@@ -116,5 +116,6 @@ Smoke test on an M-series Mac (MPS, bfloat16), Qwen3-0.6B, 200 new tokens, defau
 | (d) stock transformers config on MPS, verified on CPU | 0/5 | 0.1 to 1.4 |
 
 Watermark strength depends on entropy: low temperature, small top-k, short answers and repetitive text
-all lower z. A 150-token Hindi answer from Qwen3-0.6B scored only z = 2.2, below the threshold, so
-expect to need longer texts or a larger model for Hindi.
+all lower z. Hindi generation has not been measured systematically yet: a single 150-token Hindi
+answer from Qwen3-0.6B (20 keys, `ngram_len` 4) scored z = 2.2, below the default threshold. The
+smoke-test numbers are deterministic for a given seed and device. Qwen3-8B has not been run yet.

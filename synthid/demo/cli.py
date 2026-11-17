@@ -97,6 +97,9 @@ def cmd_generate(args) -> int:
     if args.thinking:
         gen.enable_thinking = True
 
+    for path in (args.save_config, args.out):
+        if path:
+            Path(path).parent.mkdir(parents=True, exist_ok=True)
     if args.save_config:
         Path(args.save_config).write_text(yaml.safe_dump(cfg.to_dict(), sort_keys=False, allow_unicode=True))
         print(f"wrote {args.save_config}", file=sys.stderr)
