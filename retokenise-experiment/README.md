@@ -144,3 +144,18 @@ The full table is in [`results/hi_vs_en.md`](results/hi_vs_en.md). In short:
 - **Survival is not the same as detectability.** 5-gram survival is the share of watermark-carrying
   positions kept. How much that lowers a detection score also depends on text length and the detector,
   which this experiment deliberately leaves out.
+
+## Web-crawled Hindi (ZWJ/ZWNJ check)
+
+The IITB sides contain no zero-width characters, so a small web sample was streamed to test `strip_zw`:
+1,500 documents each from mC4 Hindi (`allenai/c4`, config `hi`, Common Crawl up to 2020) and AI4Bharat
+Sangraha (`verified/hin`). The commands are in `fetch_texts.py --help`. For mC4, only documents whose letters are
+at least 80% Devanagari were kept (775 of 1,500; the rest are mostly Malayalam and Latin noise). Results are in
+[`results/hi_web.md`](results/hi_web.md):
+
+- **mC4 has ZWJ in 13% of documents**, almost always as virama + ZWJ + consonant (`क्‍या`, `दिल्‍ली`), the
+  explicit half-form some Hindi input tools insert. Stripping it changes 7.7% of passages, and a changed
+  passage keeps 93.4% of its 5-gram windows. Each ZWJ is split into two byte tokens, and removing it
+  re-merges the neighbouring bytes, so one invisible character costs several windows.
+- **Sangraha has none at all**, nor NBSP or BOM: its cleaning pipeline appears to strip them. Like IITB news, its
+  main drift is whitespace collapse (17% of passages).

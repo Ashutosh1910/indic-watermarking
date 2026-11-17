@@ -7,6 +7,12 @@ LLM-generated text. Any other dataset works with --dataset/--config/--splits/--f
   # Hindi Wikipedia (Nov 2023 dump)
   python fetch_texts.py --dataset wikimedia/wikipedia --config 20231101.hi --splits train --field text
 
+  # Web-crawled Hindi: mC4 (Common Crawl, up to 2020) and AI4Bharat Sangraha (verified web split)
+  python fetch_texts.py --lang hi --dataset allenai/c4 --config hi --splits train --field text \
+      --n-lines 1500 --out ../texts/hi-mc4.txt
+  python fetch_texts.py --lang hi --dataset ai4bharat/sangraha --data-dir verified/hin --splits train \
+      --field text --n-lines 1500 --out ../texts/hi-sangraha.txt
+
 Text is kept byte-for-byte as the dataset stores it (no Unicode normalisation), apart from
 turning newlines inside a record into spaces. The source is recorded in texts/<lang>.source.json.
 
@@ -35,6 +41,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dataset", default="cfilt/iitb-english-hindi")
     ap.add_argument("--config", default=None)
+    ap.add_argument("--data-dir", default=None, help="dataset sub-folder, e.g. verified/hin for ai4bharat/sangraha")
     ap.add_argument("--splits", nargs="+", default=["test", "validation"])
     ap.add_argument("--lang", default="hi", help="language code; sets the default --field and --out")
     ap.add_argument("--field", default=None, help="dotted path to the text in a row (default translation.<lang>)")
@@ -48,7 +55,8 @@ def main():
 
     lines: list[str] = []
     for split in args.splits:
-        ds = load_dataset(args.dataset, args.config, split=split, streaming=True)
+        ds = load_dataset(args.dataset, args.config, split=split, streaming=True,
+                          **({"data_dir": args.data_dir} if args.data_dir else {}))
         for row in ds:
             t = get_field(row, args.field)
             if t and t.strip():
@@ -61,7 +69,7 @@ def main():
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    src = {"lang": args.lang, "dataset": args.dataset, "config": args.config, "splits": args.splits,
+    src = {"lang": args.lang, "dataset": args.dataset, "config": args.config, "data_dir": args.data_dir, "splits": args.splits,
            "field": args.field, "n_lines": len(lines)}
     out.with_suffix(".source.json").write_text(json.dumps(src, indent=2))
     print(f"wrote {len(lines)} lines from {args.dataset} -> {out}")
