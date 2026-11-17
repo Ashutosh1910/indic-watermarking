@@ -1,0 +1,7 @@
+# Python 3.10+. Generation + detection with SynthID-Text via Hugging Face transformers.
+torch>=2.4               # MPS on Apple Silicon, CUDA or CPU elsewhere
+transformers>=4.51       # SynthIDTextWatermarkingConfig (4.46+) and Qwen3 (4.51+)
+accelerate>=0.33         # device_map / low_cpu_mem_usage when loading weights
+pyyaml>=6.0              # watermark / model config files
+scipy>=1.10              # p-values for the z-test
+pytest>=8.0              # tests/ only
