@@ -1,6 +1,6 @@
-"""Download human-written Hindi text from a public Hugging Face dataset into texts/hi.txt.
+"""Download human-written text (Hindi or English) from a public Hugging Face dataset into texts/<lang>.txt.
 
-Default: the Hindi side of the IIT Bombay English-Hindi corpus (cfilt/iitb-english-hindi),
+Default: the Hindi (--lang hi) or English (--lang en) side of the IIT Bombay English-Hindi corpus (cfilt/iitb-english-hindi),
 test + validation splits: human-written/translated news, released 2018, so it predates
 LLM-generated text. Any other dataset works with --dataset/--config/--splits/--field, e.g.
 
@@ -8,7 +8,10 @@ LLM-generated text. Any other dataset works with --dataset/--config/--splits/--f
   python fetch_texts.py --dataset wikimedia/wikipedia --config 20231101.hi --splits train --field text
 
 Text is kept byte-for-byte as the dataset stores it (no Unicode normalisation), apart from
-turning newlines inside a record into spaces. The source is recorded in texts/hi.source.json.
+turning newlines inside a record into spaces. The source is recorded in texts/<lang>.source.json.
+
+Because IITB is a parallel corpus, the English and Hindi arms share the same news content, period
+and pre-LLM provenance; one side of each pair is a human translation of the other.
 
 To use a corpus you downloaded yourself (e.g. IndicCorp's hi.txt), skip this script:
   head -n 3000 /path/to/hi.txt > texts/hi.txt
@@ -33,10 +36,13 @@ def main():
     ap.add_argument("--dataset", default="cfilt/iitb-english-hindi")
     ap.add_argument("--config", default=None)
     ap.add_argument("--splits", nargs="+", default=["test", "validation"])
-    ap.add_argument("--field", default="translation.hi", help="dotted path to the Hindi text in a row")
+    ap.add_argument("--lang", default="hi", help="language code; sets the default --field and --out")
+    ap.add_argument("--field", default=None, help="dotted path to the text in a row (default translation.<lang>)")
     ap.add_argument("--n-lines", type=int, default=3000, help="records to take (drift.py groups them into passages)")
-    ap.add_argument("--out", default=str(ROOT / "texts" / "hi.txt"))
+    ap.add_argument("--out", default=None, help="default texts/<lang>.txt")
     args = ap.parse_args()
+    args.field = args.field or f"translation.{args.lang}"
+    args.out = args.out or str(ROOT / "texts" / f"{args.lang}.txt")
 
     from datasets import load_dataset
 
@@ -55,7 +61,7 @@ def main():
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    src = {"dataset": args.dataset, "config": args.config, "splits": args.splits,
+    src = {"lang": args.lang, "dataset": args.dataset, "config": args.config, "splits": args.splits,
            "field": args.field, "n_lines": len(lines)}
     out.with_suffix(".source.json").write_text(json.dumps(src, indent=2))
     print(f"wrote {len(lines)} lines from {args.dataset} -> {out}")

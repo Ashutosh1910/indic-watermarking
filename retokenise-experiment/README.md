@@ -1,4 +1,4 @@
-# Retokenization drift on Hindi text (tokenizer only)
+# Retokenization drift on Hindi text, with an English baseline (tokenizer only)
 
 **Question:** a SynthID-Text detector never sees the model's token IDs. It sees *text*, which it has to
 tokenize again. How many of the original tokens, and of the 5-token windows that carry the watermark,
@@ -6,7 +6,9 @@ survive that round trip once the text has gone through the things that happen to
 copy-paste, Unicode normalisation, zero-width characters being stripped, whitespace clean-up?
 
 This version needs **no model and no GPU**. It uses only the Qwen3 tokenizer (a few MB, shared by every
-Qwen3 size including Qwen3-8B) and real human-written Hindi from a public dataset. It measures the
+Qwen3 size including Qwen3-8B) and real human-written Hindi from a public dataset. An English arm runs
+the same perturbations and metrics on the English side of the same corpus, so Hindi can be read against
+a baseline. It measures the
 retokenization gap only; watermark z-scores are out of scope.
 
 Everything stays in this folder: the virtual env (`.venv/`), the Hugging Face cache (`.hf-cache/`), the
@@ -23,8 +25,17 @@ cd retokenise-experiment
 
 ```bash
 ./run_all.sh --quick        # 10 passages, a few seconds after the first download
-./run_all.sh                # 100 passages of ~200 tokens
+./run_all.sh                # 100 passages of ~200 tokens, Hindi
+./run_all.sh --lang en      # the same for English
+./run_all.sh --lang both --n-passages 347   # both languages + outputs/compare.md side by side
 ```
+
+`--lang both` writes `outputs/hi/`, `outputs/en/` and `outputs/compare.md`. 347 is the largest matched
+size: the English side of IITB test+validation (3,027 records) yields 347 passages of 200 tokens, the
+Hindi side about 1,195, because Qwen3 needs roughly 4× more tokens per character for Devanagari. Fetch
+the full splits first with `cd src && ../.venv/bin/python fetch_texts.py --lang en --n-lines 5000` (and
+the same for `hi`); the default of 3,000 records gives slightly fewer English passages. `drift.py`
+prints a warning when it gets fewer passages than asked for.
 
 On the first run, `run_all.sh` downloads the Hindi text with `src/fetch_texts.py` and the tokenizer
 from Hugging Face. Other options:
@@ -41,7 +52,11 @@ The default is the **Hindi side of the IIT Bombay English-Hindi parallel corpus*
 ([`cfilt/iitb-english-hindi`](https://huggingface.co/datasets/cfilt/iitb-english-hindi)), test and
 validation splits, field `translation.hi`, first 3,000 records. It is human-written and translated news,
 released in 2018, so it predates LLM-generated text. The text is kept byte-for-byte; nothing is normalised
-before the experiment starts. The exact source is written to `texts/hi.source.json` and repeated at the
+before the experiment starts.
+
+The **English arm** uses the English side of the same corpus (`--lang en`, field `translation.en`). Because
+IITB is parallel, both arms share content, period and pre-LLM provenance; one side of each pair is a human
+translation of the other. The exact source is written to `texts/hi.source.json` and repeated at the
 top of every `summary.md`.
 
 To use another dataset:
@@ -89,7 +104,26 @@ Metrics, comparing `ids` with `ids2`:
 |---|---|
 | `summary.md` | two tables per perturbation. **All passages**: how often the text changed, exact match, aligned positions, 5-gram survival and change in token count. **Changed passages only**: the cost each time the perturbation actually changes something |
 | `mismatches.md` | the most frequent mismatched spans, with their code points, original tokens → re-encoded tokens and context |
+| `mismatches.csv` | the same spans as CSV (read by `compare.py`) |
 | `per_passage.csv` | every metric for each passage and perturbation |
+| `../compare.md` | with `--lang both`: fertility of each language, both tables as hi / en cells, top mismatches per language |
+
+## Results (Qwen3 tokenizer, IITB test+validation, 347 passages per language)
+
+The full table is in [`results/hi_vs_en.md`](results/hi_vs_en.md). In short:
+
+- **Clean human text barely drifts in either language.** The `none` control is 100% in both, and every
+  perturbation keeps at least 99.1% of 5-gram windows when averaged over all passages.
+- **Qwen3's built-in NFC undoes NFC, NFD and precomposed nukta.** 37% of Hindi passages contain a
+  nukta letter that `nukta_precomposed` rewrites, and every one of them re-encodes to the same IDs.
+- **Whitespace clean-up is the only perturbation that fires often, and it fires far more in Hindi.** The
+  Hindi side of IITB has many double spaces, so collapsing them changes 19.9% of Hindi passages and 2.3%
+  of English ones. When it fires the cost is similar (95.4% vs 96.5% 5-gram survival), since each
+  removed space is one token in both languages.
+- **NFKC only hit English**, through NBSPs (U+00A0) in the source; the Hindi side has none.
+- **ZWJ/ZWNJ never occur** in either side of this corpus, so `strip_zw` is untested here. Web-scraped Hindi
+  (IndicCorp, Wikipedia) is the place to measure it.
+- Fertility differs a lot: 1.09 chars/token and 4.7 tokens/word for Hindi, against 4.72 and 1.27 for English.
 
 ## What to expect, and caveats
 

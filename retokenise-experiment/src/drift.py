@@ -1,4 +1,4 @@
-"""Retokenization drift on human Hindi text, tokenizer only (no model).
+"""Retokenization drift on human text (Hindi, English, ...), tokenizer only (no model).
 
 For every passage x (a few sentences, truncated to --max-tokens at a character boundary):
 
@@ -61,6 +61,9 @@ PERTURBATIONS = {
 }
 
 
+LANG_NAMES = {"hi": "Hindi", "en": "English"}
+
+
 def ngram_survival(a: list[int], b: list[int], n: int = NGRAM_LEN) -> float:
     wa = Counter(tuple(a[i : i + n]) for i in range(len(a) - n + 1))
     wb = Counter(tuple(b[i : i + n]) for i in range(len(b) - n + 1))
@@ -93,7 +96,7 @@ def make_passages(lines: list[str], tok, max_tokens: int, n: int) -> list[str]:
         buf = f"{buf} {line}".strip() if buf else line
         if len(tok.encode(buf, add_special_tokens=False)) >= max_tokens:
             while len(tok.encode(buf, add_special_tokens=False)) > max_tokens:
-                buf = buf[: int(len(buf) * 0.95)]
+                buf = buf[: int(len(buf) * 0.95)].rstrip()  # no trailing space from the cut
             out.append(buf)
             buf = ""
             if len(out) >= n:
@@ -122,7 +125,10 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "outputs" / "hi"))
     ap.add_argument("--n-examples", type=int, default=20)
     ap.add_argument("--quick", action="store_true", help="smoke test: 10 passages")
+    ap.add_argument("--lang", default=None, help="label for the report (default: the texts file name, e.g. hi)")
     args = ap.parse_args()
+    args.lang = args.lang or Path(args.texts).stem
+    lang_name = LANG_NAMES.get(args.lang, args.lang)
     if args.quick:
         args.n_passages = 10
 
@@ -131,6 +137,9 @@ def main():
     passages = make_passages(lines, tok, args.max_tokens, args.n_passages)
     backend = getattr(tok, "backend_tokenizer", None)
     normalizer = repr(backend.normalizer) if backend is not None and backend.normalizer is not None else "none"
+    if len(passages) < args.n_passages:
+        print(f"WARNING: only {len(passages)} passages of {args.max_tokens} tokens available "
+              f"(asked for {args.n_passages}); fetch more lines")
     print(f"{len(passages)} passages from {args.texts}, tokenizer={args.tokenizer}, built-in normalizer={normalizer}")
 
     rows = []
@@ -146,6 +155,7 @@ def main():
             changed = t2 != text
             rows.append({
                 "passage": pi, "perturbation": name, "len_orig": len(a), "len_new": len(b),
+                "chars_orig": len(text), "words_orig": len(text.split()),
                 "text_changed": int(changed), "chars_changed": sum(1 for c in difflib.ndiff(text, t2) if c[0] in "+-")
                 if changed and len(text) < 5000 else 0,
                 "exact": int(a == b), "aligned_frac": al, "ngram5_survival": ngram_survival(a, b),
@@ -170,7 +180,7 @@ def main():
     for r in rows:
         by[r["perturbation"]].append(r)
     lines_md = [
-        f"# Retokenization drift, Hindi human text", "",
+        f"# Retokenization drift, {lang_name} human text", "",
         f"Tokenizer `{args.tokenizer}` · {len(passages)} passages from `{Path(args.texts).name}` · "
         f"mean {mean([r['len_orig'] for r in by[args.perturbations[0]]]):.0f} tokens/passage · n-gram window {NGRAM_LEN}", "",
         f"Text source: `{' '.join(source.split())}`", "",
@@ -211,6 +221,12 @@ def main():
             ml.append(f"| {cnt} | `{esc(txt)}` | {codepoints(txt)[:80]} | `{esc(o)}` | `{esc(n_)}` | {esc(context[(name, key)])} |")
         ml.append("")
     (out / "mismatches.md").write_text("\n".join(ml) + "\n", encoding="utf-8")
+    with (out / "mismatches.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["perturbation", "count", "text", "codepoints", "orig_tokens", "new_tokens", "context"])
+        for name in args.perturbations:
+            for key, cnt in spans.get(name, Counter()).most_common(args.n_examples):
+                w.writerow([name, cnt, key[0], codepoints(key[0]), key[1], key[2], context[(name, key)]])
     print(f"wrote {out/'summary.md'}, {out/'mismatches.md'}, {out/'per_passage.csv'}")
 
 
