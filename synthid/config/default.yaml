@@ -1,0 +1,35 @@
+# SynthID-Text settings shared by generation and verification.
+# Generation and verification MUST use the same `watermark` block and the same tokenizer,
+# otherwise the verifier computes unrelated g-values and every text looks unwatermarked.
+
+model:
+  model_id: Qwen/Qwen3-8B      # e.g. Qwen/Qwen3-0.6B for quick runs (~1.2 GB), Qwen/Qwen3-8B (~16 GB in bf16)
+  device: auto                 # auto = cuda > mps > cpu
+  dtype: auto                  # auto = bfloat16 on cuda/mps, float32 on cpu
+
+watermark:
+  # Public demo keys from the Hugging Face SynthID-Text blog post. They are NOT secret:
+  # make your own with `python -m demo keys --depth 30` for anything that matters.
+  keys: [654, 400, 836, 123, 340, 443, 597, 160, 57, 29, 590, 639, 13, 715, 468, 990, 966, 226, 324, 585, 118, 504, 421, 521, 129, 669, 732, 225, 90, 960]
+  ngram_len: 5                 # context of ngram_len-1 previous tokens seeds each g-value
+  sampling_table_size: 65536
+  sampling_table_seed: 0
+  context_history_size: 1024
+  skip_first_ngram_calls: false
+
+generation:
+  max_new_tokens: 256
+  do_sample: true
+  temperature: 0.7
+  top_k: 40
+  top_p: 1.0                   # 1.0 disables nucleus sampling (overrides the model's own default)
+  use_chat_template: true      # wrap the prompt as a user turn
+  enable_thinking: false       # Qwen3 only: no <think> block
+  seed: 0                      # null for a fresh random seed each run
+
+detection:
+  method: weighted_mean        # weighted_mean (SynthID paper) or mean
+  alpha: 0.01                  # one-sided significance level for "watermarked"
+  min_scored: 50               # fewer scorable n-grams than this -> "insufficient"
+  null_mean: table             # table = mean of the actual sampling table; or a number, e.g. 0.5
+  bayesian_detector: null      # optional path/repo of a trained BayesianDetectorModel
