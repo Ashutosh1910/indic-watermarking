@@ -1,0 +1,4 @@
+# Python 3.10+. Tokenizer-only experiment: no model weights, no torch.
+transformers>=4.51   # Qwen3 tokenizer
+tokenizers>=0.21
+datasets>=2.18       # only for fetch_texts.py --source iitb
