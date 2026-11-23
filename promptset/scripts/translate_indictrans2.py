@@ -62,7 +62,8 @@ def pick_device(name: str) -> torch.device:
 
 
 class Translator:
-    def __init__(self, src: str, tgt: str, size: str, device: torch.device, batch: int, beams: int):
+    def __init__(self, src: str, tgt: str, size: str, device: torch.device, batch: int, beams: int,
+                 kv_cache: bool = False):
         name = MODEL[(src, tgt, size)]
         self.src, self.tgt = LANG[src], LANG[tgt]
         self.tok = AutoTokenizer.from_pretrained(name, trust_remote_code=True)
@@ -70,20 +71,27 @@ class Translator:
         self.model = AutoModelForSeq2SeqLM.from_pretrained(name, trust_remote_code=True, torch_dtype=dtype).to(device).eval()
         self.ip = IndicProcessor(inference=True)
         self.device, self.batch, self.beams, self.name = device, batch, beams, name
+        self.kv_cache = kv_cache
 
     @torch.no_grad()
     def sentences(self, sents: list[str]) -> list[str]:
-        out: list[str] = []
-        for i in range(0, len(sents), self.batch):
-            chunk = sents[i:i + self.batch]
+        """Translate sentences in batches of similar length (less padding), returned in input order."""
+        order = sorted(range(len(sents)), key=lambda i: len(sents[i]))
+        out_sorted: list[str] = []
+        for i in range(0, len(order), self.batch):
+            chunk = [sents[j] for j in order[i:i + self.batch]]
             pre = self.ip.preprocess_batch(chunk, src_lang=self.src, tgt_lang=self.tgt)
             enc = self.tok(pre, truncation=True, padding="longest", max_length=256, return_tensors="pt").to(self.device)
-            # use_cache=False: IndicTrans2's custom model code breaks on the KV cache of transformers >= 4.5x
-            # (past_key_values is None). Pin transformers 4.57.x + IndicTransToolkit 1.1.1.
-            gen = self.model.generate(**enc, use_cache=False, min_length=0, max_length=256, num_beams=self.beams,
-                                      num_return_sequences=1)
+            # use_cache=False by default: IndicTrans2's custom model code breaks on the KV cache of transformers
+            # >= 4.5x (past_key_values is None). Pin transformers 4.57.x + IndicTransToolkit 1.1.1. --kv-cache turns
+            # the cache on for a transformers version where it works: same outputs, much faster beam search.
+            gen = self.model.generate(**enc, use_cache=self.kv_cache, min_length=0, max_length=256,
+                                      num_beams=self.beams, num_return_sequences=1)
             dec = self.tok.batch_decode(gen, skip_special_tokens=True, clean_up_tokenization_spaces=True)
-            out.extend(self.ip.postprocess_batch(dec, lang=self.tgt))
+            out_sorted.extend(self.ip.postprocess_batch(dec, lang=self.tgt))
+        out = [""] * len(sents)
+        for k, j in enumerate(order):
+            out[j] = out_sorted[k]
         return out
 
 
@@ -96,6 +104,9 @@ def main() -> None:
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--beams", type=int, default=5)
     ap.add_argument("--limit", type=int, default=0, help="translate only the first N rows (testing)")
+    ap.add_argument("--kv-cache", action="store_true",
+                    help="use the KV cache in beam search (faster; needs a transformers version where it works)")
+    ap.add_argument("--group", type=int, default=64, help="rows per saved group (progress is written per group)")
     a = ap.parse_args()
 
     rows = [json.loads(l) for l in open(a.inp, encoding="utf-8") if l.strip()]
@@ -113,12 +124,12 @@ def main() -> None:
         todo = [r for r in rows if r["src"] == src]
         if not todo:
             continue
-        tr = Translator(src, tgt, a.size, device, a.batch, a.beams)
+        tr = Translator(src, tgt, a.size, device, a.batch, a.beams, a.kv_cache)
         print(f"{src}->{tgt}: {len(todo)} rows with {tr.name}", flush=True)
         t0 = time.time()
         # Translate in groups of rows so progress is saved regularly.
-        for g in range(0, len(todo), 64):
-            group = todo[g:g + 64]
+        for g in range(0, len(todo), a.group):
+            group = todo[g:g + a.group]
             flat, layout = [], []
             for r in group:
                 parts, seps = split_keep(r["text"].strip())
