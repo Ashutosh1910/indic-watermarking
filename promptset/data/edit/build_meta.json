@@ -15,6 +15,7 @@
  "trim_source": "trim.py",
  "tokenizer": "/mnt/project-files/promptset_stage/qwen3_tokenizer/tokenizer.json",
  "token_counts_estimated": false,
+ "acceptance_rule": "accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0",
  "lengths": {
   "max_new_tokens_round": 64,
   "round_n_to": 10,
@@ -37,7 +38,17 @@
    "en": 1.26,
    "hi": 4.57
   },
-  "min_frac": 0.95
+  "min_frac": 0.95,
+  "slack_words": 30,
+  "slack_tokens": null,
+  "slack": {
+   "words": 30,
+   "tokens": {
+    "en": 38,
+    "hi": 137
+   }
+  },
+  "acceptance_rule": "accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0"
  },
  "experiments": {
   "same_words": "words",
@@ -65,26 +76,14 @@
    "sampled": 150
   }
  },
- "n_rows": 4601,
+ "n_rows": 4597,
  "n_passages": 600,
  "skips": [
   {
    "level": "(doc)",
-   "source": "hindi-aesthetics",
-   "reason": "no passage: same_tokens",
-   "n": 8
-  },
-  {
-   "level": "(doc)",
-   "source": "samalochan",
-   "reason": "no passage: same_tokens",
-   "n": 25
-  },
-  {
-   "level": "(doc)",
    "source": "samalochan",
    "reason": "no passage: same_tokens; same_words",
-   "n": 2
+   "n": 1
   },
   {
    "level": "C_continue",
@@ -96,13 +95,13 @@
    "level": "G_title",
    "source": "hindi-aesthetics",
    "reason": "no usable title",
-   "n": 52
+   "n": 54
   },
   {
    "level": "G_title",
    "source": "samalochan",
    "reason": "no usable title",
-   "n": 144
+   "n": 146
   },
   {
    "level": "L1_proofread",

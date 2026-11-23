@@ -138,10 +138,31 @@ More trimming rules (all recorded per row and in `*.summary.json` / `.md`):
   `punct+linebreak` rows, else a space). Rows get `ai_char_start`, `ai_words`/`ai_word_share` and
   `ai_tokens`/`ai_token_share`; small cutoffs can fall inside the human head (share 0). `--no-join-head`
   trims the continuation alone.
-* **Slack floor**: `--slack-words S` / `--slack-tokens S` accept a passage when
-  `n >= min(min_frac * N, N - S)`. The default 0 keeps the agreed 95 % rule. The 95 % window is narrow at
-  small N (5 words at N = 100), and Hindi sentences are long, so many texts have no sentence end inside it.
-  On 60 samalochan documents, words only: 28 % accepted at N = 100, 45 % at 200, 85 % at 400, 100 % at 800.
+* **Acceptance rule (default: 95 % or one sentence of slack)**: a passage of n units cut at N is accepted
+  iff `n >= min(min_frac * N, N - slack)`. From `config/promptset.yaml`: `min_frac: 0.95`,
+  `slack_words: 30`. Word cutoffs get 30 words of slack; token cutoffs get 30 words' worth of tokens in the
+  row's language, `round(30 * tokens_per_word[lang])` = **38 (en) / 137 (hi)**. The 95 % rule still governs
+  long cutoffs (word N = 800 and 1200: 760 and 1140), the slack the short ones (N = 100 words: 70; hi
+  N = 200 tokens: 63). Overrides: `--slack-words S` (also the base of the derived token slack),
+  `--slack-tokens T` (T tokens for every language), `--min-frac F`. **`--slack-words 0` turns the slack
+  off** (pure 95 % rule). Each row records its `slack` and `min_units`; the summary states the rule. The
+  edit builder (`build_edit_prompts.py`) cuts the human inputs with the same rule and the same defaults.
+  Why: the 95 % window alone is 5 words at N = 100, and Hindi sentences are long. On all 1,544 eligible
+  source documents (samalochan 576, hindi-aesthetics 968; Qwen3 tokens), share accepted, pure 95 % ->
+  default:
+
+  | cutoff | samalochan | hindi-aesthetics |
+  |---|---|---|
+  | 100 words | 28 % -> 88 % | 41 % -> 95 % |
+  | 200 words | 48 % -> 87 % | 66 % -> 95 % |
+  | 400 words | 79 % -> 91 % | 88 % -> 95 % |
+  | 800 / 1200 words | 94 % / 97 % (unchanged) | 95 % / 81 % (unchanged) |
+  | 200 tokens | 12 % -> 88 % | 16 % -> 95 % |
+  | 400 tokens | 26 % -> 89 % | 30 % -> 95 % |
+  | 800 tokens | 39 % -> 83 % | 54 % -> 95 % |
+  | 1500 tokens | 65 % -> 86 % | 83 % -> 95 % |
+
+  Most remaining rejections at large N are documents shorter than N.
 
 ## 5. Verify
 

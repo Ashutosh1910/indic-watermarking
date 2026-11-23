@@ -10,7 +10,15 @@ tokens_per_word: {en: 1.26, hi: 4.57}
 cutoffs:
   words: [100, 200, 400, 800, 1200]
   tokens: [200, 400, 800, 1500]
-min_frac: 0.95            # a trimmed passage must reach 95% of its cutoff
+# Acceptance rule ("95% or one sentence of slack"), used by trim.py and build_edit_prompts.py: a passage of n
+# units cut at cutoff N (at the last sentence end at or before N) is accepted iff n >= min(min_frac * N, N - slack).
+#   word cutoffs:  slack = slack_words
+#   token cutoffs: slack = slack_words' worth of tokens in the row's language, round(slack_words * tokens_per_word[lang])
+#                  (30 words -> en 38, hi 137 tokens)
+# The 95% rule still governs long cutoffs (min picks it once 0.05 * N > slack, e.g. N > 600 words).
+# slack_words: 0 turns the slack off (pure 95% rule); trim.py --slack-words / --slack-tokens override per run.
+min_frac: 0.95            # a trimmed passage must reach 95% of its cutoff ...
+slack_words: 30           # ... or come within one sentence (30 words, or its token equivalent) of it
 
 # Each prompt asks for one length. A row serves every cutoff N with N <= serve_frac * requested length
 # (in words, or in tokens via tokens_per_word), and gets max_new_tokens = 1.3 * requested tokens.

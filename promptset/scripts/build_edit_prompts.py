@@ -23,9 +23,13 @@ Outputs of ``build`` (in --out):
     edit_prompts_summary.md   counts per level x experiment x source x language, token budget, skips
     build_meta.json           arguments, config, tokenizer, counts
 
-Length rule (shared with trim.py): a passage is cut at the last sentence end at or before N words or
-tokens and accepted only if it keeps >= min_frac * N. Sentence ends come from trim.py (``SENT_END``);
-for punctuation-stripped corpora (hindi-aesthetics) every line break is also a sentence end.
+Length rule (shared with trim.py, same functions): a passage is cut at the last sentence end at or before N
+words or tokens and accepted only if it keeps n >= min(min_frac * N, N - slack) ("95 % or one sentence of
+slack"). Defaults from promptset.yaml: min_frac 0.95, slack_words 30; word slack = 30 words, token slack =
+round(30 * tokens_per_word[lang]) (en 38, hi 137). Override in edit_levels.yaml ``lengths`` (min_frac,
+slack_words, slack_tokens) or with ``build --slack-words S [--slack-tokens T]``; ``--slack-words 0`` is the
+pure min_frac rule. Sentence ends come from trim.py (``SENT_END``); for punctuation-stripped corpora
+(hindi-aesthetics) every line break is also a sentence end.
 """
 
 from __future__ import annotations
@@ -53,13 +57,16 @@ from _common import dumps, iter_jsonl, log, md_table, read_jsonl_files, stable_h
 # The sentence-end rule and the trimming function are trim.py's, so human inputs and AI outputs are cut by
 # the same rule. (A local copy is kept only as a fallback for a checkout without trim.py.)
 try:
-    from trim import _CLOSERS, _TERMINALS, SENT_END, Trim, count_words, sentence_ends, trim_text  # noqa: E402
+    from trim import (_CLOSERS, _TERMINALS, DEFAULT_SLACK_WORDS, SENT_END, Trim, count_words,  # noqa: E402
+                      describe_rule, min_units, resolve_slack, sentence_ends, slack_for, trim_text)
     TRIM_SOURCE = "trim.py"
 except ImportError:  # pragma: no cover - fallback; keep in sync with trim.py
     TRIM_SOURCE = "local fallback"
     _CLOSERS = "\"'”’)\\]»"
     _TERMINALS = ".!?।॥…"
     SENT_END = re.compile(f"[{re.escape(_TERMINALS)}]+[{_CLOSERS}]*(?=\\s|$)")
+
+    DEFAULT_SLACK_WORDS = 30
 
     @dataclass
     class Trim:  # type: ignore[no-redef]
@@ -69,16 +76,34 @@ except ImportError:  # pragma: no cover - fallback; keep in sync with trim.py
         accepted: bool
         reject_reason: str | None
         full_units: int | None
+        min_units: float | None = None
 
     def count_words(text: str) -> int:  # type: ignore[no-redef]
         return len(text.split())
 
+    def min_units(cutoff, min_frac=0.95, slack=0):  # type: ignore[no-redef]
+        return min(min_frac * cutoff, cutoff - slack) if slack > 0 else min_frac * cutoff
+
+    def resolve_slack(slack_words, tokens_per_word=None, slack_tokens=None):  # type: ignore[no-redef]
+        if slack_tokens is not None:
+            return {"words": int(slack_words), "tokens": int(slack_tokens)}
+        return {"words": int(slack_words),
+                "tokens": {str(k): int(int(slack_words) * float(v) + 0.5) for k, v in sorted((tokens_per_word or {}).items())}}
+
+    def slack_for(slack, kind, language):  # type: ignore[no-redef]
+        v = (slack or {}).get(kind, 0)
+        return int((v.get(str(language), 0) if isinstance(v, dict) else v) or 0)
+
+    def describe_rule(min_frac, slack, slack_words=None):  # type: ignore[no-redef]
+        return f"accept iff n >= min({min_frac} * N, N - slack), slack {slack}"
+
     def sentence_ends(text: str, pattern: re.Pattern[str] = SENT_END) -> list[int]:  # type: ignore[no-redef]
         return [m.end() for m in pattern.finditer(text)]
 
-    def trim_text(text, kind, cutoff, count_tokens, min_frac=0.95, pattern=SENT_END):  # type: ignore[no-redef]
+    def trim_text(text, kind, cutoff, count_tokens, min_frac=0.95, pattern=SENT_END, slack=0):  # type: ignore[no-redef]
+        thr = min_units(cutoff, min_frac, slack)
         if not text.strip():
-            return Trim("", 0, 0 if count_tokens else None, False, "empty", 0)
+            return Trim("", 0, 0 if count_tokens else None, False, "empty", 0, thr)
         ends = sentence_ends(text, pattern)
         if kind == "words":
             ws = [m.start() for m in re.finditer(r"\S+", text)]
@@ -98,11 +123,11 @@ except ImportError:  # pragma: no cover - fallback; keep in sync with trim.py
                 else:
                     hi = mid - 1
         if best is None:
-            return Trim("", 0, 0 if count_tokens else None, False, "no_sentence_end", full)
+            return Trim("", 0, 0 if count_tokens else None, False, "no_sentence_end", full, thr)
         p = text[:best].strip()
         nw, nt = count_words(p), (count_tokens(p) if count_tokens else None)
         units = nw if kind == "words" else nt
-        return Trim(p, nw, nt, units >= min_frac * cutoff, None if units >= min_frac * cutoff else "too_short", full)
+        return Trim(p, nw, nt, units >= thr, None if units >= thr else "too_short", full, thr)
 
 CONFIG_DIR = REPO_ROOT / "promptset" / "config"
 DEFAULT_CONFIG = CONFIG_DIR / "edit_levels.yaml"
@@ -170,8 +195,9 @@ def script_share(text: str, language: str) -> float:
 
 
 def load_config(path: str | Path | None = None) -> dict[str, Any]:
-    """edit_levels.yaml, with cutoffs / tokens_per_word / min_frac filled in from promptset.yaml and the kit
-    loaded. Returns a plain dict."""
+    """edit_levels.yaml, with cutoffs / tokens_per_word / min_frac / slack_words filled in from promptset.yaml
+    and the kit loaded. ``lengths["slack"]`` is the resolved slack ({"words": S, "tokens": {lang: T}}, see
+    trim.resolve_slack). Returns a plain dict."""
     path = Path(path or DEFAULT_CONFIG)
     cfg = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     base = path.parent
@@ -180,13 +206,29 @@ def load_config(path: str | Path | None = None) -> dict[str, Any]:
     lengths.setdefault("cutoffs", ps["cutoffs"])
     lengths.setdefault("tokens_per_word", ps["tokens_per_word"])
     lengths.setdefault("min_frac", ps.get("min_frac", 0.95))
+    lengths.setdefault("slack_words", ps.get("slack_words", DEFAULT_SLACK_WORDS))
+    lengths.setdefault("slack_tokens", None)          # None: round(slack_words * tokens_per_word[lang])
     lengths.setdefault("max_new_tokens_round", ps.get("max_new_tokens_round", 64))
     lengths.setdefault("round_n_to", 10)
     lengths["cutoffs"] = {k: sorted(int(v) for v in lengths["cutoffs"].get(k, [])) for k in KINDS}
+    set_slack(lengths)
     cfg["lengths"] = lengths
     cfg["kit_data"] = json.loads((base / cfg.get("kit", "ai_levels_prompts.json")).read_text(encoding="utf-8"))
     cfg["_path"] = str(path)
     return cfg
+
+
+def set_slack(lengths: dict[str, Any], slack_words: int | None = None, slack_tokens: int | None = None) -> None:
+    """(Re)compute ``lengths["slack"]`` and ``lengths["acceptance_rule"]``; CLI values override the config."""
+    if slack_words is not None:
+        lengths["slack_words"] = int(slack_words)
+    if slack_tokens is not None:
+        lengths["slack_tokens"] = int(slack_tokens)
+    st = lengths.get("slack_tokens")
+    lengths["slack"] = resolve_slack(int(lengths["slack_words"]), lengths["tokens_per_word"],
+                                     None if st is None else int(st))
+    lengths["acceptance_rule"] = describe_rule(float(lengths["min_frac"]), lengths["slack"],
+                                               int(lengths["slack_words"]) if st is None else None)
 
 
 def kit_level(cfg: dict[str, Any], level_id: str) -> dict[str, Any]:
@@ -273,10 +315,14 @@ def _truncate_words(text: str, max_words: int) -> str:
 
 
 def cut_passage(text: str, lang: str, cutoff_kind: str, n: int, tokenizer: TokenCounter | None,
-                min_frac: float = 0.95, pattern: re.Pattern[str] = SENT_END) -> Trim:
-    """Cut ``text`` at the last sentence end at or before ``n`` words/tokens; accepted iff >= min_frac * n.
+                min_frac: float = 0.95, pattern: re.Pattern[str] = SENT_END,
+                slack: dict[str, Any] | int | None = None) -> Trim:
+    """Cut ``text`` at the last sentence end at or before ``n`` words/tokens; accepted iff
+    units >= min(min_frac * n, n - slack).
 
-    This is trim.py's ``trim_text`` (same sentence ends, same 95 % rule). Long documents are first truncated
+    ``slack``: a slack spec ({"words": S, "tokens": T | {lang: T}}, as ``load_config`` puts in
+    ``lengths["slack"]``), resolved for ``cutoff_kind`` and ``lang``, or a plain int; None/0 = no slack.
+    This is trim.py's ``trim_text`` (same sentence ends, same rule). Long documents are first truncated
     to n + 2 words (a passage of <= n tokens has <= n words, as every word is at least one token; the
     estimate allows for tokens_per_word < 1); the truncation can only add a candidate end that is longer than
     n, so the result is identical to trimming the full text, only faster.
@@ -291,25 +337,28 @@ def cut_passage(text: str, lang: str, cutoff_kind: str, n: int, tokenizer: Token
         bound = int(math.floor((n + 0.5) / min(1.0, tpw))) + 1
     else:
         bound = n + 1
-    return trim_text(_truncate_words(text, bound + 1), cutoff_kind, n, counter, min_frac, pattern)
+    sl = slack if isinstance(slack, int) else slack_for(slack, cutoff_kind, lang)
+    return trim_text(_truncate_words(text, bound + 1), cutoff_kind, n, counter, min_frac, pattern, sl)
 
 
 def largest_cut(text: str, lang: str, kind: str, cutoffs: Sequence[int], counter: TokenCounter,
-                min_frac: float, pattern: re.Pattern[str]) -> tuple[int, Trim] | None:
+                min_frac: float, pattern: re.Pattern[str], slack: dict[str, Any] | int | None = None
+                ) -> tuple[int, Trim] | None:
     """The largest cutoff of ``kind`` the text supports, and its passage."""
     for n in sorted(cutoffs, reverse=True):
-        t = cut_passage(text, lang, kind, n, counter, min_frac, pattern)
+        t = cut_passage(text, lang, kind, n, counter, min_frac, pattern, slack)
         if t.accepted:
             return n, t
     return None
 
 
 def served_cutoffs(passage: str, lang: str, cutoffs: dict[str, list[int]], counter: TokenCounter,
-                   min_frac: float, pattern: re.Pattern[str]) -> dict[str, list[int]]:
+                   min_frac: float, pattern: re.Pattern[str], slack: dict[str, Any] | int | None = None
+                   ) -> dict[str, list[int]]:
     """Every configured cutoff at which the human passage itself trims to an accepted passage (all N up to the
     passage's length, under the same rule as trim.py)."""
     return {kind: [n for n in cutoffs.get(kind, [])
-                   if cut_passage(passage, lang, kind, n, counter, min_frac, pattern).accepted]
+                   if cut_passage(passage, lang, kind, n, counter, min_frac, pattern, slack).accepted]
             for kind in KINDS}
 
 
@@ -500,7 +549,8 @@ def make_passages(doc: SourceDoc, cfg: dict[str, Any], counter: TokenCounter
     out: list[Passage] = []
     fails: dict[str, str] = {}
     for exp, kind in (cfg.get("experiments") or {"same_words": "words", "same_tokens": "tokens"}).items():
-        res = largest_cut(body, doc.language, kind, L["cutoffs"][kind], counter, L["min_frac"], pattern)
+        res = largest_cut(body, doc.language, kind, L["cutoffs"][kind], counter, L["min_frac"], pattern,
+                          L.get("slack"))
         if res is None:
             fails[exp] = f"no accepted {kind} cut (doc has {doc.n_words} words)"
             continue
@@ -518,7 +568,8 @@ def make_passages(doc: SourceDoc, cfg: dict[str, Any], counter: TokenCounter
         out.append(Passage(
             id=passage_id(doc, exp), doc=doc, experiment=exp, experiments=[exp], cutoff_kind=kind, cutoff=n,
             cut_by={kind: n}, text=text, words=count_words(text), tokens=counter(text, doc.language),
-            cutoffs=served_cutoffs(text, doc.language, L["cutoffs"], counter, L["min_frac"], pattern),
+            cutoffs=served_cutoffs(text, doc.language, L["cutoffs"], counter, L["min_frac"], pattern,
+                                   L.get("slack")),
             char_start=base, header_lines_stripped=n_hdr))
     return out, fails
 
@@ -762,12 +813,14 @@ def resolve_levels(cfg: dict[str, Any], levels: Sequence[str] | None) -> list[st
 
 def build(args: argparse.Namespace) -> dict[str, Any]:
     cfg = load_config(args.config)
+    if getattr(args, "slack_words", None) is not None or getattr(args, "slack_tokens", None) is not None:
+        set_slack(cfg["lengths"], getattr(args, "slack_words", None), getattr(args, "slack_tokens", None))
     if args.experiments:
         cfg["experiments"] = {e: cfg["experiments"][e] for e in args.experiments}
     L = cfg["lengths"]
     counter = load_token_counter(args.tokenizer, L["tokens_per_word"])
     log(f"token counts: {'ESTIMATED from tokens_per_word ' + str(L['tokens_per_word']) if counter.estimated else counter.name}"
-        f"; sentence ends from {TRIM_SOURCE}")
+        f"; sentence ends from {TRIM_SOURCE}; {L['acceptance_rule']}")
     levels = resolve_levels(cfg, args.levels)
     samp = cfg.get("sampling") or {}
     n_docs = args.n_docs if args.n_docs is not None else samp.get("n_docs")
@@ -839,7 +892,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
                 f.write("\t".join(str(x).replace("\t", " ").replace("\n", " ") for x in t) + "\n")
     meta = {
         "command": "build", "argv": sys.argv[1:], "config": cfg["_path"], "trim_source": TRIM_SOURCE,
-        "tokenizer": counter.name, "token_counts_estimated": counter.estimated, "lengths": L,
+        "tokenizer": counter.name, "token_counts_estimated": counter.estimated,
+        "acceptance_rule": L["acceptance_rule"], "lengths": L,
         "experiments": cfg["experiments"], "levels": levels, "n_docs": n_docs, "min_words": min_words,
         "docs": {f"{s}/{l}": v for (s, l), v in doc_counts.items()},
         "n_rows": len(rows), "n_passages": len(passages),
@@ -865,6 +919,8 @@ def summary_markdown(rows: Sequence[dict[str, Any]], passages: Sequence[dict[str
     lines.append(f"{len(rows)} prompt rows, {len(passages)} human passages. Token counts: "
                  + ("**estimated** from tokens_per_word (no tokenizer)" if meta["token_counts_estimated"]
                     else f"Qwen3 tokenizer ({meta['tokenizer']})") + ".")
+    if meta.get("acceptance_rule"):
+        lines += ["", f"Length rule: {meta['acceptance_rule']}."]
     lines += ["", "## Documents", "", md_table(["source/lang", "available", "sampled"],
                                                [[k, v["available"], v["sampled"]] for k, v in meta["docs"].items()])]
     c = Counter((level_label(r), exp_label(r), r["source"], r["language"]) for r in rows)
@@ -1015,6 +1071,11 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     b.add_argument("--tokenizer", default="auto",
                    help="Qwen3 tokenizer dir / tokenizer.json / HF id; 'auto' = "
                         f"{DEFAULT_TOKENIZER} if present, else estimate; 'none' = estimate")
+    b.add_argument("--slack-words", type=int,
+                   help="word slack of the rule n >= min(min_frac*N, N - slack), also the base of the derived token "
+                        "slack (default: config lengths.slack_words / promptset.yaml slack_words, 30; 0 = off)")
+    b.add_argument("--slack-tokens", type=int,
+                   help="token slack for every language (default: round(slack_words * tokens_per_word[lang]))")
     b.add_argument("--titles", help="title overrides for G_title: TSV pair_id<TAB>title or JSONL (empty = skip)")
     b.add_argument("--normalize", help="Unicode normalisation of corpus text (default: raw bytes)")
     b.add_argument("--out", default=str(REPO_ROOT / "promptset" / "data" / "edit"))

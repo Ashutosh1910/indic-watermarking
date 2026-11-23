@@ -4,7 +4,7 @@
 involvement, for the SynthID-Text study (watermarked Qwen3-8B, English vs Hindi). Its rows have the same
 schema as the G set (`build_promptset.py`), so one `generate.py` run handles everything, and
 `trim.py` / `verify_generations.py` read the outputs unchanged. Config: `config/edit_levels.yaml`
-(cutoffs, `tokens_per_word` and `min_frac` come from `config/promptset.yaml`). Templates: the prompt kit
+(cutoffs, `tokens_per_word`, `min_frac` and `slack_words` come from `config/promptset.yaml`). Templates: the prompt kit
 `config/ai_levels_prompts.json`, plus one template of our own for outline extraction (OX).
 Tests: `python3 -m pytest promptset/tests/test_edit_prompts.py -q`.
 
@@ -26,10 +26,19 @@ id): a document uses the same phrasing in both experiments and at every k. `temp
 
 ## Length rule and experiments
 
-The agreed rule, the same as `trim.py` uses for AI text: cut a text at the **last sentence end at or before
-N** words or tokens, and accept it only if it keeps **>= 95 % of N** (`min_frac`). The builder imports
-`trim.py`'s `trim_text` and `SENT_END` (sentence end = `. ! ? । ॥ …`, optionally followed by closing
-quotes or brackets, then whitespace), so human inputs and AI outputs are cut by one rule.
+The rule, the same as `trim.py` uses for AI text: cut a text at the **last sentence end at or before N**
+words or tokens, and accept it only if it keeps **n >= min(0.95 x N, N - slack)** ("95 % or one sentence
+of slack"). Defaults from `config/promptset.yaml` (`min_frac: 0.95`, `slack_words: 30`): word cutoffs get
+30 words of slack, token cutoffs 30 words' worth of tokens in the passage's language,
+`round(30 x tokens_per_word[lang])` = 38 (en) / 137 (hi). The 95 % term decides long word cutoffs (800,
+1200); the slack decides the short ones and every Hindi token cutoff up to 1500 (hi 1500 tokens: >= 1363).
+To change it, set `lengths.slack_words` / `lengths.slack_tokens` (an int for every language) or
+`lengths.min_frac` in `config/edit_levels.yaml`, or pass `build --slack-words S [--slack-tokens T]`;
+**`--slack-words 0` (or `slack_words: 0`) gives the pure 95 % rule**. The rule used is in `build_meta.json`
+(`acceptance_rule`, `lengths.slack`) and at the top of `edit_prompts_summary.md`. Use the same setting for
+`trim.py` (its defaults are the same). The builder imports `trim.py`'s `trim_text`, `min_units`,
+`resolve_slack` and `SENT_END` (sentence end = `. ! ? । ॥ …`, optionally followed by closing quotes or
+brackets, then whitespace), so human inputs and AI outputs are cut by one rule.
 
 Each human input is cut **before** editing, at the **largest** cutoff the document supports, so that one
 generation per doc and level can later be prefix-trimmed at every smaller cutoff (the same trick as the G
@@ -46,8 +55,8 @@ for every experiment (`sampling.require_all_experiments`).
 
 `cutoffs` in every row (and in `human_passages.jsonl`) lists the cutoffs the row serves: every configured
 N at which the human passage itself trims to an accepted passage under the same rule. These are cutoffs up
-to the passage length, minus those where no sentence end falls inside the 95 % window (common for small N,
-see the caveats). `trim.py gen` reads this field.
+to the passage length, minus those where no sentence end falls inside the acceptance window (see the
+caveats). `trim.py gen` reads this field.
 
 Token counts use the Qwen3 tokenizer (`tokenizer(text, add_special_tokens=False)`, as `trim.py` and the
 verifier count them). `--tokenizer auto` (default) uses `/mnt/project-files/promptset_stage/qwen3_tokenizer`
@@ -65,9 +74,8 @@ punctuation everywhere, which inflates the measured edit share, so **the default
 hindi-aesthetics from L1 and L2** (`levels.<L>.punctuation_removed: exclude`; set it to `flag` to keep the
 rows). L3, L4, C, O and G keep them.
 
-`trim.py` does not yet know the line-break rule: run `trim.py human` on these passages (and `trim.py gen`
-on their C rows, whose continuations tend to imitate the style) only after it honours
-`sentence_end_rule`. Until then, keep `source=hindi-aesthetics` rows apart.
+`trim.py` honours each row's `sentence_end_rule` in both modes, so `trim.py human` on these passages and
+`trim.py gen` on their C rows use the line-break rule too.
 
 ### Headers (samalochan)
 
@@ -193,7 +201,8 @@ Regenerate length failures from step 5 as in the runbook (`--only-ids ... --atte
 
 ## Current build (`promptset/data/edit/`, Qwen3 tokenizer, 150 docs per corpus)
 
-4,601 rows from 600 passages (150 docs x 2 experiments x 2 corpora). No English source yet.
+4,597 rows from 600 passages (150 docs x 2 experiments x 2 corpora), built with the default rule (95 % or
+one sentence of slack). No English source yet.
 
 | level | samalochan (sw / st) | hindi-aesthetics (sw / st) |
 |---|---|---|
@@ -203,20 +212,26 @@ Regenerate length failures from step 5 as in the runbook (`--only-ids ... --atte
 | L4_rewrite | 150 / 150 | 150 / 150 |
 | C_continue k75, k50, k25 (each) | 150 / 149 | 150 / 150 |
 | OX_extract_outline | 150 / 150 | 150 / 150 |
-| G_title | 78 / 78 | 124 / 124 |
+| G_title | 77 / 77 | 123 / 123 |
 
 Sum of `max_new_tokens` is 15.3 M tokens: an upper bound, and most rows stop at EOS well before it.
 `edit_prompts_summary.md` has the full tables.
 
 ## Caveats
 
-* **95 % window at small cutoffs.** The window is 5 % of N: 5 words at N = 100, 10 tokens at N = 200,
-  75 tokens (about 16 Hindi words) at N = 1500. Hindi sentences are long (samalochan about 100-150 tokens),
-  so many passages have no sentence end inside the window. In the current build, the human anchor exists
-  at 200 tokens for only 20/150 samalochan passages, and 33-35/150 at 100 words. 35 of the 150 sampled
-  samalochan documents fall back from 1500 to a smaller token cutoff. The same applies to AI outputs in
-  `trim.py`. 27 samalochan and 8 hindi-aesthetics documents fail every token cutoff, and
-  `require_all_experiments` skips them, which favours documents with shorter sentences.
+* **Acceptance window at small cutoffs.** With the pure 95 % rule the window is 5 % of N: 5 words at
+  N = 100, 10 tokens at N = 200. Hindi sentences are long (samalochan about 100-150 tokens), so with that
+  rule the human anchor existed at 200 tokens for only 20/150 samalochan passages and at 100 words for
+  33-35/150, 35 of 150 samalochan documents fell back from 1500 to a smaller token cutoff, and 35 documents
+  (27 samalochan, 8 hindi-aesthetics) failed every token cutoff and were skipped, which favoured documents
+  with shorter sentences. The default slack (30 words / 137 hi tokens) fixes most of this: in the current
+  build the anchor exists at 200 tokens for 131/150 samalochan passages and at 100 words for 126-128/150,
+  21/150 samalochan documents fall back from 1500 tokens, and 1 document is skipped. The cost is that a
+  short-cutoff passage can be much shorter than N (hi 200 tokens accepts from 63 tokens): analyse
+  `n_tokens` / `n_words`, not only N. Rebuild with `--slack-words 0` to compare with the pure rule.
+* **More low-Devanagari passages.** The slack admits documents the old rule skipped; one samalochan
+  document (`56e7c26ec9`, mostly Latin script) now enters, and `validate_promptset.py` flags its 15 rows
+  (`script.hi_devanagari`); `trim.py human` rejects its anchor with `script`.
 * **Many distinct `max_new_tokens`.** ceil64 gives about 136 distinct values in this build, and
   generate.py batches only rows with equal `max_new_tokens`. A coarser `lengths.max_new_tokens_round`
   (for example 256) gives fuller batches at little cost, because rows stop at EOS.

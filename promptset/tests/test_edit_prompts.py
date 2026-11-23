@@ -139,17 +139,21 @@ class TestBuildFromCorpora(unittest.TestCase):
             self.assertEqual(p["n_words"], words_of(p["text"]))
             self.assertEqual(p["n_tokens"], counter(p["text"], "hi"))
             self.assertLessEqual(units, n)
-            self.assertGreaterEqual(units, 0.95 * n, f"{p['id']}: 95% rule")
+            thr = bep.min_units(n, L["min_frac"], bep.slack_for(L["slack"], kind, "hi"))
+            self.assertGreaterEqual(units, thr, f"{p['id']}: 95% / slack rule")
             # largest cutoff the doc supports: no bigger cutoff of the same kind would be accepted
             bigger = [m for m in L["cutoffs"][kind] if m > n]
             for m in bigger:
-                self.assertFalse(bep.cut_passage(body, "hi", kind, m, counter, L["min_frac"], pattern).accepted)
+                self.assertFalse(bep.cut_passage(body, "hi", kind, m, counter, L["min_frac"], pattern,
+                                                 L["slack"]).accepted)
             # served cutoffs: exactly those at which the passage itself trims to an accepted prefix
             for k2 in ("words", "tokens"):
                 for m in L["cutoffs"][k2]:
-                    acc = bep.cut_passage(p["text"], "hi", k2, m, counter, L["min_frac"], pattern).accepted
+                    acc = bep.cut_passage(p["text"], "hi", k2, m, counter, L["min_frac"], pattern,
+                                          L["slack"]).accepted
                     self.assertEqual(acc, m in p["cutoffs"][k2])
-                    self.assertTrue(m <= (p["n_words"] if k2 == "words" else p["n_tokens"]) / 0.95 or not acc)
+                    have = p["n_words"] if k2 == "words" else p["n_tokens"]
+                    self.assertTrue(m <= max(have / 0.95, have + bep.slack_for(L["slack"], k2, "hi")) or not acc)
             self.assertIn(n, p["cutoffs"][kind])
             self.assertEqual(p["sentence_end_rule"], "punct+linebreak" if pr else "punct")
 
@@ -318,10 +322,25 @@ class TestGenericJsonl(unittest.TestCase):
         sw = next(p for p in other if p["experiment"] == "same_words")
         st = next(p for p in other if p["experiment"] == "same_tokens")
         self.assertEqual((sw["n_words"], st["n_words"]), (1200, 1180))
-        # 200 and 400 tokens fall between two sentence ends (176 < 190, 378 < 380 estimated tokens)
-        self.assertEqual(sw["cutoffs"], {"words": [100, 200, 400, 800, 1200], "tokens": [800, 1500]})
+        # 200 and 400 tokens fall between two sentence ends (176 and 378 estimated tokens): below 95 % (190, 380)
+        # but within the en token slack of 38 (>= 162, 362), so they are served by default
+        self.assertEqual(sw["cutoffs"], {"words": [100, 200, 400, 800, 1200], "tokens": [200, 400, 800, 1500]})
         # L1 allowed for English (not punctuation-stripped); one set of rows for the deduped doc
         self.assertEqual(len([r for r in self.rows if r["pair_id"] == "medium_en/same" and r["level"] == "L1_proofread"]), 1)
+
+    def test_slack_recorded_and_slack_words_0_restores_pure_rule(self):
+        meta = json.loads((self.out / "build_meta.json").read_text(encoding="utf-8"))
+        self.assertEqual(meta["lengths"]["slack"], {"words": 30, "tokens": {"en": 38, "hi": 137}})
+        self.assertIn("min(0.95 * N, N - slack)", meta["acceptance_rule"])
+        self.assertIn("Length rule:", (self.out / "edit_prompts_summary.md").read_text(encoding="utf-8"))
+        out = Path(self.tmp.name) / "noslack"
+        run_build(out, "--jsonl", str(self.src), "--n-docs", "0", "--levels", "L3_paraphrase", "--slack-words", "0")
+        meta0 = json.loads((out / "build_meta.json").read_text(encoding="utf-8"))
+        self.assertEqual(meta0["lengths"]["slack"], {"words": 0, "tokens": {"en": 0, "hi": 0}})
+        self.assertIn("no slack", meta0["acceptance_rule"])
+        sw = next(p for p in read(out / "human_passages.jsonl")
+                  if p["pair_id"] == "medium_en/d000" and p["experiment"] == "same_words")
+        self.assertEqual(sw["cutoffs"]["tokens"], [800, 1500])     # 176 < 190, 378 < 380: the old 95 % rule
 
     def test_templates_rotate_and_are_stable_per_doc(self):
         variants = defaultdict(Counter)
@@ -370,7 +389,7 @@ class TestRealTokenizer(unittest.TestCase):
             n = len(tk.encode(p["text"], add_special_tokens=False).ids)
             self.assertEqual(p["n_tokens"], n)
             if p["input_cutoff_kind"] == "tokens":
-                self.assertTrue(0.95 * p["input_cutoff"] <= n <= p["input_cutoff"])
+                self.assertTrue(bep.min_units(p["input_cutoff"], 0.95, 137) <= n <= p["input_cutoff"])
         for r in rows:
             self.assertEqual(r["max_new_tokens"], ceil64(1.5 * r["input_tokens"]))
 
@@ -398,6 +417,49 @@ class TestUnits(unittest.TestCase):
         self.assertTrue(bep.cut_passage(text, "en", "words", 7, None).accepted)
         self.assertEqual(bep.cut_passage(text, "en", "words", 2, None).reject_reason, "no_sentence_end")
 
+    def test_cut_rule_with_slack(self):
+        text = " ".join(f"w{i}" for i in range(85)) + ". " + " ".join(f"v{i}" for i in range(30)) + "."
+        L = bep.load_config()["lengths"]
+        self.assertEqual(L["slack_words"], 30)
+        self.assertEqual(L["slack"], {"words": 30, "tokens": {"en": 38, "hi": 137}})
+        self.assertFalse(bep.cut_passage(text, "en", "words", 100, None, 0.95).accepted)        # no slack: 85 < 95
+        t = bep.cut_passage(text, "en", "words", 100, None, 0.95, bep.SENT_END, L["slack"])
+        self.assertTrue(t.accepted)
+        self.assertEqual((t.n_words, t.min_units), (85, 70))
+        self.assertTrue(bep.cut_passage(text, "en", "words", 100, None, 0.95, bep.SENT_END, 15).accepted)
+        self.assertFalse(bep.cut_passage(text, "en", "words", 100, None, 0.95, bep.SENT_END, 4).accepted)
+        # token slack is per language: 85 words -> 107 en / 388 hi estimated tokens
+        est = bep.TokenCounter(None, L["tokens_per_word"])
+        en = bep.cut_passage(text, "en", "tokens", 140, est, 0.95, bep.SENT_END, L["slack"])
+        self.assertEqual((en.n_tokens, en.min_units, en.accepted), (107, 102, True))            # min(133, 140-38)
+        self.assertFalse(bep.cut_passage(text, "en", "tokens", 140, est, 0.95).accepted)
+        hi = bep.cut_passage(text, "hi", "tokens", 500, est, 0.95, bep.SENT_END, L["slack"])
+        self.assertEqual((hi.n_tokens, hi.min_units, hi.accepted), (388, 363, True))            # min(475, 500-137)
+        self.assertFalse(bep.largest_cut(text, "en", "words", [100], est, 0.95, bep.SENT_END) is not None)
+        self.assertEqual(bep.largest_cut(text, "en", "words", [100], est, 0.95, bep.SENT_END, L["slack"])[0], 100)
+        self.assertEqual(bep.served_cutoffs(text, "hi", {"words": [100], "tokens": [500]}, est, 0.95, bep.SENT_END,
+                                            L["slack"]), {"words": [100], "tokens": [500]})
+        self.assertEqual(bep.served_cutoffs(text, "hi", {"words": [100], "tokens": [500]}, est, 0.95, bep.SENT_END),
+                         {"words": [], "tokens": []})
+
+    def test_slack_overrides_in_config_and_cli(self):
+        L = dict(bep.load_config()["lengths"])
+        bep.set_slack(L, slack_words=10)
+        self.assertEqual(L["slack"], {"words": 10, "tokens": {"en": 13, "hi": 46}})
+        bep.set_slack(L, slack_tokens=50)
+        self.assertEqual(L["slack"], {"words": 10, "tokens": 50})
+        self.assertIn("tokens 50 (every language)", L["acceptance_rule"])
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            for name in ("promptset.yaml", "ai_levels_prompts.json"):
+                (base / name).write_bytes((bep.CONFIG_DIR / name).read_bytes())
+            cfg_text = (bep.CONFIG_DIR / "edit_levels.yaml").read_text(encoding="utf-8")
+            cfg_text = cfg_text.replace("lengths:\n", "lengths:\n  slack_words: 0\n", 1)
+            (base / "edit_levels.yaml").write_text(cfg_text, encoding="utf-8")
+            L0 = bep.load_config(base / "edit_levels.yaml")["lengths"]
+        self.assertEqual(L0["slack"], {"words": 0, "tokens": {"en": 0, "hi": 0}})
+        self.assertIn("no slack", L0["acceptance_rule"])
+
     def test_exact_tokenizer_path(self):
         # fake "tokenizer": one token per 3 characters (monotone in the prefix, like BPE)
         fake = bep.TokenCounter(lambda s: math.ceil(len(s) / 3), {"en": 1.26, "hi": 4.57}, "fake")
@@ -410,7 +472,7 @@ class TestUnits(unittest.TestCase):
         for p in ps:
             self.assertEqual(p.tokens, fake(p.text, "en"))
             if p.cutoff_kind == "tokens":
-                self.assertTrue(0.95 * p.cutoff <= p.tokens <= p.cutoff)
+                self.assertTrue(bep.min_units(p.cutoff, 0.95, 38) <= p.tokens <= p.cutoff)   # en token slack 38
             # truncation in cut_passage must not change the result
             full = bep.trim_text(doc.text, p.cutoff_kind, p.cutoff, fake.for_lang("en"), 0.95, bep.SENT_END)
             self.assertEqual(full.passage, p.text)

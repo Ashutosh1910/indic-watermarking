@@ -1,8 +1,9 @@
 """Trim AI generations and human passages to fixed lengths with one rule (step after generate.py).
 
 Rule: cut each text at the LAST SENTENCE END AT OR BEFORE cutoff N, and accept the passage only if it
-still has at least ``--min-frac`` (default 0.95) * N units; otherwise reject it (and, for generations,
-list the id for regeneration). Two kinds of cutoff:
+still has at least ``min(min_frac * N, N - slack)`` units ("95 % or one sentence of slack", see
+"Acceptance threshold" below); otherwise reject it (and, for generations, list the id for
+regeneration). Two kinds of cutoff:
 
 * ``words``  -- whitespace-split words (the writer's view);
 * ``tokens`` -- Qwen3 tokens of the re-encoded passage, ``tokenizer(passage, add_special_tokens=False)``
@@ -12,7 +13,7 @@ Sentence end: one or more of ``. ! ? । ॥`` or ``…`` (so "..." and "?!" cou
 closing quotes/brackets (``" ' ” ’ ) ] »`` in any combination), followed by whitespace or the end of
 the text. A paragraph break after text WITHOUT final punctuation is NOT a sentence end (so an
 unpunctuated heading or a cut-off line never ends a passage). Abbreviations ("Dr.", "e.g.") do count
-as ends; with the 95 % rule this only matters if one sits right at the cutoff. ``--ascii-danda`` also
+as ends; this only matters if one sits right at the cutoff. ``--ascii-danda`` also
 treats "|" as a danda (some web Hindi uses it).
 
 Per-row ``sentence_end_rule`` (both modes): "punct" (default, the rule above) or "punct+linebreak" for
@@ -20,9 +21,20 @@ text whose punctuation was stripped upstream (hindi-aesthetics: one sentence per
 break, and the end of the text, also counts as a sentence end. For those rows the cleaning step's
 "short unpunctuated first line = title" heuristic is off.
 
-Acceptance threshold (``min_units`` in every row): n >= min(min_frac * N, N - slack), with ``--min-frac``
-(default: promptset.yaml's min_frac, 0.95) and optional ``--slack-words`` / ``--slack-tokens`` (default 0,
-i.e. the agreed 95 % rule). The rule used is written into the summary.
+Acceptance threshold (``min_units`` and ``slack`` in every row): a passage of n units cut at N is accepted
+iff n >= min(min_frac * N, N - slack). Defaults come from promptset.yaml: min_frac 0.95 and slack_words 30,
+i.e. one sentence of slack:
+
+* word cutoffs:  slack = slack_words (30 words);
+* token cutoffs: slack = 30 words' worth of tokens in the row's language,
+  round(slack_words * tokens_per_word[lang]) -> en 38, hi 137 (a language without tokens_per_word gets 0).
+
+The 95 % rule still decides long cutoffs (min picks it once 0.05 * N > slack: N > 600 words, N > 760 en /
+2740 hi tokens). Overrides: ``--min-frac F``; ``--slack-words S`` replaces 30 for word cutoffs and for the
+derived token slack; ``--slack-tokens T`` applies T tokens to every language. ``--slack-words 0`` (without
+``--slack-tokens``) turns the slack off: the pure rule n >= min_frac * N. The rule used, with the slack per
+kind and language, is written into the summary. (The Python API -- ``trim_text``, ``min_units``,
+``Options`` -- defaults to slack 0; the CLI and build_edit_prompts.py apply promptset.yaml's slack.)
 
 C_continue rows (gen mode): generate.py's "text" is only the continuation. The scored text is the row's
 ``head`` + separator + cleaned continuation (separator: a newline for "punct+linebreak" rows, else a
@@ -153,8 +165,57 @@ class Trim:
 
 def min_units(cutoff: int, min_frac: float = 0.95, slack: int = 0) -> float:
     """Acceptance threshold: a passage of n units is accepted iff n >= min(min_frac * N, N - slack).
-    With slack 0 (default) this is the agreed rule n >= min_frac * N."""
+    With slack 0 this is the pure fraction rule n >= min_frac * N."""
     return min(min_frac * cutoff, cutoff - slack) if slack > 0 else min_frac * cutoff
+
+
+# Slack spec: {"words": int, "tokens": int | {lang: int}} (an int applies to every language).
+SlackSpec = dict[str, Any]
+DEFAULT_SLACK_WORDS = 30   # fallback when promptset.yaml has no slack_words
+
+
+def _round_half_up(x: float) -> int:
+    return int(x + 0.5) if x >= 0 else -int(-x + 0.5)
+
+
+def resolve_slack(slack_words: int, tokens_per_word: dict[str, float] | None = None,
+                  slack_tokens: int | None = None) -> SlackSpec:
+    """The slack per kind (and, for tokens, per language) of the rule n >= min(min_frac * N, N - slack).
+
+    Word slack = ``slack_words``. Token slack = ``slack_tokens`` for every language if given, else
+    ``round(slack_words * tokens_per_word[lang])`` per language (30 words -> en 38, hi 137 tokens)."""
+    sw = int(slack_words)
+    if sw < 0 or (slack_tokens is not None and int(slack_tokens) < 0):
+        raise ValueError("slack must be >= 0")
+    if slack_tokens is not None:
+        return {"words": sw, "tokens": int(slack_tokens)}
+    return {"words": sw, "tokens": {str(lang): _round_half_up(sw * float(t))
+                                    for lang, t in sorted((tokens_per_word or {}).items())}}
+
+
+def slack_for(slack: SlackSpec | None, kind: str, language: str | None) -> int:
+    """Slack (in the cutoff's unit) for one kind and language; 0 when not configured."""
+    v = (slack or {}).get(kind, 0)
+    if isinstance(v, dict):
+        v = v.get(str(language), 0)
+    return int(v or 0)
+
+
+def describe_rule(min_frac: float, slack: SlackSpec | None, slack_words: int | None = None) -> str:
+    """One line stating the acceptance rule, e.g. for summaries and build metadata."""
+    sw = slack_for(slack, "words", None)
+    tok = (slack or {}).get("tokens", 0)
+    tok_any = any(tok.values()) if isinstance(tok, dict) else bool(tok)
+    if not sw and not tok_any:
+        return f"accept iff n >= {min_frac} * N (no slack)"
+    if isinstance(tok, dict):
+        per = ", ".join(f"{lang} {v}" for lang, v in tok.items()) or "none configured"
+        src = f" = round({slack_words} x tokens_per_word)" if slack_words is not None else ""
+        tok_txt = f"tokens {per}{src}; other languages 0"
+    else:
+        tok_txt = f"tokens {tok} (every language)"
+    return (f"accept iff n >= min({min_frac} * N, N - slack), N = cutoff, n = units of the passage cut at the "
+            f"last sentence end at or before N; slack: words {sw}; {tok_txt}")
 
 
 Counter_ = Callable[[str], int]
@@ -360,7 +421,9 @@ class Options:
     words: list[int] | None = None
     tokens: list[int] | None = None
     default_cutoffs: dict[str, list[int]] | None = None   # used when neither CLI nor row has cutoffs
-    slack: dict[str, int] = field(default_factory=lambda: {"words": 0, "tokens": 0})
+    # {"words": int, "tokens": int | {lang: int}}; the CLI fills it from promptset.yaml (resolve_slack)
+    slack: SlackSpec = field(default_factory=lambda: {"words": 0, "tokens": 0})
+    slack_words: int | None = None  # the slack_words the token slack was derived from (for rule_text)
     clean_steps: tuple[str, ...] = CLEAN_STEPS
     script_min: dict[str, float] = field(default_factory=lambda: dict(DEFAULT_SCRIPT_MIN))
     drop_fields: tuple[str, ...] = DEFAULT_DROP_FIELDS
@@ -373,12 +436,11 @@ class Options:
     def pattern_for(self, row: dict[str, Any]) -> re.Pattern[str]:
         return sentence_end_pattern(rule_of(row, self.default_rule), self.ascii_danda)
 
+    def slack_for(self, kind: str, language: str | None) -> int:
+        return slack_for(self.slack, kind, language)
+
     def rule_text(self) -> str:
-        sl = {k: v for k, v in self.slack.items() if v}
-        if not sl:
-            return f"accept iff n >= {self.min_frac} * N"
-        return (f"accept iff n >= min({self.min_frac} * N, N - slack), slack "
-                + ", ".join(f"{k}={v}" for k, v in sl.items()) + " (0 for other kinds)")
+        return describe_rule(self.min_frac, self.slack, self.slack_words)
 
 
 def rule_of(row: dict[str, Any], default: str = "punct") -> str:
@@ -473,7 +535,7 @@ def evaluate(text: str, language: str, kind: str, cutoff: int, count_tokens: Cou
              ) -> tuple[Trim, float | None, bool | None]:
     """Trim one text for one cutoff and apply the script check (length reasons take precedence).
     An empty AI part (C rows) rejects the row as "empty" whatever the head gives."""
-    t = trim_text(text, kind, cutoff, count_tokens, opt.min_frac, pattern, opt.slack.get(kind, 0))
+    t = trim_text(text, kind, cutoff, count_tokens, opt.min_frac, pattern, opt.slack_for(kind, language))
     if ai_text_empty:
         return Trim(t.passage, t.n_words, t.n_tokens, False, "empty", t.full_units, t.min_units), None, None
     share = script_share(t.passage if t.passage else text, language)
@@ -563,7 +625,7 @@ def passage_row(r: dict[str, Any], c: Cleaned, kind: str, n: int, t: Trim, share
         "attempts_tried": tried if opt.mode == "gen" else None, "watermarked": r.get("watermarked"),
         "script_share": None if share is None else round(share, 4), "script_ok": ok,
         "cleaning": c.steps, "trim_mode": opt.mode, "min_frac": opt.min_frac,
-        "slack": opt.slack.get(kind, 0), "sentence_end_rule": rule_of(r, opt.default_rule),
+        "slack": opt.slack_for(kind, r.get("language")), "sentence_end_rule": rule_of(r, opt.default_rule),
         **(extra or {}),
         "passage": t.passage,
     }
@@ -627,7 +689,8 @@ def summary_markdown(summary: Sequence[dict[str, Any]], group_keys: Sequence[str
 
 
 def load_promptset_config(path: str | None) -> dict[str, Any]:
-    """min_frac and cutoffs from promptset/config/promptset.yaml ({} if missing or unreadable)."""
+    """min_frac, slack_words, tokens_per_word and cutoffs from promptset/config/promptset.yaml
+    ({} if missing or unreadable)."""
     if not path or not Path(path).exists():
         return {}
     try:
@@ -635,7 +698,7 @@ def load_promptset_config(path: str | None) -> dict[str, Any]:
     except ImportError:  # pragma: no cover
         return {}
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
-    return {k: raw[k] for k in ("min_frac", "cutoffs") if k in raw}
+    return {k: raw[k] for k in ("min_frac", "slack_words", "tokens_per_word", "cutoffs") if k in raw}
 
 
 def make_token_counter(name: str | None) -> Counter_ | None:
@@ -666,9 +729,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     ap.add_argument("--tokens", type=int, nargs="*", help="token cutoffs (override rows' cutoffs.tokens)")
     ap.add_argument("--min-frac", type=float, default=None,
                     help="accept if passage >= min_frac * N (default: promptset.yaml min_frac, else 0.95)")
-    ap.add_argument("--slack-words", type=int, default=0,
-                    help="optional floor: accept if n >= min(min_frac*N, N - slack) for word cutoffs (default 0 = off)")
-    ap.add_argument("--slack-tokens", type=int, default=0, help="the same for token cutoffs (default 0 = off)")
+    ap.add_argument("--slack-words", type=int, default=None,
+                    help="accept if n >= min(min_frac*N, N - slack): word slack, also the base of the derived "
+                         "token slack (default: promptset.yaml slack_words, 30; 0 = off, the pure min_frac rule)")
+    ap.add_argument("--slack-tokens", type=int, default=None,
+                    help="token slack for every language (default: round(slack_words * tokens_per_word[lang]), "
+                         "en 38 / hi 137)")
     ap.add_argument("--promptset-config", default=str(PROMPTSET_CONFIG),
                     help="promptset.yaml: default min_frac, and cutoffs for rows without any (human mode)")
     ap.add_argument("--no-join-head", action="store_true",
@@ -685,10 +751,14 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     ps_cfg = load_promptset_config(args.promptset_config)
     min_frac = args.min_frac if args.min_frac is not None else float(ps_cfg.get("min_frac", 0.95))
+    slack_words = (args.slack_words if args.slack_words is not None
+                   else int(ps_cfg.get("slack_words", DEFAULT_SLACK_WORDS)))
+    tpw = ps_cfg.get("tokens_per_word") or {}
+    slack = resolve_slack(slack_words, tpw, args.slack_tokens)
     opt = Options(
         mode=args.mode, min_frac=min_frac, words=args.words, tokens=args.tokens,
         default_cutoffs=(ps_cfg.get("cutoffs") if args.mode == "human" else None),
-        slack={"words": args.slack_words, "tokens": args.slack_tokens},
+        slack=slack, slack_words=None if args.slack_tokens is not None else slack_words,
         clean_steps=tuple(s for s in CLEAN_STEPS if s not in args.skip_clean),
         script_min=_script_min(args.script_min),
         drop_fields=tuple(f for f in args.drop_fields.split(",") if f),
@@ -700,6 +770,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         if "id" not in r or "text" not in r:
             raise SystemExit(f"row {i} lacks 'id' or 'text'")
         rule_of(r)  # validates sentence_end_rule early
+    if isinstance(slack["tokens"], dict) and slack_words:
+        missing = sorted({str(r.get("language")) for r in rows} - set(slack["tokens"]))
+        if missing:
+            log(f"warning: no tokens_per_word for language(s) {missing}: their token slack is 0 (pure min_frac rule)")
     count_tokens = make_token_counter(args.tokenizer)
     if count_tokens is None:
         if args.tokens:
@@ -718,7 +792,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     regen_ids = sorted({k[0] for k in regen})
     next_attempts = Counter(regen.values())
     meta = {"mode": args.mode, "inputs": args.inputs, "tokenizer": args.tokenizer, "min_frac": opt.min_frac,
-            "slack": opt.slack, "acceptance_rule": opt.rule_text(),
+            "slack": opt.slack,
+            "slack_config": {"slack_words": slack_words,
+                             "slack_words_source": "cli" if args.slack_words is not None else
+                             ("promptset.yaml" if "slack_words" in ps_cfg else "built-in default"),
+                             "slack_tokens": ("cli: same for every language" if args.slack_tokens is not None
+                                              else "round(slack_words * tokens_per_word[lang])"),
+                             "tokens_per_word": tpw},
+            "acceptance_rule": opt.rule_text(),
             "sentence_end_rules": dict(Counter(rule_of(r) for r in rows)),
             "join_head": opt.join_head, "promptset_config": args.promptset_config if ps_cfg else None,
             "clean_steps": list(opt.clean_steps), "script_min": opt.script_min, "n_input_rows": len(rows),

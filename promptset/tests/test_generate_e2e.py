@@ -346,7 +346,7 @@ def test_trim_then_verify_pipeline(tiny_model_dir, base_out, tmp_path):
             assert r["n_tokens"] is not None and r["n_words"] == len(r["passage"].split())
         if r["accepted"]:
             unit = r["n_words"] if r["cutoff_kind"] == "words" else r["n_tokens"]
-            assert 0.95 * r["cutoff"] <= unit <= r["cutoff"]
+            assert r["min_units"] <= unit <= r["cutoff"] and r["min_units"] == min(0.95 * r["cutoff"], r["cutoff"] - r["slack"])
         else:
             assert r["reject_reason"] in ("too_short", "no_sentence_end", "script", "empty")
     for suffix in (".summary.md", ".summary.json", ".regen_ids.txt", ".cleaned.jsonl"):

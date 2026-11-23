@@ -1,6 +1,6 @@
 # Edit-level prompt set (L1-L4, C, O, OX, G_title) built from HUMAN documents.
 # Used by promptset/scripts/build_edit_prompts.py; see promptset/EDIT_LEVELS.md.
-# Cutoffs, tokens_per_word and min_frac are read from promptset.yaml (same numbers as the G set)
+# Cutoffs, tokens_per_word, min_frac and slack_words are read from promptset.yaml (same numbers as the G set)
 # unless overridden in `lengths` below.
 
 seed: 20261123
@@ -11,11 +11,15 @@ lengths:
   # cutoffs: {words: [...], tokens: [...]}   # uncomment to override promptset.yaml
   # tokens_per_word: {en: 1.26, hi: 4.57}
   # min_frac: 0.95
+  # slack_words: 30                     # accept iff n >= min(min_frac*N, N - slack); 0 = pure min_frac rule
+  # slack_tokens: null                  # null: round(slack_words * tokens_per_word[lang]) (en 38, hi 137);
+  #                                     # an int applies to every language. build --slack-words/--slack-tokens override.
   max_new_tokens_round: 64              # ceil to a multiple of this (generate.py batches by equal max_new_tokens)
   round_n_to: 10                        # the {n} written into a prompt is rounded to the nearest multiple
 
 # Passage variants per document. Each one is cut at the LARGEST cutoff of its kind the document supports
-# (last sentence end <= N, accepted only if >= min_frac * N), so one generation per doc and level can later
+# (last sentence end <= N, accepted only if n >= min(min_frac * N, N - slack): 95 % or one sentence of slack,
+# see promptset.yaml), so one generation per doc and level can later
 # be prefix-trimmed at every smaller cutoff. When both variants give byte-identical passages (common for
 # English) only one set of rows is written, with experiment "same_words" and experiments [both].
 experiments:

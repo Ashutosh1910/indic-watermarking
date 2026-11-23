@@ -322,8 +322,10 @@ def test_main_human_and_gen_mode(tmp_path):
         {"id": "h2", "language": "en", "text": f"{words(15)}.", "corpus": "test"},
     ]) + "\n", encoding="utf-8")
     out = tmp_path / "trim" / "human_trim.jsonl"
+    # --slack-words 0: these tiny cutoffs (20, 60 words) test the pure 95 % rule; the default 30-word slack
+    # would accept almost anything below N = 30
     assert trim.main(["human", "--in", str(human), "--out", str(out), "--tokenizer", "none",
-                      "--words", "20", "60"]) == 0
+                      "--words", "20", "60", "--slack-words", "0"]) == 0
     rows = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
     assert len(rows) == 4 and {r["corpus"] for r in rows} == {"test"}
     by = {(r["id"], r["cutoff"]): r for r in rows}
@@ -337,7 +339,7 @@ def test_main_human_and_gen_mode(tmp_path):
     gen = tmp_path / "gen.jsonl"
     gen.write_text(json.dumps(gen_row("en-a", 0, "Sure, here is the story:\n\n" + f"{words(10)}. {words(3)}")) + "\n")
     out = tmp_path / "trim" / "gen_trim.jsonl"
-    assert trim.main(["gen", "--in", str(gen), "--out", str(out), "--tokenizer", "none"]) == 0
+    assert trim.main(["gen", "--in", str(gen), "--out", str(out), "--tokenizer", "none", "--slack-words", "0"]) == 0
     rows = [json.loads(l) for l in out.read_text().splitlines()]
     assert [r["accepted"] for r in rows] == [True, False] and rows[0]["cleaning"] == ["preamble"]
     assert (tmp_path / "trim" / "gen_trim.regen_ids.txt").read_text() == "en-a\n"
@@ -427,10 +429,11 @@ def test_continue_linebreak_separator_and_empty_or_unjoined():
 # --------------------------------------------------------------------------- slack floor
 
 
-def test_slack_floor_and_default_rule():
+def test_slack_floor_and_api_default():
     text = f"{words(85)}. {words(30, 85)}."
     assert trim.min_units(100) == 95 and trim.min_units(100, 0.95, 15) == 85 and trim.min_units(100, 0.95, 2) == 95
-    assert not trim_text(text, "words", 100, None).accepted
+    assert trim.min_units(100, 0.95, 30) == 70 and trim.min_units(1200, 0.95, 30) == 1140   # 95 % governs long N
+    assert not trim_text(text, "words", 100, None).accepted          # the Python API defaults to slack 0
     r = trim_text(text, "words", 100, None, 0.95, SENT_END_DEFAULT, 15)
     assert r.accepted and r.min_units == 85
     # positional call as build_edit_prompts makes it still works (6 args)
@@ -440,16 +443,97 @@ def test_slack_floor_and_default_rule():
     assert passages[0]["accepted"] and passages[0]["slack"] == 15 and passages[0]["min_units"] == 85
 
 
-def test_main_records_rule_and_uses_promptset_defaults(tmp_path):
-    src = tmp_path / "h.jsonl"
+def test_resolve_slack_per_language():
+    assert trim.resolve_slack(30, {"en": 1.26, "hi": 4.57}) == {"words": 30, "tokens": {"en": 38, "hi": 137}}
+    assert trim.resolve_slack(30, {"en": 1.26, "hi": 4.57}, 50) == {"words": 30, "tokens": 50}
+    assert trim.resolve_slack(0, {"en": 1.26, "hi": 4.57}) == {"words": 0, "tokens": {"en": 0, "hi": 0}}
+    sl = trim.resolve_slack(30, {"en": 1.26, "hi": 4.57})
+    assert trim.slack_for(sl, "tokens", "hi") == 137 and trim.slack_for(sl, "tokens", "en") == 38
+    assert trim.slack_for(sl, "tokens", "fr") == 0 and trim.slack_for(sl, "words", "fr") == 30
+    assert trim.slack_for(None, "words", "en") == 0
+    with pytest.raises(ValueError):
+        trim.resolve_slack(-1)
+
+
+def test_token_slack_per_row_language():
+    """Token slack follows each row's language: 40 one-char 'tokens' short of N is inside hi's 137, not en's 38."""
+    text = f"{words(20)}. {words(30, 20)}."          # 20 words = 50 chars-tokens ("w0".."w19" -> 2 or 3 chars)
+    n1 = one_token_per_char(f"{words(20)}.")
+    cutoff = n1 + 40                                  # second sentence end lies beyond the cutoff
+    assert one_token_per_char(text) > cutoff
+    opt = Options(mode="human", tokens=[cutoff], slack=trim.resolve_slack(30, {"en": 1.26, "hi": 4.57}),
+                  script_min={"hi": 0.0, "en": 0.0})   # Latin test text in a "hi" row: no script check here
+    rows = [{"id": "e", "language": "en", "text": text}, {"id": "h", "language": "hi", "text": text}]
+    passages, *_ = process(rows, opt, one_token_per_char)
+    by = {p["id"]: p for p in passages}
+    assert by["e"]["slack"] == 38 and not by["e"]["accepted"] and by["e"]["min_units"] == cutoff - 38
+    assert by["h"]["slack"] == 137 and by["h"]["min_units"] == min(0.95 * cutoff, cutoff - 137)
+    assert by["h"]["n_tokens"] == n1 and by["h"]["accepted"]
+
+
+def _sentences_doc(tmp_path, lang="en"):
+    src = tmp_path / f"h_{lang}.jsonl"
     text = " ".join(f"{words(19, i * 19)}." for i in range(80))  # 19-word sentences, 1520 words
-    src.write_text(json.dumps({"id": "h", "language": "en", "text": text}) + "\n")
+    src.write_text(json.dumps({"id": "h", "language": lang, "text": text}) + "\n")
+    return src
+
+
+def test_main_default_slack_from_promptset_config(tmp_path):
+    src = _sentences_doc(tmp_path)
+    text = f"{words(85)}. {words(30, 85)}."
+    src.write_text(src.read_text() + json.dumps({"id": "s", "language": "en", "text": text}) + "\n")
+    out = tmp_path / "o.jsonl"
+    assert trim.main(["human", "--in", str(src), "--out", str(out), "--tokenizer", "none"]) == 0
+    rows = [json.loads(l) for l in out.read_text().splitlines()]
+    by = {(r["id"], r["cutoff"]): r for r in rows}
+    assert sorted(n for i, n in by if i == "h") == [100, 200, 400, 800, 1200]   # promptset.yaml cutoffs.words
+    assert by[("s", 100)]["accepted"] and by[("s", 100)]["slack"] == 30 and by[("s", 100)]["min_units"] == 70
+    assert by[("h", 1200)]["min_units"] == 1140                                   # 95 % rule governs long cutoffs
+    assert all(r["slack"] == 30 for r in rows)
+    meta = json.loads((tmp_path / "o.summary.json").read_text())["meta"]
+    assert meta["min_frac"] == 0.95
+    assert meta["slack"] == {"words": 30, "tokens": {"en": 38, "hi": 137}}
+    assert meta["slack_config"]["slack_words"] == 30 and meta["slack_config"]["slack_words_source"] == "promptset.yaml"
+    assert "min(0.95 * N, N - slack)" in meta["acceptance_rule"]
+    assert "words 30" in meta["acceptance_rule"] and "en 38, hi 137" in meta["acceptance_rule"]
+    assert "Acceptance rule" in (tmp_path / "o.summary.md").read_text()
+
+
+def test_main_slack_words_0_disables_slack(tmp_path):
+    src = tmp_path / "s.jsonl"
+    src.write_text(json.dumps({"id": "s", "language": "en", "text": f"{words(85)}. {words(30, 85)}."}) + "\n")
+    out = tmp_path / "o.jsonl"
+    assert trim.main(["human", "--in", str(src), "--out", str(out), "--tokenizer", "none", "--words", "100",
+                      "--slack-words", "0"]) == 0
+    row = json.loads(out.read_text().splitlines()[0])
+    assert not row["accepted"] and row["reject_reason"] == "too_short" and row["slack"] == 0
+    assert row["min_units"] == 95
+    meta = json.loads((tmp_path / "o.summary.json").read_text())["meta"]
+    assert meta["slack"] == {"words": 0, "tokens": {"en": 0, "hi": 0}}
+    assert meta["acceptance_rule"] == "accept iff n >= 0.95 * N (no slack)"
+
+
+def test_main_explicit_slack_overrides(tmp_path):
+    src = _sentences_doc(tmp_path)
     out = tmp_path / "o.jsonl"
     assert trim.main(["human", "--in", str(src), "--out", str(out), "--tokenizer", "none", "--slack-words", "20"]) == 0
     rows = [json.loads(l) for l in out.read_text().splitlines()]
-    assert sorted(r["cutoff"] for r in rows) == [100, 200, 400, 800, 1200]   # promptset.yaml cutoffs.words
     assert all(r["accepted"] for r in rows)                                    # 95 >= min(95, 80), ...
     meta = json.loads((tmp_path / "o.summary.json").read_text())["meta"]
-    assert meta["min_frac"] == 0.95 and meta["slack"] == {"words": 20, "tokens": 0}
-    assert "min(0.95 * N, N - slack)" in meta["acceptance_rule"]
-    assert "Acceptance rule" in (tmp_path / "o.summary.md").read_text()
+    assert meta["slack"] == {"words": 20, "tokens": {"en": 25, "hi": 91}}       # derived from --slack-words 20
+    assert meta["slack_config"]["slack_words_source"] == "cli"
+    out2 = tmp_path / "o2.jsonl"
+    assert trim.main(["human", "--in", str(src), "--out", str(out2), "--tokenizer", "none",
+                      "--slack-tokens", "7"]) == 0
+    meta = json.loads((tmp_path / "o2.summary.json").read_text())["meta"]
+    assert meta["slack"] == {"words": 30, "tokens": 7}
+    assert "tokens 7 (every language)" in meta["acceptance_rule"]
+    # a cfg without slack_words falls back to the built-in 30
+    cfg = tmp_path / "ps.yaml"
+    cfg.write_text("min_frac: 0.9\ntokens_per_word: {en: 2.0}\ncutoffs: {words: [100], tokens: []}\n")
+    out3 = tmp_path / "o3.jsonl"
+    assert trim.main(["human", "--in", str(src), "--out", str(out3), "--tokenizer", "none",
+                      "--promptset-config", str(cfg)]) == 0
+    meta = json.loads((tmp_path / "o3.summary.json").read_text())["meta"]
+    assert meta["min_frac"] == 0.9 and meta["slack"] == {"words": 30, "tokens": {"en": 60}}
+    assert meta["slack_config"]["slack_words_source"] == "built-in default"
