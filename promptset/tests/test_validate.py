@@ -461,7 +461,9 @@ def test_doubled_sentence_end_and_pipe_danda():
     set_task(by_id(rows, "G-story-0002-en"), "Write about a quiet morning... and what the village hears then")
     rep = run(rows)
     ex = rep.problems["content.punct"]["examples"]
-    assert [e.split(" ")[0] for e in ex] == ["G-story-0000-en", "G-story-0001-hi"]
+    # build_promptset.render_user no longer doubles the end after a closing quote, so only the
+    # ASCII "|" used as a danda (left in prompt_text by set_task) is flagged.
+    assert [e.split(" ")[0] for e in ex] == ["G-story-0001-hi"]
 
 
 def continuation_row(lang: str = "en") -> dict:

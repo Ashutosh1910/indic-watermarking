@@ -1,0 +1,133 @@
+{
+  "story": {
+    "hindi_native_available": 112,
+    "english_native_available": {
+      "anudesh": 22,
+      "dolly": 31,
+      "no_robots": 297,
+      "oasst2": 39,
+      "wildchat": 105,
+      "writingprompts": 242
+    },
+    "hindi_native_by_source": {
+      "anudesh": 36,
+      "aya": 36,
+      "aya_eval_dolly": 3
+    },
+    "english_native_by_source": {
+      "writingprompts": 31,
+      "no_robots": 13,
+      "wildchat": 13,
+      "anudesh": 6,
+      "dolly": 6,
+      "oasst2": 6
+    }
+  },
+  "opinion": {
+    "hindi_native_available": 3,
+    "english_native_available": {
+      "anudesh": 1,
+      "dolly": 3,
+      "no_robots": 11,
+      "oasst2": 1,
+      "persuade": 7,
+      "wildchat": 76
+    },
+    "hindi_native_by_source": {
+      "anudesh": 1,
+      "aya_eval_dolly": 2
+    },
+    "english_native_by_source": {
+      "wildchat": 76,
+      "no_robots": 11,
+      "anudesh": 1,
+      "dolly": 3,
+      "oasst2": 1,
+      "persuade": 7
+    }
+  },
+  "essay": {
+    "hindi_native_available": 21,
+    "english_native_available": {
+      "anudesh": 6,
+      "no_robots": 22,
+      "oasst2": 4,
+      "persuade": 1,
+      "wildchat": 115
+    },
+    "hindi_native_by_source": {
+      "anudesh": 12,
+      "aya": 9
+    },
+    "english_native_by_source": {
+      "wildchat": 96,
+      "no_robots": 22,
+      "anudesh": 6,
+      "oasst2": 4,
+      "persuade": 1
+    }
+  },
+  "personal": {
+    "hindi_native_available": 2,
+    "english_native_available": {
+      "anudesh": 1,
+      "dolly": 15,
+      "no_robots": 39,
+      "oasst2": 2,
+      "wildchat": 56
+    },
+    "hindi_native_by_source": {
+      "aya": 2
+    },
+    "english_native_by_source": {
+      "wildchat": 56,
+      "no_robots": 39,
+      "anudesh": 1,
+      "dolly": 15,
+      "oasst2": 2
+    }
+  },
+  "_counts": {
+    "essay/en/main/long": 42,
+    "essay/en/main/short": 42,
+    "essay/en/pilot/long": 1,
+    "essay/en/pilot/short": 1,
+    "essay/en/reserve/long": 22,
+    "essay/en/reserve/short": 21,
+    "essay/hi/main/long": 5,
+    "essay/hi/main/short": 5,
+    "essay/hi/pilot/long": 2,
+    "essay/hi/pilot/short": 2,
+    "essay/hi/reserve/long": 4,
+    "essay/hi/reserve/short": 3,
+    "opinion/en/main/long": 48,
+    "opinion/en/main/short": 46,
+    "opinion/en/pilot/long": 1,
+    "opinion/en/pilot/short": 2,
+    "opinion/en/reserve/long": 1,
+    "opinion/en/reserve/short": 1,
+    "opinion/hi/pilot/long": 2,
+    "opinion/hi/pilot/short": 1,
+    "personal/en/main/long": 47,
+    "personal/en/main/short": 47,
+    "personal/en/pilot/long": 2,
+    "personal/en/pilot/short": 2,
+    "personal/en/reserve/long": 8,
+    "personal/en/reserve/short": 7,
+    "personal/hi/pilot/long": 1,
+    "personal/hi/pilot/short": 1,
+    "story/en/main/long": 24,
+    "story/en/main/short": 24,
+    "story/en/pilot/long": 1,
+    "story/en/pilot/short": 1,
+    "story/en/reserve/long": 13,
+    "story/en/reserve/short": 12,
+    "story/hi/main/long": 23,
+    "story/hi/main/short": 23,
+    "story/hi/pilot/long": 2,
+    "story/hi/pilot/short": 2,
+    "story/hi/reserve/long": 13,
+    "story/hi/reserve/short": 12
+  },
+  "_total": 517
+}
