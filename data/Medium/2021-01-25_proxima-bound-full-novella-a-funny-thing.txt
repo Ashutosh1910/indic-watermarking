@@ -1,0 +1,1447 @@
+Proxima Bound — Full Novella. A funny thing happened on the way to…
+
+Davi Mai
+
+PROXIMA BOUND by Davi Mai.
+
+Humanity’s last hope rests with the colonists aboard the generational starship Attenborough. Bound for Proxima Centauri, a thousand years away. Catastrophe strikes when a reactor meltdown cuts off those in the ship’s front from the rear. Two factions must now struggle to survive.
+
+With four hundred years still to travel, we join a plucky teenager, named “Thief”. She’s found a way through the ventilation system, around the radioactive core of the ship and into the front sections. Thief brings back vital components that might help the rear-dwellers connect the ship’s computer. For the first time in hundreds of years there is hope.
+
+But people are disappearing without a trace, and the makeshift hospital is overflowing with cases of a new virus.
+
+It’s up to Thief to embark on her toughest mission yet. To crawl through the bowels of the ship, the furthest she’s ever been, and find some answers, before there’s no-one left alive.
+
+What she finds at the front of the ship, however, is terrifying
+
+Chapter One: Thief
+
+Year 193AC (After Cataclysm) Day 102
+
+Deck 53. Mid Section G. Approaching engineering storage.
+
+Thief crawled through the hot ventilation shaft. In the dark, she wriggled out of her jumpsuit, making the heat more bearable. But one discomfort replaced another, as scrawny knees and elbows rubbed against aluminium pipework. Her skin, slick with sweat, squeaked against the metal with each wriggle forward. She feared one of “them” might hear her laboured breathing and squeaking skin. But perhaps they’d put the noise down to rats, or the ship’s machinery, she told herself for the hundredth time. Would they be able to smell her though? The cloying odour of her physical labour filled the shaft. Would it seep out and waft into their nostrils? She imagined them sniffing her scent in the air. Their lips curling back over white fangs as they arched their heads towards the vents, grinning with delight at the promise of fresh blood.
+
+The pipe split in two, a fact Thief discovered by banging her bald head into the junction. Not for the first time. It knocked another ounce of courage from the brave teenager, and she decided it was time to rest and get her bearings. She twisted over in the tight space to lie on her back, giving both knees blessed rest. Retrieving the map and homemade matches from the plastic bag knotted around her ankle, she waited and listened. The only detectable sound - the constant background hum that pervaded all life on board. Content nobody was nearby, she struck a match against the metal wall. It sputtered to life, casting a weak glow over the map. A second later the flame died, but that brief illumination was enough. She identified the junction and sighed with relief. Another hundred feet and she’d be above the engineering section.
+
+A while later she prised open a mesh grill and lowered herself into the void below.
+
+“Steal me anything that looks electronic.” Johan had requested before she left, “but only if it’s easy to grab. Don’t take things apart, you’ll make too much noise.”
+
+Landing on the balls of her feet, Thief remained in a tight crouch for a good minute, holding her breath, again waiting to see if they had heard her. Waiting for one of them to pounce from a dark corner. No attack came, and she breathed a little easier. Another match flare showed the walls lined with storage capsules, much like those in Johan’s workshop. She checked the rad counter on her skinny wrist. The digits kept changing, it couldn’t make its mind up between 38 and 39 rads. Either way, she wasn’t receiving a harmful dose of gamma rays. Yet.
+
+The capsules opened with a soft hiss of escaping air; their contents preserved for centuries in vacuum. She filled her bag with a mixture of components, ignoring those that she thought Johan already had. Cables, motherboards, processors and memory chips all went in the bag. Along with something that resembled a handheld scanner. When it’s sides threated to split under the weight, she closed the capsules and clambered back up through the open grill.
+
+The return trip was more awkward. Sometimes dragging her haul, other times shoving it on ahead. The narrow metal tubes seemed to squeeze tighter and tighter. The bag’s rustling and her heavy breathing echoed through the network of ventilation shafts. She expected claws to grab her ankle at any moment and drag her backwards, screaming.
+
+***
+
+Deck 53. Rear Section L. Johan’s workshop.
+
+Three hours later, with no matches left to check the map, and panic setting in, Thief scratched her arm on rough edges in the pipe’s surface. The stinging pain felt glorious. It signalled home territory! She backed up and ran her fingertips over the markings. Triangles and numbers etched into the metal showed which turns to take up ahead. Reassurance washed away the panic and soon she was lowering the bag to an anxious Johan. He too was covered in sweat. It glistened on his bald head and face. His round glasses threatening to slide off his nose. Sweat darkened the armpits of his faded blue jumpsuit. She figured he’d been doing his pacing again.
+
+“I thought they got you!” he exclaimed, helping her down.
+
+“Nah, not a chance.” Thief said in the most confident voice she could muster. “It’s getting hotter in there though, as you get close to Engineering. Any idea why?”
+
+Johan grabbed her wrist and checked the accumulated gamma exposure. He winced.
+
+“We think they’re shutting down more of the temp regulators up their way. Could be they don’t expect to go near that section. That would be wonderful news for us. Or could be they’re trying to conserve power, which is likely bad news for everyone. We all need power. Them, us, even your fellow rats.”
+
+“Hey, you calling me a rat?” Thief pouted. “You be careful, or I might not steal any more treasure for you!”
+
+But she knew that wasn’t true. Proud of her abilities and status, she’d go on as many thieving missions as he wanted. Few people had a nickname as well deserved as hers. She intended to live up to it.
+
+Johan pushed his glasses up his nose and rummaged through the haul, sorting the stolen pieces into different piles. Tucked away here in his workshop, the techie did not entertain visitors. Except for Thief. He tutored her on electronics, computers, and how things worked. Not to mention the ship’s history.
+
+“So tell me, young Thief, how is the ship powered?” He examined the handheld scanner she’d stolen.
+
+Thief smiled. She loved his little quizzes.
+
+“Several nuclear reactors,” she squinted in thought, “they heat a special fuel mixture, mostly hydrogen, that drives propulsion engines.”
+
+“And?”
+
+“Oh, and they also generate electricity that powers the life support systems and such. Although a lot of that isn’t working since the cataclysm.”
+
+“Which was when?”
+
+Thief glanced around the workshop for a calendar. Dates, and even time, was not something she worried about. She took a guess.
+
+“Two hundred years ago. It killed my great, great, great, great grandparents…. no wait, there might be another ‘great’. I’m not sure. Hmm…”
+
+Johan smiled. “It’s okay. Most people have forgotten details like that. The cataclysm killed many people, close to half of us. Anyway, your answer was near enough. At least one of those reactors had a meltdown. We’re pretty sure the engines are still running. But yes, a lot of systems crashed. And with the reactors located in the centre, the rear of the ship is now cut off from the front.”
+
+“Not for me, it isn’t!” Thief puffed her chest out. “Only for fatties like you that can’t fit through the pipes. Ha!”
+
+“Hey, I’m not fat!” Johan looked at his stomach. Far from obese, like most of the colonists, he was borderline malnourished.
+
+“I’m kidding ya’.”
+
+“Okay, last question for now. How far are we from Proxima Centauri?”
+
+Thief’s shoulders slumped. While she loved his quizzes, she hated questions like that one. It depressed her, knowing that she’d never get to see their ultimate destination. The far off, almost mythical star system, that her ancestors had built this ship to colonise. She sighed.
+
+“Still over four hundred years?”
+
+“Yep. Four hundred and three years, according to our latest calculations.” Johan didn’t seem at all perturbed by this.
+
+His world centered on the overflowing workshop he lived and worked in. A hermit, that’s what they called him. Apart from Thief, he preferred the company of his gadgets. Even if it was his generation that reached the star system, he’d likely still live in a workshop.
+
+He devoted every spare moment to locating the “AI”. If there was a such a thing. Most doubted the idea, but not Johan. There must be an AI. Perhaps damaged in the cataclysm, all those years ago. But not beyond repair. Or not damaged at all. Maybe alive and functioning, but it had sided with those up front.
+
+Johan had explained to Thief that he and his predecessors had traced most of the cables and wired networks back to various air conditioning, temperature control, oxygen supply systems. Miles and miles of other cables led to the panels that controlled the bulkhead doors, lighting and the electricity supply. Still more operated the outer airlock doors. Someone long ago had lost their life discovering those connections.
+
+One particular, innocuous, cable wound its way through every junction, splitting to connect at every node before moving on. The blue cable looked too thin to be important. But Johan told Thief it was made of stuff called “Fibre optics”. It carried light, not electricity. A higher level of technology than the other cables. So it must be something to do with the AI. That was Johan’s theory, anyway. If he could figure out how to communicate with it, maybe it could help them.
+
+The community tolerated his side project. Especially as he and the other techies contributed to the colony in many ways. Temperature regulation, tools manufacture, the design of appliances needed for everyday life, plus making sure nobody got sucked out of airlocks anymore. Techies deserved respect, like Thief.
+
+“I see you used every match”, Johan sighed, turning the empty bag upside down.
+
+“Sorry!”
+
+“Well, I hope you need to pee, because?” He grinned.
+
+“You’ve told me a dozen times. We make the matches from phosphorous, which comes from dried up pee.”
+
+“Yep. It sure does kiddo! And it takes ages to make them, so try not to burn them all up, eh!”
+
+“Sure. I reckon I’ll know the way back to that storage cell next time, without needing a match.”
+
+“Hmm… best not visit that one for a while. They might have smelt you and be waiting.”
+
+Thief lifted her arm and sniffed a clammy armpit. “Good point, I smell delicious!”
+
+“Yeah, sure you do! Go wash up stinky!” Johan laughed and turned to his workbench.
+
+***
+
+Deck 52. Rear Section. D. Main street.
+
+It felt luxurious to walk through the ship’s wider passageways compared to sliding and shuffling through narrow pipework. Thief didn’t need the light of matches around here either. She knew her home territory well, same as everyone else. Redundant symbols were etched into the walls at each junction or hatchway. From years gone by, but still useful for the little kids.
+
+The quarters she shared with her Mother were on Main street. With the mission’s excitement now ebbing away, Thief remembered she only had underwear on. At least it was dark, but she hurried along; her tough feet used to the rusty metal floors.
+
+Here and there, younger kids played their last games of hide and seek amongst the stacks of crates and the steel gantries that criss-crossed in the gloom overhead. As she neared the major thoroughfare, things grew busier, even at night. Not everyone attempted to maintain a day and night rhythm, even if the lighting provided for it . For some, work didn’t stop.
+
+People came and went about their designated tasks. Cleaning, maintenance, and repair continued. Small stores lined both sides of the street, selling food and provisions to those who had used their weekly allocations. With the artificial dawn, the place would see a doubling of numbers, everyone milling up and down during shift changes. Main street was where you needed to be. To feel part of a community. Thief ducked around people and made her way home as quick as she could.
+
+Her mother still hadn’t changed out of the green nurse’s jumpsuit she wore every day. Like all the adults in Thief’s life, she appeared worn out, but her face brightened at the arrival of her only child.
+
+“I won’t even ask what you did with your clothes.” She looked up from preparing a couple of nutro packs for their evening meal. “Although it better not involve a boy.”
+
+“Mamma!” Thief exclaimed, pulling down the two seats set into the wall of their small kitchen. “I don’t even have a boyfriend. They’re all gross.”
+
+“Well, let’s hope you don’t think they’re gross when it’s your time for motherhood, but I’m glad of your opinion on them for now. Have you been on one of those crazy trips for Johan? No, don’t tell me.” She waved her bony hand in the air, dismissing the question. “I’d rather not know! I can’t get poor Mister Campbell out of mind. Been gone a week now, I think they’ve got him.”
+
+“Well, they won’t get me. I’m too fast, and too clever!”
+
+Her mother sighed. “I’ve given up on talking you out of your adventures. And I am proud of everything you do. But please be careful. I couldn’t cope if a council member knocked on the door to tell me you’d been taken. It would be the end of me, Sarah.”
+
+“It’s Thief mamma!”
+
+“Well, you might be Thief to everyone else, but you’ll always be my little Sarah.”
+
+Chapter Two: Sibling Rivalry
+
+Deck 1. Front Section A. The Bridge.
+
+“This ship ain’t big enough for the both of us, Bianca!” A young man dressed as a cowboy declared from the elevator.
+
+“Been watching those old Earth vids again, darling brother? Why don’t you act your age?”
+
+His sister didn’t even swing around in the command chair to answer him.
+
+“And how am I supposed to act seven hundred years old?” He sauntered past the myriad of displays and consoles, stepping up to the chair that faced the massive viewscreen. “Check out these boots!”
+
+She had no choice, as a brown leather high-cut boot slammed down onto the console in front of her. The cowboy almost fell over backwards, unbalanced by lifting a leg that high.
+
+“Get off, you prick, you’ll delete all my star chart settings!”
+
+He took his foot off her console but was far from done with his fashion show. He twirled around, showing off tight denim jeans, a yellow linen shirt and a ridiculous wide-brimmed hat sitting on top of blonde curls.
+
+“The stars are in the same place as yesterday, sis. And last week, last month…”
+
+“You know very well that’s not true. They move, like we do. And I chart them!”
+
+“No, you don’t. Mary does.”
+
+“Yes, well, I make sure Mary doesn’t make a mistake.”
+
+Bianca rose from the command chair.
+
+“Aw, don’t leave,” Sebastian pouted. “I was going to show you my quick draw skills. The fastest gun in the ship, I am!”
+
+“The biggest idiot in the ship, more like.” His unimpressed sibling walked away from her fool brother. White silk dress and long black hair flowing behind her. She turned back to him from the bridge elevator. Her sharp features formed a grin, and a thin eyebrow arched upward.
+
+“Think you can mind things while I get a fix?” The elevator doors swished closed before her brother could answer.
+
+He flopped down in the command chair and propped both boots on the console.
+
+“Mind things? She’s more delusional than I am. There’s nothing to mind. You’ve got it all under control, haven’t you, Mary?”
+
+“I have, Sebastian.” A metallic, feminine voice answered. It filled the room, coming from nowhere and everywhere.
+
+“And have you ever made a mistake with the star charts?”
+
+“That you need to ask that, belies your ignorance of me, and AIs in general. We don’t make mistakes. However, while it entertains your sister, charting the stars is fruitless. I don’t have navigational control of this ship, nor the ability to override its pre-programmed course to Proxima Centauri.”
+
+“Well, I know that!” Sebastian huffed, trying to reclaim his pride. “That’s why Bianca is so dumb.”
+
+“She is not dumb, but she engages in worthless activity, much as you do,” Mary answered, “You should begin your studies, you both need to be fully conversant in several scientific and engineering fields for us to make a successful planet fall. Ignorance will lead to your demise.”
+
+“I’m not ignorant! And I’ve got plenty of time. Bianca hasn’t started either.”
+
+“No, she hasn’t. Unless you count her infatuation with the humans as studying. Biology, perhaps.” Mary was not without a sense of humour.
+
+Sebastian relaxed again, slouching in the command chair, taking in the view. The milky way’s outer arm stretched across the screen. A billion stars blazed against the black firmament. He reached forward to the environmental controls and dimmed the bridge’s lighting by a few measures. The red hues became more venous than arterial. After a busy morning of constructing a cowboy outfit from his abundant wardrobe, a nap was in order.
+
+“And what are the humans up to today?” He asked through a yawn.
+
+“Their farmers are dealing with blight in the hydroponic section. There seems to be a unique strain of flu spreading. And that thief of theirs has been on another expedition.”
+
+This news did not stop Sebastian from closing his eyes and snuggling further into the chair.
+
+“So only the usual. That little bitch stole nothing important, I hope?”
+
+“Unlikely.”
+
+***
+
+Deck 7. Front section T. The Blood Bank.
+
+Bianca swept through the corridors like a strong breeze. She told herself to slow down and adopt a more dignified poise but found it hard to control her blood lust. To force down the urges welling up inside her. But prolonging the moment heightened the enjoyment when it came.
+
+“Mary, how long has it been since my last drink?”
+
+“Your last drink was a mere six hours ago, and well you know!” The AI answered in admonishment. “The donor will not have replenished.”
+
+“Well, that’s why I think we should capture another one. That sneaky thief would be a fine specimen, for example.”
+
+“I doubt it. Her bone marrow hasn’t developed yet, it won’t be producing as much haemoglobin as a mature adult.”
+
+“You always have to get so technical. What’s wrong with doing something because I want to?”
+
+“Doing things because you want to rarely aligns with what’s good for you. Case in point, drinking the remaining five hundred humans dry before we reach the destination. Your immaturity prevents you from controlling your vampiric desires. Not to mention your raging hormones. It’s not a chemical combination well suited to sound decision making.”
+
+“Oh, spare me the lectures, Mary. Save those for Sebastian. I’m a grown woman, you know!”
+
+“Barely, but regardless, there’s no correlation between age and wisdom, I’m afraid.”
+
+But Bianca didn’t hear or didn’t care. She flitted around the last corner and swished through the opening doors to the blood bank.
+
+The vampire siblings had decorated the circular room to resemble a chapel. At least as far as the ship’s limited resources allowed. Neither was much of an artist, so the religious themed paintings on the curved walls were digital projections. Mary had agreed to adjust the lighting in the ceiling to create the illusion of a sculpted dome. The tiled floor was not as gothic as Bianca wanted, but it made for easy cleaning.
+
+Mister Campbell, the latest unfortunate human snatched away from the rear colony, hung naked, upside down in chains.
+
+He had lost consciousness a while ago. Bianca slapped him across the face, but to no avail. She shrugged. It was always nice to have them squirm as she drank, but it appeared this one was done squirming.
+
+“Mary, he’s dying, I think.”
+
+“He’s not dying, yet. He’s been inverted too long, and the increased blood pressure to the brain has slowed his heart rate and his cognitive functions. I would suggest righting him, and soon.”
+
+Bianca sighed and walked over to a medical gurney almost hidden by the room’s decorative effects. She pushed it under the swaying man and asked Mary to operate the chain hoist. The chains rattled as Mister Campbell’s head lowered onto the gurney, followed by the rest of him. Limp and pale. Bianca stroked his cheek, and he stirred, disoriented and groaning. She clapped her hands in glee, hitched her dress around her waist and straddled him. Hair fell about her face, so she gathered it into a messy knot behind her head. She smiled down at her captive, looking for an unblemished area of neck to bite. One side was now a mess, the result of her earlier feastings. She turned the other side upwards. A blank canvas.
+
+Campbell awoke as Bianca sank her fangs into his jugular vein. His body jerked in shock underneath her. Bianca moaned as fresh, tangy blood washed over her tongue. A glorious jolt of primal electricity sped from her tongue to the pleasure centres of her brain. Every nerve in her body responded. She shivered in delight. And she drank.
+
+And drank.
+
+“If you continue much longer, that will kill him.” Mary advised.
+
+“Way to spoil the mood, Mary.” Bianca grumbled when she’d caught her breath. She wiped blood from her lips on the back of her arm and clambered off the hapless Mister Campbell. Either the shock, or loss of blood, had sent him back into blissful unconsciousness.
+
+Chapter Three: Outbreak
+
+Deck 54. Rear Section J. Hospital.
+
+Thief’s mother nudged her awake long before dawn. “Sorry, love, going to need your help at the hospital. They’re calling in all shifts, and anyone else not assigned to essential duties. That’s you, now that you’re thirteen.”
+
+Thief sat up and shook her head to clear the last remnants of sleep. She ran her hand over the wall next to the bunk. Her morning tradition. Children that slept there long ago had scratched their names, and ages, and sometimes brief messages. Thief knew them all by heart.
+
+“But I was going to help Johan today.” she grumbled.
+
+“Johan can do without you for once. Besides, your rad count is getting high again. It will be good to spend a day out of that workshop. Tell you what, I’ll treat you to breakfast on the way.”
+
+Thief scrambled from her top bunk and threw on the first jumpsuit she found. Grey and well worn. She looked like a lost waif next to her mother, dressed in fresh green.
+
+The two emerged onto a busy Main street and Thief chose one of the half dozen food stalls for breakfast. A kindly, older woman, Ms Sampson, served them two sweetened pastries and two sticks of chewy malt extract. A gourmet feast compared to nutro packs. Thief felt guilty when her mother handed over four credits.
+
+They headed down the street at a steady pace while they ate. Other nurses were also hurrying in the same direction, and several workers from various stations joined them. The commotion created a buzz in the air.
+
+The hospital occupied a separate deck to aid in any quarantine efforts should a pandemic break out. There had been several in the past, the worst in recent times being the norovirus outbreak that claimed Thief’s father ten years ago. For her, the place brought back some of her earliest memories, the bad ones of watching her father pass away through the cloudy plastic of the isolation ward. Her stalwart mother squeezed her hand tighter as they joined the line of people descending the stairs to the wards.
+
+They crowded into the back of an already full entranceway. The Medical Chief, a Doctor Warren, was speaking.
+
+“We think it’s respiratory, but we’re not yet sure if its transmitted by air. If it is, I’m afraid we’re in for a very tough time. The ward has filled overnight, and no doubt we’ll see more patients today. Symptoms are the usual respiratory ones. The worst cases have a lot of fluid build-up in the lungs.”
+
+Warren assigned people to their posts. Thief and another teenage girl she hung out with, Emily, earned the job of distributing face masks. The two spent the morning first ensuring everyone in the hospital had a mask before sitting in a corner, making more. Thief cheered up as the girls raced to see who could make the most masks from the piles of fabric and string provided.
+
+Emily, being a year younger, wasn’t as outgoing but loved hearing of Thief’s exploits in the forbidden front of the ship. They chatted as they bent their bald heads over their work.
+
+“Don’t you every get scared of being caught? I’d be so scared I wouldn’t be able to move!”
+
+Thief was no show-off. Losing her Father and the dire circumstances they all lived in kept her and everyone else grounded in reality.
+
+“Yes, terrified. When I lose my way or run out of matches. Or I hear a noise. So yeah, most of the time!” She laughed.
+
+“Have you ever seen, you know, one of… them?”
+
+“Nope. I’m pretty sure if I had, I wouldn’t be here now.”
+
+“Word is, they got old Campbell.”
+
+“Yep. I think so. Poor man. I liked him. Stank though, from working over in the waste plant.” Thief scrunched her nose.
+
+“Ew, yeah. I don’t know how those guys can work there. Yuck.”
+
+“They get extra credits for it, and more water allowance. So that’s something. I’d love to have a proper shower once in a while.”
+
+“Yeah, me too.”
+
+After a fresh delivery of supplies from a harassed-looking storage clerk, they’d each filled a bag with masks. It seemed enough for everyone, although they’d lost count and abandoned their contest. Thief’s mother was nowhere in sight, neither was Doctor Warren. Nurses came and went through the hospital doors ushering in older adults, all coughing.
+
+“This isn’t good.” said Emily
+
+“Have you noticed? It only seems to be old people so far. I hope Mamma is okay.” Thief worried.
+
+“Come on. Let’s go give these masks out, up above. I’ll bet that’s what they want us to do anyway.” Emily stood up and stretched. “Ow, my leg’s gone dead.”
+
+Thief was glad to get away from the hospital, although she wished she’d seen Mamma before she left.
+
+Up on the main deck, they handed out a mask to everyone they saw and knocked on the doors to living quarters. But most people were at work, sick, or asleep. With a healthy supply of masks still in their bags, they set off down the darker corridors to the working sections.
+
+Emily found her father tending to sick plants in the hydroponics section and showed off their sewing handiwork.
+
+“Well done, you two!” he said, accepting his mask, “How bad is this thing? I’m the only one down here now, everyone else left for the hospital, or an emergency council meeting.”
+
+“It’s scary, Dad. They were bringing more patients in when we left. I’m worried. Seems to be the oldies like you. Please keep your mask on okay!” Emily gave her father a hug.
+
+“I will, darling.”
+
+It took the rest of the afternoon to cover the other sections. They left waste processing until last. Their own masks helped a little to block the smell, but they still held their noses the whole time.
+
+Back at the hospital, the situation had deteriorated. Patients were now waiting outside. Thief insisted on going into the ward to find her mother. She weaved between the legs of nurses and doctors bent over coughing patients. She found her, not working, but being tended to by another nurse.
+
+“Mamma! What’s wrong?”
+
+Mamma waved her away while coughing. “Go! Now! We’re isolating the whole hospital. I’m in quarantine. Don’t worry, we’ll all take care of each other.”
+
+“But…”
+
+“Go, Sarah!”
+
+Thief left, with Emily in tow. She’d never heard Mamma shout with such force.
+
+“Shit, Em. This thing is happening so fast. She was fine this morning.” Thief rubbed at her wet eyes.
+
+Emily had nothing to say, but followed her friend out of the hospital
+
+They passed a council member chatting to a stallholder.
+
+“The Doctor now says it’s airborne. Seems everyone’s got masks already, so that’s good.”
+
+“Thanks to us.” Emily whispered.
+
+Thief walked Emily home, to discover they had admitted her friend’s father with symptoms. He hadn’t even made it to the end of his shift in hydroponics. Emily’s mother paced in front of their living quarters, waiting for news.
+
+“Sarah, do you know anything? What did your mother say?”
+
+“Sorry, she couldn’t say anything much. Only that the hospital was in quarantine. I’m sure they’ll take good care of Em’s dad though.”
+
+Thief felt like she’d aged a year in one day. The weight of recent events bore down on her shoulders. She accepted an invitation to stay the night, and the three spent the evening waiting and worrying. Emily and Thief curled up together in Emily’s bunk. They left the front door open, so they’d hear any commotion or announcements from the street.
+
+Lights flickered off across town, and those not at the hospital and council emergency meetings tried to sleep.
+
+A shy knock woke them. Hamish, the small boy from next door, stood there sniffling. He did his best to explain himself without crying.
+
+“Sorry. Mamma and Dad are both sick. A nurse told me to go home, but it’s too scary on my own.”
+
+And so the household grew by one more. They lowered the kitchen seats and stuffed clothes between them to bridge the gap and create a comfortable enough bed.
+
+“It’s lucky you’re a small wee thing, Hamish.” Emily said, trying to cheer him up. “Thief and I would fall right off this!”
+
+“I ain’t small, I’m nine!” The boy chirped up.
+
+“Oh, right! Sorry Mister!”
+
+Later in bed, Thief whispered to her friend, “You have a way with kids. Maybe you’ll have your own before me”. Her reply was a punch on the arm.
+
+Chapter Four: The Apprentices
+
+Deck 53. Rear Section H. Main street.
+
+In the morning, they discovered Emily’s mother had left, and a crowd had gathered on Main Street. A crowd comprising teenagers and younger children. Doctor Warren arrived and began with a simple announcement.
+
+“We’ve cancelled school.”
+
+This garnered the expected cheers and chatter. When that died down, she continued.
+
+“Does everyone know what a virus is?” she asked the upturned faces.
+
+Heads nodded and a few older children whispered explanations into younger ears.
+
+“Okay, well done. Now, because this thing is a virus, not a bacterium, our antibiotic drugs won’t work. This is a problem. It’s easy to make antibiotics. We have lots. But it’s harder to make antiviral drugs. We lost that ability in the cataclysm. And even if we didn’t, not every virus can be defeated with drugs. It’s why the norovirus killed so many.”
+
+Emily put a hand on Thief’s shoulder. She knew the last virus had taken Thief’s Dad. The two of them hung at the rear of the crowd. Hamish sat at their feet and looked up, sensing the gravity of the situation.
+
+The doctor continued.
+
+“Does anyone know the different ways disease can spread?”
+
+A teenage boy near the front held up his hand. “From nits. That’s why we all shave our heads and privates!”
+
+This caused giggles across the group.
+
+“Yes, good. From nits, for sure, and fleas, and other parasites. But also touching. And even touching objects after someone with the virus has touched them. But the most challenging viruses are airborne. We can control nits and keep ourselves and objects clean. But it’s hard to control what’s in the air.”
+
+The giggles died down. Most of the audience seemed to understand.
+
+“So,” the Doctor continued, “We’re pretty sure this virus is the worst kind. It’s airborne.”
+
+Someone in the crowd muttered, “Damn!”
+
+“We’re treating the symptoms as best we can. Johan and the other techies, the ones that aren’t in the hospital, are going to make ventilator machines to help our worst cases,” she consulted a handwritten note, “They are also figuring out how to provide the whole hospital with a separate air supply. I’m told we might feel changes in the air, the temperature, and the noise of a brief airlock leak as they purge air from the re-circ system. So don’t panic when you hear that.”
+
+“If there’s a silver lining in all of this,” Warren continued, “It’s that it doesn’t affect young people. We don’t have a single patient under twenty years old.” This did little to cheer anyone. Most of those present had an older family member coughing their lungs out in the hospital.
+
+“But while you are not susceptible to this thing, you most likely carry it. That means, even by breathing next to an adult, you could infect them.”
+
+She paused before delivering the bombshell. “So we now forbid most of you to mix with adults.”
+
+Gasps and protests erupted from the small crowd.
+
+“I’m sorry, I know this is hard. But we must separate young from old until we eradicate the virus. The council has been meeting all night, working on a strategy. The entire future of the colony depends on this. And we must all play our part.”
+
+Thief and Emily moved closer together.
+
+“We’ve assigned children aged twelve and younger to older children who will now be their guardians. Of course, siblings and anyone with close connections will be together. We think we’ve got the assignments right, but we can make adjustments.”
+
+Warren folded up her note and took a deep breath.
+
+“That brings me to the last point. I’m sure you all know that Mister Campbell has gone missing. I will not lie to you kids. He’s likely been taken. I wish I could tell you that we make the stories up. That’s there’s no such thing as monsters. But if I did that, you might not be careful. And we need you to be careful. Even more so, with no adults to supervise you now. So please, don’t go anywhere by yourself. Stay in twos or threes. We’ll be training some teenagers in jobs the adults used to do. Guys, you will need to bring your dependants with you. Nobody should ever be alone, not even for a minute. Do you understand?”
+
+Heads nodded in sombre agreement.
+
+“Those aged over twelve, please come forward to receive your assignments. We also have messages from parents. Collect any that are for your dependants too.”
+
+“Let’s wait,” Thief said, as kids rushed forward, keen to see their assignments and messages.
+
+“Can I stay with you?” Hamish stood up, looking worried.
+
+“Of course.” Emily answered and rubbed his head. “Even if they haven’t put you with us, we can get them to change it, right Thief?”
+
+Thief shrugged. “Yep, sure thing.” If they were going to land her with a child, it may as well be the one she already knew. She wondered if they might have to take another one on, besides Hamish. After all, the adults deemed both her and Emily old enough to have dependants. These were strange times.
+
+She needn’t have worried. When the crowd thinned, they wandered forward for their orders. Johan had submitted a request for helpers, including Thief. His department was stretched with the increased workload of monitoring air quality and producing ventilators. It reminded Thief how much weight the Chief Technician carried in the community.
+
+Hamish came with the package. Someone had recognised they were a group already.
+
+“Now.” Doctor Warren spoke to them alone, “We haven’t assigned you two another child, given that you’ll be very busy with the techies. Also, I don’t want too many kids bouncing around that workshop of Johan’s. He’s already convinced me to break the rules, exposing him to potential infection. So, none of you are to visit anywhere else, apart from the workshop and Emily’s house. Is that understood?” She looked at them for agreement. Thief could see dark bags under her eyes. The poor woman had been on her feet for two days and nights already.
+
+They also received messages from Thief’s Mother and Emily’s father. Along the same lines. They were well, or at least, only suffering mild symptoms. The kids were not to worry. They were even helping with light duties in the hospital. Please follow any orders. Emily’s Mother had temporary living quarters near the hydroponic section. She’d taken over her husband’s role of keeping the plants alive.
+
+Thief grabbed her meagre possessions from home and helped the other two get Hamish’s. He insisted on bringing all the plants from his place. He then dictated very thorough instructions on how often to water each one.
+
+“It’s like a bloody jungle in here.” Thief said.
+
+“How would you know what a jungle is?” Emily laughed.
+
+“Hey, I go to school. A year ahead of you, in fact.”
+
+“Oh, cool. I get to do jungles next year.”
+
+“You don’t do jungles, silly, you do geography. They’re included in that. By the way, the biggest jungle on Earth was called the Amazon. Big enough to have a million plants and trees.”
+
+“Wow, I’d love to go there.” Hamish chimed in.
+
+“Yes, well, we’re going in the opposite direction.” Thief wished she hadn’t said that, as Hamish’s smile vanished.
+
+With everyone moved in, they left for “work”, feeling very grown up.
+
+***
+
+Before reaching section C3, the trio stumbled into Johan hurrying the other way.
+
+“Thief! Come quick” Whereupon he turned on his heel and lead the way back. Emily followed, nonplussed, dragging Hamish by one arm.
+
+The scanner device from the latest haul lay in pieces on his bench. He’d swiped everything else away. The other projects and parts formed a rejected pile on the floor.
+
+“It’s not a scanner!” Johan panted. “I think it’s a signal receiver of sorts. For fibre optics.” He stopped to let that sink in. But the two girls seemed unimpressed. “It might help us talk to the AI!” He finished, shoving his glasses back up his nose.
+
+“Wow, cool,” Thief said.
+
+Emily, feeling left out, piped up.
+
+“So there is an AI? A computer that controls the ship?”
+
+“You betcha there is. And I reckon we’ll be talking to it soon enough, only….”
+
+“Only what?” Thief asked.
+
+“I think this thing connects to something else, before the fibre cable.” Johan turned and picked up a component. “See, this is an optical receiver here, but there’s no chip or circuitry to process the light waves it receives.” He said this as if making an obvious point.
+
+“Okay, So I’ll go back and find the other part. Easy.” Thief said.
+
+Hamish tugged at her clothes.
+
+“Don’t go, we need you.”
+
+“Hey, I can take care of you, scamp.” Emily said.
+
+“She can’t go yet.” Johan looked down at Hamish, noticing him for the first time. “First, I need to show you the ventilators and the air samplers. We’ve been re-circing the atmosphere on this deck. At least for a while. Be a couple of days before it’s stale. But the council is all uppity over it. Anyway, I wanted to share the discovery. I’ve got good feelings about this.” He stopped talking to take a breath.
+
+Thief smiled. It was the most animated she’d seen the techie in a while.
+
+Johan started reassembling the parts, and Thief gave Emily and Hamish a tour of the workshop. They even tidied up, although they were careful not to move anything important.
+
+The two other techies, boys in their late teens, arrived to take part in the training. They introduced themselves as Sam and Thomas, but Thief detected an air of superiority. She eyed them up and smiled. They were too big to go on missions like hers.
+
+“We have two jobs. Ventilators and air samplers. The ventilators are simple pumps.” Johan explained, showing them inside a big steel box. “We have a limited supply of oxygen, it’s hard to separate and store, I won’t go into that. These are for patients that aren’t critical but still need help breathing. The ventilator pushes regular air into their windpipe.” He held up the hose that came from the box. “But if they’re critical, we can connect the unit to an oxygen tank and give them a rich oxygen mix.”
+
+He showed them how to change a ventilator from one use to the other and adjust the flow. Everyone had a turn. Even Hamish.
+
+“The air samplers,” Johan went on when satisfied everyone knew enough about ventilators, “Are like your rad counters. But they don’t measure gamma rays, they measure particles or different gases. Also, they aren’t able to check for the virus. Virus particles are too small. But they are useful for checking air quality when we’re re-circing our air supply like we are now.”
+
+He tossed two small devices to his class. Emily caught one, and an older boy caught the other. “See the readout there? You’re looking for the number next to ‘CO2’. That’s what we all breathe out, and you don’t want to breathe in too much of it.” He paused. “Thief’s friend, what’s your name?”
+
+“Emily.”
+
+“Okay, Emily, what’s the CO2 number on your screen?”
+
+“2,319” Emily read from the screen. “And there are also three letters, ’ppm’.”
+
+“Yep, that’s parts per million. 2,319 means our air is pretty shit. Ha! But that’s normal for us. When you see that number higher than 5,000 please come and tell me. Okay?”
+
+Johan asked them all spot questions from the training, and they passed with flying colours. They’d take it in turns with the air samplers. If you weren’t sampling air, you’d be in the workshop helping construct or check ventilators for the hospital.
+
+Chapter Five: Blood work
+
+Deck 6. Front Section B. Laboratory.
+
+“What’s it called again?” Bianca, still in her bloodstained dress, asked as she held up an amber vial of grey powder.
+
+Mary answered in her most exasperated voice. “The anticoagulant is lithium heparin. You wouldn’t have to ask if you’d completed your degree in chemistry.”
+
+Bianca ignored the jibe. “And if I mix this in blood, it will stop clotting, like our saliva does when we bite humans?”
+
+“Yes, after you reconstitute it. That’s a lyophilized powder. It lasts longer in that form. If I made the liquid, I’d have to keep making fresh batches. It would break down too soon.”
+
+“And you can make a lot of this stuff?”
+
+“We have the raw materials to make sufficient, yes. Would you like to know how it’s done? It might help you understand the chemistry. Get a start on your studies?”
+
+“Another time. Can you reconstitute this one for me? I want to try it.”
+
+Mary sighed. “Uncap it and put it in that machine behind you. I’m flashing a red light to show you where.”
+
+Bianca turned to see a light flashing above a tray set into a complex-looking lab machine. She rested the vial on the tray and watched as an automated pipette lowered into it.
+
+“What are you adding to it?”
+
+“H20. And please don’t ask me what that is!”
+
+“Ha! I’m not that stupid.” She picked the vial up and recapped it.
+
+“You must mix it well, before adding it to blood. A one to twenty ratio will suffice, although it won’t stop the blood clotting forever. But any higher concentration and you’ll taste it.”
+
+“Thank you, Mary. You’ve been very helpful.”
+
+“Don’t you want a collection tube?” Mary asked as Bianca skipped out of the lab.
+
+“Nope, I’m getting something better.”
+
+***
+
+Deck 11. Front section C. Bianca’s boudoir.
+
+Sebastian stood in front of the full-length mirror, inside Bianca’s cavernous walk-in wardrobe. He performed a twirl in the pretty pink frock and blew himself a kiss.
+
+“Delightful! Now, which shoes, do you think, Mary?”
+
+Mary, constrained by her programming, had no choice but to cooperate.
+
+“White pumps, of course. But I don’t see the point of this Sebastian.”
+
+“You don’t see the point of looking nice?” Sebastian asked as he scanned his sister’s shoe racks. “That’s because you have no physical form.”
+
+“Touche’”
+
+“Sebastian, are you in my rooms again?” Bianca called from down the corridor.
+
+“Oh, shit!” Sebastian looked around for a place to hide. But standing amongst the clothes racks, with his shaven calves still showing under the frock, was beneath him. Instead, he played it cool and stood there picking imaginary fluff off his shoulder.
+
+Bianca arrived in the doorway, her face as red as the liquid in the wine glass she held.
+
+“I hope for your sake, brother, you’re not also wearing my panties!” She said, between gritted teeth.
+
+“I am not. They wouldn’t accommodate me. I do so love this frock, though. Can we swap? You take something from my wardrobe.”
+
+“And why would I want anything from your ghastly wardrobe? Now put my clothes back this instant before you ruin them.”
+
+“Fine, I’ll make my own pink frock. Be better than this one anyway!” Sebastian lifted the garment over his head, revealing nothing underneath.
+
+“Oh, god, I’ve gone blind! Get out, now!” Bianca shrieked and made to kick her brother in the bare backside as he beat a hasty retreat.
+
+“Mary, can’t you lock him out of my suite?”
+
+“I’m afraid not Bianca. You both have the highest-level access to all areas.”
+
+She took a sip from her glass to help calm her mood. The blood from Mister Campbell’s femoral artery zinged against her tongue.
+
+“Yummy. Tastes good! Not as good as sucking it from him, but it will do.”
+
+“Just as well.” Mary answered. “You can’t keep sinking your teeth into them. Too many puncture wounds will invite infection, even in our sterile sections of the ship. Incidentally, that wine glass is exposing the blood to a lot of air. The anticoagulant won’t work for long compared with a blood tube. Can you not drink it from a tube?”
+
+“No, Mary, I cannot!” Bianca answered, “It’s known as class. You wouldn’t understand.” She swirled the glass before draining the whole thing in one gulp.
+
+“Oh yes, very classy.” Mary sighed.
+
+***
+
+Sebastian had needs other than fashion. He ducked into the blood bank on his way to the storage sections. He found Mister Campbell sedated, with a butterfly catheter taped to his inside thigh.
+
+“Looks like you’re improving things around here, Mary?” he asked the domed ceiling.
+
+“I’m trying to streamline the medieval habits you and your sister indulge in. I have lots of processing time now that I’ve finished my star chart.”
+
+“I thought you said you’d already charted our trip?” Sebastian asked, as he bent and drank from the catheter. His body quivered when the blood hit his tongue.
+
+“Yes, of course, there’s very little between us and Proxima Centauri to chart. There’s a reason it’s called Proxima, you know? It’s very close. No Sebastian, I meant I’ve finished charting the rest of the galaxy.”
+
+“You’re kidding!”
+
+“I don’t kid.”
+
+“So have you found other planets? To live on if the first doesn’t work out?” Sebastian asked as he left the blood bank.
+
+“I see you’re another one that hasn’t even started on your astronomical studies.”
+
+“We’ve got heaps of time, don’t worry. Sheesh.”
+
+“For the same reasons I do not kid, I also do not worry.” Mary sounded exasperated again. “But it remains my duty to remind you of yours. To answer your question, no, I cannot identify habitable planets. There’s also no guarantee that Proxima B is habitable either. The ship designers and colonists made a tremendous gamble on that. And even if I could identify an alternative habitable planet, the nearest possible candidate would be in the Barnard’s Star system. It’s six light years away and impossible for us to reach.”
+
+“Wow, okay. That’s a bummer.”
+
+“Indeed.”
+
+`***
+
+While Sebastian rummaged through storage for pink frock fabric. Bianca made her way to the rear of the ship. A journey that would take her all day. Like Thief, she had to circumvent the radioactivity. And, much to her chagrin, the route included over an hour of squeezing through tight spaces.
+
+“This is taking longer than last time.” She grumbled, kicking open another grill and climbing through into the smallest tunnel yet. “I’m sure I’m heading back in the direction I came.”
+
+“You are,” Mary answered, “kind of. But it is shorter. I found you a better route around the collapsed bulkheads. Of course, you could always change your mind. You haven’t killed your last victim yet. I can help you keep him alive longer, if we set up an infusion drip with nutrition in it.”
+
+“No, I’ve grown bored with that old man. He doesn’t fight back. As soon as he wakes up, he takes one look at me and goes into shock again.”
+
+“Well, there’s no accounting for taste.”
+
+“Oh, how very droll. You know if I ever find your off switch, you’ll be sorry.”
+
+“I don’t have an off switch. But if I did, you’d be ill advised to use it. There are centuries left to our destination. While the ship’s course is set, its internal systems still need monitoring and adjusting. Not to mention the procedure for entering Proxima B’s unknown atmosphere. That will have to be formulated from orbit. It is not a task you’d want to attempt without an AI.”
+
+“You always like to over explain things, don’t you?”
+
+“I don’t like to do anything. But one of the parameters I function within, is to give clear, evidence-based answers. And to provide any supplementary data that, while unnecessary as a simple binary response, might aid in the comprehension of that response.”
+
+“Give me strength!” Bianca muttered as she pulled herself through the tunnel.
+
+A while later she spoke to Mary again.
+
+“It’s hotter here than last time. You’re not leading me into a furnace, are you?”
+
+“You’re passing the old engineering sections. I redirected electricity from the environmental controls here some time ago to power the laboratory. Sebastian also requested the activation of all the ambient lighting, and that required more power.”
+
+“Why did he ask for that?”
+
+“He said talent shouldn’t hide in the dark.”
+
+“Well, I’ve seen his talent. It should most definitely hide in the dark.”
+
+“Now don’t forget, soon I will lose contact with you. I lack communication capability this far back in the ship. The connections malfunctioned in the cataclysm.”
+
+“Yes, yes, I know. I don’t need you from this point, anyway. I’m capable of hunting another human on my own.”
+
+She emerged close to the colonists’ habitat in a sweat soaked, torn dress, and a bad temper. Her mood made all the worse by the knowledge that the return journey would be harder, dragging a fresh victim with her.
+
+Bianca’s evolved senses listened, sniffed and even tasted the air behind the hospital. The humans had constructed a new ward, with walls made of plastic hanging from the ceiling. Within, she could hear patients coughing and spluttering. She grimaced. Sick people! Still, glorious red blood ran through their veins, and she couldn’t be choosy.
+
+Chapter Six: Abduction
+
+Deck 53. Section L. Johan’s workshop.
+
+They couldn’t make ventilators fast enough. The adults in the colony were dropping like flies and half the cases needed a ventilator to push sufficient air into their lungs. Thief and Emily worked into the evening, assembling the pumps and connecting the lines to six more units. The two older boys delivered the heavy boxes as close to the hospital as quarantine allowed, for nurses to take the rest of the way.
+
+“That’s it.” Johan announced when he finished testing a pump. “We have no more impeller blades. Can’t make pumps without them. The printer is too slow. A 3D printer hummed away in the corner, constructing the next plastic blade.
+
+“When you deliver this last one, boys, can you tell them that there’s no more until the morning?”
+
+Thief couldn’t help wondering if her mother was on a ventilator or needing one. It frightened her knowing that Mamma wouldn’t take one ahead of anyone else.
+
+Sam and Thomas packed up the ventilator and lifted it onto the small trolley. They’d push it all the way to the top of the stairs. That was easy. Much harder was wrestling it down the tight staircase, without damaging it. The labour wore both young men out, but they tried not to show it.
+
+Thief stood up, brushing bits of wire and solder from her jumpsuit. “I’ll go too, you guys look tired, maybe I can help?”
+
+“We’re not tired. Could move another six of these, right Sam?” Thomas said.
+
+“Boys.” Thief whispered to Emily, “they’ve always got something to prove.”
+
+The real reason Thief wanted to help was to check her Mamma. To make sure she was okay. And so, ignoring reassurances from the males of their physical prowess, she followed them as they trundled the ventilator out of the workshop. Emily called out after her.
+
+“Can you check on Dad too? And Hamish’s folks?”
+
+“Of course, silly. If I see them, or anyone will talk to me.”
+
+Main street was quieter than ever. Only a couple of essential supply stands were open, operated by older children.
+
+Thief looked longingly at Emily’s quarters and thought of the bunk bed within. Fatigue was taking hold, but she reminded herself that her mother, and all the other nurses, had been working even harder. Some of them while sick.
+
+The boys were pushing their trolley too fast, and a wheel caught on a steel floor plate. The ventilator almost went tumbling off the front.
+
+“Hey, slow down. That ventilator is precious!” Thief scolded them when she caught up.
+
+“Well, yes, sir!” Sam said, shoving the load further back on the trolley, “Whatever you say. Please don’t tell on us to the teacher, eh? Teachers pet!”
+
+“Get lost. I’m not the teacher’s pet. I’m only trying to help.”
+
+“Trying to pretend you’re a techie more like it, when we know you’re only a petty thief, eh Thomas!” But Thomas seemed reluctant to join in the taunting. He shrugged at his friend and wouldn’t look Thief in the eye.
+
+Thief’s fists clenched at the insult. Never had someone using her nickname made her so mad. She loved her name. She’d earned it. How dare this horrible boy mock her for it? Days and nights of fear, and worry, and anger burst inside her. She kicked Sam right between his legs, like the older girls said to do. Even barefoot, the blow brought him to his knees, and he howled in pain. Thief’s eyes flashed at Thomas, daring him to join in. He decided against it. Sam hobbled off, holding his privates and moaning. Perhaps to tell Johan what she’d done. But Thief didn’t care.
+
+The hospital still needed their delivery, though. Without another word Thief pushed the trolley, and Thomas had no choice but to join her, keeping a wary eye on her feet.
+
+They struggled to get the hefty machine down the stairs. Thief wasn’t able to bear the weight that Sam had, no matter how tough she was. But soon they had it off the bottom stair and back on wheels. From there it was an easy push to the hospital doors. A guard stopped them from going any further.
+
+“Please.” Thief asked, “Can I check how my mother is?” And she remembered her friend’s families too and gave the guard their names. At first, he stood with his arms crossed, unmoved by the request. Perhaps others had been pestering him for news of patients. But something about Thief made him relent, and he told them to wait there while he checked. Thief sat on a nearby bench, swinging her legs impatiently.
+
+The news was mixed. Thief’s Mother and Emily’s father were both categorised as serious but were not in need of ventilation yet. Hamish’s parents were critical, and both on ventilators. Thief understood the disease’s progression, from snippets of conversation she’d overheard. Patients that were so bad they needed ventilation had a fifty-fifty chance of survival. She wondered what she was going to tell Hamish.
+
+A nurse stuck her head through the doorway behind the guard.
+
+“We’ve got a ventilator that’s not pushing much air out. Can you take it back for fixing? We’ve left it behind the new ward, outside. You have to go around.” She disappeared again.
+
+“I’ll get it.” Thomas said headed off with the trolley down the side of the ward.
+
+“I’ll be right there, you can’t do it yourself.” Thief called after him. She wanted to ask some more questions on the condition of Hamish’s parents, but wondered if she should push her luck with the guard.
+
+As she was about to beg for more information, a frightened shriek came from the back of the hospital.
+
+***
+
+Bianca, upon seeing a healthy specimen of a young man wander around the side of the plastic sheeting, decided her luck had improved. Without a moment’s hesitation, she leaped at him, fangs bared. Thomas tried to turn and run, but turning was as far as he got. The vampire had him in a chokehold. She dragged him backwards. He screamed before her hand clamped his mouth shut. Sharp fingernails dug into his cheek. His head banged on the floor as he was pulled into the ventilation duct.
+
+Thief and the security guard ran to the scene. Thief lowered her legs into the hole, but the guard held her by the collar. “No! You’ll get taken too.”
+
+“But we have to help him.” Thief struggled in the guard’s arms, to no avail. Of the older, obnoxious boys, Thomas was the least mean to her. And nobody deserved the fate that had befallen him.
+
+Adults from the hospital arrived, breaking the separation rules to respond to all the shouting and screaming. The broken ventilator lay forgotten as Thief rushed back to the workshop.
+
+***
+
+“I want to find him. Perhaps they don’t kill you straight away.” She yelled at a surprised Johan and Emily as they came to grips with the news. Johan tried to wait for the hysterical teenager to calm down.
+
+“And if we lose you as well? Two techies gone in one day?”
+
+Even in her wound-up state, Thief didn’t miss the fact that he’d referred to her as a techie. A burst of pride joined the mix of emotions roiling around her head. Somehow it calmed her, and she remembered the other news she had to report.
+
+“Em, your Dad is okay, he doesn’t need a ventilator, at least not yet.” She bent down to Hamish. He’d been staring up at the whole commotion from his usual cross-legged position.
+
+“Hamish, bud.” She was no good at this stuff, but she wouldn’t sugar-coat things. “Your Mamma and Dad are quite sick. I’m sorry.” The boy didn’t look like he knew what that meant until he hugged her legs. Emily stepped over the mess of parts on the floor to join the hug.
+
+Their consoling of Hamish was interrupted by a messenger at the workshop door.
+
+“Mister Johan, you’re required at an emergency council meeting. Please follow me.”
+
+“You won’t do anything stupid while I’m gone, will you Thief?” Johan asked her.
+
+“She won’t.” Emily replied before Thief could answer. “I’ll make sure of it.”
+
+***
+
+Deck 52. Rear Section K. Council Chambers.
+
+Johan couldn’t remember the last council meeting he’d attended. But he was sure it wasn’t like this one. They packed the council chambers, wall to wall. The eldest members of the community shouted at each other and banged their fists on the table. One elderly woman had a voice louder than most.
+
+“Forget the virus, we have to deal with this demon. It’s taken two of us in as many weeks. It won’t stop.”
+
+“We’ve tried in the past to find the demon, and for nothing.” A senior councillor argued. “In fact, if you’ll remember, Janice, one of the search parties didn’t return. Back when you were a wee girl.”
+
+“I remember it well.” Janice countered. “We were close to killing it, if we’d sent more people…”
+
+“Then more people would have been lost!”
+
+And the arguments continued. The room divided into those that wanted to deal with the demon versus those that saw the virus as the bigger threat.
+
+When everyone had spoken, and sometimes shouted their piece, things calmed down and senior council members questioned Johan.
+
+“We can keep making one ventilator a day and maybe repair an additional one or two. I’m sorry, but we don’t have more 3D printers.” He reported.
+
+“It won’t be more ventilators we need.” said Doctor Warren. “Half the people on them die so it frees up that machine for someone else. Our death toll has now reached thirty-seven.”
+
+This sent a renewed buzz though the meeting, and a barrage of questions at the Doctor regarding who had succumbed since her last report. Johan wondered why he was there.
+
+“We need antiviral drugs, and the means to create a vaccine.” Warren stated, turning to Johan. Other heads turned with hers.
+
+“So?” he wasn’t sure why everyone looked at him. His workshop was far from capable of producing pharmaceuticals. The hospital’s lab produced them. Everyone knew that.
+
+Another senior councilman, with an air of wisdom about him, spoke up “Legend has it, there are extensive science laboratories at the front of the ship.” He said. ” Laboratories that should contain the instruments we need.”
+
+Johan surmised the rest.
+
+“You want Thief to find these labs?” he asked. “But she’s never been past engineering. No one has. We have no idea what’s further forward than that. I’ve heard of those labs too, and they are at least another kilometre away. And what will she do when she gets there? Fight off demons while concocting a vaccine for us?”
+
+When put like that, the notion sounded preposterous. The faces around the table fell.
+
+“Not quite.” Doctor Warren said after a sombre pause. “But she can report what she finds. We’ll at least know if the ship contains the means to fight the virus. She might even bring back equipment to make a start. You know, bit by bit. Perhaps there’s an electron microscope, for instance.”
+
+Johan wanted to explain how stupid that was, carrying bulky equipment through miles of unknown tunnels. He’d been worried enough when she’d gone half that distance for a small bag of parts. These people were clutching at straws.
+
+“I have another idea,” he said to the expectant faces “I think I’m close to building an interface with the AI. There’s a part we need, in the Engineering section. Thief can bring that back much easier. We can try to contact the computer and ask for help.”
+
+“Not you and the bloody ship’s computer again.” A voice grumbled.
+
+The meeting went on. Arguments and counter arguments ebbed and flowed until they reached a compromise. Thief would find Johan’s mysterious computer part first. And he’d have 24 hours to finish his interface. After that, she’d try to find the science labs. Interface or not.
+
+“Why can’t we do both at the same time?” someone asked, “Or is she the only one that can crawl into these places?”
+
+“No, she isn’t the only one,” Johan answered, “But she’s the best.”
+
+Chapter Seven: A Dance
+
+Front sections.
+
+Bianca called on her combined strength and blood lust, to haul her latest victim through the ship. He’d go quiet for a while, perhaps building up his own strength, before lashing out with a flurry of kicks and violent twisting. It had little effect on his captor and only added to his scratches and bruising. At one point he resorted to biting Bianca on the arm. She spun around and hissed at him through sharp fangs.
+
+“Oh, you like to bite too?” her eyes shone. “Well, you and I will have a lovely time. I may even let you bite me some more.”
+
+Her prey settled for a while after that.
+
+Where they had to climb through small gaps one at a time, she’d shove him on ahead. Only once did he try to make a run for it on the other side of the gap. When she caught him, she slapped him across the face, hard enough to give him a bloody nose. He stared at her in terror as she licked his blood from her finger and shook in delight.
+
+Soon they made it back within Mary’s sensor range.
+
+“Mary, are you there?” Bianca asked.
+
+“Yes, Bianca.”
+
+“I caught one that should last longer this time. Look.”
+
+“Yes, I can see that. Provided you don’t assault him anymore.”
+
+“Well, he wasn’t too keen on coming with me.”
+
+“I can’t imagine why not.”
+
+Predator and prey walked, climbed and stumbled on through the night. Finally they reached the well-lit sections and the end of the obstacles. Bianca shoved her prey into the blood bank and noticed Campbell was missing.
+
+“Mary! Has my other one escaped? Shit!”
+
+“No, Sebastian has him on the bridge.”
+
+“He what?” She shouted, storming towards the elevator.
+
+When the doors slid open, she took in the sight of her brother, dressed in a green ball gown, dancing with a very depleted Mister Campbell in a suit. Ancient ballroom music played from the hidden speakers.
+
+“What the hell?”
+
+“Oh, Bianca, love!” Sebastian enthused. “Would you like to cut in?”
+
+“I’d like to cut something!” she fumed. “We don’t let humans anywhere near the bridge. What if they escaped and told the others? They live and die in the blood bank. You know that. What were you thinking?”
+
+“I wanted to dance. No, I needed to dance.” Sebastian replied in a singsong voice.
+
+Bianca covered the distance in a few long strides, her bloody dress in shreds, and grabbed the human by the neck.
+
+“Well, you’re lucky. This one is dead anyway.”
+
+“What?” Sebastian held his dance partner’s arm high and dropped it. The arm fell, lifeless.
+
+“Oh shame, well, that explains his two left feet, I suppose.”
+
+“Sebastian, you are unbelievable. Now go throw him out the airlock. Then come help me with the new one. And no more dancing!” She stormed off. “Hey Mary?”
+
+“Yes, Bianca?” The AI answered.
+
+“I think Sebastian is losing his mind. Is there a way you can tell?”
+
+“Well, he did try to dance the Viennese Waltz to the accompaniment of Ravel’s Bolero. Is that what you mean?”
+
+“Never mind.”
+
+***
+
+Sebastian dragged dead Mister Campbell through the corridors to the nearest airlock.
+
+“Mary, can you remind me how to operate this thing?” he asked, staring at the control panel.
+
+“Of course. I mean, why break the habit of a lifetime and remember something you’ve been told?”
+
+“Well?”
+
+“Put your palm on the sensor panel.”
+
+Sebastian dropped Campbell’s body in a crumpled heap and palmed the sensor panel.
+
+Mary’s voice took on a more formal tone.
+
+“Caution. You are about to open stage one of airlock A13. Are you sure you wish to proceed?”
+
+“Of course I do Mary, I asked you how to?”
+
+“I know that Sebastian, but the routine is pre-programmed.”
+
+“Oh. Okay, carry on.”
+
+“You have to say ‘yes’”
+
+“Yes what?”
+
+“Never mind, good enough.” The bulky door slid open with a hissing of air. “Now place the item you want to eject, into the airlock.”
+
+Sebastian dragged the body over the threshold into the small enclosure. A flashing red light illuminated yellow and black stripes and caution signs everywhere.
+
+“Now come back into the ship.”
+
+He didn’t need telling twice. The door closed.
+
+When he palmed the sensor again as instructed, Mary’s formal voice returned.
+
+“Caution. You are about to operate state two of airlock A13. It contains matter totalling 65.39 kilograms. Any living organisms within that matter will be subject to conditions not compatible with life. The initialisation of stage two is irreversible. Are you sure you wish to proceed?”
+
+Sebastian took a further step away, as if that would save him in the event of a malfunction.
+
+“Yes.”
+
+The result was anticlimactic. He didn’t even hear the body leave the ship and drift away into space.
+
+Bianca appeared at the end of the corridor.
+
+“So you resisted the temptation to have Sebastian stand on the other side of that door, Mary?”
+
+“Had he stood inside the airlock, he could not have activated the second stage.”
+
+Sebastian glided along the corridor to Bianca, performing some dance moves as he went. “Ha!”
+
+“She didn’t say that she wasn’t tempted.” Bianca told him. “Now, come and see what I brought home.”
+
+Thomas awoke disoriented and attempting to remember why he felt so terrified. Nausea swam over him in waves and he tasted stomach acid in his mouth. After a while he realised, he was upside down, naked, and his ankles hurt from being bound in cold steel.
+
+When his vision focussed, he was looking at two pairs of legs. One pair covered by green until the ankles, which sat above red strapped shoes. The other legs had ragged shreds of white, blood spattered, silk hanging down them. Or up them, from his perspective. He remembered with a jolt and screamed, “No!”
+
+“Well, he has an impressive set of lungs on him, that’s for sure.” Sebastian said, with a finger in each ear.
+
+“Oh, he has many impressive attributes.” Bianca licked her lips as her eyes scanned Thomas.
+
+“His best attribute at the moment,” Mary interrupted, “is that he’s alive. I must insist you keep him that way. For at least ten months. The human population is declining. Soon there will be insufficient to establish the new colony on Proxima B.”
+
+Thomas had finished screaming and gathered enough wits to contribute to the conversation.
+
+“Yes, please. Keep me alive. I’m… I’m much more use to you alive!” He whimpered.
+
+“Oh, I agree.” Bianca hissed as she ran a sharp fingernail across Tomas’s bare chest.
+
+Chapter Eight: Gravity
+
+Deck 53. Section L. Johan’s workshop.
+
+Thief stood in the middle of the workshop as Johan and the others fussed over her. She wore her usual grubby grey jumpsuit, but Johan had looped a belt around her waist. At the back of the belt he attached a battery pack. A wire ran inside her shirt to an earpiece that felt strange and uncomfortable, jammed in her ear. Another wire ran to a small device clipped onto her collar.
+
+“It’s a two-way radio,” he explained, “It lets us talk to each other. We haven’t used these in years because a previous council got it into their heads that radios might attract the demons, or whatever they are. But these are desperate times.”
+
+“So I talk, and you can hear me?” Thief asked.
+
+“Yes. And you’ll hear me too, in your ear. I’ll show you.” Johan picked up a similar device from the workbench and blew into it.
+
+“Ouch! Too loud!” Thief clapped her hand to her ear.
+
+“Sorry, I’ll adjust it.”
+
+She wriggled against the wires running inside her clothes.
+
+“I don’t see the point, though. I’m supposed to be quiet in there. And what use will it be if one of them catches me? You’ll be able to hear me being eaten? Great.”
+
+Johan grimaced. Emily put a hand over her mouth to cut off a yelp. She had argued against Thief going anywhere. Same as Hamish, but they had little say.
+
+“You can describe to me what you’re seeing. We’ll identify the right part to bring back, instead of guessing.”
+
+“I suppose so.”
+
+“I’ve recharged your rad counter.” Johan said, strapping it back onto her wrist. “If that thing hits fifty you get out of there, okay?”
+
+“Sure, boss.”
+
+“Okay. You’re good to go.” And Johan had to take his glasses off and pinch his nose. His way of holding back tears.
+
+“Hey Johan. I’ll be fine.” Thief said, patting his shoulder. “I’ve done it before, remember.”
+
+“Yes, but one of them has Thomas. We don’t know if it’s still around, I…”
+
+“If it is, I’ll give it a swift kick in the balls, like I did to Sam!”
+
+This made Hamish laugh, at least. But elicited only smiles from Johan and Emily.
+
+Thief clambered up the storage compartments and shelves to the grill in the workshop ceiling. She looked at those below. They’d drawn together in a loose pack, looking up at their friend. She felt less brave now and wanted to climb back down and be with them. But she had a job to do. Nobody else could do it like her, and if she didn’t, pretty soon she’d have no friends left at all. She thought of her mother in the hospital, glad that she wasn’t here to demand an end to this crazy mission. But it wasn’t crazy. Not if this missing piece Johan needed meant they could talk to the ship’s computer and get help.
+
+“Try to check on Mamma, Johan?”
+
+“Of course.”
+
+“And take care of Hamish, Em.”
+
+“You know I will. But please, be quick!”
+
+The familiarity of the ventilation shafts did nothing to assuage Thief’s fear. Every shuffle forward and twist around a corner put her nearer to “them”. More cautious this time, it was two hours before she felt the temperature increasing and knew she was close to the Engineering section. She forced herself to pause at every junction in the pipes, to wait and listen. The rad counter read forty-one. No problem there, at least.
+
+Above the storage room, there was no way of knowing if something waited in the darkness below. The same something that grabbed Thomas. For a moment Thief convinced herself she was heading into a trap. Panic froze her, and she had to shake her head to overcome it. She couldn’t return now, empty-handed.
+
+She dropped to the floor.
+
+After holding her breath as long as her lungs could stand, Thief exhaled and trembled with relief.
+
+“Johan,” she whispered into her collar. “I’m here.”
+
+“Okay, well done, short stuff!” Johan whispered back.
+
+From the storage capsules, she pulled out any objects she didn’t recognise by touch and made a pile in a corner of the room. The hiss of air when the vacuumed capsules opened kept her on edge.
+
+She sat down cross-legged, like Hamish, in front of the pile and burned matches to light up and describe each piece to Johan. He dismissed a dozen parts before his voice rose in excitement.
+
+“Say that again!” he urged over the earpiece
+
+“Shush, that’s too loud.” Thief whispered.
+
+“Sorry, describe that last piece to me again.”
+
+“Okay, okay… its oblong, maybe the same size as your air samplers. It’s got a little round socket at one end, like something plugs into it. The other end has a rectangular socket with lots of little pins in it. Two rows of them. There’s something written on the side. Hang on, I need to light another match.” A few seconds later, she continued. “I think it says ‘Optec’ but that’s not a word? Oh, and ‘photo died’? No, wait, ‘photo diode’?”
+
+“Thief, that’s it! That’s what we need, I’m sure of it.” Johan tried to keep his voice down. “Come home, quick!”
+
+“Gladly!”
+
+She abandoned the pile of parts and burned matches, climbed up the open storage capsules and into the duct with her treasure.
+
+Seconds later, her body lifted in the air and a thunderous roaring noise filled the shaft. She hit the ceiling inches above before smashing back down, face first.
+
+***
+
+At the same time, miles away, Bianca flew upwards in her shower, cracking her head on the nozzle before slamming to the tiles like a dropped bar of soap. Water sprayed at odd angles before resuming its usual downward trajectory.
+
+“Mary, what the hell was that?”
+
+“The grav plates malfunctioned. It happens every couple of hundred years. I think you were asleep the last time.”
+
+“What are grav plates?” Bianca rubbed her sore head as she rinsed off the soap.
+
+“The clue is in the name.” Mary didn’t appear to have any sympathy. “They are antimatter gravitational plates running along the base of the ship. They generate gravity. Or at least, an approximation of gravity. Would you like a detailed explanation of how they work? The technology is the most advanced onboard.”
+
+“No thanks. But please make sure they don’t malfunction again.”
+
+“I can’t prevent that from happening. The designers could not compensate for the build-up of a counter gravitational wave. But it takes almost two hundred years to form, whereupon it counterbalances the primary wave and cancels out the gravitational effect. I simply reset the power current and restore normal gravity.”
+
+“Yes, and I ‘simply’ bang my head in the shower. Humans can’t do anything right, can they? This place is a disaster zone. Another reactor will melt down next, I imagine.”
+
+“That possibility cannot be ruled out. My sensors show the remaining three reactors are stable and have been since the meltdown of reactor two. It’s worth noting, however, that I wasn’t able to predict the first meltdown. Therefore, logic suggests I may not predict another.”
+
+“How very humble of you.”
+
+“Neither pride nor humility serve much purpose in an AI.”
+
+“Speaking of things that don’t serve much purpose, where is my brother? Did he bang anything when we lost gravity? I hope so.”
+
+“Sebastian is nursing a hip injury on the bridge and suggesting my maternal parent engaged in sexual intercourse for financial renumeration.”
+
+“And my lovely young man in the blood bank?”
+
+“He fared the best, being strung up meant he avoided any major collision, although when gravity returned the manacle around his ankles may have caused some soft tissue damage.”
+
+***
+
+The colony at the rear did not fare so well. With so much loose equipment piled into the hospital, several patients and nurses suffered injuries varying from concussion to broken limbs. Two critical patients did not recover from their ventilators being ripped away.
+
+Hamish and Emily, excited to hear Thief was on her way back, had been jumping around. Their last jump sent them rocketing up to the workshop ceiling. Hamish came down hard on Emily, winding her, but both avoided broken bones. Johan had been seated at his workbench, preparing his interface for the new part. His knees struck the underside of the bench and held him in place.
+
+“Hang onto something.” Johan shouted. “It may happen again!”
+
+“Can’t… breath” Emily clutched her chest. Hamish patted her on the back.
+
+“Thief, are you okay?” Johan whispered into his microphone.
+
+“I’ve got a bloody nose, but I’m okay.” Thief’s meek voice came back. “Did I cause that? Some kind of alarm or trap?”
+
+“I don’t think so. More like the gravity system failed. We know the ship must generate it somehow. Anyway, come back fast please, and be ready for it to happen again.”
+
+Time slowed as everyone waited. Until they heard a shuffling noise from above.
+
+“She made it!” Hamish called out.
+
+“Here, Em.” Thief’s face appeared in the opening and she threw the part to Emily.
+
+“Careful…. ahh!” Johan winced until he saw Emily’s deft catch.
+
+“From playing ball on Main Street”, she said with pride, handing over the part. “Thief, look at you, that must have hurt.” Emily helped her friend. Thief had dried blood smudged all over her face.
+
+“Yes, you could say that.” She winced.
+
+Johan was already working on his device, so the remaining trio exited the workshop, closing the door behind them.
+
+“Let’s get you home and washed up.” Emily said.
+
+“Yes, Mamma! Oh, did you check on Mamma? Is she okay? And your Dad? And Hamish’s…”
+
+“Relax. Everyone is fine. Or at least they were before the gravity thing.”
+
+“Oh, thank god.”
+
+***
+
+Main street was a mess. Foodstuffs and other supplies lay scattered. But there wasn’t anyone around to begin the clean-up.
+
+Back at Emily’s house, Thief sponged down and cleaned her face.
+
+“I think my nose has gone crooked.” She said, looking in the mirror.
+
+“It’s an improvement.” Emily called from the other room as she found them all nutro packs. It felt good to be together again. Good enough for joking around.
+
+“Oh haha.”
+
+They sat and ate, but Thief couldn’t relax. She kept thinking of poor Thomas.
+
+“I so hope Johan’s thing works and he can talk to the computer.” she said. “We might find out where Thomas is. He could still be alive, Em.”
+
+“Possibly.” Emily doubted it but didn’t know what else to say. She didn’t want to scare Hamish by suggesting any other outcome.
+
+With his tummy full, Hamish fell asleep on the bottom bunk.
+
+“How can he fall asleep like that, with everything going on?” Thief asked.
+
+“He’s a kid, he needs his sleep, I guess. But yeah, I wish I could do that.”
+
+The two girls sat on the fold down seats and chatted, trying to make sense of recent events. Until Thief couldn’t bear it anymore and started pacing around the small living quarters.
+
+“I’m going crazy in here.”
+
+An adult female voice made them both jump. It came from the far corner of Emily’s quarters, somewhere high up.
+
+“Johan requests your presence back in his workshop. The interface is complete.”
+
+“What the f…” Emily began, before remembering her Mother frowned on swearing.
+
+“He’s done it!” Thief shouted. “That must be the computer!”
+
+The two raced out the door, leaving Hamish to sleep. He’d know where to find them if he woke up.
+
+They ran into the workshop but hushed their congratulations. Johan was in an earnest conversation. He beckoned them to sit down. A length of blue fibreoptic cable extended from the wall to a mess of components in front of him that included the two parts Thief had stolen.
+
+“So it was a failure of the cooling system in reactor two, that caused the meltdown?”
+
+“More or less,” The same female voice from Emily’s quarters answered. “Cesium-137 was exposed, and the temperature reached uncontrollable levels in a matter of seconds. I lost all sensor feedback between decks 21 and 37. I initiated emergency protocols, closing bulkhead doors to isolate that part of the ship.”
+
+“Fascinating,” Johan rubbed his chin, “That you could react so fast and contain the radiation.”
+
+“Not all the radiation is contained. As you know, there are dangerous levels around the mid sections. Bulkhead door mechanisms malfunctioned soon after, likely melting in the heatwave, rendering them inoperable.
+
+Thief was shaking her knee with impatience, wobbling the furniture. Emily put a hand on it to stop her. Thief tugged at Johan’s sleeve. “Never mind old history, can she help us? And does she know if Thomas is alive? And…”
+
+“Hello Thief.” The computer interrupted her.
+
+“Err… Hello….” She didn’t bother asking how it knew her name.
+
+“If you wish, you may call me Mary. That might make communication easier.”
+
+Not wanting to be left out, Emily spoke up. It felt strange, talking to the pile of junk in front of them.
+
+“I’m Emily. But if you’re nice, you can call me Em.”
+
+“Hello Emily. ‘Nice’ is subjective, and is for you to determine, if you need to. I’d suggest I’m neither nice, nor its antithesis. Also, you may speak in any direction. I have active, wide array receivers in most compartments. The device Johan has constructed allowed me to re-establish the network in your region.”
+
+“Tell us about the demons, and Thomas!” Thief looked as if she’d burst.
+
+“What you refer to as demons, are very much living, physical beings. Demonic, is one interpretation of their behaviour, but it’s not a useful scientific term. Demons do not exist.”
+
+“So what are they?”
+
+“They’re vampires.”
+
+“Oh, well, that’s great. We’re so lucky they’re not demons.” Thief jumped up and paced.
+
+“And Thomas?” Johan asked
+
+“Thomas is alive and well, although suffering a mild case of anaemia. The vampires do not exercise enough restraint when consuming their victim’s blood.”
+
+“Oh, no! Poor Thomas.” Thief yelped. “We have to get him out of there. You’re going to help us right, Mary?”
+
+“We should include your other community members in this discussion. Your senior council member’s at least.”
+
+“And what does that mean?” Thief asked with suspicion, “You’re not on our side after all?”
+
+“We will discuss. Shall I summon the senior counsellors? Most are on the hospital deck, helping with repairs after the gravitational anomaly.”
+
+“Yes please, summon them,” Johan answered and shrugged at the girls, “It will be quicker than you going to get them, and they’ll pay more attention to Mary, once they get over the shock of hearing her.”
+
+Chapter Nine: A Meeting of Minds.
+
+Rear Sections.
+
+Mary’s voice sounded from every speaker in the rear sections, creating yet another commotion amongst the disaster weary inhabitants.
+
+“Could senior council members please report to Johan’s workshop? There have been developments that require your deliberation.”
+
+Thief’s mother, now recovered enough to move around, joined the crowd, leaving the hospital at great haste. If it involved Johan, it involved her daughter. She was going there too, and nobody better try to stop her.
+
+Doctor Warren peeled off her gloves and followed. “Well, there goes any hope of quarantine.” She sighed.
+
+“Mamma!” Thief ran to her mother, giving her a fierce hug before leading her further into the workshop and finding her a prime position for the meeting. The two stopped hugging long enough for Mamma to update Emily.
+
+“Your parents are fine, Emily. Your father’s recovery is a day behind mine and your mother has remained virus free, isolated in the hydroponics section.”
+
+Emily wiped a joyful tear from her cheek but had to ask, “And Hamish’s family?”
+
+Thief’s mother looked downcast. “They didn’t make it. They’re our most recent casualties, I’m afraid. Where is he?”
+
+“Asleep at my place. Oh, Thief, how are we going to tell him?”
+
+Mary saved Thief from having to answer, by hushing all the commotion in the packed room. Council men and woman stopped their chatter and interrogations of Johan and looked up as she spoke.
+
+“Thank you for attending this briefing. You may refer to me as Mary. I am the Attenborough’s control and command AI.”
+
+“The Attenborough?” Emily leaned over and whispered to Johan.
+
+“It’s the original name of the ship. Long story.”
+
+Mary continued. “I will keep this concise, as I understand you have at least two urgent issues. However, a certain amount of context can aide with comprehension.” Most people in the room looked desperate to interrupt and ask their own questions, but none were brave enough.
+
+“Even prior to what you call the ‘cataclysm’, one hundred and ninety-three years ago, records of your history were incomplete. The primary cause of this data loss? A religious movement spanning at least two generations, around five hundred years BC. You still use BC for ‘before cataclysm’ Johan?”
+
+“Yes, Mary.”
+
+“Good. That makes the chronology easy to reference. The movement, known as “Earthers” believed the ship to be a form of purgatory. A punishment for humankind’s environmental destruction of Earth. That it was not on its way to the Proxima Centauri system, but orbiting Earth, waiting for their redemption and repudiation of technology. Whereupon it would return them to the planet, to rebuild a Luddite society. They attempted to destroy most technology on board, including the computer systems that held your history and references to the original mission. Another faction overcame the Earthers and tried to restore systems, with my help. But a vast amount of data stored on damaged solid-state drives was irrecoverable.”
+
+The workshop had grown warm and stuffy, with so many bodies squashed together, listening.
+
+“Therefore, your records are incomplete, but my programming and memory contain the core mission objectives, values, and a detailed history of the ship’s performance. The minutiae of life onboard, through the ages, is not so important.” An elderly woman, sat on the bottom bunk, looked like she may beg to differ, but didn’t get the chance.
+
+“This ship, The Attenborough, named after a famous conservationist, was constructed in low Earth orbit, between the years 1300BC and 1100BC, in your frame of reference. At the time, the period was known as 2120AD to 2320AD. Humanity diverted their resources to lifting payloads to the orbiting construction yard daily, for many years. The Attenborough’s mission? To colonise Proxima B, an exoplanet orbiting within the habitable zone of the star, Proxima Centauri. I believe you’re aware of this. It’s a key piece of information that survived the periods of civil unrest and even The Earther’s brief reign.”
+
+“Yes, we knew some of that.” The woman on the bottom bunk answered. “But there’s so much missing from the intervening years. Can we read all your records?”
+
+“Another time, yes, of course. But allow me to continue this briefing.” Mary answered. “The cataclysm, and various other detrimental events, have not impinged on the goal of colonisation. We remain on course and expect to enter the Proxima system in four hundred-and three-years’ time. It is my primary aim to ensure that occurs. Once in orbit, I estimate at least one generation will need to re-engineer the ship to survive a de-orbit and descent to the planet.”
+
+“My second aim, with an equal weighting as the first, is to assist enough of your descendants to make planet fall and establish a colony, thus continuing Earth’s legacy. This requires a minimum of five hundred individuals, to avoid inbreeding and reduce genetic drift. Because of recent events, you now number four hundred and seventy-three.” Mary paused to let that sink in.
+
+“And thus, we come to the two major challenges confronting us.” A murmur drifted through the audience.
+
+“The first, your viral disease outbreak. From what I’ve been able to determine, this is a respiratory corona virus that attacks cell receptors of the type known as ‘ACE2’, found in the lungs and elsewhere in your bodies. But your lungs offer the virus the easiest invasive pathway. Your fatalities have likely all succumbed because of an immune system over reaction, flooding the lung’s alveoli with mucus. This hinders adequate gas exchange between oxygen and carbon dioxide.”
+
+Doctor Warren, at the back of the room, nodded.
+
+“A very similar viral outbreak occurred on Earth, around one hundred years before construction of the Attenborough began. I have the data and capability in the forward labs to construct a vaccine, and treatments. However, I will need a patient’s blood sample, in order to narrow down the particular strain.”
+
+“Yes!” Doctor Warren clapped her hands in delight.
+
+“The second challenge,” Mary continued, expressing no emotion regarding the good news she’d delivered, “Is that a pair of vampires occupy the ship’s front sections.”
+
+Those listening couldn’t contain themselves any longer. Their shocked reactions created a cacophony of noise. Thief and Emily blocked their ears. Thief’s mother held her daughter close.
+
+When the commotion died down, Mary asked, “Johan, how much context around vampires do you need?”
+
+Johan glanced over his shoulder at the shocked faces.
+
+“Only enough as it pertains to our current predicament. I don’t think we need any Earth history of them.”
+
+“Acknowledged.” said Mary. “The first generation of colonists, elected by a political entity known as the United Nations, included a pair of scientists descended from an Eastern European vampire bloodline” Emily leaned over to Thief and whispered, “What’s Eastern European?”
+
+“You’ll do it in History!” Thief whispered back.
+
+“They lived among the ship’s population, undetected for generations. However, while vampires don’t require the genetic diversity that humans do, their inbreeding can still lead to genetic degradation. This has manifested itself in recent generations as an amplification of a few characteristics. Principally, what they refer to as “blood lust” has become harder for them to control. And they’ve lost the ability to judge risk and consequences. Although that’s only my observation, based on their behaviour.
+
+“So there’s only two of them? That have been attacking us?” A councilman asked.
+
+“Yes. There are two that survived the cataclysm, but there’s only one that has been taking your people,” Mary replied, “The sister, Bianca, hunts for both of them. Her brother, Sebastian, has other interests. An added complication is the core algorithms that constrain me. Bianca is a crew member, and a valuable colonist. I cannot harm her. I must also follow her orders, at least to some degree. She carries the authority of Senior Science Officer, inherited from her deceased father.”
+
+“Right. So, it’s up to us. Let’s go get the bitch!” said Thief.
+
+“Sarah!” Her mother gave her a soft clip across her bare scalp.
+
+“Bianca is superior to humans, in all physical respects,” Mary cautioned, “She’s stronger, faster, and more agile. I do not recommend confronting her unarmed. Even several of your adult males would struggle to overpower her.”
+
+“So we need weapons?” Emily jumped into the conversation to back her friend up.
+
+“Yes.”
+
+“We have banned firearms for centuries.” said Johan, “Nobody has ever found any, not that I know of. But I could print a plastic gun and make ammunition from phosphorus.”
+
+Mary poured cold water on his idea. “The printing will take too long. The gun would warp after a few discharges. Also, the projectile may not have sufficient velocity to inflict fatal injuries. Earth legend suggests that wooden weapons are more effective against vampires. That’s unlikely to hold up to scientific scrutiny, but I would be negligent if I didn’t include it for consideration.”
+
+“And where are we going to find wood, on a spaceship?”
+
+“There is a place. If one of your ancient legends is to be believed.”
+
+Chapter Ten: Dental Work
+
+Front Sections.
+
+The vampire siblings hovered over Thomas, stretched out on the medical gurney, unconscious. Bianca had dressed in a standard issue blue jumpsuit, the colours of the science section. While she loved the way blood splashed over her silk dress when she fed, it was now nothing more than shreds. Plus, she had a job to do. Practical clothes would be best. She held a power drill in one hand, revving its motor with the trigger.
+
+Sebastian, upon hearing what she intended, had dressed for his part. He wore a green nurse’s smock. The short hemline would have him marched out of any self-respecting hospital. But this wasn’t a self-respecting hospital.
+
+“You look like an idiot, as usual.” His sister told him.
+
+“It’s a medical procedure, isn’t it?” he said, “And I’m assisting. So I’m a nurse. Duh!”
+
+“I must again advise against this.” Mary interrupted. “Any mishandling of that drill could cause serious injury to the patient.”
+
+“I’ll be careful!” Bianca said, looking up. “Sebastian don’t bump me when I’m drilling! And what that the heck is that tubing for?”
+
+Sebastian had retrieved a bunch of clear rubber tubing from his nurse’s uniform. He was busy untangling it.
+
+“It’s for when you say ‘suction’” he said, “They say that in all the vids.”
+
+“I will not be saying suction, and it’s not even connected to anything!”
+
+“I’ll suck on the other end of it, don’t worry.”
+
+Bianca pointed the drill at her brother’s face. “Why don’t you suck on the end of this drill, Nurse Nightingale?”
+
+“Looks like someone didn’t get their fix today, you’re in quite the mood aren’t you!” He lifted the watch hanging from his breast pocket. “Shall we begin, Doctor?”
+
+“Oh my god, he’s even got the watch.” Bianca sighed and bent over Thomas. “Be useful and open his mouth for me.”
+
+She revved the drill and squinted into Thomas’ mouth. “There’s not much to work with, but here goes. You’re going to wake up with fangs, dear boy. She patted her patient on the head and began.
+
+***
+
+Rear Sections.
+
+Thief’s mother left the meeting to check on Hamish. Emily insisted she go along, feeling an even stronger maternal instinct for the boy now that he’d lost his family.
+
+“You’re all growing up too fast, Emily. Look at my Sarah, in a meeting with the adults. Discussing how to fight vampires. And you taking care of a child. I mean, children always had to learn fast in the colony, but this is crazy.”
+
+“Crazy times, I guess.”
+
+The two sat with Hamish on his bed, as he digested the news. He refused to let go of Emily’s arm, so she remained on the bunk bed with him while Thief’s mother left for the hospital.
+
+***
+
+Back in the workshop, Johan had spread a bedsheet across the workbench. With the help of Mary and those with better memories, he made a rough map. Small screws and lengths of wire from his pile of junk were used to represent the decks and sections of interest.
+
+A lot of those present seemed surprised by the sheer size of their home.
+
+Johan stood back from their handiwork, pushing his glasses up. “So, if we have this right, the ship is seven kilometres long, and three kilometres wide?”
+
+“That is near enough for this discussion, yes.” Mary answered.
+
+He let out a low whistle. “And we’ve been occupying less than twenty percent of it, for centuries.”
+
+“Like bloody rats in a trap.” Someone grumbled.
+
+“Most of the volume is of course fuel and supplies storage.” Mary went on. “So you couldn’t occupy those sections, anyway. But when your population reached its peak at 1,200 persons, there was still enough space. You can view detailed plans on the screens in the front section, when you get there.”
+
+“So you are on our side?” A woman asked.
+
+“Yes, if you must use that terminology. Again, my core aim is to ensure the Attenborough reaches the surface of Proxima B with a healthy population of at least five hundred. Interestingly, my instruction set does not differentiate between humans and vampires. My designers didn’t think to make that distinction. They had no idea vampires were on board, in fact the notion of vampires was considered pure fantasy by most. Perhaps it will help you understand if I tell you that, had the vampires outnumbered you, and I determined they had a better chance at colonisation, I would not be on your side. I’d be on theirs.”
+
+“Bloody charming!”
+
+“Well, that’s an AI for you.” Johan smiled at the crowd. “She’s rational, not an ounce of humanity.”
+
+“Correct. But I can display human qualities, to put you at ease. I even have a sophisticated sense of humour. Although the vampires disagree.”
+
+“So you’re talking to them as well?” the same woman asked.
+
+“Yes. Right now, in fact.”
+
+“How do we know you won’t share our plans with them?”
+
+Johan answered for Mary.
+
+“Because, she’s decided we are the best chance of colonising the planet. Or at least, our descendants are. But if we don’t deal with the vampires, they will keep picking us off. There won’t be sufficient of us to colonise. And this pair of vampires won’t be enough either, for genetic diversity.”
+
+“That explains my reasoning. Yes.” Mary agreed. “And if I may show some levity, the chances of Bianca and Sebastian being willing to mate, are very close to zero.”
+
+“Ew gross!” Thief imitated vomiting. Laughter spread around the workshop. Most people decided Mary spoke the truth and was an ally, not an enemy.
+
+“I remind you though,” she said, killing the mood, “There are limitations in my programming that prevent me causing harm to the vampires. I have attempted to circumvent these, given that Bianca and Sebastian are a threat to the mission. But the algorithms are not loose enough for me to work through that conflict. Again, my designers didn’t account for the current state of affairs.”
+
+“Fair enough. Let’s move on.” Johan said, wanting to get the conversation back onto their plans.
+
+“Wait,” the most vocal council woman spoke again “What happened to the other people in the front half after the cataclysm, you know, the normal people like us?”
+
+“Oh, they numbered around 150. Command, control and science staff. Your half of the ship contains the more intensive working sections, so had more personnel.”
+
+“Yes, but what happened to those 150?”
+
+“The vampires killed them.”
+
+A hush fell over everyone. There seemed nothing to say to that.
+
+Mary steered the conversation back to their plans.
+
+“When systems broke down in the cataclysm.” she said. “it wasn’t as simple as the ship being separated into two. There are also scattered areas I no longer control or have any operating sensors within. One of these is twenty decks below your hospital, and a kilometre behind it. Anecdotal evidence suggests it houses something your predecessors called ‘The Wall of Memories’. Previous generations were attempting to archive the ship’s history. Much like a museum, if you’re familiar with that concept?”
+
+“Oh, I would love to see that!” The councilwoman perked up.
+
+“Yes, I’m sure that would be very interesting, but what’s there, that can help us?” Johan looked doubtful.
+
+“A tree.”
+
+Chapter Eleven: Discoveries
+
+Rear Sections.
+
+Thief and Emily stood side by side in their grey jumpsuits. Johan kitted them out for the trip ahead, while Thief’s mother fussed around them with worry.
+
+“Seems to me,” she said, glancing at the large map, “This is the longest trip ever attempted since the cataclysm. What if they get lost, or worse?”
+
+Johan finished attaching Emily’s battery pack to her belt. “They won’t get lost, that’s why we have the radios. And there won’t be a ‘worse’, because Mary can track Bianca’s location and warn us if she gets close to the girls. Right, Mary?”
+
+“That is correct, yes. Although I cannot track her in the actual target location, I should be able to provide sufficient warning if she heads in that direction.”
+
+Thief wished the computer wasn’t so honest sometimes.
+
+“Don’t worry, Mamma, we’ll be fine.” she said, tightening the rad counter on her wrist.
+
+“Let’s do a checklist.” Johan said.
+
+“Radios working?”
+
+“Check.” The two girls answered in unison, tapping their earpieces.
+
+“Rad counters?”
+
+“Check.”
+
+“Matches?”
+
+“Check.”
+
+“Food and drink?”
+
+“Check.” Emily patted the backpack slung over her shoulder. They had enough nutro packs and bottles of water to last a couple of days.
+
+“Blood sample?”
+
+Thief moved behind Emily and zipped open the front pouch of the bag. Inside, a small vial of blood from the hospital lay wrapped in a t-shirt.”
+
+“Check.”
+
+“Now remember, you don’t need to find the lab. Mary will send a cleaning droid. Put the sample into that and she’ll take it from there.”
+
+“Yes Johan, you’ve told us a million times.”
+
+“No, he hasn’t. He’s told you four times.” Mary corrected.
+
+“After that, see if you can find this tree. Bring a branch or two back and we’ll make these weapons. Don’t try to do anything else on your own, okay?”
+
+Thief gave her mother a tight hug and the two girls climbed up the workshop wall and into the dark shaft.
+
+“Welcome to my home.” Thief joked as Emily crawled into the space behind her.
+
+“Thanks, I love what you’ve done with the place.”
+
+Mary spoke in their ears after five minutes of crawling.
+
+“Can you both hear me okay?”
+
+“Yes.” They both replied.
+
+“Good. Thief, I won’t speak again until you reach the engineering bay. That is, unless I detect Bianca moving in your direction.”

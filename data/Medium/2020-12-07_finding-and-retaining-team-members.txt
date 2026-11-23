@@ -1,0 +1,49 @@
+Finding and Retaining Team Members
+
+unknown
+
+With 11 million people unemployed, you would think it would be easy to find the team members you need. Not in the tech field, where the latest data tells us for every ten positions advertised this year, only six were filled. Finding the right technology talent is just the first step, of course. Companies have to also find a way to keep the people they already have by building a great culture and reskilling when necessary.
+
+Keeping talented developers on the team long-term is a scary proposition when you realize that every skilled technologist in your company is getting five or six calls from recruiters every week (maybe every day). How can your hiring team find and retain the best tech talent? What can you do in this kind of environment to keep moving forward even though it seems like there aren’t enough people to do the work these days?
+
+Finding Purple Squirrels
+
+Recruiters drive themselves nuts (pun intended) looking for purple squirrels. Right now, I’m looking for a Swift developer in our price range that fits our culture. My search takes me to LinkedIn, where I torture strangers all day, to northern Ohio bootcamps, and all the way up the east coast, trying to find the piece to fit our AWH puzzle.
+
+Despite these talent challenges, I see a lot of good news in the technology field right now. I’m pleased to share that there are hundreds of fledgling IT workers coming into the field. Bootcamps are busily giving birth to lots of “baby devs” — workers who are just learning the trade — and boy, do we need ’em. If all of these excited, energized people stay in the field and keep honing their skills, maybe the current talent shortage will someday feel like a barely remembered dream.
+
+Because right now, it’s kind of like a bad dream for a lot of tech recruiters out there.
+
+While you are probably receiving some applications for the technology jobs you have posted, the candidates you’re getting aren’t exactly qualified for these positions. ZDNet says, “The problem is that employers find it increasingly difficult to find qualified technology candidates even though there is an increasing number of applicants for several of the most-needed positions.”
+
+The current technology candidate pool is in that awkward adolescence between having no one qualified for the role and lots of people that are almost qualified.
+
+Come on, Baby Devs, learn faster!
+
+So, where does that leave us in our nutty purple squirrel hunt? I think there a few things you can do right now to improve the odds that your IT talent search will pay off:
+
+· Build your funnel for the long term by getting to know baby devs. These developers may be young to IT, but if they’ve been working for a bit they have serious soft skills. Taking the time to get to know them now will build your recruiting pipeline for the future. Also, give them a chance! We hire one junior developer per quarter and have a solid plan in place to nurture their growth. You should, too.
+
+· Learn to move more quickly. Revamp your stodgy recruiting process. How many good people applied to your company three months ago and never heard anything back from you? How many applicants get frustrated by your outdated application process and give up? Companies, especially big companies, need to go mobile-first and discard their old school recruiting processes that take way way way too long. Seriously, lighten up, people. Applying for a job shouldn’t be painful.
+
+· Don’t get too hung up on credentials. Some of the best developers I’ve ever met are self-taught. Look for aptitude for learning, attitude toward collaboration, and raw intelligence. Do they have a GitHub? What does their code look like? How about an app on the App Store? I’d take this in place of a two- or four-year tech degree, and maybe you should, too.
+
+· Get to know your developer community. Thanks to COVID-19, I don’t drive around town three nights a week going to MeetUps. I miss it terribly, and no, a Zoom isn’t the same. Sure, trolling a developer on LinkedIn is one way to build a network but that’s how everyone does it. It’s way past time to get up out of your recruiting chair and (for now, virtually) join the community you are recruiting from.
+
+All of these tips will aid you in finding top talent in the IT world. But once you’ve lassoed them in, how can you keep them?
+
+Keeping Your Purple Squirrels Satisfied
+
+If your average tenure for a developer isn’t five years or higher, you’re doing it wrong. Most developers hate the drama of switching jobs. If they leave, blame yourself for what was missing, whether it was a bad culture fit, or even a mismatch of job skills. No matter what happened, your hiring team should own the loss, learn from it, and do better next time.
+
+There have been at least a million articles written on team member engagement. Why? Because most companies do a lousy job at engaging their teams. You may cynically think that companies only care about engagement because it’s been correlated to a bottom-line impact. To put is simply; engaged workers make the enterprise more money. But really, that’s fine if it’s true. Whatever it takes to ensure businesses are paying close attention to the happiness of their workforce, that’s all that really matters. We can work with that.
+
+When I write about team engagement, I can’t help but think of Henry David Thoreau’s quote, “The mass of men lead lives of quiet desperation.” If your team (not just the men) count the minutes to quitting time every day, there is probably a desperate hole in their soul that your job just can’t fill.
+
+Maybe I’m just melodramatic (true), but I think the reason we have trouble engaging and retaining our workers is closely tied to cultural fit. If you feed your purple squirrels the delicious peanuts of meaningful, challenging work, a system of rewards, and even a mission, they will be more engaged, productive, and happy. If you create a culture around these tenets, and toss in a couple of tasty macadamias like work/life balance, your purple squirrels will stick around, noshing on this nourishing diet.
+
+The reality of looking to IT talent is this — it’s always going to be hard. But if you can create a destination workplace that takes good care of its teams, it will be much easier to fill up the seats on your bus with the right kind of knowledge workers.
+
+Looking for a great job in all the wrong places? Check out our careers page here.
+
+-Robin Walters, Career Developer at AWH

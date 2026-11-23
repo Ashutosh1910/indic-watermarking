@@ -1,0 +1,155 @@
+Here’s a Sketch Thing-y about the Google Chromecast
+
+Harrison F.
+
+The scene: A board room at Google Headquarters, 2013.
+
+The players: Caleb, an employee. Paul, his boss.
+
+Caleb stands in front of a projector screen. There’s a picture of a Chromecast device on behind him.
+
+Caleb: Thank you for joining me today. I am proud to present the latest technology for Google. This nifty little device is the future of content sharing in a user’s home. It’s called the Chromecast. Quite simply it allows the user to cast any content from Google Chrome to their tv.
+
+Caleb clicks a button and the next slide on the screen appears. A simple photo of a laptop computer sending a signal to a tv.
+
+Caleb: Once the device is hooked up to an HDMI port on a tv and the user sets up the software on their computer, all they have to do is press a little button in the upper right of a Chrome window and whatever is displayed in the Chrome browser is mirrored on the tv.
+
+Paul: Perfect! So if I am looking at my Gmail account and I press that little button, then my email will be displayed on the tv?
+
+Caleb: Correct.
+
+Paul: Of course, our users won’t want to display their email on a big tv.
+
+Caleb: Maybe around here they might!
+
+They laugh.
+
+Paul: No but seriously. If I go to YouTube and want to display an epic fail video at a party for all my friends, I just load the video in my browser and press the little button in the upper right corner?
+
+Caleb: No.
+
+Paul: No?
+
+Caleb: No. You have to press a dedicated button on the YouTube player bar.
+
+Paul: Can I see that button?
+
+Caleb: If you have the Chromecast software on your computer.
+
+Paul: Okay… Why can’t I just press the little button on the upper right?
+
+Caleb: If you try to cast a video that way it’ll be super laggy.
+
+Paul: If I try to cast…?
+
+Caleb: Correct. Cast.
+
+Paul: If I try to cast a video from YouTube by hitting the small button in the upper right of the Google Chrome window — as intended — it will result in a laggy video experience?
+
+Caleb: Correct.
+
+Paul: Why?
+
+Caleb and Paul share a moment of silence.
+
+Paul: Let’s move away from the Google ecosystem. One of the prime directives of creating this device was so users could cast content from Netflix, Hulu, and other video providers.
+
+Caleb: Absolutely. As long as the engineers at Netflix or Hulu decide to implement Chromecast support in their players.
+
+Paul: They have to add that code to their websites?
+
+Caleb: Of course. You can’t just press the little button in the upper right corner.
+
+Paul: Or else the Netflix video will be laggy?
+
+Caleb: Exactly!
+
+Paul rubs his eyes.
+
+Paul: What about mobile support?
+
+Caleb: I am so glad you asked. Yes, you can use your Android device to cast content to your tv screen.
+
+Paul: How does that work?
+
+Caleb: On your device — phone or tablet — you go to an app with Chromecast support.
+
+Paul: Which developers have to add to their existing apps.
+
+Caleb: Correct. You go to an app, like YouTube, you start the video, and then press the cast button. The content then is displayed on the tv with the Chromecast dongle.
+
+Paul: Why do you have to load the video first?
+
+Caleb: How else can you see the cast button beforehand?
+
+Paul: Can’t you code it so users can just cast videos without loading them first?
+
+Caleb: That would be a lot of work!
+
+Paul and Caleb share a moment of silence.
+
+Paul: Okay. I have my Android phone. I open YouTube. I find an epic fail video. I load the video on my phone. I then press the cast button. It’s on my tv. Now what?
+
+Caleb: Now you enjoy the video!
+
+Paul sighs.
+
+Paul: I’m enjoying the epic fail video video. I have to pause it. How do I do that?
+
+Caleb: You can press the pause button on the screen of the YouTube video on your device.
+
+Paul: The video is playing on my device as well as on the tv?
+
+Caleb: No. It’s just a black screen on your device. But there’s a pause button.
+
+Paul: Okay…
+
+Caleb: There are also controls in your notification tray.
+
+Paul: Why are there player controls in the notification tray?
+
+Caleb: In case your screen times out or you navigate away from the YouTube app while you’re casting the content.
+
+Paul: Wait. Once I’m casting a video from my Android device I don’t have to stay in that app to keep casting it?
+
+Caleb: No. Not at all.
+
+Paul: Okay… Once I am done enjoying the epic fail video how do I stop it?
+
+Caleb: Wouldn’t you want to watch the video in its entirety?
+
+Paul: Fine. Let’s say I have to stop casting the video for whatever reason. How do I do that?
+
+Caleb: In theory there are a few ways to stop casting from your Android device. You could press the stop button that is in the notification tray controls. You could pause the video and press the cast button again to stop it.
+
+Paul: Wait. Wait wait wait. Why did you say “in theory”?
+
+Caleb stares in silence.
+
+Paul: Caleb, why did you say “in theory”?
+
+Caleb: It’s just… Well… Sometimes you can’t stop the video.
+
+Paul: I’m sorry?
+
+Caleb: Under certain conditions it’s impossible to stop a video. The video will keep playing even if it seems like you’ve stopped it from your device.
+
+Paul: Can’t you fix it?
+
+Caleb: We’re not entirely sure how.
+
+Paul: What aren’t you entirely sure about?
+
+Caleb: What happens once a user decides to cast a video to a Chromecast.
+
+Caleb leans in to Paul.
+
+Caleb: We think it’s magic.
+
+Paul stands up and approaches Caleb.
+
+Paul: For the past year your team has been tasked with creating a device that will be able to play video content on a user’s tv. We wanted a device to unify the watching experience for a customer to view video content. What you’ve presented to me today is a system in which there are several conflicting, un-intuitive ways to use the product. You just admitted you don’t even fully know how the product works. What do you have to say to all of that?
+
+Caleb: The Chromecast will be $35.
+
+Paul: Congratulations! It’s perfect!

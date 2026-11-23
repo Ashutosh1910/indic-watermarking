@@ -1,0 +1,55 @@
+Alan Turing on Intuition and Human-Machine Computation
+
+Paul Austin Murphy
+
+What is a computation?
+
+According to Alan Turing (writing in 1936/7), when it comes to human beings, a computation is the following:
+
+A computation occurs when the human mind carries out a mental action according to a rule.
+
+The words above (which aren’t Turing’s own — exact — words) don’t mean that people know that they’re following a rule. (Therefore people don’t know what that rule is.) Human grammar, after all, is also rule-governed; though not all children — and even many adults — can formulate the grammatical rules they employ. Nonetheless, almost everyone still follows these rules. (This is similar to both the philosopher’s notion of tacit knowledge and Noam Chomsky’s theory of innate universal grammar.)
+
+It was said that computability is the mind’s following a rule. Well, Turing believed that this is usually the case. So does that mean that there can be computability (or computations) without the following of rules?
+
+More specifically, when machines (or computers) modify their own behaviour, is that an example of not following a rule?
+
+It’s certainly the case that computers can do things which weren’t predicted by their programmers (or designers). So does that mean that such computers aren’t following any rules? After all, they could be following new rules which they have (as it were) created themselves. So not following the programmers’ rules doesn’t automatically mean that computers aren’t following any rules at all.
+
+We can even say that such computers have genuinely learned (forget the semantics for now) something which wasn’t fed into them by their programmers (or designers). However, they may still be following rules. In fact the new rules may be the logical/mathematical consequences of the programmers’ old rules.
+
+That said, how does all this stuff about rule-following computers directly connect with the brains and minds of human beings?
+
+Alan Turing did think that the human brain is a machine… Or at least he thought that many — perhaps all — of the functions of the brain are that of a machine. Nonetheless, he also believed that the brain is so complex that it can give us the impression of not following a rule.
+
+Now it seems clear that it’s the complexity of the brain that generates only an “appearance” of the brain not following a rule (see here). So that basically means that even though the brain appears not to be following a rule, it may still be doing so. It’s just that the brain is so complex that the investigator — or even the (as it were) owner of the brain — couldn’t know all the rules which the brain is following. Similarly, the complexity of the brain may also generate the belief that it is an “indeterministic machine”. Yet if the brain were truly indeterministic, one could also question its status as a “genuine machine”. (Douglas Hofstadter, for example, seems to have believed — at least at one point in his career — that if a “machine” does go beyond the rules, then, by definition, it can’t actually be a machine — see here.)
+
+Following on from all this, does that mean that if the computer has learned something — or has created its own rules — that it’s displaying (or showing) what’s often called “genuine intelligence”? After all, the computer has gone beyond what the programmer programmed. It can be supposed that all this depends on the semantics of the word “intelligence” (as with the word “learned” earlier). If not following the rules of the programmer is a case of genuine intelligence, then the computer is displaying genuine intelligence. Nonetheless, is not following the rules of the programmer really genuine intelligence or is it something else? In that case, what exactly is it?
+
+Intuition
+
+So what is intuition?
+
+It depends on how the word is used and in which context it’s being used. In Alan Turing’s case, we (or mathematicians) use our intuition when seeing the truth of a formally unprovable Gödel sentence. That’s because Gödel sentences can’t be proved. Nonetheless, they’re true and they’re taken to be true.
+
+How do we know they’re true without mathematical proof?
+
+According Kurt Gödel himself, it’s through the use of human intuition (see here).
+
+And if a Gödel sentence can’t be formally proved, then it can’t be shown to be true through “mechanical” methods. Again, it can’t be proved because proof is deemed to be a mechanical process (at least in this respect).
+
+Another way of looking at intuition is with another of Turing’s ideas: the “oracle”.
+
+In the case of a Gödel sentence, the mathematician (or the oracle) simply “has an idea” that the Gödel sentence is true. That is, he doesn’t use a mechanical method to establish its truth. He has an idea (or an intuition) that it is true. This hints at the brain (not the mind) working in ways which are way beyond conscious thought. That is, intuition is a result of the brain (not the mind) indulging in unconscious processes.
+
+You may now ask how something can be established as true — especially in mathematics — without proof. You may also ask how truths can be established — especially in maths — only on the flimsy basis of a mathematician’s (or even of hundreds of mathematicians’) intuition or his simply “having an idea”.
+
+Computer scientists — and the philosophers of mind who focus on computer/brain comparisons (or who even see the brain-mind as a literal computer) — will like Turing’s conclusion (of 1945/6) that algorithms are enough to account for all mental activity. Bearing in mind the previous comments about intuition, Turing believed that algorithms also encompassed non-mechanical intuition.
+
+Just as intuition follows algorithms (therefore rules), Turing believed that what he called “initiative” didn’t require uncomputable steps either. In other words, both human and computer initiative is also a mechanical process. (That would make the idea of computer’s showing initiative less problematic for the simple reason that what it’s doing is still a computable — or mechanical - process.) However, as stated earlier when it was mentioned that computers may go beyond the rules (or programmes) created by the programmer, even if a computer departs from the computations which were programmed by the programmer, it would still be following a (new) rule, indulging in computations, or following mechanical processes.
+
+Indeed — what else could a computer (or machine) be doing?
+
+Another way of looking at a computer’s — or a Turing machine’s — ability to follow its own rules (or to show initiative) is for the programmer to engineer an element of randomness into the computer (or into the programme). That was what Turing did with his Manchester computer of 1948/50. That means that such randomness is deemed to (as it were) bring about intuition (or initiative). However, it would still be intuition (or initiative) that’s grounded in computation or in mechanical processes. The randomness, therefore, would simply be a result of the computer not abiding by the programmer’s rules (or programmes). It wouldn’t — or doesn’t — mean that the computer has gone beyond rules or computations.
+
+[I can be found on Twitter here.]

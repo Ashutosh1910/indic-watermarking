@@ -1,0 +1,31 @@
+How I became a developer in Japan
+
+Hyun Sung Kim
+
+Hi there! I’m Kim, a front-end developer in Japan. It’s been around almost 2 years since I came here and working at my company ZEALS.
+
+I decided to write about my own story just because I can’t really think of any good technological stuff to talk about at this point(sorry!). And I also think how I became a developer in a different country might interest some people!
+
+Midtown Manhattan, 2017
+
+Briefly introducing myself, I’m from New York and I used to be working as a graphic designer before I came to Japan and what I mostly did was UI /UX design and 2D, 3D graphics, and video editing. When I first came to Japan, I was looking for a designer job and fortunately, I could get a job at the company where one of my friends was working at that time in Tokyo. I was hired and started working as a graphic designer and what I basically did was making some 2D graphics such as banners and popups for our client’s product advertisement for the first three months.
+
+One day, there was a project that changed my entire career and the future. I joined the project which required me to do some new UI design for our new product to release in public(though, this project was canceled). I started working very closely with our front-end team and I just naturally started having interests in the development field. And started helping CSS for the project was the first step of my new career. I was very fortunate that I had some experience with mark-up languages such as HTML and CSS from school and my previous job.
+
+My first time on TV for 1.5 seconds https://abema.tv/
+
+Speaking of my previous development experiences, I had a chance to do some web publishing work for an institution to build an educational web application in New York. After that project, I was able to build a very simple static webpage by using HTML and CSS only. However, still, I had zero experience in advanced programming languages such as JS or PHP at that time.
+
+Going back to the main story in Japan, I wanted to know more about front-end development because I thought I could be more helpful for something related in the team. In addition, the team mainly used English at work(it was a huge point) so I just casually sent a message to our front-end team leader Aaron that I want to learn more about development. And it changed my future.
+
+I said “programming” because I didn’t know what to learn
+
+It was possible because of our unique company culture I would say. Everyone basically could try what they want to do and the company supports that decision(it’s probably not so normal I believe?). Of course, I also tried learning extremely hard everyday to catch up on basic skills and knowledge that I need to know for work at least. Because of my lack of programming knowledge and skill, it was actually quite tough at the very beginning for sure(well, still probably…).
+
+However, there is another cool culture which is helping each others and improving ourselves together in our team. Every single member of my team has always been helpful and willing to teach me everything seriously. We often do some code challenges together as well as study-group in the team. It makes me learn faster and enjoy development because showing my own project to the other members and getting feedbacks from the study-group is really fun. And guess what, now I am working 100% as a front-end developer here. I still very much appreciated what my team members did for me.
+
+Front-end Gang from Zeals
+
+Now I think that the decision that I made was right. I love being a developer a lot more than I was and what I’m doing now is getting more and more excited, though there are still so many things that I need to learn(literally, it never ends..). But someday in the future, I hope there will come a day that I am writing my second article with the title called “How I became a full-stack developer”.
+
+P.S We are hiring right now!

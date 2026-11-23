@@ -1,0 +1,49 @@
+A great collection of practical books for Electrical engineering students
+
+Aboud Ink
+
+According to THETAB, electrical engineering is the 4th hardest and important major among many college majors. it is easier than chemical engineering but harder than physics, with this being said preparing with the right materials is essential and time-saving considering how faster this industry is growing.
+
+These books below are well-oriented in nowadays technology and will help you to strengthen your skills in addition, acquiring a broader understanding of electrical engineering in your future, and the sooner you start the better.
+
+we divide the collection by levels from the easiest to more sophisticated ones, starting with :
+
+level 0: Teach Yourself Electricity and Electronics :
+
+Teach Yourself Electricity and Electronics, Sixth Edition (Teach Yourself (McGraw-Hill))
+
+this book is for Since the concept of electricity and its functionality can be ambiguous at first, I highly recommend starting with this book first, either right before you start college or during your summer vacation, it is fairly easy and helpful.
+
+level 1: Electronic Devices and Circuit Applications :
+
+Fundamentals of Electronics Book 1: (Electronic Devices and Circuit Applications)
+
+this book will help you get familiar with all common passive elements of linear circuit-analysis (resistors, inductors, capacitors, and transformers) as well as the idealized linear active elements (independent and dependent voltage and current sources).
+
+level 2: Amplifiers Analysis and Design :
+
+Fundamentals of Electronics, Book 2: Amplifiers Analysis and Design (Synthesis Lectures on Digital Circuits and Systems)
+
+provide a good foundation for further study of electronic circuitry. Analog amplifiers constitute a major class of electronic circuitry and are a primary component in many applications. While it has been shown that electronic devices are basically non-linear, amplifiers typically operate within a region of incremental linearity. it is a region where small variation in the input produces linearly amplified variation in the output. Analysis of such systems uses the principle of superposition: DC (or bias) conditions are separated from the AC (or variational) components of the input and output of an amplifier. e term ”small-signal analysis” refers to the use of linear models. ”Large-signal analysis” implies operation near the transition between operational regions of an active device: such large-signal operation is typically non-linear and leads to distorted amplification.
+
+level 3: Active Filters and Amplifier Frequency Response :
+
+Fundamentals of Electronics: Book 3: Active Filters and Amplifier Frequency Response (Synthesis Lectures on Digital Circuits and Systems)
+
+the purpose of this book to explore the variation of circuit behavior over the entire range of frequencies. In addition to exploring frequency dependence, the time domain equivalence of these effects is explored. A review of the characteristics of ideal filters and frequency response plots leads to the design of active filters. Active Butterworth and Chebyshev filter design is discussed in this section using OpAmps as the active circuit elements. Discussion of passive filters and filters with other active elements is saved until the chapter in Book 3on communication circuits. 
+
+level 4: Oscillators and Advanced Electronics Topics :
+
+Fundamentals of Electronics: Book 4 Oscillators and Advanced Electronics Topics (Synthesis Lectures on Digital Circuits and Systems)
+
+In this final book of this work focuses on four significant branches of electronic circuitry that are not necessarily in the direct path taken by the three previous books, Each is particularly significant in its own right. The discussion here provides an introduction to these specialized topics:
+
+• Oscillator discussions focus on both linear and non-linear oscillators.
+
+• Power circuit discussions focus on DC power.
+
+• Communication circuit discussions focus on high-frequency operation and the frequency translation of signals.
+
+Digital circuit discussions focus on the non-linear operation of digital gates and the speed at which they operate.
+
+All these books mentioned here are from many years of research and experience, for all those who took the time to read this article I would like to encourage you to study electrical engineering is becoming one of our essential industries out there, thank you!

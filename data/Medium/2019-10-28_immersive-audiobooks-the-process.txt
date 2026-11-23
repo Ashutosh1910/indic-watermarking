@@ -1,0 +1,61 @@
+Immersive Audiobooks: The Process
+
+Sarah Callison
+
+The opening line of the novel, The Woman in White, reads: “This is the story of what a Woman’s (sic) patience can endure . . .” When I listened to the LibriVox audiobook of the novel, I thought, “This is an audiobook no user’s patience can endure . . .” Okay, that’s a little dramatic, but some aspects of my user experience did try my patience a little. There was room for improvement to the cover design and the metadata.
+
+PURPOSE
+
+The cover art used by LibriVox didn’t seem to convey much of the story’s meaning. The design could be cleaner and more modern, and there was no art for the individual chapters. To improve on what they created and provide an immersive experience, my goals were to create meaningful cover and chapter art and add metadata that would provide critical information and enhance the experience.
+
+BACKGROUND
+
+First, a little about the novel. The Woman in White is a romantic mystery. Originally published in 1859, the story’s main character, Walter, is said to have been the inspiration for the illustrious Sherlock Holmes. The story boasts intriguing characters that show determination, grit, and loyalty and the happy ending would make any romance-lover sigh.
+
+But to get to that happy ending, the characters go through a gamut of experiences. The story begins when a young, poor art tutor named Walter, and his young, rich student named Laura, fall in love. On his way to Laura’s estate, Walter meets a woman dressed all in white. It becomes clear to him that she is suffering from some kind of mental disturbance. When he sees Laura for the first time, she too is dressed all in white, and Walter is struck by the resemblance between the two women. Walter and Laura’s sister, Marion, identify the woman in white as Anne Catherick, harmless and developmentally delayed. To Walter’s horror, Anne is captured and confined in an insane asylum by the baronet, Sir Percival Glyde.
+
+Laura and Walter are then separated by Laura’s promise to her dying father to marry Glyde. Walter leaves heartbroken and concerned by Glyde’s connection to Anne Catherick. She claims to know a secret that would disinherit Glyde. Laura and her sister soon discover that her marriage to Glyde was a ploy to get her inheritance. When Laura refuses to sign over her estate, Glyde mistreats her. Meanwhile, Anne, who has fallen seriously ill, escapes from the asylum. Marion too falls ill and is delirious with fever. When she regains consciousness, she hears of Anne’s recapture and Laura’s death from Glyde’s servants.
+
+Marion enlists Walter’s help to solve the mystery of Laura’s death and to bring Glyde to justice. When they visit Anne at the asylum, who should they find, but Laura imprisoned in Anne’s place — the resemblance between the two and Anne’s death enabling the deception. Laura’s recovery is depicted as painful and lengthy. In the end, they learn Glyde’s secret and he is discredited. Laura is reintroduced to the community who attended her funeral, and Laura, Marion, and Walter live happily ever after.
+
+STRATEGY
+
+The original cover art (left) and the redesigned cover art (right)
+
+Cover and Chapter Art
+
+Instead of designing a typical romance novel cover, I wanted to create something that pulled the user into the mystery, tragedy, and eventual triumph of the characters. Glyde tries to steal Laura’s identity and almost succeeds, but Laura is stronger, and Walter is braver and more determined than Glyde anticipates. The black eyelashes and nose against a white background represent the book’s title — a woman in white — and how Laura fades under Glyde’s treatment but refuses to disappear.
+
+Since this is one of the first known detective novels, I used a magnifying glass in the chapter art and enlarged the part of the number that was under the glass. As it was written, the novel is told by several narrators in a total of 38 chapters. To make this project more manageable, I only used the first ten chapters. For the user’s clarification, I included the chapter narrator’s name on the chapter art.
+
+Chapter 1 Art
+
+Audiobook
+
+I used Splasm’s Audiobook Builder (AB) software to package the audio files from LibriVox, the cover and chapter art, and metadata into m4b audio files. This software provides the option to compile the audio files into one, longer m4b file or an individual m4b file per chapter. I tested both options and it made the most sense to create individual chapter files. This way, I could add individual chapter art, and jump to specific sections of the story more easily as I listened.
+
+A screenshot of the chapters menu in Audiobook Builder
+
+After chapter files are formatted, AB provides build options such as quality level, file format, and breaks between parts or files. The LibriVox files already have a short stretch of silence recorded at the end of each chapter, so I didn’t need to add additional breaks between the files.
+
+A screenshot of the build options in Audiobook Builder
+
+AB allows you to add limited metadata to the audiobook, but I modified most of the information in iTunes. Many of my audiobook users likely enjoy classical literature, so I wanted to include the original publishing date and the fact that this novel inspired Sherlock Holmes. I found that fascinating and if such a “successful” character was inspired by this novel, it must have a lot to offer readers, right? For romance fans, I included a brief overview of Walter and Laura’s story in the “Description” section. I changed the name of the chapter author to the character narrator, such as “Walter” or “Marion.”
+
+A screenshot of the metadata options in iTunes
+
+TESTING
+
+Testing the audiobook was both enlightening and underwhelming. Enlightening because I understood more clearly the importance of testing and how it flushes out problems. Underwhelming because the perfect audiobook I had envisioned was not perfect when I came up against limitations.
+
+I also learned more about how to pick my battles — which limitations couldn’t be changed realistically. When I tested my audiobook on an Android phone, I downloaded an app called Smart Audiobook Player as my files weren’t compatible with the Audible app and my phone isn’t compatible with iTunes. The interface for this app uses white interaction buttons. Against the white background of my cover art, the buttons are difficult to see. I thought about modifying the cover art, but it worked great in iTunes on my PC and iPad. Using a modified cover in these apps would take away from the experience I had planned, so I accepted the fact that listeners using the app I used would have a less than optimal experience.
+
+A user’s view of the Smart Audiobook Player
+
+When I imported the m4b files into iTunes, the chapter art that I added in AB didn’t transfer. I updated the chapter art in iTunes, and it worked for chapters 2–10. Whenever I added a new photo for chapter 1, the cover photo changed as well. If I added a new cover photo, the chapter 1 photo changed. I tried rebuilding my audiobook using different options (for over 30 minutes) but always encountered the same issue. There wasn’t an audio file for credits at the beginning so that may have been a contributing factor.
+
+Some problems that I identified during testing were easy to fix. Originally, I included additional information about the chapter in a smaller font, but the text was difficult to read in the chapter thumbnail on my laptop. I simplified the image to include only the chapter narrator’s name. When the m4b files loaded in iTunes with the narrator’s name, Tony Addison, in the author field, I changed it to “Wilkie Collins — read by Tony Addison.” It would be interesting to see with further testing if users think this is too long.
+
+TAKEAWAYS
+
+One of my first thoughts about this project was, “Cool. If I have to do this at my job, I’ll know what I’m doing.” An accurate revision of that statement could be, “Cool. I need to practice more to feel comfortable doing this on the job.” I learned a lot about audiobooks, but the most important thing I learned was how testing and iteration can improve the design. Each time I tested, more problems came up or I got confirmation that I’d fixed the problems. With each iteration, my audiobook got better.

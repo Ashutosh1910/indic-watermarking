@@ -1,0 +1,47 @@
+Probability Interpretations and their Criticisms
+
+Ganna Moharram
+
+“Probability is the most important concept in modern science, especially as nobody has the slightest notion what it means.” — Attributed to Bertrand Russel
+
+Probability theory is a well developed field of mathematics. Its definitions and results apply equally well no matter the interpretation. This is the beauty of rigid mathematics, the logic must be internally consistent. However, the interpretation of probability is a subject of much controversy. No single interpretation is agreed upon by all persons or institutions of authority. This provides the opportunity for an interesting philosophical discussion.
+
+Three of the most common are the frequentist, classical and subjectivist interpretations — all with their fair share of criticisms. Let’s dive in!
+
+Frequentist
+
+A frequentist will tell you that probabilities are the relative frequencies with which the outcomes of a process repeated a large number of times under similar conditions occur.
+
+This is the way we often intuitively think of probabilities; especially when we think of the prime example of probability applications — rolling a dice. However, looking closely we observe some ambiguity which is undesirable for a formal definition.
+
+For one, it is not clear what is meant by a “large number” of repetitions. According to our experience the observed relative frequencies fluctuate. At what point that fluctuation can be ignored is unclear. Only an infinite limit would eliminate fluctuations, however, that is not practically achievable.
+
+Additionally, what exactly counts as “similar conditions” for a repeated process is not well defined. We cannot stipulate exact same conditions. For deterministic processes with a low number of degrees of freedom, which many of the problems of interest are, exact same starting conditions would mean getting the exact same outcome each time. So there does have to be some random element involved. To what extent is unclear.
+
+Lastly, talking about the frequency of an outcome only makes sense when repetition of the process can occur. But that is not always the case. Talking about the probability of the outcomes of a future election for example is done with the understanding that the process will only take place once.
+
+Classical
+
+The classical interpretation assumes that all outcomes of a process are equally likely and assigns each of n possible outcomes of a process the probability 1/n to fulfill normalization (a sum of one).
+
+The obvious issue is the circular definition. A probability is assigned by making a statement about the probability being “equally likely”.
+
+Another issue is the disregard of processes where the outcomes aren’t equally likely. It is not the case, that a well trained and an untrained person have equal probability of winning a race.
+
+Subjectivist
+
+Subjectivist, personalist or Bayesian probability represents a person’s degree of belief based on his information and judgement that an outcome will occur.
+
+In this context, we speak of subjective probability as opposed to “true” probability. In the case of no information we might see no reason to distinguish between the outcome and assign equal probability. In the case of information we might take past frequencies into account. Either way, it is a matter of subjective preference.
+
+If people were consistent in their translation of information and judgement into their degrees of belief in an outcome this subjective probability could be uniquely determined and thus formalized. However, that is widely unrealistic.
+
+Furthermore, the absence of a true probability leaves scientists with no objective basis with which they can arrive at a mutual evaluation of their state of knowledge regarding a subject of common interest. The conclusion drawn from experimental data would be to a certain extent a subject of personal preference.
+
+Summary
+
+As we can see, the interpretation of probabilities is a difficult and thought provoking topic with great implications for science and decision making. As usual, mathematical theory does not provide us with interpretations but a string of implications. Maybe there is no one universal interpretation that holds true for all cases, but there should remain some flexibility according to the specific situation.
+
+References
+
+[1] M. H. DeGroot, M. J. Schervish, Probability and Statistics 4th Edition, Addison-Wesley, 2012, ISBN 0321500466

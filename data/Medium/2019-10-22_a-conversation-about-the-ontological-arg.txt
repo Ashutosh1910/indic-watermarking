@@ -1,0 +1,39 @@
+A Conversation about the Ontological Argument
+
+Tom Bell
+
+Following the response from Kirk, I feel satisfied that I had misunderstood the definition of a possible world. Here’s how Dr MacGregor explains it:
+
+The ontological argument indeed starts with the assumption that it is possible that God, understood as a maximally great being, exists. If it is possible that God exists, then by definition there is a possible world in which God exists. You’re first wondering if God (or anything) can possibly exist in a possible world as opposed to actually existing in that possible world. The question is impossible to answer as stated because of the way possible world semantics works.
+
+And then Kirk hit the nail on the head for me:
+
+“Since a possible world is a complete description of the way reality could be, any given entity is either part or not part of that description. Hence something either does or does not exist in a possible world. Those are our only two choices.”
+
+He continues:
+
+Strangely but truly, an entity neither possibly exists nor actually exists in a possible world. If the entity just possibly existed in a possible world, then we wouldn’t know if it was part of the description. If the entity actually existed in a possible world, then we’d be committing ourselves to the accuracy of the description, which we don’t yet know. So we have the idea that a maximally great being is part of one complete description of the way reality could be. But if that being is maximally great — and it’s greater to be part of every complete description of the way reality could be rather than simply one description — then that being is part of every complete description of the way reality could be. Since one of these ways is the way reality actually is (the actual world), then a maximally great being exists in the actual world. Notice that this reasoning does not rely on the actual existence of multiple possible worlds, which is self-contradictory on possible worlds semantics; only one possible world (complete description of the way reality could be) can be the actual world (the way reality actually is). Accordingly, once we define “possible world” as philosophers do (and philosophers, myself included, are weird), then your queries can be solved. Please feel free to write back with any follow-up questions.
+
+What’s so great about necessary existence?
+
+I then wanted to know a bit more about what the idea of a ‘maximally great being’ constitutes and the kind of argumentation that’s necessary to arrive at a justifiable definition of what contributes to this kind of ‘greatness’.
+
+Here’s how I approached it with Kirk:
+
+As you appear to be saying, this argument relies on it being a property of a maximally great being to necessarily be a part of every complete description of the way reality could be rather than part of simply one description. However, how can it be shown that a property of a maximally great being that actually exists (namely, the God the argument intends to prove actually exists) is necessarily to exist in a possible world? Surely a maximally great being is only necessarily required to exist in an actual world? In other words, it seems paradoxical that a property of a being in existence is necessarily something less than actual existence — namely existence in a possible world (possible existence).
+
+Dr MacGregor then responded by explaining the way in which necessary existence is an attribute of a maximally great being:
+
+You write, “Surely a maximally great entity is only necessarily required to exist in an actual world.” I say, quite the contrary! I don’t think you grasp the implications of your assertion. For if your assertion were true, then God would not have to exist in a world that were slightly different than the actual world, which seems preposterous. To explain why, suppose it had snowed this morning in Kansas, where I live (it didn’t). That would be a different world than the actual world. But if a maximally great entity is only necessarily required to exist in the actual world (there’s only one, namely, ours), then atheism would be true had it snowed this morning in Kansas! Rather, for a being to be maximally great, it would need to exist no matter what the true description of reality is. For the law of non-contradiction to be a law of logic, it needs to hold under every description of reality (i.e., in every possible world). For the axioms of arithmetic to be mathematical laws, they need to hold under every description of reality (i.e., in every possible world). So it seems no less plausible that for a being to be maximally great, it needs to exist under every description of reality (i.e., in every possible world). Any being that would exist only under some but not all descriptions of reality is a contingent being, not a necessary one. And the very concept of God is one of a necessary being. So in answer to your question, “how can it be shown that a property of a maximally great entity that actually exists (namely, the God the argument intends to prove actually exists) is necessarily to exist in a possible world?” I think simple reflection on other entities like the laws of logic and mathematics accomplishes the demonstration. You write, “it seems paradoxical that a property of an actually existing entity is necessarily something less than actual existence — namely existence in a possible world (possible existence).” I don’t think this is paradoxical at all. Take, for example, me. One of my properties is to possibly exist. For if I couldn’t possibly exist, I couldn’t actually exist! So anything that actually exists must have as one of its properties possible existence. Simply put, actual existence presupposes possible existence; actual existence includes as one of its component parts possible existence. So for a maximally great being (unlike me), it must have unconditional possible existence, which logically implies actual existence. As a philosophy professor, I know this is a tricky argument! You’re doing much better than most of my students. So let me know if there are any outstanding issues I need to clear up.
+
+I’m not sure I fully agreed with Kirk’s initial statement that “if your assertion were true, then God would not have to exist in a world that were slightly different than the actual world”. Indeed if God does exist in the actual world, then he exists in all actual worlds. Yet the set of actual worlds will (presumably) always be a subset of all possible worlds, and why should it be necessary for maximal greatness that one exists in possible worlds that do not actually exist? Indeed what would that even amount to?
+
+I would have liked to probe further here, but I have spent far too many hours going around in circles during discussions of philosophical matters that I recognised I must move on.
+
+Is it possible that God does not exist?
+
+I had a feeling I was missing something (it turns out I was), but thought I’d try to be clever.
+
+I know how cyclic these conversations can get…so one final question if I may? Could it be argued that it is possible that God does not exist and there is therefore a possible world in which God does not exist. Therefore, even if it were the case that, if it is possible for God to exist he would exist in every possible world and therefore in the actual world, that therefore it is not possible for God to exist in any world, since there is a possible world in which he does not exist?
+
+For some reason I felt it necessary to rephrase my question in another 3 ways.

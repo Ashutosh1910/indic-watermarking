@@ -1,0 +1,25 @@
+What To Watch
+
+Claire Mccleskey
+
+In the streaming age, there are more options than ever for movie nights. An issue I’ve heard many of my friends and family face is that it is that much harder to decide on a movie to watch because of the overwhelming number of choices. For my final project at Flatiron, I wanted to create something that would help make that decision process easier. To do so, I surveyed people about the things that are most important to them when looking for a movie. Overall, I found that people could often only narrow it down to the genre of movie they wanted to watch. The details that mattered most to them when making a decision were an interesting description of the plot and — most importantly — that it was available to stream easily. Overwhelmingly, people were more likely to watch a movie if they had heard positive things about it from another person. I based the functionality off of this research to create an application that takes user recommended movies and allows users to sort recommendations based on genre. When viewing the list of recommendations, the user is provided with a plot description as well as the name of the streaming service where it is available.
+
+An Overview of the Stack
+
+Before we dive into the details, let’s take a look at the different technologies used to make the application:
+
+What to Watch relies on an API built with Rails as its backend.
+
+built with as its backend. The frontend was built using the JavaScript library React and uses Redux for state management.
+
+and uses for state management. For styling the user interface beyond what React provides, I used Material UI.
+
+Creating an API to Store the Data
+
+Since What to Watch is reliant on user submittable data, a place to store that data is one of the most important parts of the application. For this, I decided to build my own API using Rails. While there are existing movie APIs out there, none seemed to have exactly the information I wanted. I chose to use Rails because it keeps things simple when creating a backend and is easy to connect to using React. For this project, in particular, I found I only needed one table. I created a movies table with columns for each field I knew I’d want to be displayed to the user: title , description , genre , and streamer .
+
+Adding A Recommendation
+
+To allow users to make recommendations to be added to the backend and displayed to other users, I created a submission form as a component. I used text area fields for the title and description entries. However, I decided to use a drop-down selection for both genre and streamer as I wanted to ensure users only selected from the list of supported genres and streaming services. Above the code for the form itself, I set the state to equal an empty string so that the state of the fields starts empty before a user inputs anything. I also created two functions — one to handle changing the state and one to handle submitting the form. The first sets the state so that the field in question is set to the value of what the user has entered. In other words, if the user types “Harry Potter” into the title field, the state of title would be changed to Harry Potter:
+
+To make this work, we set the text field’s value to {this.state.title} and give it an onChange of {this.handleChange} . The handleSubmit() function, unsurprisingly, handles what happens when we submit the form. It references an action I created — this action uses fetch with a post method to add the movie, pulling from our recently changed state, to our database.

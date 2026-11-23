@@ -1,0 +1,41 @@
+Indian mythosophy: A reconnaissance
+
+Parikshit Sanyal
+
+In contrast to the theoretical, abstruse development of Western philosophy, much of the philosophy of the orient has been handed down in the form of stories and fables — stories about men and women, angels and demons, God(s) and Devil(s) (deities are are always plural in Hindu theology) . Some of these stories are based on the lives of real people, with an always-proportionate dose of artistic liberty; some are pure flights of fancy of imaginative minds. But even in their most unreal, these stories convey insights and ideas so radical, so incisive, that it is difficult not to consider them philosophy.
+
+A mural from Sun Temple at Konark, India (From Mohamed A., CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons)
+
+Now, to be accurate, mythology is not exclusive to any particular civilisation: all ancient civilisations have accumulated tons of colorful myths, folklores and parables (Greece and China come to the mind right away). However, one would really have to be hard-pressed to find remnants of Greek mythology in the daily lives of modern day Europeans. Too much has changed, too often battles fought, too many tales lost.
+
+India, on the other hand, in spite of a series of political turmoils (in cycles of about 400 years), has largely preserved the mythologic stock; for most of its history, the myths were passed down simply by word of mouth, through that wonderful but endangered art of story-telling. When a Hindu walks into a river, faces the rising sun and starts chanting mantras (hymns? spells?), (s)he is continuing an unbroken tradition of almost 4000 (depends on when the Rg-veda was written) years. The two epics, Ramayana and Mahabharata have been told and retold over and over to generations of Indians until it has become their second memory. The epics are the original ‘crowdsourced’ literature, for several generations of poets have added on to them, thus forking them into several parallel (and often incompatible) versions. The epics also provide a stock source when your imagination dries out; thus they have been adopted in several derivative works, theater, movies and series (it seems even after all these years, bollywood and OTT alike still manage to find ‘inspiration’ from the two epics). Add to this the prolific mythological richness of scriptural texts: Puranas (‘Puran’ literally means ‘ancient’), Upanishads (the concluding sections of Vedas) and the near-infinite mass of folklore strewn across India. Indeed, with a such a baggage of mythology, one often finds it difficult to tease out ‘reality’.
+
+Of course, there are serious, devoted schools of Indian philosophy which match, and sometimes exceed, their western counterparts in pedantry. But they have met the same fate as that of the west, i.e. obscurity. Scholarly discussions (and duels) over the ‘nature of truth’, ‘fate’, ‘karma’ (yes, that) and other such lofty ideas are becoming less and less commonplace. A section of erudites revel in them, but they have never found mass appeal, unless diluted down into a story, seasoned with drama, peppered by special effects and served steaming hot. Case in hand: the story of Baladeva’s marriage.
+
+Time dilation
+
+The following account of a marriage should serve as a prequel for the kind of disruptive, out-of-the-box kind of ideas to expect in Hindu mythology.
+
+The king Raivata or Kakudmín (literally, ‘Taurus’ or bull), had a lovely daughter called Revati, and not finding any one worthy of her hand, he wished to consult the creator God, Brahma, to find a suitable boy. The two set on a journey to the court of Brahma; however, upon arrival, they found themselves in the middle of a concert and had to wait for a while before having an audience with Brahma. The king mentioned three or four candidates that he had in mind, and then
+
+Nodding his head gently, and graciously smiling, Brahmá said to him, “Of those whom you have named the third or fourth generation no longer survives, for many successions of ages have passed away whilst you were listening to our songsters: now upon earth the twenty-eighth great age of the present Manu is nearly finished, and the Kali period is at hand. You must therefore bestow this virgin gem upon some other husband, for you are now alone, and your friends, your ministers, servants, wife, kinsmen, armies, and treasures, have long since been swept away by the hand of time.”
+
+— From The Vishnu Purana, translated by Horace Hayman Wilson, [1840], Book IV¹
+
+It seems that due to some sort of time dilation, in the brief period spent listening to the music at Brahma’s court, 11664000 years had passed in earth (may vary slightly depending on how you calculate, see https://en.wikipedia.org/wiki/Hindu_units_of_time). The reaction of the king was not unlike that of the astronauts in Interstellar(2014), who spent some minutes on a heavy planet and returned to their spaceship, only to realise several decades have gone by.
+
+However, all was not lost. Brahma told the king
+
+That mighty Vishńu, who is paramount over all beings, is now in a portion of himself upon the earth. That city Kuśasthalí which was formerly your capital, and rivalled the city of the immortals, is now known as Dwáraka, and there reigns a portion of that divine being in the person of Baladeva; to him, who appears as a man, present her as a wife: he is a worthy bridegroom for this excellent damsel, and she is a suitable bride for him.
+
+Raivata returned with his daughter to earth, where he found that over the billions of years that have passed, men have evolved to a much shorter species, almost a tenth² of the former. He found Baladeva easily; Vishnu, one of the three chief deities, had incarnated on earth as Krishna, and Baladeva was his elder brother. The only problem seemed to be the the (several times) taller bride, which was solved immediately by Baladeva himself: a pull of his plough bought Revati down to a proportionate height, and the marriage was formalised.
+
+Wait, what was that again?
+
+One can interpret mythology in any manner. Time dilation is a proven and well demonstrated fact, albeit on a very small scale. To lose significant time, one must travel very fast (relativistic time dilation) or be near something very heavy, i.e. a dense planet (gravitational time dilation) — both of which have not yet been accomplished in reality.
+
+But why does mythology have to be vindicated by physics? Evidently, the idea of time dilation existed much before the physical proof. And even if an idea is never validated by physics, is it diminished in novelty? There are numerous doctrines on the nature of time, whether it’s moving or ‘block’, i.e. whether things happen in sequence or evrything happens at the same time, whether it is linear or circular, whether there is one universal time or many — personal — ‘times’: some of these ideas have found footing in physics, most have not.
+
+It’s better to reconcile with physics and move on, the way we read a work of science fiction — without giving second thoughts about the physics involved. A myth is just a myth. If you have enjoyed it, and find it worth retelling, its purpose is served — it has reproduced, to be told another day, to another one. In addition, if it has ignited a spark in your brain — which is the very reason philosophy exists — then it is no longer just mythology, it’s become mythosophy.
+
+Hindu mythology is littered with strange concoctions of mostly wonderful, sometimes bizarre and every once in a while, truly outlandish, ideas: ideas which have found reverberation in physics, biology and mathematics of present day. I plan to explore a few select cases for the insights they offer; if nothing, we would’ve at least heard a new story!

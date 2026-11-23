@@ -1,0 +1,39 @@
+Friday Thoughts 01 — My Epic Film Viewing Spreadsheet
+
+Simon Prior
+
+Hello again, world. It’s been a while, hasn’t it? Rest assured, I’ve not spent the last 3 months vegetating in front of the goggle box (although Westworld is rather good, isn’t it?). I have in fact been quite busy writing, working on bits and bobs, the usual.
+
+I’ll be talking more about all of that in future updates. For now though, just to ease back into the routine, here’s a quick update on one of the things I’ve been tinkering with.
+
+The Big Film Spreadsheet Project
+
+Over the last four years I’ve maintained a list of every film I have watched. It used to just be the basics — the date I watched the film and its title.
+
+[caption id=”attachment_5336" align=”alignnone” width=”291"]
+
+This is where it all began. Let’s pretend this is the original in Pages and not a copy I made in Google Docs.[/caption]
+
+That was all well and good for the best part of three years. Then, back in July, I decided to move this information into a massive spreadsheet. I also planned to expand on the data I recorded.
+
+Thus, the big film viewing spreadsheet project began. Whenever I had a spare five minutes I would transfer information from my text documents into the spreadsheet. After separating out my viewings by year, I decided I wanted to track directors, the year of release, whether it was a cinema viewing or a rewatch.
+
+At that point I considered the project to be complete. This is, apparently, never the case. Creative minds always find more work to do, it’s inevitable.
+
+Then, having already moved this information into the log, I decided to add even more data. As you do. This led to me adding columns for my rating of the film (using my rather boring 0.5–5 scale) and also the film’s running time. I would now know, almost precisely, how long I have spent sat watching through movies.
+
+As it turns out — quite a lot. At the time of writing, it stands at 152 days if you watched every film back to back. A not insignificant amount.
+
+Finishing The Project (Sort of)
+
+And this has led to today. Apart from new film viewings and the odd movie I’ve seen before but forgotten to add (likely because I haven’t owned it), the list is complete. Sure, I’ll probably find other ways of pulling out reasonably cool facts and information and may tinker with the format here and there, but for all intents and purposes, it’s done.
+
+Thanks to the miracle of modern technology, this is now available to view direct through Google Sheets (click here) or through the embedded document I’ve placed on this very website (click here).
+
+This will be an ongoing project for me now, and will most likely replace my long-form movie reviews. To be honest, writing 500+ words for every film I see has gradually become more untenable as the months have passed. Time is at a premium these days, more so than it was in 2013 when I first started writing the reviews.
+
+I’m tempted to re-purpose my film viewing so that I’m only writing about certain films. It’s certainly something much more manageable than trying to churn out 3500+ words a week on top of everything else. My zombie fixation might be a good place to start with that. Watch this space. Or possibly even this one.
+
+I’ll be back next Friday with another batch of random thoughts, and an update on my fiction writing.
+
+Until then: what do you think about the spreadsheet I’ve created? Drop me a line via the Contact page with your thoughts.

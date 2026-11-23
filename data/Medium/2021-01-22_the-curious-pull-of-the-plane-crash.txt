@@ -1,0 +1,29 @@
+The Curious Pull of the Plane Crash
+
+Alex Fox Rudinski
+
+Think about the way a child’s paper airplane flies. Imagine it, waving in the invisible breeze. It bucks and dives in the air, wagging up and down before stalling and crashing. That sine-wave flight pattern is called the phugoid cycle, and it’s characteristic of airfoils without control surfaces. Like a paper airplane. Or your DC-10.
+
+The aircraft dives and plunges in gasping heaves, hunting for lift like a desperate swimmer gulps for air. It climbs and falls distances measured in thousands of feet as it races towards inevitable stall, the sine-wave motion obscuring the final, fatal dive into the loving soil.
+
+Everything changes. In an instant, hundreds of lives, your own life, the lives of coworkers you know well — they all now hang in the balance. If you die here, you never see your spouse again; never kiss your children; never correct your mistakes.
+
+You have not been trained for this moment. There is no training for this moment. It a moment unknown but to those who have faced it, and they were lucky if they made it out alive.
+
+You plummet again, this time deeper, faster. The useless control surfaces waggle in the air, almost like they’re waving. The metal skeleton of the aircraft sighs out in pain, its whine at the edge of human hearing, begging for release, for the ecstasy of fracture.
+
+The complete loss of hydraulics on a DC-10 was believed to be virtually impossible. But no one had imagined a turbine blade shearing through triple redundancies.
+
+There is no plan. This is not on a checklist. The airplane is no longer flying. We can call it falling: it will be, soon enough.
+
+In that moment, and with no indication that this tactic will be successful, Haynes somehow finds exactly the right solution, knows it, intuits it. To this day, Haynes can’t explain it.
+
+Haynes slams the right engine to the firewall and cuts the left engine to nothing. Somehow, the plane begins to gradually return to something approximating neutral flight. Nothing in his training had prepared him to recover from a sudden loss of control in this way. But it worked.
+
+The flight crew, with the able assistance of Dennis Fitch, a United Airlines DC-10 training-check airman who was coincidentally on the flight, regained enough control over the plane to right it. In a series of ever decaying right-handed turns, they pinwheeled around to line up with an airport. Somehow, impossibly, they were headed home.
+
+The plane still crashed: God himself couldn’t stop it. At the last moment of descent, the plane suddenly bucked, jackknifing into a conflagration that almost looks like a cartwheel. Of the 296 souls aboard, 112 were lost. Haynes and the entire flight crew survived, the cockpit somehow ejected from the main body of the fire that engulfed the cabin, a final lucky break in a day that was nothing but the opposite. That anyone survived the crash at all is extraordinary. Every person who walked away did so thanks to the impressive teamwork in the cabin that day.
+
+In 1989, no one knew how to recover an aircraft of this size from this kind of flight condition. But on the fly, Haynes created it. How?
+
+He had to, or everyone would have died.

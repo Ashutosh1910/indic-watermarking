@@ -1,0 +1,87 @@
+Why I Wrote A Serverless Security Book
+
+Miguel A. Calles Mba
+
+When I started working with the Serverless Framework I was curious about the security aspect. Previously, I was an information assurance (IA) engineer working on cybersecurity for US government military systems and I had become accustomed to using well-defined processes and requirements as an IA engineer.
+
+The systems we were securing were part of a vast network of other systems with strict IA requirements. The threats seemed limited; and implementing Cybersecurity, in many cases, was following a list of checklists and requirements. But, Cybersecurity in the world of serverless development was a new frontier.
+
+The more I worked with serverless, the more I wondered about its Cybersecurity. Cybersecurity with serverless projects seemed to lack the oversight that I experienced in the IA world. The team could release a serverless application without addressing security. I searched for serverless security and found limited information. I did find some helpful documents on the top serverless security risks and well-written blog posts about specific topics. I was looking for a book that provided an overview of serverless security and guidance on approaching it.
+
+I decided to write this book with the intent to fill that void and provide a resource that addressed multiple aspects of serverless security. I leveraged my IA and Cybersecurity experience, my hands-on experience with serverless, and my research to write this book. In one perspective, this book provides an overview of serverless security. You could be new to serverless and learn how to approach serverless security by performing a risk assessment. From another perspective, this book provides practical ways to address serverless security. You could be looking for examples and recommendations to implement in your serverless projects. I am excited to share this book with you because I believe it will guide you in identifying areas of consideration when securing your serverless application.
+
+About the Serverless Security book
+
+Chapter 1 · Introduction to Cloud Computing Security
+
+In this chapter, we will review cloud computing and how its security evolved. We will learn how serverless computing relates to cloud computing and how securing serverless computing differs from the typical cloud computing Cybersecurity. We Cybersecurity, how it applies to cloud computing, and why it is needed. This chapter will set the foundation for Cybersecurity in serverless computing by putting it in the context of cloud computing and its security.
+
+Chapter 2 · Performing a Risk Assessment
+
+In this chapter, we will learn how to perform a risk assessment for a serverless application. We will explore how to understand how the application works, which includes reviewing documentation, source code, and system accounts and using the application. We will discuss why we scope the risk assessment. We will learn how to develop a threat model and how to use it to start creating the risk assessment.
+
+Chapter 3 · Securing the Code
+
+In this chapter, we will review the importance of securing the application code. We will learn how to choose the runtime and version for our serverless functions and how to assess any libraries and dependencies they use. We will discuss static code analysis tools, unit tests, and regression tests and how they help secure our application code. Finally, we will learn how multiple events can trigger serverless functions and review examples on performing input validation on those events.
+
+Chapter 4 · Securing Interfaces
+
+In this chapter, we will review the function triggers and provide a use case for each. We will discuss how to identify the different interfaces defined in the Serverless configuration file and function code.
+
+Chapter 5 · Configuring the Application Stack
+
+In this chapter, we will review the organization of the Serverless configuration file. We will explore good practices for us to consider using in each configuration section.
+
+Chapter 6 · Restricting Permissions
+
+In this chapter, we will discuss how we might use permissions in AWS, Azure, and Google Cloud. We might consider them as a first-line defense in our serverless environment from attacks on functions and account takeovers. Therefore, we should understand how to implement them. We will learn the permission capabilities each provider has and how we might use them.
+
+Chapter 7 · Account Management
+
+In this chapter, we will discuss how we might manage our account to reduce risk and improve security. The provider account allows us to access multiple services and create numerous resources. We will learn how we might use various accounts to organize the resources we create and how to secure our account by implementing standard practices.
+
+Chapter 8 · Secrets Management
+
+In this chapter, we will discuss how you might protect our secrets using provider services. We will explore the various ways AWS will enable us to encrypt secrets. Based on this exploration, we will select an approach that has a balance between encryption and convenience, and explore that approach in Azure and Google Cloud.
+
+Chapter 9 · Authentication and Authorization
+
+In this chapter, we will define authentication and authorization. We will review different approaches for implementing both in our serverless application, discuss where those approaches might apply, and provide some security practices for each. Lastly, we will review services and capabilities that AWS, Azure, and Google Cloud provide to help us implement authentication and authorization.
+
+Chapter 10 · Protecting Sensitive Data
+
+In this chapter, we will discuss some principles for protecting sensitive data. We will consider sensitive data to be information that are not secrets but might still result in damage when putting multiple pieces of data together. For example, driver’s licenses, birthdays, medical history, and so on are sensitive data. We will learn how to apply these principles in the cloud provider services, the software used to build the application, and the application configuration.
+
+Chapter 11 · Monitoring, Auditing, and Alerting
+
+In this chapter, we will discuss monitoring, auditing, and alerting. We will consider monitoring to be the process and tools we use to assess our application, auditing to be the process of looking for deviations from desired settings, and alerting to be the notification process when there are monitoring and auditing findings. We will review cloud provider services we can use to implement monitoring, auditing, and alerting.
+
+Chapter 12 · Additional Considerations
+
+In this chapter, we will review additional topics for us to consider in our project. They are based on situations from projects using the Serverless Framework and Cybersecurity concepts. The topics we will review are in no particular order and were reserved for the penultimate1 chapter to share additional thoughts without disrupting the main messages from the previous chapters.
+
+Chapter 13 · Finalizing the Risk Assessment
+
+In this chapter, we will discuss how to finalize the risk assessment we started in Chapter 2 to present it to our business stakeholders.
+
+Learn more about the book
+
+Ready to start securing your serverless application?
+
+Please visit https://ServerlessSecurityBook.com to learn more.
+
+Buy the Serverless Security book at Amazon, Barnes and Noble, and Apress.
+
+A Note from the Author
+
+Join my mailing list to receive updates about my writing.
+
+Visit miguelacallesmba.com/subscribe and sign up.
+
+Stay secure,
+
+Miguel
+
+About the Author
+
+Miguel is a Principal Security Engineer and is the author of the “Serverless Security “ book. He has worked on multiple serverless projects as a developer and security engineer, contributed to open-source serverless projects, and worked on large military systems in various engineering roles.

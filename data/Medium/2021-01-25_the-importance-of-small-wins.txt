@@ -1,0 +1,29 @@
+The Importance of Small Wins
+
+Aulia Amin
+
+The year is not ended yet, but I would like to share a piece of year-end reflection.
+
+I took an inspiration from SpaceX on the importance of small wins. Here is why.
+
+Many of us probably know SpaceX for the founder, Elon Musk. We also probably heard that recently SpaceX had been successfully providing a private-commercial passenger shuttle service between Earth and the International Space Station for NASA. And soon they are going to deliver cargo as well. Probably less known to us is that SpaceX also plans to provide Ridesharing service to Low Earth Orbit and even between cities. They claim that their Starship will be able to shorten travel time between London and New York to just 29 minutes, compared with almost 8 hours using a commercial airline.
+
+So, is it ok to say that they are the “Uber” of the space? Well, not really.
+
+SpaceX’s mission, as stated on their website, is “Making Humanity Multiplanetary”. This is the “big-win”. Such a simple and profound mission statement. Especially if we realize that humanity doesn’t make much progress in terms of distance traveled since the 70’s.
+
+So, why they are now doing shuttle service?
+
+The reason is because they need to do this “shuttle service use-case” to fund their company. At one time, Elon almost gave up either Tesla or SpaceX to keep the other survive. This “small-win” use-case gives breathing space for SpaceX. At the same time, this use-case also provides a playground to develop technology for the “big-win”, such as the game-changing rocket reusability technology.
+
+Reflect to MSIGHT, we also have mission statements. As I mentioned in the Fintech Talks webinar last week, one of our mission is to help provides equal chances to access financial services for our customers.
+
+MSIGHT’s Mission Statement on Financial Inclusion
+
+But we were a very small unit back then, with a relatively unknown business. When I was joining this team, we had a difficult time getting 250K USD in annual revenue. At that time, I think only a handful of people in the entire organization know what a telco credit score is, let alone how to build it and bring it to the market.
+
+So, we had to look for opportunities -the small wins-, how to gradually build business traction towards the end goal. At the same time nurture stakeholders’ confidence to invest in our use cases. And simultaneously build our capabilities, test our hypotheses and assets that can be useful for the “big-win”.
+
+We have team members working on the small-wins, the opportunistic use-cases, that provide the lifeline of this unit. Some other team members working on the long-term project. All are important, one part cannot sustain without the other.
+
+We are not a 250K USD startup anymore, we also have quite a lot of products compared with 6 years ago. We built a strong foundation this year, together with our friends in the IT department. Certainly, we gain traction, but we are not there yet. Keep patience, persistence, and perseverance. Conquer the small wins, take a detour if necessary, but don’t lose sight of the bigger mission.

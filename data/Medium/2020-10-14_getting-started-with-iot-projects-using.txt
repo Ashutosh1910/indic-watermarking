@@ -1,0 +1,87 @@
+Getting started with IoT projects using .Net Core on the Raspberry Pi
+
+Rob Hansen
+
+The Problem
+
+For this project, the problem was…there was no problem. It’s great to learn new technologies by doing tutorials and courses. But the examples are often trivial and therefore not engaging. It’s often easier and more fun if you have a specific problem to solve. So on a long and boring car journey a friend and I tried to come up with a problem that I could solve with .Net Core and IoT. We decided to try to build the mysterious glowing briefcase from the movie Pulp Fiction…
+
+Because why not?
+
+One West German Franzen briefcase purchase later and we’re ready to roll.
+
+Condition: Used
+
+We now have our problem: how do we get the briefcase to emit the iconic glow reputed to be the soul of Marcellus Wallace? We want the briefcase to begin glowing when opened, and stop glowing when closed — kind of like the light in your fridge.
+
+Required Hardware
+
+Here’s what I used, but there are alternatives for almost all of these:
+
+Raspberry Pi 3 running Raspberry Pi OS (formerly Raspbian)
+
+HC-SR04 ultrasonic sensor
+
+MOSFET x3
+
+RGB LED strip (with 4pin 5050 and 12v power adapter connectors)
+
+5v portable power supply
+
+Breadboard and jumper wires
+
+Building The Circuit
+
+Building the circuit is pretty straightforward. The key is understanding how the MOSFETs control the interaction between the 5v and 12v circuits.
+
+MOSFETs have 3 pins: Source, Drain, and Gate
+
+The Raspberry Pi can output a maximum of 5v. However the LED strips require a 12v power source to operate (I used the mains transformer that came with the strips, but a portable 12v supply works too). We want the Pi to be able to control whether the 12v power is allowed through to the LEDs. We achieve this using MOSFETs — these are essentially switches that can be controlled by voltage. So we send a 5v signal from the Pi to tell the MOSFET to allow the 12v power through to the LEDs. We can use .Net Core to interact with the Pi’s GPIO pins to control when this signal is sent (ie when the lid of the briefcase is opened or closed). We use 1 MOSFET each for the red, green, and blue LEDs on our strip.
+
+We’ll use an SR-HC04 to sense the height of the lid.
+
+4 pins on this bad boy — Trigger and Echo, Power and Ground
+
+This sensor works by firing out ultrasonic waves, and detecting how long they take to bounce back. We can then convert this time to a distance in software. It’s accurate for distances up to around 4 metres.
+
+Here’s how I wired it all together with the Pi:
+
+Required Software
+
+Once the OS was installed, I installed the .Net Core 3.1 SDK onto the Pi. It needs the ARM32 binary.
+
+There are a few different ways to set up your dev environment for working on the Pi:
+
+Dev and build on the Pi
+
+This is the simplest way, keeping everything in one place. However, the Pi can be slow in both running the IDE and building projects. The Pi I used was a v3, so the newer v4s might be better suited.
+
+2. Dev and build on your Windows or Mac machine and deploy to the Pi
+
+With this method you get all the speed and familiarity of your usual dev machine. However, deploying to the Pi can be slow, and makes debugging more difficult.
+
+3. Dev and build on the Pi remotely
+
+This is a combination of methods 1 and 2, and involves a persistent SSH connection between your dev machine and the Pi. So you can use the IDE on your dev machine to access the code sitting on the Pi. The app is then built and run on the Pi. This is the method I chose, and it’s easy to set up with Visual Studio Code using the Remote-SSH extension.
+
+The App
+
+I built a simple console app to control our circuit. Its role is to sense the distance from the Ultrasonic sensor to the top of the briefcase, and if it is above a set threshold, then the lid must be open, so send a 5v signal to the MOSFETs. This will close the 12v circuit and illuminate the LEDs. Conversely, if the distance is below the threshold, turn off the LEDs.
+
+Interacting with both the Pi’s GPIO pins, and devices is straightforward, thanks to the open source libraries provided by the following nuget packages:
+
+System.Device.Gpio — provides classes to setup and use the Pi’s GPIO pins.
+
+Iot.Device.Bindings — provides classes to interact with many different devices, including the SR-HC04 untrasonic sensor.
+
+Getting the distance from the HC-SR04 is trivial using the Hcsr04 abstraction from Iot.Device.Bindings:
+
+For the LEDs I needed to reduce the intensity of the light as the full power was too bright. To achieve this we can use Pulse Width Modulation (PWM) that rapidly switches power on and off to trick the eye into seeing a dimmer light. I used the SoftwarePwmChannel class from System.Device.Gpio to achieve this. You must specify the GPIO pin as a constructor argument, and I used a bit of trial and error to arrive at the appropriate frequency and duty cycle values. Note that only red and green channels were used to achieve the required yellow.
+
+Then we just need some logic to light the LEDs when the distance is above threshold (I settled on 20cm after more trial and error):
+
+Initialize everything, passing in the appropriate GPIO pin numbers in Program.cs:
+
+The app outputs the distance to the console:
+
+And the LEDs illuminate as expected:

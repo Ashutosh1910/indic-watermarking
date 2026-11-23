@@ -1,0 +1,71 @@
+Meet Meesha, Meesho’s new Virtual Assistant, who wants to Make our Entrepreneurs super successful
+
+Mangala Dilip
+
+The product team at Meesho prides themselves on always staying connected to its users and being their support throughout their reselling journey. They are always trying to find out and solve what kind of problems users are facing and what kind of solution would work best for them. They are constantly striving to launch features that would make the users’ experience on the app more meaningful and worthwhile.
+
+For instance, they knew that Meesho entrepreneurs were forced to reach out for outside help when they found it difficult to navigate the app. New users who sign on to the app have many doubts they want to be clarified and they often turn to their family members for help. The Product team knew that our newly onboarded users needed a friend within the Meesho app to guide them through doubts and confusions while reselling, and so in July 2020, they created a virtual assistant for them — Meesha.
+
+Tanya Batra, who was part of the crack team that helped create Meesha, tells us how Meesha has been helping the Meesho entrepreneurs, why this was the best solution for the problems faced by our new users and how Meesha is going to improve over time:
+
+Could you walk us through the inception of Meesha?
+
+Tanya: The team that I am part of within the Product org looks into new user activation and acquisition holistically, and when we are trying to solve any problem within this purview, we always go to our users, talk to them, and find out how we can solve their problems. One of our discoveries about new users was that when they first start using the app, they often need the help of a family member or a friend when they feel lost or stuck.
+
+So we decided to give our users an experience that would help them navigate the Meesho app, understand the value proposition and get them acquainted with Meesho — and of course, start earning. Thanks to Meesha, they would not have to rely on anyone else to navigate the app. This feature helps them whenever they feel stuck in the app.
+
+How and where can Meesho users find Meesha?
+
+Tanya: One of the first things we realised once we dug a little deep is that our users are not looking for one-time help. There are two ways you can offer help on an app like ours:
+
+You can bombard a new user with all the information as soon as they install the app. Answer all the FAQs such as how to place the order, how to return products, etc.
+
+or
+
+You can help the users contextually, as and when they need your help.
+
+We went ahead with the latter because in real life our users try to understand their next step on their own at any given time before reaching out for help from the people around them or to our customer care number. We wanted Meesha to offer help whenever they needed it as well, rather than bombarding them with information without any context.
+
+And so Meesha became a contextual virtual assistant who prompts our entreprneuers in English at every new step in the initial stages.
+
+Why Meesha?
+
+Tanya: The name Meesha came up during a design solution discussion and one of our designers suggested the name and since Meesha is a female-sounding name adjacent to Meesho, we all agreed on it as well.
+
+We had to ensure that Meesha was approachable as well because, without the approachability factor, users won’t and ask questions they want to. By approachable, I mean design it in a way that it connects well with the target audience, which for Meesho are our women entrepreneurs.
+
+When do the entrepreneurs get introduced to Meesha?
+
+Tanya: We wanted to establish Meesha as a core part of their journey with Meesho, and not an experience randomly appearing out of the void. Meesha makes an appearance as soon as the app is installed, and says, “Hey, I am here to help you through your journey.” From that point, Meesha is present at every stage of the user’s journey every step of the way.
+
+How is Meesha different from the other chatbots out there?
+
+Tanya: Many platforms out there use chatbots and usually what happens is they appear on various spots of the website or app. The user goes to that chatbot and asks the queries they have and gets them answered.
+
+What is unique about Meesha is that we have used our experiences and deep connection with our users to identify the specific screens where they would feel stuck.
+
+So, instead of keeping the question, they would have behind a click-on-the-chat interface, we prompted the question from Meesha. For instance, on our orders screen, Meesha would put a prompt asking, “Do you want help with placing an order?” or something along those lines. This way, Meesha goes beyond regular chat interactions.
+
+She draws user attention and pinpoints the area that the user might need help with and solves it for them, without the user even having to go searching for it.
+
+Beyond this, we have the regular chatbot too, where the users can interact with Meesha and get any queries they have in mind, clarified.
+
+How has the entrepreneurs’ response been to Meesha?
+
+Tanya: Our users are responding extremely well to Meesha, we are seeing a lot of engagement and interaction. In fact, a large chunk of views for our video “How to earn on Meesho” in the recent past have come from Meesha. We are noticing other screens too, where consumption of Meesha is good.
+
+The attitude we are seeing is, “I have an assistant and I can ask Meesha questions about any doubts I might have. She will have my queries resolved.”
+
+How is Meesha going to evolve?
+
+Tanya: We are still in the early stages with Meesha. Right now Meesha only helps new users who are on their 0–1 journey. Once that happens, Meesha disappears and they go about selling in through the normal flow of things.
+
+In time, I see Meesha becoming a fulltime virtual assistant to our entire user base and solving their problems contextually. The reason we focused on 0–1 was that we knew the problems of these users very well and knew exactly how to solve it. The next stage is going to be about expanding Meesha’s presence beyond the first order, understanding the exact pain points of our users, and making Meesha available to solve those problems as well and solving them.
+
+Ultimately, our primary goal is Making Entrepreneurs Successful and Meesha is helping us do just that.
+
+Learn the magic mantra to take projects from 0–1 from Nikita Dresswala, Director of Strategy & Operations — International Expansion
+
+The Emerging Narrative of Women in India
+
+Are you following us on social media yet? You might want to head over to Life at Meesho’s Instagram, Facebook, Twitter, and LinkedIn pages if you are a fan of fun and positivity.

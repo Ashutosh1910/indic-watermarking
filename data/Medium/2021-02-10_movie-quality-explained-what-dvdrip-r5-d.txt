@@ -1,0 +1,67 @@
+MOVIE QUALITY EXPLAINED - WHAT DVDRip/ R5/ DVDSCR/ TC/ TS/ MEANS?
+
+Chan Kulatunga
+
+Mini Cinema Setup
+
+Now movie streaming services are everywhere. There you will find various movie quality acronyms. Ever wondered what they actually means? Here is the list.
+
+CAM :
+
+If you ever see a film that sometimes the audience suddenly appear in the film, that is the Cam-Quality film. A Cam is a theater rip usually done with a digital video camera. Sometimes they use mini tripod, but a lot of them do this manually so the camera is shaking. And sometimes the seating placement isn’t always idle, it might be filmed from an angle, some parts of the film chopped off. The sound is taken directly from the onboard microphone of the camera, so sometimes you can hear the audiences laughter quite often during the film. Due to these factors the sound and picture quality usually very poor.
+
+TELESYNC (TS) :
+
+Actually it’s similar with CAM but TS is filmed with different condition it uses an external audio source (most likely an audio jack in the chair for hard of hearing people), but it does not ensure a good audio quality though. And TS is filmed in an empty cinema or from the projection booth with a professional camera, giving a better picture quality.
+
+TELECINE (TC) :
+
+A telecine machine copies the film digitally from the reels. Sound and picture should be very good, but due to the equipment involved and cost telecines are fairly uncommon. Generally the film will be in correct aspect ratio, although 4:3 telecines have existed. Sometimes it shows a visible counter on screen throughout the film.
+
+SCREENER (SCR) :
+
+A pre VHS tape, sent to rental stores, and various other places for promotional use. The main draw back is a “ticker” (a message that scrolls past at the bottom of the screen, with the copyright and anti-copy telephone number). Also, if the tape contains any serial numbers, or any other markings that could lead to the source of the tape, these will have to be blocked, usually with a black mark over the section. This is sometimes only for a few seconds, but unfortunately on some copies this will last for the entire film, and some can be quite big. Depending on the equipment used, screener quality can range from excellent if done from a MASTER copy, to very poor if done on an old VHS recorder thru poor capture equipment on a copied tape. Most screeners are transferred to VCD, but a few attempts at SVCD have occurred, some looking better than others.
+
+DVD-SCREENER (DVDscr) :
+
+Same premise as a screener, but transferred off a DVD. Usually letterbox , but without the extras that a DVD retail would contain. The ticker is not usually in the black bars, and will disrupt the viewing. If the ripper has any skill, a DVDScr should be very good. Usually transferred to SVCD or DivX/XviD.
+
+Digital Distribution Copy/ Direct Digital Content (DDC)
+
+Somewhat rare a Digital Distribution Copy (DDC) is basically the same as a Screener, but sent/ downloaded digitally (FileShare, FTP, HTTP, etc.) specially to companies like video clubs instead of via a postal system. This makes distribution cheaper. Its quality is lower than one of a R5, but higher than a Cam or Telesync copy.
+
+R5 RETAIL (R5) :
+
+Over the past 6 months the major movie studios have been releasing retail DVDs early in Russia. They do this to stop the widespread use of pirated Telecines (which were once very common). Lately however there has been very few real Telecines, most of the scene Telecines you see are actually R5 retails. The main difference between Telecines put out by the pirates is that the r5′s are done using pro equipment, professional studios and professional people. The quality of R5 retail is very similar to DVDScr’s, no time is usually spent cleaning up DVDScrs either.
+
+DVDRip/ BDRip/ Blu-Ray Rip:
+
+A copy of the final released DVD or DVD Blu-Ray version. If possible this is released pre-retail (for example, Star Wars Episode II) again, should be in excellent quality. DVDRips are released in SVCD and DivX/XviD or newer HEVC codec formats.
+
+TVRip- Some Lesser Known Formats
+
+(DSR,DSRip,SATRip,DTHRip,DVBRip,HDTV,PDTV,DTVRip,HDTVRip)
+
+As name implies TVRip is a capture source from a TV telecast, mostly by an analog capture card (coaxial/composite/s-video connection). Digital satellite rip (DSR, also called SATRip or DTH) is a rip that is captured from a non-standard definition digital source like satellite. HDTV stands for captured source from HD television, while PDTV (Pure Digital TV) stands for any SDTV rip captured using solely digital methods from the original transport stream, not from HDMI or other outputs from a decoder, it can also refer to any standard definition content broadcast on a HD channel. DVB rips often come from free-the-air transmissions (such as digital terrestrial television). With an HDTV source, the quality can sometimes even surpass DVD. Movies in this format are starting to grow in popularity. Main disadvantage is some advertisement, commercial banners and other language subtitles can be seen on some releases during playback which can’t be off.
+
+Most downloadable movies now come in as MKV, M4V, DivX, XVID or generic AVI formats.
+
+So the range of quality we now have is like this. From high quality to low quality.
+
+DVDRIP > R5 Retail > DVDSCR > Telecine > Telesync > PDVD > CAM
+
+Hope you enjoy the post. More recent HEVC & HEIF formats/ codes are explained here in the following link. Which delivers more quality over a low bandwidth.
+
+Few other article you may be interested:
+
+Switch to new Opera GX browser, it saves a lot
+
+Different Video Formats Explained
+
+HEVC & HEIF : The future of multimedia file formats explained.
+
+SINHALA SUBTITLES IN iOS — සිංහල උපසිරසි
+
+TAXI APPS FRENZY! — ටැක්සි ඇප්ස් මේනියාව!
+
+Everything 5G Networks Can Bring You!

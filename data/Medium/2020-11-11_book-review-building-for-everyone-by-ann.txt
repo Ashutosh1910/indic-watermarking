@@ -1,0 +1,47 @@
+Book Review: “Building for Everyone” by Annie Jean-Baptiste
+
+Katy Boungard
+
+Women in Voice Book Club: “Building for Everyone: Expand your market with design practices from Google’s Product Inclusion Team” by Annie Jean-Baptiste
+
+The following was compiled by Katy Boungard, WiV Global Director of Content, on behalf of WiV Book Club. Sign up here to join Slack and monthly discussions!
+
+Overall, this book offers valuable insights on integrating inclusion into a corporate environment, and is a solid introduction to the topics if you have the budget and resources to pursue inclusion across all (or any) touch points. While the book provides material, like specific questions to ask various teams and how to get buy-in from stakeholders, processes don’t necessarily apply to start-ups or agencies. With the current state of Voice technology, we feel such insights would be extremely helpful to people operating on smaller teams.
+
+Throughout the book, Annie offers step-by-step guidance to consider inclusion throughout each stage and detail of product planning, which could be adapted to accommodate various scenarios. It is a simple read that allows one to get familiar with the golden path process, which include;
+
+Key Terms: product inclusion, diversity, equity, and intersectionality, pg. 20
+
+20 Essential Questions to ask teams: (“why is culture important”) pg. 57
+
+Integrating product inclusion into the four key phases (Ideation, UX Research and Design, User Testing, and Marketing) pg. 106
+
+Google’s Six-Step Inclusive Research Framework, pg. 124
+
+Relevant Industry examples and case studies provided throughout
+
+The NASA astronauts Anne McClain and Christina Koch were going to make history, until a space suit got in the way. (JOHNSON SPACE CENTER / NASA) From The Atlantic article, “The Original Sin of NASA Space Suits”.
+
+A prominent example featured in the book is NASA’s design of space suits to accommodate larger male sizes. As recent as 2019 this delayed the first all-female spacewalk, because there was only one correctly sized space suit available for a woman on board — not two. Other key examples of designing for inclusion are comfortable Virtual Reality headsets for everyone, and ignoring the impact of airbags on women and children.
+
+There are several checklists included that are very useful to reference, outlining the steps to be taken or questions to be asked (that could be used to “sneak” the topics into an organization that might not have the infrastructure and resources to go all in), as the author describes Google doing. The approaches described explain the best possible path when you have all the support and resources you could want. However, tips for operating in the world without corporate-level support would have been useful.
+
+With mostly positive examples, the reading lacks failed attempts or points of friction when integrating inclusion into the key touch points. It would be great to hear from freelancers, small businesses and other large corporations on how they focus on inclusion and diversity in their design process. We would also love more data/numbers and results from the research, since building for everyone is dependent on taking actionable, measurable steps from start to finish.
+
+The cast of Savage x Fenty Show 2020 from Rihanna (available on Amazon Prime). This fashion show was referenced in our discussion as a positive example of diversity and inclusion in today’s landscape.
+
+“You, me, trans women, women of all sizes, paraplegic women, all women are important women! All women belong here, on the biggest platform I can give them” — says Rihanna, in an interview with Elle magazine.
+
+This is a powerful current example the book club discussed on how to integrate inclusion into creative, design and performance. Worth noting, there was backlash from the Muslim community for the use of a song in the Fenty Show that included sacred islamic verses, which Rihanna apologized for days after as a ‘careless mistake’.
+
+In conclusion, our discussion of this book focused on how to implement these strategies when things don’t go according to plan, a team is low on resources, or there is pushback from key stakeholders. We are grateful this book exists as a foundation for how to build for inclusivity, and recognize there is a lot more work to be done in order to make this a reality across the Voice industry and Technology landscape. Nieves Ábalos, Chief Diversity and Inclusion Officer of Women in Voice, recently shared an article on her experiences, Allyship, and how diverse communities create more inclusive voice products.
+
+The biggest takeaway from Google’s Product Inclusion Team is “building for everyone with everyone”, which aligns directly with the mission and vision of Women in Voice. As Annie so deftly concludes the book…
+
+“And lastly, listen and be humble. We’re all on a journey to empathize, solve problems, and tap into opportunity by doing so. Put yourself in the shoes of your users. Ask questions. And keep trying! The opportunity to build user-centric products and build better business awaits!” — Annie-Jean Baptiste
+
+— —
+
+Have you read this book? Share your thoughts in the comments!
+
+Next book is “Voice Interaction Design: Crafting the new conversational speech systems” by Randy Harris. Sign up here to join on slack and monthly discussions!

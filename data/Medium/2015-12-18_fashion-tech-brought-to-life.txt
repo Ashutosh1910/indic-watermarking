@@ -1,0 +1,61 @@
+Fashion Tech brought to Life
+
+Ian Schoen
+
+Anouk Wipprecht is an artist, designer, and engineer. Her work entwines the worlds of fashion and technology and challenges our relationship with the garments we wear. She explores robotic couture, experiments with sensory experiences, and creates futuristic fashion that empathizes with how we perceive the world and interact with it.
+
+Anouk’s worked with groups like the Black Eyed Peas, Cirque du Soleil, AutoDesk, and is now at Microsoft Research Labs as an artist in residence. Thanks to a collaboration with CODAME ART+TECH, we were lucky enough to have her stop by Salesforce last week to speak and showcase her work. I also sat down with her to talk about her process and learn more about her journey into the emerging world of fashion tech.
+
+These are the highlights —
+
+The Journey to Fashion Tech
+
+Anouk began as a fashion design student in The Netherlands, passionate about what people could say by the clothing they wore. As soon she arrived to her studies, however, she developed a strong dissatisfaction with the practices and philosophies of the fashion industry that taught to mass manufacture design and deprive people of the best quality garments.
+
+“It felt a little bit evil in a way. I expected fashion to be empathic, a way to help humans understand each other better. The industry itself can be a pretty evil machine in many ways.”
+
+In a search for inspiration, Anouk found robots,
+
+“On the other hand, you have robots — technology which is perceived as evil by the means of science fiction but I felt different…there was something wrong here.”
+
+Fabric wasn’t expressive enough. Anouk wanted to make something that felt fluid, personalized and interactive. “As opposed to having an analog dress that could only express a single emotion or message”, she asked, “wouldn’t it be remarkable to have clothing that could communicate with us… and change?” At the core, she discovered, that this was something she couldn’t find in her fashion studies alone but could find in technology, arduinos, and robots.
+
+“I saw interesting systems that could monitor us…nurture us. I wanted those [systems] to not only be in the devices we carried but also in the garments we wore.”
+
+When her instructors first saw her with robot micro-controllers they kicked Anouk out of class and told her it wasn’t fashion and that robotics and fashion together wouldn’t be accepted. Nevertheless, she left to Sweden to pursue her growing interest in fashion tech and began learning interaction design, programming, and engineering.
+
+Courage to be Different
+
+I was fascinated by Anouk’s inclination towards risk and experimentation. In Silicon Valley, risk (and failure) have become suitable norms. For Anouk, however, her dissonance wasn’t as accepted. As she continued to develop her craft, she attributed her courage to be different on the innate basis of being human. As she told me,
+
+“I think [risk and experimentation] is what makes a human. Otherwise innovation and development wouldn’t happen. [It’s about] being able to act on your impulses and having a strong belief in what the world should look like.”
+
+Work & Inspiration
+
+During her presentation, Anouk showcased two of her latest projects: A jaw-dropping 3d printed spider dress and an interactive installation that revealed how we view personal space and proximity to others based on body-tracking sensors. Both the dress and the installation touched deeply on themes of subconscious and brought greater self-awareness and empathy for those interacting with the projects.
+
+As she presented the spider dress, she explained it’s interactive functionality. When you approach the dress it reacts — the legs on the dress expand and contract, moving elegantly or aggressively, responding to how you approach.
+
+“If a cat doesn’t like you, you get a claw. If a human doesn’t like you, you hear about it from someone else.”
+
+There is a real candor in animal interactions that is often concealed in the way humans relate to one another. To have our our internal feelings exposed can be strange, even frightening but it also raises questions about human nature, authenticity, and our own self-awareness.
+
+When asked about the inspiration for her creations, Anouk responded,
+
+“I don’t like to do things twice. I’m always on the search for something else. It’s mostly curiosity that’s driving it. If you have a curious mind, you will always be able to seek new things out from the existing world. Sometimes you blow things up and sometimes things work out. It’s all about curiosity.”
+
+Being a Female Engineer
+
+The field of engineering is still largely male-dominated. I wanted to get Anouk’s thoughts on breaking into the field and what she’s experienced first hand as a woman engineer.
+
+“If I’m at a conference or other places with technical people, it can often be 90–95% male. At a lot of conferences, I’m the only female speaker. Certain companies say they want to be 50/50 by a certain year but they still have a lot to overcome.”
+
+She continued,
+
+“On an individual level, it has a lot to do with attitude…Perhaps it’s something that society has pushed us towards.”
+
+Anouk admitted that the topic is complicated. The work that she is doing however is not purely engineering but instead at the intersection of engineering and design — a locale that I believe will only become more significant in the future.
+
+The Artist in Residence Experience
+
+This week Salesforce debuted it’s Artist in Residence program, working with our artist and innovator Reza Ali. Having been an artist in residence at Intel, Autodesk, and now Microsoft Research Labs, I asked Anouk to help shed some insight into how we could provide an invaluable experience for the artists who walked through our doors.

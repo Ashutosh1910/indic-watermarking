@@ -1,0 +1,61 @@
+Why Product Managers at Meesho are the guardian angels of entrepreneur success
+
+Mangala Dilip
+
+Why Product Managers at Meesho are the guardian angels of entrepreneur success Mangala Dilip Follow Sep 21 · 6 min read
+
+At Meesho, our true north is Making Our Entrepreneurs Successful. While this is the driving force behind every team’s success, the Product Management function is uniquely driven by this Meesho core value since Product Managers (PMs) are the guardians of our entrepreneurs’ success. It is our job to always put the entrepreneurs first, understand their most important problems and solve them in a way that is differentiated and adds business value to Meesho.
+
+Understanding our entrepreneurs
+
+One of the key responsibilities of any PM who joins Meesho is to first deeply understand who our entrepreneurs are. This is especially important because the entrepreneur base we serve is extremely unique. Our entrepreneurs are business people by profession, but they behave like end customers in terms of their shopping behaviour, motivations, desires, the kind of lifestyle they lead, and so on. The core persona of our entrepreneur is — more often than not — a homemaker living in a tier-2 or tier-3 city in India, aged between 25–45.
+
+Most of the PMs at Meesho would not fit the persona of our entrepreneurs, and so it is therefore very, very important for them to understand the entrepreneur well. They need to understand how this entrepreneur encounters Meesho in their journey of becoming an entrepreneur, how their browsing behaviour is once they come to the Meesho app, how they share catalogs with their end customer, how they influence their customers to buy, and so on.
+
+It is only natural then, that every single PM at Meesho endeavours to establish and maintain a connection with our entrepreneurs. In fact, when we hire new members to the Product team, one of the core expectations from the assignment they complete is that they talk to a few of our entrepreneurs — we give them a problem to solve in the assignment that necessarily requires them to talk to our entrepreneurs. The idea is to embed this culture of empathising with the entrepreneurs right at the beginning of their journey as a Meeshoite.
+
+So, in order to make Meesho and our entrepreneurs successful, a PM must first understand the entrepreneurs, their persona, their motivations and their journey on the Meesho app.
+
+Entrepreneur tested and approved
+
+Many of my team members even reach out to our entrepreneurs on WhatsApp and discuss our product plans with them — not just for getting feedback on the existing product, but also to build a product roadmap for the next 3–6 months. These insights really help the PMs uncover new problem areas that are sometimes tough to find only through data analysis.
+
+Kirti Varun, Senior Vice President — Product
+
+Building any new product that directly impacts our entrepreneurs, requires a strong collaboration between our product, design and entrepreneur research teams. Over the last six months, the Product team in partnership with Design and entrepreneur Research (UR) teams, has redesigned multiple different constructs of the Meesho app. While the UR team brought to the table their expertise in understanding the nuances of how entrepreneurs behave, the Design team members design the experience after understanding entrepreneurs. The PMs, meanwhile, have a cross-functional expertise in understanding the entrepreneurs and solving their problems optimally, while also keeping in mind how those solutions would create business value — be it terms of improving metrics such as the Gross Merchandise Volume (GMV) or Net Promoter Score (NPS) or reducing the cost of a project.
+
+We leverage different techniques of validating new features with our entrepreneurs before we actually launch them — foundational research to understand entrepreneur segments and their motivations/preferences, directional research to validate specific hypotheses, usability testing studies using design prototypes to evaluate how entrepreneurs are responding to the new UX we have designed. All these techniques help us get timely inputs from our entrepreneurs which in turn helps us build products that entrepreneurs would love.
+
+Making category navigation seamless, and introducing gamification to keep our entrepreneurs motivated in their entrepreneurial journey, are two key products where the teams leveraged these validation techniques in the past few months.
+
+Each of these three teams have a unique role to play in building a product and PMs are like the anchors who shepherd an entire project from conceptualisation to launch. After all, Product Management is at the intersection of Business, entrepreneurs, and Technology in any product-driven company.
+
+Making navigation seamless
+
+Category navigation on our app is, in fact, one of the long-standing problems that we recently solved. On our app, we have a large set of categories, ranging from women’s fashion to men’s fashion to accessories to home & kitchen products. Our goal was to make it easy for our entrepreneurs to discover all the available categories and the best catalogs within them, and then share them with their end customers.
+
+Even before we launched this, the PMs and Design members took feedback from our entrepreneurs by showing them a prototype. The entrepreneurs’ responses and the improvements and tinkering done based on that definitely made category navigation all the better because we have seen a very healthy improvement in the browsing metrics of our entrepreneurs and we have received very positive qualitative feedback about the same as well.
+
+Another interesting project that the Product, Design & entrepreneur Research teams collaborated on in the last few months is journey gamification — which is the first of its kind in the Indian ecosystem.
+
+Mission Rise summits are huge events that Meesho puts together to celebrate entrepreneurs
+
+Putting the fun in motivation
+
+Reselling is a tough business, and many of our entrepreneurs are trying this out for the first time. Hence keeping them motivated on this journey is a very important problem that we wanted to solve in order to make them successful in the long term. One approach we wanted to leverage is to make reselling on the Meesho app seem like a fun activity, and as engaging as playing a game.
+
+Every entrepreneur on our platform is at a different stage of evolution, from new entrepreneurs who have just joined Meesho to power entrepreneurs who are at the pinnacle of expertise in reselling. Our goal was to figure out what motivated each of these different types of entrepreneurs, and how we can learn from game design principles to keep them going till the finish line. So, we created a journey concept where every entrepreneur would start from a beginner level, evolving to a learner level, then to a graduate, expert, and finally to the legend level — legend being the entrepreneurs with the highest level of expertise and success on Meesho.
+
+We also established a points system; every time an entrepreneur did an activity that was critical to reselling like opening the app, sharing a catalog, or writing a product review, they would get points. As they accumulate points, they move from one level to the next, and also earn rewards and recognition on the platform. These points and levels made the activities involved with reselling fun, and helped increase entrepreneur engagement in a significant manner.
+
+We are also rewarding our entrepreneurs for leveling up on the app with Meesho credits and certifications. The certificates from the Meesho Business Academy can be shared by entrepreneurs with the end customers as a professional certificate in reselling. This new system also encourages a sense of healthy competition within the entrepreneur community, which would push each of them to do better.
+
+The teams were able to build these new product constructs only because we are always connected to our entrepreneurs and eager to learn about their challenges and growth on Meesho. And, this culture of always putting entrepreneurs first trickles down from the top. Be it our co-founders Vidit Aatrey (CEO) and Sanjeev Barnwal (CTO), or the leadership team at Meesho, we all put the success of our entrepreneurs before anything else.
+
+As told to Mangala Dilip by Meesho Senior VP — Product, Kirti Varun
+
+Read Thought Leadership Edition 1 here: Vidit Aatrey talks about Meesho’s work culture
+
+What to keep in mind when virtually onboarding during the lockdown
+
+Are you following us on social media yet? You might want to head over to Life at Meesho’s Instagram, Facebook, Twitter, and LinkedIn pages if you are a fan of fun and positivity.tanaya.chanda@meesho.com

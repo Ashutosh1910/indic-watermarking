@@ -1,0 +1,79 @@
+Jacques Roubaud on Math and the Art of Literary Invention
+
+Cynthia Giles
+
+Adventurous heroines, abstract algebra, a poetics of grief, OULIPO, and the ongoing memoir of a grand project
+
+If you’ve never heard the name “Jacques Roubaud,” just use any of these substitutions:
+
+“Emeritus professor of mathematics at the University of Paris X-Nanterre”
+
+“Composer of the innovative, recombinatory poetry collection ∈”
+
+“Author of a fantasy about talking animals and abstract algebra”
+
+And that’s only a start. Since publishing his first volume of poetry in 1967, Roubaud has produced a stream of innovative literary works in almost every form — including a trilogy of comic novels about the postmodern heroine Hortense, and a series of intricately interwoven memoirs that explore not only his personal experience but the mysteries of memory and the structures that organize our individual realities. His work in every form is suffused with mathematics, whether explicitly or subtly.
+
+Roubaud has been a leading member of the experimental writing collective known as Oulipo (short for Ouvroir de littérature potentielle, or “workshop of potential literature“). Oulipo writers often employ “constraints” like leaving one letter of the alphabet out of a novel, or making word substitutions according to a predetermined algorithm. And they frequently organize their works according to numerical patterns, as exemplified in two of Roubaud’s poetry collections: ∈ follows a scheme derived from the ancient Japanese game of Go, and Trente et un au cube [31 cubed] contains thirty-one poems of thirty-one verses of thirty-one syllables.
+
+While some Oulipo texts are merely curiosities, Roubaud’s novels, plays, and poems are really very good. And fortunately — in case your French isn’t as good as your math — his best works have been translated into English.
+
+Perhaps the most delightfully original — and the most mathematical — of Roubaud’s works is La princesse Hoppy, ou le conte du Labrador (1990; The Princess Hoppy, or The Tale of Labrador, 1993). This inventive fantasy cleverly integrates talking animals (whose languages include Posterior Duck, which is silently conveyed by the motion of duck feet, and Anterior Duck, which is vocalized), with abstract algebra, encoded autobiographical references, and intertextual allusions that range from Alice’s Adventures in Wonderland to Chrétien de Troyes’ medieval romance, the Conte du Graal.
+
+Fortunately again, Elvira Laskowski-Caujolle’s “Jacques Roubaud: Literature, Mathematics, and the Quest for Truth” outlines many of the math elements in The Princess Hoppy — and Jstor.org offers free access to the article.
+
+Here’s a sample:
+
+“To read Roubaud’s novel means not only to interpret and to analyze, but [also] to decipher the given puzzles and riddles. Like a mathematician who reads a mathematical text with pen and paper to verify theorems or to do the inevitable exercises at the end of a chapter, the reader of La Princesse Hoppy has to answer 79 questions to verify whether or not s/he has properly ‘understood’ the tale.”
+
+In addition, complex mathematical and logical problems are woven through the whole narrative, as the princess tries to unravel a conspiracy in which three of her uncles are plotting against a fourth. She doesn’t know which uncle is the target of the plot — and every time any two of the uncles meet, they conspire in secret, creating a very large array of conspiratorial configurations. One key to the solution derives from a mathematical interpretation of a medieval monastic precept: the Rule of St. Benedict.
+
+Laskowski-Caujolle’s commentary on the princess’s problem offers a glimpse of the complexity Roubaud has built into the story:
+
+“If we translate the literary text into algebraic formulas, we will get the axioms for a mathematical group of order 4, when we consider a set of four kings [the uncles]. There exist only two groups of order 4, the cyclic group C4 and the so called Klein group KA, represented by the following multiplication tables (in general the elements are given by a, b, c, e; the element e is called the unity element):
+
+So: “If we can determine the unity element for the set of the four kings and the type of group, we will be able to answer the princess’s question concerning the royal conspiracy.”
+
+There’s much more of course, with clues and puzzles scattered throughout the text. As Roubaud explains elsewhere, everything in his work — down to each letter of the alphabet — has more than one meaning.
+
+The Princess Hoppy represents one side of Roubaud’s writing: the playful, intellectually entertaining, and eccentric side. An opposite, complementary aspect is deeply personal, balancing emotional intensity with mathematical abstraction. In Quelque chose noir (1986; Some Thing Black, 1991), Roubaud organizes the experience of grief into nine groups of nine poems— beginning with the starkly physical account of finding a body, and ending with one last poetic expression of grief: “Nothing.”
+
+By now I hope you’d like to know more about this unusual writer, so here’s a quick get-acquainted guide.
+
+Born in 1932, Roubaud was a literary prodigy, who began publishing poetry at the age of twelve. But he disliked the competitive system of French education, and dropped in and out of school, studying English, linguistics, and other subjects at various points. Then, in 1954, he happened into contact with the innovative mathematical collective known as Bourbaki, and became interested in set theory. Although twenty-two is a very late age to begin the serious study of mathematics, Roubaud made rapid progress, and by the early 1960s had obtained a teaching position and completed his doctorate.
+
+The decision to immerse himself in math was the first turning point in Roubaud’s life — but he couldn’t abandon literature altogether. During a dream on his birthday in 1961, he envisioned a vast web of works that would contain both literary and mathematical texts. He planned to provide a map of its thematic structure in the form of a novel, to be called Le grand incendie de Londres [The Great Fire of London].
+
+Roubaud embarked on this “grand project” with a disciplined plan of writing, and extensive research into a traditional poetic form, the sonnet —a fourteen-line poem with ten syllables in each line and a thematic turn that usually divides the poem into an eight-line octet and a six-line sestet. Since there are several possible rhyme schemes, and several different ways of organizing the sonnet’s internal elements, the basic form has many variations.
+
+Combining his sonnet research with a mathematical structure based on the game of Go, Rubaud produced his first major work, the 1967 collection titled simply ∈ (the symbol for an element belonging to a set). The poems and their internal components can be rearranged by the reader in a variety of configurations — and if that sounds intriguing, you can explore an English translation of the collection online, for free.
+
+During the 1970s, Roubaud continued teaching mathematics and writing mathematically inspired poetry. He also collaborated on a play cycle and published Graal Fiction, a text that combines the retelling of several medieval stories about the Grail quest with interconnected theoretical commentaries.
+
+By now, however, Roubaud had realized that his original vision of the “grand project” was impossibly ambitious — and at the end of 1978, he tore up the outline and threw it away.
+
+The following year he met and married 28-year-old photographer Alix Cléo, with whom he formed a deep emotional and creative bond. Her sudden death from a pulmonary embolism, just three years later, became the second major turning point in Roubaud’s life, and for many years, his work reflected — often very subtly — a slow, complex process of grief and recovery.
+
+The first expression of that process was Some Thing Black, a somber, often wrenching, volume of poems published in 1986. But in a characteristic alternation of emphasis, Roubaud surrounded the publication of Some Thing Black with two comic, carnivalesque novels: La belle Hortense: roman (1985; Our Beautiful Heroine, 1987) and L’enlèvement d’Hortense: roman (1987; Hortense Is Abducted, 1989). Three years later he concluded the trilogy with L’exil d’Hortense: roman (1990; Hortense in Exile, 1992).
+
+A cross between off-kilter fairy tale and crazy-quilt detective story, the Hortense novels are not just irresistibly entertaining but also intellectually mischievous, as Roubaud parodies accepted ideas about the literary novel, and lampoons some exaggerated aspects of literary theory.
+
+In 1989, Roubaud returned to his “grand project,” but from a radically different perspective. The prose work he published as Le grand incendie de Londres was both a description of his original vision and an account of why and how he abandoned it.
+
+You can get a good idea of the book in English translation from the “Look Inside” feature on Amazon. And in case you’d like to read about the work before/during/after exploring the work itself, Dalkey Archive has kindly provided the text of several commentaries for free download.
+
+Le grand incendie de Londres began a series of works that Roubaud calls the “minimal project” — exploring the dimensions of memory and the fragmented remains of what he had once imagined. A second volume, La Boucle, travels back to Roubaud’s memories of family and childhood. It was published in 1993 and translated as The Loop in 2002. The third volume, Mathematique: recit (1997; Mathematics, 2012), focuses on the period of his life during which Roubaud committed to the serious study of math.
+
+A fourth (not yet translated) volume traces Roubaud’s early explorations in the practice of poetry — and taken together, Mathematique and Poesie form a “branch” of the minimal project, reflecting Roubaud’s practice of linking various texts in a tree-like structure.
+
+The minimal project, which has grown to seven volumes, comprises a complete cycle of autobiographical reflection, but does not present a linear narrative. And in each text, memories are recounted in the order they came back into recollection, not in the order that events actually took place.
+
+The elementary unit of these works is the “prose moment,” Roubaud’s term for the amount of writing that happens between the time he habitually begins (in the early morning darkness) and the time he stops (when sunlight reaches his desk). In constructing the memoir cycle, his practice was to write every day, but never re-read or revise what he had already written, preserving the spontaneity of his recollections.
+
+In Mathematics, Roubaud offered this observation:
+
+“I sought out arithmetic to protect myself. But from what? At the time, I would probably have replied: from vagueness, from a lack of rigor, from ‘literature.’”
+
+Yet he went on to discover that the two realms — “arithmetic” and “literature” — could not be completely separated, at least in his own work. The result has been a lifetime of writing that not only breaks new ground intellectually, but also reaches into the deepest recesses of the human heart.
+
+Which seems quite remarkable.

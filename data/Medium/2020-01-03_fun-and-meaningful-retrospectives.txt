@@ -1,0 +1,49 @@
+Fun and Meaningful Retrospectives
+
+Farfetch Tech
+
+By Pedro Costa Pereira, Junior Software Engineer — .NET
+
+A wise man once said you can only truly move forward by learning from the past, otherwise, you will make the same mistakes again and again.
+
+From this idea, we built the foundations of our agile retrospectives. We started by looking at our past work, focusing on what we did well and where there was room for improvement.
+
+In this article, I will focus on Tech Development retrospectives, but still, in many organizations and many areas, retrospectives are not regularly practised, if at all. I, for one, come from a background where we didn’t have them. What I learned from that experience is that we were constantly feeling that something was not right but we hardly ever took any actions to fix the problems, or simply had difficulty understanding those downfalls collectively as a team. When I came to Farfetch, I was introduced to the ceremony of the retrospective and right away I understood the value of it — it was a moment of reflection and it prevented the accumulation of problems. Many of my colleagues agree and feel that with the Farfetch retrospectives we have a greater team union, the capability to act on problems and to plan for the future.
+
+Still for some, this agile ceremony carries no great value or is outright pointless. In fact, if retrospectives are not done properly and with real commitment from the team members, they will most likely end up being of little use and mostly just a discussion forum without any short, mid or long-term results. I understand why many teams see Retrospectives in such a light, but still, I will try to show my vision of them and to positively influence you regarding your future Retrospectives.
+
+That being said, one of the pitfalls many teams end up being caught in are having retrospectives which are too focused on bare discussion, with no games involved, that leads to a dull retrospective that becomes tiresome. Another pitfall is to have a retrospective where we do not actually set any targets or actions on which to work upon, which can lead to losing the point of the initiative.
+
+For starters, a retrospective should be, as my title states, Fun and Meaningful.
+
+It must be fun because we need the participants to be involved and engaged with total focus. In addition, it is important to remember that a team is made up of the bonds between people and those bonds need to be nourished beyond simple work tasks, through team-building activities and those activities commonly translate in moments like — yes you guessed it — retrospectives. A fun retrospective is a team-building retrospective.
+
+They ought to be meaningful since they are a key part of a team work-cycle and must generate value to the team. To do so, and regarding my experience here at Farfetch, I believe that a retrospective should follow at least five key points:
+
+It should reflect on what went wrong It should reflect on what went well It should enable healthy discussions It should generate actions regarding what went wrong or what we want to improve It should enumerate and build upon the last retrospective actions
+
+These five key points should be, in my opinion, and based on my experience at Farfetch, the core objectives and guidelines of your team retrospective and are quite self-explanatory of what they aim to achieve. But the “how” is a different part that should be focused on the “Fun”. As such, I suggest that these five points are involved in activities that will engage the team and make everyone have a healthy discussion while at the same time having fun, all while generating valuable insights and actions to further improve the performance and work-cycle of the team.
+
+I am going to share with you an example of an early retrospective done here at Farfetch by my team, according to my vision and personal take on the organization of retrospectives and the activities that are part of them. Its organization was as follows:
+
+I started the retrospective with an interactive and fast ice-breaker that focused on each team member’s current wellbeing and happiness, to assess and measure where the team stands at the time. The ice-breaker I chose was the “Weather Report” where you draw on a board a Sun, a Cloud, a Raining Cloud and a Thunder Cloud, and then ask each team member to choose the symbol that defines their state of mind and why they felt as such during the last couple of weeks We then reviewed the last retrospective’s actions and discussed what was missing to ensure completion — this is important as one of the fundamentals of a retrospective is the actions we extract from it, so it’s crucial that we assess how they are progressing For the biggest part of the retrospective, we played a fun and engaging game where through various activities we ended up reflecting on the events that have happened, good and bad, and the values that were generated. The game we played this time was “The Three Little Pigs”, a game where you draw on a board three houses, a straw one where the team members should list what went wrong or is in a fragile state, a wood one where the team members should list what went well and a brick house for everything that went great or was done in a very solid way in the past weeks We took some time to discuss the points that were gathered in the game we played, this way everyone was able to build upon them by sharing their vision Based on the discussion, we created as a team the action points to be carried out towards improving the performance or any other necessity of the team Finally, to finish up the retrospective, we assessed through a fast activity if the team enjoyed this ceremony. This is important in order to refine the next retrospectives, making them more enjoyable and engaging
+
+This is a good basis for a fully-fledged retrospective with space for all our needs and that tries its best to be motivating for our colleagues.
+
+Furthermore, you can use a plethora of games and activities to enrich your retrospectives, a simple online search will give you great ideas and there are even dedicated websites to the matter. Some examples of activities that I have done with success are “The 3 Ls”, the “Three Little Pigs” and the “Hot Air Balloon”. There are even complex games similar to Monopoly and Dungeons & Dragons you can explore!
+
+Of course, these are just suggestions and are open to modification and extension. One extension that I would like to talk about and advise on, is the incorporation of Metrics in the ceremony, which is something I have started using here at Farfetch.
+
+One of the feelings people tend to have towards retrospectives, as stated before, is that they sometimes appear to not gather value or are simply meaningless. This tends to happen when in a retrospective matters are discussed in a very subjective way, without proper calibration to guide our judgment, as such we may incorrectly have the feeling that nothing is really changing or improving.
+
+That’s where metrics can help, they provide us with solid and real data through which we can compare and assess our development through time.
+
+Imagine that in team retrospectives it has been commonly pointed out that the team feels like they should be more productive and they come up with actions to solve that, but still the team feels like things are not changing. With the inclusion of metrics in the retrospective, we could at first demonstrate the current throughput of stories done by week, and on following retrospectives the actions taken would be discussed while new metrics would be presented that would show a real 5% increase. Now the team is not being subjective anymore, it has data that shows objectively how the team targets are evolving and how our retrospective actions really affect the work done.
+
+Of course, the metrics taken and shown in a team retrospective change depending on the team and the needs the team has, as such, I cannot advise in particular which metrics to use, but some examples include WIP (work in progress), throughput, cycle time and lead time. These are particularly useful in software development but I believe they can be used in many other areas.
+
+In terms of the organization of the retrospective activities and using the example I gave earlier, I would insert the presentation and discussion of the metrics during and after the discussion of the past retrospective actions. Having this in mind and considering the time everything usually takes, I advise that a retrospective should be about an hour or an hour and a half long. Shorter and there will be no time for proper discussions, longer and the engagement of the team will suffer.
+
+I hope that I have helped someone prepare a fun and meaningful retrospective, I remember how lost I felt when I had to prepare my first one and know it can be difficult to engage one’s team.
+
+Remember to engage, to discuss and to take actions, all while having fun.

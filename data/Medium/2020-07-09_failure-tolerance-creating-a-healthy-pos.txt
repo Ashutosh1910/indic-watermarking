@@ -1,0 +1,51 @@
+Failure Tolerance: Creating a Healthy Postmortem Culture
+
+April Dagonese
+
+In 2016, our Engineering org was visited by then-Etsy CTO John Allspaw, who led a multi-day workshop about healthy incident management processes. He’d written several pieces about how Etsy managed incidents, particularly focusing on the use of blameless postmortems as a means of creating transparency, knowledge-sharing, stronger technical systems, and greater fault tolerance. (A postmortem or retrospective is a meeting held to review the successes and failures of a project or specific event, during and/or after the fact.) This was especially appealing to our org at the time, as we’d been experiencing a record number of outages and needed to stop the bleeding.
+
+Allspaw had a few key points that we ran with:
+
+“A funny thing happens when engineers make mistakes and feel safe when giving details about it: they are not only willing to be held accountable, they are also enthusiastic in helping the rest of the company avoid the same error in the future.” “By investigating mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process of individuals proximate to the failure, an organization can come out safer than it would normally be if it had simply punished the actors involved as a remediation.” “You can’t fully appreciate how complicated some of the failure scenarios we see in our field of web operations [are] until you actually want to explain it to someone who isn’t familiar with software and infrastructure fundamentals.”
+
+Essentially, an org can create a process where the goal is to ask questions and learn from failure, rather than to point fingers.
+
+In a typical non-blameless postmortem or retro, it’s common to confine the meeting to a small group of impacted parties in the hope of keeping sensitive conversations private and reducing embarrassment. By making these conversations both blameless and systematic, it’s no longer as necessary to keep them small and private. In creating a safe atmosphere that is expected after every major incident or project, you also create accountability and open up the learning opportunity to the entirety of your company.
+
+Although the postmortem process eventually took hold throughout many areas of the company, it initially took shape as part of technical incident management — for example, when our website went down, or one of our APIs stopped working for customers. We needed a way to understand, communicate, and share knowledge about outages, and postmortems were the capstone of each incident. As we repeated the exercise, it became clearer that our handling and documentation of the incident were crucial inputs to a successful postmortem later on. Creating transparency in the inputs produced greater transparency in the outputs.
+
+Here’s what that timeline looked like in practice:
+
+Incident Occurs
+
+At first, this was often a service disruption — an outage on our platform that required technical troubleshooting, communication out to customers, and heavy internal coordination and messaging.
+
+The incident itself was governed by an “Outage Point of Contact,” an individual whose temporary role was to coordinate across technical, customer-facing, and communications teams until the incident was resolved. The Outage POC was also responsible for an Outage Doc, detailing notes and the latest update (in business-friendly language), which anyone in the company could access. The Outage POC was usually a more senior engineer or technical program manager who had a solid understanding of the company’s flows and teams — typically whoever was available at the time.
+
+An internally-public communications channel was used to provide status updates. The Outage Doc would be linked in the outage channel, which itself was an open forum where anyone could ask questions throughout the incident. The channel would also be moderated by the Outage POC.
+
+This entire process was documented on a checklist that was easily accessible to the Outage POC at the start of the incident.
+
+Incident Ends
+
+Following the incident, the Outage POC would schedule a postmortem. The meeting would go on a public calendar. Those directly involved in the incident would be required attendees — everyone from engineers to customer-facing teams to communications managers. But the rest of the company was also invited to attend if they wanted to learn more about what had happened, how it was handled, or what preventive measures would be taken in the future.
+
+Postmortem Occurs
+
+The postmortem conversation was led by someone from a group that had gone through training and was considered qualified to facilitate in a blameless style. Importantly, it was required that the facilitator be someone who had not been involved in the incident itself. This gave the facilitator the ability to ask questions that might have felt obvious to those involved but actually contained important details that were worth talking about out loud. (I.e. Including a facilitator with very little context helped to eliminate Hindsight Bias.) It also helped ensure that the facilitator had no stake in pointing fingers.
+
+The facilitator would typically ask for a timeline of events, using the Outage Doc and the audience as inputs. Timelining helped uncover knowledge gaps and gave attendees a mutual understanding of what had happened. Facilitators were trained to ask questions aimed at process thinking: “How did you know to look there as part of your troubleshooting?” or “what was it about that alert that made it feel more urgent than the others?” were encouraged over anything that started with “why did you….” Audience members could ask questions as well.
+
+Postmortems could last anywhere from 30 minutes to 3 hours, depending on the severity of the incident. They typically included between 10 and 25 attendees.
+
+Notes were taken on the Outage Doc throughout the conversation. Action Items were identified if necessary, but they were never the goal of the postmortem; learning was the main focus. Outage Docs/Postmortem Notes were kept in a public place where anyone could read details about the incident and its resolution after the fact.
+
+As the postmortem process calcified, we consistently received positive feedback from attendees. Those of us who managed incidents noted smoother recovery processes and better, more accurate communications with our customers. Disparate groups of teams showed better alignment over how systems were integrated and which parties should be involved.
+
+The fact that our program management team owned the postmortem process and facilitated most of our postmortems firsthand drove some of this improved alignment. It was powerful to give ownership of these learning opportunities to the people who could adapt to the feedback on a daily basis and disseminate better processes. But we also gained alignment simply by opening up attendance to any interested parties, which often included others in cross-functional roles as well.
+
+We kicked off this program while we were around 300 employees strong, but it grew with us as we scaled. We started receiving requests to train teams outside of Engineering on conducting blameless postmortems. By the time we were closer to 600 people, we used this system to understand and share knowledge about marketing processes, customer onboarding, sales team initiatives… Anything that benefited from unbiased exploration and knowledge sharing was game.
+
+We built out our team of qualified facilitators until we had representatives from across the company. Your postmortem for a marketing project could be facilitated by someone you’d never met or worked with before. This anonymity contributed to blamelessness, helped foster relationships, and also systematized the process of learning about distant parts of the business. I can’t count the number of times I heard from an employee that attending a postmortem had been one of the most educational experiences they’d had at the company. Members of the C suite and executive leadership would also attend, opening themselves up to the same feedback and questioning that was expected of lower-level employees.
+
+A major benefit of making these meetings so open and cross-functional was that it forced participants to crystallize their understanding into something simple enough for a broader audience. To Allspaw’s third quote above, we never fully understood what had happened until we distilled it down this way. But even further, we didn’t limit the number of employees who had access to this distillation. There were occasionally exceptions when the topic involved sensitive HR or compliance issues, for example. But, for the most part, we managed to create something that was systematic and wide-reaching.
