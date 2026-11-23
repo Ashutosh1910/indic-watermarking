@@ -4,6 +4,10 @@
 
 Length rule: accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0.
 
+Passage script check (trim.py's threshold): a document is skipped and replaced by the next one in the sample if a passage has less than 0.9 Latin (en), 0.8 Devanagari (hi) among its letters; 1 skipped.
+
+max_new_tokens = ceil256(max(level factor x requested tokens, 1.25 x (largest served token cutoff - head tokens), largest served word cutoff x passage tokens/word - head tokens)); prompt + max_new_tokens <= 32768.
+
 ## Documents
 
 | source/lang | available | sampled |
@@ -55,15 +59,14 @@ Length rule: accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of 
 | same_tokens | hindi-aesthetics | hi | tokens | 1500 | 143 |
 | same_tokens | hindi-aesthetics | hi | tokens | 400 | 1 |
 | same_tokens | hindi-aesthetics | hi | tokens | 800 | 6 |
-| same_tokens | samalochan | hi | tokens | 1500 | 129 |
+| same_tokens | samalochan | hi | tokens | 1500 | 130 |
 | same_tokens | samalochan | hi | tokens | 200 | 1 |
 | same_tokens | samalochan | hi | tokens | 400 | 4 |
-| same_tokens | samalochan | hi | tokens | 800 | 16 |
+| same_tokens | samalochan | hi | tokens | 800 | 15 |
 | same_words | hindi-aesthetics | hi | words | 1200 | 121 |
 | same_words | hindi-aesthetics | hi | words | 400 | 5 |
 | same_words | hindi-aesthetics | hi | words | 800 | 24 |
-| same_words | samalochan | hi | words | 1200 | 145 |
-| same_words | samalochan | hi | words | 200 | 1 |
+| same_words | samalochan | hi | words | 1200 | 146 |
 | same_words | samalochan | hi | words | 800 | 4 |
 
 ## Passages serving each cutoff (human anchor exists at that cutoff)
@@ -76,12 +79,12 @@ Length rule: accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of 
 | same_tokens | hindi-aesthetics | hi | tokens | 800 | 144 |
 | same_tokens | hindi-aesthetics | hi | words | 100 | 144 |
 | same_tokens | hindi-aesthetics | hi | words | 200 | 139 |
-| same_tokens | samalochan | hi | tokens | 1500 | 129 |
-| same_tokens | samalochan | hi | tokens | 200 | 131 |
+| same_tokens | samalochan | hi | tokens | 1500 | 130 |
+| same_tokens | samalochan | hi | tokens | 200 | 132 |
 | same_tokens | samalochan | hi | tokens | 400 | 130 |
 | same_tokens | samalochan | hi | tokens | 800 | 123 |
-| same_tokens | samalochan | hi | words | 100 | 126 |
-| same_tokens | samalochan | hi | words | 200 | 119 |
+| same_tokens | samalochan | hi | words | 100 | 127 |
+| same_tokens | samalochan | hi | words | 200 | 118 |
 | same_words | hindi-aesthetics | hi | tokens | 1500 | 143 |
 | same_words | hindi-aesthetics | hi | tokens | 200 | 145 |
 | same_words | hindi-aesthetics | hi | tokens | 400 | 143 |
@@ -91,26 +94,26 @@ Length rule: accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of 
 | same_words | hindi-aesthetics | hi | words | 200 | 143 |
 | same_words | hindi-aesthetics | hi | words | 400 | 142 |
 | same_words | hindi-aesthetics | hi | words | 800 | 143 |
-| same_words | samalochan | hi | tokens | 1500 | 129 |
-| same_words | samalochan | hi | tokens | 200 | 131 |
+| same_words | samalochan | hi | tokens | 1500 | 130 |
+| same_words | samalochan | hi | tokens | 200 | 132 |
 | same_words | samalochan | hi | tokens | 400 | 130 |
-| same_words | samalochan | hi | tokens | 800 | 122 |
-| same_words | samalochan | hi | words | 100 | 128 |
-| same_words | samalochan | hi | words | 1200 | 145 |
-| same_words | samalochan | hi | words | 200 | 134 |
-| same_words | samalochan | hi | words | 400 | 137 |
-| same_words | samalochan | hi | words | 800 | 139 |
+| same_words | samalochan | hi | tokens | 800 | 123 |
+| same_words | samalochan | hi | words | 100 | 129 |
+| same_words | samalochan | hi | words | 1200 | 146 |
+| same_words | samalochan | hi | words | 200 | 133 |
+| same_words | samalochan | hi | words | 400 | 138 |
+| same_words | samalochan | hi | words | 800 | 140 |
 
 ## Upper bound on generated tokens (sum of max_new_tokens)
 
 | level | lang | tokens |
 |---|---|---|
-| C_continue | hi | 3,923,200 |
-| G_title | hi | 1,713,536 |
-| L1_proofread | hi | 1,544,896 |
-| L2_polish | hi | 1,544,896 |
-| L3_paraphrase | hi | 2,996,608 |
-| L4_rewrite | hi | 2,996,608 |
+| C_continue | hi | 4,117,504 |
+| G_title | hi | 1,764,352 |
+| L1_proofread | hi | 1,585,152 |
+| L2_polish | hi | 1,585,152 |
+| L3_paraphrase | hi | 3,064,064 |
+| L4_rewrite | hi | 3,064,064 |
 | OX_extract_outline | hi | 614,400 |
 
 ## Skipped
@@ -118,6 +121,7 @@ Length rule: accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of 
 | level | source | reason | n |
 |---|---|---|---|
 | (doc) | samalochan | no passage: same_tokens; same_words | 1 |
+| (doc) | samalochan | passage script share < 0.8: same_tokens; same_words | 1 |
 | C_continue | samalochan | no inner sentence end | 3 |
 | G_title | hindi-aesthetics | no usable title | 54 |
 | G_title | samalochan | no usable title | 146 |

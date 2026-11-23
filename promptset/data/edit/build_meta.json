@@ -17,7 +17,8 @@
  "token_counts_estimated": false,
  "acceptance_rule": "accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0",
  "lengths": {
-  "max_new_tokens_round": 64,
+  "max_new_tokens_round": 256,
+  "max_context": 32768,
   "round_n_to": 10,
   "cutoffs": {
    "words": [
@@ -66,6 +67,11 @@
  ],
  "n_docs": 150,
  "min_words": 300,
+ "script_min": {
+  "hi": 0.8,
+  "en": 0.9
+ },
+ "docs_skipped_script": 1,
  "docs": {
   "hindi-aesthetics/hi": {
    "available": 968,
@@ -83,6 +89,12 @@
    "level": "(doc)",
    "source": "samalochan",
    "reason": "no passage: same_tokens; same_words",
+   "n": 1
+  },
+  {
+   "level": "(doc)",
+   "source": "samalochan",
+   "reason": "passage script share < 0.8: same_tokens; same_words",
    "n": 1
   },
   {

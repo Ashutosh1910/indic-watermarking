@@ -14,7 +14,14 @@ lengths:
   # slack_words: 30                     # accept iff n >= min(min_frac*N, N - slack); 0 = pure min_frac rule
   # slack_tokens: null                  # null: round(slack_words * tokens_per_word[lang]) (en 38, hi 137);
   #                                     # an int applies to every language. build --slack-words/--slack-tokens override.
-  max_new_tokens_round: 64              # ceil to a multiple of this (generate.py batches by equal max_new_tokens)
+  # max_new_tokens = ceil_round(max(level factor x requested tokens, 1.25 x (largest served token cutoff -
+  # head tokens), largest served word cutoff x passage tokens/word - head tokens)): every row can reach every
+  # cutoff it serves (validate_promptset.py's length checks). 256 (was 64): generate.py batches only rows with
+  # equal max_new_tokens, so coarser steps give fewer, fuller batches; rows stop at EOS, so the extra
+  # headroom costs little.
+  max_new_tokens_round: 256
+  max_context: 32768                    # prompt + max_new_tokens must fit (Qwen3-8B; validator --max-context);
+  #                                     # cutoffs a row cannot reach within it are dropped from that row
   round_n_to: 10                        # the {n} written into a prompt is rounded to the nearest multiple
 
 # Passage variants per document. Each one is cut at the LARGEST cutoff of its kind the document supports
@@ -32,6 +39,8 @@ sampling:
   require_all_experiments: true         # a doc must yield a passage for every experiment above
   stratify_by: genre                    # round-robin over genres in stable-hash order
   pilot_docs: 0                         # first K sampled docs per corpus get split "pilot" (--pilot-docs)
+  # script_min: {hi: 0.8, en: 0.9}      # default: trim.py's DEFAULT_SCRIPT_MIN. A doc whose passage has a
+  #                                     # lower Devanagari (hi) / Latin (en) share of letters is skipped
 
 # What to do with documents whose punctuation was removed upstream (hindi-aesthetics):
 #   exclude  no rows for this level

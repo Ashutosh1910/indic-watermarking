@@ -12,13 +12,33 @@ Tests: `python3 -m pytest promptset/tests/test_edit_prompts.py -q`.
 
 | level | model input | `{n}` / target | `max_new_tokens` | watermark |
 |---|---|---|---|---|
-| `L1_proofread`, `L2_polish`, `L3_paraphrase`, `L4_rewrite` | the whole cut human passage `{text}` | output is about as long as the input | ceil64(1.5 x input tokens) | yes |
-| `C_continue` (k = 75, 50, 25) | `{head}` = the first k % of the passage's words, cut at the sentence end nearest to k % | `{n}` = words left over (passage words - head words) | ceil64(1.3 x (passage tokens - head tokens)) | yes |
+| `L1_proofread`, `L2_polish`, `L3_paraphrase`, `L4_rewrite` | the whole cut human passage `{text}` | output is about as long as the input | 1.5 x input tokens, raised to the served cutoffs (below) | yes |
+| `C_continue` (k = 75, 50, 25) | `{head}` = the first k % of the passage's words, cut at the sentence end nearest to k % | `{n}` = words left over (passage words - head words) | 1.3 x (passage tokens - head tokens), raised to the served cutoffs | yes |
 | `OX_extract_outline` (stage 1, **ours**) | `{text}` = the passage; asks for 5-8 bullet points in the same language, in the model's own words | none | 512 (en) / 1024 (hi) | **no** |
-| `O_outline` (stage 2) | `{points}` = the cleaned OX outline | `{n}` = passage words | ceil64(1.3 x passage tokens) | yes |
-| `G_title` | `{title}` = the human doc's title; kit G templates 1 and 3 (indices 0 and 2) | `{n}` = passage words | ceil64(1.3 x passage tokens) | yes |
+| `O_outline` (stage 2) | `{points}` = the cleaned OX outline | `{n}` = passage words | 1.3 x passage tokens, raised to the served cutoffs | yes |
+| `G_title` | `{title}` = the human doc's title; kit G templates 1 and 3 (indices 0 and 2) | `{n}` = passage words | 1.3 x passage tokens, raised to the served cutoffs | yes |
 
 `{n}` is rounded to the nearest 10 (`lengths.round_n_to`); `target_words` holds the number in the prompt.
+
+**`max_new_tokens` covers every cutoff the row serves.** A row's `cutoffs` can exceed its own passage: the
+acceptance slack serves hi 1500 tokens from a 1363-token passage and 1200 words from 1170. A budget scaled on
+the passage alone (1.3 x 1400 = 1820 < 1.25 x 1500) then cannot reach the largest cutoff it claims, which
+`validate_promptset.py` rejects (`length.mnt_vs_token_cutoff`, `length.word_cutoff_unreachable`; 402 + 5
+rows of the previous build, all C and G rows of `same_tokens` passages). So the builder takes
+
+    max_new_tokens = ceil256( max( level factor x requested tokens,
+                                   1.25 x (largest served token cutoff - head tokens),
+                                   largest served word cutoff x passage tokens/word - head tokens ) )
+
+with the validator's factor (1.25, `MNT_CUTOFF_FACTOR`; a test keeps the two equal) and the passage's own
+tokens per word (`input_tokens / input_words`, as the validator uses); head tokens are 0 except for C rows.
+Cutoffs are dropped instead only if the budget would push prompt + `max_new_tokens` past
+`lengths.max_context` (32768, the validator's `--max-context`): the row then keeps the cutoffs the capped
+budget reaches and the drop is counted under Skipped ("cutoffs dropped: over max_context"). No row of the
+current build comes near it (passage + budget is at most about 16.5 k tokens). The O rows of `build-outline` use
+the same rule. Steps are 256 tokens (`lengths.max_new_tokens_round`, was 64): generate.py batches only rows
+with equal `max_new_tokens`, and 256 gives 38 distinct values instead of 136, so batches are fewer and
+fuller. A budget is an upper bound (rows stop at EOS), so the extra headroom costs little.
 The system prompt is the kit's, per language; every row carries `chat_template_kwargs: {enable_thinking:
 false}`. The three kit phrasings of a level rotate across documents by a stable hash of (seed, level, doc
 id): a document uses the same phrasing in both experiments and at every k. `template_id` is
@@ -84,6 +104,16 @@ samalochan posts start with headings, bylines, picture credits and `____` separa
 non-empty lines, then leading lines of at most 10 words without sentence or clause punctuation (at most 8
 lines in total). The passage is still a verbatim slice of the document (`meta.passage_char_start`).
 Passages that still contain HTML remnants (`<![endif]>` and similar) are not used.
+
+### Script check
+
+A passage must have at least **0.8 Devanagari (hi) / 0.9 Latin (en)** among its letters, the threshold
+`trim.py` applies to the same human passages (`DEFAULT_SCRIPT_MIN`; override per language with
+`sampling.script_min`). A document whose passage fails is skipped like any other unusable document, so the
+next document in the stable sample takes its place. The count is in `build_meta.json`
+(`docs_skipped_script`, and the `(doc)` row "passage script share < 0.8" under `skips`) and in the summary.
+In the current build this removes one samalochan document (`56e7c26ec9`, mostly Latin script, 0.72-0.75
+Devanagari in its user turns), whose 15 rows the validator flagged (`script.hi_devanagari`).
 
 ### Titles (G_title)
 
@@ -202,7 +232,8 @@ Regenerate length failures from step 5 as in the runbook (`--only-ids ... --atte
 ## Current build (`promptset/data/edit/`, Qwen3 tokenizer, 150 docs per corpus)
 
 4,597 rows from 600 passages (150 docs x 2 experiments x 2 corpora), built with the default rule (95 % or
-one sentence of slack). No English source yet.
+one sentence of slack). No English source yet. `validate_promptset.py --strict` (Qwen3 tokenizer): 0
+errors, 18 warnings (`balance.en_hi_edit`: no English rows yet).
 
 | level | samalochan (sw / st) | hindi-aesthetics (sw / st) |
 |---|---|---|
@@ -214,7 +245,9 @@ one sentence of slack). No English source yet.
 | OX_extract_outline | 150 / 150 | 150 / 150 |
 | G_title | 77 / 77 | 123 / 123 |
 
-Sum of `max_new_tokens` is 15.3 M tokens: an upper bound, and most rows stop at EOS well before it.
+Sum of `max_new_tokens` is 15.8 M tokens (largest 9,984; 38 distinct values): an upper bound, and most
+rows stop at EOS well before it. Of the +0.46 M over the previous build (15.3 M, ceil64, budgets on the
+passage only), about 0.09 M is the cutoff floor above and the rest the 256 step.
 `edit_prompts_summary.md` has the full tables.
 
 ## Caveats
@@ -225,17 +258,14 @@ Sum of `max_new_tokens` is 15.3 M tokens: an upper bound, and most rows stop at 
   33-35/150, 35 of 150 samalochan documents fell back from 1500 to a smaller token cutoff, and 35 documents
   (27 samalochan, 8 hindi-aesthetics) failed every token cutoff and were skipped, which favoured documents
   with shorter sentences. The default slack (30 words / 137 hi tokens) fixes most of this: in the current
-  build the anchor exists at 200 tokens for 131/150 samalochan passages and at 100 words for 126-128/150,
-  21/150 samalochan documents fall back from 1500 tokens, and 1 document is skipped. The cost is that a
+  build the anchor exists at 200 tokens for 132/150 samalochan passages and at 100 words for 127-129/150,
+  20/150 samalochan documents fall back from 1500 tokens, and 1 document is skipped for length (1 more for
+  script, see above). The cost is that a
   short-cutoff passage can be much shorter than N (hi 200 tokens accepts from 63 tokens): analyse
   `n_tokens` / `n_words`, not only N. Rebuild with `--slack-words 0` to compare with the pure rule.
-* **More low-Devanagari passages.** The slack admits documents the old rule skipped; one samalochan
-  document (`56e7c26ec9`, mostly Latin script) now enters, and `validate_promptset.py` flags its 15 rows
-  (`script.hi_devanagari`); `trim.py human` rejects its anchor with `script`.
-* **Many distinct `max_new_tokens`.** ceil64 gives about 136 distinct values in this build, and
-  generate.py batches only rows with equal `max_new_tokens`. A coarser `lengths.max_new_tokens_round`
-  (for example 256) gives fuller batches at little cost, because rows stop at EOS.
-* Hindi same_words rows are long: about 5,500 input tokens and `max_new_tokens` up to about 9,900 for
+* **Low-Devanagari documents.** The slack admits documents the old rule skipped; such a document is now
+  caught by the passage script check (see "Script check") and replaced by the next one in the sample.
+* Hindi same_words rows are long: about 5,500 input tokens and `max_new_tokens` up to 9,984 for
   L1-L4.
 * `edit_prompts.jsonl` is about 90 MB, because the Hindi passage appears in `human_passage` and in the
   prompt. Keep it out of git.

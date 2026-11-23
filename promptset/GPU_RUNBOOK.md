@@ -29,6 +29,46 @@ huggingface-cli download Qwen/Qwen3-8B            # ~16 GB (newer huggingface_hu
 # --tokenizer /path/to/Qwen3-8B (trim.py, verify_generations.py)
 ```
 
+## 0b. Finish the translation and build the G prompt file (before any generation)
+
+`promptset/data/G_prompts*.jsonl` is built here, after the translation. The selection
+(`promptset/data/work/selected.jsonl`, `to_translate.jsonl`) is committed. The translation was started on a laptop
+and stopped at 64 of 517 rows (all English->Hindi); copy that partial `translated.jsonl` to
+`promptset/data/work/translated.jsonl` to resume from it, or translate all 517 here (minutes on a GPU). A pair is
+used only when both languages exist, so a build from a partial translation has no Hindi-native prompts and
+unbalanced genres; build after the translation is complete (517 pairs, 1,034 rows).
+
+IndicTrans2 needs its own venv (it breaks on transformers 5.x) and a Hugging Face token from an account that
+has accepted the terms of `ai4bharat/indictrans2-en-indic-1B` and `ai4bharat/indictrans2-indic-en-1B`:
+
+```bash
+python3 -m venv .venv-mt && .venv-mt/bin/pip install torch "transformers==4.57.6" "IndicTransToolkit==1.1.1" sentencepiece sacremoses pyyaml
+.venv-mt/bin/huggingface-cli login                 # read token of the account with IndicTrans2 access
+W=promptset/data/work
+# Resumes: the rows already in translated.jsonl are skipped. Same model (1B) and beams (5) as the laptop rows.
+.venv-mt/bin/python promptset/scripts/translate_indictrans2.py --in $W/to_translate.jsonl \
+    --out $W/translated.jsonl --size 1B --batch 32 --beams 5 --device cuda
+wc -l $W/translated.jsonl                          # expect 517
+```
+
+Optional speed-up: `--kv-cache` turns on the beam-search cache. With transformers 4.57.6 IndicTrans2's model
+code may crash with it; only use it if a 20-row test (`--limit 20`, two separate `--out` files) gives
+identical translations with and without it.
+
+Then build and validate the prompt file (main venv):
+
+```bash
+python promptset/scripts/build_promptset.py --work $W --config promptset/config/promptset.yaml \
+    --kit promptset/config/ai_levels_prompts.json --out promptset/data
+python promptset/scripts/validate_promptset.py promptset/data/G_prompts.jsonl \
+    --tokenizer Qwen/Qwen3-8B --report promptset/data/validation.md --strict
+```
+
+`build_promptset.py` prints "Missing translations: 0" when everything is in. Translations are used exactly
+as IndicTrans2 produced them. `$W/translation_review.jsonl` (optional, `id, ok, drop, issue`) only flags or
+drops pairs; it covers the rows reviewed so far, and the validator's `tr.*` warnings (length ratio, Latin
+leftovers, repeat loops, identical text) cover the rest. Use `P=promptset/data/G_prompts.jsonl` below.
+
 ## 1. Private watermark keys (once for the whole study)
 
 The keys in `promptset/config/generation.yaml` are the PUBLIC demo keys from the HF blog post. Make
@@ -49,7 +89,7 @@ verification reloads it.
 ## 2. Plan and pilot
 
 ```bash
-P=work/prompts.jsonl                              # prompt JSONL from the prompt-set step
+P=promptset/data/G_prompts.jsonl                  # built in step 0b (edit levels: promptset/data/edit/edit_prompts.jsonl)
 mkdir -p runs trimmed scores
 
 # Batch plan only (loads the tokenizer, not the weights): number of batches and padded token slots
@@ -179,6 +219,20 @@ level x cutoff_kind x cutoff x watermarked. `--score-ids` on a generate.py file 
 sampled token ids, which shows how much is lost to re-tokenisation.
 
 ## 6. Token budgets (TODO: fill after the pilot)
+
+Upper bounds known now (sum of `max_new_tokens`, i.e. every row running to its cap; real use is lower because
+generation stops at end of text). G rows are computed from the selection and config, so they hold once the
+translation is complete:
+
+| file | split | language | rows | mean max_new_tokens | sum max_new_tokens |
+|---|---|---|---|---|---|
+| G_prompts | pilot | en | 24 | 1,440 | 34,560 |
+| G_prompts | pilot | hi | 24 | 5,088 | 122,112 |
+| G_prompts | main | en | 376 | 1,444 | 542,912 |
+| G_prompts | main | hi | 376 | 5,102 | 1,918,400 |
+| G_prompts | reserve | en | 117 | 1,471 | 172,160 |
+| G_prompts | reserve | hi | 117 | 5,202 | 608,576 |
+| edit_prompts | main | hi | 4,597 | 3,436 | 15,794,688 |
 
 Per-GPU throughput comes from the pilot log (`total N tok/s`); GPU-hours = generated tokens / throughput / 3600.
 Devanagari costs several times more Qwen3 tokens than English for the same amount of text (see

@@ -22,6 +22,7 @@ sys.path.insert(0, str(REPO / "promptset" / "scripts"))
 sys.path.insert(0, str(REPO))
 
 import build_edit_prompts as bep  # noqa: E402
+import validate_promptset as vp  # noqa: E402
 
 HAVE_CORPORA = (REPO / "data" / "Samalochan").is_dir() and (REPO / "data" / "Hindi-Aesthetics-Corpus").is_dir()
 REQUIRED = ("id", "pair_id", "language", "level", "genre", "source", "source_id", "license", "split", "experiment",
@@ -35,8 +36,28 @@ def read(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-def ceil64(x: float) -> int:
-    return int(math.ceil(x / 64) * 64)
+RND = int(bep.load_config()["lengths"]["max_new_tokens_round"])
+
+
+def ceil_r(x: float) -> int:
+    return int(math.ceil(x / RND) * RND)
+
+
+def expected_mnt(r: dict, factor: float) -> int:
+    """The level's factor x requested tokens, raised to what the served cutoffs need (validator rule)."""
+    h = r.get("head_tokens") or 0
+    t, w = r["input_tokens"], r["input_words"]
+    need = [factor * (max(1, t - h) if r["level"] == "C_continue" else t)]
+    need += [vp.MNT_CUTOFF_FACTOR * (n - h) for n in r["cutoffs"]["tokens"]]
+    need += [n * t / w - h for n in r["cutoffs"]["words"]]
+    return ceil_r(max(need))
+
+
+def length_errors(rows: list[dict]) -> Counter:
+    """validate_promptset's length checks on the rows: code -> count (errors only)."""
+    rep = vp.Report()
+    vp.check_lengths(rows, None, rep)
+    return Counter({c: p["count"] for c, p in rep.problems.items() if p["severity"] == "error"})
 
 
 def words_of(s: str) -> int:
@@ -97,7 +118,7 @@ class TestBuildFromCorpora(unittest.TestCase):
             self.assertTrue(r["token_counts_estimated"])
             self.assertEqual(r["genre"], "unknown")
             self.assertTrue(r["license"])
-            self.assertEqual(r["max_new_tokens"] % 64, 0)
+            self.assertEqual(r["max_new_tokens"] % RND, 0)
             self.assertEqual(r["watermark"], r["level"] != "OX_extract_outline")
             self.assertNotRegex(r["messages"][1]["content"], r"\{(text|head|points|title|prompt|n)\}")
             if r["level"] != "C_continue":
@@ -107,13 +128,15 @@ class TestBuildFromCorpora(unittest.TestCase):
         for r in self.rows:
             lv, t = r["level"], r["input_tokens"]
             if lv.startswith("L"):
-                self.assertEqual(r["max_new_tokens"], ceil64(1.5 * t))
+                self.assertEqual(r["max_new_tokens"], expected_mnt(r, 1.5))
+                self.assertGreaterEqual(r["max_new_tokens"], 1.5 * t)
                 self.assertEqual(r["target_words"], r["input_words"])
                 self.assertIn(r["human_passage"], r["messages"][1]["content"])
             elif lv == "C_continue":
-                self.assertEqual(r["max_new_tokens"], ceil64(1.3 * (t - r["head_tokens"])))
+                self.assertEqual(r["max_new_tokens"], expected_mnt(r, 1.3))
+                self.assertGreaterEqual(r["max_new_tokens"], 1.3 * (t - r["head_tokens"]))
             elif lv == "G_title":
-                self.assertEqual(r["max_new_tokens"], ceil64(1.3 * t))
+                self.assertEqual(r["max_new_tokens"], expected_mnt(r, 1.3))
                 self.assertIn(r["title"], r["messages"][1]["content"])
                 self.assertIn(str(r["target_words"]), r["messages"][1]["content"])
                 self.assertLessEqual(abs(r["target_words"] - r["input_words"]), 5)
@@ -121,6 +144,13 @@ class TestBuildFromCorpora(unittest.TestCase):
                 self.assertEqual(r["max_new_tokens"], 1024)
                 self.assertEqual(r["cutoffs"], {"words": [], "tokens": []})
                 self.assertIn("passage_cutoffs", r)
+
+    def test_budgets_pass_the_validator_length_checks(self):
+        self.assertEqual(length_errors(self.rows), Counter())
+        meta = json.loads((self.out / "build_meta.json").read_text(encoding="utf-8"))
+        self.assertEqual(meta["script_min"], {"hi": 0.8, "en": 0.9})
+        for p in self.passages:
+            self.assertGreaterEqual(bep.script_share(p["text"], "hi"), 0.8, p["id"])
 
     def test_passages_are_doc_prefixes_cut_at_sentence_ends(self):
         L = self.cfg["lengths"]
@@ -260,7 +290,7 @@ class TestBuildFromCorpora(unittest.TestCase):
             for f in ("pair_id", "experiment", "passage_id", "human_passage", "input_words", "input_tokens", "split"):
                 self.assertEqual(o[f], src[f])
             self.assertEqual(o["cutoffs"], src["passage_cutoffs"])
-            self.assertEqual(o["max_new_tokens"], ceil64(1.3 * src["input_tokens"]))
+            self.assertEqual(o["max_new_tokens"], expected_mnt(o, 1.3))
             self.assertEqual(o["target_words"], bep.round_to(src["input_words"], 10))
             user = o["messages"][1]["content"]
             self.assertIn(o["points"], user)
@@ -363,6 +393,12 @@ class TestGenericJsonl(unittest.TestCase):
         genres = Counter(r["genre"] for r in rows if r["experiment"] == "same_words")
         self.assertEqual(genres, {"story": 3, "essay": 3, "opinion": 3})
 
+    def test_budgets_pass_the_validator_length_checks(self):
+        self.assertEqual(length_errors(self.rows), Counter())
+        for r in self.rows:
+            if r["level"] != "OX_extract_outline":
+                self.assertEqual(r["cutoffs"], next(p["cutoffs"] for p in self.passages if p["id"] == r["passage_id"]))
+
     def test_levels_subset_adds_ox_for_o(self):
         self.assertEqual(bep.resolve_levels(bep.load_config(), ["O_outline"]), ["OX_extract_outline", "O_outline"])
 
@@ -391,7 +427,8 @@ class TestRealTokenizer(unittest.TestCase):
             if p["input_cutoff_kind"] == "tokens":
                 self.assertTrue(bep.min_units(p["input_cutoff"], 0.95, 137) <= n <= p["input_cutoff"])
         for r in rows:
-            self.assertEqual(r["max_new_tokens"], ceil64(1.5 * r["input_tokens"]))
+            self.assertEqual(r["max_new_tokens"], expected_mnt(r, 1.5))
+        self.assertEqual(length_errors(rows), Counter())
 
 
 class TestUnits(unittest.TestCase):
@@ -495,6 +532,77 @@ class TestUnits(unittest.TestCase):
         self.assertFalse(bep.usable_title("", "hi", chk)[0])
         self.assertFalse(bep.usable_title("यह एक वाक्य है.", "hi", chk)[0])
         self.assertTrue(bep.usable_title("The Long Walk Home", "en", chk)[0])
+
+    def test_cutoff_factor_matches_validator(self):
+        self.assertEqual(bep.MNT_CUTOFF_FACTOR, vp.MNT_CUTOFF_FACTOR)
+        self.assertEqual(bep.load_config()["lengths"]["max_context"], 32768)
+        self.assertEqual(bep.passage_script_min(bep.load_config()), bep.DEFAULT_SCRIPT_MIN)
+        self.assertEqual(bep.DEFAULT_SCRIPT_MIN["hi"], 0.8)
+
+    def test_length_budget_covers_served_cutoffs(self):
+        cuts = {"words": [100, 200], "tokens": [200, 400, 800, 1500]}
+        # passage of 1400 tokens / 300 words serves 1500 tokens through the slack: 1.3 x 1400 = 1820 is not enough
+        mnt, kept, dropped = bep.length_budget(1.3 * 1400, cuts, 1400, 300, 64)
+        self.assertEqual((mnt, kept, dropped), (1920, cuts, 0))                 # ceil64(1.25 x 1500 = 1875)
+        # continuation: the head counts towards the cutoff; k25 head of 350 tokens -> 1.25 x 1150 = 1437.5
+        mnt, _, _ = bep.length_budget(1.3 * 1050, cuts, 1400, 300, 64, head_tokens=350)
+        self.assertEqual(mnt, 1472)
+        # a word cutoff above the passage (1200 words served from 1140) with a long head: 1.3 x (5244 - 4457)
+        # = 1023 < 1200 x 4.6 tok/word - 4457 = 1063
+        wc = {"words": [800, 1200], "tokens": [1500]}
+        self.assertEqual(bep.length_budget(1.3 * (5244 - 4457), wc, 5244, 1140, 64, head_tokens=4457)[0], 1088)
+        # the requested budget wins when it is larger
+        self.assertEqual(bep.length_budget(5000, cuts, 1400, 300, 256)[0], 5120)
+        # no cutoffs (or none above the passage): plain ceil of the request
+        self.assertEqual(bep.length_budget(100.0, {"words": [], "tokens": []}, 80, 20, 64), (128, {"words": [], "tokens": []}, 0))
+
+    def test_length_budget_drops_cutoffs_over_the_context_cap(self):
+        cuts = {"words": [100, 200], "tokens": [200, 400, 800, 1500]}
+        mnt, kept, dropped = bep.length_budget(600, cuts, 1400, 300, 64, cap=1100)
+        self.assertEqual(kept, {"words": [100, 200], "tokens": [200, 400, 800]})   # 1.25 x 1500 > 1088
+        self.assertEqual((mnt, dropped), (1024, 1))                                # ceil64(1.25 x 800) = 1024
+        # request itself over the cap: capped at the cap (rounded down), unreachable cutoffs dropped
+        mnt, kept, dropped = bep.length_budget(3000, cuts, 1400, 300, 64, cap=1100)
+        self.assertEqual((mnt, dropped), (1088, 1))
+        rep = vp.Report()
+        vp.check_lengths([{"id": "x", "language": "hi", "max_new_tokens": mnt, "cutoffs": kept,
+                           "input_tokens": 1400, "input_words": 300}], None, rep)
+        self.assertEqual(rep.problems, {})
+
+    def test_passage_script_check_skips_and_replaces_doc(self):
+        hi_sent = "यह एक साधारण हिंदी वाक्य है जिसमें कुछ शब्द हैं।"
+        latin_sent = "This sentence is mostly written in Latin script here ok."
+        def doc(i, latin_every):
+            sents = [latin_sent if latin_every and j % latin_every == 0 else hi_sent for j in range(120)]
+            return {"id": f"h{i}", "language": "hi", "title": "शीर्षक", "text": " ".join(sents), "license": "CC0"}
+        cfg = bep.load_config()
+        est = bep.TokenCounter(None, cfg["lengths"]["tokens_per_word"])
+        bad = bep.SourceDoc("t/x", "t", "x", "hi", "", doc(0, 2)["text"], "unknown", "CC0", {})
+        ps, fails = bep.make_passages(bad, cfg, est)
+        self.assertEqual(ps, [])
+        self.assertTrue(all(why.startswith("script share") and why.endswith("< 0.8") for why in fails.values()), fails)
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "hi_docs.jsonl"
+            docs = [doc(i, 2 if i == 1 else 0) for i in range(5)]
+            src.write_text("".join(json.dumps(d, ensure_ascii=False) + "\n" for d in docs), encoding="utf-8")
+            full = Path(tmp) / "all"
+            run_build(full, "--jsonl", str(src), "--n-docs", "0", "--levels", "L3_paraphrase")
+            meta = json.loads((full / "build_meta.json").read_text(encoding="utf-8"))
+            self.assertEqual(meta["docs_skipped_script"], 1)
+            self.assertIn({"level": "(doc)", "source": "hi_docs", "n": 1,
+                           "reason": "passage script share < 0.8: same_tokens; same_words"}, meta["skips"])
+            self.assertIn("1 skipped", (full / "edit_prompts_summary.md").read_text(encoding="utf-8"))
+            self.assertNotIn("hi_docs/h1", {p["pair_id"] for p in read(full / "human_passages.jsonl")})
+            # a sample of n keeps n docs: the skipped one is replaced by the next eligible doc
+            out = Path(tmp) / "n4"
+            run_build(out, "--jsonl", str(src), "--n-docs", "4", "--levels", "L3_paraphrase")
+            got = {p["pair_id"] for p in read(out / "human_passages.jsonl")}
+            self.assertEqual(len(got), 4)
+            self.assertNotIn("hi_docs/h1", got)
+            # sampling.script_min overrides the threshold
+            cfg2 = bep.load_config()
+            cfg2["sampling"]["script_min"] = {"hi": 0.3}
+            self.assertTrue(bep.make_passages(bad, cfg2, est)[0])
 
     def test_clean_outline(self):
         txt = "Here is the outline:\n\n1. First point\n2) **Second** point\n- third\nSome closing remark.\n* fourth"

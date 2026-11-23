@@ -57,11 +57,13 @@ from _common import dumps, iter_jsonl, log, md_table, read_jsonl_files, stable_h
 # The sentence-end rule and the trimming function are trim.py's, so human inputs and AI outputs are cut by
 # the same rule. (A local copy is kept only as a fallback for a checkout without trim.py.)
 try:
-    from trim import (_CLOSERS, _TERMINALS, DEFAULT_SLACK_WORDS, SENT_END, Trim, count_words,  # noqa: E402
-                      describe_rule, min_units, resolve_slack, sentence_ends, slack_for, trim_text)
+    from trim import (_CLOSERS, _TERMINALS, DEFAULT_SCRIPT_MIN, DEFAULT_SLACK_WORDS, SENT_END,  # noqa: E402
+                      Trim, count_words, describe_rule, min_units, resolve_slack, sentence_ends, slack_for,
+                      trim_text)
     TRIM_SOURCE = "trim.py"
 except ImportError:  # pragma: no cover - fallback; keep in sync with trim.py
     TRIM_SOURCE = "local fallback"
+    DEFAULT_SCRIPT_MIN = {"hi": 0.8, "en": 0.9}
     _CLOSERS = "\"'”’)\\]»"
     _TERMINALS = ".!?।॥…"
     SENT_END = re.compile(f"[{re.escape(_TERMINALS)}]+[{_CLOSERS}]*(?=\\s|$)")
@@ -136,6 +138,12 @@ LEVEL_ORDER = ("L1_proofread", "L2_polish", "L3_paraphrase", "L4_rewrite", "C_co
                "OX_extract_outline", "O_outline")
 EXP_SHORT = {"same_words": "sw", "same_tokens": "st"}
 KINDS = ("words", "tokens")
+# A row serving token cutoff N must be allowed MNT_CUTOFF_FACTOR x (N - head tokens) new tokens: the same
+# factor as validate_promptset.MNT_CUTOFF_FACTOR (a test keeps the two equal).
+MNT_CUTOFF_FACTOR = 1.25
+# Tokens the Qwen3 chat template adds around system + user (role headers, <|im_end|>, the empty think block);
+# about 20, rounded up. Only used to keep prompt + max_new_tokens under lengths.max_context.
+CHAT_TEMPLATE_TOKENS = 32
 
 # Every line break is a sentence end (for text whose punctuation was removed upstream): the match ends right
 # after the last non-space character of each line.
@@ -166,6 +174,43 @@ def round_to(x: float, step: int) -> int:
     return max(step, int(round(x / step)) * step) if step > 1 else int(round(x))
 
 
+def cutoff_need(kind: str, n: int, tokens: int, words: int, head_tokens: int = 0) -> float:
+    """New tokens a row needs so that (head +) generation can reach cutoff ``n`` of ``kind``, by the rule
+    validate_promptset.py checks: MNT_CUTOFF_FACTOR x (n - head) for token cutoffs, n x the passage's own
+    tokens per word - head for word cutoffs."""
+    if kind == "tokens":
+        return MNT_CUTOFF_FACTOR * (n - head_tokens)
+    return n * (tokens / words) - head_tokens if words > 0 else 0.0
+
+
+def length_budget(requested: float, cutoffs: dict[str, list[int]], tokens: int, words: int, rnd: int,
+                  head_tokens: int = 0, cap: int | None = None) -> tuple[int, dict[str, list[int]], int]:
+    """(max_new_tokens, cutoffs kept, number of cutoffs dropped).
+
+    max_new_tokens = ``requested`` (the level's factor x the tokens it asks for) raised to what every served
+    cutoff needs (``cutoff_need``), then ceiled to a multiple of ``rnd``. The served cutoffs can exceed the
+    passage (the acceptance slack serves hi 1500 tokens from 1363), so a budget scaled only on the passage
+    can fall short of them. Cutoffs are dropped only when the budget would exceed ``cap`` (context limit
+    minus prompt tokens): then every cutoff needing more than the capped budget goes, and the budget is
+    min(cap rounded down, what the rest needs)."""
+    def budget(cuts: dict[str, list[int]]) -> int:
+        need = max([float(requested)] + [cutoff_need(k, n, tokens, words, head_tokens)
+                                         for k in KINDS for n in cuts.get(k, [])])
+        mnt = ceil_to(need, rnd)
+        while mnt < need:            # guard against float rounding in ceil_to
+            mnt += rnd
+        return mnt
+
+    kept = {k: list(cutoffs.get(k, [])) for k in KINDS}
+    mnt = budget(kept)
+    if cap is None or mnt <= cap:
+        return mnt, kept, 0
+    cap_r = max(rnd, cap // rnd * rnd)
+    kept = {k: [n for n in v if cutoff_need(k, n, tokens, words, head_tokens) <= cap_r] for k, v in kept.items()}
+    dropped = sum(len(cutoffs.get(k, [])) - len(kept[k]) for k in KINDS)
+    return min(cap_r, budget(kept)), kept, dropped
+
+
 _PLACEHOLDER = re.compile(r"\{(text|head|points|title|prompt|n)\}")
 
 
@@ -181,6 +226,8 @@ def render(template: str, **values: Any) -> str:
 
 
 def script_share(text: str, language: str) -> float:
+    """Share of letters (L*, M*) in the language's script; the same count as trim.script_share (0.0 for a
+    language without a script entry)."""
     script = {"hi": "DEVANAGARI", "en": "LATIN"}.get(language)
     letters = hit = 0
     for ch in text:
@@ -210,6 +257,7 @@ def load_config(path: str | Path | None = None) -> dict[str, Any]:
     lengths.setdefault("slack_tokens", None)          # None: round(slack_words * tokens_per_word[lang])
     lengths.setdefault("max_new_tokens_round", ps.get("max_new_tokens_round", 64))
     lengths.setdefault("round_n_to", 10)
+    lengths.setdefault("max_context", 32768)        # Qwen3-8B native context (validate_promptset --max-context)
     lengths["cutoffs"] = {k: sorted(int(v) for v in lengths["cutoffs"].get(k, [])) for k in KINDS}
     set_slack(lengths)
     cfg["lengths"] = lengths
@@ -530,6 +578,19 @@ class Passage:
 _MARKUP = re.compile(r"<!|\[endif\]|\[if [a-z]|</?(?:p|div|span|br|a|img)\b[^>]*>|&(?:nbsp|amp|lt|gt);")
 
 
+SCRIPT_FAIL = "script share"
+SCRIPT_LABEL = {"hi": "Devanagari", "en": "Latin"}
+
+
+def passage_script_min(cfg: dict[str, Any]) -> dict[str, float]:
+    """Minimum share of the language's script (Devanagari for hi, Latin for en) among a passage's letters:
+    trim.py's DEFAULT_SCRIPT_MIN (hi 0.8, en 0.9), the threshold its script check applies to the same human
+    passages, unless ``sampling.script_min`` overrides it per language."""
+    out = dict(DEFAULT_SCRIPT_MIN)
+    out.update({str(k): float(v) for k, v in ((cfg.get("sampling") or {}).get("script_min") or {}).items()})
+    return out
+
+
 def passage_id(doc: SourceDoc, exp: str) -> str:
     return f"HP-{doc.source}-{short_hash(doc.pair_id)}-{EXP_SHORT.get(exp, exp)}-{doc.language}"
 
@@ -546,6 +607,7 @@ def make_passages(doc: SourceDoc, cfg: dict[str, Any], counter: TokenCounter
         body, n_hdr, _ = strip_header(doc.text)
     lead = len(body) - len(body.lstrip())
     base = len(doc.text) - len(body) + lead
+    script_min = passage_script_min(cfg)
     out: list[Passage] = []
     fails: dict[str, str] = {}
     for exp, kind in (cfg.get("experiments") or {"same_words": "words", "same_tokens": "tokens"}).items():
@@ -564,6 +626,12 @@ def make_passages(doc: SourceDoc, cfg: dict[str, Any], counter: TokenCounter
         if _MARKUP.search(text):
             fails[exp] = "HTML/markup left in the passage"
             continue
+        need = script_min.get(doc.language)
+        if need is not None:
+            share = script_share(text, doc.language)
+            if share < need:
+                fails[exp] = f"{SCRIPT_FAIL} {share:.2f} < {need:g}"
+                continue
         assert doc.text[base: base + len(text)] == text, "passage must be a prefix of the doc body"
         out.append(Passage(
             id=passage_id(doc, exp), doc=doc, experiment=exp, experiments=[exp], cutoff_kind=kind, cutoff=n,
@@ -713,9 +781,24 @@ def build_rows_for_passage(p: Passage, cfg: dict[str, Any], levels: Sequence[str
                            skips: Counter) -> list[dict[str, Any]]:
     L = cfg["lengths"]
     rnd, rn = int(L["max_new_tokens_round"]), int(L["round_n_to"])
+    max_context = L.get("max_context")
     d, lang = p.doc, p.doc.language
     pattern = sentence_pattern(bool(d.meta.get("punctuation_removed")))
+    system = cfg["kit_data"]["system"][lang]
     rows: list[dict[str, Any]] = []
+
+    def scored_row(level: str, k: int | None, v: int, user: str, target_words: int | None, requested: float,
+                   head_tokens: int, meta: dict[str, Any], extra: dict[str, Any] | None = None) -> dict[str, Any]:
+        """A watermarked row whose budget covers every cutoff it serves (see ``length_budget``)."""
+        cap = None
+        if max_context:
+            cap = int(max_context) - counter(system + "\n" + user, lang) - CHAT_TEMPLATE_TOKENS
+        mnt, cuts, dropped = length_budget(requested, p.cutoffs, p.tokens, p.words, rnd, head_tokens, cap)
+        if dropped:
+            skips[(level, d.source, "cutoffs dropped: over max_context")] += dropped
+        return finish_row(base_row(p, level, split, counter, k), cfg, level, v, user, target_words, mnt, cuts,
+                          True, meta, extra)
+
     for level in levels:
         if level == "O_outline":
             continue  # stage 2: build-outline
@@ -726,9 +809,8 @@ def build_rows_for_passage(p: Passage, cfg: dict[str, Any], levels: Sequence[str
         kind = lc.get("kind")
         if kind == "edit":
             v, tpl = pick_variant(cfg, level, d.pair_id, lang)
-            rows.append(finish_row(base_row(p, level, split, counter), cfg, level, v, render(tpl, text=p.text),
-                                   p.words, ceil_to(lc["max_new_tokens_factor"] * p.tokens, rnd), p.cutoffs,
-                                   True, doc_meta(p)))
+            rows.append(scored_row(level, None, v, render(tpl, text=p.text), p.words,
+                                   lc["max_new_tokens_factor"] * p.tokens, 0, doc_meta(p)))
         elif kind == "continue":
             v, tpl = pick_variant(cfg, level, d.pair_id, lang)
             for k in lc.get("ks", [75, 50, 25]):
@@ -739,10 +821,9 @@ def build_rows_for_passage(p: Passage, cfg: dict[str, Any], levels: Sequence[str
                 head, hw = h
                 ht = counter(head, lang)
                 n = round_to(p.words - hw, rn)
-                rows.append(finish_row(
-                    base_row(p, level, split, counter, int(k)), cfg, level, v, render(tpl, head=head, n=n), n,
-                    ceil_to(lc["max_new_tokens_factor"] * max(1, p.tokens - ht), rnd), p.cutoffs, True,
-                    doc_meta(p),
+                rows.append(scored_row(
+                    level, int(k), v, render(tpl, head=head, n=n), n,
+                    lc["max_new_tokens_factor"] * max(1, p.tokens - ht), ht, doc_meta(p),
                     {"head": head, "head_words": hw, "head_tokens": ht, "head_share": round(hw / p.words, 4),
                      "continuation_words_human": p.words - hw, "continuation_tokens_human": p.tokens - ht}))
         elif kind == "title":
@@ -751,9 +832,8 @@ def build_rows_for_passage(p: Passage, cfg: dict[str, Any], levels: Sequence[str
                 continue
             v, tpl = pick_variant(cfg, level, d.pair_id, lang)
             n = round_to(p.words, rn)
-            rows.append(finish_row(base_row(p, level, split, counter), cfg, level, v,
-                                   render(tpl, title=title, n=n), n,
-                                   ceil_to(lc["max_new_tokens_factor"] * p.tokens, rnd), p.cutoffs, True,
+            rows.append(scored_row(level, None, v, render(tpl, title=title, n=n), n,
+                                   lc["max_new_tokens_factor"] * p.tokens, 0,
                                    doc_meta(p, {"title_source": title_src}), {"title": title}))
         elif kind == "extract_outline":
             v, tpl = pick_variant(cfg, level, d.pair_id, lang)
@@ -857,7 +937,12 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             ps, fails = make_passages(d, cfg, counter)
             cache[d.pair_id] = (ps, fails)
             if not ps or (require_all and fails):
-                reasons["no passage: " + "; ".join(sorted(fails))[:80]] += 1
+                script = sorted(e for e, why in fails.items() if why.startswith(SCRIPT_FAIL))
+                if script:   # a script failure is reported on its own (the doc is replaced like any other)
+                    need = passage_script_min(cfg).get(d.language)
+                    reasons[f"passage {SCRIPT_FAIL} < {need:g}: " + "; ".join(script)] += 1
+                else:
+                    reasons["no passage: " + "; ".join(sorted(fails))[:80]] += 1
                 return False
             return True
 
@@ -895,6 +980,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         "tokenizer": counter.name, "token_counts_estimated": counter.estimated,
         "acceptance_rule": L["acceptance_rule"], "lengths": L,
         "experiments": cfg["experiments"], "levels": levels, "n_docs": n_docs, "min_words": min_words,
+        "script_min": passage_script_min(cfg),
+        "docs_skipped_script": sum(v for (a, _, c), v in skips.items() if a == "(doc)" and SCRIPT_FAIL in c),
         "docs": {f"{s}/{l}": v for (s, l), v in doc_counts.items()},
         "n_rows": len(rows), "n_passages": len(passages),
         "skips": [{"level": a, "source": b, "reason": c, "n": v} for (a, b, c), v in sorted(skips.items())],
@@ -921,6 +1008,16 @@ def summary_markdown(rows: Sequence[dict[str, Any]], passages: Sequence[dict[str
                     else f"Qwen3 tokenizer ({meta['tokenizer']})") + ".")
     if meta.get("acceptance_rule"):
         lines += ["", f"Length rule: {meta['acceptance_rule']}."]
+    if meta.get("script_min"):
+        lines += ["", "Passage script check (trim.py's threshold): a document is skipped and replaced by the next "
+                  "one in the sample if a passage has less than "
+                  + ", ".join(f"{v:g} {SCRIPT_LABEL.get(k, k)} ({k})" for k, v in sorted(meta["script_min"].items()))
+                  + f" among its letters; {meta.get('docs_skipped_script', 0)} skipped."]
+    if meta.get("lengths", {}).get("max_new_tokens_round"):
+        Lm = meta["lengths"]
+        lines += ["", f"max_new_tokens = ceil{Lm['max_new_tokens_round']}(max(level factor x requested tokens, "
+                  f"{MNT_CUTOFF_FACTOR} x (largest served token cutoff - head tokens), largest served word cutoff x "
+                  f"passage tokens/word - head tokens)); prompt + max_new_tokens <= {Lm.get('max_context')}."]
     lines += ["", "## Documents", "", md_table(["source/lang", "available", "sampled"],
                                                [[k, v["available"], v["sampled"]] for k, v in meta["docs"].items()])]
     c = Counter((level_label(r), exp_label(r), r["source"], r["language"]) for r in rows)
@@ -987,6 +1084,7 @@ def build_outline_rows(gen_rows: Iterable[dict[str, Any]], cfg: dict[str, Any]
     L = cfg["lengths"]
     rnd, rn = int(L["max_new_tokens_round"]), int(L["round_n_to"])
     lo, hi = int(lc.get("min_bullets", 3)), int(lc.get("max_bullets", 8))
+    est = TokenCounter(None, L["tokens_per_word"])
     by_id: dict[str, list[dict[str, Any]]] = defaultdict(list)
     stats: Counter = Counter()
     for r in gen_rows:
@@ -1022,9 +1120,17 @@ def build_outline_rows(gen_rows: Iterable[dict[str, Any]], cfg: dict[str, Any]
         meta = dict(r.get("meta") or {})
         meta.update({"outline_model": r.get("model_id"), "outline_finish_reason": r.get("finish_reason"),
                      "outline_watermarked": r.get("watermarked")})
-        finish_row(row, cfg, level, v, render(tpl, points=points, n=n), n,
-                   ceil_to(lc["max_new_tokens_factor"] * int(r["input_tokens"]), rnd),
-                   r.get("passage_cutoffs") or {"words": [], "tokens": []}, True, meta,
+        user = render(tpl, points=points, n=n)
+        cap = None
+        if L.get("max_context"):   # prompt tokens estimated (the O prompt is short: the outline only)
+            cap = int(L["max_context"]) - est(cfg["kit_data"]["system"][lang] + "\n" + user, lang) \
+                - CHAT_TEMPLATE_TOKENS
+        mnt, cuts, dropped = length_budget(lc["max_new_tokens_factor"] * int(r["input_tokens"]),
+                                           r.get("passage_cutoffs") or {"words": [], "tokens": []},
+                                           int(r["input_tokens"]), int(r["input_words"]), rnd, 0, cap)
+        if dropped:
+            stats["cutoffs dropped: over max_context"] += dropped
+        finish_row(row, cfg, level, v, user, n, mnt, cuts, True, meta,
                    {"points": points, "n_bullets": len(pts), "outline_source_id": ox_id,
                     "outline_attempt": int(r.get("attempt") or 0)})
         if r.get("watermarked"):
