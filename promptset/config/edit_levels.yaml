@@ -1,0 +1,125 @@
+# Edit-level prompt set (L1-L4, C, O, OX, G_title) built from HUMAN documents.
+# Used by promptset/scripts/build_edit_prompts.py; see promptset/EDIT_LEVELS.md.
+# Cutoffs, tokens_per_word and min_frac are read from promptset.yaml (same numbers as the G set)
+# unless overridden in `lengths` below.
+
+seed: 20261123
+promptset_config: promptset.yaml        # relative to this file
+kit: ai_levels_prompts.json             # relative to this file
+
+lengths:
+  # cutoffs: {words: [...], tokens: [...]}   # uncomment to override promptset.yaml
+  # tokens_per_word: {en: 1.26, hi: 4.57}
+  # min_frac: 0.95
+  max_new_tokens_round: 64              # ceil to a multiple of this (generate.py batches by equal max_new_tokens)
+  round_n_to: 10                        # the {n} written into a prompt is rounded to the nearest multiple
+
+# Passage variants per document. Each one is cut at the LARGEST cutoff of its kind the document supports
+# (last sentence end <= N, accepted only if >= min_frac * N), so one generation per doc and level can later
+# be prefix-trimmed at every smaller cutoff. When both variants give byte-identical passages (common for
+# English) only one set of rows is written, with experiment "same_words" and experiments [both].
+experiments:
+  same_words: words
+  same_tokens: tokens
+
+sampling:
+  n_docs: 150                           # per corpus (source); --n-docs overrides
+  min_words: 300                        # minimum words of the SOURCE document; --min-words overrides
+  require_all_experiments: true         # a doc must yield a passage for every experiment above
+  stratify_by: genre                    # round-robin over genres in stable-hash order
+  pilot_docs: 0                         # first K sampled docs per corpus get split "pilot" (--pilot-docs)
+
+# What to do with documents whose punctuation was removed upstream (hindi-aesthetics):
+#   exclude  no rows for this level
+#   flag     rows are written with flags.punctuation_removed = true (analyse separately)
+# L1/L2 on punctuation-stripped text make the model ADD punctuation, which inflates the measured edit share.
+levels:
+  L1_proofread:
+    kind: edit
+    max_new_tokens_factor: 1.5          # x input tokens
+    punctuation_removed: exclude
+  L2_polish:
+    kind: edit
+    max_new_tokens_factor: 1.5
+    punctuation_removed: exclude
+  L3_paraphrase:
+    kind: edit
+    max_new_tokens_factor: 1.5
+    punctuation_removed: flag
+  L4_rewrite:
+    kind: edit
+    max_new_tokens_factor: 1.5
+    punctuation_removed: flag
+  C_continue:
+    kind: continue
+    ks: [75, 50, 25]                    # head = first k% of the passage's words, cut at the nearest sentence end
+    max_new_tokens_factor: 1.3          # x requested tokens (= passage tokens - head tokens)
+    punctuation_removed: flag
+  OX_extract_outline:
+    kind: extract_outline               # stage 1, run WITHOUT watermark
+    max_new_tokens: {en: 512, hi: 1024}
+    punctuation_removed: flag
+  O_outline:
+    kind: outline                       # stage 2, written by `build-outline` from the OX generations
+    max_new_tokens_factor: 1.3          # x passage tokens
+    min_bullets: 3
+    max_bullets: 8
+    punctuation_removed: flag
+  G_title:
+    kind: title
+    kit_level: G_generate
+    variants: [0, 2]                    # the kit's G templates 1 and 3 (title-based)
+    max_new_tokens_factor: 1.3          # x passage tokens
+    punctuation_removed: flag
+
+# OUR templates (not in the prompt kit): stage-1 outline extraction. One phrasing per language; it is run
+# unwatermarked, so no rotation is needed. Asks for paraphrased points so the O stage gets ideas, not wording.
+ours:
+  OX_extract_outline:
+    _note: "Written for this study (not part of ai_levels_prompts.json)."
+    en:
+      - "Summarise the main ideas of the text below as an outline of 5 to 8 bullet points, in English, in the order they appear. Put each point on its own line starting with \"- \", and state it as a short phrase or sentence in your own words; do not copy sentences from the text. Write nothing before or after the list.\n\n{text}"
+    hi:
+      - "नीचे दिए गए पाठ के मुख्य विचारों को, जिस क्रम में वे आते हैं, 5 से 8 बिंदुओं की रूपरेखा के रूप में हिंदी में लिखें। हर बिंदु अलग पंक्ति में \"- \" से शुरू करें और उसे अपने शब्दों में एक छोटे वाक्यांश या वाक्य में लिखें; पाठ के वाक्य ज्यों-के-त्यों न उतारें। सूची से पहले या बाद में कुछ न लिखें।\n\n{text}"
+
+# Per-source settings. Registered corpora (corpora package) and generic JSONL sources share this table;
+# an unknown source gets `default`.
+#   language           used for corpus documents (JSONL rows carry their own)
+#   license            written into each row (a JSONL row's own "license" wins)
+#   punctuation_removed  true -> every line break is a sentence end (in addition to . ! ? । ॥ …)
+#   strip_header       drop leading heading/byline lines (short lines without final punctuation, and
+#                      everything up to a "____"/"----" separator in the first lines) before cutting
+#   title_from         candidates for G_title's {title}, tried in order: "title" (doc title),
+#                      "first_line" (meta first_line) or "header_lines" (the heading lines strip_header
+#                      removes, in order); a candidate must pass title_check below
+#   title_max_chars    optional {candidate: max characters}, e.g. to reject slugs that were cut short
+sources:
+  default:
+    language: null
+    license: "see source"
+    punctuation_removed: false
+    strip_header: false
+    title_from: [title]
+  samalochan:
+    language: hi
+    license: "samalochan.com posts; copyright of the authors (research use only, do not redistribute)"
+    punctuation_removed: false
+    strip_header: true
+    # The file-name slug is often Latin ("ravindra-kalia") or cut short; the first line is usually the
+    # headline. The title check rejects first lines that are section labels ("उर्दू से :") or prose.
+    title_from: [header_lines, first_line, title]
+    # Devanagari slugs are cut at about 22-27 characters ("राहत इंदौरी एक ख़ुद्दार श"): longer slug titles
+    # are treated as truncated and rejected.
+    title_max_chars: {title: 21}
+  hindi-aesthetics:
+    language: hi
+    license: "Hindi-Aesthetics-Corpus (gayatrivenugopal); see the upstream repository for terms"
+    punctuation_removed: true
+    strip_header: false
+    title_from: [title]
+
+title_check:
+  min_words: 1
+  max_words: 14
+  min_script_share: {hi: 0.9, en: 0.9}  # Devanagari (hi) / Latin (en) share of letters
+  reject_chars: ":|_/\\"                # section labels, slugs and separators
