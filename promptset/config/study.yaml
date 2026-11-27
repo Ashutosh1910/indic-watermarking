@@ -2,10 +2,17 @@
 # Paths are relative to the repo root unless absolute. Every key can be overridden on the command line
 # with --set key.sub=value (YAML value), e.g. --set filters='[split=main]' --set gpus=4.
 
-# Run config with the PRIVATE watermark keys (GPU_RUNBOOK.md step 1). The job copies it into the dump
-# (dump/config/run_config.yaml) and refuses to continue a dump that was made with other keys or sampling.
-# $RUNCFG, if set, wins over this value.
+# Run config (model, sampling, detection). The job copies it into the dump (dump/config/run_config.yaml) and
+# refuses to continue a dump that was made with other keys, sampling or model. $RUNCFG, if set, wins.
 run_config: promptset/config/generation.yaml
+
+# Watermark keys. generation.yaml holds the PUBLIC demo keys; whenever the run config still has them, the job
+# uses the private keys in `file` instead, and creates that file (30 random keys, mode 0600) on the first real
+# run. Keep the file: every dump of the study (pilot, main) must use the same keys. Never commit it.
+keys:
+  file: ~/wm/keys.private.yaml
+  allow_demo: false         # true = really use the public demo keys (tests only)
+prefetch_model: true        # download the weights once before the per-GPU processes start
 
 dump_dir: dump/study        # everything the job writes goes here (see promptset/JOB.md for the layout)
 model: null                 # override model.model_id of run_config (HF id or local dir)
@@ -17,7 +24,26 @@ python: null                # interpreter for the stage subprocesses; default: t
 # built by the job from the OX generations (stage "outline").
 prompts:
   G: promptset/data/G_prompts.jsonl
-  edit: promptset/data/edit/edit_prompts.jsonl
+  edit: work/edit/edit_prompts.jsonl          # built by the job (build_inputs.edit) when missing
+
+# Inputs the job builds itself when they are missing (stage "inputs:*", before any generation). Both read the
+# corpora under data/ (HindiSamay, Samalochan, Medium), so their outputs stay in work/ (gitignored).
+build_inputs:
+  edit:
+    enabled: true
+    # build_edit_prompts.py build -> work/edit/edit_prompts.jsonl + human_passages.jsonl (300 docs per language,
+    # story/essay 50/50, see EDIT_LEVELS.md). The first pilot_docs sampled docs per language get split=pilot,
+    # so the pilot runs every level (L1-L4, C, OX -> O, G_title) on them, long Hindi rows included.
+    pilot_docs: 8
+    n_docs: null            # null = edit_levels.yaml (300 per language)
+    config: null            # null = promptset/config/edit_levels.yaml
+    tokenizer: null         # null = the job tokenizer
+    extra_args: []
+  human_pool:
+    enabled: true
+    # build_human_pool.py -> human.pool: every document of each corpus, for the FPR check
+    dirs: [hindisamay:hi:data/HindiSamay, samalochan:hi:data/Samalochan, medium:en:data/Medium]
+    min_words: 500
 
 # Filters on prompt rows, applied to every stream (generate.py --filter syntax; same key = OR, keys AND).
 # The pilot first: filters: [split=pilot]. Full run: [split=pilot,main] (add reserve if needed).
@@ -47,8 +73,8 @@ regen:
 # (FPR per language and length). Each file is its own set (dump/trim/human.<name>.jsonl), so the edit
 # anchors and the wider pool are never double-counted. Missing files are skipped with a warning.
 human:
-  edit_anchors: promptset/data/edit/human_passages.jsonl     # from build_edit_prompts.py build
-  pool: work/human_pool.jsonl                                 # from build_human_pool.py (HindiSamay, Samalochan, Medium)
+  edit_anchors: work/edit/human_passages.jsonl               # from build_edit_prompts.py build (build_inputs.edit)
+  pool: work/human_pool.jsonl                                 # from build_human_pool.py (build_inputs.human_pool)
 human_cutoffs: null         # null = every cutoff of promptset.yaml ({words: [...], tokens: [...]})
 
 # Trimming (trim.py). null = promptset.yaml defaults (min_frac 0.95, slack_words 30).
@@ -68,4 +94,11 @@ generate:
   batch_size: null          # null = run_config batching.batch_size
   token_budget: null        # null = run_config batching.token_budget (lower it on 40/48 GB cards)
   shard_retries: 2          # a crashed generation process is restarted this many times (it resumes)
+  extra_args: []
+
+# Last stage: analyze.py on the dump (CPU): per-token strength z/sqrt(n_scored), edit share f, calibration on
+# human and control text, doc-clustered bootstrap CIs, en vs hi gaps, figures -> dump/analysis/ (ANALYSIS.md).
+analysis:
+  enabled: true
+  config: promptset/config/analysis.yaml
   extra_args: []

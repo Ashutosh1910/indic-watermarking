@@ -1,0 +1,7 @@
+# Everything the GPU job needs (python 3.10+): generation, trimming, scoring, analysis.
+-r ../synthid/requirements.txt
+huggingface_hub>=0.24     # model download before the per-GPU processes start
+tokenizers>=0.19
+numpy>=1.26
+pandas>=2.0               # load_dump *_df helpers
+matplotlib>=3.8           # analysis figures (optional: analysis skips figures without it)

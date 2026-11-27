@@ -16,10 +16,12 @@ everything into one dump directory (layout in promptset/JOB.md). It is
 * **safe against mixing**: the effective run config (watermark keys + sampling) is frozen in
   dump/config/run_config.yaml on the first run; a later run with other keys or sampling is refused.
 
-Stages, in order: preflight; for each stream (ox, wm, ctrl by default): generate attempt 0, then
+Stages, in order: preflight (private keys, model download, inputs: edit prompts and human pool built if
+missing); for each stream (ox, wm, ctrl by default): generate attempt 0, then
 [trim, regenerate length failures as attempt k] up to regen.max_attempts, final trim (the ox stream is not
 trimmed; its outlines feed the "outline" stage that builds the O_outline prompts for wm); human (trim each
-human set); score (every trimmed file with per-token details, plus every raw generation); report.
+human set); score (every trimmed file with per-token details, plus every raw generation); report; analysis
+(analyze.py, CPU: per-token strength, edit share f, calibration, clustered CIs, figures).
 
 Failures never stop the job unless nothing can run: a generation process that crashes is restarted
 (generate.shard_retries) and then recorded; a batch that fails inside generate.py is logged with its ids and
@@ -40,6 +42,7 @@ import math
 import os
 import platform
 import re
+import secrets
 import shlex
 import signal
 import subprocess
@@ -54,6 +57,10 @@ SCRIPTS = Path(__file__).resolve().parent
 REPO = SCRIPTS.parents[1]
 sys.path.insert(0, str(SCRIPTS))
 from _common import dumps, iter_jsonl, log, parse_filters, read_id_list, row_matches, stable_hash  # noqa: E402
+from _common import add_synthid_to_path  # noqa: E402
+
+add_synthid_to_path()
+from synthid_wm.config import BLOG_KEYS  # noqa: E402
 
 DEFAULT_STUDY = REPO / "promptset" / "config" / "study.yaml"
 GEN_FILE = re.compile(r"^a(\d+)\.s(\d+)of(\d+)\.jsonl$")
@@ -86,12 +93,36 @@ def load_study(path: str | Path, sets: Sequence[str]) -> dict[str, Any]:
         _set_dotted(cfg, k.strip(), yaml.safe_load(v))
     if os.environ.get("RUNCFG"):
         cfg["run_config"] = os.environ["RUNCFG"]
+    cfg["filters"] = normalize_filters(cfg.get("filters"))
     cfg.setdefault("streams", {})
+    for sc in (cfg.get("streams") or {}).values():
+        if isinstance(sc, dict) and "filter" in sc:
+            sc["filter"] = normalize_filters(sc["filter"])
     cfg.setdefault("prompts", {})
     cfg.setdefault("human", {})
     for sec in ("regen", "trim", "detection", "generate"):
         cfg[sec] = cfg.get(sec) or {}
     return cfg
+
+
+def normalize_filters(value: Any) -> list[str]:
+    """Filter specs as a list of "key=v1,v2" strings. YAML reads ``[split=pilot,main]`` (the natural way to write
+    it on the command line) as ["split=pilot", "main"]; an item without "=" continues the previous one."""
+    if value is None:
+        return []
+    items = [value] if isinstance(value, str) else list(value)
+    out: list[str] = []
+    for it in items:
+        s = str(it).strip()
+        if not s:
+            continue
+        if "=" not in s:
+            if not out:
+                raise SystemExit(f"filter {s!r} has no key (expected key=value)")
+            out[-1] = f"{out[-1]},{s}"
+        else:
+            out.append(s)
+    return out
 
 
 def rpath(p: str | Path | None) -> Path | None:
@@ -279,12 +310,18 @@ class Job:
             raise SystemExit(f"run_config not found: {src}")
         overrides = {"model.model_id": self.s.get("model")}
         cfg, batching = G.load_run_config(src, overrides)
+        keys = self.private_keys(cfg)
+        if keys is not None:
+            overrides["watermark.keys"] = keys
+            cfg, batching = G.load_run_config(src, overrides)
         g = self.s["generate"]
         self.batching = {"batch_size": g.get("batch_size") or batching.batch_size,
                          "token_budget": g.get("token_budget") or batching.token_budget}
         sha = G.config_sha(cfg)
-        if cfg.watermark.keys == list(__import__("synthid_wm.config", fromlist=["BLOG_KEYS"]).BLOG_KEYS):
-            log("WARNING: run_config uses the PUBLIC demo watermark keys (GPU_RUNBOOK.md step 1 makes private ones)")
+        if cfg.watermark.keys == list(BLOG_KEYS):
+            log("WARNING: this run uses the PUBLIC demo watermark keys (keys.allow_demo is true)"
+                if (self.s.get("keys") or {}).get("allow_demo") else
+                "note: --plan shows the demo keys' config_sha; the real run uses private keys")
         if self.run_config.exists():
             old, _ = G.load_run_config(self.run_config)
             if G.config_sha(old) != sha or old.model.model_id != cfg.model.model_id:
@@ -294,10 +331,14 @@ class Job:
         # Detection settings may differ between runs (they only change scoring); keep the frozen file's
         # watermark/sampling and refresh the rest.
         text = G.dump_config(cfg)
-        if not self.run_config.exists() or self.run_config.read_text(encoding="utf-8") != text:
+        if self.args.plan:
+            pass   # --plan writes nothing that a real run would compare against (keys may not exist yet)
+        elif not self.run_config.exists() or self.run_config.read_text(encoding="utf-8") != text:
             self.run_config.write_text(text, encoding="utf-8")   # unchanged -> keep mtime (score fingerprints)
         self.tokenizer = str(self.s.get("tokenizer") or cfg.model.model_id)
         self.gpus = visible_gpus(self.s.get("gpus", "auto"))
+        self.fetch_model(cfg.model.model_id)
+        self.build_inputs()
         inputs = {}
         for name, p in list((self.s.get("prompts") or {}).items()) + [
                 (f"human.{k}", v) for k, v in (self.s.get("human") or {}).items()]:
@@ -314,6 +355,124 @@ class Job:
         }
         self.record("preflight", "done", t0, config_sha=sha, gpus=self.gpus, tokenizer=self.tokenizer,
                     missing_inputs=[k for k, v in inputs.items() if not v["exists"]])
+
+    def private_keys(self, cfg: Any) -> list[int] | None:
+        """Private watermark keys when the run config still has the public demo keys.
+
+        The keys live in ``keys.file`` (default ~/wm/keys.private.yaml, outside the repo), created once with OS
+        randomness (mode 0600) and reused by every later run and dump, so pilot and main share one key set.
+        ``keys.allow_demo: true`` keeps the demo keys (tests only). Returns None to keep the config's keys."""
+        kc = self.s.get("keys") or {}
+        if cfg.watermark.keys != list(BLOG_KEYS) or kc.get("allow_demo"):
+            return None
+        path = rpath(kc.get("file") or "~/wm/keys.private.yaml")
+        assert path is not None
+        if path.exists():
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            keys = [int(k) for k in (data.get("watermark", {}).get("keys") or data.get("keys") or [])]
+            if not keys:
+                raise SystemExit(f"{path}: no watermark keys in it")
+            log(f"watermark keys: private keys from {path} ({len(keys)} keys)")
+            return keys
+        if self.args.plan:
+            log(f"watermark keys: {path} does not exist; the first real run creates it")
+            return None
+        depth = int(kc.get("depth") or cfg.watermark.depth)
+        keys = secrets.SystemRandom().sample(range(cfg.watermark.sampling_table_size), depth)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write("# PRIVATE SynthID watermark keys for the study. Do not commit or share. Created by run_study.py "
+                    f"{now()}.\n" + yaml.safe_dump({"watermark": {"keys": keys}}, default_flow_style=None, width=1000))
+        log(f"watermark keys: created new private keys in {path} (keep this file; every dump needs the same keys)")
+        return keys
+
+    def fetch_model(self, model_id: str) -> None:
+        """Download the weights once, before the per-GPU processes start (they would race on the cache)."""
+        if self.args.plan or Path(os.path.expanduser(model_id)).exists() or not self.s.get("prefetch_model", True):
+            return
+        t0 = time.perf_counter()
+        try:
+            from huggingface_hub import snapshot_download
+            path = snapshot_download(model_id, allow_patterns=["*.json", "*.safetensors", "*.txt", "*.model",
+                                                              "*.jinja", "tokenizer*"])
+            self.record("model", "done", t0, model=model_id, path=path)
+        except Exception as e:  # noqa: BLE001  (offline cache, gated repo, ...: the shards try again)
+            self.record("model", "skipped", t0, model=model_id, reason=f"{type(e).__name__}: {e}"[:300])
+
+    # ------------------------------------------------------------------ inputs
+
+    def build_inputs(self) -> None:
+        """Build the prompt and human files the job reads when they are missing (study.yaml ``build_inputs``):
+        the edit-level prompts + human anchors (build_edit_prompts.py build, with pilot docs so the pilot covers
+        every level) and the human pool for the FPR check (build_human_pool.py). Both read the corpora under
+        data/. A file that exists is kept unless the job built it with other settings (stamp file)."""
+        b = self.s.get("build_inputs") or {}
+        e = b.get("edit") or {}
+        edit_out = rpath(self.s["prompts"].get("edit"))
+        if e.get("enabled", True) and edit_out is not None:
+            anchors = rpath((self.s.get("human") or {}).get("edit_anchors"))
+            out_dir = edit_out.parent
+            cmd = [self.py, str(SCRIPTS / "build_edit_prompts.py"), "build", "--out", str(out_dir),
+                   "--tokenizer", str(e.get("tokenizer") or self.tokenizer)]
+            if e.get("config"):
+                cmd += ["--config", str(rpath(e["config"]))]
+            if e.get("pilot_docs"):
+                cmd += ["--pilot-docs", str(int(e["pilot_docs"]))]
+            if e.get("n_docs"):
+                cmd += ["--n-docs", str(int(e["n_docs"]))]
+            cmd += [str(x) for x in e.get("extra_args") or []]
+            cfg_files = [REPO / "promptset" / "config" / n for n in ("edit_levels.yaml", "promptset.yaml",
+                                                                    "ai_levels_prompts.json")]
+            want = [edit_out] + ([anchors] if anchors and anchors.parent == out_dir else [])
+            self.build_one("inputs:edit", cmd, want, out_dir / ".job_build.json",
+                           {"cmd": cmd[2:], "configs": [sha256_file(p) for p in cfg_files if p.exists()]})
+        h = b.get("human_pool") or {}
+        pool = rpath((self.s.get("human") or {}).get("pool"))
+        if h.get("enabled", True) and pool is not None:
+            dirs = h.get("dirs") or []
+            have = [d for d in dirs if rpath(str(d).split(":")[2]) and rpath(str(d).split(":")[2]).is_dir()]
+            if len(have) < len(dirs):
+                log(f"warning: human pool: corpus folders missing: {sorted(set(dirs) - set(have))}")
+            cmd = [self.py, str(SCRIPTS / "build_human_pool.py"), "--out", str(pool),
+                   "--min-words", str(int(h.get("min_words", 500)))]
+            for d in have:
+                name, lang, folder, *rest = str(d).split(":")
+                cmd += ["--dir", ":".join([name, lang, str(rpath(folder)), *rest])]
+            if have:
+                self.build_one("inputs:human_pool", cmd, [pool], pool.with_name(pool.name + ".job_build.json"),
+                               {"cmd": cmd[2:]})
+
+    def build_one(self, stage: str, cmd: list[str], outputs: list[Path], stamp: Path, params: Any) -> None:
+        t0 = time.perf_counter()
+        fp = f"{stable_hash(params, bits=64):016x}"
+        built_here = stamp.exists()
+        if all(o.exists() for o in outputs):
+            if not built_here:
+                self.record(stage, "skipped", t0, reason="exists (not built by the job; kept as is)")
+                return
+            try:
+                same = json.loads(stamp.read_text(encoding="utf-8")).get("fingerprint") == fp
+            except json.JSONDecodeError:
+                same = False
+            if same:
+                self.record(stage, "skipped", t0, reason="unchanged")
+                return
+        if self.args.plan:
+            self.record(stage, "planned", t0, out=[str(o) for o in outputs])
+            return
+        for o in outputs:
+            o.parent.mkdir(parents=True, exist_ok=True)
+        code = self.run(cmd, self.dump / "logs" / f"{stage.replace(':', '.')}.log")
+        if code != 0 or not all(o.exists() for o in outputs):
+            self.fail(stage, returncode=code, log=str(self.dump / "logs" / f"{stage.replace(':', '.')}.log"))
+            self.record(stage, "failed", t0, returncode=code)
+            return
+        stamp.write_text(json.dumps({"fingerprint": fp, "time_utc": now(), "cmd": cmd}, ensure_ascii=False, indent=1),
+                         encoding="utf-8")
+        for o in outputs:
+            self._rows_cache.pop(o, None)
+        self.record(stage, "done", t0, out=[str(o) for o in outputs])
 
     # ------------------------------------------------------------------ generation
 
@@ -359,8 +518,13 @@ class Job:
         todo = [r for r in sel if (str(r["id"]), attempt, G.row_watermark(r, no_wm)) not in done]
         if not todo:
             return self.record(name, "skipped", t0, selected=len(sel), todo=0)
+        budget = sum(int(r.get("max_new_tokens") or 0) for r in todo)
         if self.args.plan:
-            return self.record(name, "planned", t0, selected=len(sel), todo=len(todo))
+            by_lang: dict[str, int] = {}
+            for r in todo:
+                by_lang[str(r.get("language"))] = by_lang.get(str(r.get("language")), 0) + int(r.get("max_new_tokens") or 0)
+            return self.record(name, "planned", t0, selected=len(sel), todo=len(todo),
+                               max_new_tokens_sum=budget, max_new_tokens_by_language=by_lang)
         ids_file = None
         if only_ids is not None:
             ids_file = self.dump / "state" / f"ids.{stream}.a{attempt}.txt"
@@ -634,6 +798,36 @@ class Job:
             self.fail("report", returncode=code, log=str(self.dump / "logs" / "report.log"))
         self.record("report", "done" if code == 0 else "failed", t0, out=str(self.dump / "report.md"))
 
+    def analysis(self) -> None:
+        """CPU analysis of the dump (analyze.py): per-token strength, edit share f, calibration, CIs, figures."""
+        t0 = time.perf_counter()
+        a = self.s.get("analysis") or {}
+        if not a.get("enabled", True):
+            self.record("analysis", "skipped", t0, reason="analysis.enabled is false")
+            return
+        if self.args.plan:
+            self.record("analysis", "planned", t0)
+            return
+        cmd = [self.py, str(SCRIPTS / "analyze.py"), str(self.dump), "--tokenizer", self.tokenizer,
+               "--set", f"z_threshold={self.s['detection'].get('z_threshold', 3.0)}"]
+        if a.get("config"):
+            cmd += ["--config", str(rpath(a["config"]))]
+        cmd += [str(x) for x in a.get("extra_args") or []]
+        inputs = sorted((self.dump / "scores").glob("*.jsonl")) + sorted((self.dump / "trim").glob("*.jsonl"))
+        cfg_file = rpath(a.get("config") or "promptset/config/analysis.yaml")
+        fp = fingerprint(inputs + ([cfg_file] if cfg_file else []) + [SCRIPTS / "analyze.py"], cmd[2:])
+        out = self.dump / "analysis" / "analysis.md"
+        if self.state_ok("analysis", fp, [out]):
+            self.record("analysis", "skipped", t0, reason="unchanged")
+            return
+        code = self.run(cmd, self.dump / "logs" / "analysis.log")
+        if code != 0:
+            self.fail("analysis", returncode=code, log=str(self.dump / "logs" / "analysis.log"))
+            self.record("analysis", "failed", t0, returncode=code)
+            return
+        self.state_save("analysis", fp)
+        self.record("analysis", "done", t0, out=str(out))
+
     # ------------------------------------------------------------------ main flow
 
     def write_manifest(self, status: str, started: str) -> None:
@@ -659,6 +853,7 @@ class Job:
             self.human()
             self.score_all()
             self.report()
+            self.analysis()
             status = "planned" if self.args.plan else ("done_with_failures" if self.failed else "done")
         except KeyboardInterrupt:
             status = "interrupted"

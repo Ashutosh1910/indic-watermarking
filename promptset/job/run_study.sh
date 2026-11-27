@@ -3,11 +3,12 @@
 #
 #   sbatch promptset/job/run_study.sh                         # SLURM (the #SBATCH lines below)
 #   nohup bash promptset/job/run_study.sh > job.out 2>&1 &    # plain server
-#   bash promptset/job/run_study.sh --set filters='[split=pilot,main]'   # extra args go to run_study.py
+#   bash promptset/job/run_study.sh --dump dump/main --set filters='[split=pilot,main]'   # extra args go to run_study.py
 #
 # Re-submit the same command to resume after a crash, preemption or time limit: finished work is skipped.
 # Environment (all optional):
-#   RUNCFG    run config with the PRIVATE watermark keys (wins over study.yaml's run_config)
+#   RUNCFG    another run config (wins over study.yaml's run_config). Not needed for keys: the job uses
+#             ~/wm/keys.private.yaml (created on the first run, see study.yaml keys)
 #   STUDY     job config (default promptset/config/study.yaml)
 #   VENV      virtualenv to activate (default .venv in the repo, if present)
 #   HF_HOME   Hugging Face cache (model weights)

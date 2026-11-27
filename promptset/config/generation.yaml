@@ -1,4 +1,4 @@
-# Run config for promptset/scripts/generate.py (SynthID-Text study, English vs Hindi, Qwen3-8B).
+# Run config for promptset/scripts/generate.py (SynthID-Text study, English vs Hindi, Qwen3-14B).
 #
 # The model / watermark / generation / detection blocks have exactly the format of
 # synthid/config/default.yaml and are parsed by synthid_wm.load_config's own validation.
@@ -9,16 +9,15 @@
 # Generation and verification MUST use the same `watermark` block and the same tokenizer.
 
 model:
-  model_id: Qwen/Qwen3-8B      # HF id or a local directory (config.json + weights + tokenizer files)
+  model_id: Qwen/Qwen3-14B     # HF id or a local directory. Every Qwen3 size shares one tokenizer, so cutoffs,
+  #                              trimming and detection are the same for 8B and 14B (one model per dump).
   device: auto                 # auto = cuda > mps > cpu; one GPU per process (use CUDA_VISIBLE_DEVICES + --shard)
   dtype: bfloat16
 
 watermark:
-  # !!! REPLACE THESE KEYS before the real run. These are the PUBLIC demo keys from the Hugging Face
-  # SynthID-Text blog post. Generate private keys once, from the synthid/ folder:
-  #     cd synthid && python -m demo keys --depth 30 > ../promptset/config/keys.private.yaml
-  # and paste the list here (or keep a private copy of this file). Do not commit private keys:
-  # the saved <out>.config.yaml next to every generation file contains them too.
+  # These are the PUBLIC demo keys from the Hugging Face SynthID-Text blog post. run_study.py replaces them with
+  # the private keys in study.yaml keys.file (created on the first run). Running generate.py by hand: pass a
+  # private copy of this file. Do not commit private keys: every dump's config/ holds them too.
   keys: [654, 400, 836, 123, 340, 443, 597, 160, 57, 29, 590, 639, 13, 715, 468, 990, 966, 226, 324, 585, 118, 504, 421, 521, 129, 669, 732, 225, 90, 960]
   ngram_len: 5                 # context of ngram_len-1 previous tokens seeds each g-value
   sampling_table_size: 65536
@@ -47,9 +46,10 @@ detection:
 batching:
   batch_size: 32               # hard cap on rows per generate() call
   # Rows per batch are also limited by batch_size * (longest_prompt_tokens + max_new_tokens) <= token_budget.
-  # The KV cache of Qwen3-8B in bf16 is ~144 KiB per token (36 layers x 8 KV heads x 128 dims x 2 x 2 bytes),
-  # so 160k tokens ~ 23 GB of KV cache on top of ~16 GB of weights: fits an 80 GB A100/H100 with headroom.
+  # The KV cache of Qwen3-14B in bf16 is 160 KiB per token (40 layers x 8 KV heads x 128 dims x 2 x 2 bytes),
+  # so 110k tokens ~ 17 GB of KV cache on top of ~30 GB of weights: fits an 80 GB A100/H100 with headroom.
   # The SynthID processor also allocates several transient [batch, vocab=151936, depth=30] int64 tensors
   # per decoding step (~1.2 GB each at batch 32), so leave a few GB spare.
-  # Lower it (e.g. 60000) on a 40/48 GB card. On CUDA OOM a batch is halved and retried automatically.
-  token_budget: 160000
+  # 14B needs an 80 GB card for useful batches (on 48 GB: about 30000). For Qwen3-8B, 160000 fits 80 GB.
+  # On CUDA OOM a batch is halved and retried automatically.
+  token_budget: 110000
