@@ -1,0 +1,85 @@
+What is a unit?
+
+Danny Preussler
+
+During our careers, most of us learned about the different types of test. We learned that we should have many unit tests (because they are super fast to run) and fewer integration tests (very slow to run). When we think about unit tests, most of us have the same understanding of what the unit stands for: the smallest possible unit. We all learned it, its the smallest possible unit: a class, a method and we would isolate it during the test-run from all other units.
+
+What if I tell you that we got it all wrong?
+
+Writing your tests like this will make them brittle and flaky. As unit tests are the foundation of our testing pyramid, we would create nothing but a lot of tech debt.
+
+Like many of you, I believed in the definition of unit tests I stated above. I would also use a lot of mocks to make sure all my tests are independent.
+
+I would create tests for every method.
+
+I even had that phase where I would test my getters and setters.
+
+But something was wrong.
+
+Whenever I had to do a larger refactoring, I would spend days “fixing” my tests, often resulting in throwing away a lot of those. But we learned that tests are the ones allowing us to refactor! Something was wrong!
+
+It was not before I dug more into test-driven development (TDD) when I understood my mistake.
+
+For years I was testing implementation details!
+
+You might think: wait, as long as we don’t test private methods or internal states, this is not true. As we test public interfaces of our APIs right?
+
+Nope, wrong!
+
+The classes we were testing were the implementation details to the problems we tried to solve. What we hardly ever tested was the actual purpose of what we were supposed to write.
+
+And seeing it like this, I could understand why many Android developers prefer writing integration tests instead of unit tests. For them, they feel more useful. But this kind of thinking leads to an inverted testing pyramid:
+
+The ice cream cone https://blog.reactiveconf.com/tdd-waste-of-time-7bf5a84ce9b6
+
+The better way
+
+When you do TDD you start by writing tests for the actual things you are trying to build. The code you write would change over time as you continuously refactor.
+
+The tests though are still the same as you wrote them initially. Although we would extract new classes, evolve our architecture, we would not change the tests! Why? There is no need to!
+
+Let me show you an example.
+
+We used the MVVM architecture in one of our apps. From ViewModel onwards, everything was heavily tested. As it was developed with TDD, those tests would cover multiple layers up to a stubbed/mocked API.
+
+Example MVVM implementation
+
+At some point, one colleague noticed that certain ViewModels grew too large (250 lines). He decided to add some Redux type of architecture. This way he could get all the state management out of the ViewModel.
+
+With such an architectural change you might think that lof of tests needed to be rewritten.
+
+But actually, they all kept working!
+
+The ViewModel still exposed the same things as before. Its purpose didn’t change! It just had far less code and talked to some new intermediate actors,
+
+MVVM with some Redux
+
+Our tests gave us the confidence that we didn’t break anything during that refactoring. Applying Redux was an implementation detail.
+
+Now imagine we would write tests the classical way afterwards. We would write tests for all the components of Redux: the Reducer, the Store. Probably would write them all by mocking the other elements.
+
+The 1:1 way of testing Redux components
+
+And in the end, we would have written much more test code than production code. Something many of us just accepted as given.
+
+But many of those might just become worthless next time the architecture changes. In our example, the moment I’d remove or replace Redux those tests would become useless. Because they didn’t test anything relevant to what we built the app for.
+
+But but…
+
+Now you might think: But aren’t these integration tests?
+
+We are so focused on the definition of unit tests that it’s hard to see through it. Yes, I have larger units than you might be used to. But my tests are fast, I don’t do actual network requests or similar. I see them as unit tests.
+
+Interestingly Kent Beck in his famous TDD book doesn’t even use the word unit tests, he just speaks of tests or developer tests.
+
+Robert “Uncle Bob” Martin mentions a similar thing all the time:
+
+And once you’ve started you will find many reasons to rethink “unit”:
+
+Test what you deploy… not a function rather a Microservice or a React component
+
+Tech has evolved, we can now run whole component tests very quickly (e.g. CI has dynamic workers, test harness are great in parallelizing things)
+
+When starting a new module, the given artefact is a requirements document. It makes sense to start with tests at the same level. This is also recommended by classic TDD books.
+
+In my experience: a good developer is a pragmatic developer. Let’s try to be more pragmatic!

@@ -1,0 +1,41 @@
+A machine apprentice of the old masters?
+
+Abraar Ahmed
+
+In this short note, we will explore published research in the field of computer vision in code using PyTorch: image style transfer using convolutional neural networks. If you’re inclined, follow along with images of your choice; the source image should be by an artist and the target image a natural picture.
+
+According to the authors of the linked paper the problem of transferring style from one image to another can be considered one of texture transfer. To me, as one who doesn’t make visual art but appreciates it, this is intuitive as paint layering is one of many processes that artists are consciously careful about in creating their paintings. Prior to this novel use of deep convolutional neural networks (DCNN) to extract semantic image content from the target image and inform a texture transfer procedure from the source image to render the target in the style of the source, the authors point to a fundamental limitation that spanned all algorithms utilized which is that they used only low level image features of the target image to inform the texture transfer. The math driving content and style representation, and style transfer is covered in some depth in the paper. For the purposes of this note, we will proceed with implementing the principles behind the DCNN style transfer concept:
+
+Take objects/context from one image
+
+Take style/texture from a second image
+
+Generate a final image which is a synthesis of the two
+
+High level image content and style extraction is done from both the input images; content from target image and style from source image. The generic feature representation learned by high performing Convolutional Neural Networks (CNN) can be used to independently process these.
+
+Luncheon of the Boating Party by Pierre-Auguste Renoir
+
+For example, in the 19 layer deep VGG19 which we will be using here, an input image is represented as a set of filtered images at each processing stage of the CNN wherein the size of the filtered image is reduced by some downsampling mechanism like max-pooling leading to a decrease in the total number of units per layer of the network. Content reconstruction from lower layers is almost perfect whereas in higher layers detailed pixel information is lost while the high level content of the image is preserved. On top of the original CNN activations a feature space that captures the texture information is used. The style representation computes correlations between the different features in different layers of the CNN, and the style of an input image is reconstructed from a style representation built on different subsets of CNN layers. The layers being discussed here are those represented by conv1_1, conv2_1, conv3_1 et cetera.
+
+Load the two images on the device and obtain the features from VGG. Also, apply the transformations:
+
+Resize to tensor
+
+Normalize values
+
+Next, we obtain relevant features of the two images:
+
+Image one: extract features related to the context or the objects
+
+Image two: extract features related to styles and textures
+
+The authors of the paper used correlations in different layers to obtain the style related features. These feature correlations are given by the Gram matrix G; every cell (i, j) in G is the inner product between vectorized feature maps i and j in a layer.
+
+We can now perform style transfer using features and correlations. We set the weight of every layer used to obtain style features to transfer style from one image to another. As discussed above, the initial layers provide more information so we will set more weights for these layers. Additionally, we define the optimizer function and the target image which will be a copy of image one.
+
+Finally, we start the loss minimization process by running the loop for a large number of steps and calculating the loss related to object feature extraction and style feature extraction. Using the minimized loss, the network parameters are updated which further updates the target image.
+
+The good news: Using this method, machines can learn the style of not only the old masters but artists of other traditions too.
+
+The bad news: Using this method, machines have learned the style of a single painting and not the whole or even a majority of the artist’s ingenuity.

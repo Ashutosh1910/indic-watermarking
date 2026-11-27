@@ -1,0 +1,71 @@
+Sound in the Adult Film Industry
+
+unknown
+
+I am an Adult Film Director and Cinematographer.
+
+I created this “Boom Operator Training Guide” to outline and provide some knowledge on what it would be like to be a Boom Operator on the set of a new site we’re launching. We’re focusing on a deep storyline and great cinematography and sound. I did all the research myself a month before production, and bought/pieced together an entire sound package.
+
+Sound is just as important as camera when you’re trying to tell a compelling story. Our focus on this new brand is to level up our production quality and it’s extremely important that the sound quality get addressed. During my career on adult film productions, the best you get is a shotgun mic on a boom stand and/or a mini shotgun on the camera. Hey, we at least know to put a wind-shield on if we’re outside!
+
+Needless to say, I had some research to do! After I gathered the technology and basic knowledge needed to pull this off, I did sound operations on a few sets to get the hang of it. Now we’re giving our production assistant the opportunity to step up for the role. To get them started, I created this fun little guide.
+
+I want to share this because, well, I spent time on it! It’s not perfect, and I am by no means a sound expert. I just hope this could serve as an interesting starting point for learning more about how other studios capture sound.
+
+Boom Operator Training Guide
+
+Welcome to Boom Operator Training for the Adult Film Industry
+
+The adult film world is an interesting place to be! While still holding up to production industry standards, adult film sets are much smaller and the crew usually needs to be extremely diverse problem solvers. This quick guide is meant to teach the basic fundamentals of being a Boom Operator in this setting. This position usually serves as an assistant to the Production Sound Mixer. On an adult film set these roles may be combined or limited depending on set, location, or production standards.
+
+*Always ask what your specific responsibilities are for each shoot. You are an integral part of the team and it’s better safe than sorry. Some things can not be “fixed in post”.*
+
+Overall job responsibilities/expectations include…
+
+You guessed it! — Holding a boom pole with a microphone attached at the end and following talent at appropriate distance. Reading script and writing notes on when LOUD/QUIET interactions are had. Also, noting and preparing when foley (recorded sound effects, i.e leaves crackling under footsteps) are needed. Formatting SD card/USB drive for Sound Recorder. Charging/handling batteries and maintaining various auxiliary equipment (i.e cords and transmitters). Wearing headphones and satchel with field recorder/wireless transmitters for a long period of time. Adjusting levels/gain if sound begins to clip. Don’t worry too much about this at first. Just get close enough to capture the sound! Pressing RECORD/STOP when production begins and ends a take. Recording room tone (ambient location sound only). Pausing/stopping a take if unintended noise is heard.
+
+Now that you have an idea of the tasks and processes ahead. Let’s get into the nitty gritty! Remember, much of this information in basic knowledge needed to successfully operate as a Boom Mic Operator and is not intended to be a comprehensive guide to Production Sound Mixing. There are certain technical aspects and lingo that may need to be researched further in order to develop your sound recording skills.
+
+The Basic Tools and Explanations
+
+Pickup patterns
+
+Microphone — device that takes sound waves and converts them into electrical signals. This information is then amplified, transmitted, and/ or recorded.
+
+Easy enough right? We all know what a mic is! But… did you know there are specific TYPES of microphones with different pickup patterns? These are technically called polar patterns and they are categorized by HOW (which direction) the microphone receives sound waves. They all have different use cases and while you’re starting out your Production Sound Mixer will choose which microphone to use for each application. It is your responsibility to know how to hold and operate each device we use based on it’s pickup pattern. Below is an example of the three main basic polar patterns. Here are links to a couple articles to learn more. Link One. Link Two
+
+A simple explanation for the purpose of this guide is:
+
+A basic cardioid pattern is “unidirectional” meaning it “mostly” picks up sound coming from one direction. Which is in front and slightly to the side of the microphone. This result is clear and crisp sound wherever it is pointing towards and is the most favorable microphone used in heavy dialogue scenes. It doesn’t pick up sound from behind the microphone, which greatly reduces reverb(sound bouncing of walls/echo) and typical production sounds. Requires concise handling! There are different versions of these types of mics with tighter or wider focus pickup patterns, some even pickup a little behind. You will need to learn the others eventually(follow links provided). Most importantly, listen carefully and test your location to see how the sound travels based on the direction you’re pointing the mic. We WILL be using a type of cardioid mic on set and outdoors. Common names for different types of cardioid mics are simply cardioid, mini-shotgun(hypercardioid), and shotgun(supercardioid).
+
+A figure eight pattern is picking up sound directly in front of and behind the mic. With careful positioning, this type of pickup pattern can isolate sound in front/back better than any other mic. These mics are really only used for things like podcasts or face-to-face duets(?). We will NOT be using this pickup pattern on a film set. Now you can cross this one off the list!
+
+An omnidirectional pattern is picking up sound from ALL directions. This pickup pattern is found on the lavalier/lapel microphones. These are the small clip-on microphones you see on reality TV. Handy for tight spaces! We will use these mics and wireless transmitters often throughout production.
+
+Positioning
+
+BAM! Now you know there are different types of mics if you didn’t already. Let’s get on to mic positioning and what to do while holding the boom pole on set.
+
+A few important things to keep in mind while handling a microphone, especially a professional quality one, is how GREAT it is at picking up sound and all the ways this can be affected. Depending on the shoot of course, you’re going to want to dial into certain sounds, or the complete absence of sound. Positioning of the mic and yourself on set is a surprisingly important task. You may need to quickly change positions or flick your wrist to point the mic at opposite talent. These movements, along with your clothes, jewelry, and equipment you’re wearing, can all create small vibrations and noises the mic WILL pick up if not used properly. Pay attention to these nuances and be light as a feather and watch all surroundings! Definitely no phone, rings or scratchy wool sweaters should be wornon set.
+
+As general rule of thumb:
+
+“4 inches: If you are about 4 inches away from your cardioid microphone it will produce a warm and intimate sound. The minimal distance you can have between a cardioid microphone and your mouth is 4 inches. Anything less will negatively affect your recording. (i.e feedback loops, popping sounds, too much bass, etc)
+
+12 inches: 12 inches distance between you and the mic will give you an airy and open sound. This recording will appear to be very bright.
+
+In most cases going for 6–8 inches will yield you good results. If you are still unsure in your ability to pick up on these nuances, going for more distance rather than less is advisable, so your recording will not be ruined by overly heavy bass.”
+
+ULTIMATE TIP for Positioning using a boom pole- These distancing are ideal but holding a boom pole and dancing around camera operators, director, talent, props, lighting equipment, etc can be difficult! Your main goal is usually to maintain the closest distance possible while avoiding your mic(or body) being seen by cameras. If you know you’re not going to be able to get close enough to get great sound for a certain take, you may need to change mics, or use the field recorder to turn up gain. Worse case (more work) is to record the same lines separate from the take and do a voice over.
+
+Now, you already know your mic’s pickup pattern and you’ve studied the script. You should know the vibe/tone that the director and sound mixer are looking for and how to place the mic accordingly. When in doubt ASK! You are all a TEAM! Before beginning a sequence you will probably do a couple dry runs of the scene called rehearsal (not recording but listening through your field recorder and tracing movements). After a few rounds of practicing you should be confident enough to start a real take.
+
+During your blocking, test out a few different positions while holding the pole. Find the one that feels best for the time it would take to finish the sequence. Watch out for shadows casted by you or your boom pole. This is a major fail that will most certainly ruin a take. If you notice this happen, speak up and it can be shot again! While you’re a VERY important part of the crew, you want to be basically invisible while everyone’s rolling. Here’s a little list from a video that will help you keep track of a few things regarding position.
+
+Point mic at sound source from the correct/best possible distance. If you hear a lot of reverb/echo/hollow type sounds, you’re too far. If you hear heavy bass, scratchy sounds, you’re too close. Don’t be in the way! You should be watching your shadows on the set and if possible check one of the camera screens every now and again. Don’t rely on them telling you that you dipped into frame! Ask them what lens they’re using to get an idea of their FOV to get the best distance from talent. Wear Black/Low profile clothing and comfy socks(bring extra?) you don’t mind getting messy! Listen hard-intently! Watch out and keep an ear open for equipment, cables, clothes and jewelry that are touching the pole. Swinging the pole too quickly will create a wind sound and even hitting a rough pillow can sound like you hit a wall. A good portion of the job is thinking about, and controlling things like these. — The boom pole I use has an XLR cable running inside and if you swing it too quickly or have to run, sometimes you can hear it move inside. Get comfortable(as possible). Things like how you hold the pole and forgetting to take your headphones off for a little bit can make you uncomfortable by the end of the day.
+
+Sound Recorder and other equipment
+
+A sound recorder is the device that records your sound and allows you to adjust levels and gain(along with many other settings). As a boom operator you shouldn’t have to mix multiple channels at once but you should definitely know how to switch between them, arm for recording and label inputs correctly! On an adult film set you use a portable field recorder with 3 channels input(microphones/transmitters). A few things that separate one field sound recorder from another is, the amount of channels, the quality of the preamplifier, and how many bits can be recorded. An important quality of high end production devices are their ability to block electrical and radio frequencies that degrade the quality of the sound. As a boom operator you would be responsible for the field recorder, XLR and AUX cables, wireless transmitters and receivers, microphones, batteries, memory card, headphones, clips/tape, mic windscreens(deadcats/socks), boom pole and stands during all of production. All device settings will basically be setup already.
+
+Now you have the knowledge needed to get started at least! All it’s going to take is some hands on training with the equipment and you’re well on your way to learning a new film production skill!

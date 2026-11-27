@@ -1,0 +1,155 @@
+Risky Business: What Wattpad’s Business Model Means for Writers
+
+Kristle Chester
+
+Wattpad launched in December 2006. That’s four years after fanfiction.net’s great NC-17 Purge of 2002 and six years before the follow-up Purge of 2012.
+
+Since its inception, Wattpad has blossomed into a community 70 million strong with over 565 million story uploads. It’s still growing. In 2010, they solicited and secured funding from private investors — their angel investors. Additional rounds followed in 2011, 2012, 2014, and 2018. So far they’ve raised $117.8 million (US) in seed money and venture capital.
+
+According to MySiteWealth, Wattpad’s domain is worth approximately $14 million (US), and it produces a daily income of about $4,248, which amounts to $1,550,520 per year. Notice, this is the domain’s estimated ad revenue based on traffic and Alexa rank and does not include app ad revenues, subscriptions, rights sales, etc. PitchBook places Wattpad’s current value at around $398 million (US).
+
+Stop and stew over those numbers for a minute.
+
+Done?
+
+Good. Now, take a moment and wrap your head around the key difference between Wattpad and a site like Archive of Our Own.
+
+Both built their reputations on user-generated content. Both allow users to grow and interact with communities of readers. Both encourage writers to post original works and fanfiction.
+
+Archive of Our Own is a non-profit; Wattpad isn’t.
+
+Wattpad is a business. Period.
+
+Every action they undertake is designed to:
+
+increase their revenues, cut costs, build their corporate brand, and broaden their user base.
+
+Businesses take risks. Whether you consider yourself a dabbler, writer, or author, you need to know if Wattpad’s business model puts your work at risk.
+
+These include
+
+a fanfiction.net-style story purge,
+
+Wattpad shutting down,
+
+account deletion, and
+
+the lost value of your first publication rights.
+
+Throughout this series, I’ll discuss the risks and propose a few ways you can stop these issues from biting you in the butt.
+
+I know I’m not the only person thinking about this. If you would like to guest post on this series, leave a comment here on Medium or contact me via the email address on my website.
+
+Should Wattpad Be a For-Profit Business?
+
+Yes.
+
+In my opinion, Wattpad has the potential to disrupt publishing on the same scale as the Amazon Kindle did. Their success over the last decade speaks well of their innovative publishing model and their founders’ work ethics. Harper Collins, Tor, Amazon, all profit off their e-book divisions, and I see no reason why Wattpad shouldn’t be a for-profit entity.
+
+However, with each year that their disruptive potential goes unrealized, the chances they’ll become the Kindle’s successor dwindle. It’s still present. If you take a long view and think of Wattpad’s consumption model as a generational shift, this potential may actually grow as Generation Z reaches adulthood.
+
+Despite their massive potential, if they held an IPO today, I wouldn’t invest. Their current business model includes two massive, potential liabilities as part of their core business.
+
+The first big ticket problem: national obscenity laws.
+
+Let me preface this with I’m not a lawyer. I’m a policy wonk/business analyst turned copywriter with an MA in International Commerce and Policy. Based on a review of the publishing industry as a whole, I created a list of risks and ranked them using what I’ve personally observed on Wattpad. What I discovered left me cringing, cursing, and shaking my head in sheer disbelief at both Wattpad’s audacity and the (sometimes) stupid risks they’ve elected to take.
+
+Obscenity laws?! What the f***!
+
+As I write this, the most read books on Wattpad all have one thing in common. Sex. Although a few authors adhere to Wattpad’s terms of service and imply rather than show, most favor explicit sex. Some even venture into PWP territory, which clearly violates Wattpad’s terms of service. As the saying goes, sex sells.
+
+Is Wattpad Enforcing the M-Rating?
+
+Wattpad’s content guidelines require an M-rating for anything with “explicit sex scenes”. These stories are supposedly not discoverable to any user under the age of 17. However, there are reports that Wattpad’s M-rating enforcement is haphazard at best. Malleable’s Wattpad — Where Children Read Porn gives a disturbing overview of the problem. Seriously, don’t eat before you read this.
+
+Although I don’t know the full scope of the problem, opening a private browser tab, googling Wattpad romance, and opening the category’s hot list suggests that the above criticisms are fact-based.
+
+Misrated? You Be the Judge.
+
+Take MaliaReeds’ Unwanted, which is currently #17 on Wattpad’s romance hot list and presently has 2.7 million reads Here’s a snapshot of Chapter 84 in all its smexy glory.
+
+Notice, that I’m using a private browser window with all previous logins and cookies cleared. As Wattpad so generously reminds me, I’m not logged in. Anyone can access this chapter regardless of age.
+
+For an adult reader, this is an enjoyable read with a pleasant balance of mystery, adventure, and romance. It also includes heavy petting, references to torture, an actual torture scene, what may be an off-screen rape or attempted rape, and the previously mentioned adult naked time.
+
+How would you react if you discovered your 13-year-old daughter reading this?
+
+Now imagine that you’re a conservative judge in a country with strong obscenity laws. Do you think this will end well for Wattpad? Probably not.
+
+Isn’t Entering a Birthdate Enough?
+
+Birthdates are user-entered and not verified by Wattpad before users are allowed to access M-rated material.
+
+I doubt saying the user lied will be an adequate defense in some jurisdictions.
+
+There’s another problem. Wattpad’s content guidelines specify 17. Now, I’m about to point out a fact that will tick some of you off.
+
+In most countries, including Wattpad’s home country Canada, 17 is still a child. Only 16 countries disagree with this. They include Kyrgyzstan, Myanmar, Saudi Arabia, and Iran, which all practice internet censorship.
+
+So based on Wattpad’s terms of service and their most popular books, it’s fair to say Wattpad allows minors to access explicit fiction. (I pray its fiction. If it’s not, inhumanely flexible aliens are gradually taking over our world and likely killing their lovers via dehydration.)
+
+Why is Wattpad’s Recommendation System a Potential Problem?
+
+In 2016, a class-action lawsuit against Snapchat alleged that they were violating the Communications Decency Act by
+
+intentionally exposing minors to harmful, offensive, prurient, and sexually offensive content.
+
+Snapchat updated their guidelines and added an age-gating tool for their publishers. Although Snapchat swears this was always their plan, some analysts point to the lawsuit and their 2 March 2017 IPO as the real reasons behind these changes.
+
+We don’t know how the court would have ruled in the Snapchat case, but Snapchat’s actions suggest they didn’t want to find out.
+
+Every time Wattpad recommends a misrated explicit book to someone underage, they are arguably marketing obscene content to children!
+
+When Wattpad inserts a book recommendation between chapters, they are acting as a content curator. If its tagged
+
+r18, possessive, romance, mature, badboy, alpha
+
+would a reasonable jury think that Wattpad should know this content is inappropriate for an audience under 18? YES!
+
+In the US alone, the penalty for violating the Communications Decency Act is $50,000 per violation per day.
+
+They’re not alone. Most countries have laws designed to protect minor children from explicit material. Typically, they are enforceable regardless of a country’s free speech beliefs.
+
+Obscenity Laws and Wattpad
+
+Actual obscenity, the sort that gets your website and app added to a country’s banned list, works a little differently. Some countries like Iran operate under extremely strict obscenity and morality laws. Violating them is punishable by death. Others employ ban lists and fines.
+
+Although the US and its states have obscenity laws on the books, the First Amendment renders many of these unenforceable. Canada’s obscenity laws — remember, this is Wattpad’s home country — are enforceable because of their reasonable limits clause. In other words, Canada can and does reasonably limit free speech.
+
+I cannot say if a given story is obscene. I cannot say if it qualifies as pornography. Neither can Wattpad. These are questions for a judge. Different countries have different obscenity and pornography standards. Some ban it outright. Unfortunately, if you end up standing in front of a judge arguing that you didn’t know about an erotic BDSM novel with 1 million reads posted on your site, it’s likely too late.
+
+Bottom Line
+
+Given Wattpad’s explosive growth in Asian markets — many of whom practice internet censorship — and the history of countries like Malaysia banning books on moral grounds, it’s not a stretch to think that Wattpad will run afoul of these laws. If they have prior knowledge — for instance, a user reported the disputed story as mature — and didn’t act to prevent minors from accessing the work, they are liable.
+
+The Fifty Shades of Grey Example
+
+Here’s a relatively recent example involving obscenity laws and erotic fiction.
+
+In 2013, a Brazilian judge ordered bookstores to shrink wrap Fifty Shades of Grey, emblazon it with adult content warnings, and place it out of reach of minors because it violated Brazil’s obscenity laws.
+
+Think about all the adult content on Wattpad, including some written by Wattpad Stars, and ask yourself how do you shrink wrap a website.
+
+You pull the plug.
+
+Conclusion
+
+Wattpad’s user base is 90% Millennial and Gen Z. Millennials aren’t a concern. The eldest members of Gen Z are 24, the youngest 4. Given these demographics, we will wake up one morning and learn that Wattpad has either purged all adult content from their site or moved it to an adult-only site.
+
+This is a matter of when, which judge, and which country, not if. The sole question if whether Wattpad will survive the potential fines and bad press. That said, don’t expect this lawsuit to hit a US court.
+
+In this scenario, purging anything questionable is a good business decision and may be the only way Wattpad stays in business.
+
+Unfortunately, their business comes before your writing. If your story contains mature or borderline mature content, back it up. (I have a tutorial in the works for this. I’m sometimes a little too geeky for my own good, so I’m looking for a few test subjects if you’re interested.) Then start working on Wattpad-proofing your publishing strategy.
+
+Begin by
+
+Researching other self-publishing opportunities,
+
+Building connections with your readers on other social media platforms, and
+
+Starting a personal blog.
+
+Up Next …
+
+Obscenity laws are not Wattpad’s only potential liability. Next up, “The Wattpad Fanfiction Conundrum.”

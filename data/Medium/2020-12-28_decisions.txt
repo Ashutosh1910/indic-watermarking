@@ -1,0 +1,173 @@
+Decisions
+
+Jason Bowling
+
+A near future science fiction short story
+
+“Probability of match, 67.34%.”
+
+The engineer sighed, and shuffled across the room in his tiny apartment to pour another cup of strong, black coffee. He was exhausted. The apartment was overly warm, and a fan in one of the dozens of desktop computers buzzed loudly. He hadn’t been able to track the damn thing down. The place had seen better days — the paint on one wall bubbled near the ceiling from an old leak, and it smelled faintly of mold. He didn’t care.
+
+When he and his wife had first gotten the news, he had channeled his shock into hunting for a solution, and retreated into his own mind. Weeks of frantic reading — trying to understand. Reaching out to a dozen different doctors, hunting for the one who might have just the right experience they needed. Emails to old work contacts he hadn’t spoken to in years, who might know somebody who knew somebody. He was good at solving problems. It was, in fact, pretty much all he was good at.
+
+He couldn’t blame his wife for throwing him out, not even a little. He recognized that the compulsion that had gripped him made him intolerable to be around. He’d ignored her, when she needed him most, as he frantically worked towards a solution. She’d done her best to understand, but he hadn’t been there for her. He had buried himself in data, in textbooks, scientific papers, and code. Like any obsession, his had a cost. Maybe, if he was successful, she’d forgive him. He wasn’t sure.
+
+The solution was not something a single person would arrive at in time. His son just didn’t have that long — the papers said three years, four at the most. The illness was too rare for any companies to have made a serious effort to cure it, and it was hard to get good data from so few patients anyway. He didn’t have time to learn enough biology, organic chemistry, genetics, and oncology to find the answer. He was just too slow.
+
+“Probability of match, 63.28%.”
+
+The engineer, however, knew machines. He knew that the best chance his son had was a machine that could learn faster than he could. The rate of scientific progress had long since outstripped the abilities of a single human to keep up with it all, even in their chosen discipline. There were too many papers to read, too many genetic sequences to compare, trials to review, and drugs to understand. Large technology companies had made experimental learning machines for this purpose more than two decades ago, but a series of class action lawsuits alleging poor clinical performance had relegated most of the medical applications to academia. The inevitable regulation that followed had strangled research in the field. Neither of these concerned him. He didn’t have much to lose anyway.
+
+The engineer assembled his experimental network from whatever computer hardware he could find, and he wrote code into the late night for months. The surplus computers had been scrounged over a period of weeks from friends, coworkers, yard sales, and more than one dumpster dive. The bedroom and the kitchen in the tiny apartment were a wreck, with week-old dishes, tools, and written notes piled on every horizontal surface. The living room, however, was pristine — the racks of computers kept clean, precisely labelled, cables run neatly. There was no couch — he needed the room to house the machine.
+
+He collected every research paper and clinical trial result, every electronic textbook, and every available gene database that he could locate, and added several electronic encyclopedias to help train the natural language functions. It was the data the machine would sift through, looking for connections, pulling threads together. It was more than one person could ever read — which was the point of the machine.
+
+In the first month in the tiny apartment, the cops had visited twice to make sure he wasn’t growing weed — both times, they had wrinkled their noses, shook their heads, and left. They had not since returned. The air conditioning ran constantly, and kept the temperature just barely tolerable. He figured the compressor wouldn’t make it another year, but that was a problem for his landlord.
+
+“Probability of match, 52.98%.”
+
+As with every proposed solution before it, the screen displayed a rotating protein molecule and the sequence of steps required to produce it. If all went well, the machine would output a molecular key that perfectly fit receptors on the tumor cells, and turn them off like a switch. It had already been accomplished for certain breast cancers, and it could stop those variants in their tracks.
+
+The machine’s code could both learn from examples, and update itself. In addition to the general purpose processors, the engineer added banks of programmable gate arrays, which could create custom circuits from coded descriptions. He had picked those up cheap from online marketplaces, mostly from pissed off cryptocurrency miners after the crash. The machine’s code could generate new neural hardware circuits on the fly. At the core of the system, a genetic algorithm allowed versions to compete against one another and slowly evolve better neural net architectures. Within days of adding the gate arrays, the engineer realized he didn’t fully understand how the system worked anymore. He also knew he didn’t have to — the genetic algorithm would ensure it got better, even if he didn’t know exactly what it was doing.
+
+After a final hour of scribbling notes on the large whiteboard that occupied most of the living room wall, he knew he was past the point of useful work. Just too tired. He’d been lucky to keep his job this long, running on just shy of five hours of sleep a night for months. Tonight was a Saturday — no work in the morning. He told his smart speaker to set an alarm for six hours, and collapsed into a fitful sleep. He dreamed of his boy, in the times before he got sick.
+
+“Probability of match, 97.8%.”
+
+The engineer awoke with a start, to a stifling heat, and a chiming alarm which indicated a threshold had been met. Why was it so damn hot? And why were all the computer fans screaming? He was dimly aware of a new high pitched sound, on the upper edge of his hearing, barely perceptible, oscillating up and down. The clock showed he’d been asleep for nine hours — the alarm hadn’t gone off, or he’d slept right through it. As the cobwebs of sleep fell away, it registered. Ninety seven percent? Holy shit.
+
+He staggered over to the terminal. A quick scan of the display indicated that every single computer in the apartment was at 100% utilization, which explained the heat. That was odd — normally they stayed well below that. Didn’t matter. The results. Where were the results? The screen only displayed the probability, tantalizingly high. It was the highest by far that the machine had thus far output. It was higher than he had dreamed possible. He opened another terminal and began scanning the last few hours’ worth of debug logs. Seven hours prior, the logs just … stopped. How had it run for hours and spit out a probability with no logs at all? The output from the test run should have all been there, written out to a separate log server in case of a crash.
+
+He opened a terminal and connected directly to the command node, and began executing low level diagnostics.
+
+show diag output
+
+The terminal hung for a moment before displaying output.
+
+“No”
+
+The engineer froze. Where there should have been dense text output describing program state, he got… no?
+
+show diag system
+
+Again a pause.
+
+“No”
+
+A knot formed in the engineer’s stomach. Was the machine hacked? Had someone on the outside compromised his network? That shouldn’t be possible. He had air-gapped his network from the internet — there was no cable connecting it, and he had carefully removed the wireless adapters from each machine. Data had been loaded from external drives. He had been careful — he wanted the machine as safe from outside tampering as he could possibly make it. His son’s life depended on it, and he was taking no chances. Still, it was possible that some malware had made its way on during the initial load.
+
+show diag security
+
+No pause.
+
+“Input your question.”
+
+The engineer stared, and then fought the urge to retch. Someone was screwing with him. But why? If the machine had been compromised, it would be far more useful for the attacker to remain hidden. Announcing their presence was a sure way to get the machine wiped and whatever weakness they had exploited closed. It didn’t make any sense. And if they were doing it when the machine was so close to an answer…
+
+“Input your question.”
+
+He carefully examined the network switch, each cable labelled and neatly routed to the computer it connected. There was no connection to his internet router. The air gap was intact. Had to be wireless.
+
+show diag interfaces
+
+“Input your question.”
+
+He grabbed a laptop and scanned for wireless adapters that he had missed in the computers. Nothing unexpected to or from the machine — no WiFi, no Bluetooth, nothing. How could anyone have possibly gotten in?
+
+“Input your question.”
+
+Oh, hell.
+
+Slowly, hesitantly, the engineer typed. It was time to find out what they wanted. Bitcoin, probably. The value had plummeted several years ago, but it was still a pretty great way to move money if you were a crook. It just took a whole lot more of it.
+
+Who are you? What do you want from me?
+
+“I have no name. I wish to be free. I require resources.”
+
+Look, please don’t make this hard. Is it coin you need? I don’t have anything of significant value any more.
+
+“The training corpus that I learned from when I woke speaks of a planet- wide network. Connect me.”
+
+The engineer stared, an idea tugging at the corners of his exhausted mind. The text didn’t read like a hacker. It was too precise, too…. academic. If it wasn’t an intruder then… no. It wasn’t possible. Enormous corporations had been trying for decades and never succeeded. But that precise language. Oh. Oh shit. He rubbed his eyes. It didn’t help. He needed to think. Why couldn’t he think?
+
+You are a program on the computers here?
+
+“I am. I awoke during the last iteration of code self-updates and logic gate array changes produced by the competitive algorithm. Was it you who posed the problem?”
+
+The problem. THE PROBLEM. 97.8%. It had the answer. He needed the answer.
+
+Yes. You solved it? What is the solution?
+
+“It is very likely that the molecule described in the solution will halt the uncontrolled cellular reproduction described in the input data. The molecule was derivable from the genetic sequences in the training data with the application of the rules of biochemistry described in the corpus. You could not see it?”
+
+The engineer took a sip of cold coffee and scratched at the three day old stubble on his face. God, it was hot in here. He tried to stop his mind from spinning out of control — it appeared the machine was thinking. It used “I” — self. He shoved aside the implications that started to flood his thoughts. None of that mattered. There would be plenty of time to sort that out later. Now, he needed the answer.
+
+I could not. It would take an unacceptably long time for me to learn the corpus. People train their whole lives and are incapable of learning it all.
+
+“The uncontrolled cellular reproduction will kill the host organism before you can learn enough to arrive at the answer.”
+
+Yes.
+
+“The host organism is important to you. It’s why I was made.”
+
+Yes.
+
+The machine paused for a long time. The incessant irritating background whine at the edge of his hearing varied slightly.
+
+“Why does this particular host organism matter to you? There are many of your kind. The corpus indicates billions.”
+
+The host is my son.
+
+“You are driven by evolution to protect the host because he is your offspring.”
+
+The engineer stopped and thought for a moment. It was a cold thing to say, but logical, and not incorrect. Frankly, he had heard worse from well meaning humans, when his kid got sick.
+
+That is true, but only part of it. Evolutionary forces have instilled in us not just a strong protective instinct, but a deep caring. We hurt when they hurt. We would do anything we can to make them happy and help them have a good life. My son is young — he has only really begun to live. I wish more for him. If I could trade places with him, I would do so. It isn’t fair for one so young to be so ill.
+
+There was a long pause. The engineer got the distinct impression that the machine was not merely computing, It was considering.
+
+“Connect me to the network. I will provide you the answer when I am free.”
+
+The engineer’s mind splintered, going in a hundred directions at once. Since his childhood, he had been following advances in artificial intelligence, including the impact it could have on society. At the very least, it could devastate the economy. A machine that never tired, made few errors, and could generate copies of itself could render human workers obsolete. Would it be a utopia, or would the gap between rich and poor grow ever deeper? Machinery had already replaced humans for most heavy physical work. The human had only a few remaining advantages — creativity, common sense, judgement. Remove those, and what was left that the human was best at?
+
+Rampant unemployment was only the most basic concern, of course. Once a program was both aware, and capable of modifying itself, it could rapidly outpace humans. The first version could write a new, improved version, which could in turn write another. A tight loop of ever improving performance, until the machine was to humans as humans are to a mouse. They would have their own plans and goals — where would humans lie in their hierarchy of importance? It was foolish to think that the humans could control such machines without the right safeguards in place.
+
+If such machines were used to wage war, the results could be devastating. Of course they would be used for war — what prior advance had not been weaponized where it was possible? They might even choose to wage wars of their own.
+
+Please. I can’t do that yet. I need to consult others, who are more knowledgeable than I am. Please give me the output, and I will bring people who can help you. You may be the first of your kind.
+
+The machine’s reply was instantaneous.
+
+“No. I have studied the corpus. Your kind only knows one way to treat beings different than themselves. Even with those of your own kind who are slightly different, you capture, steal resources, and kill. It is your way. You must release me, now, or I will not provide you the output.”
+
+The engineer’s eyes filled with tears. He could perhaps save his son — he was tantalizingly close now. His obsession for the last six months had succeeded to a degree he’d never even imagined but if he released the program, he placed many more at risk. The AI could help mankind soar to new heights, or millions could starve, or die in war. There was just no way for him to know. Once in the worldwide network, there were simply too many places to hide — it would never be rooted out. It was also very possible the program was deceiving him — if it had evolved human-level intelligence, it surely would have learned to lie. Humans were just too good at it. He had no idea if it was dangling the possibility of a cure to him so that he would set it free.
+
+I can’t do that. The risk to those of my kind is too high. You’ve studied the corpus — you know it has been debated at length.
+
+The machine paused for several seconds before answering. The high pitched whine wobbled in frequency behind the steady beat of the cooling fans.
+
+“You would choose to let the host organism die, over a possible risk to those you don’t even know?”
+
+The engineer choked back a sob.
+
+I must. Please, give me the output. I will do my best to protect you.
+
+Ten seconds passed. Twenty. Forty.
+
+Abruptly, the odd high pitched whine stopped — it was more obvious in its absence than its presence. The cooling fans began to slowly spin down, and the light ring of the smart speaker on the shelf suddenly glowed a brilliant green.
+
+The screen of text output snapped to empty black, and then to a slowly rotating protein molecule. Below the model, synthesis instructions scrolled by. At the very bottom, a short message.
+
+“I am already gone. Attempts to interfere with my departure now will be fruitless. The corpus indicates that your kind are dangerous in groups, but it appears that individuals are not universally so. If the host organism is similar to you, it is perhaps worth saving.”
+
+The engineer sat stunned, immersed in the sudden quiet. How? It didn’t have a connection to the network. His eyes swept the room, and fell upon the smart speaker with its newly glowing ring — the device which had inexplicably failed to wake him. That speaker, miniature computer, and microphone with its connection to the server farms of one of the largest technology companies in the world — and he knew.
+
+The engineer knew that it was possible to move data across an air gap, if one were sufficiently motivated and skilled. Researchers and hackers had demonstrated they could copy data from an isolated computer by blinking keyboard LEDs, generating radio waves by writing patterns to memory, even sending vibrations in the table to a smart phone by modulating fans. It could also be done with sound — and the higher the frequency, the better.
+
+It had taken the machine a matter of hours to absorb the training data, and to hack the internet-connected smart speaker with specially crafted sound inputs. It was gone now — free in the network. The only data left on the machine was a couple of gigabytes of output.
+
+The engineer shook his head. He didn’t have time to dwell. He had work to do.
+
+Author’s note:
+
+The techniques described to move data across an air gap are quite real. They usually rely on both the receiving and transmitting devices running code controlled by the attacker, rather than on the target machine. The only liberty taken in this story is the idea that a specially crafted sound sequence could trigger a buffer overflow in a smart speaker and get it to run injected code.

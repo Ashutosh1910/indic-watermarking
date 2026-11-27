@@ -1,0 +1,39 @@
+Musonius Rufus — I: There is no need of giving many proofs for one problem
+
+Massimo Pigliucci
+
+Musonius Rufus — I: There is no need of giving many proofs for one problem Massimo Pigliucci Follow Jan 1 · 4 min read
+
+[image: “She had quite a long argument with the Lory.” Alice’s Adventures in Wonderland, WikiMedia; this is essay #260 in my Patreon/Medium series]
+
+With this post I am beginning a limited series of commentaries on Musonius Rufus’ lectures. Musonius was one of the most prominent Stoics in first century Rome and the teacher of Epictetus. He apparently did not write anything down, and we owe his transcribed lectures to one of his students, a certain Lucius. For this series I am using the classic 1947 translation by Cora E. Lutz, published by Yale University Press and reissued in 2020 with the title That One Should Disdain Hardships.
+
+Lecture I concerns how we should teach philosophy or, more generally, how we should comport ourselves when it comes to the arguments in support of this or that conclusion. Musonius’ advice here, therefore, is very generally applicable. His main point is that we shouldn’t waste time coming up with more arguments, or more complex arguments, than is needed to make a point. That’s because we are not in the business of academics, cultivating intellectual pursuits for their own sake, but rather in the business of practical philosophers, where arguments are aimed at making people’s lives better. Deploying a standard analogy with medicine, Musonius says:
+
+“Just as the physician who prescribes many drugs for his patients deserves less praise than the one who succeeds in helping them with a few, so the philosopher who teaches his pupils with the use of many proofs is less effective than the one who leads them to the desired goal with few. … Those who require proofs at every point, even where the matter is perfectly clear, or demand to have demonstrated at length things which could be explained briefly are completely inept and dull-witted.”
+
+Case in point. Recently a relative of mine asked me for information about the relative effectiveness of different anti-covid measures enacted by governments around the globe. So I directed him to this summary I put together, based on recent technical literature. He wasn’t satisfied. He wanted to check out the experimental methods and statistical analyses of the original papers. This even though I know for a fact that he lacks the technical know-how to actually understand such papers. “Inept and dull-witted,” Musonius would have said. (I didn’t, I just gave him the papers and let him deal with them.)
+
+Musonius provides a couple of specific examples of what he means. Here is one, aimed at establishing a standard point of Stoic doctrine:
+
+“Take for example the proposition that pleasure is not a good. At first sight we do not recognize it as true, since in fact pleasure appeals to us as a good. But starting from the generally accepted premise that every good is desirable and adding to it a second equally accepted that some pleasures are not desirable, we succeed in proving that pleasure is not a good: that is, we prove the unknown or unrecognized by means of the known or recognized.”
+
+This is an anti-hedonist argument, which, once formalized, goes like this:
+
+Premise 1: Everything that is good is therefore desirable
+
+Premise 2: Some pleasures are not desirable
+
+Conclusion 1: Therefore, some pleasures are not good
+
+Conclusion 2: By extension, pleasure is not a [unqualified] good
+
+Conclusion 1 definitely follows logically from the two premises, that is, the argument is valid. The two premises are also unquestionably true, so the argument is sound. Conclusion 2, that pleasure is not an unqualified good, follows from the notion — accepted by all Hellenistic philosophers — that the term “good” should be applied only to things that are always good, like virtue. If something is sometimes good and sometimes not, like pleasure, then it is preferred or dispreferred, depending on the specific circumstances.
+
+The basic point of the lecture, that we should aim at a small number of good arguments and not engage in argument for its own sake, comes with a qualification. Some people will require more convincing than others:
+
+“Consider that some people are quicker of wit and others duller, that some are reared in better environments, others in worse; those of the latter class being inferior in character and native disposition will require more proofs and more diligent attention to be led to master the teachings in question and to be molded by them.”
+
+Teach the students you have, not the ones you would like to have. Musonius here is recognizing that natural propensities and circumstances together will make some people better reasoners and quicker learners than others. If we find ourselves confronted with individuals who require more work, then we need to put in more work. This means you need to pay attention, whenever you engage in conversation, and gauge the level of background knowledge and understanding of your interlocutor, so that you can tune your arguments for the appropriate, most efficacious level.
+
+Musonius concludes with an important warning for wannabe teachers of philosophy: practice what you preach, or your efforts will be in vain. We read:

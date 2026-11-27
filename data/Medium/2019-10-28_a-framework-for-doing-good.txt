@@ -1,0 +1,111 @@
+A Framework for Doing Good
+
+Ernesta Orlovaitė
+
+Do good unless, to do so, you would have to sacrifice your long-term happiness.
+
+In 1972, a 25-year-old philosophy student published an article in ​Philosophy and Public Affairs.​ His name was Peter Singer, and his F​amine, Affluence, and Morality​ became a classic. In it, Singer asserted that it was our obligation to help those in need. He also provided a framework for evaluating the morality of one’s actions. While “rather draconian” seems like an appropriate description of the framework, it made me think — and come up with an alternative, something I (and maybe you) could use to make good decisions.
+
+Go on, read the article, I’ll wait. The rest of this post builds on (and often disagrees with) Singer’s ideas, and you will have much more fun reading it if you bring your own opinions instead of relying on mine. By the way, that article is a beautiful, insightful piece of writing. It has significant flaws (some of which I have noticed and will happily point out), but its conclusion is powerful and, at its core, right (with caveats, read on).
+
+(I am just starting to think about this topic, so excuse my cluelessness and naïveté. Ethics is a fascinating branch of philosophy that I know nothing about; instead, this post is about what feels right.)
+
+The famous pond thought experiment
+
+While Singer wrote the article against the backdrop of the Bangladesh Liberation War (I admit, I had to Google it), it’s the pond thought experiment that survived the test of our shared memory. It goes like this:
+
+If I am walking past a shallow pond and see a child drowning in it, I ought to wade in and pull the child out. This will mean getting my clothes muddy, but this is insignificant, while the death of the child would presumably be a very bad thing.
+
+Most people would agree that it is one’s duty to save the child. That’s when Singer delivers his slam dunk by turning the obligation to save the drowning child into an obligation to save the nine million refugees in East Bengal. To do that, he asks two questions:
+
+Does proximity matter?
+
+In other words, does your moral duty to prevent a bad thing from happening change with distance to the person in peril? Sure, there’s a much better chance you will be able to save someone from drowning when they are nearby, but distance has little effect on your ability to help those who are starving. So, assuming you can help someone far away as easily as someone nearby, does your moral duty change? When you put it like that, the answer seems obvious: why would it?
+
+Of course, this idea disregards nationalism and the ever more prevalent us-versus-them rhetoric, and so is not trivial to implement in practice. Yet as a moral principle, it’s hard to argue against:
+
+From the moral point of view, the development of the world into a “global village” has made an important, though still unrecognized, difference to our moral situation. Expert observers and supervisors, sent out by famine relief organizations or permanently stationed in famine-prone areas, can direct our aid to a refugee in Bengal almost as effectively as we could get it to someone in our own block. There would seem, therefore, to be no possible justification for discriminating on geographical grounds.
+
+Does the number of potential saviors matter?
+
+That is, does your moral duty to prevent a bad thing from happening diminish as the the number of people who have the power to help grows?
+
+Singer notes that there is clearly a psychological difference:
+
+One feels less guilty about doing nothing if one can point to others, similarly placed, who have also done nothing.
+
+To prove that the number of people who can help is irrelevant, Singer returns to the pond example: would your moral duty to save the child lessen if there were other people who saw the child drowning and were as close to the pond as you? Hopefully the answer is a passionate no¹.
+
+Singer does clarify that if everyone chipped in equally to prevent a bad thing from happening, one’s moral duty would lessen together with the scale of the problem. In practice, however, there will always be more bad things to prevent, and most people will not chip in. Your moral duty is thus to always do as much as you can.
+
+The tragedy of the commons
+
+Now here’s an important question: why do so few people help others? Singer offers two interesting theories², but I think I have come up with something better (there’s a good chance that thousands before me have had the same “unique” insight): philanthropy is a flipped tragedy of the commons (if you need to brush up on the tragedy of the commons, take a few minutes to read the seminal article by Garrett Hardin). Here’s why.
+
+Bad things happen in the world (e.g., 10% of the world’s population lives in extreme poverty). Preventing bad things from happening is our moral duty. However, doing so requires time and money. Each actor in the system can freely decide how much time and money to give; there is no control mechanism. If everyone chipped in, bad things could be prevented. However, while you will bear the cost of doing good, the benefit will be entirely someone else’s.
+
+In other words, not donating, not volunteering, not helping others at your own expense can be seen as a rational individual-level decision, even if it doesn’t stand up to an ethical scrutiny. Hardin asserts that there is no technical solution to the problem of the commons. To “fix” the world, we have to change the way we behave. However, eradicating poverty requires global cooperation of the sort that we seem incapable of. Just look at climate change: we have emitted so much carbon dioxide into the atmosphere that we might have already passed the point of no return. And global poverty doesn’t even threaten to kill us.
+
+In short, cooperation is hard. And there might be no technical a solution. So I am going to propose a moral one.
+
+The strong version
+
+Now let’s get back to Singer. So far I’ve avoided talking about his exact definition of our moral duty to prevent bad things from happening. He offers two, and both of them, while theoretically well reasoned, would likely have disastrous results if implemented in practice.
+
+The “strong version” is what Singer says is the correct definition³:
+
+We ought to give until we reach the level of marginal utility — that is, the level at which, by giving more, I would cause as much suffering to myself or my dependents as I would relieve by my gift.
+
+There are two important points to note here. First, inflicting suffering is acceptable as long as that suffering benefits the recipient. Second, such suffering should be inflicted as long as the benefit to the recipient is greater than the suffering, thus effectively reducing the giver to the state comparable to that of the recipient.
+
+Now the reason the pond example is straightforward is that saving a life there is cheap. A much more appropriate illustration of Singer’s strong version would be the following example:
+
+You are passing a minefield, the legacy of a recent civilian war. In the middle of the minefield, you see a girl. You have no idea how she got there, but you know that if you don’t help her, she will most likely die. You are her only hope. If you do decide to help her, however, there’s a 30% chance that you will be killed, and a 30% chance that you will be maimed for life. Your children watch as you calculate the probabilities and decide that it is your moral duty to try and save the girl (see analysis at the end of this post⁴). You don’t make it back alive.
+
+In short, Singer’s strong version requires inflicting significant suffering unto oneself and others. If this was the accepted moral code, I would hate helping others. I would also end up being miserable, demotivated, and too poor to give. This is not an ethical theory — it’s a mutual self-destruction manual.
+
+The moderate version
+
+Alright, says Singer, here’s a more lenient proposal. It’s not right, but it’s better than nothing:
+
+We should prevent bad occurrences unless, to do so, we had to sacrifice something morally significant.
+
+The moderate version drops the marginal utility bit. In other words, you are no more obliged to reduce yourself to the level of suffering experienced by the refugees in East Bengal if (and only if) you consider that to be a morally significant sacrifice.
+
+With this definition, we are getting closer to something we could work with. However, it still requires us to deny all pleasures and non-essential needs to ourselves and our families.
+
+The simplicity of the two definitions is appealing, yet it is also why they will never work: they fail to recognize that their object is a human being. A human being who might believe in doing no harm, who has a moral duty to their family, and who assigns value to their own happiness and well-being⁵.
+
+The human version
+
+So here’s my moral duty theory. The Singer of 1972 might have called it the “weak version”. I’d rather prefer the “human version”. While it is inspired by my own values⁶, you don’t have to be a starry-eyed bookworm to make it work for you.
+
+Alright, are you ready? Here you go:
+
+We ought to do good unless, to do so, we had to sacrifice long-term happiness of ourselves or others.
+
+Here’s what this one sentence is actually saying:
+
+It is our moral duty to do good
+
+Simply not doing bad things is not enough.
+
+Doing good encompasses the prevention of bad things, the focus of Singer’s article. But it also includes other ways of benefiting those around us. It expands our options. (Note that when making big “do good” decisions, it is one’s moral duty to choose the most impactful cause⁷.)
+
+It also provides a framework for one’s everyday behavior. Saving a life is a worthy, but costly endeavor. Making someone happy, even if only for a few minutes, is (almost) free. You can smile. You can open the door. You can say good morning, please, thank you. You can make them tea. It’s also something that everyone, regardless of their financial situation, can do.
+
+Happiness is the universal currency
+
+Human life does not have an obvious reason for existence (if it did, Wikipedia’s article on the meaning of life would not have 222 references). So we end up creating our own purpose, whether that’s being the best person one can be, following God’s will, or helping others. Whichever adventure you choose, happiness is the universal currency. It’s the ultimate success metric.
+
+Happiness is easy to measure, you need only ask. It transcends individual differences — we each have our own definition. And it acknowledges that there is more than one way to live a good life.
+
+Lifting others up instead of drowning together
+
+Finally, I do away with the marginal utility nonsense. And I incorporate my belief in doing no harm. I could not inflict pain on one person to benefit another. I also could not ask one person to inflict pain on themselves to benefit another⁸. So I don’t.
+
+Instead, the limiting factor to the good one can do should be the effect on one’s long-term happiness. In my previous post I touched upon the idea of hedonic adaptation theory (one’s tendency to revert to a previous level of happiness despite any significant positive or negative events). Buying new sneakers might lead to a short-term increase in happiness, but the feeling will pass in a day or two, leaving you at the pre-purchase happiness level (“the happiness set point”). Not all events lead to the reversion to the set point, however. For example, research suggests that you can buy long-lasting happiness, up to a certain point. Once you reach that point, however, you should start donating.
+
+So here’s what I’m saying: when the choice is between a short-term happiness increase (or a short-term happiness loss) and doing good, you should do good. You should not, however, sacrifice your (or anyone else’s) long-term happiness.
+
+So, to recap, do good unless, to do so, you would have to sacrifice your long-term happiness. Try it the next time you are thinking of buying that new pair of sneakers. Yes, you might genuinely need new shoes. But there’s a chance you don’t. There’s a chance that buying them would change nothing for you. There’s a chance that not buying them will help save a life⁹.

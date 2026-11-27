@@ -1,0 +1,101 @@
+Boing, boing (and a LA) — Postmortem
+
+Luno Aka Twoclicks
+
+Following post mortem contains dissection of my latest work called Boing, boing (and a LA). Although it is not the first dissection I do this way, the genre is still young, with some edges rough, so pardon the uncombed parts.
+
+Let’s have a quick look at the piece:
+
+Downsized preview, see in full glory on Superrare (https://superrare.co/twoclicks/creations)
+
+Now brace for some historical perspective … might be a tad long, but it has pictures!
+
+First, the origins — Garden
+
+We start with the work from April 2019, called Garden (with a glimpse of the gardener).
+
+The title of this piece is derived from Einstein’s last conversation with nurse that took care of him, which allegedly went something like this:
+
+- “Professor Einstein, do you think God made the garden?”
+
+- “Yes, God is both the gardener and the garden”
+
+- ”Oh I’d not thought of it that way”
+
+- “Yes, and I’ve spent my whole life just trying to catch a glimpse of him at his work”.
+
+Message of this work is a play on Albert’s Spinozian view of identity/unity of god and natural world (deus sive natura). One of the possible variations on this pantheistic worldview is a notion that what we call god, when examined carefully, turns out as just a feature arising from the layout of the whole system — hence the gardeners are a plenty in this one.
+
+From technical point of view, work consists from overlay of reddish and grayish texture brushes (simple smudges) creating dynamic coloring, and the “content” layer, which is mostly composed from variations of three brushes (see below)
+
+Upper row is a brush made from picture of orchid (which under certain deformation works also as a bird), in the middle row we see a farmer worker, our gardener, and the bottom row is a background linear pattern.
+
+The picture uses simple way of texturing, which worked great, when printed on canvas (see Garden printed on 1 meter high canvas in company of its siblings), but since last year we have been busy developing better texturing methods for the purely digital works, we decided to revisit picture with new set of brushes and techniques.
+
+Rework nr. 1 — Birdwatching
+
+First we get rid of texture brushes and some motives (gardener) and instead of structured garden we leave only few motives (birds). We also bring in new technical brushes made from HDR pictures of some engine (top row on pic below) and some new structural brushes and soil/ground brush (bottom right)
+
+New imports, for the sake of Birdwatching
+
+With these new elements we construct Birdwatching — exploration of the way in which the world of constructed technology (represented by radiator grille and bended metal parts) peers into (or rather invades) the fragile older ecosystems and grows into them.
+
+(you can buy it as 1/1 NFT token here https://makersplace.com/twoclicks/birdwatching-1-of-1-34043/)
+
+Gardener was removed and is on purpose replaced with the watcher (red metallic entity lurking behind the structures).
+
+It also hints that “the watcher” might be constructed entity instead of transcendent one.
+
+Also we bring in new more sophisticated texture that has interesting behavior under color down quantization.
+
+Rework nr. 2 — Boing, Boing! (and a LA)
+
+We feel, that texture, color tone, brushes and motives made from those brushes (what we collectively call a geometry) of this work invite some further exploration, so we take up that challenge. To broaden the size of playground of possibilities (and make the search easier on ourselves), we bring in some new brushes with mechanical and comics theme (see below)
+
+New vector brushes and their deformations
+
+We go through several various iterations, changing the main elements and their configuration. Here are some saved variations (that themselves went through countless unsaved variations)
+
+We stray from the original examination of possible philosophical implications of pantheism and as we move out of garden and ditch the gardener or watcher, we walk into multipolar world, where we try to replace the transcendental entities with larger than life villains and superheroes in a comics-like flatworld.
+
+Comics themed brushes invite to formalize this in a comics framing, and we decide to make a dynamic comics from the last two iterations.
+
+Here they are in more detail:
+
+From these two iterations we make two „color streams“, one for each source variation.
+
+Color stream is a series of color quantizations with dominant color changing from RGB value A (say 150, 100, 60) to value B (e.g. 80,250,0) in proportional increments per step (here 20 steps per 1 stream) — final stream will have 38 steps, due to mirroring of frames to achieve endless loop (A to B to A)
+
+Stream A (without mirroring, thus not looping seamlessly)
+
+Stream B (without mirroring, thus not looping seamlessly)
+
+With the streams ready as a source of “sub-frame movies”, we use a comics composer (simple processing app) to find a best working composition of sub-frames, and we settle on setup shown below, where cutouts from stream B (the industrial variation) are in the top left and bottom right corners and the rest is from the stream A
+
+We encode this composition to final composition script, which takes corresponding cut-outs from successive stream frames and creates series of composite panel frames for dynamic comics spread which thus features sub-frames with independently changing colorizations.
+
+As a last touch we add few blended frames between each successive frame to moderately but not completely smoothen, the flickering from too many color variations. And we have a set of final 114 frames.
+
+Here it is once more in its full glory.
+
+Downsized preview gif, full size available as 1/1 NFT token on SupeRrare
+
+Final discussion — yes, but why?
+
+Technical part:
+
+Final piece is, on a technical level, a demonstration of possibilities of combining various source animations into fragmented multi streams (here in a form of comics panel). This multiple movies principle will boost the narrative possibilities of our future animated works.
+
+Different color streams also highlight a dynamic variability of color quantization with changing dominant color — the variations of single picture, when constructed in certain manner also create a universe of possibilities of their own — the changes of character can go from subtle to dramatic and to include them in the form of animation provides us with possibility to peer into this universe.
+
+…okay, but what does it mean?
+
+Looking at a historic timeline outlined in this post mortem, we start with unipolar pantheistic view of nature/god, then go through opposition of technology (human construct) vs nature (divine construct) and moving beyond this, we arrive at a multipolar world of entities larger than life (villians and heroes), that should in theory guide us with their wisdom … instead, we see that good vs evil are just a random variations of each other and their morals (utterings which we, per tradition of comics, expect in the dialogue bubbles) are just vacuous bubbles with no real content. The moral compass of the world is reduced to trite, childish Boing, Boing (and a LA).
+
+… and what should I do now
+
+Open the looping video in full resolution on large enough screen and enjoy the infinitge loop.
+
+As with other MEMvids, firs it seems nothing is going on then you get a sense of each subrames and some time after that you will get some super-frame intuitions and start to see larger connections.
+
+Boing, boing! … LA

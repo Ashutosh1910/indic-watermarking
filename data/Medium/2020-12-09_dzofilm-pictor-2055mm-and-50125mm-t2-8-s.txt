@@ -1,0 +1,43 @@
+DZOFilm Pictor 20–55mm and 50–125mm T2.8 Super35 Zoom Lens Set Review
+
+Evan A Olson
+
+Dampening
+
+The focus, zoom, and iris gears are nicely dampened. The focus gear has 270 degrees of rotation, which is more than enough for fine adjustments. The zoom gear slows down just a touch on the long end, but the resistance there is not enough to alter my confidence in a shot. The iris gear is on the looser end compared to the focus and zoom gears. On multiple occasions, I had bumped the iris to a T3 or T3.5 without realizing. A user error? Yeah, for sure, but the looseness is still a concern given that they could loosen up somewhat over a few years of use. When will they need to be serviced? How can they be serviced?
+
+When writing about the dampening of the gears on the Pictors, my opinion is tempered by my recent experience with the similarly-priced Venus Optics Laowa OOOM 25–100mm T2.9. The dampening on the OOOM is almost non-existent. It is rough, inconsistent, and frustrating to use. The dampening of the Pictor set is butter by comparison, punching above its price.
+
+Gearing Issues
+
+But while the dampening is great, the gearing itself seems to have a problem. When connected to a follow focus, like the manual LanParte I own or the Tilta Nucleus-M I used, the gears do not perfectly line up with the gears of the focus system as if there is an ever-so-slight machining error. This error, if it is one, causes vibrations. When rotating a follow focus, the movement of the two gears as they fight one another shakes the entire lens. That shaking results in an audible rattle.
+
+Worse, in my own tests with the camera locked down on a tripod and focused on a close subject, I found that this rattling of the lens shows up on camera as a bumpy frame movement reminiscent of the subtle bump of a weathered slider.
+
+I held off on reviewing these lenses because I knew I would be remotely pulling focus with a Nucleus-M setup connected to a remote camera operator using an easy rig. I wanted to see if I could notice the bump from far away while staring at a monitor.
+
+Did I notice it when handheld? No. When the lenses are on a handheld camera, the bumpiness when rack focusing is overpowered by the handheld shake. Further, when I was using this remote setup, there were moments when the camera was placed on a tripod. While it was locked down, I racked focus and also did not see any shake. What changed? The operator had firmly attached the supportive base to the rails beneath it.
+
+In order to mitigate the bumpiness caused by the gearing, the lenses must be supported by the rails. This will get rid of the bump, but it will not eliminate the audible rattle of the gearing.
+
+More Threaded Mounting Points
+
+One (petty) thing I would have liked to see is the inclusion of those threaded mounting points on the focus and iris barrels in addition to the zoom barrel. Had there been threading on the focus barrel, I would have taken off the zoom knob and placed it there to aid in manual focusing without a follow focus. My thumbs were pretty beat up from racking with just the gear.
+
+Image Performance
+
+I am split about the performance of the Pictors. I tried writing around this so that I could get to the salient features of the set first, but in the end it is easier to just say what has been on my mind: the optical performance at T2.8 is either intentionally tuned for a vintage look or unintentionally poor with heavy chromatic aberration and strange bokeh. Yes, you could use these lenses at T4 for a reduction in those vintage characteristics, but you, like me, are likely looking at these lenses specifically because they are T2.8.
+
+On the other hand, where the set suffers optically could be seen as reasons to justify it down the road as some kind of cult favorite on forums and at crafty tables. The set has all the character of something from another era, minus the fungus, plus many modern features like parfocal zooming and low breathing. It could be enough to keep those Nikkor primes firmly in a Pelican in your closet (with silica gel, I hope).
+
+Parfocal
+
+By calibrating with the included shims, the Pictors are truly parfocal.
+
+There were many moments while using these lenses when I would zoom in on a subject and realize I did not need to refocus. I began to adapt my shooting style so that I could utilize the parfocality more frequently, such as by shooting a 20mm wide shot and then snap zooming in for a 55mm shot. When editing, I cut out the zooming portion to make the sequence of the two shots look continuous. Getting this kind of continuity on a non-parfocal lens is difficult to achieve because the time it takes to refocus after zooming is enough to make the wide shot and tight shot appear non-sequential when put together.
+
+To hammer this home… Think of a chef chopping an onion. You want to get a wide of the chef starting on the onion and a tight of them partway through. With a parfocal lens, you grab this wide and then snap zoom to get the tight of them cutting. Since you do not need to spend time refocusing, the placement of the knife on the tight is nearly the same as its placement in the wide, lending a more continuous shot.
+
+Low Breathing
+
+These lenses have no noticeable breathing. The lack of a perspective shift when focusing between close and far subjects invites more creative shot opportunities, especially when coming from the nauseating focus shift of the Canon 24–70mm F2.8, which heaves the image in and out by double digit degrees. For those looking for minimal focus breathing, these lenses check that box.

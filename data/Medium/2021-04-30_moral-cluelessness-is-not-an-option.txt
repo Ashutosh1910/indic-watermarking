@@ -1,0 +1,29 @@
+Moral Cluelessness is not an Option
+
+Ben Chugg
+
+Let’s recap. We started by considering a donation to solve a concrete problem (malaria), only to find that we must now direct our efforts towards the nebulous target of “reducing the probability of premature human extinction, even by a tiny little bit” because we must care “about all the effects of our actions until the end of time.” What happened? Can this really be the consequence of a sober reflection about how to best help those less fortunate than ourselves?
+
+No, because theories such as moral cluelessness are divorced from the actual role of moral argumentation, which is to help us solve problems and make progress. We need to make decisions about health care policy, foreign aid, euthanasia, and vaccine distribution. Moral cluelessness has nothing to say about such problems (besides to tell us not to work on them), thus forfeiting its place as a serious suggestion. Remaining agnostic about pressing problems and continually emphasizing existential risk reduction because we can’t trace every effect of our actions is not an option.
+
+A moral principle that considers all consequences until the end of time is perhaps elegant, but we should not judge moral theories by such standards alone. An aesthetic but unactionable principle does not help us navigate the world. As Peter Singer notes in the introduction to his seminal work on ethics:
+
+[E]thics is not an ideal system that is noble in theory but no good in practice. The reverse of this is closer to the truth: an ethical judgement that is no good in practice must suffer from a theoretical defect as well, for the whole point of ethical judgements is to guide practice. (emphasis mine) - Practical Ethics, 1993. Chap 1, pg 2.
+
+Both Greaves and Singer are professed utilitarians. So why are their methods and conclusions so different?
+
+Singer recognizes that problems come first. Faced with problems — violence, racism, factory farming, suppression of speech — Singer uses moral arguments as criticisms of the various possible solutions that occur to us. That Singer is problem-focused is the reason he is often considered the most influential living moral philosopher. He wades forcefully into the public debate on important issues, using his brand of utilitarianism to argue for and against various positions on topics such as animal welfare, global poverty, Covid-19 challenge trials, euthanasia, and religion.
+
+That problems are primary is not some aesthetic preference to help keep our ideas concrete, but a deeper fact about knowledge creation. Specifically, knowledge grows by attempting to solve problems. Faced with problems, we guess solutions and subject them to various forms of criticism. Those guesses which best survive this critical process are tentatively accepted, until a better guess is made. Faced with the odd behavior of light, we guess an explanation and test it; if your child is late from school you guess that they’re in detention (again!) and call the school; faced with child poverty we guess that cash transfers or insecticidal bed-nets are good solutions and run controlled trials to check our guesses. Our knowledge grows as our guesses are shown to be wrong and we slowly generate better solutions to the problems we face.
+
+Problems, then, separate good guesses from bad ones: each guess is judged by how it fares as a solution. The guesses themselves can come from anywhere — whether from theorizing in a vacuum or with a particular issue in mind. But we should adopt our guesses as general principles only inasmuch as they prove themselves good solutions to problems.
+
+At best, moral cluelessness has nothing to say about the many problems we face. At worst, it prohibits us from making progress. Cluelessness limits the range of solutions under consideration by discouraging us from taking actions whose consequences (far, far in the future) we can’t foresee. But this is almost all actions. Obeying this logic, it is no wonder that working existential risks becomes our only option. And limiting the range of solutions prohibits us from solving problems and learning from our mistakes — it limits knowledge creation.
+
+In this way, moral cluelessness is similar to the precautionary principle, which seeks to avoid everything not known to be safe. The adoption of this principle has been argued for in both the environmental sciences and public health. Of course, it is easy to criticize the consequences of an action in hindsight. But to require that all the side-effects of new ideas be understood beforehand limits what we will try, thereby cementing in place the status-quo. Our focus should be on correcting the mistakes of new ideas, not staring into crystal balls trying to gauge every conceivable outcome.
+
+Both moral cluelessness and the precautionary principle point out an important fact: our actions have unintended consequences. The future will indeed be shaped by our current ideas, and our actions today will cause many problems tomorrow. However, the answer lies not in trying to reason about the effects of our actions until the end of time and refusing to act unless we are confident in our assessment. Our ideas are error-prone and such assessments are bound to be wrong. Instead, the answer lies in recognizing that problems are unavoidable. Progress entails continually solving the next set of problems, not trying to reach a problem-less utopian state. We should continue to cultivate a dynamic society which is adept at solving problems and minimizing the reach of negative consequences, not one which is paralyzed by the fear of making decisions lest they cause a problem millions of years hence.
+
+— — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+
+Ben Chugg is a research fellow at Stanford Law School, working at the intersection of computer science and public policy. He writes about ethics, knowledge, and progress. benchugg.com

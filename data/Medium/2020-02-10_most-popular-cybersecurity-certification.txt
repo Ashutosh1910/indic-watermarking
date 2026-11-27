@@ -1,0 +1,83 @@
+Most Popular Cybersecurity Certifications That Matter in a Growing Market
+
+Priya Reddy
+
+Businesses have come to learn the importance of cyber security hygiene the hard way. Yet many of those same businesses are still ill-equipped to deal not only with the threats of today, but also the dangers of tomorrow. One of the biggest challenges faced by businesses of any size comes in the form of having the right people on staff to deal with persistent threats.
+
+Most enterprises have relied on a CISO (Chief Information Security Officer) to implement cyber security policies. However, the frequency of new attack vectors has forced CISOs to eschew proactive techniques and become more reactive to real-time attacks. Those same CISOs have started to recruit specialists who can tackle particular cybersecurity chores, helping them to return to the realm of proactive cybersecurity while building an effective team of cybersecurity professionals. More Additional Information On Cyber Security Online Training
+
+Research from CompTIA, an IT trade association, illustrates that cybersecurity skills are in need of improvement and that roles are quickly beginning to change. CompTIA reports that 72 percent of firms surveyed believe that their security center of operations is an internal function. However, the same survey revealed that 25 percent are looking for significant improvement in cybersecurity skill sets, while 64 percent said moderate improvement is required.
+
+Simply put, many organizations are facing significant challenges when it comes to staffing their cybersecurity teams. Further complicating the issue is a dire prediction by Cybersecurity Ventures that, by 2021, there will be 3.5 million unfilled cybersecurity positions.
+
+Those dire predictions may actually be good news for those looking to become cybersecurity professionals; with the right skill sets, there will be a plethora of opportunities. But just not any skill set will do. Those hoping to leverage the job market will need to understand what roles companies will need to fill, and how to garner the skills for those roles. Cybersecurity associations and groups are researching the cyber-job market and offer some valuable insights.
+
+Take for example, research firm CyberSeek. The organization has identified the top nine cybersecurity titles for 2020:
+
+Cybersecurity Engineer
+
+Cybersecurity Analyst
+
+Network Engineer/Architect
+
+Cybersecurity Manager/Administrator
+
+Systems Engineer
+
+Software Developer/Engineer
+
+Systems Administrator
+
+Vulnerability Analyst/Penetration Tester
+
+Cybersecurity Consultant
+
+Perhaps one of the most interesting aspects of that list is the number of roles that do not specifically include the moniker “cybersecurity.” In the past, cybersecurity best practices were not a major concern for network engineers, system engineers, system administrators, and software developers; those professionals usually shifted the responsibilities of security off to CISOs and their staffers.
+
+As cyber threats increase and attack surfaces grow (thanks to cloud adoption and other innovations), it becomes obvious that good cybersecurity hygiene has to start further down in the stack and involve those creating code and managing networks. The concept of Agile development and DevOps has also further driven the need for better cybersecurity practices, launching concepts such as DevSecOps, where cybersecurity was intertwined into the development and deployment process.
+
+The increased importance of cybersecurity is forcing those once unconcerned about cybersecurity to adopt best practices, which in turn redefines many IT roles that were once outside of the realm of cybersecurity. In other words, understanding the basics of cybersecurity has become very important to almost any member of the IT team, meaning that additional training is a must.
+
+While some may look at traditional IT roles absorbing more cybersecurity responsibilities as a growth-limiting factor for cybersecurity professionals, the opposite is actually true. More cybersecurity professionals will be needed to train those unfamiliar with cyber best practices, and cybersecurity pros will have to work hand-in-hand with developers and engineers to ensure those best practices are being followed. What’s more, the need for digital forensics, penetration testing, and security operation centers will increase.
+
+That rising need will drive a new ecosystem of cybersecurity professionals who will specialize in certain security concepts. Those cybersecurity professionals will need to turn to an education and certification system to get their start.
+
+While that may seem to be a difficult path to navigate, organizations such as CyberSeek offer insights into cybersecurity career pathways: Numerous other organizations offer training and certification, with the top certifications today being:
+
+Certified Information Systems Security Professional — CISSP
+
+CISSP is an advanced-level credential and is offered by the ISC2 (International Information Systems Security Certification Consortium). As a vendor-neutral credential, it is recognized globally for its high level of standards. CISSP credentialed professionals are usually decision-makers in their organizations and possess the technical skills and expert knowledge needed to develop, manage, and guide security standards, procedures, and policies within their companies.
+
+Certified Ethical Hacker — CEH
+
+CEH credentialed professionals are responsible for mitigating attacks and threats by proactively protecting information systems against hackers. Often referred to as ‘White Hats’ or ‘White Hat Hackers,’ CEH credential professionals uncover vulnerabilities to prevent penetration into an organization.
+
+CEH is an intermediate-level certification administered by EC-Council (International Council of E-Commerce Consultants). The individuals with this certification have the knowledge and skills on hacking practices in different areas such as scanning networks, system hacking, worms and viruses, Trojans, sniffers, social engineering, denial-of-service attacks, enumeration, footprinting and reconnaissance, session hijacking, SQL injection, hacking web servers, cryptography, wireless networks and web applications, honeypots, evading IDS, penetration testing, and firewalls. To become a Certified Ethical Hacker Go Through Ethical Hacking Online Training
+
+Certified Information Security Manager — CISM
+
+CISM credentialed professionals are responsible for developing, overseeing, and managing information security systems in different enterprise level applications. They are also responsible for developing the best security practices for organizations. The Certified Information Security Manager certification was introduced in 2003 and is administered by the Information Systems Audit and Control Association — ISACA.
+
+The goals of ISACA are geared towards the IT experts who are interested in top-quality standards in terms of control, security, and audit of information systems. The certificate is designed to meet the needs of security professionals in IT who are responsible for enterprise-level security management functions.
+
+CompTIA Security+
+
+CompTIA Security+ is a globally recognized vendor-neutral security credential. The professionals with this certification are believed to possess higher technical skills, expert knowledge and skills in security-related disciplines. CompTIA Security+ is approved by the United States Department of Defense and is compliant with the standard for ISO-17024.
+
+SANS GIAC Security Essentials — GSEC
+
+GSEC is an entry-level credential and is offered by GIAC and is designed to validate the candidate’s understanding of information security concepts and terminology and their technical expertise needed to take up hands-on security job roles. GSEC certified professionals have technical skills and knowledge of various areas, such as access authentication, recognizing and mitigating general and wireless attacks, password management, cryptography fundamentals, access controls, DNS, IPv6, ICMP, network mapping, public key infrastructure, network protocols, and Linux.
+
+Offensive Security Certified Professional — OSCP
+
+The OSCP certification ensures that candidates have the skills needed to understand the penetration testing process and life cycle. OSCP is offered by the Offensive Security organization as an ethical hacking credential. Individuals who achieve OSCP will be able to identify the vulnerabilities in security systems, compromise vulnerable PHD-scripts, perform controlled attacks, and write simple Python/Bash scripts.
+
+Certified Cloud Security Professional — CCSP
+
+CCSP is offered by the International Information Systems Security Certification Consortium (ISC2). The certification is aimed at middle-level and advanced-level specialists who are involved in IT architecture, information security, web and cloud security engineering, governance, IT auditing, and risk and compliance.
+
+Naturally, some of these certifications may require a much larger commitment than others, and all require that candidates have some networking and other IT knowledge. Additional resources are available from community colleges, professional training institutes, and numerous online entities that offer many different types of courseware.
+
+Take your career to new heights of success with an Cyber Security, enroll for live free demo on Cyber Security Training
+
+The SANS technology institute offers a great deal of insight on how to get a start in cybersecurity, and provides numerous resources for no charge to those interested in pursuing cybersecurity certifications.

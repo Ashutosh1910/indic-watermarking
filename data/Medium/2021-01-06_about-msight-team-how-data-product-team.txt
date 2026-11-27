@@ -1,0 +1,39 @@
+About MSIGHT Team: How Data Product Team is Organized
+
+Aulia Amin
+
+This photo was taken before pandemic.
+
+I was the 4th member of MSIGHT team. At that time, there were 2 commercial people, one business analyst, and one data/tech (me). It was normal for me to go to the client in the morning, create code/query in the afternoon, and create report/insight after that. Basically doing everything together with other team member.
+
+Now we have 39 team members, things getting more structured, and this is a glimpse of how we are organized.
+
+We are blessed with a diverse team.
+
+Half of our team were “born and raised” in Telkomsel (including me). This provides understanding on the telco assets that we have, how this big company operates and how to navigate through its system.
+
+The other half were recruited from various industry verticals. They bring deep understanding on what product should be created for our clients.
+
+In terms of role, although we are a business unit which leverage data as the core asset, only a third of us are Data Scientist or Data Engineer. They are the heart of our team. They have a philosophy of “pragmatic analytic”. Meaning that when developing an analytic model, they must be pragmatic, business objective comes first. Model doesn’t have to be perfect, technique doesn’t have to be fancy, as long as it serves business needs, the simpler the better.
+
+But we need more than that to develop the business.
+
+Other roles are Sales, Partnership, and Business Development. They are the one who listen and connect to our clients in a day to day basis.
+
+We also have Business Analyst or Industry Analyst or Analytic Translator. These people are the one who connect business and analytic world, they are the one who draw simple yet useful pattern from (usually) complex analytic model and make sure that we really provide solution to the client.
+
+Product Owner is the other role in our team. They are the one who orchestrate everything and do whatever needs to be done, A to Z, to deliver the product.
+
+We also have a strong support system.
+
+We have Business Operation team, who develop and maintain the data pipeline, dashboard, APIs, and many other, to ensure the product is delivered to our client. They also ensure our well-being, happiness, and (sometimes) sanity :).
+
+We also have our Legal, Compliance, and Regulatory team. They are the one who keep us in-line according to regulation.
+
+And lastly, we are also supported by IT team who maintain our big data platform, data ingestion, data quality, model deployment, and other fancy things to support our business. They are the one who handle the “real” big data. What they do is remarkable and deserve a complete article to do justice for what they’ve done.
+
+Eventually, it is all about learning from each other. Every day, every challenge provides learning opportunity. I feel that whatever I know now, mostly came from field duty, from getting my hands dirty, solving one puzzle after another.
+
+Just like Matt Watney once said, “…You just begin. You do the math. You solve one problem then you solve the next one, and then the next. And if you solve enough problems, you get to come home…”
+
+(the original article was published in https://www.linkedin.com/pulse/msight-team-how-data-productteam-organized-aulia-rahma-amin/)

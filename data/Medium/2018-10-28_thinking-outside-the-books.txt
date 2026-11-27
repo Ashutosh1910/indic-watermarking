@@ -1,0 +1,87 @@
+Thinking Outside the Books
+
+Badri Sunderarajan
+
+A library without librarians, a bookshelf without books, and other wonders of the modern word.
+
+It’s late in the night, when most people are getting ready for bed — if they aren’t asleep already. Daytime shops have closed long ago; they wait with their shutters down until the next morning. But in this silent street, one door remains open.
+
+It leads to a library.
+
+But what an extraordinary library this is! There are no staff working inside; no librarian. You walk in through the door, after having your library-card scanned: walk in, pick the books you want to borrow, and walk out again. As you move about, the library’s sensors follow your motions with their electronic eyes.
+
+And when you walk out, the library detects which books you’ve borrowed, automatically entering them into your account.
+
+This is an ‘Intelligent Library’, one of several set up around Taiwan to help people access books more easily. Intelligent Libraries are not meant to replace ordinary ones. Instead, they act as a supplement. They extend a library’s reach to places where a full-fledged, human-handled library would be too impractical.
+
+Intelligent Libraries can also open earlier and stay open later into the night. That’s important, because with ever-lengthening work hours, that’s the only time people have for reading. Libraries in China and Singapore regularly remain open until midnight.
+
+But some libraries never close at all.
+
+The Bath University, UK, was the first in the country to try out a 24-hour library. That was in 1996. But it’s only in the past decade or so that other universities have started to follow suit.
+
+24-hour libraries are open round the clock. They aren’t always in use, but they’re still useful for students who work late at night to catch up on assignments, or wake up early morning to prepare for an upcoming exam. Foreign students use the space to conduct Skype calls with relatives in different timezones.
+
+Some people are concerned that 24-hour libraries may lead to bad habits. Students may get the impression that they’re expected to work late, rather than catch up on much-needed sleep. They might do that anyway, but an all-night library would only encourage the habit.
+
+Students don’t buy that argument, though. If they’re so pressed for time, it’s useful to have library access whenever they need it instead of worrying about opening and closing times.
+
+Either way, it seems the 24-hour library is valued mainly for the space it provides. The question of books hardly ever turns up.
+
+Maybe that’s why some libraries have decided to do away with them altogether.
+
+The Vision IAS Library, Delhi, is one of many such spaces that have sprung up in India’s capital. This ‘library’ has soothing air-conditioned rooms to keep out the worst of Delhi’s heat. They have WiFi access, open discussion spaces, the usual silent atmosphere, and everything else you’d expect from a library.
+
+Well, almost.
+
+It doesn’t have any books.
+
+Instead, what it has are rows of desks, at which you can sit and study without disturbance. You can book desks in one of three ‘shifts’ — morning, evening, and night — or pay extra for round-the-clock access.
+
+The Vision IAS Library was started in 2011, after Shalini and Sanjeev Rathod had failed several attempts to crack the government-job IAS exam. They decided to use their experience to conduct coaching classes, but then they realised students were missing one more thing: a comfortable, distraction-free space to study.
+
+Libraries like the Vision IAS don’t store books, because exam textbooks change every year. Instead, some provide lockers for people to store their own belongings. Though summer is peak season, these ‘libraries’ are in demand all through the year — some so much that they even let you pre-register online.
+
+While Vision IAS is a library without books, you could say Safari Books Online is books without a library.
+
+Started in 2001, Safari Books Online is the Netflix of digital textbooks. You pay a monthly or yearly fee, and get unlimited access to the whole collection. And you can read the book in whichever ebook format you prefer, on a variety of devices.
+
+Safari Books Online started with a focus on computer science and programming, but it has expanded to other areas as well. All this is still about textbooks, though. What about proper books — books that you want to read, for fun, and for pleasure?
+
+Ignoring all the illegal pirate sites out there, Project Gutenberg and WorldCat are the places to go.
+
+The idea behind Project Gutenberg is simple. Take all the books whose copyrights have expired. Scan them, digitise them, and put them up for people to read.
+
+But copyrights take time to expire. Nowadays, companies renew them even after the original authors are long gone. So Project Gutenberg is good if you want to dip into Alice in Wonderland or Sherlock Holmes, but not if you want to check out the latest New York Times bestseller.
+
+That’s when WorldCat comes in. It’s a catalogue of real, physical libraries from all round the world. Search for a book, and WorldCat will tell you which libraries have a copy (of the libraries who’ve registered with WorldCat, that is). Then you can go to the library and pick up the book, or, in some cases, even have it home-delivered.
+
+Of course, if the library’s too far from you to access, you’re out of luck. Or are you? Maybe not: libraries can also lend you books through the Internet. And the Internet is seldom “too far away”.
+
+How does that work? Well, libraries don’t just lend out physical books. They can also lend out ebooks. Lending works the same way: you get the book for a while, and then, when you’re done, you “return” it by deleting it from your device. Libraries keep track of how many copies of an ebook are ‘lent’, and make sure not to load more than they’re allowed.
+
+Usually, ebook loading is only available for people who visit the library. But through WorldCat, they can lend ebooks to anybody in the world (but you’ll still have to pay).
+
+If you’re like me, you wouldn’t consider an ebook a ‘proper’ book. It would have the same text, of course, but everything else is different.
+
+Ebooks are getting very popular because they’re cheaper, lighter to carry, and don’t cut trees. But if you don’t like ebooks, don’t worry: there are initiatives to promote ‘proper’ book reading, too.
+
+The Delhi Metro is a busy place. Over two-million commuters use it every day to get around the city.
+
+There are harried businessmen for whom the ride is the only routine they have during the day. There are students squeezing in some last minute revision, brick-like textbooks propped open in their arms. There are suburban housewives in their bright clothes and gaudy lipstick, heading into the city to meet their friends for lunch. And they’re all trying to get to the places they want to go as fast as possible.
+
+But somewhere in a corner, if you look very carefully, you might find a book.
+
+‘Books on the Delhi Metro’ is an project by writer Shruti Sharma and her husband Tarun Chauhan. With a tagline of “Take it, Read it, Return it”, the idea is to leave books in random places for people to find. If you find a book, you can take it home and read it. When you’re done, leave it somewhere — anywhere — in the metro system, for the next person to find. People are also asked to leave a tweet, to keep track of where the books are going.
+
+Books on the Delhi Metro is currently only in Delhi, but there are plans to expand it. And it’s not the only such initiative. The Delhi project was itself inspired by Emma Watson, who played Hermione in the Harry Potter movies.
+
+Emma Watson left books on the London Underground. She later went on to start Book Fairies, which lets anyone around the world becoming a ‘book fairy’ by leaving books in random places for people to pick up. Other projects, like BookCrossing, let you do the same thing too.
+
+With reading habits going down and bookless libraries going up, you may be worried about the future of libraries. But if Books on the Delhi Metro and similar initiatives catch on, we won’t have to worry so much about them vanishing.
+
+The whole world will be a library.
+
+Have something to say? At Snipette, we encourage questions, comments, corrections and clarifications — even if they are something that’s easily Googled! You can also sign up for our weekly email.
+
+Sources and references for this article can be found here.

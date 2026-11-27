@@ -1,0 +1,31 @@
+How will Neuralink change the way we talk?
+
+unknown
+
+Nowadays, languages are either spoken or written. How will that change once we’re able to communicate directly through thoughts a la Neuralink?
+
+Initially, we might imagine implants being used to transfer neural correlates of existing sounds or symbols. Currently, this is what most implants are trying to achieve by detecting a specific word or sound in the brain.
+
+But, over time, the floodgates might open and allow us to experiment with entirely new language concepts:
+
+Memory-based languages
+
+One of the biggest downsides of current languages is that experience gets lost in translation. It’s often hard to describe events without editorializing or exaggerating them, making it difficult to share a memory in its most unadulterated form. If instead, we adopt an event-based language for sharing memories, either by directly sharing the memory or developing an intermediate language for expressing the memory’s most important concepts, it might become easier to tell personal stories and empathize with them.
+
+This also creates exciting new avenues for storytelling if people decide to make their memories publicly accessible. If a fiction author wants to write a tragic drama, they might draw inspiration by viewing dramatic memories collected from all those who’ve ever lived with an implant. Going a step further, they might craft stories directly out of these memory-collages, inventing new genres of storytelling along the way.
+
+Emotive languages
+
+Similarly, it’s difficult to directly share emotions like anger, sadness, and happiness with others. If an implant allows users to convey what they’re feeling in the most primal sense, it would probably lead to better cooperation and communication. I imagine that such a system would be incredibly unifying in times of shared loss like when a family is grieving or in times of shared ecstasy like when musicians collaborate together.
+
+This, of course, also has its downsides. If people decide to use this system to share addictive experiences or take advantage of one another, it would lead to social dysfunction and division. However, these might be issues that arise much later because they require us to transmit far more complex emotions.
+
+Consensus languages
+
+Then, if people are able to communicate through thoughts, they might develop languages for the purposes of theorem-proving or truth-finding. Such consensus languages might restrict people to only speak in platitudes or to debate sentences before they are considered valid per the language, which could be useful for developing languages that are solely intended for scientific experimentation.
+
+Ultimately, this might lead to the formation of knowledge-specific languages that are useful for thinking in terms of abstraction, duality, or proof-making and might lead to interesting forms of collaboration if sentences require multiple people thinking at the same time in order to write them.
+
+Of course, as you’ve probably noticed, these forms of communications have only gotten more outlandish over the course of this blog post. That is, I have no clue whether they’ll stay confined to the realm of science fiction or come about as humans develop more and more advanced neural implants.
+
+As always, I’d love to hear your opinions on this train of thought and any feedback on ideas that I’ve missed.

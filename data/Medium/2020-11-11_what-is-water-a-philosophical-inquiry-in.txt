@@ -1,0 +1,41 @@
+What is Water? A Philosophical Inquiry into Natural Kinds
+
+Paul Austin Murphy
+
+All Samples of Water Contain Micro-Organisms
+
+The Philosopher George Bealer picks up on the microscopic-macroscopic-properties distinction (mentioned at the beginning) when it comes to water. He cites the classic twin-earth example of the opposition between XYX-as-water and H₂O-as-water.
+
+Readers must note here that Bealer’s following “thought experiment” is extremely artificial. That often doesn’t matter in Philosophy because such cases are chosen to illustrate broader Philosophical issues. And, in this instance, that broader Philosophical issue is the — possibly? — contingent and/or arbitrary nature of natural kinds.
+
+In his paper ‘Propositions’, Bealer firstly cites the possibility (or actuality) that
+
+“All and only water here on earth is composed entirely of certain micro-organisms”.
+
+Even if the factual claim that all samples of water contain “certain micro-organisms” is false, we can still argue that every sample of water will contain at least some constituents other than H₂O molecules — whether that includes “foreign” ions, dust, tiny bits of plastic, or Bealer’s own example of micro-organisms. Now does that matter when it comes to the nature of the natural kind water?
+
+(It turns out that “nearly every body of water” here on Earth does contain microorganisms. Despite that, one would intuitively believe that chemists must surely be able to create “pure water”. Yet, as it turns out, even chemists can’t do that.)
+
+Bealer states his broader position thus:
+
+“If… all and only water here on earth is composed entirely of certain micro-organisms, then on a twin earth a stuff which contains no micro-organisms whatsoever but which nevertheless contains the same chemicals as those found in samples of water on earth would not qualify as water.”
+
+The general point here is that what we take water to be maybe a contingent and/or even an arbitrary matter. Of course, Bealer isn’t arguing that water here on earth isn’t H₂O. Or, more correctly, he isn’t arguing that all samples of water don’t contain mostly H₂O molecules. Bealer is saying that the fact that water contains mostly H₂O molecules is only a part of this (possible) story. In his example, literally, all samples of water here on earth also contain micro-organisms. Now if every sample of water does contain micro-organisms, then why aren’t these micro-organisms part of the essence of water? Or, alternatively, why aren’t these micro-organisms constitutive of the natural kind water?
+
+Now if we provisionally accept that all samples of water contain micro-organisms, then if what passes for water on Twin Earth doesn’t contain any micro-organisms, then surely it can’t be water. (At least it can’t be water according to people on earth.) Yet here there seems to be an obvious distinction which can be made here between water (or H₂O molecules) and what else we may find in water. And that’s still the case even if we always find any given x (other than H₂O molecules) in water.
+
+For example, simply because all trees have fungi, molds, or lichen on them, that doesn’t mean that we have a joint tree-fungi/etc. natural kind. Similarly, if every sample of gold has microscopic particles of dirt on it, that wouldn’t mean that we have a joint gold-dirt natural kind. And even if water (or a collection of H₂O molecules) is diluted with whiskey (to invert things for this example), then it’s still water that’s being diluted.
+
+The fact that a distinction can be made between water and what else is found in every sample of water may not matter when it comes to Bealer’s central point. That is, why do we (or why do Philosophers) exclude these micro-organisms from the natural kind water if they occur (or exist) in literally every sample of water?
+
+So a summary of Bealer’s argument can be posed in the form of this question:
+
+What if literally every sample of water contains something that isn’t H₂O?
+
+Well, that depends. In one case, a sample of water may contain x and another sample may contain y. So, yes, it may be the case that every sample of water contains something that’s over and above H₂O molecules. But what if water always contains the same x that’s over and above H₂O molecules? That seems to be Bealer’s argument.
+
+Bealer further stresses the contingent and/or arbitrary nature of natural kinds in his Twin Earth example. He continues:
+
+“[T]hen on a twin earth a stuff which contains no micro-organisms whatsoever but which nevertheless contains the same chemicals as those found in samples of water on earth would not qualify as water.”
+
+Now we’re in the absurd (or simply possible) situation in which all the samples of a substance that’s entirely made up of H₂O molecules may not be deemed — by people on earth at least — to be water! Why is that? It’s because these samples don’t contain any micro-organisms. Yet intuitively it would seem that the “water” (note the scare quotes) on Twin Earth has more right to be deemed a natural kind (or simply as water) than water on actual Earth. Indeed why can’t Twin-Earthers reverse the earthling position by claiming that water on earth is not water precisely because each sample of it contains micro-organisms!

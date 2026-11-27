@@ -1,0 +1,29 @@
+Blender Plugins to Up your UV game
+
+Daniel Rose
+
+Zen UV, UV Toolkit, and TexTools all provided a somewhat improved experience from the traditional UV experience within Blender. With slick GUI’s and expanded options, UV’ing the rock was a little more enjoyable in these tools. However, none of they really stood out in terms of altering my workflow, and while Zen UV may let me get the unwrap finished slightly faster, that is strictly because it is a 3D view tool. It removed a few clicks, but it did not do anything remarkably different across the board.
+
+Why is that the case?
+
+Power of the Seams
+
+One of the major shifts in thinking I had when adopting Blender 2.8 was it’s UV workflow. In the past, I spent a lot of time doing a “de-construct/re-construct” workflow in Maya. I would often use automatic unwrap for my models and then move, sew, cut, and unfold as I went. It had the benefit of making sure all of my model had UV projections, minimized the use of the legacy unfold algorithm, and often made it easier to work strictly within the UV editor at times. It was also rather time consuming. After Maya 2015, this workflow was faster than ever, but it still took longer than it should have.
+
+This can be accomplished in Blender too, but with the lack of an easy to use ‘move and sew’ and the lack of an iterative based unfold per shell tool, it took a lot of steps and I never got it right during my learning process (when 2.8 only had a handful of tutorials).
+
+Marking seams prepping for an un-wrap.
+
+Through the difficulty of using my own workflow, I stumbled upon Blender’s seemingly preferred workflow; Mark Seams and Unfold. This workflow exists in Maya too (and likely has for a while) but I never really took note until I was forced into using it in Blender. The general premise is that you start on the model and tell Blender where you want your UV seams though selecting edge loops and marking a seam. Once that’s done, you tell Blender to Unfold, and you magically have a shockingly complete unwrap.
+
+Well, mostly.
+
+This method is central to UV’ing effectively in Blender and all of the tools in this article are built around that workflow. Therefore none of the paid options really stood out in this regard since the rock mesh I’m using is a great fit for simple ‘mark and unwrap’ methods.
+
+Let the Gas Powered Laser Blade Rip
+
+While none of the contenders stood out during the testing of the rock, ZenUV was the clear winner in working with the CyberDieselPunk Blade.
+
+Uving the DieselCyberPunk Blade was where the tools separated themselves. The asset is more complex and it’s more important to find ways to UV quickly while remaining organized. Zen UV was the stand out in this regard. It saved time marking and clearing seams by removing a few clicks in 3D. Additionally, it is easy to toggle shading (very important for models like this) based on my islands or not. What stood out the most, however, is Zen’s Mark by Angle option. Using Mark by Angle allows Blender to mark all edges that surpass a threshold. ZenUV’s default option is 30 degrees or so, but adjusting that to 60+ easily marked half of the model. With a few manual selections and markings, ZenUV will have this asset ready to go in no time. It’s a HUGE timesaver, and one that stood out above the other plugins. ZenUV also has a solid standalone UV packer, but it also integrates with UVPackmaster if you so choose, giving you the best possible results.
+
+UV Toolkit also was solid. UV Toolkit is at almost 1 to 1 feature parity with Maya’s UV Toolkit, giving you all of the alignment, orientation, and stacking options that Maya has in an extremely familiar package. It has some additional tools that can also help with seam placement, including seams from mesh borders, mirroring UV’s over an edge, and a few additional straightening or grid based tools. It’s expanded selection tools also remove a large number of clicks, making manual arrangement of the layout easy to do. I didn’t find it quite a useful for the unwrapping process, but it has everything you’d want for hand editing UV’s when needed.

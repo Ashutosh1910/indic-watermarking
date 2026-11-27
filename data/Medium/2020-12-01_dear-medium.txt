@@ -1,0 +1,55 @@
+Dear Medium…
+
+Petr Swedock
+
+Medium is a good thing. I’ve been on Medium for over a year and half now and have enjoyed reading about a vast array of experiences, each from a unique perspective. I’ve enjoyed writing and getting feedback on my writing.
+
+Like with all things, that which is good can be made better. I’ve been doing some thinking on my experience so far with Medium and have a couple of itches that need scratching. So, with that in mind, I submit some ideas for improving the experience and the writing:
+
+Editing
+
+I’m a writer with a lot of ideas and some notion of how to present them. This takes my writing all over the place. I like to think that I’m steadily improving all the time, but the best I’ve done is often under the watchful eye of an editor. Indeed, the history of all my submissions to all the places I’ve ever done so are just attempts to get the attention of editors, in the hopes that they’ll help me polish and get better quicker.
+
+There are a number of programs that catch typo’s and grammar slips. Some even attempt syntactical corrections and stylistic choices, though I’ve found them altogether lacking. There’s nothing like a live person to interrogate your writing and force you to clarify your thinking. In short, I think everybody can do better with an editor.
+
+So why not make that part of the Medium experience?
+
+I propose that Medium adopts some method to allow writers and editors to get together and by which both profit. Suppose I write a piece, suggest it to Roz Warren, who is an editor (and sherpa, ninja and librarian) who spends some amount of time editing it. The piece is better, and it stands a better chance of being curated, more widely read and to make more money. In that instance, I would not mind some portion of the proceeds for that piece that would normally accrue solely to me, to go to Roz. Ramona Grigg and Jon Hawkins have also been helpful in shaping my writings with their editorial assistance.
+
+A corrolary to this might include the creation/distribution of accompanying images. I often have difficulty finding the right image to go with a piece, and when I do find a good image, sometimes it involves a license I don’t want to pay for. Like editors, perhaps graphic design professionals might be part of this sharing. If, for instance, I write a piece and could submit it to a number of graphic artists for illustration, choosing the one I like best, that artist might share in the proceeds, same as the editor. There are some writers here on Medium who illustrate their own work, Carlyn Beccia and John P. Weiss are particular favorites of mine. I would like the opportunity to ‘bid’ for an illustration from them and allow them to profit from their talents where they accompany my writing.
+
+In addition, perhaps, a particular publication can have an ‘in-house’ editor and/or graphic designer who shapes the piece for accordance with that publications style, themes and mission and is remunerated accordingly.
+
+Signalling the signal to noise ratio
+
+There is a lot of writing on Medium. Some of it is stellar. Some of it is not so stellar. On average, though, I would venture that any given 50 articles I might find on Medium are slightly better than any 50 articles I might randomly cull from the Internet. The goal, however, ought to be to make that average significantly better. The first step would be, as I already noted, to introduce an editing component. The second step would be to signal the signal to noise ratio. As of right now, the only method I have of deciding if something is not worth reading is to read it. That doesn’t seem too onerous, except that, on any given day, I might be presented with fifty or more pieces to decide, and some distribution of my read times — read as: payments to other writers — to consider.
+
+My rule of thumb is that if I see three bad pieces by the same writer in a given time frame, I might mute that author. I have to go back through my memorty and see if there is anything by them I like that would rescue them from the mute. This is a tedious and time consuming process. And, frankly, it bugs me that I might waste some portion of my read times — that is to say my payment to other writers — to a writer I find consistently sub-par.
+
+I, personally, would like to see a method by which I could signal ‘don’t bother with this piece’ to other writers and have them signal same to me, that I don’t waste my time and money. For example,among others, I always read James, Cocoa Griot, Allison Gaines, and Genius Turner (I mention them specifically because I often find that a piece I’m reading has already been read and highlighted by any or all of them). We seem to share a lot of tastes and interests, so a way of signalling what not to read might be of advantage to us all.
+
+Perhaps something like a private note to the effect of: ‘James Finn, whom you follow, read this but did not highlight, comment or clap’. Or, ‘x number of writers, whom you follow read this and did not highlight, comment or clap where y number did so’. Or some way to signal a writer I follow has muted another writer.
+
+Improve the stats collection.
+
+I can’t tell you how many times I’ve gone to my stats page and have seen that a statistic for a piece shows something like two reads, but five fans.
+
+Huh?
+
+According to the stats page only two people took the time to read the piece but five people clapped for it? Obviously, all five must have read it, but three of the reads didn’t quite take in the stats page. This might mean that three of the five were likely speed readers who outpaced the algorithm for capturing reads. The shorter the piece the likelier that these speed readers will not get captured in the stats. This needs to be improved, especially since we are paying and getting paid on read times.
+
+In addition, while I have an idea about how many followers I have, I don’t have any idea, whatsoever, how many chances I may have had. I’d like to see a stat about how many people saw my headlines in a given time period: that is to say, how many times has my headline appeared on somebody else’s Medium front page, or in an email, or in an external way, regardless of whether they clicked on it, both followers and non-followers. I guess I’m asking for some metric on what curation and/or distribution does for visibility of the piece.
+
+Clarify inside, outside, paying and non-paying members and curate accordingly.
+
+My most popular piece (so far) has greater than 5K views but has earned me, as of this writing, $1.54. This is, ostensibly, because the vast majority of the reads are ‘external,’ in fact over 5K of them. The piece was not curated, or ‘chosen for further distribution,’ but doesn’t the fact of 5k external reads merit a revisit on the curation/distribution, so that I might have a chance to make another 5k internal views? If it was popular externally, it might have been more popular internally if curated appropriately.
+
+I suggest some form of ‘tripwire’ that re-curates anything that gets a certain amount of external reads.
+
+Writers and publications
+
+When I follow a writer, who also has a publication, I get two notifications in my ‘latest from following.’ This duplication of notification is mildly annoying by itself, but I also wonder who else I’m following is being shunted aside because I got duplicative notifications. To be honest, I don’t necessarily need notification from publications. Of the publications I follow, I usually pin a browser to thatpub.medium.com/latest and follow them that way. Strangely, user.medium.com/latest doesn’t work in the same way — I wish it would, but it returns a 404 not found.
+
+In addition, when I refresh my browser and get a list of ‘latest from following’ I click on the particular writer and I don’t, actually, get the ‘latest’ from them. It takes me to their page, which may have several things pinned, forcing me to scroll down, and figure out what their latest is. This can be frustrating as when, after doing all that, I end up at a piece I already read because it was featured in a publication I follow, and I read it there already.
+
+Not particular to Medium, but rather the owners of publications, I wish they would slow down. Yes there is a lot of good writing on Medium, but I sometimes feel as though I’m being asked to read it all at once. Many publications seem to accept new stories indiscriminately, to the extent that sometimes when I refresh and get ‘latest from following’ some publications have thirty or forty new pieces. This problem is exacerbated when, as with the recent Thanksgiving holiday, I’m away from Medium and there are hundreds of pieces to catch up on when I get back. Daunting.

@@ -1,0 +1,33 @@
+Silicon Silliness
+
+Seedomir Jeden
+
+Ovocomputation
+
+Easter is a Christian thing. Nothing too controversial about this bold claim, I hope. Easter eggs are an Easter thing. Even less controversial, hardly worth pointing out. Therefore, Easter eggs are a Christian thing. Fair?
+
+So far so good.
+
+Except (oh no — controversy alert), they’re not. At least, not just that. The egg, like many other symbolic objects, was imported from pre-Christian traditions into the rituals and celebrations surrounding the story of the resurrection, likely in order to signify rebirth in a very direct and material way. Ok, so not all that controversial after all, no terribly bad thing in and of itself anyway, and in any case, not the main focus of this blog post.
+
+Because Easter eggs led to Easter egg hunts, which in turn led to Easter eggs in various electronic media. Some of my own creations include Easter eggs, so go have a rummage around to find out for yourself (and no apologies for the lack of further clues).
+
+The idea that there is hidden humour (or at least adjacent, perhaps even irrelevant tidbits) in software circles is appealing to me. Easter eggs are just one example, but there are plenty more, and many of them, rather than be obfuscated for your detective-like pleasure, are right up front and centre, to tickle your funny bone, or maybe just that of their creators.
+
+First there is the programming best practice of making sure you DRY. That is to say, Don’t Repeat Yourself. Not much more I can mention about it here without risking breaking the sacred rule itself, so, onwards….
+
+If you don’t know Git, may you burn for your ignorance: strong stance, folks
+
+Then there is the ubiquitous versioning system Git. This name may not necessarily be funny to you at all, simply because it’s quite culturally specific, and even then, you may just think it’s a humorous coincidence worthy of no further thought. But Linus Torvalds, the guy behind Git as well as such miniscule ventures as Linux, readily and self-deprecatingly admits that in a manner of speaking he named Git after himself because he is (and here I quote the definition of ‘git’ from the Merriam Webster online dictionary): ‘ a foolish or worthless person’.
+
+Go figure.
+
+Anyway, I don’t know; to me, that’s kind of funny, regardless of cultural specificity.
+
+Then you have the case of YAML, which started life as a markup language. Even laypeople may have heard of this way of marking up a document because of HTML, which stands for Hyper Text Markup Language and is pretty much the document format of choice for that odd, many-tentacled thing we have now come to know as the World Wide Web (ring any bells?), and perhaps some will also have come across XML in their adventures on the high seas of the Interweb (spiders and water, is there anything better than a carefully crafted mixed metaphor?), with this instead standing (not quite correctly, you may observe) for eXtensible Markup Language. So what of YAML? You would think that given all of the above, and the preponderence of movies and literature aimed at teenagers in the present day, that this stands for Young Adult Markup Language, but you’d only be half right, and even then, not quite. This is because, although YAML was originally meant to mean Yet Another Markup Language — which I feel is pretty amusing in its own right, and, it seems, an example of a wider tendency amongst digital creators to rather humorously preface the names of their creations with ‘yet another’, apparently straight-up acknowledge their own lack of originality — YAML’s progenitors made the fun choice of doing a total 180 on it and decided that instead it would actually mean YAML Ain’t Markup Language. It’s a bit like a car manufacturer calling their latest output We Made A Car Again, but then realizing it actually only has two wheels and changing its moniker to We Didn’t Make A Car This Time. Except YAML has the additional fun aspect of infinite regress built into its retroactively given acronym, because if you unpack the initials within the initials, you presumably get the full name again, with the acronym there at its starts once more, warts and all:
+
+YAML Ain’t Markup Language Ain’t Markup Language Ain’t Markup Language Ain’t Markup Language Ain’t Markup Language Ain’t Markup Language etc.
+
+Its repetitiveness serves to be almost elegantly insistent that it definitely IS NOT the markup language it originally appeared to be (even if it isn’t very DRY, it may be witty enough to be just plain dry, but that’s up to you). But just for a giggle, let me mention in closing that the ‘IS NOT’ in the present paragraph is not simply some innocent tactic of shouty emphasis. The ‘Ain’t’ in YAML is also already a contraction meaning ‘is not’, right? So shouldn’t YAML actually be called YINML? It positively rolls of the tongue….
+
+Who knew there was so much silliness lurking in the combination of circuit boards and electricity dancing under our fingertips as we type?

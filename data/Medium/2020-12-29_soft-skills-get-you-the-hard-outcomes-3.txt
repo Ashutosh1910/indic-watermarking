@@ -1,0 +1,103 @@
+Soft skills get you the hard outcomes; 3 essential elements to achieving an agile delivery culture
+
+Niall Mcshane
+
+I remember the day clearly; the sense of achievement, joy and belonging was a shared felt experience amongst those in the room. We had just finished a significant and impactful initiative as a team of agile coaches and delivery specialists. It had been a difficult journey but seeing the customer come into our business and interact with the digital experience we had just spent 18 months designing and building was quite emotional.
+
+Another clear memory is represented in the picture below; I was having (a lot) of fun as I delivered my work and so were the agile coaches I was working with. I call these experiences “agile moments”; where you hit the cultural sweet spot that balances the need for delivering outcomes with other key enablers of success; that’s what this post is about.
+
+Niall having fun
+
+Agile delivery moments of celebration
+
+These agile coaching and delivery moments are fleeting and are soon forgotten as we move onto the next feature, idea or coaching gig in our backlog. I’ve been lucky enough to have worked with some great agile teams and cohorts of agile coaches who have delivered together under difficult circumstances. I thought I’d write this post to capture my thoughts on what it was that had enabled these great agile practitioner teams to hit high levels of performance. I wanted to articulate it in order to be able to help others understand what I did to enable this success. What I’ll share in this post comes from my work in the following situations where I’ve had to achieve outcomes working with and through other agile practitioners; maybe you recognise some of them in your work:
+
+building an agile practice (teams of agile coaches/scrum masters)
+
+coaching agile delivery teams (single teams or at scale)
+
+leading agile consulting teams
+
+enabling development teams to ship software
+
+business agility change programs
+
+In preparation for this post I spent some time whiteboarding my ideas on what have been the critical elements that underpinned these special agile moments; I came up with three key enablers that were always present:
+
+1. learning via community 2. making the work matter 3. fostering a done culture
+
+If we can get the right amount of each element we can hit the agile delivery culture “sweet spot”
+
+Getting in the “zone” or cultural sweet spot
+
+If you can hit that sweet spot, that’s when the cultural magic can happen and unthought of levels of collective agile coaching/consulting/delivery performance can be reached; more on this special spot later but now I’d like to take you through each element in a bit more detail and show you how to introduce each one into your team. Of course not all of my work has had all of these elements and I don’t always hit the sweet spot, but this approach provides me with a guide on what to aim for as I work as an agile coach/consultant.
+
+The order in which I’ll explain these elements is important; I believe that if you are coaching or leading agile delivery teams/practitioners it’s important to initially; NOT focus on delivering outcomes. Jumping straight to delivery runs the risk of adverse consequences that are hard to undo later. So my recommendation when setting the foundations for a solid agile delivery culture is to focus on community and meaning first. But I hear you saying…
+
+NIALL, WE HAVEN’T GOT TIME FOR THIS FLUFFY SOFT STUFF, WE NEED TO GET QUICK WINS!!
+
+Trust me I get it, and of course we need to emphasize getting stuff done; but stay with me, it’ll make sense by the end of this post. Here are my three recommendations on how to get yourself and your team in the agile delivery cultural sweet spot.
+
+Recommendation #1: Enable the team to form a learning community
+
+It does not take much to start to build community; but it takes regular, consistent and authentic intent to build a strong collective, supportive learning community as the foundation of your agile practitioner / delivery team.
+
+Why would I suggest this as the first thing to do as you launch a agile coaching/consulting/delivery engagement? To answer this let’s start with what a community is and how it is different to a group of agile practitioners with a common goal.
+
+In a seminal 1986 study, McMillan and Chavis identify four elements of “sense of community”:
+
+membership: feeling of belonging or of sharing a sense of personal relatedness, influence: mattering, making a difference to a group and of the group mattering to its members reinforcement: integration and fulfillment of needs, shared emotional connection.
+
+When I’m coaching I emphasise community members helping each other learn about and improve their agile practice as they delivery together. By emphasising this aspect of helping your fellow agilist, teams become self-healing/learning mini-communities. The investment at the start (before the going gets tough) helps ensure the agile team is not in-fighting or strongly storming as the pressure to deliver builds (and it will).
+
+How to quickly enable a learning community
+
+Let’s not complicate this; make and vigorously protect time to connect, share, learn and talk openly, honestly in a safe environment that is outside of the normal “chain of command” (management and delivery hierarchy). Think of a jar you’re filling with the most important rocks; put this recommendation in first. The goal of a learning community is to establish a culture that learns fast, which in turn reduces speed to competency which in turn reduces time to value (delivering outcomes). Plus if the team is a community then they help each other and have cohesiveness (stick together-ness).
+
+Once you have seeded your learning community, I recommend you make what the team is doing matter, have purpose and meaning. This is not just matter of having a visioning workshop or developing a social contract; no, it is more subtle than that…
+
+Recommendation #2: Make the work matter; encourage purposeful conversations
+
+Is work a means to an end for you and your team of agile practitioners? Probably not; agile practitioners can be very tribal, placing a strong emphasis on the why of work as well as the what (process). Having purpose and finding meaning in the workplace is at the top of Maslow’s hierarchy (self-actualisation) and is great if you can get it. But for agile coaches meaning and purpose are closer than you think. I recently surveyed 27 agile coaches asking them what they desired from their work; 76% wanted to “make a difference” or “be part of something important”. So where is “meaning” found in agile? Here’s a very simple answer; it is right in front of us, almost all the time…
+
+individual interactions and conversations that result in ah-ha! moments
+
+Agile practitioners and especially coaches should be interacting with individuals and having conversations all day as they work; its a core value in the agile manifesto. So my advice to stop looking for meaning as this big abstract vision of the future (a product or culture on the horizon) but focus on the here and now and the people in front of you. All the meaning you could ever desire is available in the moments of conversation between two (or more) people interacting to co-create a new way to work.
+
+How to quickly enable a meaningful conversations
+
+I’m going to simplify complex subject to help explain my thinking; so apologies in advance. Agile coaches and practitioners can have two types of change conversations as they work with others to deliver outcomes:
+
+process change conversations: focussed on what to do and how mindset change conversations: helps others to reframe their perspective on work
+
+My opinion is that our industry overvalues and emphasises the first and does not understand or utilise the second. What’s frustrating is that having mindset conversations is VERY rewarding and helps to bring meaning into an agile practitioner’s work. Process conversations are important and represent most of the work agilists do but avoiding these deeper, meaning-making conversations seems to be the norm. I am so frustrated with this I even wrote on book on the topic. You could think of mindset change conversations as adding another conversation pathway to how an agile coach works with clients. To conduct these mindset type of conversations the coach needs to “Open and Hold” the space for a deeper conversation. I call this a Move in the agile coaching model I authored; you can learn more here on a site I created to explain my thoughts in more detail.
+
+The other thing to understand about the ability to have these deeper types of conversations is that they allow the agile practitioner to deal with resistance to change (in adopting agile). Some people don’t like being handed an agile playbook of processes and then told to “just do it”; hence these mindset conversations are not only a means to make meaning but also enable higher levels of adoption/delivery.
+
+Recommendation #3: Fostering a DONE culture
+
+Ok, we’ve got the above two recommendations in place (or in-progress at least) now let’s focus on ensuring everyone values and has a shared understanding on what we’re all here to get DONE. Whether you and your team are delivering change, business outcomes or software that works, the end game is done work resulting in value being delivered.
+
+My experience has shown me that without the delivery “scoreboard” (metrics and measures of delivery success) being clear and well-defined, the above two recommendations risk becoming anti-patterns (common solutions to common problems where the solution is ineffective and may result in undesired consequences).
+
+I see certain archetypes of agile practitioners developing when the team culture excludes to a focus on DONE. See the picture below that explains what archetypes (agile practitioner personas) can arise when you’re NOT operating in the cultural sweet spot.
+
+the sweet cpot of agile delivery
+
+I’m being slightly comical with my depiction but I’m deadly serious; I often see these archetypes of agile practitioners; my work aims to help practitioners and those leading agile practitioner teams to avoid them developing:
+
+The Socialite ; strongly engaged in community activities at the expense of getting work done or helping clients do meaningful change work
+
+; strongly engaged in community activities at the expense of getting work done or helping clients do meaningful change work The manager ; focuses on getting work done with others at the expense of meaningful change conversations. Can struggle to deal with resistance to change.
+
+; focuses on getting work done with others at the expense of meaningful change conversations. Can struggle to deal with resistance to change. The Evangelist: Loves community, loves deep and meaningful work but has no urgency in getting delivery outcomes.
+
+Loves community, loves deep and meaningful work but has no urgency in getting delivery outcomes. The Hermit; searching for meaning at work to the exclusion of others and outcomes. Often disengaged from the team; a loner.
+
+searching for meaning at work to the exclusion of others and outcomes. Often disengaged from the team; a loner. The Pilgrim ; on a their mission to achieve what’s required, gets stuff done but goes it alone and doesn’t contribute to the community/team’s development. An individual contributor.
+
+; on a their mission to achieve what’s required, gets stuff done but goes it alone and doesn’t contribute to the community/team’s development. An individual contributor. The Champion; drives outcomes not quite “at all costs” but certainly does not consider everyone’s experience of the change. These practitioners go it alone and are self-reliant but do not share what they know/learn with the community or ask for help.
+
+With this post I was attempting to get you to reflect on your agile practice; are you operating in the sweet spot? Of course this is simply a means to help you introspect and consider how you work with and through others to achieve outcomes. If you lead a team of agile practitioners (coaches, consultants, scrum masters etc) my aim was to help you learn from my work building and leading teams of agilists. I’m hoping this post in some way provides you some tips and ideas on how to build and foster a high-preforming sustainable culture in your team. If you can hit the agile delivery cultural sweet spot it could take you and your team to the next level of performance, engagement and job satisfaction.
+
+Go here to join my email list and get regular articles like this one.

@@ -1,0 +1,45 @@
+Variance Makes Life Fun
+
+Steven Finkelstein
+
+Applying statistical concepts, like variance, to the real world
+
+In every introductory statistics class, you are forced to learn about the basic descriptive statistics — mean, median, mode, and standard deviation. These calculations give you a quick summary of any dataset. The key word here is summary. In any summary, you zoom out to describe the dataset and can easily miss some of the important details. What gets lost in these introductory courses, is how these descriptive statistics apply to your life outside of the spreadsheet. You don’t need to be a data analyst to utilize these concepts. In fact, statistics are used in every domain; however, they are often hidden in plain sight.
+
+What is variance?
+
+Variance is the average of the squared differences from the mean. That’s a nerdy way of saying how spread out the dataset is. Even simpler yet, it is a play off of the word, “vary”, to differ in size, degree, amount, or nature from something else of the same general class. If I told you my mood tends to vary throughout the day, then you would expect my mood ring to change colors quite often. To change is the literal definition of the Latin word, variāre, which is where variance derives from. The more often my mood changes and deviates from a display of being normal (no pun intended), the higher the variance.
+
+Why is Variance Important?
+
+One of the most common applications for variance is in finance. Pick up any classic finance book and you will see it everywhere. In “The Intelligent Investor” by Ben Graham, it is referenced over 200 times, but the word, “variance”, only appears twice in the novel. How can this be?
+
+In finance, the term, “risk”, is often synonymous with variance. The Securities and Exchange Commission (SEC) defines risk as “the degree of uncertainty and/or potential financial loss inherent in an investment decision” (Source). Risk gets all of the credit in finance and on Google (seen below), but variance is the backbone of these discussions.
+
+A common investment decision where risk comes into play is deciding the amount of risk an individual can handle in their financial portfolio as they approach retirement. Imagine you just retired from your career and were given the following options for your portfolio.
+
+Option A has an average annual return of 12.2 percent, while option B has an average annual return of 4.1 percent. You would be a fool to choose option B, right? Not always. In this situation, option A had a standard deviation of 28.8 percent, while option B had a standard deviation of only 5.1 percent. This means that option A is expected to have a decline of over 24 percent one out of every ten years (Calculator). Option B will only experience a decline like that in less than 1/100 of a percent of cases. In this situation, option A was emerging market equities and option B was U.S. bond returns from 1985 through Oct 31, 2020 (Source). I don’t know about you, but I don’t think I could stomach a decline of 24 percent during my retirement.
+
+The lesson above demonstated an important caveat to every measurement. The average returns were completely useless without knowing the level of uncertainty, or variance, of each average. But don’t take my word for it. The National Institute of Standards and Technology’s (NIST) states that “a measurement result is complete only when accompanied by a quantitative statement of its uncertainty” (Source). Once uncertainty enters the mix, that’s when things get interesting.
+
+Why is Variance Interesting?
+
+Imagine that it’s Friday evening. You just flew across the country to have one last adventure before your friend ties the knot. You step out of the airplane and walk into the Las Vegas airport. The first thing you hear is loud noises. Cha ching! Cha ching! What could that be?
+
+And then you see it. There are slot machines in the airport! Slot machines, or any form of gambling, is a Statistics Professor’s dream. You could teach every fundamental statistics concept based solely off of the activities that occur at a casino.
+
+How does variance come into play?
+
+Let’s assume a casino manager could preset their slot machines to one of the following situations (seen below). They aren’t sure which one to choose so they design an experiment. Half of the slot machines will have the blue frequency distribution, while the other half will have the orange distribution. In the blue slot machines, a customer is expected to lose one dollar 10,473/10,500 (99.74%) times. However, they are expected to win 10,000 dollars once every 10,500 times they play.
+
+Screenshot from author’s Tableau Public page
+
+When comparing the two slot machines, you notice a few more things. The orange slot machine has a payout of 5 or 10 dollars more frequently than the blue slot machine. However, the maximum payout on the orange slot machine is only 10 dollars. On a casino floor, you could envision each slot machine with the following signs:
+
+As a customer, which slot machine are you more likely to play? I would wager (no pun intended) to say the blue one is more enticing. The obvious reason here is the larger jackpot. What does a larger jackpot mean from a statistical point of view? In order to further compare these two slot machines, we can calculate some summary statistics.
+
+You will notice that the blue slot machine has a lower expected value for the customer, but a much high variance. If these distributions were 100 percent transparent to customers, you would expect a rational customer to always choose the orange machine. However, people aren’t always rational. Those who go to a casino aren’t excited about an average payout of 2 cents for each pull of the slot machine. Customers want a thrill. They want a surprise. They want the chance to change their lives at the blink of an eye. Once you add high variance into the slot machines’ distribution of outcomes, it becomes significantly more interesting.
+
+While risk and gambling get all of the credit in the real world, it’s the underlying variance that makes finance and gambling interesting. When you hear Jim Cramer yell that Tesla is too risky on Mad Money, you will know that means Tesla has a high degree of uncertainty; therefore, a high variance. Next time you are bored, deviate from your normal behavior and add a little variance because that is what makes life fun.
+
+~ The Data Generalist

@@ -1,0 +1,25 @@
+Weapons of Math Destruction
+
+unknown
+
+Thoughts on Cathy O’Neil’s book
+
+A good book to me has to be something that makes me think. For a non-fiction book (which Cathy’s book is), if I completely agree with everything the book says, it has no value to me. Also, if the concepts discussed are so far out of my understanding either because they are too technical or the views are too extreme from my own, I won’t be able to integrate the ideas and the book has limited value to me too.
+
+After hearing about Weapons of Math Destruction on three separate podcasts that I follow, I finally got a chance to read Cathy’s book over the holidays. I didn’t agree with everything Cathy said and I’m lukewarm about the writing style, but overall I think it’s a good book. It made me think, I enjoyed it and I think it kicks off an important discussion that more people should be having.
+
+Cathy lists three qualities of WMD’s — Opacity, Scale, and Damage. To me, “scale” is the biggie.
+
+Scale: Never before has one idea or algorithm been able to be applied to so many people so quickly. A minor miscalculation or incorrect assumption can be devastating and once implemented, there is no time for humans to intervene or create new regulation. Algorithms and even machine hardware can scale and improve exponentially. Humans and our ability to understand things, can build upon prior generations of knowledge, but we don’t scale at nearly the same pace.
+
+Never before has one idea or algorithm been able to be applied to so many people so quickly. A minor miscalculation or incorrect assumption can be devastating and once implemented, there is no time for humans to intervene or create new regulation. Algorithms and even machine hardware can scale and improve exponentially. Humans and our ability to understand things, can build upon prior generations of knowledge, but we don’t scale at nearly the same pace. Opacity: Compared to human judgment, I don’t think any current algorithm can be more opaque. Maybe in the future, this will change, but for now humans are still much more complicated than the algorithms we can create.
+
+Compared to human judgment, I don’t think any current algorithm can be more opaque. Maybe in the future, this will change, but for now humans are still much more complicated than the algorithms we can create. Damage: Cathy mentions a few times in the book that if algorithms were used for good purposes, they would not be WMD’s. We live in a relative world, so I don’t agree with this idea. Assuming that “good” can be defined in an objective and measurable way, which I’m doubtful of, doing any segment of people good will make other people relatively worse off.
+
+I was not familiar with many of the algorithms in use in the various industries that Cathy discussed. The scheduling issues for places like Starbucks surprised me most because I visit them often and never considered it. So close to home and I had no idea!
+
+The discussion on the insurance industry, which I’m much more familiar with, I think is lacking.
+
+She doesn’t make any mention of how regulated the insurance industry is. There isn’t much federal regulation, but each state has its own set of messy and horrendously complicated laws. This is important to note when trying to understand why the industry is in its current state. The criticism about premiums not being based on direct driver experience (i.e. DUI) is unfounded because it doesn’t consider other tools that insurance companies have at their disposal such as underwriting guidelines (the insurance company doesn’t have to offer full coverage or will place poor risks into a “nonstandard” book that uses different rating methods). Additionally, if insurance companies can charge people the real cost that they expect to pay out in losses (minus pure randomness), which companies are now close to being able to do, what purpose would insurance serve? Insurance would not be a social good anymore. My biggest beef with the book is the portion criticizing the use of credit scores to charge premiums. Credit scores were one of the best predictors of future auto losses. This is a fact and could have been easily cleared up.
+
+Because I have a number of issues with the insurance section, it does make me wonder if the other industries are really using algorithms the way that Cathy described. Or, is it just that I understand more of the nuances in the insurance industry so to me a chapter is not nearly enough to be a thorough commentary. I’m not sure. The book does discuss important questions and definitely made me think. So overall, thumbs up!

@@ -1,0 +1,67 @@
+Misinformation and the Prospect of Catalytic War
+
+Jordan Prescott
+
+In July 1870, France declared war on Prussia after learning the Prussian king had insulted the French envoy during a meeting concerning affairs in Spain. Unknown to the French, Prussian Chancellor Bismarck had fabricated the story about the insult to provoke them into war. Bismarck knew France was militarily inferior and that a declaration would push southern German states to finally unify with Prussia. The “Ems Dispatch” ruse worked and the war was a catastrophe for France, marking the end of the Second French Empire and the birth of the German Empire.
+
+In August 1964, the United States Navy alleged their ships had been unjustly attacked by North Vietnam in the Gulf of Tonkin in international waters. Some officers contended the reports were inaccurate but before the incident could be fully verified, the President ordered military retaliation. The President then requested and received near-unanimous congressional and public approval for virtually unlimited authority to wage war on North Vietnam. In 2005, declassified documents confirmed the president knew the reports were false. The war, however, quickly escalated out of the president’s control, sparking years of protest and major political divisions throughout the country before ending in an ignominious withdrawal nine years later.
+
+These historical incidents demonstrate how war can result from misinformation and deceit as much as they can from accidents and miscalculation. All warfare may be based on deception but disinformation is poised to destabilize international affairs in an unprecedented way.
+
+Thomas Rid is a political scientist who focuses on the nexus between technology and conflict. His latest book, Active Measures: The Secret History of Disinformation and Political Warfare, provides an exceptional historical overview of misinformation operations and the challenges they present for national security.
+
+Within the counterintelligence portfolio, active measures are unique in their embedding of disinformation within an ostensibly legitimate and mostly truthful medium, whether it is a document, report, periodical, book, audio or video recording, or a digital posting.
+
+Rid describes how disinformation marked the origins of the Soviet Union and how its brand of misinformation came into its own in the early Sixties in the middle of the Cold War. Soviet leadership devoted considerable funding and manpower, elevated political warfare’s organizational standing, and integrated its satellites’ intelligence capabilities. The mission of the new KGB organization, Service A, was to identify and analyze enemy fissures and failures, and then “to exploit the discovered vulnerabilities in a systematic, worldwide effort.”
+
+And the Soviets excelled — “anti-Western campaigns were aggressive, fast-paced, and used innovative methods that evolved quickly and in unexpected frightening ways.”
+
+The Soviets altered Army Field Manuals, leaked falsified nuclear plans for Europe, invented rumors of Nazi gold in a Czechoslovakian lake, co-opted the nuclear freeze movement, and, most notoriously, claimed AIDS was the invention of American scientists.
+
+After the Cold War ended, Russian intelligence services withered significantly. Misinformation, instead, became the weapon of choice in the competition for power during the Nineties — a virtual information civil war. The period ended when a former KGB agent ascended to the presidency in 2000 and conscripted this new generation of seasoned operators and their sophisticated media skills into a revitalized Russian national security apparatus.
+
+Initially, Russian information operations took the form of cyber-disruption and were once limited to the country’s “near abroad,” such as Estonia in 2007 and Georgia in 2008.
+
+When democratic upheaval finally breached Russia’s near abroad in the form of the 2014 Maidan Revolution in the Ukraine, it began targeting the West.
+
+Russian efforts culminated in 2016 and 2017, when it undertook election interference operations directly against the United States and the United Kingdom (Brexit), France (presidency), and Germany (federal offices).
+
+Regarding the 2016 American presidential election, many observers have speculated why. At the personal level, many allege Russia acted to deny Hillary Clinton the presidency in revenge for her comments during anti-government protests in 2011. In terms of geopolitics, others suggested various reasons. Interference was retribution for democracy promotion in Russia’s sphere of influence or a warning to refrain from seeking regime change in Moscow or simply a reminder to treat Russia as a great power.
+
+Whatever the reason, a few high-profile email leaks and a provocative Facebook campaign resurrected Russia as a great power competitor (despite half the population, half the economy, and half the defense budget of the United States).
+
+In Rid’s analysis, the email hacks and fake social media accounts were entirely ineffective.
+
+However, the power of misinformation lies in its indirect consequences.
+
+In the main, Rid describes how the media indefensibly exaggerated the impact of the Russian Facebook campaign. Journalistic standards collapsed as reporters failed to scrutinize questionable evidence, published unverified conclusions, circulated unsubstantiated accusations, and adopted an overtly partisan tone. Misinformation had succeeded in inverting reality — what was balanced was derided as biased and what was suspect was declared plausible.
+
+Rid’s conclusions are twofold — neither comforting.
+
+First, misinformation succeeds because its melding of fact and fiction prompts not contemplation but consternation. Misinformation is essentially anti-information — a weapon marked by reassuring facts but concealing an emotionally inflammatory payload.
+
+Second, the Internet accelerates, augments, and amplifies misinformation. Deposited in the obscure corners of cyberspace, seemingly dormant misinformation is instantly animated when it’s discovered. Whether the mark ratifies or refutes it, misinformation’s very acknowledgment unknowingly legitimizes it and initiates its dissemination. Inexorably, journalists will elevate its visibility, analysts will debate its validity, pundits will argue over its significance, and everyone will share it on social media.
+
+While Cold War forgeries could be exposed and refuted, the Internet endlessly recycles misinformation from objective to subjective and back again. The antagonist then feeds the media scrum another fabrication, which has been designed to exacerbate the original confusion by “validating” one side’s interpretation. The result is a proliferation of heated emotional fissures across the body politic and the inability to separate fact from fiction.
+
+Traditionally, active measures are the product of a state bureaucracy staffed by professionals and allocated substantial budgets, but, as with many enterprises, misinformation is being privatized and decentralized.
+
+More ominously, anyone with Internet access can obtain and use the world’s most sophisticated cyber-weapons and undertake their own misinformation campaign.
+
+Rid closes his history by recounting how a mysterious cadre of hackers calling themselves the Shadow Brokers penetrated the National Security Agency in 2016 and stole the country’s arsenal of cutting-edge cyber tools.
+
+The intrusion constituted a monumental security breach and jeopardized wide-ranging signals intelligence operations around the world. Furthermore, the penetration distracted national security agencies at a critical time, namely defending the nation’s electoral system from cyber-attack.
+
+Hackers eventually gained access to NSA’s tools and rapidly overwhelmed IT systems around the world. Ukraine’s national infrastructure, Britain’s health system, a Danish shipping giant, and an American multinational food distributor were among the theft’s many collateral victims.
+
+And no one has figured out who the Shadow Brokers were.
+
+Episodes such as this feed theorists’ speculation that in the future America will suffer a “cyber Pearl Harbor” or a “cyber 9/11.” Plausible fears but, at a minimum, decision-makers could take comfort knowing that in each of these precedents, the identity of the aggressor was immediately obvious and the fate visited upon the Japanese and the Taliban (at least at the outset) would deter any imitators.
+
+However, the potential combination of cyber-weapons promising anonymity and anti-information introduces the prospect of manufactured security crises.
+
+The greater threat is a “cyber Ems Dispatch” or a “cyber Gulf of Tonkin” whereby a third party anonymously introduces misinformation to purposely instigate or aggravate existing tensions in a volatile region (e.g. Western Pacific, Persian Gulf). The active measure sabotages decision-makers’ ability to objectively assess the situation and enrages their respective publics. The result is an armed conflict arising from circumstances falsified by a third party — a catalytic war.
+
+Like American national security after a cyber-catastrophe, international security would never be the same after a misinformation-instigated catalytic war.
+
+Prussian theorist Carl von Clausewitz’s simple but enduring maxim asserts war is nothing but a duel on a larger scale. If the Prussian theorist were alive today, he might concede the duelists may not know the truth behind their post-haste rush to the dueling grounds.

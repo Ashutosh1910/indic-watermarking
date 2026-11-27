@@ -1,0 +1,151 @@
+SCC Book App
+
+unknown
+
+Background
+
+Since Saints Community Church published and gave out free books at her Annual Charis Camp Meeting, the number of books published now is well over 35 as at the time of the project, as the number of books produced increases, the demand for these books has since increased as expected, a major problem now is that books most times after release are exhausted within less than few weeks, a particular case was when a particular book was exhausted even before the publication as many had pre-ordered, calling to get a book a week after its release is not too late I think, but I recent times you would be at least 72 hours late.
+
+The major aim of this project, therefore, is to help anyone within Nigeria majorly to get all or any of Saints Community Church Books with ease, either by initial pre-ordering (in an event that a particular book is out of stock) or outright purchase.
+
+Design process
+
+Problem
+
+The chances of getting any of Saints Community Church Books decreases by half if buyers reside in certain states of the country, some would literally have to wait till there is a special meeting to have the opportunity to get the book of their choice, this is largely down to some reasons
+
+Inability to Preorder books Distance from Church location
+
+How do I plan to solve this problem?
+
+Maybe that’s not the first question, how about who have these problems? Who are my users?
+
+Knowing my potential users would help my User Researching process not just fun but productive, the nature of this project simply indicate that my potential mainstream users are Christians especially those that value Christian literatures while my extreme user are just about anybody, realizing this is going to help in my user researching process because it will help me recruit the right participant for my user research, participant that posses the characteristics of my potential users
+
+In a bid to prevent **deformation professionnelle i.e. (**a phenomenon where when so many testers from one profession come into contact with an item they must judge) I recruited Christians from other Churches as my user research participants.
+
+In summary, here was my recruitment criteria
+
+Smartphone users Experience on E-commerce platforms Location (I used Lagos, Nigeria)
+
+User Research
+
+In UX Design, you have to be faithful to the U which is the USER, having gotten my user research participants I needed to understand more them, how they think, how they feel, what they say and what they do, the only way to get this information accurately was for me to perform a thorough user research, in order to get a result that’s not only quantitative but qualitative, I opted for interview sessions with my users, this was not difficult for me as I serve a worker in the department.
+
+I prepared the following questions, even though during the interview sessions others came up.
+
+Have you made an online purchase on any platform before?
+
+How was your experience with the whole process?
+
+Have you bought book(s) before from Saints Community Church?
+
+If Yes, how was the process?
+
+If you change your present state of residence, would the process be easier?
+
+How would you know when a book is available or out of stock?
+
+Insights
+
+These were the very words of some buyers
+
+‘Please, im not in Lagos right now, can you just help me keep one copy each of the following books……’
+
+Another one
+
+‘ … Can you please inform me when those books would be reprinted again, please don’t sly me oo’
+
+Yet another
+
+‘… so how do I get the books here in Delta state…’
+
+The list is endless
+
+Contextual Inquiry
+
+My interaction with people who have purchased and want to purchase Saints Community Books in their different context and environment helped me understand more how the users feel, during which I observed how they act, these suggests one of the reasons why some will have to wait for special meetings where they just buy all available.
+
+Persona
+
+Define
+
+With the need of the users ever before me, it became clearer to me what problem I have I hand to solve.
+
+I began to ask myself the HMI Questions
+
+How do make the whole process of book purchase faster and easier? How do I help users preorder for books? How do I improve the delivery experience for users? How do I notify users when a book is available or out of stock?
+
+Ideate
+
+With the users need in mind, the HMI questions helped go guide the process of brainstorming on different possible ways to solve the problem before me, but as a basis I was able to highlight some features and ranked their importance in the design process
+
+I must have
+
+Preorder option available Delivery system available
+
+I should have
+
+A notification
+
+User Flow Diagram
+
+Information Architecture
+
+Low fidelity Prototype
+
+Designing for users is great, designing with users is better, in the light of this, I engaged my users in the low fidelity paper prototype to see their interaction flow with my design model to complete a given task, this is to ensure that all my decisions are user-centric.
+
+How did I do this?
+
+Firstly, I told each participant ahead of time the purpose of the test so that they are not are well aware what they are doing
+
+In summary I did the following
+
+I told them that there are no right or wrong answer
+
+I asked, what do you expect next after showing each paper screen
+
+after showing each paper screen I avoided asking questions like ‘ where would you click next’ because clicking might not be the next action in the mind of the user,
+
+because clicking might not be the next action in the mind of the user, I used an engaging environment which can be distracting because I am building a mobile device which will be used is such environment
+
+I used phrases like you have just help me see what I was looking for’ when they asked questions like ‘am I right’?
+
+when they asked questions like ‘am I right’? I told them they can stop at any time they want to
+
+I was presenting each screen paper prototype to the users to see their interaction with the entry flow into the design.
+
+This was really fun 😀
+
+Some sketches
+
+Paper prototyping testing session
+
+Seeing that the conceptual model of my design matches with the customers mental model, I was confident they would be able to complete the task when the entire flow is ready.
+
+Having tested the entry point into the flow, it was time to identify if the intended functionality meets the users perceived functionality based on the visual indicator provided by the UI.
+
+To do this, I asked the participant questions like
+
+Based on what you are seeing, how would you order for book(s)?
+
+Based on what you are seeing, how would you order for book(s) if you stay outside Lagos?
+
+Based on what you are seeing, how do you preorder book(s) that is out of stock?
+
+Based on what you are seeing, how would you know when a new book is released?
+
+What might happen if you clicked on the image of a book?
+
+What would you like to change in all these flow?
+
+Visual Design
+
+The color, fonts, Icon and other user interface components becomes an important part of my work especially for the high-fidelity prototype after learning Mood Board during my HCI (Human Computer Interaction from IDF (Interaction Design Foundation) which are inspirational collage of images, fonts, colors that virtually communicate an idea of the design project.
+
+Knowing that colors are forms of identity, I decided to use the color that the Church had adopted on their website to ensure consistency of identity.
+
+High Fidelity Design
+
+For the prototype on Figma click here

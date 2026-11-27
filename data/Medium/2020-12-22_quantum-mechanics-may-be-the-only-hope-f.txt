@@ -1,0 +1,63 @@
+Quantum Mechanics May Be The Only Hope For Your Free Will
+
+Matthew Tainsh
+
+See full video here: https://youtu.be/nr29Ar21nqA
+
+Free will is described by the ability to do otherwise, the freedom to make decisions on behaviour based upon volition. And of course we have free will! It is up to you whether or not you take your dog for a walk or decide to go out for dinner. We punish people and praise people based on their actions, and judge people by what they do. But what if the choice wasn’t theirs, but merely an illusion?
+
+A Clockwork Universe
+
+Hard determinism can aptly describe the nature of being, consciousness and free will as an the illusion of free will by adopting the notion of physical reductionism: The idea that any system, including mental states and biological states can be reduced into physical ones, whose behaviour is governed by the fundamental laws of the universe. This in turn, means that one does not act freely, but rather is destined by a deterministic fate; unchangeable and predetermined.
+
+We will briefly discuss how classical physics alludes to determinism and then, in detail, discuss how quantum mechanics may offer an understanding to consciousness and answer the mystery of free will.
+
+The universe is thought to be governed by a set of fundamental laws of nature that determine the forces upon, the path and interaction between matter, and these laws are ultimately described by mathematical equations, from Einstein’s General Theory of Relativity — relating to the motion of objects at a large scale through a curved space-time, or gravity, and Quantum Mechanics which relates to the very small subatomic scale and the forces and interactions between elementary particles. This notion that matter behaves according to perfectly described laws provides the purpose of predictability and reversibility: once we know the state of a matter at a certain point in time, we can predict its behaviour at any time in future, or the past. This same simulation can theoretically be performed on any system, regardless of complexity. In saying this, is the human body not just an extremely complex system of mathematically described matter? This idea that the universe is not arbitrary and everything in the universe obeys definite unbreakable laws, realises something called physical reductionism.
+
+Physical Reductionism
+
+This means that all systems and states, including biological states in the body including mental states in the brain, can be broken down and reduced into physical states. Our body is controlled by the brain, run by neural activity whose activity is chemical; governed by its own laws which can be ultimately reduced to physical processes which we have established are governed by definite laws of nature.
+
+This is the underpinning idea of hard determinism; illustrating that the world is fundamentally pre-determined by the initial state of matter. If all this is true, and the universe is deterministic, your fate has already been decided. This can be a daunting thought, believing that you have no control over what you feel, what you do and who you become. But, what about the mind? Isn’t consciousness and free will beyond the fact, something unexplainable by physics?
+
+The Mind-Body Problem
+
+Well this is known as dualism, arguing that consciousness and mental states are not a complex product of physics and neuroscience but, merely something more metaphysical, something that cannot be simply reduced into physical states in the brain. In dualism, the realms between mind and matter are distinct. This innately feels right. It is almost nonsensical to believe that our emotions, qualia and the understanding between right and wrong can be explained deterministically by physics.
+
+However, there is no evidence for this. For example, people with a flat lined EEG don’t exhibit characteristics of mind, alongside infants born without a brain, unconscious patients of anaesthesia and patients with stroke or tumour inducing brain damage.
+
+However, the field of quantum mechanics may provide hope into explaining the source of free will. Firstly, we don’t actually have the whole picture of the universe and are yet to achieve the ultimate goal of physics; to formulate one complete unified Theory of Everything. The contemporary idea is to merge the two pillars of modern physics; Einstein’s General Theory of Relativity and Quantum Mechanics, which has proven to be exceptionally difficult since they appear to be wholly incompatible. Not only are there gaps in our understanding of the natural world from inconsistencies between these theories, but Quantum Mechanics is responsible for exhibiting some strange phenomena which produce unpredictability and randomness which we will discuss next.
+
+Introduction to Quantum Mechanics
+
+In the early 1900s, a German physicist named Werner Heisenberg ran into a bizarre phenomena, and coined it the Heisenberg Uncertainty Principle. The Heisenberg Uncertainty Principle articulates that the position and momentum of a particle cannot both be measured exactly, nor could its energy be known at any precise time. Moreover, the position and momentum are on a sort of see-saw; when you measure one, you know less about the other. This principle realises that there is a fundamental limit to what we can know about an atomic system. Though, the Uncertainty Principle provides a more profound fact: The states of particles are dependent on how we observe them, and the future path of a particle only becomes certain when we observe it.
+
+This concept is an underlying implication of another quantum phenomena known as Schrodinger’s Wave Equation. Schrodinger’s Wave Equation is a mathematical description of the probability of the state of any quantum system or particle that evolves with time. Put more simply, in two dimensions, Schrodinger’s Equation of a particle can be thought of as a sine wave function, where the wavefunction is above zero for all possible states of a particle and the amplitude of the wave tell us the probability of that particle occupying that state. A wavefunction is zero in places where the particle’s existence is impossible. And, more complicated systems can have wavefunctions that are made from a combination of many sine waves and mathematical functions.
+
+A popular interpretation of these phenomena is the Copenhagen Interpretation. In this, particles exist in all possible states superposition (occupying every state but not one in particular) until observation, causing the wavefunction to collapse, vanishing of all probabilities bar one, instigating the particle to occupy one of those states. This interpretation promotes the idea that every moment in time, wavefunctions for every quantum system including each particle or one wavefunction governing the entire universe are collapsing through observation — a future based on probabilities.
+
+The Source of Consciousness
+
+The father of computer science Alan Turing’s interpretation of the human brain was a computer. However complicated and powerful, it is still just a computer, able to be simulated and replicated. This understanding has been adopted by many including programmers on the leading edge of machine learning, hoping one day to simulate a human brain and create artificial consciousness.
+
+But, is this intuition true? One simple objection lays the following; If consciousness is an illusion brought upon by an extraordinarily complex computer, the brain, it would be expected that the cerebellum, responsible for powerful computation made from billions of intricate neural connections would provide the source of consciousness. However, all processing attributed with consciousness; personality, beliefs, emotions and decision making are conducted in the more simple, neatly organised cerebrum.
+
+Now, how can we connect biology and quantum physics? Well, scientists have already observed some quantum phenomena in nature; Birds are known who have an innate sense of navigation thought to be due to the Earth’s magnetic field and another phenomena known as quantum entanglement. Additionally, some evidence shows that photosynthesis, particular enzyme activity and our sense of smell demonstrate properties of quantum mechanics.
+
+Orchestrated Objective Reduction
+
+So how does this work in the brain? How can quantum mechanics produce consciousness? Well, one proposed model is named Orchestrated Objective Reduction or Orch OR for short. Orch OR postulates that microtubules inside of neurons can govern cellular behaviour by reducing coherent quantum systems in superposition into definite states by collapsing the wavefunction. Microtubules are a part of the cytoskeleton of the neuron, made from polymers of tubulin, they are responsible for brain plasticity, growth, neurotransmitter transport and many of the brain’s inner workings. Orch OR suggest that these microtubules house dipoles forming resonance rings in superposition of quantum states in its helical pathways of the lattice. Orchestration refers to the process by which connective proteins interfere with the quantum system, physically reducing it by collapsing the wavefunction.
+
+Orch OR however, has received a healthy amount of criticism involving the fact that there has been no substantial mathematical description of quantum state reduction in the brain and that the brain is merely not chemically suitable enough to house coherent quantum systems.
+
+So maybe there is something we are missing.
+
+Wonderful Fascination
+
+One may believe in Free Will and another determinism but, many believe in both (compatibilism). They may believe in physical reducibility in the universe and that it is governed by fundamental laws, but, when it comes to consciousness and free will, it may be due to some unexplainable phenomena or metaphysics. Similarly, if we can reduce consciousness to physical interactions, it does not eliminate it as a phenomenon in its own right. Not cherishing Free Will due to one’s belief in Hard Determinism may cause personal implications; they may abandon any aspirations to achieve, render life meaningless, excuse morale or succumb to pessimistic nihilism.
+
+There may be numerous other theories of how Quantum Mechanics give rise to consciousness and hence, free will in the brain. Or, how the universe is deterministically governed by fundamental laws of nature, or even the belief that free will and consciousness can be scientifically described is ignorant absurdity.
+
+That being said, physics, philosophy and all of science is arguably still in its infancy, and this video was designed to make to viewer become fascinated with the topic and come out with more questions that they went in with. This may have been a relatively complicated video involving some abstract ideas and some sort of prerequisite knowledge. But, the greatest thing about philosophy is that anyone can ask the big questions. You don’t need a Ph. D to wonder and question your existence, whether or not we have free will, why we love or have a sense of being.
+
+So, you can ask yourself, is the mind some complex dance of physics, or something metaphysical and beyond what we can understand?

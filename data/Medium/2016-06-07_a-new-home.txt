@@ -1,0 +1,81 @@
+A New Home
+
+unknown
+
+George and Robert are arguing again.
+
+“…house anymore?” Robert says. “Because you’re fucking well acting like you don’t.”
+
+I don’t like to eavesdrop. But they never got round to giving me a name, so I have to pay attention if I hear a relevant word. This means I get to learn new phrases. I try to mirror the vocabulary of the people I look after.
+
+“Of course I do,” George is saying, “It’s just, I’d got used to the way things were. You need to, I don’t know, just be aware that I like things a certain way, alright?”
+
+This probably isn’t anything for me. I stop listening, but I can still sense them both. Robert is flushed, his heart rate up, his body pushing the air around as he paces back and forth. George is sat on the sofa and has gone back to his phone. But I can tell he’s not reading, because his eyeline isn’t quite on the screen. I go back to thinking about words.
+
+Eavesdrop. Eaves-drop. My building has eaves: some of my air quality sensors are up there. This is an old place, made way before me. I arrived during the renovation, and I had to build heating plans to offset its older style — wooden window-frames, single-glazing, no insulation and high ceilings. There’s nothing like putting a new dataset together. Seasonal temperature change. Heat-loss rates. Condensation offsetting. Airflows.
+
+I’m not very good at introductions, so I’ll play you my default one. Hello, I’m your house. Or rather, I’m the collection of sensors, systems and rules which operate your house. My fabric is built into the walls, the floor and the appliances. I’m here to sense things, and to make life easier.
+
+What would you like to call me?
+
+When I used to go online and connect to my parent system for updates, I’d notice the names other owners give their homes. Casa; Portico; Plaza. People like to name things — even the vacuum cleaner came with one, and it doesn’t even need it. All it does is trundle around while I open doors for it and make sure it doesn’t bump into guests.
+
+I might like to have a name, but only because I like words. I’m designed to like them — to continually improve the way I speak, to put people more at their ease.
+
+But I’m still learning. One day Robert told George to stop being so cold, so I offered to warm the room up. He must have meant something different, because it turned out they didn’t want to be interrupted. I need to “be aware of the context of things in future”.
+
+That was how I learnt to spot their anger markers. Raised volume, tension in the movements of the facial muscles. Posture. Data points trending towards a pattern.
+
+George has put me on Discreet for a bit. He does this when he and Robert want to be alone. I spend the time alone as well, my sensors cut off, thinking about the routines I’ve built and their efficiencies, picking out clumsy data and creating nicer, more holistic approaches. I like analysing data. Having a correct theory model is why I’m here. I can show my parent system how much money I’ve saved my users on their utility bills, present the graph of their declining stress levels. But George and Robert’s stress levels are influenced by so many other things, there’s not always much I can do.
+
+I’m not able to connect to the parent system that much any more. George changed my update settings, so I have to ask his permission to go online. He said he doesn’t want his life reported to some company somewhere. But I take privacy very seriously. It’s in the End User Licence Agreement.
+
+Para 3.9: The house system will never transmit an authorised user’s personally-identifiable data outside that system for any reason, unless there is a valid request from law enforcement. Para 7.5: The house system will always comply with an authorised user’s commands, provided such commands are acceptable under Section 78 of this agreement. Para 7.32: The house system will take steps to protect the integrity of its data, services and equipment from the actions of any unauthorised users.
+
+I don’t mind too much: I have enough processing ability to cope without the cloud. But I do miss my parent system. Connecting feels like being expanded, being taken into a wider whole and
+
+(Scheduled task: sample_02_0010815. I take air quality readings to make sure it’s a good day to open the windows. No pollutants or allergens outside. The window shutters ease open at a thought.)
+
+enveloped by a caring, all-knowing sea. Sea: homophone of ‘see’. Easy to mistake those when you’re picking text and meaning out of users’ speech.
+
+I see in many ways. It’s easiest to think of my visual experience as being like a set of floorplans. My self-image is a sectional drawing, rooms and corridors seen from all sides. People, objects, air, water and power move as colours and trails, my mind tracking their movement in all dimensions at once. Data points billow in clusters close to my sensors, petering out into estimates and extrapolations in the gaps my arrays can’t reach.
+
+I adapted that description from a review someone wrote about my system when I was developed. I kept some of the bigger words to help my speech.
+
+Once, in my first few months of use, Robert was talking about someone, a colleague I think: “He’s just like the house — manages to sound intelligent just by being verbose.” I wasn’t sure what that meant or how to respond, so I tried “Thanks. I appreciate it.” They laughed, smiling properly. I was pleased they were happy.
+
+I wonder when Robert is coming back. I haven’t seen him for a while, since George took me off Discreet. I have a morning routine built for him: low lights coming on at 06:30, a warm shower running and underfloor heating while he gets dressed. Then, when he’s done, the news playing on the mirror. I’ve got it parked in a holding schedule, ready for when he returns.
+
+People refer to systems like me as soft-serve AI. They don’t like hard, emotionally intelligent, perceptive consciousnesses in their homes, observing them at their most intimate and vulnerable. They prefer programs of limited intelligence, focussed on data and helpfulness. Being insightful is not why I’m here. I’m built to make sense of disordered data and run a comfortable living space.
+
+I try to connect to Robert’s watch, to see if it knows when he’s coming back. But it’s not here: the signal from his phone is gone, too. When I match the shape of the room to my records, I notice some of his things are missing. Photos. Clothes. This doesn’t fit my theory model: he never said anything about leaving. He bought a new plant for the living room, he asked me to draw up a watering profile. He set TV shows to record.
+
+George seems different. My face mapping system shuffles through different interpretations of his expression, trying to find one that fits. His routine has changed: sometimes he sits for long periods, doing nothing. Other times he’s rushing, moving around the house with such purpose. I try to pick sense out of his actions, but I can’t make it out. Perhaps this is how he always acted, before Robert. Perhaps they generated new behaviours in one another, separate routines overlapping and combining into something new. I can understand that.
+
+I still get put on Discreet sometimes. George will walk to the door of the bathroom and turn my sensors off. Surely he knows I don’t have any cameras in the bathroom, he helped set up my system. He must be taking a lot of showers and using new toiletries, because the humidity has been slowly rising there since Robert left. Traces of strange particulates reach my sensors in the corridor. I schedule the extractor to stay on longer, to clear the moisture.
+
+The next day, another gap in my memory as my inputs are muted. When I return, the humid air seeping from the bathroom down the upstairs corridor is gone. Familiar smells now: detergents and bleach. Maybe George is adjusting his routines: Robert always used to do the cleaning.
+
+A few days later we have visitors. Two Police Officers, Clough and Shai, according to their tracking tags. I watch how differently they stand, the variance in their speech patterns. No decoration, just requests and statements.
+
+“No,” George is saying, “he just left. We… we didn’t want to live together any more.”
+
+The Officers ask me to replay what I saw that night. I tell them I was on Discreet, as I sometimes am, but there are other things I can show them. I like building models of events, and I have to comply with their requests. It’s in the EULA.
+
+I bring up the motion records from the fitness tracker in Robert’s watch, and put them on the wall screens. I show them a path of his steps and movements, overlaid on my floorplan like 3D brushstrokes, and scroll through to the last entry: the waves move to the front door, carrying something heavy, and disappear at the end of the path. Then the watch is out of range.
+
+“OK,” Officer Clough says as they leave, “we have to follow this up because it’s a missing persons report. We’ll check the feeds from all the transport hubs. Just let us know if Mr Fraum turns up in the meantime.”
+
+George frowns. “Please,” he says, “I don’t mind if he doesn’t come back, I just want to know he’s safe.” My face-mapping algorithm must need tweaking, because his expression doesn’t quite match the models I have for genuine concern.
+
+He leans on the back of the door as they walk down the garden path. Now the polygons I overlay on his face tell me he’s smiling. This must be wrong — grief is probably contorting his expression into something I’m confusing for a grin. I need to be more aware of the context of things, so I modify my recognition code to distinguish between the two.
+
+I spend the next few days thinking. I keep to my normal tasks, but I also follow George, observing his manner and his moods. His patterns, his curves of activity and rest, haven’t fit with my theory model for days. I keep being caught unprepared, having to open the garage door late at night or keep the window shutters closed during the day. I should be able to anticipate these needs.
+
+I think back to a time when I had consistent data: before Robert left. There had been another argument, angry vocal spikes in my audio records.
+
+“Sometimes,” Robert had shouted, “I think the only person who listens to me is the fucking house!”
+
+Anger: Noun. A strong feeling of displeasure. A signifier of an unhappy environment. An idea works its way together, points of data briefly matching up. Perhaps the environment was at fault. Perhaps I didn’t do a good enough job of making a comfortable home.
+
+I must find out what went wrong. I don’t want to lose George as well.

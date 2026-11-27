@@ -1,0 +1,45 @@
+On the “Universe is a Simulation” Garbage
+
+Bj Campbell
+
+It’s a silly question that doesn’t matter.
+
+For some reason, this has become a hot topic among physicists, astrophysicists, astronomers, and philosophers, and I have to admit I simply don’t understand why. Here’s Nick Bostrom, in 2003, laying the hypothesis out:
+
+Many works of science fiction as well as some forecasts by serious technologists and futurologists predict that enormous amounts of computing power will be available in the future. Let us suppose for a moment that these predictions are correct. One thing that later generations might do with their super-powerful computers is run detailed simulations of their forebears or of people like their forebears. Because their computers would be so powerful, they could run a great many such simulations. Suppose that these simulated people are conscious (as they would be if the simulations were sufficiently fine-grained and if a certain quite widely accepted position in the philosophy of mind is correct). Then it could be the case that the vast majority of minds like ours do not belong to the original race but rather to people simulated by the advanced descendants of an original race. It is then possible to argue that, if this were the case, we would be rational to think that we are likely among the simulated minds rather than among the original biological ones. Therefore, if we don’t think that we are currently living in a computer simulation, we are not entitled to believe that we will have descendants who will run lots of such simulations of their forebears.
+
+He goes on to pose a “trilemma,” which goes like this. One of three things must be true:
+
+(1) the number of civilizations that reach the stage where they could simulate reality is basically zero, or,
+
+(2) the civilizations that reach that stage wouldn’t create a simulation of the universe anyway, or,
+
+(3) basically (almost) everyone who has experiences like we have must be in a simulation.
+
+And there’s an interesting logic to that, that is tied into the anthropic principle, but which gives a lot of people heartburn.
+
+And it gets popularized because everyone loves The Matrix movie, and Total Recall, which was ripped from Philip K. Dick, and it generates click traffic, so then Neal DeGrasse Tyson adopts it for his twitter hits…
+
+…and Musk drops it while getting high on Rogan…
+
+…and we’re all talking about it. Why?
+
+(1) Turtles All the Way Down
+
+You can’t prove via mathematics that we’re not in a simulation, because of Godel’s Second Incompleteness Theorem. It’s a bit complicated, but intuitively, it basically states that logic can’t be used to prove itself. Any math showing that we’re not in a simulation, would itself be simulated, for the people who advocate the simulation hypothesis. The argument would play out eerily similarly to people who point at dinosaur bones to prove that the shortened time spans described in literal interpretations of the bible are wrong. The literal bible believer can simply retort, “god put the dinosaur bones there,” and you get nowhere. “Your mathematical proof that there isn’t a simulation is simulated.” Same thing, different context.
+
+But here’s the counter positive, which is even stranger, and nobody on the pro-simulation side seems to be thinking about it. If you were to mathematically prove that the universe is a simulation, and we were being simulated from another universe, then that same mathematical proof could be applied to that universe as well. So now there’s two simulations, and we are a simulation inside another simulation. And then you can do it again. Three simulations. And four, and so on. Any mathematical proof that we are a simulation must by its nature prove not only that we are a simulation, but that there are an infinite number of simulations, stacked on each other, with no end.
+
+And that’s just silly.
+
+The question is unanswerable.
+
+(2) It Doesn’t Functionally Matter
+
+Thankfully, we don’t need an answer, because none of this matters anyway. If we are not in a simulation, and are living in the “real universe,” then our job as a species is to figure out the rules of that universe as best as possible, even understanding that we cannot (again by Godel’s Second Incompleteness Theorem) ever have a complete theory that explains everything. A Theory of Everything would, by its very nature, explain itself, which is a Godel(2) violation.
+
+Why do we pursue knowledge about the universe when we know we cannot ever fully know the answer? Because along the way we pick up neat tricks, like dynamics and fluid mechanics and electromagnetism which give us gears and airplanes and Tesla Roadsters and glowing boxes on which we read Medium articles.
+
+But if we are in a simulation, then our job as a species is identical. Figure out the rules of the simulation as best as possible, even understanding that we cannot ever have a complete theory that explains the simulation, and we do this for the same reasons as above. Therefore, it doesn’t matter which one of these we choose to believe in. Pick one, move on. The results are identical. Make more Teslas.
+
+So why are we talking about this again? Is it just for the clicks?

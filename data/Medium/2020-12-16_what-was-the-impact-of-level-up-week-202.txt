@@ -1,0 +1,95 @@
+What was the impact of Level Up Week 2020?
+
+Chris Smith
+
+Level Up Week 2020 was Redgate’s first ever global event focused on learning and personal development. It encouraged us to share skills, knowledge, and ideas with other Redgaters and give each other opportunities to grow and improve. Originally envisaged as a physical conference, Level Up Week also became our first company-wide remote event, delivering content at a sustainable pace and in a format we thought people could really engage with while they’re working from home.
+
+This post continues the story of how Redgate pivoted its internal tech conference to be a company global virtual conference in September 2020. If you’d like to hear the whole story of how we planned & delivered the event, discovering some unexpected advantages of a remote conference, you can read that here.
+
+Here we consider whether Level Up Week 2020 was objectively a success, focussing on if it delivered the outcomes and had the impact we aimed for.
+
+The post-event survey
+
+It’s fair to say the Level Up Week Organising Team were completely blown away by the engagement during the week from across Redgate, the strength of support and appreciation that Redgaters gave our speakers, and the sense of reconnection with the wider company. It certainly felt to us like things had gone well but, to be honest, the team and I are a bit biased! We really wanted to step back and get a more objective view of whether the event had met the aims we set out at the start of the planning process. Afterall, putting on the event was a lot of effort and we only wanted to do it again in the future if that effort was well placed.
+
+Thanks to the 104 wonderful Redgaters who took the time to fill in our post-event survey, we developed a clearer sense of whether Level Up Week did what it was meant to do and how people felt about the event itself.
+
+We’ll start by sharing the ratings survey respondents gave Level Up Week’s sessions, organisation, communication and social events, plus the overall rating for the event.
+
+We’re delighted with these scores. They compare favourably with the results of a similar survey for the development-focused Level Up conferences in 2018 and 2019. This is remarkable given that those were physical events able to focus more tightly on the L&D needs of a smaller group of people.
+
+Focusing on the quality of sessions rating, 98% of respondents rated Level Up Week’s sessions as 4 or 5 out of 5. A lovely quote from the survey was, “Every talk or workshop I attended was of a quality that I would hope to get from any paid external conference”, and respondents shared the following themes regarding why they scored the quality of sessions so highly:
+
+Many attendees said they learned something in every session they attended Sessions were considered to be well prepared and high-quality In general, session content was clear, informative and engaging Workshops and interactive sessions were engaging and valuable There were a wide range of talks from across the business on a variety of topics Every speaker was a Redgater, and it was good to see a mix of public speaking experience on show
+
+A conference lives and dies on the quality of its sessions, and clearly this is where our 42 speakers (all Redgaters) excelled — thank you so much to every one of those brave souls who stepped in front of their webcam to present their skills and ideas to their colleagues.
+
+What did people takeaway from Level Up Week?
+
+Rather than just rely on survey respondents telling us a score for the usefulness of the sessions (in which they would probably be quite optimistic and kind) we decided to ask respondents to tell us what their key lessons were from Level Up Week.
+
+Redgaters called out a huge variety of takeaways from the sessions during the week. Here are a few of our most common lessons:
+
+There’s a really high level of talent at Redgate and an enormous wealth of skills and experience that we can share with each other.
+
+It’s important to set time aside to invest in personal development and embrace a growth mindset when faced with difficult work or new opportunities.
+
+We can do more on diversity and inclusion and we have a large group of Redgaters who are passionate about addressing this.
+
+We learned presentation skills and about the mindset we need to step forward to do more public speaking. New speakers also learned that they really can give a talk and their fellow Redgaters will be really supportive of them.
+
+We learned how to level up our writing skills and how we can put them into practice.
+
+Sketchnoting is a fun and valuable skill to learn — but its something that we can all pick up and put into practice.
+
+Software accessibility is something we can and should think more about.
+
+We learned a lot about career progression, paths and opportunities from the Exec session.
+
+We learned about how different functions within Redgate work and that there is real interest from Redgaters in other parts of the business.
+
+The Imposter Syndrome is something many of us suffer with and many of us have the same worries about our work. We’re all in the same boat and we that’s comforting to know.
+
+Sketchnoting with Chris Spalton
+
+In addition to lessons, we asked people what they were already doing differently as a result of Level Up Week. It was wonderful to hear that Redgaters are investing more in personal development. From reading new books, blogging and sketchnoting to practicing intent-based leadership and delegating to grow others.
+
+For some rigorous scientific analysis of what respondents told us in this category, here’s a pretty word cloud emphasizing the common words from those responses:
+
+More learn, indeed.
+
+Bringing Redgate together
+
+One of the biggest successes people reflected on in the survey was how Level Up Week brought Redgate together and increased our feelings of “connectedness” with the wider company.
+
+91% of respondents who attended the event agreed that they feel more connected to Redgate as a result of Level Up Week. For context, there was no strong consensus that Level Up Week increased connection within our teams. That lead us to wonder whether a future Level Up event could look to catalyse some shared learning within our normal working groups.
+
+Did Level Up Week meet its objectives?
+
+While the results of the survey are heartening, the Level Up Week Organizing team were keen to review whether the event had the impact we were hoping for. At the start of the initiative we used Objectives and Key Results (OKRs) to set out and measure the outcomes we wanted the event to deliver.
+
+Ultimately, we believe learning & personal development is vital to increase the capability of the organisation, staff engagement and the company’s performance. The aim of Level Up Week was to invest in people’s learning and personal development, encouraging Redgaters to share the skills, knowledge and ideas we need for a successful Redgate and for Redgaters’ growth.
+
+Level Up Week’s OKR:
+
+Objective (what change are we trying to encourage): Increase engagement with learning & personal development for Redgaters by delivering an engaging and valuable ‘theme week event’.
+
+Key Results (how we know we’re succeeding with that objective):
+
+We wanted high engagement from Redgaters. Despite being an optional activity, 74% of Redgaters engaged with a session or activity during the week. Our target was 60% of Redgaters, so the event exceeded our expectations. This figure does not include people who could only catch-up on video content during the week.
+
+We wanted the event to be valuable for people’s personal development. Only 2% of respondents reported learning nothing or not very much from the event. Our aim was to that 90% of event attendees believe the event was valuable for their personal development.
+
+We wanted people to be able to apply what they have learnt in the role. 64% of survey respondents named something new they were trying or going to try themselves or in their team. We aimed for 50% of people who engage with the event to be able to name something they have taken away to try themselves or with their team.
+
+We wanted to see visible impact of the event at Redgate. We have been able to gather stories of change from across the company on the back of Level Up Week. For example, many Redgaters have offered to share their skills in workshops on the our new #level-up Slack channel, people are practicing and sharing their sketchnoting efforts and a Redgater in Marketing committed to organizing a book club having heard about the practice in Product Development.
+
+In summary, Level Up Week did have the impact we had hoped for, exceeding each of our key result targets.
+
+What next for Level Up?
+
+Well, it seems Level Up Week 2020 — Redgate’s first ever global event focused on learning and personal development — was a success from a variety of perspectives. It encouraged us to share skills, knowledge, and ideas with other Redgaters and give each other opportunities to grow and improve.
+
+For the hybrid/remote-first working future many of us expect to become the norm (some work in an office, some work at home — but aiming for equality of experience wherever you are) and to improve our connectedness with our global offices, it’s likely that we’ll continue with a week-long remote learning & development event in 2021 and beyond.
+
+If you’d like to know more about Level Up Week 2020 or how to evolve your company conference into a virtual event, please do let me know.

@@ -1,0 +1,29 @@
+Calling Bullsh*t By Carl Bergstrom & Jevin West — Review
+
+𝐆𝐫𝐫𝐥𝐒𝐜𝐢𝐞𝐧𝐭𝐢𝐬𝐭, Scientist
+
+A useful and accessible guide to how to think critically about the information and research that we read about in the news and on social media
+
+by GrrlScientist for Forbes | Twitter
+
+NOTE: This piece was a Forbes Editor’s pick.
+
+Nothing that you will learn in the course of your studies will be of the slightest possible use to you [thereafter], save only this, that if you work hard and intelligently you should be able to detect when a man is talking rot, and that, in my view, is the main, if not sole, purpose of education. — Idealist philosopher John Alexander Smith (1863–1939)
+
+Spin. Fake News. Conspiracy theories. Lies. We are daily confronted with a stinking quagmire of misinformation, disinformation and fact-free drivel. How do we sort the truth from the lies? This is the premise of the timely new book, Calling Bullshit: The Art of Skepticism in a Data-Driven World (Allen Lane/Random House, 2020: Amazon US / Amazon UK), a book that effectively acts as a field guide to the art of scepticism.
+
+The authors are expert guides. Carl Bergstrom is a theoretical and evolutionary biologist who researches how information flows through biological and social networks. Jevin West is a data scientist who studies misinformation in science and society. Together, they teach a popular undergraduate class offered under the same name by the University of Washington.
+
+This book, a distillation of that course, presents a mix of amusing anecdotes, timely news stories and accessible explanations of scientific and medical data. You do not need to be a professional statistician or some other sort of mathematical wizard, nor must you invest weeks into fact-checking to see through most nonsense. Instead, the authors argue, assessing the accuracy of a particular claim using basic logic, augmented (where necessary) with information that can be easily retrieved by an online search engine is sufficient to “call bullshit”.
+
+The authors point out that creating bullshit is easier and often simpler than speaking the truth. That is why BS is accepted as truth. Italian software engineer, Alberto Brandolini perhaps said it best when he noted in 2014 that “the amount of energy required to refute bullshit is an order of magnitude bigger than [that needed] to produce it”, which explains why there is so much baloney in the world. Uriel Fanelli helpfully observed that “an idiot can create more BS than you could ever hope to refute.”
+
+So why bother “calling bullshit”? As the authors assert, adequate bullshit detection is essential for the survival of democracy. Regardless of political ideologies, democracy has always relied on a critically thinking electorate, and this intellectual skill is more important than ever in this modern age of online information warfare. It also is critically important for proper functioning of any social group, whether it is a small group of friends or some other social group, or a professional community.
+
+This book teaches us how to identify the various forms of new-school bullshit: how to evaluate scientific claims, to distinguish between correlation and causation, to recognize biased and unrepresentative data and small sample sizes, to identify selection biases in samples, to understand how data can be manipulated visually, and more. They also include lots of graphs and other data images so you can practice spotting screwy data representations yourself. Whether you are confused by the anti-vax movement, which grew out of a single retracted medical study, to the claim that Artificial Intelligence can infer sexual orientation from analyzing a photograph of a person’s face, there is no shortage of nutty ideas out there to contemplate and dissect.
+
+The book ends with two empowering chapters on how to spot and refute nonsense and, more importantly, how to do so in a useful and constructive way.
+
+Ironically, despite the authors’ assertion that proper fact-checking is essential, the book only has an alphabetized reference list for each chapter in the back of the book, leaving interested readers to scratch their collective heads as they try to deduce which statement should be attributed to which source. And although mistakes do inevitably creep in during the writing and editing process, I was surprised that the letter M in the commonly used acronym, STEM, was erroneously attributed to medicine, instead of mathematics. And yes, I was disappointed by the poor quality paper that the book was printed on.
+
+Despite my complaints (some of which are probably beyond the authors’ control), Calling Bullshit presents a thoughtful, careful and engaging deconstruction about how to spot and disprove nonsense. It should be required reading for high school and university students as well as for any thinking person who is working to identify questionable news sources and stories, and navigate their way around social media in these weird times.
