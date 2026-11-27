@@ -5,35 +5,43 @@ one directory (the **dump**). `job/run_study.sh` wraps it for SLURM or a plain `
 scripts described in [GPU_RUNBOOK.md](GPU_RUNBOOK.md) (`generate.py`, `trim.py`, `build_edit_prompts.py
 build-outline`, `verify_generations.py`) and `scripts/load_dump.py` reads the dump back.
 
-## Before the first run (once)
-
-1. Setup, model weights and private keys: GPU_RUNBOOK.md steps 0 and 1 (`export RUNCFG=~/wm/generation.private.yaml`).
-2. Prompt files: `promptset/data/G_prompts.jsonl` (runbook step 0b) and `promptset/data/edit/edit_prompts.jsonl`
-   plus `human_passages.jsonl` (EDIT_LEVELS.md step 1). A missing prompt file is skipped with a warning.
-3. Human pool for the false-positive check (all documents of every human corpus, not only the edit anchors):
-
-   ```bash
-   python promptset/scripts/build_human_pool.py --out work/human_pool.jsonl \
-       --dir hindisamay:hi:data/HindiSamay --dir samalochan:hi:data/Samalochan --dir medium:en:data/Medium
-   ```
-
-   (`data/HindiSamay` and `data/Medium` come from the `add-hindi-corpora` branch. Add
-   `--dir hindi-aesthetics:hi:data/Hindi-Aesthetics-Corpus:linebreak` for the punctuation-stripped corpus.)
-   The file holds corpus texts, so it stays out of git (`work/` is ignored).
-
-## Run
+## Quick start (a fresh GPU server)
 
 ```bash
-export RUNCFG=~/wm/generation.private.yaml
-# pilot (the default filters: [split=pilot])
-sbatch promptset/job/run_study.sh                              # or: nohup bash promptset/job/run_study.sh > pilot.out 2>&1 &
-# full run into its own dump
-sbatch promptset/job/run_study.sh --set filters='[split=pilot,main]' --dump dump/main
-python promptset/scripts/run_study.py --plan --dump dump/main --set filters='[split=pilot,main]'   # what is left to do
+git clone https://github.com/Ashutosh1910/indic-watermarking && cd indic-watermarking
+bash promptset/job/setup_gpu.sh          # venv, packages, Qwen3-14B weights, GPU check, CPU tests (once)
+source .venv/bin/activate
+
+# 1. what will run, with the token budget per stream and language (starts nothing, needs no GPU)
+python promptset/scripts/run_study.py --plan --dump dump/pilot
+# 2. pilot: every level in both languages on 8 docs per language + 18 G prompts per language
+sbatch promptset/job/run_study.sh --dump dump/pilot              # or: nohup bash promptset/job/run_study.sh --dump dump/pilot > pilot.out 2>&1 &
+# 3. read dump/pilot/report.md and dump/pilot/analysis/analysis.md (throughput: generation.csv gpu_seconds)
+# 4. full run into its own dump (pilot rows are included again, so main is complete on its own)
+sbatch promptset/job/run_study.sh --dump dump/main --set filters='[split=pilot,main]'
 ```
 
+Nothing else is needed by hand. The job itself:
+
+* **Keys.** `generation.yaml` has the public demo keys. The job swaps in private keys from `~/wm/keys.private.yaml`
+  (study.yaml `keys.file`) and creates that file on the first real run (30 random keys, mode 0600). Pilot and
+  main then share one key set. Keep the file and never commit it. `RUNCFG=<file>` still works for a run config
+  with its own keys.
+* **Model.** It downloads the weights once (stage `model`) before the per-GPU processes start.
+* **Inputs.** It builds what is missing (stages `inputs:edit`, `inputs:human_pool`) from the corpora under `data/`:
+  `work/edit/edit_prompts.jsonl` + `human_passages.jsonl` (300 docs per language, story/essay 50/50, the first 8 per
+  language as `split=pilot`) and `work/human_pool.jsonl` (every document, for the FPR check). They hold corpus text
+  and stay in `work/` (gitignored). A file the job built is rebuilt only when its settings change. The G prompts
+  are in git (`promptset/data/G_prompts.jsonl`, 473 pairs).
+* **Analysis.** The last stage runs `analyze.py` on the dump (CPU): see [ANALYSIS.md](ANALYSIS.md).
+
+Budget knobs (estimate before the pilot, about 22M new tokens for the full run, roughly 10-40 A100-hours on
+Qwen3-14B; the pilot measures the real throughput): `--set build_inputs.edit.n_docs=200` (fewer docs),
+`--set filters='[split=pilot,main, language=en]'` (one language at a time), or
+`--set model=Qwen/Qwen3-8B` (faster; a separate dump).
+
 Settings live in `config/study.yaml` (streams, filters, regeneration cap, human sets, z threshold, GPUs);
-`--set key=value` overrides any of them. On a 40/48 GB card add `--set generate.token_budget=60000`.
+`--set key=value` overrides any of them. Qwen3-14B wants an 80 GB card; on 48 GB add `--set generate.token_budget=30000`.
 
 **Resume:** submit the same command again. Rows already generated are skipped (per id, attempt and watermark
 flag, across all shard files, so the number of GPUs may change); trimming and scoring are redone only when
@@ -48,13 +56,14 @@ a later run with other keys, sampling or model is refused (use another dump). De
 
 | step | per stream | output |
 |---|---|---|
-| preflight | | `config/run_config.yaml` (keys, private), `config/study.yaml`, input sha256s, environment |
+| preflight | | private keys, model download, `inputs:edit` / `inputs:human_pool` when missing; `config/run_config.yaml` (keys, private), `config/study.yaml`, input sha256s, environment |
 | generate attempt 0 | ox, then wm, ctrl | `gen/<stream>/a0.s<i>of<n>.jsonl`, one process per GPU |
 | outline | after ox | `prompts/O_prompts.jsonl` (O_outline rows, fed to wm and ctrl) |
 | trim, regenerate | wm, ctrl | `trim/<stream>.jsonl`; ids whose largest cutoff fails for length get attempt k = 1, 2, 3 (new seeds); per cutoff the first accepted attempt is used |
 | human | each human set | `trim/human.<set>.jsonl`, every cutoff of promptset.yaml, same rule |
 | score | every trimmed file + raw generations | `scores/*.jsonl`, `tokens/*.jsonl.gz` |
 | report | | `report.md`, `results/*.csv` |
+| analysis | | `analysis/` (analyze.py: tables, figures, `analysis.md`) |
 
 Streams (study.yaml): **wm** = watermarked G + edit levels + O; **ctrl** = the same G prompts without the
 watermark (AI-text FPR; widen its level list for matched edit controls); **ox** = unwatermarked outline

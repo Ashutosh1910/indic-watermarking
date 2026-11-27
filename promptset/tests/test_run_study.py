@@ -97,16 +97,21 @@ def setup(tmp_path_factory, tiny_model_dir):
     run_cfg.write_text(yaml.safe_dump(gen), encoding="utf-8")
 
     study = yaml.safe_load((CONFIG / "study.yaml").read_text(encoding="utf-8"))
-    study.update(run_config=str(run_cfg), dump_dir=str(d / "dump"), gpus=0, filters=["split=pilot"],
+    # the run config keeps the public demo keys: the job must swap in private keys from keys.file (created here)
+    # and build the human pool itself (build_inputs.human_pool) from the same corpus folders
+    study.update(run_config=str(run_cfg), dump_dir=str(d / "dump"), gpus=0, filters="split=pilot",
                  prompts={"G": str(G), "edit": str(edit / "edit_prompts.jsonl")},
-                 human={"edit_anchors": str(edit / "human_passages.jsonl"), "pool": str(pool),
+                 human={"edit_anchors": str(edit / "human_passages.jsonl"), "pool": str(d / "job_pool.jsonl"),
                         "absent": str(d / "nope.jsonl")},
-                 human_cutoffs={"words": [10, 20], "tokens": [20, 40]})
+                 human_cutoffs={"words": [10, 20], "tokens": [20, 40]},
+                 keys={"file": str(d / "keys" / "private.yaml"), "allow_demo": False})
+    study["build_inputs"]["human_pool"].update(
+        dirs=[f"pool_en:en:{d / 'corpus' / 'en'}", f"pool_hi:hi:{d / 'corpus' / 'hi'}"], min_words=30)
     study["regen"]["max_attempts"] = 2
     study["detection"]["workers"] = 2
     sp = d / "study.yaml"
     sp.write_text(yaml.safe_dump(study, allow_unicode=True), encoding="utf-8")
-    return {"dir": d, "study": sp, "dump": d / "dump", "run_cfg": run_cfg}
+    return {"dir": d, "study": sp, "dump": d / "dump", "run_cfg": run_cfg, "pool": pool}
 
 
 def job(setup, *extra: str) -> int:
@@ -134,13 +139,15 @@ def test_outputs(first_run):
                 "trim/human.edit_anchors.jsonl", "scores/wm.jsonl", "scores/raw.wm.jsonl", "scores/ctrl.jsonl",
                 "scores/human.pool.jsonl", "tokens/wm.jsonl.gz", "tokens/human.pool.jsonl.gz",
                 "prompts/O_prompts.jsonl", "failures/missing.wm.txt", "failures/dropped.wm.jsonl",
-                "results/detection_rates.csv", "results/fpr_human.csv"):
+                "results/detection_rates.csv", "results/fpr_human.csv", "analysis/analysis.md",
+                "analysis/passages.csv", "analysis/calibration.csv", "analysis/strength.csv", "analysis/lang_gap.csv"):
         assert (dump / rel).exists(), rel
     man = json.loads((dump / "manifest.json").read_text(encoding="utf-8"))
-    assert man["status"] == "done"
+    assert man["status"] == "done", [s for s in man["stages"] if s["status"] != "done"]
     assert man["inputs"]["G"]["sha256"] and man["inputs"]["human.absent"]["exists"] is False
     assert {s["stage"] for s in man["stages"]} >= {"preflight", "gen:wm:a0", "trim:wm", "outline", "human:pool",
-                                                   "score:wm", "score:raw.wm", "score:human.pool", "report"}
+                                                   "score:wm", "score:raw.wm", "score:human.pool", "report",
+                                                   "analysis", "inputs:edit", "inputs:human_pool"}
     gen = read_jsonl(dump / "gen" / "wm" / "a0.s0of1.jsonl")
     sel = (dump / "prompts" / "wm.selected_ids.txt").read_text(encoding="utf-8").split()
     assert {r["id"] for r in gen} == set(sel)                                # every selected row generated
@@ -267,3 +274,31 @@ def test_token_details_unit(tiny_model_dir):
     half = v.verify_ids(ids[:60])
     z60, n60 = load_dump.prefix_z(det, n_tokens=60)
     assert n60 == half.n_scored and z60 == pytest.approx(half.z, abs=1e-9)
+
+
+def test_private_keys_and_inputs(first_run):
+    """Demo keys in the run config -> private keys created once in keys.file (0600) and frozen in the dump;
+    the human pool is built by the job (same documents as a hand-built pool); the edit file is kept as is."""
+    from synthid_wm.config import BLOG_KEYS
+    d, dump = first_run["dir"], first_run["dump"]
+    kf = d / "keys" / "private.yaml"
+    assert kf.exists() and (kf.stat().st_mode & 0o777) == 0o600
+    keys = yaml.safe_load(kf.read_text(encoding="utf-8"))["watermark"]["keys"]
+    frozen = yaml.safe_load((dump / "config" / "run_config.yaml").read_text(encoding="utf-8"))["watermark"]["keys"]
+    assert keys == frozen and keys != list(BLOG_KEYS) and len(set(keys)) == 30
+    first = json.loads((dump / "job_runs.jsonl").read_text(encoding="utf-8").splitlines()[0])  # the first real run
+    st = {s["stage"]: s for s in first["stages"]}
+    assert st["inputs:human_pool"]["status"] == "done"
+    assert st["inputs:edit"]["status"] == "skipped"            # given by the test, not built by the job
+    built = read_jsonl(d / "job_pool.jsonl")
+    assert sorted(r["id"] for r in built) == sorted(r["id"] for r in read_jsonl(first_run["pool"]))
+    assert (d / "job_pool.jsonl.job_build.json").exists()
+
+
+def test_filters_from_the_command_line():
+    """`--set filters='[split=pilot,main]'` is read by YAML as two items; the job joins them back."""
+    assert run_study.normalize_filters(yaml.safe_load("[split=pilot,main, language=en]")) == \
+        ["split=pilot,main", "language=en"]
+    assert run_study.normalize_filters("split=pilot") == ["split=pilot"]
+    with pytest.raises(SystemExit):
+        run_study.normalize_filters(["main"])

@@ -1,6 +1,7 @@
 # GPU runbook: watermarked generation, trimming, verification
 
-**One-command job:** after steps 0, 0b and 1, `promptset/job/run_study.sh` (SLURM or nohup) runs steps 2-5
+**Use the job instead (nothing below is needed by hand):** `promptset/job/setup_gpu.sh`, then
+`promptset/job/run_study.sh` (see [JOB.md](JOB.md)). It makes the private keys, builds the inputs and runs steps 2-5
 below end to end into one resumable dump, with human-text FPR, per-token detector state and a report; see
 [JOB.md](JOB.md). The steps below are what it runs, for doing them by hand.
 
