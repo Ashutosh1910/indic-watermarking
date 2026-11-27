@@ -7,7 +7,7 @@ ask for normalisation. That keeps ZWJ, NBSP, double spaces and precomposed nukta
 ```python
 import corpora
 
-corpora.available()                     # ['hindi-aesthetics', 'samalochan']
+corpora.available()                     # ['hindi-aesthetics', 'hindisamay', 'medium', 'samalochan']
 sam = corpora.get("samalochan")         # Sequence[Document]: len(), indexing, slicing, iteration
 doc = sam[0]
 doc.id, doc.title, doc.text, doc.meta   # meta: date, year, slug, first_line, source, ...
@@ -38,7 +38,9 @@ does not import torch.
 | name | folder | documents | notes |
 |---|---|---|---|
 | `hindi-aesthetics` | `data/Hindi-Aesthetics-Corpus` | 968 | Every file is read, with or without `.txt`. One exact duplicate (`आलमे-तसबीर-1` = `आकाशबाणी`) is dropped. Punctuation was removed upstream, so sentences are one per line and double spaces are common (`meta["punctuation_removed"] = True`). 491 files use precomposed nukta, which is not NFC. |
-| `samalochan` | `data/Samalochan` | 576 | `date`, `year` and `slug` come from `<date>_<slug>.txt`. The title is the slug. `first_line` is the first line of the post, which is sometimes a section label rather than the headline. |
+| `samalochan` | `data/Samalochan` | 576 | `date`, `year` and `slug` come from `<date>_<slug>.txt`. The title is the slug. `first_line` is the first line of the post, which is sometimes a section label rather than the headline. The site has no genre field, so `genre` follows a fixed rule (`samalochan_genre`): `story` if the slug starts with `कथा-गाथा` (the fiction column) or one of the first three non-empty lines is exactly `कहानी` / `कहानियाँ` / `लम्बी कहानी` (36 posts), else `essay` (540; a residual class that can hold a few unlabelled stories). `genre_rule` says which rule fired. |
+| `hindisamay` | `data/HindiSamay` | 1,696 | Hindi prose from hindisamay.com. File `<content id>_<title>.txt`: title, blank line, author, blank line, paragraphs. `metadata.csv` (with a BOM) gives `title`, `author`, `words`, `id`, `wayback_first_capture`, `source_url`; `genre_fine` is the site's genre and `genre` the study genre: `कहानी` -> `story` (1,035), everything else -> `essay` (661). `header_lines: 2` (title and author lines, kept in `text`). **Not in git** (copyright stays with the authors, do not redistribute): fetch from branch `add-hindi-corpora`, see `promptset/EDIT_LEVELS.md`. |
+| `medium` | `data/Medium` | 3,992 | English stories and essays from the fabiochiu/medium-articles dump. File `<date>_<slug>.txt`, same layout as hindisamay. `metadata.csv` gives `title`, `authors` (also as `author`), `genre` (`story` 1,143 / `essay` 2,849, from Medium tags), `words`, `published`, `tags` (a list), `source_url`; `date` and `year` come from the file name. `filter_medium.py` and `metadata.csv` are not documents. **Not in git** (copyright stays with each Medium author, do not redistribute): fetch from branch `add-hindi-corpora`. |
 
 ## Options (every corpus)
 
@@ -62,7 +64,9 @@ register_text_dir("hindi-wiki", "Hindi-Wikipedia", description="...", pattern="*
 ```
 
 For custom titles, metadata, file selection or decoding, subclass `TextDirCorpus` and override `_paths`,
-`_read`, `_title` or `_meta` (see `HindiAesthetics` and `Samalochan` in `datasets.py`). For a format that
+`_read`, `_title` or `_meta` (see `HindiAesthetics` and `Samalochan` in `datasets.py`). For a folder in the
+title / author / paragraphs layout with a `metadata.csv` keyed by `file`, subclass `TitleAuthorCorpus` and
+implement `_genre` (see `HindiSamay` and `Medium`). For a format that
 is not one file per document, such as a single JSONL file, subclass `Corpus` and override `paths` and
 `load` so that each index maps to one record.
 

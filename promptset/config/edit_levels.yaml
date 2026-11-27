@@ -34,11 +34,32 @@ experiments:
   same_tokens: tokens
 
 sampling:
-  n_docs: 150                           # per corpus (source); --n-docs overrides
+  # Two modes (build --sampling; see EDIT_LEVELS.md "Sampling"):
+  #   genre_mix   the study build (default when no --corpus/--jsonl is given): per language,
+  #               n_docs_per_language docs split by genre_mix, each genre's quota split over the sources in
+  #               genre_sources. English and Hindi get the same story/essay mix.
+  #   per_corpus  n_docs per source, round-robin over genres (default when --corpus/--jsonl is given)
+  mode: genre_mix
+  n_docs_per_language: 300              # genre_mix; --n-docs overrides
+  genre_mix: {story: 0.5, essay: 0.5}   # coarse study genres (meta["genre"] of the corpora); others not sampled
+  # language -> genre -> {source: share}. Shares are renormalised over the sources actually loaded; a source
+  # that runs out of usable docs is topped up by the other sources of the same genre. Stories come from
+  # HindiSamay only: samalochan's "story" label is a heuristic (corpora/datasets.py, samalochan_genre) and its
+  # stories often open with an author bio. hindi-aesthetics is not a study corpus (punctuation stripped
+  # upstream) and is not used here; build --corpus hindi-aesthetics still works (per_corpus mode).
+  genre_sources:
+    hi:
+      story: {hindisamay: 1.0}
+      essay: {hindisamay: 0.5, samalochan: 0.5}
+    en:
+      story: {medium: 1.0}
+      essay: {medium: 1.0}
+  n_docs: 150                           # per_corpus: per source; --n-docs overrides
   min_words: 300                        # minimum words of the SOURCE document; --min-words overrides
   require_all_experiments: true         # a doc must yield a passage for every experiment above
-  stratify_by: genre                    # round-robin over genres in stable-hash order
-  pilot_docs: 0                         # first K sampled docs per corpus get split "pilot" (--pilot-docs)
+  stratify_by: genre                    # per_corpus: round-robin over genres in stable-hash order
+  pilot_docs: 0                         # first K sampled docs per source (per_corpus) or language (genre_mix)
+  #                                     # get split "pilot" (--pilot-docs)
   # script_min: {hi: 0.8, en: 0.9}      # default: trim.py's DEFAULT_SCRIPT_MIN. A doc whose passage has a
   #                                     # lower Devanagari (hi) / Latin (en) share of letters is skipped
 
@@ -102,10 +123,13 @@ ours:
 #   punctuation_removed  true -> every line break is a sentence end (in addition to . ! ? । ॥ …)
 #   strip_header       drop leading heading/byline lines (short lines without final punctuation, and
 #                      everything up to a "____"/"----" separator in the first lines) before cutting
+#   header_lines       with strip_header: drop this many first non-empty lines unconditionally first (a known
+#                      title + author header; default: the corpus's meta["header_lines"], else 0)
 #   title_from         candidates for G_title's {title}, tried in order: "title" (doc title),
 #                      "first_line" (meta first_line) or "header_lines" (the heading lines strip_header
 #                      removes, in order); a candidate must pass title_check below
 #   title_max_chars    optional {candidate: max characters}, e.g. to reject slugs that were cut short
+#   title_check        optional overrides of the global title_check below for this source
 sources:
   default:
     language: null
@@ -124,7 +148,29 @@ sources:
     # Devanagari slugs are cut at about 22-27 characters ("राहत इंदौरी एक ख़ुद्दार श"): longer slug titles
     # are treated as truncated and rejected.
     title_max_chars: {title: 21}
-  hindi-aesthetics:
+  hindisamay:
+    language: hi
+    license: "hindisamay.com (MGAHV), published with the authors' permission; copyright stays with the authors (non-commercial research only, do not redistribute)"
+    punctuation_removed: false
+    strip_header: true
+    header_lines: 2                     # title, author (then the heuristic drops any further heading lines)
+    title_from: [title]                 # metadata.csv title = the file's first line
+    # Titles come from metadata.csv, not from heading lines, so a colon inside a title is a subtitle
+    # ("कबीर : एक अंतहीन यात्रा", "The Alchemist: A book review"), not a section label; a trailing colon is
+    # still rejected.
+    title_check: {reject_chars: "|_/\\"}
+  medium:
+    language: en
+    license: "Medium posts via fabiochiu/medium-articles (dump labelled MIT); copyright stays with each Medium author (non-commercial research only, do not redistribute)"
+    punctuation_removed: false
+    strip_header: true
+    header_lines: 2                     # title, author(s); then e.g. a publication name or date line
+    title_from: [title]
+    # Titles come from metadata.csv, not from heading lines, so a colon inside a title is a subtitle
+    # ("कबीर : एक अंतहीन यात्रा", "The Alchemist: A book review"), not a section label; a trailing colon is
+    # still rejected.
+    title_check: {reject_chars: "|_/\\"}
+  hindi-aesthetics:                     # not a study corpus (punctuation stripped upstream); per_corpus mode only
     language: hi
     license: "Hindi-Aesthetics-Corpus (gayatrivenugopal); see the upstream repository for terms"
     punctuation_removed: true
@@ -135,4 +181,5 @@ title_check:
   min_words: 1
   max_words: 14
   min_script_share: {hi: 0.9, en: 0.9}  # Devanagari (hi) / Latin (en) share of letters
-  reject_chars: ":|_/\\"                # section labels, slugs and separators
+  reject_chars: ":|_/\\"                # section labels, slugs and separators; a trailing ":" is always
+  #                                     # rejected, a trailing "..." / "…" is allowed (not a sentence end)

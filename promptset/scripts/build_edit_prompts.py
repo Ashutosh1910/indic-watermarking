@@ -5,11 +5,17 @@ them. See promptset/EDIT_LEVELS.md for the study design and the GPU run order.
 
 Subcommands::
 
-    # 1) cut human passages and write the prompt rows (OX outline-extraction rows included)
+    # 1) the study build: a genre-matched sample per language from the study corpora (hi: hindisamay +
+    #    samalochan, en: medium; sampling.n_docs_per_language = 300, sampling.genre_mix story 0.5 / essay 0.5),
+    #    human passages cut and the prompt rows written (OX outline-extraction rows included)
+    python promptset/scripts/build_edit_prompts.py build \\
+        --tokenizer /mnt/project-files/promptset_stage/qwen3_tokenizer/ --out promptset/data/edit
+    #    per-corpus mode (n docs per corpus, round-robin over genres): name the corpora
     python promptset/scripts/build_edit_prompts.py build --corpus samalochan --corpus hindi-aesthetics \\
-        --n-docs 150 --out promptset/data/edit [--tokenizer /path/to/qwen3_tokenizer]
+        --n-docs 150 --out ...
     #    generic JSONL input (one doc per line: id, language, title, text, genre, license[, source])
-    python promptset/scripts/build_edit_prompts.py build --jsonl medium_en.jsonl --n-docs 150 --out ...
+    python promptset/scripts/build_edit_prompts.py build --jsonl docs_en.jsonl --n-docs 150 --out ...
+    #    (add --sampling genre_mix to pool named inputs per language with the genre mix)
 
     # 2) after generate.py has run the OX rows (unwatermarked): turn the outlines into O_outline rows
     python promptset/scripts/build_edit_prompts.py build-outline --gen runs/ox.jsonl \\
@@ -436,19 +442,23 @@ _SEPARATOR_LINE = re.compile(r"^\s*[_\-*=~•.·]{3,}\s*$")
 _HEADING_END_OK = re.compile(f"[{re.escape(_TERMINALS)},;][{_CLOSERS}]*\\s*$")
 
 
-def strip_header(text: str, max_lines: int = 8, max_words: int = 10) -> tuple[str, int, str]:
+def strip_header(text: str, max_lines: int = 8, max_words: int = 10, fixed_lines: int = 0) -> tuple[str, int, str]:
     """Drop leading heading/byline lines (titles, author names, picture credits, "____" separators).
 
-    1. If a separator line ("____", "----", "***") is among the first ``max_lines`` non-empty lines, drop
+    0. Drop the first ``fixed_lines`` non-empty lines unconditionally: a known header, such as the title and
+       author lines of hindisamay and medium files (``sources.<name>.header_lines``; titles can be long).
+    1. If a separator line ("____", "----", "***") is among the next ``max_lines`` non-empty lines, drop
        everything up to and including the last such separator.
     2. Then drop leading lines of <= ``max_words`` words that do not end in sentence or clause punctuation
-       (. ! ? । ॥ … , ;), at most ``max_lines`` of them in total.
+       (. ! ? । ॥ … , ;), at most ``max_lines`` of them in total (after the fixed lines).
     Returns (rest of the text, number of dropped non-empty lines, the dropped text).
     """
     lines = text.split("\n")
     nonempty = [i for i, ln in enumerate(lines) if ln.strip()]
-    start = 0
+    fixed = nonempty[:max(0, int(fixed_lines))]
+    start = fixed[-1] + 1 if fixed else 0
     dropped = 0
+    nonempty = [i for i in nonempty if i >= start]
     window = nonempty[:max_lines]
     seps = [i for i in window if _SEPARATOR_LINE.match(lines[i])]
     if seps:
@@ -461,12 +471,20 @@ def strip_header(text: str, max_lines: int = 8, max_words: int = 10) -> tuple[st
             break
         start = i + 1
         dropped += 1
+    dropped += len(fixed)
     if start == 0:
         return text, 0, ""
     rest = "\n".join(lines[start:])
     if not rest.strip():  # nothing but header: keep the text as it is
         return text, 0, ""
     return rest, dropped, "\n".join(lines[:start]).strip()
+
+
+def header_lines(doc: "SourceDoc", sc: dict[str, Any]) -> int:
+    """Known header lines (title, author) to drop before the heuristic: ``sources.<name>.header_lines``, else the
+    corpus's ``meta["header_lines"]``, else 0."""
+    v = sc.get("header_lines")
+    return int(doc.meta.get("header_lines", 0) if v is None else v)
 
 
 def usable_title(title: str | None, lang: str, check: dict[str, Any]) -> tuple[bool, str]:
@@ -479,7 +497,9 @@ def usable_title(title: str | None, lang: str, check: dict[str, Any]) -> tuple[b
         return False, f"{nw} words"
     if any(c in t for c in check.get("reject_chars", "")):
         return False, "label/slug characters"
-    if re.search(r"[.।॥]\s*$", t):
+    if re.search(r"[:：]\s*$", t):
+        return False, "ends with a colon (label)"
+    if re.search(r"[.।॥]\s*$", t) and not re.search(r"(?:\.\.\.|…)\s*$", t):   # a trailing ellipsis is a title style
         return False, "ends like a sentence"
     if sum(1 for ch in t if unicodedata.category(ch)[0] == "L") < 2:
         return False, "too few letters"
@@ -520,8 +540,17 @@ def load_corpus_docs(name: str, cfg: dict[str, Any], normalize: str | None = Non
     lang = sc.get("language")
     if not lang:
         raise SystemExit(f"config sources.{name}.language is not set")
+    try:
+        corpus = corpora.get(name, normalize=normalize)
+    except FileNotFoundError as e:
+        hint = ""
+        if name in ("hindisamay", "medium"):
+            hint = ("; HindiSamay and Medium are not in git: git fetch origin add-hindi-corpora && "
+                    "git checkout FETCH_HEAD -- data/HindiSamay data/Medium && "
+                    "git restore --staged data/HindiSamay data/Medium (see promptset/EDIT_LEVELS.md)")
+        raise SystemExit(f"{e}{hint}") from e
     out = []
-    for d in corpora.get(name, normalize=normalize):
+    for d in corpus:
         meta = dict(d.meta)
         meta.setdefault("punctuation_removed", bool(sc.get("punctuation_removed", False)))
         out.append(SourceDoc(pair_id=d.id, source=name, source_id=d.id, language=meta.get("language", lang),
@@ -604,7 +633,7 @@ def make_passages(doc: SourceDoc, cfg: dict[str, Any], counter: TokenCounter
     pattern = sentence_pattern(pr)
     body, n_hdr = doc.text, 0
     if sc.get("strip_header"):
-        body, n_hdr, _ = strip_header(doc.text)
+        body, n_hdr, _ = strip_header(doc.text, fixed_lines=header_lines(doc, sc))
     lead = len(body) - len(body.lstrip())
     base = len(doc.text) - len(body) + lead
     script_min = passage_script_min(cfg)
@@ -666,6 +695,86 @@ def sample_docs(docs: Sequence[SourceDoc], n: int | None, seed: int, accept: Cal
             else:
                 del queues[key]
     return chosen
+
+
+def apportion(n: int, weights: dict[str, float]) -> dict[str, int]:
+    """Split ``n`` into integer parts proportional to ``weights`` (largest remainder; ties by key), summing to n."""
+    w = {k: float(v) for k, v in weights.items() if float(v) > 0}
+    if n <= 0 or not w:
+        return {k: 0 for k in weights}
+    tot = sum(w.values())
+    raw = {k: n * v / tot for k, v in w.items()}
+    out = {k: int(math.floor(v)) for k, v in raw.items()}
+    for k in sorted(w, key=lambda k: (-(raw[k] - out[k]), k))[: n - sum(out.values())]:
+        out[k] += 1
+    return {k: out.get(k, 0) for k in weights}
+
+
+def genre_mix_plan(cfg: dict[str, Any], lang: str, sources: Sequence[str], n: int) -> dict[str, dict[str, int]]:
+    """Quota per genre and source for one language: ``n`` x ``sampling.genre_mix`` per genre, each split over
+    the sources by ``sampling.genre_sources[lang][genre]`` (shares), restricted to the loaded ``sources``. A
+    genre without configured shares for any loaded source is split equally over them."""
+    samp = cfg.get("sampling") or {}
+    mix = samp.get("genre_mix") or {}
+    if not mix:
+        raise SystemExit("genre_mix sampling needs sampling.genre_mix in the config, e.g. {story: 0.5, essay: 0.5}")
+    per_genre = apportion(n, mix)
+    plan: dict[str, dict[str, int]] = {}
+    shares_cfg = ((samp.get("genre_sources") or {}).get(lang) or {})
+    for g, q in per_genre.items():
+        shares = {s: float(v) for s, v in (shares_cfg.get(g) or {}).items() if s in sources and float(v) > 0}
+        if not shares:
+            shares = {s: 1.0 for s in sources}
+        plan[g] = apportion(q, dict(sorted(shares.items())))
+    return plan
+
+
+def sample_genre_mix(docs: Sequence[SourceDoc], plan: dict[str, dict[str, int]], seed: int,
+                     accept: Callable[[SourceDoc], bool]) -> tuple[list[SourceDoc], dict[tuple[str, str], dict[str, int]]]:
+    """Genre-matched sample of one language. ``plan``: genre -> source -> quota (``genre_mix_plan``).
+
+    Each (genre, source) cell takes its quota of accepted docs in the same seeded stable-hash order as
+    ``sample_docs`` (so a cell's picks are a prefix of its order and grow stably with n). If a source runs out
+    of usable docs, the other sources of that genre fill the gap (largest share first). Docs whose genre is
+    not in the plan are never used. Returns (docs, per-cell counts), the docs interleaved round-robin over the
+    cells (genres in plan order, then sources), so that the first K (pilot) docs keep the mix."""
+    order = sorted(docs, key=lambda d: (stable_hash(seed, "sample", d.pair_id), d.pair_id))
+    cells: dict[tuple[str, str], list[SourceDoc]] = defaultdict(list)
+    for d in order:
+        cells[(d.genre, d.source)].append(d)
+    picked: dict[tuple[str, str], list[SourceDoc]] = {}
+    counts: dict[tuple[str, str], dict[str, int]] = {}
+    for (g, s), v in cells.items():
+        counts[(g, s)] = {"available": len(v), "quota": int((plan.get(g) or {}).get(s, 0)), "sampled": 0}
+    for g, quotas in plan.items():
+        its = {s: iter(cells.get((g, s), [])) for s in quotas}
+        short = 0
+        for s, q in quotas.items():
+            got = picked.setdefault((g, s), [])
+            while len(got) < q:
+                d = next(its[s], None)
+                if d is None:
+                    break
+                if accept(d):
+                    got.append(d)
+            short += q - len(got)
+            counts.setdefault((g, s), {"available": 0, "quota": q, "sampled": 0})
+        for s in sorted(quotas, key=lambda s: (-quotas[s], s)):     # top up from the other sources of the genre
+            got = picked[(g, s)]
+            while short > 0:
+                d = next(its[s], None)
+                if d is None:
+                    break
+                if accept(d):
+                    got.append(d)
+                    short -= 1
+    for k, v in picked.items():
+        counts[k]["sampled"] = len(v)
+    queues = [picked[(g, s)] for g, quotas in plan.items() for s in quotas if picked.get((g, s))]
+    chosen: list[SourceDoc] = []
+    for i in range(max((len(q) for q in queues), default=0)):
+        chosen.extend(q[i] for q in queues if i < len(q))
+    return chosen, counts
 
 
 # --------------------------------------------------------------------------- rows
@@ -740,6 +849,9 @@ def doc_meta(p: Passage, extra: dict[str, Any] | None = None) -> dict[str, Any]:
     m = {"punctuation_removed": bool(p.doc.meta.get("punctuation_removed", False)),
          "header_lines_stripped": p.header_lines_stripped, "passage_char_start": p.char_start,
          "doc_words": p.doc.n_words}
+    for k in ("genre_fine", "genre_rule"):        # the corpus's own genre label / how a genre was assigned
+        if p.doc.meta.get(k):
+            m[k] = p.doc.meta[k]
     m.update(extra or {})
     return m
 
@@ -755,13 +867,13 @@ def resolve_title(doc: SourceDoc, cfg: dict[str, Any], overrides: dict[str, str 
     if doc.pair_id in overrides:
         t = overrides[doc.pair_id]
         return (t.strip(), "override") if t and t.strip() else (None, "override: skip")
-    check = cfg.get("title_check") or {}
     sc = source_cfg(cfg, doc.source)
+    check = {**(cfg.get("title_check") or {}), **(sc.get("title_check") or {})}   # per-source overrides
     max_chars = sc.get("title_max_chars") or {}
     reasons = []
     for src in sc.get("title_from") or ["title"]:
         if src == "header_lines":   # the heading lines strip_header removes, first usable one wins
-            hdr = strip_header(doc.text)[2]
+            hdr = strip_header(doc.text, fixed_lines=header_lines(doc, sc))[2]
             cands = [ln.strip() for ln in hdr.split("\n") if ln.strip() and not _SEPARATOR_LINE.match(ln)]
         else:
             cands = [doc.title if src == "title" else doc.meta.get(src)]
@@ -903,60 +1015,96 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         f"; sentence ends from {TRIM_SOURCE}; {L['acceptance_rule']}")
     levels = resolve_levels(cfg, args.levels)
     samp = cfg.get("sampling") or {}
-    n_docs = args.n_docs if args.n_docs is not None else samp.get("n_docs")
-    n_docs = None if n_docs is not None and int(n_docs) <= 0 else n_docs
+    named = bool(args.corpus or args.jsonl)
+    mode = args.sampling or ("per_corpus" if named else str(samp.get("mode", "genre_mix")))
+    if mode == "genre_mix":
+        n_docs = args.n_docs if args.n_docs is not None else samp.get("n_docs_per_language")
+        if not n_docs or int(n_docs) <= 0:
+            raise SystemExit("genre_mix sampling needs a number of docs per language > 0 "
+                             "(sampling.n_docs_per_language or --n-docs)")
+        n_docs = int(n_docs)
+    else:
+        n_docs = args.n_docs if args.n_docs is not None else samp.get("n_docs")
+        n_docs = None if n_docs is not None and int(n_docs) <= 0 else n_docs
     min_words = args.min_words if args.min_words is not None else int(samp.get("min_words", 0))
     pilot_docs = args.pilot_docs if args.pilot_docs is not None else int(samp.get("pilot_docs", 0))
     require_all = bool(samp.get("require_all_experiments", True))
     overrides = read_title_overrides(args.titles)
     seed = int(cfg.get("seed", 0))
 
+    corpus_names = list(args.corpus or [])
+    if not named:       # the study build: every source named under sampling.genre_sources
+        corpus_names = sorted({src for by_genre in (samp.get("genre_sources") or {}).values()
+                               for shares in (by_genre or {}).values() for src in (shares or {})})
     groups: dict[tuple[str, str], list[SourceDoc]] = defaultdict(list)
-    for name in args.corpus or []:
+    for name in corpus_names:
         for d in load_corpus_docs(name, cfg, args.normalize):
             groups[(d.source, d.language)].append(d)
     for path in args.jsonl or []:
         for d in load_jsonl_docs(path, cfg, args.jsonl_source):
             groups[(d.source, d.language)].append(d)
     if not groups:
-        raise SystemExit("no input: give --corpus NAME and/or --jsonl FILE")
+        raise SystemExit("no input: give --corpus NAME and/or --jsonl FILE, or set sampling.genre_sources")
+
+    cache: dict[str, tuple[list[Passage], dict[str, str]]] = {}
+    reasons: dict[str, Counter] = defaultdict(Counter)
+
+    def accept(d: SourceDoc) -> bool:
+        why = reasons[d.source]
+        if d.n_words < min_words:
+            why[f"< {min_words} words"] += 1
+            return False
+        ps, fails = make_passages(d, cfg, counter)
+        cache[d.pair_id] = (ps, fails)
+        if not ps or (require_all and fails):
+            script = sorted(e for e, w in fails.items() if w.startswith(SCRIPT_FAIL))
+            if script:   # a script failure is reported on its own (the doc is replaced like any other)
+                need = passage_script_min(cfg).get(d.language)
+                why[f"passage {SCRIPT_FAIL} < {need:g}: " + "; ".join(script)] += 1
+            else:
+                why["no passage: " + "; ".join(sorted(fails))[:80]] += 1
+            return False
+        return True
+
+    selections: list[tuple[str, list[SourceDoc]]] = []     # (group label, docs in sample order)
+    doc_counts: dict[str, dict[str, int]] = {}
+    plans: dict[str, dict[str, dict[str, int]]] = {}
+    if mode == "genre_mix":
+        by_lang: dict[str, list[SourceDoc]] = defaultdict(list)
+        for (_, lang), docs in sorted(groups.items()):
+            by_lang[lang].extend(docs)
+        for lang, docs in sorted(by_lang.items()):
+            plan = genre_mix_plan(cfg, lang, sorted({d.source for d in docs}), n_docs)
+            plans[lang] = plan
+            chosen, counts = sample_genre_mix(docs, plan, seed, accept)
+            for (g, src), c in sorted(counts.items()):
+                doc_counts[f"{lang}/{g}/{src}"] = c
+            for g, quotas in plan.items():
+                got = sum(counts.get((g, src), {}).get("sampled", 0) for src in quotas)
+                if got < sum(quotas.values()):
+                    log(f"warning: {lang}/{g}: only {got} of {sum(quotas.values())} docs usable (genre mix not met)")
+            selections.append((lang, chosen))
+    else:
+        for (source, lang), docs in sorted(groups.items()):
+            chosen = sample_docs(docs, n_docs, seed, accept, samp.get("stratify_by", "genre"))
+            doc_counts[f"{source}/{lang}"] = {"available": len(docs), "sampled": len(chosen)}
+            if n_docs is not None and len(chosen) < n_docs:
+                log(f"warning: {source}/{lang}: only {len(chosen)} of {n_docs} docs usable")
+            selections.append((f"{source}/{lang}", chosen))
 
     rows: list[dict[str, Any]] = []
     passages: list[dict[str, Any]] = []
     titles: list[list[Any]] = []
     skips: Counter = Counter()
-    doc_counts: dict[tuple[str, str], dict[str, int]] = {}
-    for (source, lang), docs in sorted(groups.items()):
-        cache: dict[str, tuple[list[Passage], dict[str, str]]] = {}
-        reasons: Counter = Counter()
-
-        def accept(d: SourceDoc) -> bool:
-            if d.n_words < min_words:
-                reasons[f"< {min_words} words"] += 1
-                return False
-            ps, fails = make_passages(d, cfg, counter)
-            cache[d.pair_id] = (ps, fails)
-            if not ps or (require_all and fails):
-                script = sorted(e for e, why in fails.items() if why.startswith(SCRIPT_FAIL))
-                if script:   # a script failure is reported on its own (the doc is replaced like any other)
-                    need = passage_script_min(cfg).get(d.language)
-                    reasons[f"passage {SCRIPT_FAIL} < {need:g}: " + "; ".join(script)] += 1
-                else:
-                    reasons["no passage: " + "; ".join(sorted(fails))[:80]] += 1
-                return False
-            return True
-
-        chosen = sample_docs(docs, n_docs, seed, accept, samp.get("stratify_by", "genre"))
-        doc_counts[(source, lang)] = {"available": len(docs), "sampled": len(chosen)}
-        for (reason, v) in reasons.items():
+    for source, why in sorted(reasons.items()):
+        for reason, v in why.items():
             skips[("(doc)", source, reason)] += v
-        if n_docs is not None and len(chosen) < n_docs:
-            log(f"warning: {source}/{lang}: only {len(chosen)} of {n_docs} docs usable")
+    for _, chosen in selections:
         for i, d in enumerate(chosen):
             split = "pilot" if i < pilot_docs else args.split
             title, tsrc = resolve_title(d, cfg, overrides) if "G_title" in levels else (None, "")
             if "G_title" in levels:
-                titles.append([d.pair_id, d.source, d.language, title or "", tsrc, d.title,
+                titles.append([d.pair_id, d.source, d.language, d.genre, title or "", tsrc, d.title,
                                str(d.meta.get("first_line", ""))[:80]])
             for p in cache[d.pair_id][0]:
                 passages.append(passage_record(p, counter, split))
@@ -972,17 +1120,20 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     write_jsonl(out / "human_passages.jsonl", passages)
     if titles:
         with open(out / "titles_review.tsv", "w", encoding="utf-8") as f:
-            f.write("pair_id\tsource\tlanguage\ttitle_used\ttitle_from\tdoc_title\tfirst_line\n")
+            f.write("pair_id\tsource\tlanguage\tgenre\ttitle_used\ttitle_from\tdoc_title\tfirst_line\n")
             for t in titles:
                 f.write("\t".join(str(x).replace("\t", " ").replace("\n", " ") for x in t) + "\n")
     meta = {
         "command": "build", "argv": sys.argv[1:], "config": cfg["_path"], "trim_source": TRIM_SOURCE,
         "tokenizer": counter.name, "token_counts_estimated": counter.estimated,
         "acceptance_rule": L["acceptance_rule"], "lengths": L,
-        "experiments": cfg["experiments"], "levels": levels, "n_docs": n_docs, "min_words": min_words,
+        "experiments": cfg["experiments"], "levels": levels, "sampling_mode": mode,
+        "n_docs": n_docs, "n_docs_unit": "per language" if mode == "genre_mix" else "per source and language",
+        "genre_mix": samp.get("genre_mix") if mode == "genre_mix" else None,
+        "genre_plan": plans or None, "min_words": min_words,
         "script_min": passage_script_min(cfg),
         "docs_skipped_script": sum(v for (a, _, c), v in skips.items() if a == "(doc)" and SCRIPT_FAIL in c),
-        "docs": {f"{s}/{l}": v for (s, l), v in doc_counts.items()},
+        "docs": doc_counts,
         "n_rows": len(rows), "n_passages": len(passages),
         "skips": [{"level": a, "source": b, "reason": c, "n": v} for (a, b, c), v in sorted(skips.items())],
     }
@@ -1018,8 +1169,28 @@ def summary_markdown(rows: Sequence[dict[str, Any]], passages: Sequence[dict[str
         lines += ["", f"max_new_tokens = ceil{Lm['max_new_tokens_round']}(max(level factor x requested tokens, "
                   f"{MNT_CUTOFF_FACTOR} x (largest served token cutoff - head tokens), largest served word cutoff x "
                   f"passage tokens/word - head tokens)); prompt + max_new_tokens <= {Lm.get('max_context')}."]
-    lines += ["", "## Documents", "", md_table(["source/lang", "available", "sampled"],
-                                               [[k, v["available"], v["sampled"]] for k, v in meta["docs"].items()])]
+    if meta.get("sampling_mode") == "genre_mix":
+        lines += ["", "## Documents (genre-matched sample)", "",
+                  f"{meta['n_docs']} documents per language, genre mix {meta.get('genre_mix')}; quota per genre and "
+                  "source from sampling.genre_sources (a source short of usable documents is topped up by the "
+                  "other sources of its genre). Genres outside the mix are not sampled (quota 0).", "",
+                  md_table(["lang/genre/source", "available", "quota", "sampled"],
+                           [[k, v["available"], v.get("quota", "-"), v["sampled"]] for k, v in meta["docs"].items()])]
+    else:
+        lines += ["", "## Documents", "", md_table(["source/lang", "available", "sampled"],
+                                                   [[k, v["available"], v["sampled"]] for k, v in meta["docs"].items()])]
+    dg = Counter((lang, g, src) for lang, g, src, _ in {(p["language"], p["genre"], p["source"], p["pair_id"])
+                                                         for p in passages})
+    lines += ["", "## Sampled documents per language x genre x source", "",
+              md_table(["lang", "genre", "source", "docs"], [list(k) + [v] for k, v in sorted(dg.items())])]
+    lg = Counter()
+    for r in rows:
+        for e in r.get("experiments") or [r["experiment"]]:
+            lg[(level_label(r), r["language"], r["genre"], e)] += 1
+    lines += ["", "## Rows serving each experiment, per level x language x genre", "",
+              "A row whose words and tokens cuts coincide serves both experiments and is counted under each "
+              "(filter on `experiments`).", "",
+              md_table(["level", "lang", "genre", "experiment", "rows"], [list(k) + [v] for k, v in sorted(lg.items())])]
     c = Counter((level_label(r), exp_label(r), r["source"], r["language"]) for r in rows)
     lines += ["", "## Rows per level x experiment x source x language", "",
               md_table(["level", "experiment", "source", "lang", "rows"], [list(k) + [v] for k, v in sorted(c.items())])]
@@ -1035,11 +1206,33 @@ def summary_markdown(rows: Sequence[dict[str, Any]], passages: Sequence[dict[str
     lines += ["", "## Passages serving each cutoff (human anchor exists at that cutoff)", "",
               md_table(["experiment", "source", "lang", "kind", "N", "passages"],
                        [list(k) + [v] for k, v in sorted(served.items(), key=lambda kv: tuple(map(str, kv[0])))])]
+    cov_tot = Counter()
+    cov = Counter()
+    for p in passages:
+        for e in p.get("experiments") or [p["experiment"]]:
+            cov_tot[(p["language"], e)] += 1
+            for kind in KINDS:
+                for n in p["cutoffs"][kind]:
+                    cov[(p["language"], e, kind, n)] += 1
+    cfg_cuts = (meta.get("lengths") or {}).get("cutoffs") or {}
+    cov_rows = [[lang, e, kind, n, cov[(lang, e, kind, n)], tot, f"{cov[(lang, e, kind, n)] / tot:.0%}"]
+                for (lang, e), tot in sorted(cov_tot.items()) for kind in KINDS for n in cfg_cuts.get(kind, [])]
+    lines += ["", "## Served-cutoff coverage per language", "",
+              "Passages (serving each experiment) whose human anchor exists at cutoff N, out of all passages of that "
+              "language and experiment.", "",
+              md_table(["lang", "experiment", "kind", "N", "passages", "of", "share"], cov_rows)]
     tok = Counter()
     for r in rows:
         tok[(r["level"], r["language"])] += r["max_new_tokens"]
     lines += ["", "## Upper bound on generated tokens (sum of max_new_tokens)", "",
               md_table(["level", "lang", "tokens"], [list(k) + [f"{v:,}"] for k, v in sorted(tok.items())])]
+    per_lang: dict[tuple[str, str], list[int]] = defaultdict(list)
+    for r in rows:
+        per_lang[(r["language"], str(r.get("split")))].append(r["max_new_tokens"])
+    lines += ["", "## max_new_tokens per language and split", "",
+              md_table(["lang", "split", "rows", "mean", "max", "sum"],
+                       [[l, sp, len(v), f"{sum(v) / len(v):,.0f}", f"{max(v):,}", f"{sum(v):,}"]
+                        for (l, sp), v in sorted(per_lang.items())])]
     if meta["skips"]:
         lines += ["", "## Skipped", "", md_table(["level", "source", "reason", "n"],
                                                  [[s["level"], s["source"], s["reason"], s["n"]] for s in meta["skips"]])]
@@ -1165,15 +1358,24 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build", help="cut human passages and write edit_prompts.jsonl + human_passages.jsonl")
     b.add_argument("--config", default=str(DEFAULT_CONFIG))
-    b.add_argument("--corpus", action="append", help="registered corpus name (repeatable), e.g. samalochan")
+    b.add_argument("--corpus", action="append",
+                   help="registered corpus name (repeatable), e.g. samalochan; default (none given): the sources "
+                        "under sampling.genre_sources (hindisamay, samalochan, medium)")
     b.add_argument("--jsonl", action="append", help="generic JSONL docs: id, language, title, text, genre, license")
     b.add_argument("--jsonl-source", help="source name for --jsonl rows without a 'source' field (default: file stem)")
-    b.add_argument("--n-docs", type=int, help="docs per source and language (default: config sampling.n_docs; 0 = all)")
+    b.add_argument("--sampling", choices=("genre_mix", "per_corpus"),
+                   help="genre_mix: one genre-matched sample per language (sampling.n_docs_per_language x "
+                        "sampling.genre_mix, sources from sampling.genre_sources); per_corpus: n docs per source. "
+                        "Default: genre_mix without --corpus/--jsonl (the study build), per_corpus with them")
+    b.add_argument("--n-docs", type=int,
+                   help="genre_mix: docs per language (default sampling.n_docs_per_language); per_corpus: docs per "
+                        "source and language (default sampling.n_docs; 0 = all)")
     b.add_argument("--levels", nargs="+", help="subset of levels (O_outline implies OX_extract_outline)")
     b.add_argument("--experiments", nargs="+", choices=sorted(EXP_SHORT), help="subset of experiments")
     b.add_argument("--min-words", type=int, help="minimum words of a source document (default: config)")
     b.add_argument("--split", default="main", help="split label of the rows (default main)")
-    b.add_argument("--pilot-docs", type=int, help="first K sampled docs per source get split=pilot")
+    b.add_argument("--pilot-docs", type=int,
+                   help="first K sampled docs per source (per_corpus) or per language (genre_mix) get split=pilot")
     b.add_argument("--tokenizer", default="auto",
                    help="Qwen3 tokenizer dir / tokenizer.json / HF id; 'auto' = "
                         f"{DEFAULT_TOKENIZER} if present, else estimate; 'none' = estimate")

@@ -506,6 +506,19 @@ def test_unwatermarked_outline_rows_may_serve_no_cutoff_and_edit_balance_is_a_wa
     assert "balance.en_hi_edit" in codes(rep, "warning") and "balance.en_hi" not in codes(rep)
 
 
+def test_edit_balance_counts_a_row_in_every_experiment_it_serves():
+    en, hi = edit_rows()
+    en.update({"experiment": "same_words", "experiments": ["same_words", "same_tokens"]})   # cuts coincide
+    hi_w = {**hi, "experiment": "same_words", "experiments": ["same_words"]}
+    hi_t = {**hi, "id": hi["id"] + "-st", "experiment": "same_tokens", "experiments": ["same_tokens"]}
+    rep = run([en, hi_w, hi_t])
+    assert "balance.en_hi_edit" not in codes(rep)
+    cells = {tuple(c[:4]): c[4:] for c in rep.sections["balance"]["cells"]}
+    assert cells[("L1", "main", "essay", "same_tokens")] == [1, 1, "ok"]
+    rep = run([{**en, "experiments": ["same_words"]}, hi_w, hi_t])
+    assert "balance.en_hi_edit" in codes(rep, "warning")
+
+
 def test_head_tokens_checked_and_estimates_skipped():
     r = continuation_row("hi")
     r["head_tokens"] += 30

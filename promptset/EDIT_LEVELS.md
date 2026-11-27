@@ -3,7 +3,9 @@
 `scripts/build_edit_prompts.py` turns **human documents** into model requests at graded levels of AI
 involvement, for the SynthID-Text study (watermarked Qwen3-8B, English vs Hindi). Its rows have the same
 schema as the G set (`build_promptset.py`), so one `generate.py` run handles everything, and
-`trim.py` / `verify_generations.py` read the outputs unchanged. Config: `config/edit_levels.yaml`
+`trim.py` / `verify_generations.py` read the outputs unchanged. The base texts come only from our study
+corpora (Hindi: HindiSamay + Samalochan; English: Medium), sampled with the same story/essay mix per
+language; the prompt wording comes only from the fixed kit templates. Config: `config/edit_levels.yaml`
 (cutoffs, `tokens_per_word`, `min_frac` and `slack_words` come from `config/promptset.yaml`). Templates: the prompt kit
 `config/ai_levels_prompts.json`, plus one template of our own for outline extraction (OX).
 Tests: `python3 -m pytest promptset/tests/test_edit_prompts.py -q`.
@@ -86,7 +88,9 @@ the real run.
 
 ### Punctuation-stripped text (hindi-aesthetics)
 
-`hindi-aesthetics` has its punctuation removed upstream and one sentence per line. For such sources
+`hindi-aesthetics` is **not a study corpus** and is not in the default build (since the genre-matched
+build); the rules below apply when it is named with `--corpus hindi-aesthetics` or for any other source
+marked `punctuation_removed`. It has its punctuation removed upstream and one sentence per line. For such sources
 (`sources.<name>.punctuation_removed: true`, or a JSONL row's `punctuation_removed`), **every line break is
 also a sentence end**; rows record `meta.punctuation_removed: true` and `sentence_end_rule:
 "punct+linebreak"`. Proofreading (L1) or polishing (L2) punctuation-stripped text makes the model add
@@ -97,13 +101,17 @@ rows). L3, L4, C, O and G keep them.
 `trim.py` honours each row's `sentence_end_rule` in both modes, so `trim.py human` on these passages and
 `trim.py gen` on their C rows use the line-break rule too.
 
-### Headers (samalochan)
+### Headers (samalochan, hindisamay, medium)
 
 samalochan posts start with headings, bylines, picture credits and `____` separators. With
 `strip_header: true` the builder drops, before cutting, everything up to a separator in the first 8
 non-empty lines, then leading lines of at most 10 words without sentence or clause punctuation (at most 8
-lines in total). The passage is still a verbatim slice of the document (`meta.passage_char_start`).
-Passages that still contain HTML remnants (`<![endif]>` and similar) are not used.
+lines in total). hindisamay and medium files have a fixed header (title, blank line, author, blank line),
+and titles can be long (649 Medium titles have more than 10 words), so for them `header_lines: 2` drops the
+title and author lines unconditionally first; the heuristic then drops any further heading lines (a date,
+a publication name, "भूमिका", a translator's note such as "(डोगरी से अनुवाद : …)"). The passage is
+still a verbatim slice of the document (`meta.passage_char_start`; `meta.header_lines_stripped` counts
+the dropped lines). Passages that still contain HTML remnants (`<![endif]>` and similar) are not used.
 
 ### Script check
 
@@ -112,46 +120,115 @@ A passage must have at least **0.8 Devanagari (hi) / 0.9 Latin (en)** among its 
 `sampling.script_min`). A document whose passage fails is skipped like any other unusable document, so the
 next document in the stable sample takes its place. The count is in `build_meta.json`
 (`docs_skipped_script`, and the `(doc)` row "passage script share < 0.8" under `skips`) and in the summary.
-In the current build this removes one samalochan document (`56e7c26ec9`, mostly Latin script, 0.72-0.75
-Devanagari in its user turns), whose 15 rows the validator flagged (`script.hi_devanagari`).
+In the build that introduced the check this removed one samalochan document (`56e7c26ec9`, mostly Latin
+script, 0.72-0.75 Devanagari in its user turns), whose 15 rows the validator flagged
+(`script.hi_devanagari`). The current build skips one samalochan document for script.
 
 ### Titles (G_title)
 
 `{title}` candidates per source come from `title_from`, tried in order, and must pass `title_check` (1-14
-words, at least 90 % Devanagari letters for Hindi or Latin for English, no `: | _ / \`, not ending like a
-sentence). For samalochan: the stripped heading lines, then the first line, then the file-name slug, which
+words, at least 90 % Devanagari letters for Hindi or Latin for English, no `: | _ / \`, not ending with a
+colon or like a sentence; a trailing `...` / `…` is allowed). hindisamay and medium use the metadata title
+(`title_from: [title]`) and allow a colon inside it (`sources.<name>.title_check`), because there it marks a
+subtitle ("कबीर : एक अंतहीन यात्रा", "The Alchemist: A book review"), not a section label. For samalochan: the stripped heading lines, then the first line, then the file-name slug, which
 is rejected when longer than 21 characters because samalochan cuts slugs short ("राहत इंदौरी एक ख़ुद्दार श").
 Documents without a usable title get no G_title row. Every choice is listed in `titles_review.tsv`. A
 heading line is sometimes the author's name, so check the list by hand and pass corrections with `--titles
 FILE` (TSV `pair_id<TAB>title`, or JSONL `{"pair_id", "title"}`; an empty title drops the document).
 
+## Study corpora
+
+| language | corpus (`--corpus` name) | folder | documents | genres (`meta.genre`) | license (copied into each row) |
+|---|---|---|---|---|---|
+| hi | `hindisamay` | `data/HindiSamay` | 1,696 | story 1,035 / essay 661 | hindisamay.com (MGAHV), published with the authors' permission; copyright stays with the authors; non-commercial research only, do not redistribute |
+| hi | `samalochan` | `data/Samalochan` | 576 | story 36 / essay 540 (rule below) | samalochan.com posts; copyright of the authors; research use only, do not redistribute |
+| en | `medium` | `data/Medium` | 3,992 | story 1,143 / essay 2,849 | Medium posts via fabiochiu/medium-articles (dump labelled MIT); copyright stays with each Medium author; non-commercial research only, do not redistribute |
+
+`hindi-aesthetics` (`data/Hindi-Aesthetics-Corpus`) stays registered but is not a study corpus: its
+punctuation was stripped upstream.
+
+**Fetching HindiSamay and Medium.** Their texts are not in this branch: copyright stays with the authors
+and their READMEs say not to redistribute them. They live on branch `add-hindi-corpora` (commit
+`2f2abaf`), with a `metadata.csv` and a README each (Medium also has `filter_medium.py`, which rebuilds
+the set from the Hugging Face dump). From the repo root:
+
+```bash
+git fetch origin add-hindi-corpora
+git checkout FETCH_HEAD -- data/HindiSamay data/Medium      # puts the files in the working tree (staged)
+git restore --staged data/HindiSamay data/Medium             # unstage: keep them out of commits
+```
+
+`/data/HindiSamay/` and `/data/Medium/` are in the repo-root `.gitignore`, so they stay untracked. Do not
+commit them, and keep `edit_prompts.jsonl` / `human_passages.jsonl` (which embed the texts) out of git too.
+
+**Genres.** The study compares two coarse genres, `story` and `essay`; every row has `genre` set to one of
+them and keeps the corpus's own label in `meta.genre_fine` (or how it was assigned in `meta.genre_rule`).
+
+* hindisamay: the site's `कहानी` -> story; every other prose genre (आलोचना, लेख, सिनेमा, विमर्श, निबंध,
+  व्यंग्य, संस्मरण, यात्रावृत्त, वैचारिकी, डायरी, बात-चीत, लघुकथाएँ, व्याख्यान, आत्मकथ्य, पत्र) -> essay.
+  The 6 `लघुकथाएँ` (short-short story) texts are essays under this rule.
+* medium: `metadata.csv` already has story / essay (from the authors' Medium tags).
+* samalochan: the site has no genre field and nothing in `data/Samalochan` gives one, so a fixed rule
+  decides (`corpora/datasets.py`, `samalochan_genre`): **story** if the file slug starts with `कथा-गाथा`
+  (samalochan's fiction column, 33 posts) or one of the first three non-empty lines is exactly a section
+  label `कहानी` / `कहानियाँ` / `लम्बी कहानी` (3 more); **essay** otherwise. Essay is a residual class:
+  criticism, essays, memoirs, interviews and reviews, plus the few stories posted with only an editor's
+  note (for example "युवा कथाकार … की नई कहानी"), which no reliable rule separates from criticism about a
+  story. The default build takes no stories from samalochan (see Sampling), so this matters only for
+  which samalochan posts can be essays.
+
+## Sampling
+
+**genre_mix (the default, the study build).** `build` without `--corpus` / `--jsonl` loads every source
+named under `sampling.genre_sources` and draws, **per language**, `sampling.n_docs_per_language` (300)
+documents split by `sampling.genre_mix` (story 0.5 / essay 0.5), so English and Hindi have the same
+story/essay mix. Each genre's quota is split over that language's sources by the shares in
+`sampling.genre_sources`:
+
+| language | story (150) | essay (150) |
+|---|---|---|
+| hi | hindisamay 150 | hindisamay 75 + samalochan 75 |
+| en | medium 150 | medium 150 |
+
+Stories come only from HindiSamay: samalochan's story label is a heuristic and its fiction-column posts
+usually open with an author bio. Quotas are integers by largest remainder (ties by name). Inside a
+(genre, source) cell documents are taken in the order of a seeded stable hash of their id (seed
+`20261123`, the same order as per_corpus mode), skipping documents that fail `--min-words`, the length rule
+for every experiment (`require_all_experiments`) or the script check. With the default shares and no
+top-ups, a larger `--n-docs` keeps every document a smaller one chose (each cell's picks are a prefix of
+its order). If a source runs out of usable documents, the other sources of the same genre
+fill its quota (largest share first); if a genre cannot be filled the build warns. Genres outside
+`genre_mix` are never sampled. The sample is written interleaved over the cells, so `--pilot-docs K` (the
+first K documents per language) keeps the mix. `--n-docs N` sets the number per language.
+
+**per_corpus.** With `--corpus NAME` (repeatable) or `--jsonl FILE`, each source is sampled on its own:
+`--n-docs` (default `sampling.n_docs`, 150; 0 = all) documents per source and language, round-robin over
+genres (`sampling.stratify_by`), as before the genre-matched build. `--sampling genre_mix` pools the named
+inputs per language with the genre mix instead (shares renormalised over the loaded sources; a genre with
+no configured share is split equally).
+
 ## Inputs
 
-* Registered corpora (`corpora` package): `--corpus samalochan --corpus hindi-aesthetics`. Language,
-  license and the options above come from `sources.<name>` in the config. Genre is `meta.genre` if the
-  corpus has one, else `"unknown"`.
-* Generic JSONL (for example the English Medium corpus or HindiSamay): `--jsonl FILE` (repeatable), one
-  document per line:
+* Registered corpora (`corpora` package): `hindisamay`, `samalochan`, `medium` by default, or any
+  registered corpus with `--corpus NAME`. Language, license and the options above come from
+  `sources.<name>` in the config. Genre is `meta.genre` (`"unknown"` if the corpus has none).
+* Generic JSONL: `--jsonl FILE` (repeatable), one document per line:
 
   ```json
   {"id": "m-000123", "language": "en", "title": "Why I Walk to Work", "text": "Full text ...",
-   "genre": "personal", "license": "CC BY 4.0", "source": "medium"}
+   "genre": "essay", "license": "CC BY 4.0", "source": "mysource"}
   ```
 
   `id`, `language` (`en` | `hi`) and `text` are required. `title` is needed for G_title, `genre` drives the
-  stratified sample (`"unknown"` if missing), and `license` is copied into each row (otherwise
-  `sources.<source>.license`). `source` defaults to `--jsonl-source` or the file name stem. Optional:
-  `punctuation_removed` (bool) and `meta` (dict). Paragraphs are separated by newlines. Give the full text:
-  the builder does the cutting. `pair_id` becomes `<source>/<id>`.
+  stratified sample and the genre mix (`"unknown"` if missing), and `license` is copied into each row
+  (otherwise `sources.<source>.license`). `source` defaults to `--jsonl-source` or the file name stem.
+  Optional: `punctuation_removed` (bool) and `meta` (dict). Paragraphs are separated by newlines. Give the
+  full text: the builder does the cutting. `pair_id` becomes `<source>/<id>`.
 
-Options: `--n-docs` (per source and language; 0 = all), `--min-words` (minimum words of the source
-document), `--levels` (subset; `O_outline` implies `OX_extract_outline`), `--experiments`, `--split`
-(label, default `main`), `--pilot-docs K` (the first K sampled docs per source get `split: pilot`),
+Options: `--sampling genre_mix|per_corpus`, `--n-docs` (per language in genre_mix, per source in
+per_corpus), `--min-words` (minimum words of the source document), `--levels` (subset; `O_outline`
+implies `OX_extract_outline`), `--experiments`, `--split` (label, default `main`), `--pilot-docs K`,
 `--normalize NFC` (default: raw text, byte for byte).
-
-Sampling is stable: documents are taken in the order of a seeded hash of their id, round-robin over genres,
-skipping documents that fail `--min-words` or cannot be cut. A larger `--n-docs` keeps every document a
-smaller one chose, with identical rows.
 
 ## Outputs (`--out`, default `promptset/data/edit/`)
 
@@ -159,8 +236,8 @@ smaller one chose, with identical rows.
 |---|---|
 | `edit_prompts.jsonl` | every row: L1-L4, C (one row per k), G_title, OX |
 | `human_passages.jsonl` | one row per cut passage: `id` (`HP-...`), `pair_id`, `language`, `text`, `cutoffs`, `n_words`, `n_tokens`, `experiment(s)`, `input_cutoff_kind/cutoff`, `sentence_end_rule`, `meta`. The input of `trim.py human` and of the FPR check, identical to each row's `human_passage` |
-| `titles_review.tsv` | the title chosen for every sampled document, or why there is none |
-| `edit_prompts_summary.md` | counts per level x experiment x source x language, served cutoffs, `max_new_tokens` sums, skips |
+| `titles_review.tsv` | the title chosen for every sampled document (with its genre), or why there is none |
+| `edit_prompts_summary.md` | documents per language x genre x source (quota, sampled), rows per level x language x genre x experiment and per source, served cutoffs (per source and per-language coverage), `max_new_tokens` sums per level and per language, skips |
 | `build_meta.json` | arguments, lengths, tokenizer, counts, skips |
 | `O_prompts.jsonl` | written by `build-outline` |
 
@@ -171,7 +248,7 @@ Row fields (the G-set schema plus some extra fields):
 anchor for this row), `k` (C only), `target_words`, `max_new_tokens`, `cutoffs {words, tokens}`, `template_id`,
 `messages [system, user]`, `chat_template_kwargs`, `generation {seed}` (sha256 of the id, as in the G set),
 `watermark`, `meta` (`punctuation_removed`, `header_lines_stripped`, `passage_char_start`, `doc_words`,
-`title_source`). The C rows also have `head`, `head_words`, `head_tokens`, `head_share` and
+`genre_fine` or `genre_rule`, `title_source`). The C rows also have `head`, `head_words`, `head_tokens`, `head_share` and
 `continuation_*_human`. G_title rows have `title`. OX rows have `cutoffs` empty (outlines are not
 scored) and the passage's cutoffs in `passage_cutoffs`. O rows have `points`, `n_bullets`,
 `outline_source_id` and `outline_attempt`.
@@ -199,9 +276,10 @@ See `GPU_RUNBOOK.md` for setup, keys (`$RUNCFG`), sharding and regeneration. Fro
 ```bash
 E=promptset/data/edit; TOK=/path/to/Qwen3-8B     # or Qwen/Qwen3-8B, or the staged qwen3_tokenizer
 
-# 1. build (CPU, ~1 min with the tokenizer)
-python promptset/scripts/build_edit_prompts.py build --corpus samalochan --corpus hindi-aesthetics \
-    --n-docs 150 --tokenizer $TOK --out $E            # + --jsonl medium_en.jsonl etc.
+# 0. fetch HindiSamay and Medium into data/ (see "Study corpora"; not committed)
+# 1. build (CPU, ~2 min with the tokenizer): 300 docs per language, story/essay 50/50
+python promptset/scripts/build_edit_prompts.py build --tokenizer $TOK --out $E
+#    (the current build used TOK=/mnt/project-files/promptset_stage/qwen3_tokenizer/)
 
 # 2. stage 1: outline extraction WITHOUT watermark (its own output file)
 python promptset/scripts/generate.py --config $RUNCFG --prompts $E/edit_prompts.jsonl \
@@ -213,6 +291,7 @@ python promptset/scripts/build_edit_prompts.py build-outline --gen runs/edit_ox.
 # 4. every other level, watermarked (one process per GPU with --shard i/N)
 python promptset/scripts/generate.py --config $RUNCFG --prompts $E/edit_prompts.jsonl $E/O_prompts.jsonl \
     --filter watermark=true --filter language=hi --shard 0/4 --out runs/edit_hi.s0.jsonl
+#    (and the same with --filter language=en --out runs/edit_en.s0.jsonl ...)
 
 # 5. trim AI outputs (cutoffs from each row) and the human anchors (same passages, same rule)
 python promptset/scripts/trim.py gen --in runs/edit_hi.s*.jsonl --out trimmed/edit_hi.jsonl --tokenizer $TOK
@@ -229,26 +308,58 @@ python promptset/scripts/verify_generations.py --config runs/edit_hi.s0.config.y
 Steps 2 and 4 use separate output files because generate.py refuses to mix watermark configs in one file.
 Regenerate length failures from step 5 as in the runbook (`--only-ids ... --attempt k`).
 
-## Current build (`promptset/data/edit/`, Qwen3 tokenizer, 150 docs per corpus)
+## Current build (`promptset/data/edit/`, Qwen3 tokenizer, genre-matched, 300 docs per language)
 
-4,597 rows from 600 passages (150 docs x 2 experiments x 2 corpora), built with the default rule (95 % or
-one sentence of slack). No English source yet. `validate_promptset.py --strict` (Qwen3 tokenizer): 0
-errors, 18 warnings (`balance.en_hi_edit`: no English rows yet).
+Built with `build --tokenizer /mnt/project-files/promptset_stage/qwen3_tokenizer/ --out promptset/data/edit`
+and the default rule (95 % or one sentence of slack): **10,455 rows** (en 5,120, hi 5,335) from 1,173 passages
+of 600 documents. `validate_promptset.py --strict` (Qwen3 tokenizer): **0 errors, 7 warnings**, all
+`balance.en_hi_edit`: G_title in 4 cells (titles usable for en 280 / hi 269 documents) and C_continue
+hi story same_tokens 149 vs 150 (one HindiSamay passage has no inner sentence end) in 3 cells. Every
+other level x genre x experiment cell has equal en and hi counts.
 
-| level | samalochan (sw / st) | hindi-aesthetics (sw / st) |
+Documents (all quotas filled):
+
+| language | genre | source | documents |
+|---|---|---|---|
+| en | story | medium | 150 |
+| en | essay | medium | 150 |
+| hi | story | hindisamay | 150 |
+| hi | essay | hindisamay | 75 |
+| hi | essay | samalochan | 75 |
+
+Two samalochan documents were skipped and replaced (one failed every token cutoff, one the script check).
+27 English documents give the same passage in both experiments (one set of rows, `experiments` both), so
+English has 573 passages and Hindi 600.
+
+Rows per level (sw / st = rows serving same_words / same_tokens; a row serving both counts in each):
+
+| level | en (sw / st) | hi (sw / st) |
 |---|---|---|
-| L1_proofread | 150 / 150 | excluded |
-| L2_polish | 150 / 150 | excluded |
-| L3_paraphrase | 150 / 150 | 150 / 150 |
-| L4_rewrite | 150 / 150 | 150 / 150 |
-| C_continue k75, k50, k25 (each) | 150 / 149 | 150 / 150 |
-| OX_extract_outline | 150 / 150 | 150 / 150 |
-| G_title | 77 / 77 | 123 / 123 |
+| L1_proofread, L2_polish, L3_paraphrase, L4_rewrite (each) | 300 / 300 (573 rows) | 300 / 300 (600 rows) |
+| C_continue k75, k50, k25 (each) | 300 / 300 (573 rows) | 300 / 299 |
+| OX_extract_outline | 300 / 300 (573 rows) | 300 / 300 |
+| G_title | 280 / 280 (536 rows) | 269 / 269 |
 
-Sum of `max_new_tokens` is 15.8 M tokens (largest 9,984; 38 distinct values): an upper bound, and most
-rows stop at EOS well before it. Of the +0.46 M over the previous build (15.3 M, ceil64, budgets on the
-passage only), about 0.09 M is the cutoff floor above and the rest the 256 step.
-`edit_prompts_summary.md` has the full tables.
+Served-cutoff coverage (share of passages whose human anchor exists at N; full table in
+`edit_prompts_summary.md`). English documents are shorter (Medium median about 1,000 words), so fewer
+reach the large cutoffs; that is expected:
+
+| language / experiment | 100 w | 200 w | 400 w | 800 w | 1200 w | 200 t | 400 t | 800 t | 1500 t |
+|---|---|---|---|---|---|---|---|---|---|
+| en same_words | 96 % | 94 % | 95 % | 65 % | 43 % | 93 % | 95 % | 65 % | 34 % |
+| en same_tokens | 96 % | 93 % | 80 % | 41 % | 35 % | 93 % | 96 % | 82 % | 43 % |
+| hi same_words | 92 % | 94 % | 94 % | 96 % | 95 % | 91 % | 93 % | 88 % | 93 % |
+| hi same_tokens | 91 % | 90 % | 0 % | 0 % | 0 % | 91 % | 93 % | 88 % | 93 % |
+
+Input cutoffs (the largest each document supports): English same_words passages are cut at 1200 words for
+128 documents (27 of them also serve same_tokens at 1500 tokens: the two cuts coincide), 800 for 72, 400
+for 97 and 200 for 3; the other 273 same_tokens passages at 1500 tokens for 101, 800 for 123, 400 for 47 and
+200 for 2. Hindi: same_words 284 at 1200 words, 14 at 800, 1 each at 400 and 200; same_tokens 279 at 1500
+tokens, 18 at 800, 3 at 400.
+
+`max_new_tokens`: en sum 6.09 M (mean 1,188, max 2,560), hi sum 19.63 M (mean 3,679, max 9,472), total
+25.7 M: an upper bound, most rows stop at EOS well before it. The OX rows (573 en at 512, 600 hi at 1,024)
+run unwatermarked.
 
 ## Caveats
 
@@ -265,7 +376,16 @@ passage only), about 0.09 M is the cutoff floor above and the rest the 256 step.
   `n_tokens` / `n_words`, not only N. Rebuild with `--slack-words 0` to compare with the pure rule.
 * **Low-Devanagari documents.** The slack admits documents the old rule skipped; such a document is now
   caught by the passage script check (see "Script check") and replaced by the next one in the sample.
-* Hindi same_words rows are long: about 5,500 input tokens and `max_new_tokens` up to 9,984 for
+* Hindi same_words rows are long: about 5,500 input tokens and `max_new_tokens` up to 9,472 for
   L1-L4.
-* `edit_prompts.jsonl` is about 90 MB, because the Hindi passage appears in `human_passage` and in the
-  prompt. Keep it out of git.
+* **English and Hindi passages differ in length.** The genre mix is matched, the lengths are not: Medium
+  texts are much shorter than HindiSamay / Samalochan, so at 800 words and above English has fewer human
+  anchors (table above). Compare languages at a cutoff only over passages that serve it (`cutoffs`).
+* Genre labels are coarse and partly heuristic: Medium's come from the authors' tags, samalochan's from
+  the rule above (its essay class can hold a few stories), and HindiSamay's 6 `लघुकथाएँ` count as essays.
+* Some samalochan essays are criticism that quotes a lot of verse (about 80 posts have more short lines
+  than long ones). They stay in the essay pool, as in earlier builds.
+* The caveat numbers above (slack, fall-backs) were measured on the earlier samalochan + hindi-aesthetics
+  build; the current coverage is in the table above.
+* `edit_prompts.jsonl` is about 156 MB, because each passage appears in `human_passage` and in the prompt.
+  Keep it (and `human_passages.jsonl`) out of git: they embed the corpus texts.
