@@ -1,0 +1,162 @@
+{
+ "command": "build",
+ "argv": [
+  "build",
+  "--tokenizer",
+  "/mnt/project-files/promptset_stage/qwen3_tokenizer/",
+  "--out",
+  "promptset/data/edit"
+ ],
+ "config": "/home/user/indic-watermarking/promptset/config/edit_levels.yaml",
+ "trim_source": "trim.py",
+ "tokenizer": "/mnt/project-files/promptset_stage/qwen3_tokenizer/tokenizer.json",
+ "token_counts_estimated": false,
+ "acceptance_rule": "accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0",
+ "lengths": {
+  "max_new_tokens_round": 256,
+  "max_context": 32768,
+  "round_n_to": 10,
+  "cutoffs": {
+   "words": [
+    100,
+    200,
+    400,
+    800,
+    1200
+   ],
+   "tokens": [
+    200,
+    400,
+    800,
+    1500
+   ]
+  },
+  "tokens_per_word": {
+   "en": 1.26,
+   "hi": 4.57
+  },
+  "min_frac": 0.95,
+  "slack_words": 30,
+  "slack_tokens": null,
+  "slack": {
+   "words": 30,
+   "tokens": {
+    "en": 38,
+    "hi": 137
+   }
+  },
+  "acceptance_rule": "accept iff n >= min(0.95 * N, N - slack), N = cutoff, n = units of the passage cut at the last sentence end at or before N; slack: words 30; tokens en 38, hi 137 = round(30 x tokens_per_word); other languages 0"
+ },
+ "experiments": {
+  "same_words": "words",
+  "same_tokens": "tokens"
+ },
+ "levels": [
+  "L1_proofread",
+  "L2_polish",
+  "L3_paraphrase",
+  "L4_rewrite",
+  "C_continue",
+  "G_title",
+  "OX_extract_outline",
+  "O_outline"
+ ],
+ "sampling_mode": "genre_mix",
+ "n_docs": 300,
+ "n_docs_unit": "per language",
+ "genre_mix": {
+  "story": 0.5,
+  "essay": 0.5
+ },
+ "genre_plan": {
+  "en": {
+   "story": {
+    "medium": 150
+   },
+   "essay": {
+    "medium": 150
+   }
+  },
+  "hi": {
+   "story": {
+    "hindisamay": 150
+   },
+   "essay": {
+    "hindisamay": 75,
+    "samalochan": 75
+   }
+  }
+ },
+ "min_words": 300,
+ "script_min": {
+  "hi": 0.8,
+  "en": 0.9
+ },
+ "docs_skipped_script": 1,
+ "docs": {
+  "en/essay/medium": {
+   "available": 2849,
+   "quota": 150,
+   "sampled": 150
+  },
+  "en/story/medium": {
+   "available": 1143,
+   "quota": 150,
+   "sampled": 150
+  },
+  "hi/essay/hindisamay": {
+   "available": 661,
+   "quota": 75,
+   "sampled": 75
+  },
+  "hi/essay/samalochan": {
+   "available": 540,
+   "quota": 75,
+   "sampled": 75
+  },
+  "hi/story/hindisamay": {
+   "available": 1035,
+   "quota": 150,
+   "sampled": 150
+  },
+  "hi/story/samalochan": {
+   "available": 36,
+   "quota": 0,
+   "sampled": 0
+  }
+ },
+ "n_rows": 10455,
+ "n_passages": 1173,
+ "skips": [
+  {
+   "level": "(doc)",
+   "source": "samalochan",
+   "reason": "no passage: same_tokens; same_words",
+   "n": 1
+  },
+  {
+   "level": "(doc)",
+   "source": "samalochan",
+   "reason": "passage script share < 0.8: same_tokens; same_words",
+   "n": 1
+  },
+  {
+   "level": "C_continue",
+   "source": "hindisamay",
+   "reason": "no inner sentence end",
+   "n": 3
+  },
+  {
+   "level": "G_title",
+   "source": "medium",
+   "reason": "no usable title",
+   "n": 37
+  },
+  {
+   "level": "G_title",
+   "source": "samalochan",
+   "reason": "no usable title",
+   "n": 62
+  }
+ ]
+}

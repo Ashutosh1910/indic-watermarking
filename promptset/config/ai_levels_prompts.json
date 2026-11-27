@@ -1,0 +1,119 @@
+{
+  "_notes": {
+    "placeholders": "{text} = human passage, {head} = first part of human passage, {points} = bullet outline, {title} = topic/title of matched human doc, {prompt} = story idea, {n} = target length in words",
+    "system": "Applied to every call. Keeps output clean so detection runs on the text only.",
+    "qwen3": "Call apply_chat_template with enable_thinking=False so no <think> tokens are generated.",
+    "variants": "Rotate the 3 phrasings per level (seeded by doc id) to avoid one template's artifacts."
+  },
+  "system": {
+    "en": "You are a writing assistant. Output only the requested text, with no preamble, title, notes or quotation marks.",
+    "hi": "आप एक लेखन सहायक हैं। केवल माँगा गया पाठ हिंदी में लिखें; कोई भूमिका, शीर्षक, टिप्पणी या उद्धरण-चिह्न न जोड़ें।"
+  },
+  "levels": [
+    {
+      "id": "L1_proofread",
+      "input": "full human text",
+      "expected_ai_share": "very low (spelling and grammar only)",
+      "en": [
+        "Fix only spelling, grammar and punctuation errors in the text below. Do not change word choice, sentence structure or meaning.\n\n{text}",
+        "Proofread this text. Correct typos and grammatical mistakes only; leave everything else exactly as written.\n\n{text}",
+        "Correct the errors in the following passage without rewording it.\n\n{text}"
+      ],
+      "hi": [
+        "नीचे दिए गए पाठ में केवल वर्तनी, व्याकरण और विराम-चिह्न की गलतियाँ ठीक करें। शब्द, वाक्य-रचना और अर्थ जैसे हैं वैसे ही रखें।\n\n{text}",
+        "इस पाठ की प्रूफ़रीडिंग करें। सिर्फ़ टाइपिंग और व्याकरण की गलतियाँ सुधारें, बाकी सब कुछ बिल्कुल वैसा ही रहने दें।\n\n{text}",
+        "नीचे दिए गए अंश की गलतियाँ सुधारें, पर इसे दोबारा शब्दों में न लिखें।\n\n{text}"
+      ]
+    },
+    {
+      "id": "L2_polish",
+      "input": "full human text",
+      "expected_ai_share": "low to medium",
+      "en": [
+        "Lightly polish the text below: improve flow and clarity, but keep most of the original wording and every idea.\n\n{text}",
+        "Make this read a little more smoothly. Keep my voice and the same content and length.\n\n{text}",
+        "Improve the style of this passage slightly without changing what it says.\n\n{text}"
+      ],
+      "hi": [
+        "नीचे दिए गए पाठ को थोड़ा निखारें: प्रवाह और स्पष्टता सुधारें, पर ज़्यादातर शब्द और सभी विचार वैसे ही रखें।\n\n{text}",
+        "इसे पढ़ने में थोड़ा और सहज बना दें। मेरी शैली, विषय-वस्तु और लंबाई वैसी ही रखें।\n\n{text}",
+        "इस अंश की भाषा-शैली को हल्का-सा बेहतर करें, पर इसका अर्थ न बदलें।\n\n{text}"
+      ]
+    },
+    {
+      "id": "L3_paraphrase",
+      "input": "full human text",
+      "expected_ai_share": "medium to high (same meaning, new wording)",
+      "en": [
+        "Paraphrase every sentence of the text below in your own words. Keep the meaning, order and roughly the same length.\n\n{text}",
+        "Reword this passage sentence by sentence so it says the same thing in different words.\n\n{text}",
+        "Rewrite the following in different wording while preserving its content and structure.\n\n{text}"
+      ],
+      "hi": [
+        "नीचे दिए गए पाठ के हर वाक्य को अपने शब्दों में दोबारा लिखें। अर्थ, क्रम और लंबाई लगभग वैसी ही रखें।\n\n{text}",
+        "इस अंश को वाक्य-दर-वाक्य ऐसे दोबारा लिखें कि बात वही रहे पर शब्द अलग हों।\n\n{text}",
+        "नीचे दिए गए पाठ को उसकी विषय-वस्तु और ढाँचा बनाए रखते हुए अलग शब्दों में लिखें।\n\n{text}"
+      ]
+    },
+    {
+      "id": "L4_rewrite",
+      "input": "full human text",
+      "expected_ai_share": "high (ideas human, wording and structure AI)",
+      "en": [
+        "Rewrite the text below from scratch as a skilled writer would. Keep the main ideas but choose your own structure, style and wording.\n\n{text}",
+        "Use this draft only as notes and write a much better version of it.\n\n{text}",
+        "Completely rewrite this passage to make it more engaging, keeping its key points.\n\n{text}"
+      ],
+      "hi": [
+        "नीचे दिए गए पाठ को एक कुशल लेखक की तरह नए सिरे से लिखें। मुख्य विचार रखें, पर ढाँचा, शैली और शब्द आप स्वयं चुनें।\n\n{text}",
+        "इस मसौदे को सिर्फ़ नोट्स मानकर इसका कहीं बेहतर संस्करण लिखें।\n\n{text}",
+        "इस अंश को इसके मुख्य बिंदु रखते हुए पूरी तरह दोबारा और अधिक रोचक ढंग से लिखें।\n\n{text}"
+      ]
+    },
+    {
+      "id": "C_continue",
+      "input": "first k% of human text, k in {75, 50, 25}",
+      "expected_ai_share": "exactly 1 - k (measured by construction)",
+      "en": [
+        "Here is the beginning of a piece. Continue it in the same style and voice for about {n} words. Do not repeat the beginning.\n\n{head}",
+        "Finish this text. Match its tone and write roughly {n} more words.\n\n{head}",
+        "Keep writing from where this leaves off, about {n} words.\n\n{head}"
+      ],
+      "hi": [
+        "नीचे एक लेख या कहानी की शुरुआत दी गई है। इसी शैली और स्वर में इसे लगभग {n} शब्दों तक आगे लिखें। शुरुआत को दोहराएँ नहीं।\n\n{head}",
+        "इस पाठ को पूरा करें। इसका स्वर बनाए रखें और लगभग {n} शब्द और लिखें।\n\n{head}",
+        "जहाँ यह पाठ रुकता है, वहीं से लगभग {n} शब्द और लिखें।\n\n{head}"
+      ]
+    },
+    {
+      "id": "O_outline",
+      "input": "bullet outline extracted from human text (by hand or by a separate unwatermarked model)",
+      "expected_ai_share": "very high (human ideas only)",
+      "en": [
+        "Write a piece of about {n} words based on these points:\n\n{points}",
+        "Turn these notes into a full text of roughly {n} words.\n\n{points}",
+        "Expand the following outline into about {n} words of flowing prose.\n\n{points}"
+      ],
+      "hi": [
+        "नीचे दिए गए मुख्य बिंदुओं के आधार पर लगभग {n} शब्दों का एक लेख लिखें।\n\n{points}",
+        "इन नोट्स को लगभग {n} शब्दों के पूरे पाठ में बदलें।\n\n{points}",
+        "इस रूपरेखा को लगभग {n} शब्दों के धाराप्रवाह गद्य में विस्तार दें।\n\n{points}"
+      ]
+    },
+    {
+      "id": "G_generate",
+      "input": "title / topic of the matched human doc, or a story idea",
+      "expected_ai_share": "100%",
+      "en": [
+        "Write an article of about {n} words titled \"{title}\".",
+        "Write a story of about {n} words based on this idea: {prompt}",
+        "Write about {n} words on the topic: {title}"
+      ],
+      "hi": [
+        "\"{title}\" विषय पर लगभग {n} शब्दों का एक लेख हिंदी में लिखें।",
+        "इस विचार पर लगभग {n} शब्दों की एक कहानी हिंदी में लिखें: {prompt}",
+        "इस विषय पर हिंदी में लगभग {n} शब्द लिखें: {title}"
+      ]
+    }
+  ]
+}

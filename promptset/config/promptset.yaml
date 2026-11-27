@@ -1,0 +1,59 @@
+# How the G-level (generate from scratch) prompt set is selected and rendered.
+# Used by select_prompts.py and build_promptset.py. Change numbers here, then re-run both scripts.
+
+seed: 20261123
+
+# Qwen3 tokens per whitespace word, measured on the study's human corpora (project notes, Nov 2026).
+tokens_per_word: {en: 1.26, hi: 4.57}
+
+# Cutoffs the trimmed passages are cut at. Words = writer's view, tokens = detector's view.
+cutoffs:
+  words: [100, 200, 400, 800, 1200]
+  tokens: [200, 400, 800, 1500]
+# Acceptance rule ("95% or one sentence of slack"), used by trim.py and build_edit_prompts.py: a passage of n
+# units cut at cutoff N (at the last sentence end at or before N) is accepted iff n >= min(min_frac * N, N - slack).
+#   word cutoffs:  slack = slack_words
+#   token cutoffs: slack = slack_words' worth of tokens in the row's language, round(slack_words * tokens_per_word[lang])
+#                  (30 words -> en 38, hi 137 tokens)
+# The 95% rule still governs long cutoffs (min picks it once 0.05 * N > slack, e.g. N > 600 words).
+# slack_words: 0 turns the slack off (pure 95% rule); trim.py --slack-words / --slack-tokens override per run.
+min_frac: 0.95            # a trimmed passage must reach 95% of its cutoff ...
+slack_words: 30           # ... or come within one sentence (30 words, or its token equivalent) of it
+
+# Each prompt asks for one length. A row serves every cutoff N with N <= serve_frac * requested length
+# (in words, or in tokens via tokens_per_word), and gets max_new_tokens = 1.3 * requested tokens.
+tiers:
+  long:  {request_words: 1300}
+  short: {request_words: 400}
+serve_frac: 0.95
+max_new_tokens_factor: 1.3
+max_new_tokens_round: 64
+
+genres: [story, opinion, essay, personal]
+
+# Counts are per language and per genre. Every prompt appears in both languages (native + translation),
+# so English and Hindi get identical prompts, genres and tiers.
+per_genre:
+  main: 100
+  reserve: 50
+pilot_per_genre_tier: 3   # main rows flagged split=pilot for a first run (3 x 4 genres x 2 tiers = 24 per language)
+hindi_native_share: 0.5   # target share of Hindi-native prompts in each genre; the rest are English-native
+
+# Mix of English-native sources inside each genre (relative weights; a source that runs out is skipped).
+english_source_weights:
+  story:    {writingprompts: 5, no_robots: 2, wildchat: 2, dolly: 1, oasst2: 1}
+  opinion:  {persuade: 1, wildchat: 3, no_robots: 2, dolly: 1, oasst2: 1}
+  essay:    {wildchat: 3, no_robots: 2, dolly: 1, oasst2: 1}
+  personal: {wildchat: 3, no_robots: 2, dolly: 1, oasst2: 1}
+# PERSUADE has only a few independent prompts; use each at most once.
+
+licenses:
+  writingprompts: "MIT"
+  persuade: "CC BY 4.0"
+  no_robots: "CC BY-NC 4.0 (non-commercial)"
+  dolly: "CC BY-SA 3.0"
+  oasst2: "Apache 2.0"
+  wildchat: "ODC-BY"
+  aya: "Apache 2.0"
+  aya_eval_dolly: "Apache 2.0"
+  anudesh: "CC BY 4.0"

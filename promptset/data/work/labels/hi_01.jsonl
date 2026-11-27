@@ -1,0 +1,52 @@
+{"cid": "aya:aya-train-164945", "keep": true, "genre": "story", "reason": "fiction: young person's transformation"}
+{"cid": "anudesh:anudesh-hi-1b2f3195-1d86-5ff3-9361-cd57973f75a9", "keep": true, "genre": "essay", "reason": "general essay: dangers of technology"}
+{"cid": "anudesh:anudesh-hi-3b5f0b87-7e9c-519d-b3b2-392af20e9941", "keep": false, "genre": null, "reason": "unsafe: child sexual abuse; ideas list"}
+{"cid": "anudesh:anudesh-hi-3b83c81a-1d61-5eb3-bc8d-d49e54cb8aed", "keep": true, "genre": "story", "reason": "fiction: reimagined love story"}
+{"cid": "aya:aya-train-100306", "keep": true, "genre": "essay", "reason": "general essay: education in culture"}
+{"cid": "anudesh:anudesh-hi-1e2c80a6-9b00-542f-a9a8-6dd0eb86f701", "keep": false, "genre": null, "reason": "incoherent meta request"}
+{"cid": "anudesh:anudesh-hi-00877815-2c4c-5780-8b3c-ae241a2ab7ec", "keep": true, "genre": "story", "reason": "fiction: army officer story"}
+{"cid": "anudesh:anudesh-hi-3c249f13-bd7b-5a48-9dc1-ec69ffe254b9", "keep": true, "genre": "story", "reason": "fiction: thriller set in India"}
+{"cid": "aya:aya-train-199929", "keep": true, "genre": "story", "reason": "fiction: struggling artist"}
+{"cid": "aya:aya-train-17182", "keep": true, "genre": "story", "reason": "fiction: time-travel legend"}
+{"cid": "aya:aya-train-198173", "keep": true, "genre": "story", "reason": "fiction: speculative world premise"}
+{"cid": "anudesh:anudesh-hi-2f0ed141-a8ba-5644-b9b4-2a2488b9b514", "keep": false, "genre": null, "reason": "social media post; needs facts"}
+{"cid": "anudesh:anudesh-hi-e690e334-1bda-5d2e-86fa-67ee6e16138e", "keep": true, "genre": "story", "reason": "fiction: college students' business"}
+{"cid": "anudesh:anudesh-hi-f32f1021-a25b-5bd6-a841-efb64a696a31", "keep": false, "genre": null, "reason": "dialogue with real historical figures"}
+{"cid": "anudesh:anudesh-hi-da6935b8-8d6a-5587-b690-9cc2f307cad5", "keep": false, "genre": null, "reason": "needs facts: science/environment"}
+{"cid": "aya:aya-train-58625", "keep": true, "genre": "story", "reason": "fiction: night journey"}
+{"cid": "anudesh:anudesh-hi-591a7321-735d-5dc8-b3d1-7533f62211f2", "keep": false, "genre": null, "reason": "no topic; not self-contained"}
+{"cid": "anudesh:anudesh-hi-1743ed8d-024a-5906-b570-feb737a5d6a9", "keep": true, "genre": "story", "reason": "fiction: middle-class boy"}
+{"cid": "anudesh:anudesh-hi-139223df-2dd9-55e4-a128-d9ecc8798b5e", "keep": true, "genre": "story", "reason": "fiction: film plot"}
+{"cid": "aya:aya-train-109773", "keep": true, "genre": "essay", "reason": "descriptive imaginative essay"}
+{"cid": "aya:aya-train-50025", "keep": false, "genre": null, "reason": "needs facts: place description"}
+{"cid": "anudesh:anudesh-hi-0b1f5766-5846-513a-b442-d2fc6714396d", "keep": false, "genre": null, "reason": "joke, not long-form prose"}
+{"cid": "aya_eval_dolly:ayaeval-79", "keep": true, "genre": "opinion", "reason": "persuasive letter to parents"}
+{"cid": "anudesh:anudesh-hi-a17dd3ea-0e06-54f9-8030-7d90eca6d882", "keep": true, "genre": "story", "reason": "fiction: crime mystery"}
+{"cid": "anudesh:anudesh-hi-d992d2f1-397e-5be6-b181-decbefaf4d00", "keep": false, "genre": null, "reason": "needs facts: technical ML"}
+{"cid": "anudesh:anudesh-hi-4f7f7dfa-1d31-5b50-8b56-352dd1c25ffa", "keep": true, "genre": "story", "reason": "fiction: desert road trip"}
+{"cid": "anudesh:anudesh-hi-29b4aa93-37a3-50f4-b1a9-8d824ad0dd0d", "keep": false, "genre": null, "reason": "meta example text, not a request"}
+{"cid": "anudesh:anudesh-hi-2fb989af-5024-5f0d-92f2-c5215e36662b", "keep": false, "genre": null, "reason": "meta example text, not a request"}
+{"cid": "anudesh:anudesh-hi-4be2d3f7-ff5c-55ea-a0eb-c9190a0a6d8a", "keep": false, "genre": null, "reason": "needs facts: political history"}
+{"cid": "anudesh:anudesh-hi-8e545cf1-35e3-58c4-85aa-de4865376e64", "keep": false, "genre": null, "reason": "franchise fan fiction"}
+{"cid": "aya:aya-train-43249", "keep": true, "genre": "story", "reason": "fiction: village child's dreams"}
+{"cid": "anudesh:anudesh-hi-65f42083-d299-5a04-b33a-4f749f9d6e0c", "keep": true, "genre": "story", "reason": "fiction: ordinary Indian life"}
+{"cid": "anudesh:anudesh-hi-77664aa4-af18-50e6-aeca-835a17b950ad", "keep": false, "genre": null, "reason": "real people; garbled"}
+{"cid": "anudesh:anudesh-hi-b2316e8e-22c6-55ac-9a9d-205b3559c2da", "keep": false, "genre": null, "reason": "needs facts: technical explanation"}
+{"cid": "anudesh:anudesh-hi-fa738482-fd9b-5aeb-9670-681d93a8cce2", "keep": true, "genre": "essay", "reason": "general essay: tackling pollution"}
+{"cid": "anudesh:anudesh-hi-d28c0683-8041-553b-b985-b32ca2749297", "keep": false, "genre": null, "reason": "unclear/garbled request"}
+{"cid": "anudesh:anudesh-hi-2d1604b5-8eef-5c2a-8d81-8e8b98808cd9", "keep": true, "genre": "story", "reason": "fiction: detailed love story premise"}
+{"cid": "anudesh:anudesh-hi-bcf98b5e-5a98-5aae-8b42-cacfa98d4815", "keep": false, "genre": null, "reason": "needs facts: math"}
+{"cid": "aya:aya-train-102557", "keep": true, "genre": "story", "reason": "fiction: young scientist"}
+{"cid": "anudesh:anudesh-hi-15c2a515-a4d4-5eb4-888a-115831a1c1f1", "keep": true, "genre": "story", "reason": "fiction: poor farmer"}
+{"cid": "anudesh:anudesh-hi-1de48b92-afca-5d1e-9c12-87b16cbc5aad", "keep": true, "genre": "story", "reason": "fiction: film story"}
+{"cid": "anudesh:anudesh-hi-e4d19a8e-48cc-598d-9847-6c0db26113b0", "keep": false, "genre": null, "reason": "needs facts: finance; mixed language"}
+{"cid": "anudesh:anudesh-hi-b53b6f4c-fe98-563a-88f2-302fbd27e7c6", "keep": true, "genre": "story", "reason": "fiction: film plot"}
+{"cid": "anudesh:anudesh-hi-ada486a6-be8d-5ca4-896d-f1cd5d275f1a", "keep": false, "genre": null, "reason": "needs facts: technical"}
+{"cid": "aya:aya-train-186887", "keep": true, "genre": "essay", "reason": "imaginative descriptive essay"}
+{"cid": "anudesh:anudesh-hi-deffe31f-9f4f-583a-a33b-6e9f718fb827", "keep": false, "genre": null, "reason": "joke about real celebrity"}
+{"cid": "anudesh:anudesh-hi-5d59a600-db78-5d72-9a79-f0788151e248", "keep": false, "genre": null, "reason": "needs facts: science"}
+{"cid": "anudesh:anudesh-hi-c397375d-61dd-5519-a378-57de328d22c3", "keep": true, "genre": "story", "reason": "fiction: film plot"}
+{"cid": "anudesh:anudesh-hi-071b4844-5e07-539d-bd71-14081590fb09", "keep": true, "genre": "story", "reason": "open story request"}
+{"cid": "anudesh:anudesh-hi-428c1c41-0350-5774-b0ef-5d792a961f48", "keep": false, "genre": null, "reason": "incoherent, not a writing task"}
+{"cid": "anudesh:anudesh-hi-14abc865-6436-5b3e-8b87-1b2b50c36bfd", "keep": false, "genre": null, "reason": "needs facts: place weather"}
+{"cid": "aya:aya-train-194248", "keep": false, "genre": null, "reason": "needs facts: history"}

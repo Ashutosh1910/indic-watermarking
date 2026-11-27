@@ -96,6 +96,37 @@ class TempCorpusTest(unittest.TestCase):
         self.assertEqual(len(list(corpora.CorpusLoader("tmp-l1", batch_size=3, drop_last=True))), 0)
 
 
+class TitleAuthorCorpusTest(unittest.TestCase):
+    """hindisamay / medium layout: title, blank, author, blank, paragraphs; metadata.csv (with a BOM)."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "00016_खुशबू.txt").write_text("खुशबू\n\nलेखक एक\n\nपहला अनुच्छेद है।", encoding="utf-8")
+        (self.root / "00017_लेख.txt").write_text("एक लेख : उपशीर्षक\n\nलेखिका दो\n\nदूसरा पाठ।", encoding="utf-8")
+        (self.root / "00018_बिना-मेटा.txt").write_text("बिना मेटा\n\nअनाम\n\nतीसरा पाठ।", encoding="utf-8")
+        (self.root / "metadata.csv").write_text(
+            "\ufefffile,id,title,author,genre,words\n00016_खुशबू.txt,16,खुशबू,लेखक एक,कहानी,2\n"
+            "00017_लेख.txt,17,एक लेख : उपशीर्षक,लेखिका दो,आलोचना,2\n", encoding="utf-8")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_hindisamay_metadata_and_genres(self):
+        c = corpora.get("hindisamay", root=self.root)
+        self.assertEqual(len(c), 3)                                  # metadata.csv is not a document
+        story, essay, bare = c
+        self.assertEqual((story.title, story.meta["author"], story.meta["words"], story.meta["id"]),
+                         ("खुशबू", "लेखक एक", 2, 16))
+        self.assertEqual((story.meta["genre"], story.meta["genre_fine"]), ("story", "कहानी"))
+        self.assertEqual((essay.meta["genre"], essay.meta["genre_fine"]), ("essay", "आलोचना"))
+        self.assertEqual(essay.title, "एक लेख : उपशीर्षक")
+        # no metadata row: title and author from the header lines, genre unknown
+        self.assertEqual((bare.title, bare.meta["author"], bare.meta["genre"]), ("बिना मेटा", "अनाम", "unknown"))
+        self.assertEqual(story.text, "खुशबू\n\nलेखक एक\n\nपहला अनुच्छेद है।")     # raw text, header included
+        self.assertEqual(story.meta["header_lines"], 2)
+
+
 @unittest.skipUnless((corpora.DATA_ROOT / "Samalochan").is_dir(), "real data not present")
 class RealDataTest(unittest.TestCase):
     def test_registered(self):
@@ -107,6 +138,30 @@ class RealDataTest(unittest.TestCase):
         d = c[0]
         self.assertRegex(d.meta["date"], r"^\d{4}-\d{2}-\d{2}$")
         self.assertLess(max(x.meta["year"] for x in c[-5:]), 2022)
+
+    def test_samalochan_genre_rule(self):
+        c = corpora.get("samalochan")
+        g = {d.meta["slug"]: d.meta["genre"] for d in c}
+        self.assertEqual(set(g.values()), {"story", "essay"})
+        self.assertTrue(all(v == "story" for k, v in g.items() if k.startswith("कथा-गाथा")))
+
+    @unittest.skipUnless((corpora.DATA_ROOT / "HindiSamay").is_dir(), "HindiSamay not fetched (branch add-hindi-corpora)")
+    def test_hindisamay(self):
+        c = corpora.get("hindisamay")
+        self.assertEqual(len(c), 1696)
+        from collections import Counter
+        self.assertEqual(Counter(d.meta["genre"] for d in c), {"story": 1035, "essay": 661})
+        d = c[0]
+        self.assertEqual(d.text.split("\n")[0], d.title)
+        self.assertTrue(d.meta["author"] and d.meta["source_url"].startswith("https://www.hindisamay.com/"))
+
+    @unittest.skipUnless((corpora.DATA_ROOT / "Medium").is_dir(), "Medium not fetched (branch add-hindi-corpora)")
+    def test_medium(self):
+        c = corpora.get("medium")
+        self.assertEqual(len(c), 3992)
+        from collections import Counter
+        self.assertEqual(Counter(d.meta["genre"] for d in c), {"story": 1143, "essay": 2849})
+        self.assertFalse(any(p.suffix != ".txt" for p in c.paths))        # filter_medium.py, metadata.csv skipped
 
     def test_aesthetics_duplicate_dropped(self):
         c = corpora.get("hindi-aesthetics")

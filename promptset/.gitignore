@@ -1,0 +1,6 @@
+# Large or rebuildable outputs: regenerate with the scripts (see GPU_RUNBOOK.md)
+data/edit/edit_prompts.jsonl
+data/edit/human_passages.jsonl
+/work/
+/outputs/
+__pycache__/
