@@ -1,5 +1,9 @@
 # GPU runbook: watermarked generation, trimming, verification
 
+**One-command job:** after steps 0, 0b and 1, `promptset/job/run_study.sh` (SLURM or nohup) runs steps 2-5
+below end to end into one resumable dump, with human-text FPR, per-token detector state and a report; see
+[JOB.md](JOB.md). The steps below are what it runs, for doing them by hand.
+
 Scripts in `promptset/scripts/`: `generate.py` (Qwen3-8B with SynthID-Text through HF `generate`),
 `trim.py` (one trimming rule for AI and human text), `verify_generations.py` (z-test on the passages).
 All three import the repo's `synthid/synthid_wm` library directly; no `pip install -e` is needed

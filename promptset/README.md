@@ -11,6 +11,8 @@ scripts that generate, trim and verify the outputs.
   study corpora: HindiSamay and Samalochan (Hindi), Medium (English), 300 documents per language with the
   same story/essay mix. See [EDIT_LEVELS.md](EDIT_LEVELS.md).
 * **GPU steps** (translation, generation, trimming, verification): see [GPU_RUNBOOK.md](GPU_RUNBOOK.md).
+* **The GPU job** (everything after the prompt files, in one resumable command, into an analysable dump):
+  see [JOB.md](JOB.md).
 
 ## Status (2026-11-23)
 

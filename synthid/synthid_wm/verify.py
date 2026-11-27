@@ -141,6 +141,33 @@ class SynthIDVerifier:
         posterior = self._bayes_posterior(x) if self._bayes is not None else None
         return self._result(score, mean_g, n_scored, n_pos - n_scored, n_tokens, posterior)
 
+    def token_details(self, ids: list[int] | torch.Tensor) -> dict:
+        """Per-position detector state of a token sequence, for later analysis.
+
+        Returns ``token_ids`` (cut at the first stop id), and for every position t >= ngram_len - 1 (the
+        positions ``verify_ids`` considers, in order): ``g_bits`` (the D g-values packed into one int,
+        bit d = g-value of key d) and ``mask`` (1 = scored, 0 = masked because its context repeated).
+        From these the (weighted) score and z of any prefix can be recomputed exactly; see
+        ``promptset/scripts/load_dump.py``'s ``prefix_z``.
+        """
+        ids = list(ids.tolist() if isinstance(ids, torch.Tensor) else ids)
+        for i, t in enumerate(ids):
+            if t in self.stop_ids:
+                ids = ids[:i]
+                break
+        out = {"token_ids": ids, "g_bits": [], "mask": [], "depth": self.wm.depth,
+               "ngram_len": self.wm.ngram_len, "null_mean": self.p0, "method": self.det.method}
+        if len(ids) < self.wm.ngram_len:
+            return out
+        x = torch.tensor([ids], dtype=torch.long)
+        with torch.no_grad():
+            g = self.proc.compute_g_values(x)[0].long()                          # [n_pos, D]
+            mask = self.proc.compute_context_repetition_mask(x)[0].long()        # [n_pos]
+        powers = (2 ** torch.arange(self.wm.depth, dtype=torch.long))
+        out["g_bits"] = (g * powers).sum(-1).tolist()
+        out["mask"] = mask.tolist()
+        return out
+
     # ------------------------------------------------------------------ internals
 
     def _result(self, score, mean_g, n_scored, n_masked, n_tokens, posterior) -> VerifyResult:

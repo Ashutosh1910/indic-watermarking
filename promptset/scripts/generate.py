@@ -50,6 +50,7 @@ import platform
 import re
 import sys
 import time
+import traceback
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Sequence
@@ -221,31 +222,27 @@ def load_done(out_path: Path) -> tuple[set[tuple[str, int, bool]], set[str]]:
         with open(out_path, "ab") as f:
             f.write(b"\n")
     return done, shas
-    data = out_path.read_bytes()
-    good_end = 0
-    pos = 0
-    for line in data.split(b"\n"):
-        end = pos + len(line) + 1
-        if line.strip():
-            try:
-                r = json.loads(line.decode("utf-8"))
-            except (json.JSONDecodeError, UnicodeDecodeError):
-                if end >= len(data):  # last line, no newline: truncated write
-                    break
-                raise ValueError(f"{out_path}: corrupt line at byte {pos}") from None
-            done.add((str(r["id"]), int(r.get("attempt", 0)), bool(r.get("watermarked", True))))
-            if r.get("config_sha"):
-                shas.add(r["config_sha"])
-        good_end = min(end, len(data))
-        pos = end
-    if good_end < len(data):
-        log(f"warning: dropping a truncated last line of {out_path} ({len(data) - good_end} bytes)")
-        with open(out_path, "r+b") as f:
-            f.truncate(good_end)
-    elif data and not data.endswith(b"\n"):
-        with open(out_path, "ab") as f:
-            f.write(b"\n")
-    return done, shas
+
+
+def read_done_keys(paths: Sequence[str | Path]) -> set[tuple[str, int, bool]]:
+    """(id, attempt, watermarked) of other output files (read-only; a bad or partial line is ignored).
+
+    Used with ``--done-from`` so a re-run with a different shard count, or a regeneration, skips rows
+    another file already holds."""
+    done: set[tuple[str, int, bool]] = set()
+    for p in paths:
+        p = Path(p)
+        if not p.exists():
+            continue
+        with open(p, "rb") as f:
+            for line in f:
+                try:
+                    r = json.loads(line.decode("utf-8"))
+                except (json.JSONDecodeError, UnicodeDecodeError):
+                    continue
+                if isinstance(r, dict) and "id" in r:
+                    done.add((str(r["id"]), int(r.get("attempt", 0)), bool(r.get("watermarked", True))))
+    return done
 
 
 # --------------------------------------------------------------------------- requests and batching
@@ -446,6 +443,12 @@ def parse_args(argv: Sequence[str] | None) -> argparse.Namespace:
     ap.add_argument("--allow-config-change", action="store_true",
                     help="append to an --out produced with a different watermark/sampling config (not recommended)")
     ap.add_argument("--dry-run", action="store_true", help="load the tokenizer only, print the batch plan, exit")
+    ap.add_argument("--done-from", nargs="*", default=[],
+                    help="other output files whose (id, attempt, watermarked) rows count as done (read-only)")
+    ap.add_argument("--failures", help="append one JSON line per failed batch here (default: <out stem>.failures.jsonl)")
+    ap.add_argument("--continue-on-error", action="store_true",
+                    help="log a failing batch (any error, or OOM at batch size 1) and go on; its rows stay "
+                         "undone, so a re-run retries them. Exit code 3 if any batch failed")
     args = ap.parse_args(argv)
     if args.attempt < 0:
         ap.error("--attempt must be >= 0")
@@ -467,6 +470,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     done, shas = load_done(out_path)
+    done |= read_done_keys([p for p in args.done_from if Path(p).resolve() != out_path.resolve()])
     if shas - {sha} and not args.allow_config_change:
         raise SystemExit(f"{out_path} has rows from config_sha {sorted(shas - {sha})}, this run is {sha}. "
                          "Use another --out (or --allow-config-change).")
@@ -534,9 +538,30 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"{ntok / max(dt, 1e-9):.0f} tok/s | total {stats['tokens'] / max(elapsed, 1e-9):.0f} tok/s, "
                 f"ETA {eta / 60:.1f} min")
 
+        fail_path = Path(args.failures) if args.failures else sibling(out_path, ".failures.jsonl")
+        n_failed = 0
         for b in batches:
             for i in range(0, len(b), cap[0]):
-                run_with_oom_retry(b[i:i + cap[0]], do_batch, cap)
+                chunk = b[i:i + cap[0]]
+                try:
+                    run_with_oom_retry(chunk, do_batch, cap)
+                except Exception as e:  # noqa: BLE001  (logged, then re-raised unless --continue-on-error)
+                    rec = {"time_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+                           "stage": "generate", "out": str(out_path), "attempt": args.attempt,
+                           "ids": [r.id for r in chunk], "n_rows": len(chunk), "error_type": type(e).__name__,
+                           "error": str(e)[:2000], "traceback": traceback.format_exc()[-6000:],
+                           "prompt_len_max": chunk[0].prompt_len, "max_new_tokens": chunk[0].max_new_tokens,
+                           "watermark": chunk[0].watermark, "config_sha": sha}
+                    fail_path.parent.mkdir(parents=True, exist_ok=True)
+                    with open(fail_path, "a", encoding="utf-8") as ff:
+                        ff.write(dumps(rec) + "\n")
+                    log(f"batch of {len(chunk)} rows FAILED ({type(e).__name__}: {str(e)[:200]}); logged to {fail_path}")
+                    # a CUDA error (not OOM) usually poisons the context: let the process die, a re-run resumes
+                    if not args.continue_on_error or ("CUDA error" in str(e) and not is_oom(e)):
+                        raise
+                    n_failed += len(chunk)
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
 
     elapsed = time.perf_counter() - t_start
     log(f"done: {stats['rows']} rows, {stats['tokens']:,} new tokens in {elapsed:.1f}s "
@@ -548,11 +573,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         "attempt": args.attempt, "host": platform.node(), "python": platform.python_version(),
         "torch": torch.__version__, "transformers": __import__("transformers").__version__,
         "device": str(device), "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
-        "batching": dataclasses.asdict(batching),
+        "batching": dataclasses.asdict(batching), "failed_rows": n_failed,
     }
     with open(sibling(out_path, ".runs.jsonl"), "a", encoding="utf-8") as f:
         f.write(dumps(manifest) + "\n")
-    return 0
+    return 3 if n_failed else 0
 
 
 if __name__ == "__main__":
