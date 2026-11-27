@@ -1,0 +1,43 @@
+Let’s Make A Free Art Portfolio!
+
+Dan Brioli
+
+A Place You Can Call A Homepage
+
+This is the quick-and-easy guide for anyone who needs a free hosting solution for a simple image gallery with no file compression — ideal for a visual artist. I’ve broken down all of the steps so that you will have a portfolio up and running in 30 minutes. We will be using Github Pages, which is a free service provided by a company called Github.
+
+If you use this tutorial and would like help with adding any additional features, let me know and I will write up tutorials for them!
+
+Enough talk — let’s make a portfolio.
+
+Create A Github Account
+
+Github is a site that hosts your project’s source code, images, and other files. We will need an account, so first things first — create a free account.
+
+(If you already have an account, great! Just log in.)
+
+Create A New Repository
+
+A repository is a named location in your Github account that stores code for an individual project. You can have many repositories and many projects. We only need one for our portfolio, but it has to be named a specific name to take advantage of the automated hosting features of Github Pages.
+
+Once you are logged in, you will see a button on the page that says “Start A Project” or “New Repository” or something similar. Click it. (Github will look different depending on if you have a new account or if you have used it previously — just click whatever is available to create our portfolio’s new repository.)
+
+In the “Create a new repository” page that opens, in the “Repository name” field, enter the new name of your repository. You’ll want to name it github-username.github.io — the Github Pages service requires this to be the format of the repo’s name.
+
+For example, if my Github username is technicaldebtgames then my repository name should be technicaldebtgames.github.io — the repository’s name in this case is going to be the URL we use to navigate to it, so make sure your account name is appropriate for how you want your portfolio to be viewed.
+
+You will also want to click “Add a README file” as an initialization option. You can choose to make the project public or private — this won’t change whether people can navigate to your portfolio or not, only if they can see the repository and its code.
+
+Basic options for initializing your repository.
+
+Create A New File Named “index.html”
+
+In your portfolio’s main directory, click the “Add file” dropdown button, and then click the “Create new file” option.
+
+Give this file the name index.html and enter the following HTML into it:
+
+Enter this file name and HTML code in the New File page.
+
+This is an HTML file, and it uses a scripting language known as HTML. It’s essentially a series of textual tags that tell browsers how to layout information on a website.
+
+At the bottom of the page, you will see the “Commit new file” section of the page. You can either leave the fields blank, or you can fill them with useful information in case you want to know why you did something in the future.

@@ -1,0 +1,53 @@
+Plug-In Graduates 2020 — Unprecedented in many ways
+
+Farfetch Tech
+
+By Maria Cabral, Senior Talent Acquisition Specialist
+
+Being part of FARFETCH’s People Team has always been a roller coaster full of great challenges. One of the richest challenges in my experience so far has been the Plug-In Programme, which actually existed long before I joined FARFETCH.
+
+Right now, Plug-In is the umbrella programme that covers the internship, traineeship and career conversion schemes at FARFETCH, mainly directed to early careers and career changes. However, the first edition of our Plug-In Programme, back in 2016, established the beginning of one of the most successful development programmes at FARFETCH and one that truly highlights our investment in young talent.
+
+Fast forward 5 years, we have just welcomed the fifth batch of trainees — the Class of 2020. In this article, I want to share with you how we made it possible this year, especially considering the current unprecedented situation with COVID-19 and with almost everyone working remotely.
+
+A bit of history on the programme
+
+As previously mentioned, 2020 marks the fifth edition of the Plug-In Graduates Programme in Portugal. At this point, the success of the programme has been well established at FARFETCH, mainly within our Tech teams.
+
+The main idea was that we would provide technical and non-technical knowledge and train Tech talent from the beginning of their careers, providing them with an unrivalled experience, on the job training and actual contribution to the product, while diving into the FARFETCH culture and values from the very first day. This proved to be an amazing success. The trainees were extremely engaged, enthusiastic and motivated and they came up with innovative ideas that contributed to the growth of our products. The managers could not be happier with their contribution and their exponential growth rate. In fact, most of the trainees from the first edition are still at FARFETCH today.
+
+Some of the most relevant initiatives that make this programme stand out are:
+
+Personalized onboarding sessions for the group — adapted to the needs of the trainees and the teams they are joining. The onboarding process for the programme is usually longer than the general onboarding and even more fun!
+
+Mentoring throughout the programme — every trainee has a mentor in the team, that will support them through the experience and be a bridge to facilitate their integration to the team and our culture.
+
+On the job learning — there are a lot of formal (and not so formal) training opportunities throughout the internship, but the main one is the fact that each trainee is allocated to a specific team and has a specific role, with growing responsibilities. This is the best opportunity for them to learn a lot and gain solid foundations for their careers ahead.
+
+All these initiatives and more have been thoughtfully organized for each edition of the programme, adapted to the trainees’ needs and improved based on the previous edition’s feedback.
+
+Creating an opportunity through uncertainty
+
+There is a lot of behind the scenes work for each new edition. In fact, it was early March when we were gathering the needs and outlining this year’s programme. The same month when most of us in Portugal had to start working from home, due to the pandemic.
+
+The success of the previous four editions of the programme was an important consideration when deciding how to progress with Plug-In during such challenging times. All the teams that had ever welcomed a Plug-In in the past were very happy with the results and excited about a new edition. They knew how the trainees’ energy and fresh ideas were important for the team and how quickly they would start contributing to their projects.
+
+Because of that, we were able to ensure we would have opportunities to welcome a new group of trainees in 2020, even if it had to be remotely and we had to rethink a big part of the programme.
+
+Adapting to remote work
+
+With the new context in 2020, we felt the need to design a hiring process that was fully remote, but at the same time would allow us to really get to know the candidates from an early stage. Not only based on their resume but also to assess whether they would be Good for FARFETCH, Good for Growth and Good for the Role.
+
+We received over 2500 applications, we reviewed hundreds of video interviews and selected tens of candidates for the final interview stage. The hiring managers were very happy to have access to a short video that allowed them to learn more about the candidates even before they met them. And then, even if remotely, we were able to organize the interview structure in order to create a consistent experience for everyone that was going through the process. The interview itself was very well planned and quite casual, creating an unmistakably FARFETCH experience for the candidates and an opportunity for them to get to know some of the people they would be working with.
+
+Importantly, we had to make sure that the trainees being hired were a good fit for our culture, and that would thrive through the company’s growth, even more than having the required technical skills. The fact that FARFETCH has a set of values that define our culture is, of course, an important framework to support our decisions in terms of cultural fit. To Be Human, to Be Brilliant and to act Todos Juntos summarize only a few of the competencies and behaviours we are looking to find in our candidates.
+
+Welcoming the Class of 2020
+
+On October 12th 2020, we welcomed the 37 trainees that make up this year’s edition of the Plug-In Graduates Programme. Distributed across Technology, Product and Data, this group is made of future Software Engineers, Data Scientists, Product Designers, Project Managers, and more. Almost 40% are women and there are people from many different backgrounds within the group. The vast majority have studied Software Engineering, but some have studied Economics, Fashion Design and even Clinical Analysis.
+
+The onboarding experience has been upgraded for them, so they can really get to know the company and its different areas, to listen to testimonies from different people around the business and to ask their questions. We also ensured that the remote work environment was not a barrier for them to create relationships within the group, through interactive group activities and more informal networking sessions. They learned first hand from our CTO Cipriano Sousa, from our VP People, Ana Sousa, from our VP Architecture, Luís Carvalho, from the representatives of our FARFETCH People Communities, and so many others.
+
+All of this while gradually getting to know their team lead, teammates and their mentor, who will be following their experience throughout the programme and supporting their development.
+
+We wish all the very best for this group of Plug-ins and that this is only the beginning of their brilliant journey at FARFETCH!

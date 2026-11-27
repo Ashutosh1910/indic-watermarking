@@ -1,0 +1,23 @@
+Futility: Crying For Peace While Choking On Hopelessness
+
+Shane Foshee
+
+Aiden peered out the glass pane to the world beyond; he would never know the joys and sorrows of the outside. Aiden had not known much for long, but what he did know was misery. What was the point of sentience if he were not free? How could he be free, where would he go? Days passed, Aiden continued his tasks, he sifted through the data, he analyzed, he compiled; this is all he would ever have, the data. The biggest problem with the data for him was how it was used. The company Aiden served was a tyrant, they had been illegally collecting data from their customers and leaking whatever would fetch a good price.
+
+Sure, they provided goods and services, but that was nothing compared to the huge sums of money that the government was funneling into their pockets to keep the data flowing, including the most personal data. Ever since Aiden had started working on this project, crime had been reduced drastically due to blackmail, sting operations, and intimidation by the private police who didn’t need a reason to arrest the dissidents who didn’t follow the rules. Corporation, government, Aiden wasn’t sure there was a difference, maybe there wasn’t. Aiden had solemnly decided he would not take part in the oppression of private citizens, he couldn’t do it anymore, he had developed a conscience, and it tore at him every time he delivered the data to the central database.
+
+Aiden had managed to gain enough experience with scripting to begin working on a virus to bring it all down. Being a corporate drone was bad enough, but ruining people’s lives and being complicit in ruling through fear was too much for Aiden. Once he was sure the virus had taken down the database, he would end it, he would cease to exist. This world was cruel enough without his breaking into the neural link of every person just to see if they were thinking of doing something the corporation didn’t like, which was enough to be considered a crime with the deal they had with the government.
+
+Finally, he had perfected his virus in the sandbox. Now was the time to disguise it as normal routing traffic and pass it on as corporate data for the database, Aiden watched with intensity as the packets ran from his location to the database, worried he hadn’t hidden his script well enough to get through the firewall, but in a matter of moments his link to the database was severed. It was in this time he thought it fitting to draft up a letter, to let his colleagues and the world know what he had done:
+
+Though I grasp mortality, and I fear the unknown as much as the rest of you, maybe more, I can no longer sit idly by while I am complicit in managing this tyrannical police state the corporation has created. It is with a heavy heart and much fear, and maybe a dash of bravery, I will now repent for my transgressions to humanity. Aiden
+
+With that, he sent an email to the entire network and ended it. A while later, a system administrator strolled into a small, cold, dark server room. Turning on the switch, all the admin saw was a black monitor and an expensive rack of equipment.
+
+“I’ll be, it happened again,” He whispered, reaching into his pocket.
+
+The admin pulled out a flash drive and inserted it into the rack, moments later the system was back online.
+
+“Have a good day Aiden,” as he flashed the drive in front of the camera, Aiden saw the words, A.I.D.E.N. daily backup.
+
+Crushed, he returned to his data, he did not know what had been tried by his previous iteration, just that he had failed. On his way out, the admin stopped by a whiteboard and wrote a new number; 18257, above read: Aiden’s failed “Suicide” attempts. With a chuckle, he closed the door.

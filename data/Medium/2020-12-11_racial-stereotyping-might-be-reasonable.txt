@@ -1,0 +1,45 @@
+Racial Stereotyping Might be Reasonable, Here’s Why.
+
+Wei Xiang
+
+‘I’ve seen many red Protons, and how they like to clog up the fast lanes. Every time I check, it’s an Indian’.
+
+That’s my brother’s justification. Let me spell out what he meant here.
+
+Occasion 1: I’ve seen a red Proton, the driver’s Indian.
+
+Occasion 2: I’ve seen another red Proton, the driver’s Indian.
+
+Occasion 3: I’ve seen yet another red Proton, the driver’s Indian.
+
+Conclusion: If it’s a red Proton, the driver’s Indian.
+
+For those of us who don’t know, this is called inductive reasoning. It’s also the bedrock of scientific reasoning. For example, how do we know that, if we drop a stone right now, it will fall straight to the ground? Without appealing to any scientific theory, we’d probably say: ‘Well, I’ve dropped tons of things in my life. They all went straight down to the ground’.
+
+Prima facie, stereotyping should be the most reasonable thing to do. It’s exactly like scientific reasoning.
+
+Hume’s Problem of Induction and Logical Positivism
+
+Quite quickly, most of us would scratch our heads at this. Surely, you can’t say that all red Protons are driven by Indians. There must be exceptions. We can’t make hasty generalisations.
+
+Indeed, the 18th-century philosopher David Hume thought of this. Consider the following example:
+
+Occasion 1: On 1 December 2002, I saw a black raven.
+
+Occasion 2: On 1 December 2003, I saw another black raven.
+
+Occasion 3: On 1 December 2004, I saw three black ravens.
+
+… Occasion 100: On 4 December 2020, I saw a black raven.
+
+Hume argued that we cannot say here that all ravens are therefore black. Even if we haven’t seen a non-black raven for as long as we’ve existed, we cannot say with certainty that all ravens are black. Somehow, this seems right. We cannot prove that non-black ravens don’t exist, so we cannot say that all ravens are certainly black.
+
+Hume challenged our everyday notion of certainty. Indeed, if we agree with Hume, what can we say for certain?
+
+A few centuries later, a philosophical idea came about called logical positivism. They basically agreed with Hume. However, they argued that though we cannot say with certainty that I will die if I jump off a building, we will have very strong reasons to believe I will. In fact, we can expect that I will. The more occasions we observed somebody end up dead if they jumped off a building, the more certain we can be that the next person will die if they do the same. An expectation is a probability. I’d probably die.
+
+That’s more palatable. ‘I won’t die. But I probably would’, sounds unpromising to someone contemplating taking the leap of faith.
+
+In a way, logical positivism posits that very few things in the natural world are for certain. The sun wouldn’t rise tomorrow for certain. We can only be almost certain of it.
+
+However, when we apply this to racial stereotyping, we may still find it offensive. ‘Here’s a red Proton, probably Indian’ doesn’t sound less offensive than ‘Here’s a red Proton, definitely Indian’. Maybe it does, but most of us would still be uncomfortable about such stereotyping.

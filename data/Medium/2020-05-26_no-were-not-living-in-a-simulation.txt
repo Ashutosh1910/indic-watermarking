@@ -1,0 +1,155 @@
+No, We’re Not Living in a Simulation
+
+Richard Johns
+
+Alice meets the Programmer
+
+The simulation hypothesis leads to a contradiction that involves a diagonal thought. To make the argument more fun, I’ll let the contradiction emerge from a dialogue involving a fictional philosophy student, Alice, who becomes fascinated with the simulation hypothesis. The dialogue begins with Alice returning from school to find a strange little man in her apartment. He seemed not to notice her entering the room, and remained seated comfortably in Alice’s favourite armchair, reading her own copy of Nick Bostrom’s “Are You Living in a Computer Simulation?”.
+
+“Who the hell are you?” Alice shrieked. “What are you doing in my apartment?”
+
+The man laid the article on his lap, and looked up at her. “Hullo Alice”, he said, completely at ease, as if they knew each other.
+
+“An interesting paper,” he said in a matter-of-fact way, tapping the article with his index finger. “And his suspicion about living in a simulation was correct.”
+
+Alice’s initial alarm at seeing the stranger gave way to curiosity. “How do you know my name? And what makes you think we’re in a simulation?” she asked.
+
+“Ah,” he replied modestly, looking down at his lap. “I know both things because I’m the Programmer. This body,” (he gestured at himself) “is just my avatar in the simulation. Members of my species no longer have bodies in the conventional sense.”
+
+Alice stared at him for several seconds, lost for words. The Programmer waited patiently.
+
+Finally, Alice blurted out, “Why should I believe you?”
+
+“Good, good. Philosophers are supposed to be skeptical. All that you see around you is code, and as the Programmer I’m able to delete objects such as this paper here.” As he spoke, the paper vanished into thin air. “And insert other objects.” He gestured to his left, where a low table appeared, supporting a bottle of wine and two glasses. He filled one glass and took a sip. “Would you like some wine while we talk?”
+
+Alice pulled up a chair and sat down. “Alright,” she replied. Whoever this guy was, she would play along with it for now, as it was sure to be an interesting conversation.
+
+After a quick slurp of wine — which was very good — she started. “So, if this is all code, and you’re the Programmer, how are you interacting with the code right now.”
+
+“It’s hard to explain, but you can imagine that everything happening in the simulation is laid out before me on a huge screen, in a highly compressed format — I’m basically seeing the code as it’s executed, command by command, but I also see the effect of those commands on trillions of different variables, representing all the processes happening on the whole planet. I can also alter the code, as you just saw.”
+
+“What about me?” Alice replied. “What am I?”
+
+The Programmer paused and took a large mouthful of wine. Then he looked Alice straight in the eye, saying, “You’re part of the simulation. A high-fidelity Sim that exists within the code only.”
+
+Alice choked slightly. “Really? So, I’m basically just a bunch of numbers?”
+
+“That’s an unflattering way to put it,” the Programmer said evenly. “I would rather say that you’re a very complex and constantly evolving pattern, whose state at a given moment is specified by a huge collection of numbers, and whose evolution is controlled by an algorithm.”
+
+“But I’m … I’m a thinking being!” Alice blurted out. “I think, therefore I am. I exist!”
+
+The Programmer looked concerned. “Please don’t be troubled, my child. Of course you exist — I never said otherwise. I’m just telling you what you are.”
+
+“So even my conscious thoughts, right now, are just numbers in the simulation?
+
+“That’s correct. I see your thoughts, along with everything else.”
+
+“OK then, what am I thinking about right now?” Alice closed her eyes and focused her mind on something.
+
+“You’re picturing a plate of waffles, with syrup and fresh strawberries.”
+
+“No way!” Alice exclaimed. “That’s freaky. But what is my mind really like? How many numbers are there?”
+
+“Well, the computer running the code works in binary of course, like all computers, so ultimately these numbers are binary strings. Some parameters are longer strings than others, but putting them all together your mental state at a given moment is defined by around twenty billion bits.”
+
+“So my belief that I had waffles for breakfast is a bunch of zeros and ones somewhere in my mental parameters?”
+
+“More or less, yes. The coding of your belief system into binary is very complex, and holistic, but you can think of it that way.”
+
+“But how does a string of zeros and ones come to mean anything, or be about anything? How does it unambiguously represent some state of affairs in the world? How does it have so-called intentionality?”
+
+“Don’t you remember covering functionalism last term? A mental state is defined by how it came about, and what it does, in other words by its causes and effects (within the simulation). For example, your belief that you had waffles for breakfast was caused by your sensory experience of eating waffles, and once formed it will cause other mental states, as well as behavior such as speech. The propositional content of an intentional state is just a matter of its causal role in the whole system.”
+
+“I guess that makes sense,” Alice conceded. “After all, we judge whether or not a person really understands something by seeing whether their speech and behavior show that understanding. If someone understands the directions we give them, for example, then they’ll follow the route described.”
+
+“Yes, that’s the basic idea, although it’s more holistic than that. Their behavior arises from all their beliefs and desires in combination. They might not take the direct route you gave them if they think they’re being followed, or if they want to grab a coffee along the way, and so on.”
+
+Alice nodded. It seemed incredible, but perhaps she really was just part of a simulation?
+
+“Remember,” the Programmer continued, “that intentional content isn’t a fundamental property of your mental states. I understand everything that’s happening in the simulation in terms of the binary logic of the program. Intentionality reduces, as I said before, to causal connections between your representational states and ‘external’ objects within the simulation.”
+
+As he was speaking, a doubt started to form in Alice’s mind. Something didn’t quite add up.
+
+“There’s something weird,” she said hesitantly, “about knowing that my own thoughts are, ultimately, just binary strings. Because I can also have thoughts about binary strings! If I have a thought about binary strings, then you’re saying that a binary string is having a thought about binary strings? Can that really happen?”
+
+“Well, why not?” the Programmer replied, shifting uncomfortably in his seat.
+
+“Well, because …” Alice struggled to find the right words. “… Doesn’t that kind of self reference lead to paradoxes? For example, I might think the thought, some of my states have more ones than zeros, and when I think that, the very state I’m in has more ones than zeros.”
+
+“I suppose it might, but so what?”
+
+“Well, you see how that binary sequence kind of applies to itself? I’m having a thought that involves a certain concept, and the concept actually applies to the binary state underlying the thought.”
+
+“OK, that’s fine. But where are you going with this?”
+
+Alice went quiet for almost a minute, her face showing intense concentration. Then she brightened. “I’ve got it! I can just use the Cantor diagonal!”
+
+“What?”
+
+“You know how Cantor defined his ‘diagonal’ set, to show that there are more sets of whole numbers than there are whole numbers?”
+
+“Of course I know about that. But how is it relevant?”
+
+“I can use Cantor’s trick here,” Alice said excitedly. “Let’s define an ‘inclusive’ binary state as a state S in which I’m thinking a thought of the form, There is a binary state with the property P, and S itself has the property P.”
+
+“Fair enough.”
+
+“Then I might wonder how many states are inclusive in that sense. Perhaps all are, for example, although that seems unlikely. Probably at least one state will be non-inclusive.”
+
+“Ah, I think I see what you’re up to. That’s a diagonal thought.”
+
+Alice took a deep breath. “Right. If I’m thinking that thought, There is a binary state that is non-inclusive, then I must be in some binary state at that moment. Call that state ‘d’, for diagonal, and then we get the familiar contradiction. d cannot be inclusive, and cannot be non-inclusive either. If d is inclusive, then it has the property P that’s part of the thought, but that property is non-inclusive. If d is non-inclusive, on the other hand, then d doesn’t have the embedded property, so d isn’t non-inclusive. Either way it leads to contradiction.”
+
+“Ok,” the Programmer said wearily, “you know how to make a diagonal argument. So do I. Why is this interesting?”
+
+“It seems to show that something is wrong with the simulation hypothesis. I only exist within the simulation, you said, and my thoughts are nothing but binary strings within the simulation. But this just can’t be true. I have thoughts about binary strings, so I was able to construct a diagonal thought that can’t have any underlying binary string. So, I can’t even think that thought, which is absurd! I just thought it!”
+
+“Very clever, Alice, but I think your term ‘inclusive’ is improperly defined, at least when applied to thoughts involving ‘inclusive’ itself. It becomes circular in that case, and that’s why you get a contradiction. Your contradiction has nothing to do with the simulation hypothesis.”
+
+Alice paused to think. “Hmm. You’re saying that ‘inclusive’ isn’t well defined. But suppose we look at it this way. Whatever language the code is written in, I’ve heard that it gets converted to very simple commands that the CPU can execute directly — things like move this number to this register, add this number to that one, and so on. Is that true?”
+
+“Yes, my earth simulation ultimately runs in machine code.”
+
+“Good. So you understand what the program is doing in terms of a certain set of concepts that we might call ‘machine code concepts’. OK?”
+
+“Yes, that’s true enough.”
+
+“And these machine code concepts are completely adequate for understanding the program? There’s never anything going on in the program that can’t be described, predicted or understood using them?”
+
+“Yes, yes. Please get on with it.” He now seemed slightly irritated.
+
+“Great. Then I can restrict the property ‘P’, in my definition of ‘inclusive’, to properties definable using your machine code concepts.”
+
+The Programmer sighed. “Let me get this straight. You now want to define an ‘inclusive’ binary state as a state S in which you’re thinking a thought of the form, “There is a binary state with the property P”, S itself has the property P, and P has to be something definable in terms of machine code concepts?”
+
+“That’s right. The key point is that, since an understanding of the program in terms of machine code concepts is functionally complete, it must provide a full understanding of the intentional content (if any) that each binary state has, and so ‘inclusive’ is itself a machine code concept.”
+
+“Well, actually it’s a rather complicated construction, but you’re right that it only uses machine code concepts.”
+
+“So the term ‘inclusive’ is now properly defined, and not circular or anything like that?”
+
+“I suppose so. You’re diagonalizing on well-defined concepts, so the diagonal is also well defined. And now you’re going to tell me that the contradiction still arises?”
+
+“Well it does, doesn’t it? If I’m thinking that some binary state is non-inclusive, I must be in some binary state d when I’m thinking that. And since ‘inclusive’ is a well-defined machine code concept, the state d must be either inclusive or not, but both possibilities lead to contradiction. The claim that I’m only a Sim leads to contradiction after all.”
+
+“Very clever, Alice. But I don’t believe you’re really able to understand the diagonal proposition in question. I understand the machine code of the program, but you don’t. You don’t even possess all of the machine code concepts that are needed, and the sheer complexity of it is far beyond your understanding. There’s a difference between merely speaking words, like a parrot, and actually understanding them.”
+
+Alice wasn’t intimidated by this. “You’re right of course that I don’t understand the details, but I do understand the general idea, and I’m certainly not just ‘parroting’ the diagonal sentence — thank you very much. I was the one who came up with it! I can understand a proposition perfectly well, such as “All the candies in this box are peppermints”, without knowing all the details, such as how many candies there are, what each one weighs, and so on. I can successfully refer to things I know to exist, and this includes the finite set of machine code concepts that you understand.”
+
+The Programmer opened his mouth, but no words came out, so Alice continued. “Let’s look at it this way. You can understand the term ‘inclusive’, as I’ve defined it, right?”
+
+“Yes, I already said that. From my perspective, it’s just a very complicated machine code concept.”
+
+“So, from your perspective, Some of Alice’s binary states are non-inclusive is perfectly meaningful?
+
+Yes. It’s also true, as a matter of fact. But you already guessed that.
+
+“Oh right. I just figured that some properties P are going to very specific, and so apply to very few states, or even none at all. In that case it’s rather unlikely that the state I’m in when thinking about P would have the property.”
+
+“I thought that was your reason. It makes sense.”
+
+“OK, so you and I are having a conversation about this property ‘inclusive’, which I first thought of, and I made a reasonable argument about it, and yet you claim I don’t even understand what it means? If I don’t understand that, then do I understand anything at all? Do I understand the simulation hypothesis, for example? If not, then what we even are talking about …”
+
+Suddenly, loud music started playing right next to her, and Alice sat up with a start. She looked around her. She was alone, in her dark bedroom. The luminous digits on the clock radio said 7.30am.
+
+“Wow, cool dream,” she said to herself.

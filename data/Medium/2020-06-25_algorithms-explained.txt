@@ -1,0 +1,21 @@
+Algorithms Explained
+
+Margherita Gilley
+
+I can’t believe I just finished reading an entire book about algorithms. As a retired English teacher and adjunct instructor, I’ve got plenty of time to indulge in any kind of reading I want to do. Now, I can read all of Shakespeare again, maybe a little Dickens, or any of the many brilliant authors writing great fiction today.
+
+Still, I chose Hello World by mathematician Hannah Fry and I am glad to say that this wonderful writer has not only made algorithms intelligible to a common, die-hard literature fan like myself, but she explained how algorithms are the new magicians of our era.
+
+They are casting spells all over the place and most of us are none the wiser. Her methodical study got me thinking about education. If algorithms are useful in medicine, science, and crime, how are they used in education? Luckily, in education, we have a unique opportunity to learn from the errors made in using algorithms in other fields. Algorithms, like humans, are flawed! I knew it all along and thought myself a hopeless Luddite for thinking such blasphemy, but as it turns out, my instincts were correct. Educators are humanists, purely, dogmatically wedded to the idea that humans and people matter more than institutional Big Brothers; surprisingly, we can find some common ground with this mathematician who shows humility in evaluating the power of the almighty algorithm.
+
+The author shows how algorithms, sets of logical instructions for accomplishing a task, are expressed mathematically by operations and equations to create computer code and are “fed” real data and given a specific objective. She identifies four specific tasks: Prioritization as in Google searches; Classification, used by advertisers to target ads based on search history; Association, responsible for finding links between products you have searched and others in the same category; and Filtering, as used by Siri, Alexa, and Cortana.
+
+While the use of algorithms has, for the most part, enabled doctors and judges to improve their professional practices, Ms. Flynn cautions that “our reluctance to question the power of an algorithm has opened the door to people who wish to exploit us.” She explains how algorithms have built-in biases that are sometimes the result of the data, how it is collected, and how the directions are formulated. Therefore, just like humans, the algorithm can be wrong and dangerous. Precisely!
+
+I wondered how data is currently being collected in education. What is the purpose of standardized testing which has ignited a firestorm of opt-outs and rallying cries in many communities in New York? Who needs all of this data and what do they need it for? Certainly, kids don’t benefit from sitting for hours taking exams when they could be learning more of the curriculum. As it is, the school day is very short, especially if one takes into account the various social activities and school spirit functions.
+
+I suspect that the data is needed to develop a teaching algorithm that will be used to reconfigure the classroom and the entire educational system. Already, formulaic configurations were used to try to hold teachers accountable for student performance. While there has been some retraction of the half-baked connections, it is clear that the intent is to write the new algorithm. The ultimate one is coming and like an insatiable tyrant, it must have data.
+
+The new algorithm will either destroy our educational system or improve it beyond our wildest expectations. Everyday classroom teachers and teacher unions must be front and center in the design of the new algorithm. They should be asking the hard questions and as Ms. Flynn says, “questioning and scrutinizing motives.” Who is benefitting from all this data collection? Why does it have to be done so frequently? Why on a computer? Why can’t local assessments be just as valid? Why is this yearly opt-out ritual still repeated after there is apparent consensus on the ineffectiveness of the exams?
+
+I hope stakeholders will read Ms. Flynn’s book, as it makes the use of algorithms crystal clear, offers a cautionary perspective, and most of all gives us an insider’s view of the wizard behind the curtain.

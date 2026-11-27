@@ -1,0 +1,31 @@
+The Algorithmic Anarchy of Uberland
+
+Indrajeet Sircar
+
+A quick review of Alex Rosenblat’s new publication — Uberland
+
+I was lingering on Amazon to pick up my next read, when I came across, fresh off the press — “Uberland: How Algorithms are Rewriting the Rules of Work” by Alex Rosenblat, a technology ethnographer.
+
+Being an anti-trust lawyer, I have observed Uber largely through its pricing practices, and have been trying to dig into whether algorithms can violate antitrust laws. (I have a love-hate professional relationship with claims of “platform neutrality” and “algorithmic neutrality” — transitioning only more recently to the inevitable admission that algorithms can at best only be built upon existing societal biases)
+
+I was tempted to pick up this book for two reasons. First, I recently read a lot of literature surrounding the nuances of the term “sharing economy”. However, I was unable to reconcile the concept with the actual business models of the most quoted examples of the sharing economy — Uber and AirBnB. Second, I wanted to feed my newfound curiosity on the impact of the new economy model on labour markets. Having recently read Temp by Louis Hyman, and discovering a revealing quote from Uber’s ex-CEO Travis Kalanick in this podcast at Recode, while explaining Uber’s motivations for investing in (or allegedly stealing IP from Google for) driverless cars, I was curious to dig deeper into the Uber way of viewing labour.
+
+“Well, you know what the problem with my business is, is the guy in the front seat. He costs a lot of money, and if I can get rid of him, that would be a business.” - Travis Kalanick
+
+Rosenblat cuts to the chase in the initial few pages of the book, calling Uber’s bluff — of crafty positioning and doublespeak — and confusing their position on drivers as entrepreneurs, workers or merely consumers of Uber’s technology solution. The rest of the book provides a detailed on-ground account of Uber’s story in North America from 2014 till date, in an attempt to discover how precisely Uber might just be a red-herring for a larger shift in societal perceptions about work, through this problematic proposition of viewing workers as consumers.
+
+Through the pages, Rosenblat takes the effort of developing thoroughly detailed driver experience canvasses to amplify and provide context to the continued global press coverage surrounding the waves of controversy at Uber. All this, to get a fuller picture of the “algorithmic boss” Uber has set loose, to nudge its “employees”, while sternly maintaining that its drivers are merely “customers” of its technology.
+
+While the book does make a point about how Uber’s example gives us insights into the future of work, and enables us to look beyond the over simplified and deterministic panaceas offered by Silicon Valley in the form of ideas like Universal Basic Income — the book serves in equal parts as a harsh critique of the “move fast and break things” philosophy that has come to dominate most of what Silicon Valley seems to view as the norm in high innovation. And that is what I liked most about the narrative — it doesn’t hold back — and reads as an overtly political account of Uber’s overtures at gaining regulatory arbitrage through its narrative of technology exceptionalism.
+
+In the process, she covers the chaotic public affairs spins that have spread Uber in all directions, and touches upon the various reasons why Uber wins. For example, by touching upon the backdrop against which the “gig economy” idea gained mileage, and the clever leveraging of the typical “millenial way of working” image by Uber and other similar platforms, to give weight to the idea of Uber drivers being essentially entrepreneurs in line with the new norm.
+
+Along the way she delivers some shockers, some of which gained wide media coverage, and others which even to me, were eye-openers, and would certainly give readers a lot of food for thought about the failings of extant institutions, and the ways in which even newer decentralised models could fail us in similar ways. For instance, I was indeed blind to the fact that sometimes, Google Maps’ algorithm may not send me on a route because it’s the fastest, but because it’s a route about which it doesn’t have any data. And she does have a point here. Do that to me for a free service — yes sure there are still some ethical questions. But do that in a context where you use an algorithm to provide behavioural nudges to drivers who depend on the algorithm for their livelihood, backed by potential sanctions of deactivation from the platform, all while trying to disavow yourself of the true nature of the relationship between the platform and the drivers, algorithm based decisions can have wide ramifications.
+
+In fact the book made me validate my newfound admission that algorithms may at best reflect extant societal biases, by pointing out that in certain states in the US, if one types in a name that is statistically such that it indicates an African-American ethnicity, then Google is likely to throw up Ads for criminal justice background checks, amplifying extant racial biases.
+
+No wonder therefore, the book had me going “wow” out loud and smirking on public transport, several times, as bystanders stared at me disapprovingly. And even though, the book didn't go as far as to convince me that Uber template is indeed the future of work, it did give me some well put together material to ponder over the ways in which technology is often pitched against existing legal frameworks, and whether jurisdictions necessarily have to serve up a “law of the horse”, just because the buggy industry says it is needed.
+
+All in all, it’s not just a useful resource for those trying to develop an answer to the questions the book raises, it’s a must read for pretty much everyone, to get a fuller view of the way in which the new economy business model continues to evolve, in ways both ugly and innovative.
+
+(Written as a part of the requirements for the course — History of Technology Revolution offered at Sciences Po, Paris)

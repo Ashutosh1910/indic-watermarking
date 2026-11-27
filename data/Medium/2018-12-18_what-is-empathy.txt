@@ -1,0 +1,93 @@
+What is Empathy?
+
+Rowman, Littlefield International
+
+By Elisa Aaltola
+
+Empathy is often spoken of, but rarely defined. We all have a general sketch of what it may mean, but when put on the test many confuse “empathy” with terms such as “sympathy” and “pity”. This lack of definition also applies to the relation between empathy and moral ability. Many share the intuition that empathy is important for our capacity to recognize value in and care for other individuals yet struggle with explaining why this should be so. There is a clear need for both defining empathy and its role within morality.
+
+Definitions of Empathy
+
+As recent debates within the study of emotion have manifested, a universally applicable definition of emotions is not easy to construct. Indeed, it may be the case that our conception of emotions is culture-dependent, and thus definitions concerning them will vary from one individual to another. Yet despite of the role that culture can play in shaping our understanding of emotions, it is important to recognize that most human beings do share some universal tendencies (such as the capacity to experience or have affects, to form perceptions concerning the experiences of others, and to at least potentially care for what happens to those others). It is such universal tendencies that lay the grounds for empathy, even if understandings of empathy can also be shaped by one’s culture. At their core, investigations of empathy aim to describe what empathy can mean in light of psychology, neurosciences, philosophy and morality.
+
+If one scratches the surface of the term “empathy”, it becomes quickly apparent that “empathy” is not one but many. That is, instead of there being one, singular and prototypic form of empathy, empathy falls into different varieties. Often these different varieties support each other and manifest in the same situation, yet they can also surface individually, unaccompanied by other forms. Furthermore, they all prioritise a different mechanism as their basis, and come with different moral consequences. Drawing upon my latest book, Varieties of Empathy: Moral Psychology and Animal Ethics(Rowman & Littlefield 2018), I will unpack four common forms of empathy.
+
+Projective Empathy
+
+Perhaps the most common variety of empathy is projective empathy, wherein we are to place ourselves into the metaphoric shoes of another individual. Children are taught to consider how they would feel in the place of another, and as adults we tend to at least implicitly ask others to think of how they would feel in our position. Here “the self” is projected into the situation of another. Literature is often thought to teach this ability, as narratives concerning real or fictious others invite us to imagine the experience of a different life and context.
+
+Simulative Empathy
+
+The sibling of projective empathy is simulative empathy. Whilst also it can be taught by literature, films and other arts, it also differs from projection in one important manner. When experiencing projective empathy, we ask “how would I feel, were I to be her?” In simulative empathy, we ask “How does she feel?” One no longer seeks to transport oneself into the place of another, but rather to interpret, with the aid of imagination, how the other may feel within herself, in all her difference. The aim is to simulate the context of the other individual — her history, cultural environment, everyday struggles, etc. — and thereby envision what it is like to be her, in all her distinctness and particularity.
+
+Affective Empathy
+
+The third empathetic form, affective empathy, refers to our ability to resonate with the experiences of others. One no longer prioritises projection or imaginative simulation, but rather echoes the feelings of the other. When witnessing sorrow, we may become sad, and when witnessing suffering, we may feel a painful pang in ourselves.
+
+Whilst 18th century liberalist philosopher Adam Smith was a pivotal figure in advocating the previous projective and simulative empathy (what he termed “sympathy”), his colleaugue David Hume appeared to support something similar to affective empathy. Indeed, Hume argued “reverberation” to be the most spectacular of our abilities. The philosopher Arthur Schopenhauer used the term “compassion” for the same emotional capacity, suggesting that it was something quite mystical. Contemporary studies show that there is nothing mystical about our ability to resonate with the experiences or emotions of another. Affective empathy develops early on in our childhood, and gains basis in our neural structures. Social animals are prone, at least in some contexts, to imitate the emotions of others, and humans may in fact share this type of empathy with some other species.
+
+Cognitive Empathy
+
+Finally, cognitive empathy refers to the ability to primarily perceive or infer, on the basis of what in philosophy is called “a theory of mind”, what the other individual is undergoing. The aim here is to remain as emotion-neutral as possible, and simply observe the other. Cognitive empathy is in many ways the opposite of affective empathy, as attunement and resonation with another is replaced by a more detached outlook. It may sound surprising that such a state is categorized as “empathy”, but it in fact forms one important method of understanding the internal landscapes of other individuals.
+
+Empathy and Morality
+
+Quite strikingly, different varieties of empathy can have radically different moral implications. Take projective empathy: although it can work as a great pedagogical tool, it also has its downsides. One of these is that the other individual may become replaced with “the self”. If a middleclass person undergoes projective empathy toward a homeless individual, and thereby transports herself into the shoes of someone with no funds or housing, she will judge that individual according to the same criteria she uses for herself. Projecting her own stable and privileged position onto the other, she may think that the homeless person should just go and get an education or find a job — her ability to note the background and challenges (the sort of troubles she may never have experienced) of the other may become restricted.
+
+Another example of projective empathy’s potentially problematic moral consequence is anthropomorphism, whereby one may wrongly project human qualities onto nonhuman animals. Although humans share with other animals a vast number of different abilities, which used to be positioned as “human-only” (memory, learning, awareness, communication, emotions, conceptuality, and so forth), in order to morally respect, say, bears or cows one must also note their differences and peculiarities. Nonhuman animals are not furry and feathery humans, and when we simply project ourselves into their place, the danger is that their particularity is lost. Indeed, when projecting too much, we may demand impossible things (for instance, human morality or human-specific ways of manifesting intelligence) from other animals, thereby ultimately undervaluing members of other species.
+
+Simulative empathy is often more morally constructive in such dilemmas. Its point of focus is precisely also the difference and distinctness of the other creature. Within its sway, the middleclass person seeks to imagine the life-history, challenges and context of the homeless person, and the human being tries to imagine what it may be like to exist as a wholly different type of an animal. Here, learning more of the other becomes a significant act, whether it is through their personal accounts, factual information concerning them, interaction with them, or artistic practice. However, simulation also comes with challenges. One of these is that it alone may not suffice for moral concern — after all, it is possible to imagine what it is like to be another, but still remain un-resonating and emotionally detached from what happens to her.
+
+Similarly, cognitive empathy faces its own risks. While it is important to learn to perceive and infer the mental states of others, if one does not combine doing so with also an affective dimension the dangers are nothing short of Machiavellian. When we gather information of the other’s emotions without feeling much for or with them, it becomes a lot easier to use that information in order to manipulate the others to serve our own benefit. Indeed, studies manifest that those suffering from “psychopathy” or the narcissistic personality disorder can have both good cognitive empathy skills, and difficulties in feeling guilt or resonating with others. It may be precisely this that renders them skilled at manipulation and control and prevents them from understanding the inherent value of other individuals.
+
+On its own, cognitive empathy may not support moral agency. This is also evident in the context of how other animals are treated. Arguably, practices such as industrial farming and hunting depend on utilizing cognitive information regarding the behavior of animals (such as how they will react to given stimulus) whilst avoiding resonation or further morally relevant emotions (such as guilt, humility or love). Relatively affect-neutral knowledge of the affects of others is always a dangerous thing at the hands of self-directed creatures, and all too easily leads to ignoring the needs and value of the other.
+
+But what about affective empathy? Out of these four candidates, it forms the most promising basis for morality. This is because resonating with others forms an experiential bridge into the other. Simply put, resonating with the suffering, fear or joy of another will spark moral concern or recognition much more forcefully than detached simulation, inference, or rational theory. As Schopenhaeur suggested, if we were to rationally debate what is wrong with ripping off someone’s jaw, we would be lost — the immorality of the act is evident, because we feel it to be evident, and we feel it, because we undergo compassion. Often, just letting ourselves become experientially affected by the internal landscapes of another is enough for us to start noting their uniqueness and worth. This applies also to nonhuman animals. Becoming exposed to their suffering within, say, industrial animal agriculture — truly paying attention to what happens to them — may lead to the sort of resonation after which one can no longer deny the subjectivity of other animals, or the moral wrongs committed toward them.
+
+Yet affective empathy faces problems when unaccompanied by other varieties of empathy. For instance, were one to simply resonate strongly with little simulation or cognitive inference, one might not understand the contexts, causes or more hidden motivations behinds the emotions of another. As I argue in Varieties of Empathy: Moral Psychology and Animal Ethics, it is often the balanced combination of different types of empathies, which allows us to form the most complete understanding of the other’s felt perspective.
+
+The Role of Reflection
+
+One such combination is formed by what I call reflective empathy, which is a type of “meta-empathy”. In reflective empathy, one explores how one could cultivate one’s ability to expand and use the other “first-order” varieties of empathy. How could I resonate better with beings highly different from myself? How could I simulate others more effectively? How to become more empathic in situations of conflict?
+
+Here, mindful attention can function as a method via which to become more inclusive and capable in one’s empathy. Another obvious source of reflection is rationality. Indeed, although empathy is important for moral agency, reason has a significant and vital role to play. Placing empathy as one constituent of moral ability in no way eradicates the significance of rationality. Rather, at their best, the two entwine and support each other.
+
+Mindful attention and reason can help to combat one unpleasant downside of empathy. As has been pointed out by thinkers such as Jesse Prinz and Paul Bloom, empathy faces the risk of bias. If such a risk is to be avoided, we ought to strive toward both mindful and rational reflection on why we empathise with particular types of individuals and not others, and how to broaden our empathy so as to include all those creatures, human or nonhuman, who have minds, and who experience their existence as something.
+
+Conclusion
+
+Empathy is an important route into understanding the internal realms of others. It also facilitates our moral relationships with those others. Ideally, we should try and combine the best aspects of different varieties of empathy and pay attention to how to cultivate our non-biased ability to pay heed to all those creatures, who have minds, experiences, needs and perspectives. Here, not only simulation and resonation, but also attentive reflection and reason can serve as guides.
+
+Yet, empathy does not take place in isolation from wider social, cultural and political surroundings. We are often taught to use or to suppress different types of empathy from early on in our lives. For example, we may be taught to prioritise cognitive empathy at the expense of resonation, or we may be taught to project rather than to simulate. Most worryingly, we are often told that empathy is appropriate only toward those, who are most like us, or who are members of our ingroups. As a result, nonhuman animals, people from other cultures or social classes, or even members of another gender may be excluded outside of empathy.
+
+Aristotle argued the task of the society is to teach us virtue, and the same applies to our knowledge of empathy. Cultivating empathy does not take place only “in the head”, but also socially, in relation to others. Transforming our social institutions in a direction that renders them better able to support and teach us empathy is crucial. The media, education, health care, marketing and economic industries are all culture-shaping institutions which ought to be sculpted so as to become capable of fostering different varieties of empathy — both toward human and nonhuman animals. Not a bad direction for a society to take.
+
+Elisa Aaltola is Senior Lecturer in Philosophy at the University of Eastern Finland. Varieties of Empathy: Moral Psychology and Animal Ethics is her latest book.
+
+References
+
+Aaltola, Elisa. 2014a. “Affective Empathy as Core Moral Agency: Psychopathy, Autism and Reason Revisited”. Philosophical Explorations17 (1): 76–92.
+
+Aaltola, Elisa. 2014b. “Varieties of Empathy and Moral Agency”. Topoi– An International Review of Philosophy33 (1): 1–11.
+
+Ahmed, Sara. 2004.The Cultural Politics of Emotion. Edinburgh: Edinburgh University Press.
+
+Baron-Cohen, Simon. 2011. Zero Degrees of Empathy: A New Theory of Human Cruelty. London: Penguin Books.
+
+Barrett, Lisa Feldman. 2017. How Emotions are Made. London: MacMillan.
+
+Bloom, Paul. 2016.Against Empathy. New York: Ecco.
+
+Decety, Jean & Ickes, William (eds.). 2009. The Social Neuroscience of Empathy. Massachusetts: MIT Press.
+
+deWaal, Frans. 2008. “Putting the Altruism Back into Altruism: The Evolution of Empathy”. Annual Review of Psychology59: 279–300.
+
+Hume, David. 1969. A Treatise of Human Nature. London: Penguin Books.
+
+Prinz, Jesse. 2011. “Is empathy necessary for morality?” In Empathy: Philosophical and Psychological Perspectives, edited by Amy Coplan and Peter Goldie. Oxford: Oxford University Press.
+
+Schopenhauer, Arthur. 2005. The Basis of Morality. New York: Dover Publications.
+
+Smith, Adam. 2009. The Theory of Moral Sentiments. London: Penguin Books.
+
+Stein, Edith. 1989. On the Problem of Empathy. Watraut Stein (transl.). Washington: ISC Publishing.

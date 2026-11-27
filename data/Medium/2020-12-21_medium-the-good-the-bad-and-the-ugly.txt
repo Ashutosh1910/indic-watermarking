@@ -1,0 +1,101 @@
+Medium — the Good, the Bad, and the Ugly
+
+unknown
+
+The Good
+
+With the advent of the COVID19 pandemic, I came across this beautiful community called Medium. Before that, I used to actively use Quora and StackOverflow (for technical articles) for voicing my opinions.
+
+The monetization process in Medium is fairly simple and helps and inspires writers like us to write better quality articles. The statistics page is pretty useful and can help budding writers understand the penetration of the article. And there are a lot of articles present on how to fine-tune your title, how to choose the featured image etc.
+
+The Medium community is awesome. When I started writing, I spoke to a lot of existing writers and they were always ready to help. There are some social media communities where you can share your articles and ask for honest opinions and reviews. Some of the editors of pubs guide you to write a better article.
+
+Reading is one of the best side effects of Medium as a writer. When I started writing on Medium, I realized I am reading more. I have read more books, more medium articles, and I am more on top of current trending news. All this, thanks to medium.
+
+Look at some awesome reviews of medium articles. And you can relate to most of them and say, “Yes it's true. Medium is great”.
+
+History Written Interestingly
+
+I just read an article entitled “The Process Leading to the US Losing it’s Manufacturing” and I hung on to every word. Loved reading the whole article to find out the shifts, losses, gains, and the economic wars , if you will, between countries …
+
+Articles & Authors Alike Publishing In MEDIUM are “Worth In Gold & Diamonds”
+
+The articles are written under the concept of “Short & Sweet” and requiring only less than 10 Minutes to read & still be able to understand the main goal & objective of the article
+
+The Bad
+
+A unified and clean process for Publishing
+
+As a writer, the process of publishing an article to a pub is very confusing at times. There are thousands of publications on Medium and the process of adding as a writer is not streamlined across all of them.
+
+Some pubs have a separate page where you can send an online form. Some accept via emails, some via Medium comments, and I have seen one via Slack as well.
+
+For a newcomer, this is a bit complicated, and I believe this is overcomplicating things. Ideally, there should be only one predefined way of adding yourself as a writer. That would take all the guesswork out of the process.
+
+Maybe there is a reason Medium keeps this process confusing and complicated, maybe this curiosity helps attract more writers. I don’t know. The only thing I know is that multiple folks on separate forums have talked negatively about this.
+
+More trending articles
+
+As an avid reader, I personally feel this is very important. I just love reading trending articles. Whether on Twitter or general news, I love the things that are trending.
+
+Currently medium has 6 trending articles on my home page.
+
+Screenshot from Medium’s homepage
+
+Which is very good. But I want more. I want the flexibility to see more trending articles. 6 articles finish fast, really fast.
+
+An article is trending means that a huge part of the Medium population has already loved the article. And I do not need much validation of the article. I can just sit, relax, and enjoy these trending articles.
+
+The Medium App
+
+The Medium app is pretty basic. And I have seen multiple people complain about it.
+
+Screenshot by the author of a question the author asked on social media
+
+→ Response to comments are pretty tough to manage on the app
+
+→ Copying link of stories and bio is a nightmare
+
+→ General Usability is not that great
+
+→ Editing a comment or story creates a lot of confusion. I by mistake published an article while trying to edit.
+
+The Ugly
+
+Comments as stories
+
+As a writer, this is one of the most irritating issues with Medium. And it’s not only me, I have seen multiple folks on social media reporting it, there are some articles on Medium itself bringing up the issue.
+
+Medium posts your comments are individual stories.
+
+Imagine you have written 100 articles, and you wanted to look at one of your older articles. This feature makes navigation through your published stories near impossible.
+
+The way I navigate is by going to the stats page, then scrolling to the story I want to see, then clicking on the story heading to navigate to the story. It is a multi-step process — thanks to this medium feature.
+
+Steps to go to a particular published story — Image by Author
+
+And I believe most of you would also be going through a similar ordeal every time you want to browse through a story.
+
+I have also seen many readers and writers avoid commenting altogether to overcome this problem. Check out this post
+
+From a logical point of view, I believe comments are intrinsically different from stories and should be treated differently. Comments are usually a couple of lines max, while a story in most cases is north of 1000 words. Comments are just responses to stories.
+
+The solution could be as simple as adding a new tab to the stories page
+
+Let’s hope Medium changes this feature in the future.
+
+Future of the Company
+
+Medium has in the past shut down few offices and laid off a few folks. And Medium is a pretty private company, so they keep a lot of their numbers, business practices, roadmaps, etc a secret.
+
+There are a lot of posts stating that Medium is not a very profitable company.
+
+There are some reviews stating the influx of average and non researched articles on Medium. With monetization and dependency on its own editors and writers, is that a risk? Let’s look at this review on App Store:
+
+Average writing from enthusiasts rather than experts IMO Most of the articles on this platform appear as summaries of greater works to me. It’s almost a collection of high school and college book reports with very little researched reporting, like a thesis, magazine, or news outlet. Most of the pieces come off as “something I wrote this morning” and not “I’ve been working on this for a year”
+
+This creates a lot of confusion among the writers who are putting all their efforts into Medium. Medium is considered as “YouTube with text” by many, but can the business model sustain?
+
+Although there is nothing to worry about right now, it forces us to ask the question — “What if the company shuts down?”. What will be the future of the writers who are publishing here? Maybe something to think about, eh?
+
+Share your honest review of Medium.

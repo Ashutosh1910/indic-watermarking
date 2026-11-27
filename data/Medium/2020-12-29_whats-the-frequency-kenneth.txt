@@ -1,0 +1,55 @@
+What’s The Frequency Kenneth?
+
+David Todd Mccarty
+
+The late, great Louis CK (he’s not dead yet, but I don’t know if we’re allowed to talk about him yet after he admitted to masturbating in front of people that were apparently not into this social abnormality). Anyway, Louis had this bit about how unappreciative we are concerning how amazing all the technology is.
+
+He told a story about being on an airplane when WiFi access on planes was first launched and the flight attendant explained to everyone that they had free Wifi now, and you could just login and do whatever you do on the internet in the sky. He said it was great, until it broke and the guy next to him said, “This is bullshit.”
+
+Louis observed how quickly we all believed that the universe owed us something. That a thing we didn’t even know existed 20 minutes ago, was now something we deserved to have and we would be angry that it wasn’t being made available to us.
+
+The worst thing about technology is when we come to rely on it and it fails. We all take electricity for granted until the power goes out, then you literally sit there in the dark, waiting for the lights to go back on. Last year, we lost power for 3 days and I mostly just sat there wondering when it was coming back on.
+
+If you’ve ever had your internet go down, it’s the same thing. Even with power, you all of sudden don’t know what to do with yourself. Leave your phone at home by accident? You lose your mind.
+
+What’s The Frequency Kenneth?
+
+For the past two days I’ve been having technical difficulties. The big issue is my news website The Standard, is down again. But I also have some tiny, annoying issue where the icons on my web browser are not repopulating properly after I cleared my cache in an attempt to fix the other problem earlier.
+
+Over the past year, I have written a few articles here and there that went viral to a certain degree. They blew up. Instead of the few hundred to a few thousand views I might normally expect from even a popular article, I would get 30–50k views. That much traffic inevitably crashed the server and my site would shut down.
+
+So I attempted to remedy this, with the help of a friend of a friend, and his friend. Not to get too deep into the technical weeds over this, but in a nutshell, I moved the website from a shared server like most people have their websites on, and moved to AWS (Amazon Web Services), which is basically the largest cloud service in the world. It’s very robust, very complicated, impossible to navigate, designed for coding professionals, and surprisingly not that cheap. In fact, I’d go so far as to say it’s rather expensive for how I’m using it.
+
+The people helping me were doing me a favor. They were not experts, but they knew a hell of a lot more than me, and so we eventually stumbled forward to getting the site back up and running properly.
+
+Then yesterday, the site went down again, this time for an unknown reason. Well, the reason as almost everyone who has tried to logon to the site is known as a 522 Error: Connection Timed Out. This happens when the server (AWS) isn’t able to speak correctly to CloudFlare, which is like the security blanket of protection from DDoS attacks. Why is this error occurring? No fucking idea.
+
+So, now I’m paying a bunch of money I can’t afford to operate a site that doesn’t work.
+
+It takes an unbelievable amount of web traffic before you can make any real money from an advertising platform such as Google. I have made about $200 since I started, which is like three years ago. The hosting is presently costing me about $130 per month, plus I have hosting elsewhere that is also costing me money.
+
+I have a handful of readers and fans who have had pity on me and actually donate money, some every month, which is really kind and much appreciated, but is not close to covering my costs.
+
+So essentially, I not only write and research these stories for The Standard on my own time and with my own money, but the very act of presenting the website to the world, costs me about $2000 a year. That’s pretty stupid really and I really should be spending my time doing something else, but what I am doing? Paying some man I don’t know, to try to fix what I am already paying for, so I can continue this madness.
+
+This operation needs a business manager. One of those people whose job it is to figure out how to make enough money to pay themselves, and make the whole thing worth our while. Maybe people think I do this for the money. Clearly they are mistaken.
+
+Painting By Letters
+
+I mentioned recently that I’ve been thinking about painting for some time. Like artwork painting, not my house or anything. I hate that shit.
+
+I like the idea of it all, but not sure I will care once I’ve done it.
+
+I spent a few hours last night watching YouTube videos of people showing off various techniques, famous artists talking about why they’re crazy, shit like that. Today I wonder what I would add to that, if I took the leap of painting myself. I mean, what am I really going to add that hasn’t already been done? Nothing.
+
+The weird thing about the art world is that the difference between famous artists and artwork and non famous artwork and artists, beyond a basic level of quality, is who decides whether or not the work or the artist is important. It’s a game of politics and commerce, not meritocracy.
+
+I am drawn to abstract art that is also vaguely representative. Or others that are simplistic enough that they are graphical in nature. Much like my graphic design style and my photography I think.
+
+Keeping It Analog
+
+What I need to remind myself of, and stick to, is to spend more time working on things I can do with fewer resources I can’t control. It’s why I would rather write then almost anything else. I love filmmaking but it takes a tremendous amount of money and people to really get it done. Even photography, or at least the things I like to do, involve at least one subject.
+
+Which brings me back to writing and art. I can’t write longhand any more so I’m still reliant on electricity, and eventually I need the Internet to get it out there, but not initially, not the hard part. And drawing or painting would require none of that. Just daylight presumably. I wish I had the space to paint large canvases. I really do.
+
+I might need to whittle it down to pencils and paper, but ultimately if you’re not sharing it with people you end up like Ted Kazinsky in a cabin in the middle of nowhere writing a manifesto about the evils of technology and madness.

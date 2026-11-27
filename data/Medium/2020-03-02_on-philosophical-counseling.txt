@@ -1,0 +1,77 @@
+On philosophical counseling
+
+Massimo Pigliucci
+
+[If you’d like to schedule a philosophical therapy session with me, please use this contact form.]
+
+Back in the early 2000s I was living in Knoxville, TN, working as a faculty in the Department of Botany at the University there. But I already had an interest in philosophy, so for one of my classes I interviewed Lou Marinoff, who is now my colleague in the Department of Philosophy at the City College of New York.
+
+You see, Lou had written a best selling book that struck me as both bizarre and intriguing: Plato, Not Prozac! — Applying Eternal Wisdom to Everyday Problems. The book introduced the general public to what is known as philosophical counseling, which Lou characterizes as “therapy for the sane.”
+
+The National Philosophical Counseling Association (NPCA) provides the following description of what philosophical counselors are up to:
+
+“A philosophical practitioner helps clients to clarify, articulate, explore and comprehend philosophical aspects of their belief systems or world views. … Clients may consult philosophical practitioners for help in exploring philosophical problems related to such matters as mid-life crises, career changes, stress, emotions, assertiveness, physical illness, death and dying, aging, meaning of life, and morality.”
+
+A few years later, I wrote a short piece introducing philosophical counseling to my blog readers, on the occasion of my first attendance to the meetings of the American Philosophical Practitioners Association (APPA) in New York City. In 2011 I interviewed Lou again, for my Rationally Speaking podcast. Obviously, I was indeed intrigued. (Lou is also quite a character in his own regard, setting aside the things he talks about.)
+
+Finally, in 2014 I took the plunge and enrolled in the APPA certification program for philosophical counselors. I wanted to try out the thing for myself, so I set up shop for about a year, during which I had 11 clients. Each client saw me (in person or via Skype) for a small number of sessions — this isn’t Woody Allen’s style, lifelong, psychotherapy! In each case the client had one or more of the problems listed above by the NCPA, and in each case I provided the client with a number of philosophical resources to address those problems. We discussed several possible philosophical approaches, drawn from both the western and eastern traditions, and I often “prescribed” bibliotherapy: reading books (or even articles) that I thought might be useful. This was often combined with writing therapy, where the client writes out her own thoughts in the form of a philosophical diary. In some cases, the client would then schedule additional follow-up sessions to go through those readings with me, to make sure s/he understood them and got the intended benefit from them.
+
+The experience was, quite honestly, extremely gratifying. All my clients seemed happy with the approach, and at least in one case philosophical counseling turned out to be life changing. But I dropped the project because in the meantime a number of other things took over my own life. I moved from CUNY-Lehman College to City College as the K.D. Irani Professor of Philosophy, and I got into Stoicism! I am now, however, reopening my philosophical counseling activity, re-conceptualized as one more component of my broader interest in practical philosophy. Which means it is time to take a closer look at the whole notion of philosophical counseling.
+
+First, a bit of history. The concept, and the actual professional practice, go back to the 1950s and the work of Pierre Grimes, who deployed the notion of philosophical midwifery — obviously inspired by Socrates, which means that one can think of philosophical counseling as rooted in a 24 century old tradition. The first book on philosophical counseling was published in 1978 by Peter Koestenbaum: The New Image of the Person — The Theory and Practice of Clinical Philosophy. The first professional society was established in Germany in 1982 by Gerd B. Achenbach, under the name of the German Society for Philosophical Practice and Counseling. In the US, the NCPA was founded by Elliot D. Cohen, Paul Sharkey, and Thomas Magnell in 1992, and the APPA by Marinoff in 1998. There are now professional philosophical counseling associations in the following countries: Australia, Austria, Belgium, Brazil, Canada, Denmark, Finland, France, Germany, Great Britain, Greece, India, Israel, Italy, Japan, Luxembourg, the Netherlands, Norway, Poland, Portugal, Singapore, South Africa, South Korea, Spain, Switzerland, Taiwan, Turkey, and the United States.
+
+Conceptually, there are two strands of philosophical counseling: logic-based therapy and existential therapy. Logic-based therapy was developed initially by Elliot D. Cohen, and is based on rational emotive behavior therapy (REBT), a type of cognitive behavioral therapy (CBT) pioneered by Albert Ellis. The basic idea is that people get upset because they engage in bad reasoning about their own life and situation. This bad reasoning can take the form of invalid (i.e., structurally flawed) syllogisms, or of unsound (i.e., based on false premises) syllogisms. This, of course, is not very different from the premise of Stoic philosophy, as explained for instance by Epictetus:
+
+“Since reason is what analyses and coordinates everything, it should not go itself unanalyzed. Then what will it be analyzed by? Obviously by itself or something different. Now, this something different must either be reason or something superior to reason — which is impossible, since there is nothing superior to reason. … Which, I suppose, is why Stoics put logic at the head of our curriculum — for the same reason that, before a quantity of grain can be measured, we must settle on a standard of measurement.” (Discourses, I.1–2, 7)
+
+Here is an example of bad logic that causes problems according to logic-based therapy:
+
+Premise 1: If I were divorced, that would be so terrible that I might as well be dead.
+
+Premise 2: I was divorced.
+
+Conclusion: So, what happened to me is so terrible that I might as well be dead.
+
+In this case, the syllogism is valid, as the conclusion does logically follow from the premises. But it is unsound, because one of the premises (P1) is false: it is simply not the case that divorce is as bad as death.
+
+The basic notion here goes back to Aristotle, who called these “practical syllogisms,” proposing the notion that the reasoning underlying our emotions and behaviors can be expressed in the form of syllogisms. The idea behind logic-based therapy, then, is that we should make our own flawed reasoning explicit, challenge its structure or premises, and correct our thinking. While of course the emotional problem will not thereby magically disappear, practice will make us increasingly responsive to reason and less likely to be in the thrall of our negative emotions.
+
+Our set of bad assumptions is, in most cases, hierarchical, meaning that there are higher-level fallacies that are implied by our overt bad reasoning. For instance, the false P1 above could in turn be based on an additional, unstated premise:
+
+P0: If I were divorced, then that makes me a worthless loser.
+
+Which is in turn false. P0 may, again, be based on further unstated premises, such as:
+
+P00: I must never fail at anything.
+
+And so on. Things like demanding perfection, “awfulizing” (i.e., thinking that something is awful even though it isn’t), the notion that the world revolves around us, and so forth, are considered cardinal fallacies in logic-based therapy. They are matched by countervailing virtues (for instance, respectively: security about reality, courage, and empathy), which are the traits to be cultivated in order to become better human beings. Obviously, the whole approach — again, just like in Stoicism — is based on the theory that emotions are, in part, cognitive, a theory that was developed originally by Robert Solomon in his The Passions — Emotions and the Meaning of Life (1976), and which finds support in modern cognitive science.
+
+I now turn to the second broad approach within philosophical counseling: existential therapy. This is the notion that anxiety, alienation, depression, and the like are not pathologies, but normal responses to human problems, including disease and death. Existential therapists seek to facilitate the client’s moral development by way of exposure to the philosophies of authors like Kierkegaard, Nietzsche, Husserl, Heidegger, De Beauvoir, Sartre, and others. The point is to help people make sense of human existence and find meaning in life as it actually is, with the degree of freedom and responsibility that we actually have.
+
+Victor Frankl, the Holocaust survivor and author of Man’s Search for Meaning — An Introduction to Logotherapy, is considered an early adopter of existential therapy. Incidentally, a different strand of existential therapy, called Daseinsanalysis, is based on the ideas of Sigmund Freud and Martin Heidegger. Since I find it profoundly misguided (I think of Freud’s ideas as pseudoscience, and of Heidegger’s philosophy as unnecessarily obfuscatory and flawed), I will not treat it further here (but if you are curious about Daseinsanalysis, read this). The existential approach has been developed particularly in Britain, beginning with R.D. Laing and David Cooper in the 1960s, and it is often associated with the anti-psychiatry movement.
+
+Conceptually, existential therapy begins with the idea that human beings naturally seek relations to others, coupled with the injunction that we should seek what Sartre called authenticity, which is rooted in the fact that we should not rely on others for validation (that would be “bad faith” in existential lingo).
+
+What, then, is the root of psychological dysfunction? According to Irvin Yalom, author of Existential Psychotherapy, the root of anxiety is to be found in our inability to deal with the four “givens” of life: mortality, isolation, meaninglessness, and freedom. However, existential therapy (in this respect, just like logic-based therapy) does not focus on psychological dysfunction, but rather on the broad dimensions of normal human experience.
+
+Four dimensions (or “worlds”), to be precise: physical, social, psychological, and spiritual. These are concerned respectively with how we think of our body and physical environment, how we related to others, how we related to ourselves, and how we relate to the unknown. The goal of existential therapy then becomes to help the client develop healthy attitudes toward the four worlds and their interrelationships.
+
+In case you are wondering, in my practice I use a combination of logic-based and existential approaches, with a bit more of an emphasis on the former, given my interest in Stoicism. Other practitioners too realize that there are important commonalities between the two styles of philosophical counseling, which means that it is useful to judiciously draw from whatever coherent combination may be useful to a given client.
+
+Okay, so much for the theory, but what sort of actual practices are involved in philosophical counseling? The NACP provides a useful list:
+
+i. Examination of clients’ arguments and justifications.
+
+ii. Clarification, analysis, and definition of important terms and concepts.
+
+iii. Exposure and examination of underlying assumptions and logical implications.
+
+iv. Exposure of conflicts and inconsistencies.
+
+v. Exploration of traditional philosophical theories and their significance for client issues.
+
+Finally, we can address the obvious lingering question: is it therapy or philosophy? Marinoff actually got in trouble with City College over this, as the university sought to shut down his activities back in 2004, on the ground that he was engaging in mental health advice without proper training. In typically Marinoffnian fashion, he fought back, sued the college, and won on the basis of academic freedom.
+
+Despite ongoing turf wars with psychologists and psychiatrists, I think the answer to the question is pretty clear: philosophical counseling is not psychotherapy. However, the two activities are obviously related. Indeed, both strands of philosophical counseling examined above, logic-based therapy and existential therapy, have the word “therapy” right in the name! Still, what most of these practitioners mean is something along the lines of Marinoff’s own catch phrase: “therapy for the sane.”
+
+Indeed, despite the title of his best-selling book, Marinoff clearly states in the introduction to Plato, not Prozac! that if your mind is not working properly you do need a psychologist or psychiatrist to treat you or prescribe medications for you. And in fact, APPA licensed counselors are ready to refer their clients to professionals in the mental health disciplines, if need be. But whatever medication you may take, it is only — at best — going to bring your mind back to a normal range of functionality. At which point you will still be faced with the existential problems of the human condition: meaning, relationships, work, loss, death. The pill isn’t going to tell you how to deal with those. But philosophical counseling may help.

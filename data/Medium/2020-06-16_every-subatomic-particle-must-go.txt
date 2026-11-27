@@ -1,0 +1,113 @@
+Every Subatomic Particle Must Go
+
+Paul Austin Murphy
+
+i) Introduction
+
+ii) Ernst Cassirer’s Structuralism
+
+iii) Essential/Intrinsic Properties?
+
+iv) Individuals?
+
+v) Particles as Package-deals
+
+Ontic structural realism is the position that (in physics at least) structure is all there is. That means that reality has no reality underneath its observed structure. This kind of structuralism is primarily influenced by 20th century physics; specifically by quantum field theory. It can also be argued that certain early-20th-century physicists held the same view (such as Arthur Eddington and Herman Weyl).
+
+Max Tegmark takes such structuralism further with his mathematical universe hypothesis. Tegmark argues that if our universe is only a particular structure, then it is no more real than any other structure.
+
+Ontic structural realism has been called “the most fashionable ontological framework for modern physics”.
+
+These piece is primarily a commentary on the ‘Ontic Structural Realism and the Philosophy of Physics’ chapter of James Ladyman and Don Ross’s book Every Thing Must Go: Metaphysics Naturalized. There are also a handful of references to — and quotes from — other parts of that book.
+
+Ernst Cassirer’s Structuralism
+
+James Ladyman and Don Ross’s (L & R) philosophy of physics is primarily motivated by the findings of quantum mechanics. Elements of their position can be traced back to — among others — Ernst Cassirer. (Cassirer died in 1945.) Indeed Ladyman and Ross have much to say about Cassirer. For example, they write the following:
+
+“OSR [ontic structural realism] agrees with Cassirer that the field is nothing but structure. We can’t describe its nature without recourse to the mathematical structure of field theory.”
+
+What L & R say about Ernst Cassirer’s position on objects is almost exactly the same as their own. Indeed it was also quantum mechanics (QM) which provided Cassirer with the motivation to reject “individual objects”. L & R write:
+
+“Ernst Cassirer rejected the Aristotelian idea of individual substances on the basis of physics, and argued that the metaphysical view of the ‘material point’ as an individual object cannot be sustained in the context of field theory. He offers a structuralist conception of the field.”
+
+One can firstly ask whether or not a commitment to the existence of objects is also automatically a commitment to “individual substances”; as well as to intrinsic (essential) properties. After all, the metaphysical bundle theory (among other theories) rejects the notion of substance; though not that of an individual.
+
+We can also ask whether or not these positions are equally applicable to objects in the “classical” (or macro) world. Let’s put it this way. Ernest Cassirer’s and L & R’s positions are far more acceptable when applied the the quantum world than when applied to the classical world. More precisely, all this is far easier to swallow in the “context of field theory” than it is in relation to, say, human beings, cups or houses.
+
+Essential/Intrinsic Properties?
+
+It does seem strange (intuitively) that all “quantum elementary particles of a given type” are deemed to “have the same mass, size, and shape (if any), charge, and so on” — at least that’s how Ladyman and Ross see things. As it is, mass, size and charge are seen as intrinsic or essential properties. (Distinctions have been made between what is intrinsic and what is essential.) In fact it’s hard to imagine elementary particles having other (contingent/inessential) properties. After all, we’re not talking about the macroworld here. One can easily imagine a natural kind (such as a cat or lump of gold) having essential properties; though, in a particular instance, also having contingent properties. Can we also imagine an elementary particle having contingent properties? If such particles don’t have such contingent properties (due to the nature of the micro-world), then it may literally be the case that mass, size, charge and spin together is all there is to them. Thus essentialism of some kind may be an easier option to uphold for particles than it is for macro-objects such a water or monkeys.
+
+However, Ladyman and Ross do cite examples of what can be taken as “accidental” properties. They cite “velocity or position at a particular time”. However, don’t physicists take a particular velocity — or at least mean velocity — of a particle to be pretty essential to it? On the other hand, do physicists care at all about the essential/contingent distinction?
+
+From what’s just be said, it’s therefore no surprise that different particles of a particular type can be seen as “indistinguishable”. (See John Archibald Wheeler and his one-electron universe.) However, particles may still have properties which aren’t intrinsic. That is, properties which are relational or extrinsic. Ladyman and Ross cite “spatio-temporal or other state-dependent properties” as examples.
+
+In terms of spatio-temporal properties. Does that mean that particles are even more likelier candidates for being 4-dimensional objects that macro-objects? As for state-dependent properties — this means that the nature of a particle must necessarily depend on the parallel (or corresponding) nature of the “state” (or system) to which it belongs.
+
+Individuals?
+
+Ladyman and Ross give a very concrete example of the physics which underlies the problematic nature of seeing elementary particles as single entities. Firstly they put the position of classical physics:
+
+“[C]lassical physics assumed a principle of impenetrability, according to which no two particles could occupy the same spatio-temporal location. Hence, classical particles were thought to be distinguishable in virtue of each one having a trajectory in spacetime distinct from every other one.”
+
+Clearly, in quantum mechanics, many — or all — the assumptions in the classical picture are rejected. (Or, at the least, on some readings of QM all these assumptions are rejected.)
+
+Firstly, the “principle of impenetrability” is either questioned or rejected. On the classical picture, if particles are impenetrable, then that means that “no two particles could occupy the same spatio-temporal location”. However, if they’re penetrable (or if the notion of impenetrability doesn’t make sense), then one can conclude that two particles “could occupy the same spatio-temporal location”. Thus one can immediately ask the following question:
+
+If two particles occupy the same spatiotemporal location, then is it correct to talk about two particles in the first place?
+
+In consequence, the second part of the classical picture is either rejected or questioned. That second part (which follows from the first) is that
+
+“classical particles were thought to be distinguishable in virtue of each one having a trajectory in spacetime distinct from every other one”.
+
+Clearly, if the penetrability argument is true and two particles may occupy the same location, then each particle can’t be seen to have its own trajectory in spacetime. In other words, it will share that trajectory with other particles. This has the result that the Leibnizian picture breaks down (at least according to L & R) in the case of QM. Or as L & R put it:
+
+“Thus for everyday objects and for classical particles, the principle of the Identity of Indiscernibles is true…”
+
+Particles as Package-deals
+
+It can be seen that the quantum-mechanical notion of a field plays an important part in L & R’s philosophy. The central argument is that fields and particles are intimately connected. Indeed they’re so strongly connected that a distinction between the two hardly seems warranted.
+
+Firstly, there’s the problem of distinguishing particles from the states they ‘belong’ to. Thus, in an example given by L & Ross, we can interpret a given field/particle situation in two ways:
+
+i) A two-particle state. ii) A single state in which two “two particles [are] interchanged”.
+
+Since it’s difficult to decipher whether it’s a two-particle state or a single state in which two particles are interchanged, L & R adopt the “alternative metaphysical picture” which “abandons the idea that quantum particles are individuals”. Thus all we have are states. That means that the “positing individuals plus states that are forever inaccessible to them” is deemed (by L & R) to be “ontologically profligate”.
+
+L & R back-up the idea that states are more important than individuals (or, what’s more, that there are no individuals) by referring to David Bohm’s theory. In that theory we have the following:
+
+“The dynamics of the theory are such that the properties, like mass, charge, and so on, normally associated with particles are in fact inherent in the quantum field and not in the particles.”
+
+In other words, mass, charge, spin, etc. are properties of states, not of individual particles. However, doesn’t this position (or reality) have the consequence that a field takes over the role of an individual (or of a collection of individuals) in any metaphysics of the quantum world? Thus does that also mean that everything that’s said about particles can now be said about fields?
+
+On Bohm’s picture ( if not on L & R’s) “[i] t seems that the particles only have position”. Yes; surely it must be a particle (not a field) which has a position. Indeed particles also have trajectories which account for their different positions.
+
+To Bohm (at least according to L & R), “trajectories are enough to individuate particles”. It’s strange (prima facie) how trajectories can individuate. Unless that means that each type of particle has a type of trajectory. Thus the type trajectory tells you the type of particle involved in that trajectory.
+
+L & R spot a problem with Bohm’s position. That problem is summed up in this way:
+
+If all we have is trajectory (as with structure), then why not dispense with particles (as individuals at least) altogether?
+
+This is how L & R explain their stance on Bohm’s theory:
+
+“We may be happy that trajectories are enough to individuate particles in Bohm theory, but what will distinguish an ‘empty’ trajectory from an ‘occupied’ one?”
+
+Here again L & R are basically saying that if all we’ve got are trajectories (which are part of the structure), then let’s stick with them and eliminate particles (as individuals) altogether.
+
+L & R go into more detail on this by saying that
+
+“[s]ince none of the physical properties ascribed to the particle will actually inhere in points of the trajectory, giving content to the claim that there is actually a ‘particle’ there would seem to require some notion of the raw stuff of the particle; in other words haecceities seem to be needed for the individuality of particles of Bohm theory too”.
+
+If L & R’s physics is correct, then what they say makes sense. Positing particles seems to run free of Occam’s razor. That is, Bohm is filling the universe’s already-existing “ontological slums” with yet more superfluous entities (to use two metaphors).
+
+One way of interpreting this position is by citing two different positions. Thus:
+
+1) The positing of particles as individuals which exist in and of themselves. 2) The positing of particles as part of package-deals which include fields, states, trajectories, etc.
+
+Then there’s L & R’s position.
+
+If there are never particles in splendid isolation (i.e., apart from fields, etc.), then why see particles as individuals in the first place?
+
+L & R are a little more precise as to why they endorse the position directly above. They make the metaphysical point that “haecceities seem to be needed for the individuality of particles of Bohm’s theory too”. In other words, in order for particles to exist as individuals (as well as to be taken as existing as individuals), they’ll require “individual essences” in order to be individuated. However, if the nature of a particle necessarily involves fields, states, other particles, trajectories, etc., then it’s very hard (or impossible) to make sense of the idea that it could have an individual (or indeed any) essence.
+
+In very basic terms, a specific particle — and indeed all particles — is part of a package-deal. Particles simply can’t be individuated without reference to external, extrinsic or relational factors. Thus particles simply aren’t individuals (or things) at all.

@@ -1,0 +1,49 @@
+We Are Poorly Designed for Reading. Note-Taking Can Help.
+
+Finn Macken
+
+Think of every non-fiction book that you’ve ever read. Every self-help guide, every biography, every treatise on success, or business, or life — all the ones cluttering your bookcase. We devote our time to them, spend hours pouring over them, because we feel that through them we might become better people — those possessed of a secret, arcane knowledge that lets us succeed, or see things in a new light, or achieve some sort of enlightenment.
+
+And it’s true, to some degree. To take business as an example, we can thumb through Thiel, or Horowitz, or Ries, and, in the span of a couple of hours, pick up precepts of entrepreneurship that took them years of bitter, bloody work to realise, all the while tucked away in the corner of a library or cafe. We can learn from their mistakes, emulate their successes, discover insights through their advice, all without needing to be the constantly-stressed CEO of a multinational company, or the overworked founder of a tech startup.
+
+In terms of sheer efficiency, there is nothing more powerful than reading. If you’re particularly dedicated, you can take in one lifetime of expertise in the span of an afternoon, and then open the pages of another that same evening.
+
+And yet, of all those books you’ve read, how much information do you remember? I mean, really remember — beyond a couple of fragmented thoughts or buzzwords. How confident would you be speaking on them?
+
+Try something, if you have the time. Go to your bookcase, and pick a book that you thought worthwhile — even one that you’ve read recently. Get a piece of paper out, and write down as much about the book as you can remember. Sit there for a while, even. If you’re anything like me, your page will be mostly empty, and what’s written there will be a collection of vaguely-remembered ideas, a mix of frayed principles and abstract thoughts.
+
+To an extent, this is unavoidable. Our memory is spatial and episodic, not semantic. Facts slip from our mind with maddening ease. These flawed memories of ours can make it impossible to think deeply about the ideas presented in a book, to draw associations between the thoughts of different authors, and to critique them deeply. A book, unremembered, is a processed bit of wood.
+
+It’s disturbing to think about. All those hours spent flipping through pages and reading articles, wasted. It seems an impossible battle: how are we to learn, to grow as individuals, when our minds seem intent on forgetting everything that we worked so hard to master. If only we had better memories.
+
+The solution, however, is not to train one’s mind. Mental tools — chunking, elaborative encoding, loci — are effective, but they’re also time-consuming, energy-intensive, and require endless practice.
+
+It’s simpler than that: write down the key themes and ideas. Write down the questions that arise as you read. Write down anything.
+
+Here’s why note-taking is so invaluable:
+
+[1] It forces deep consideration of the text
+
+In the act of writing something, you are forced to focus on the text more deeply. You can no longer afford to get swept along by the prose, flitting from one word to the next. Instead, you are made to grapple with the key ideas — the messages that lie beyond the anecdotes and window-dressing. In doing so, reading changes from a passive process to an active one.
+
+[2] It creates an indelible store of artificial memory
+
+Words in a notebook, or on a document, or in Notion, never degrade. They can be pulled up and referred to almost instantaneously. They are a resource to which you can turn again and again as you face the problems that the great thinkers of history have already overcome. They are a framework upon which you can build your own approach to life.
+
+[3] It allows you to challenge and build upon the ideas in the book
+
+A principle, presented in a book, is an immutable truth. It has the weight of a publisher and author and printing press behind it, and adapting it seems almost sacrilegious. A principle, typed up on your computer, is a foreign object to be prodded and poked at. Notes reinforce the idea that each text presents merely one framework for understanding the world, born of the thoughts and actions of a single individual, in one context, at one point in time.
+
+The truth is, all books are descriptive, no matter how compelling their insights. It is the role of the reader to determine which of the author’s precepts hold sway within their own life, and the only way to do that effectively is to think about and write on their core ideas, over time.
+
+[4] It allows you to form associations between different texts
+
+One of the most valuable things that you can do while reading is to investigate the similarities and differences between different authors writing on the same topic. If the same advice appears across many authors in a discipline, especially if it’s over a long period of time, it’s probably worth thinking about. As a corollary, if there are differing opinions that re-emerge across many of the seminal books within a field, there is probably a reason for that lack of consensus: some characteristic of the field that means that conflicting pieces of advice can both be correct, contextually. In both cases, the only way to make these connections is by having a reference to which you can refer, one which preserves the nuance of the original argument.
+
+Recently, I’ve been thinking about the best way to do this, and stumbled upon the idea of a resource hub: a page which categorises sets of notes into topics, which I can then add to with each book I read. Here’s a draft of one I created on Notion, which investigates several topics across entrepreneurship.
+
+Conclusion
+
+It can seem an impossible ask to make notes while also reading, slowing down an already infuriatingly slow process every further. The truth, however, is that it doesn’t matter how long it takes to write your notes — the alternative is simply to forget most of it. A single book, analysed deeply and in a way which provides a permanent, iterable record, is worth more than a library of half-remembered, amorphous texts.
+
+We are poorly-designed for reading non-fiction, but note-taking can help.

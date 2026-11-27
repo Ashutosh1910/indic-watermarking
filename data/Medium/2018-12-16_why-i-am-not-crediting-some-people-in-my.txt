@@ -1,0 +1,73 @@
+Why I Am Not Crediting Some People in my Projects
+
+Erik Hermansen
+
+How and when to credit people in projects? I’ve thought a lot about this. I’ve been doing it for decades for various art forms, including computer games, songs, audio dramas, and animated videos. I’m sure I’ve screwed up a few times, but I was always trying. It does matter to me a lot.
+
+I wrote this for two reasons:
+
+It might help somebody else figure out their own system for crediting people. It might help avoid a misunderstanding with someone who sees their uncredited work in something I’ve made.
+
+When Crediting Is Obvious
+
+If I directly communicate with people contributing to a project — artists, actors, musicians — the default is “your name goes in the credits”. Though if after talking about attribution with them, they specifically say they don’t care, I might leave them out, for reasons I’ll go into below.
+
+Less Obvious
+
+I also sometimes license creative work through distributors — various websites and portals. You can get stock photos from Getty Images, for example. Sometimes, the creator/rights-holder has a website set up with their work available for license. Kevin McLeod ‘s Incompetech website is an example.
+
+I believe in honoring the terms creative people set for using their work. If they want payment, credit, or a free beer — whatever they ask for upfront, in exchange for using their art — I will give them that before I use what they’ve made. If they ask for something I don’t want to do, then I just don’t use their work. This is a legal, as well as moral, requirement for me. I don’t want to get sued, after all.
+
+But if I’ve licensed something, and the author hasn’t arranged for that licensing to include attribution, I’m very reluctant to add their names to the list of credits.
+
+Why? It would be easy enough to add an extra name giving credit to the creator. Here’s why I won’t do it most of the time.
+
+Secret Fishing Hole
+
+When I went fishing with my grandpa, he explained the concept of “secret fishing holes” to me. If you find a place where the fishing is good, you keep it to yourself, and maybe a few trusted buddies. Otherwise, on your next trip, it might be “fished out” from too many people coming there.
+
+Me and my Grandpa at his secret fishing spot. PSYCHE! Just a licensed stock photo
+
+Same principle applies to licensed media…
+
+If I find a royalty-free website or other place that is licensing some great images, music, video, etc. it works against my own interest to advertise it. Because the more popular that source becomes, the better chance that the same media I use for my projects will also be used in something else you’ve seen. While I’m resolved to this happening, I don’t have any reason to accelerate it.
+
+And yes, a solution to this is to create or commission new work exclusively for a project, and then it’s yours alone. I do this all the time. But it’s costlier than shared licensing solutions.
+
+I licensed a treasure trove of royalty-free music from a seller around 2010. Thousands of tracks, in every genre. Then that seller went out of business, and I have not seen all those tracks offered together in one place since. This is about the best possible licensing situation for me. I have several hundred tracks of music I can use, royalty-free, that are not ubiquitous.
+
+You can sleuth around and figure out where I get my media from. No big deal to me if you do! But again, I have no reason to help strangers make my media go stale faster.
+
+I Don’t Like Lengthy Credits
+
+On most of my projects, there are people besides me contributing their talent and time, and their attribution can be part of the deal we made. A shorter credits list gives them a better shout-out. Leaving off a lengthy list of unneeded mentions means the credits of people that care about having their names “in the lights” are more prominent.
+
+I ain’t Marvel Studios. One page of credits, quick and simple.
+
+With my animation shorts like Always the Boss, the video is over in two minutes, despite the weirdly disproportionate amount of work that goes into them, typically around 40 hours. It would be particularly unwelcome to the viewer to pad out the credits here. A “Special Thanks” section on the end calling out people and companies that don’t actually care about their inclusion is just self-indulgent.
+
+Legal Trolls
+
+I’ve licensed music from a certain deceased music composer. Despite having never met or communicated with her, and having no legal requirement to attribute her, I would still like to include her in my credits. Because she’s an amazing artist that I respect. It would feel right to help keep her name alive through her music.
+
+Well, suppose I did name-drop her in the credits.
+
+Then maybe it comes up in a Google Alert somebody set up, which triggers a bot to fire off a letter to me with some threatening language like:
+
+“Mr. Erik Hermansen, we have determined your use of media results in $722 owed to Scammy Scamson Holdings, LLC. Please remit payment immediately before further action is pursued.”
+
+The sender doesn’t even need to be connected to the rights holder of the media. I can just be harassed by random people, who are using information to piece together something that looks like, but is not, a legitimate claim. It can be a fully automated process that costs milliseconds and pennies to them, but costs me my full attention to a potential legal threat.
+
+It’s been done to me before. I want to minimize this kind of activity by leaving less hooks for these assholes to grab onto. So no, I’m not going to mention people in credits just because I admire their work.
+
+That Said…
+
+If anybody notices their work in one of my productions, first off, be assured that I took pains to correctly license it. I don’t just grab stuff and use it.
+
+Second, if you are the creator of the work, (not just a distributor or rights holder) you can give some evidence of your authorship with a request to be added to the credits. And because you and me are in that same tribe — People that Make Shit — I’m almost certainly going to add your name to the credits, even if I’m not legally obliged to.
+
+Anyhow
+
+That’s a lot to read for something most people don’t think much about. Also, there is no legal advice in this article. Here I talk about what I do, not what you should do. You can get professional advice from a lawyer or your pet hamster if you want.
+
+I am curious what you think, and how you’ve handled the “Credits” task in possibly different ways. Please feel welcome to comment.

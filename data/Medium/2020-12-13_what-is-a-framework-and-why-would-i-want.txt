@@ -1,0 +1,49 @@
+What is a framework, and why would I want one?
+
+John Schlag
+
+Introduction
+
+Being a child of bygone-era TV, I remember clearly the punchline from a famous commercial (since become a meme), where a customer in a nail salon is conversing with her manicurist about a particular dishwashing liquid. The manicurist surprises her with, “You’re soaking in it.” Similarly, you may not be familiar with the concept of a framework, but you’re soaking in them.
+
+A framework is simply “a particular set of rules, ideas, or beliefs which you use in order to deal with problems or to decide what to do.” That’s a mouthful. To get a feeling for frameworks, let’s look at a few. While we’re looking at them, keep in mind the most important part: the point of a framework is not to be right; it’s to be useful.
+
+Maslow’s Hierarchy of Needs
+
+I worked for a year and a half in the group that creates Google Earth, in the “uncharted backwaters of the unfashionable end of the western spiral arm” of the business unit whose better-known offspring is Google Maps. Yes, jokes from The Hitchhiker’s Guide to the Galaxy pepper the place: Mostly Harmless, etc. What’s wonderful about working there is the shared culture of frameworks. If you start a conversation in a meeting by referring to Maslow’s Hierarchy of Needs, everyone knows what you mean. This is one of the world’s most well-known frameworks. It lists the needs of human beings in, roughly, order of urgency. Or, the time it takes you to die without it. Oxygen: three minutes; water: three days; food: three weeks. The items further down the list —reproduction, contribution, recognition—are less tangible, but still important. You can argue endlessly about what the items in the framework should be, and how to order them. What’s important is that someone took the time to think about needs, wrote about them, and gave us a way to talk about them. One interesting result, for example: we think of transportation as a basic need. But it’s not; it’s a strategy for meeting other needs. This gives city planners a new outlook on their work. Another example: people need a sense of contribution. Good managers, good nonprofit leaders, good parents—they all learn to listen to their charges’ ideas, and recognize them for contributing.
+
+In case you’re still thinking this is a purely intellectual exercise, consider the counsel from the advisors to community-organizing nonprofits: if you’re not getting any traction with the people you’re trying to engage with, think about whether you’re offering them solutions to problems they don’t have. Put even more simply: if your clients can’t put food on the table, they’re likely not worrying about water pollution, the ozone layer, or gerrymandering.
+
+Gestalt
+
+Some people love analyzing their dreams. Others would rather be boiled in oil. Some authors claim to know the content of dreams, even writing “dream dictionaries” — while others eschew the concept. The wonderful thing about viewing Gestalt Theory as a framework is — you’re getting this now—it doesn’t matter whether it’s wrong or right. One tenet of Gestalt Theory says that every element of your dream—character, location, symbol—represents some aspect of yourself. So try looking at your next memory of a dream in this light. If it tells you something interesting about yourself, great! If not, try again tomorrow.
+
+The Tragedy of the Commons
+
+Garrett Hardin, drawing from earlier lore, popularized in 1968 the concept of The Tragedy of the Commons. It’s a simple enough concept, wherein, for example, sheep farmers who share a common grazing area with agreed-upon limits, each think, “I could squeeze out a bit more income by adding just one more sheep.” The obvious end-game to this line of thinking is the complete crash of the commons ecosystem, leading to zero income for everyone. This framework is invoked often on systems varying from agriculture to transportation to real estate development to commercial fishing.
+
+Networking
+
+In the high-tech arena, the Open Systems Interconnection model describes a seven-layer system of categorizing every known communication system, from Ethernet to Wifi to cellular, satellites and transatlantic cables. It includes everything from what you plug into the wall (or nothing at all) to the way you download your movie for tonight. This may be one of the most successful technical frameworks of all time, it’s so all-encompassing.
+
+Places to Intervene in a System
+
+Donella Meadows, a student of MIT systems theorist Jay Forrester, was moved to write up a singularly useful framework during her involvement in the creation of NAFTA. This one is not quite as approachable as the previous examples, but its subtlety comes with power. The analogy I use to whet people’s appetite for it is the game of Why? We’re all familiar with the sometimes unending chain of Whys a child can ask — and with the discomfort the game induces. Why? Because it causes us to examine our motivations and our assumptions.
+
+Like chess, acquainting yourself with this framework takes only a few minutes to learn the rules, but a lifetime to master. For a gentle introduction, let’s go back to the children’s game: say you’re working on a spreadsheet on your laptop. Your child asks, Why are you doing that? Even on this first step, you have to think: Because I want to get paid? Or is it, Because I want to get these equations working? Then: Why? How about, Because I want to figure out how this new disease is propagating? And another Why? Now what? Because I want to keep people from dying. If now your child has the temerity to ask again, Why?, you’re now into the territory of goals, or worldview.
+
+All the year ‘round
+
+My all-time favorite framework, pound for pound, is … Santa Claus! Pressing home the point, again, that it’s more important for a framework to be useful than correct, recall Judge Harper in Miracle on 34th Street, avoiding the wrath of his wife and grandchildren, darkly intoning, “The question of Santa Claus seems to be largely a matter of opinion. Many people firmly believe in him. Others do not.” If Santa Claus, and more generally, the Christmas Season, is what helps me to, as Scrooge says, “… honour Christmas in my heart, and try to keep it all the year,” then bravo for the framework!
+
+The Philosophy of Religion
+
+Sometimes people ask me about religion — or, as we call it on the Left Coast, spirituality. Before we have a discussion about that, I ask them, let’s first quickly put this in a framework. Briefly, there are three layers to the layer-cake. First, physiology and psychology: there are physical things going on in human beings, for example, when they meditate. It’s only recently that we’ve put long-time meditators into fMRI scanners and measured their vital signs. The results are interesting. This is good science. Second, spiritual philosophy: How should we live? Should we treat each other well? What does that mean? What are the benefits? These are time-honored questions that straddle all the world’s major spiritual traditions. Third, religion: Do you believe this or that event, or person, is somehow outside the realm of modern science? What about reincarnation? Life after death? These are questions on which we’re unlikely to find universal, or even broad, agreement. The key point is, at the first two levels, there’s a lot of interesting discussion to be had, without resorting to any supernatural claims. We can meet there and get real work done.
+
+Creative Frameworks
+
+Artists across many media marinade in frameworks. A sonnet consists of this many lines of this many syllables. A fugue works like so. Perspective has these rules, as do light and shadow, contrast and color. At a larger grain size, the monomyth has a series of stages, elucidated by Joseph Campbell, and embodied famously by George Lucas in Star Wars. The Catholic Mass has been a framework for centuries. Want to write a Mass? You need an Agnus Dei. There’s Bach’s Mass in B Minor, Beethoven’s Missa Solemnis, and more recently, the Bernstein Mass (including a quatrain donated by Paul Simon) and Missa Gaia/Earth Mass by Paul Winter et al.
+
+Coda
+
+With these example frameworks as introduction, I’m sure you’ll now see others wherever you go. It’s like learning about fonts and kerning: you can’t stop seeing design violations in signage everywhere. Similarly, with frameworks, you’ll see new ways of looking at old problems, and realize that others are using different frameworks than you are. Just remember (all together now): it’s more important that a framework be useful, than right!

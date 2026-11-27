@@ -1,0 +1,73 @@
+What it does not Mean to be Human
+
+Dustin T. Cox
+
+A long and fascinating history of dissent follows in the wake of Descartes’ “Cogito.” The split between mind and body implied by Descartes’ “thinking thing” has simultaneously been a source of stability and a kernel of doubt for nearly 400 years in the continuing discussion of what it means to be human. In the middle of the twentieth century, proto-Posthumanist philosopher, Maurice Merleau-Ponty, seriously challenged the mind-body split proposed by Descartes and, in so doing, cleared space for Posthumanist thinkers to reimagine how we define the human being.
+
+Each argument in the field of Posthumanism, however, has eliminated more possibilities for the human than it has contributed — we know more about what it doesn’t mean to be human than ever before.
+
+As I shall argue, Merleau-Ponty’s “chiasm” is the first break in the levee of humanist conceptions of the human. From that break, a cascade of challenges follows, such as the human conceived as both biological and technical, the human as a cog in an assemblage, and finally, the human that may not be rational — a thinking thing — at all. Each turn removes a trait we might embrace as essentially human, leaving us more certain at each about what we are not.
+
+In The Visible and the Invisible, Maurice Merleau-Ponty sets out to reimagine what it means to be human by reintegrating the mind with the body, in contrast to Descartes’ “Cogito.” Whereas Descartes begins with hyperbolic doubt about the body’s perceptions, Merleau-Ponty embarks with blessed assurance about the body, insisting that we “take [the body] literally to begin with” (137).
+
+The body, he argues, deserves not doubt but consideration as the source and pre-condition of human knowledge. The hands, for example, can both touch the tangible world and be touched by other hands, other “touchers” (Merleau-Ponty 133–134). The experience is reversible, which demonstrates that the distinction between perceiver and perception, mind and body, isn’t clear at all.
+
+The traditional lines are blurred further by Merleau-Ponty’s observation that his body “as a visible thing is contained within the full spectacle” of what he sees (138). Just as he sees, he can be seen, and just as his body pre-conditions his capacity for perceptions, the things he perceives pre-condition the possibility of the human body.
+
+Furthermore, the body is both sentient and sensible, both a perceiver and a thing perceived, an interconnected “chiasm” of touching and touched (Merleau-Ponty 142–143). The body and the mind are inseparable, the human is a “thinking thing” only because it is an embodied thing. As it turns out, we are not just mind; in fact, “mind” has little meaning apart from “body.”
+
+The notion of an “embodied, thinking thing,” of course, marries well with evolutionary biology, a flagship of enlightenment science. As Andres Vaccari and Belinda Barnet argue (“Prolegomena to a Future Robot History: Stiegler, Epihylogenesis and Technical Evolution” 2009), however, human evolution has become “exteriorized,” that is, moved outside the human body by our capacity for “technics” (11).
+
+Tools, language, and the human capacity to transfer individual memory to the whole of our species through technology (everything from language to hard-drives), have replaced biological adaptation and natural selection as the driving forces of our evolution (Vaccari and Barnet 11).
+
+For that reason, Vaccari and Barnet provocatively suggest that “[t]echnology has…created the human as a species” (12). Our bodies, it seems, do not define us with the finality suggested by Merleau-Ponty; instead, the human being is a process “born in” and shaped by technics (Vaccari and Barnet 10).
+
+The film Blade Runner, by Ridley Scott, illustrates the furthest extremes of the marriage between human evolution and technics in the form of the Replicants — a species of beings modeled on the human and bred/built for work in conditions undesirable to humans. They, like their human masters, have rational capacities, memories, and a drive to live.
+
+The Replicants are therefore a hypothetical confirmation of the notion that human evolution has moved outside the human body through technology. For if the Replicants, despite their different “biology,” possess all the qualities we otherwise think of as human, then it is fair to claim that they, too, are human.
+
+This claim becomes even more threatening to the “embodied, thinking thing” if we remember that technology creates the human species and that the Replicants descend from human technique. The human body, it seems, is not the last word on the human being. It is possible that our “things” are human, too.
+
+The notion that our “things” might be human provides an excellent segue into Jane Bennett’s discussion of “thing power” (Vibrant Matter: A Political Ecology of Things 2010) and its implications for what it means to be human. According to Bennett, “nonhuman materials” — i.e., essentially everything — are “actants” in a way we typically reserve for humans (3).
+
+Bennett’s argument takes Merleau-Ponty’s chiasm one step further; we aren’t just touchers who touch, we are material actants who act on and are acted upon by the material world. Bennett doesn’t stop there, however, but adds that humans are actants in “assemblages,” or “ad hoc groupings of…vibrant materials of all sorts” (23), including human beings.
+
+Bennett explains that any assemblage “owes its agentic capacity to the vitality of the materials that constitute it” (34), an assertion that absolves human culpability in what we typically think of as human events. By way of illustration, Bennett analyses the 2003 North American power blackout in terms of her notion of assemblage. She contends that the electrical power grid that failed is best understood as an assemblage of vital materials — electromagnetic fields, legislation, human attitudes, water, etc. (Bennett 25) — that produced results outside the intentions or control of the human actants involved.
+
+Power grids aren’t Bennett’s only example of an assemblage, however — human beings, too, are assemblages. Here Bennet cites mineral processes occurring at the pace of evolutionary time that resulted in “the emergence of our bones” (11) as an example of how humans can be thought of as assemblages that result from the agency of vital materiality.
+
+In that light, human biology in total can be coherently described as an emergent property of “thing power,” as an effect that affects. Human beings, it seems, are both a result of and a part of a swarm of actants (Bennett 32); we are neither fully in control nor wholly mechanistic.
+
+Bennett’s claims, by her own admission, have important implications for the field of ethics. She advocates, based on her conception of the human as an emergent property in a swarm of vitally material causality, for a distributive theory of agency, wherein a given subject can never be considered the “root cause of an effect” (Bennett 31).
+
+The failure of the power grid, for example, cannot be assigned to human agents, because the human agents involved are not responsible for their own hubris, incompetence, or any other “human” failure, for these traits came to them through the greater processes of a larger assemblage.
+
+If that is true, then our evolution is not only outside of our bodies also out of our control and whatever tools (technics) we might design to tame it. For the “embodied, thinking thing,” emphasis might finally be on thing, which makes us less recognizable from all the other “things” in our field of vision.
+
+Immanuel Kant also struggled to fully distinguish the human from other “things,” despite his tireless efforts to categorize and finally understand the object of his greatest fascination, the terrestrial rational being. Kant worried that without a “non-terrestrial rational being” — an alien — by which to compare ourselves, our rationality is an assumption rather than a verified fact.
+
+Such a concern seriously undermines any conception of the human, for if we are not rational, then rational investigations into human nature, such as all those described above, have no merit. Furthermore, as David L. Clark observes, contemplating the existence of an advanced alien race in its distance from human concerns “throws into relief the relative (un)importance of those concerns” (213). If we are not alone, then we are not special, and extended reflection into our own nature seems like a frivolous and self-important exercise.
+
+H.P. Lovecraft illustrates Clark’s observation in At the Mountains of Madness. After discovering alien burial mounds along with the butchered carcasses and the “inexpertly dissected parts” of his colleagues in the western camp of their polar expedition (Lovecraft 45), William Dyer, the party’s leader, stumbles upon four decapitated “Elder Beings” in the depths of an abandoned alien city.
+
+Upon this discovery, Dyer realizes that the aliens are not evil after all, but are instead “men of another age and another order of being” (Lovecraft 115). Dyer describes them as “scientists to the last” (Lovecraft 115) — science, of course, representing the pinnacle of human rationality. He also claims that they had done nothing that humans would not have done in the same situation (Lovecraft 115).
+
+In this light, the “dissections” at the camp become an evocation of Nietzsche’s “alien zoologist” (Clark 203), a non-terrestrial rational being who performs taxonomic work in the spirit of Kant and in the interest of science.
+
+Dyer’s conclusions are supported by his long interlude in the alien city, where he spends a good deal of energy documenting the history and values of the Elder Beings by way of their extensive system of decorative murals. The alien bas reliefs depict the cosmic conflicts, the cultural and physical evolution, and the ultimate demise of the Elder Ones, a narrative that “throws into relief” the relative unimportance of human concerns, such as geologic expeditions and “anthropological” speculations on what it means to be human. Again, if we are not alone, then we are not special.
+
+Interestingly, the science of that “man of another age” prompts the aliens’ demise by way of a laboratory experiment gone wrong, which results in the accidental creation of a “thing that should not be” (Lovecraft 121) that devours its scientist-creators for sport and revenge. Even the aliens, it seems, are not immune from “thing power;” they, too, suffer cataclysm despite their expertise and intentions.
+
+The alien holocaust in Lovecraft, insofar as it is the madness that punctuates alien science, dramatizes Clark’s observation that implicit in Kant is the notion that “insanity is not the opposite of reason but somehow the result of its unfettered amplification” (222). Lovecraft’s aliens are essentially no different than Kant’s, for both take rationality to insane and self-destructive extremes.
+
+The question remains, then, to what degree a dose of the non-rational makes for a healthy species, and whether or not we should be tethered to any conception of the human as a rational being at all. Kant and Lovecraft alike conceived of the human in terms of mind, and likewise imagined other beings of mind by which we could compare ourselves, only to discover that rationality contains the irrational.
+
+If that is so, if we are made mad by reason, if rationality is a packaged deal with irrationality, then how can we know what it means to be human at all? How can we know anything?
+
+As we have seen, the various sciences of “humanology” — be they philosophical, biological, technological, speculative or literary — invariably succeed only in clouding our vision of what it means to be human. We don’t know what we are — even if one of the competing conceptions were correct, we wouldn’t know it, because irrationality accompanies our best reasoning.
+
+As such, perhaps we should tentatively mark ourselves as “terrestrial lost beings” or “vulnerable power grids,” much more certain about how we feel than about what we know.
+
+In so doing, we could perhaps move beyond humanist certainties to an embrace of Posthumanist exposure and thereby cultivate a humane conscience based on mutual vulnerability and doubt that would foreclose judgmental views on who gets to be human.
+
+I cannot help but think that the Posthuman impulse to leave that question open will lead to more reluctance in our species to act violently or otherwise destructively, though it remains to be seen if a peaceful but exponential expansion of the human species will indeed make the world a better place.

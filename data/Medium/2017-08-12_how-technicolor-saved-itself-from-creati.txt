@@ -1,0 +1,53 @@
+How Technicolor Saved Itself From Creative Destruction
+
+Charlie Fink
+
+Technicolor’s HDR grading environment. The company has gone from processing and duplicating films to managing digital assets. (Photo Credit: Technicolor)
+
+“VR is not one thing. Interactivity is not one thing. The modes exist on a continuum. On one end, you’ve got passive 360 video, where you’re a ghost, watching but unable to interact; on the other, we have fully immersive multiplayer games and cinematic environments, and in between is where most content and devices are right now. Not totally one thing or another. The first big hit in VR may be more like a game than a movie.”
+
+In a hip, newly renovated industrial park in Culver City, CA, the 10,000 square foot Technicolor Experience Center (TEC) nestles unassumingly amongst the stylishly naked concrete and steel offices of maverick agencies, startups, and independent producers. Its official opening is June 15 but even though I’m almost a month early, Mark Turner, Technicolor’s VP, Corporate Partnerships and Strategy, graciously agreed to give me a preview anyway. “The purpose of this building is to bring people together to learn, to experiment, and to solve hard problems facing producers of VR and AR content,” Turner told me during my visit.
+
+TEC features every commercially available headset: Rift, Vive, Hololens, Playstation VR, the mobile GearVR, which is powered by the Samsung 7 smart phone, and Google Daydream, which is only compatible with its Pixel phone. The TEC is open to anyone in the entertainment industry, game producers, studio executives, content distributors, writers, cinematographers. “Anyone,” says Turner, “who wants to see what’s around the corner ahead of them”. I’m told the head of Google VR was a recent visitor. TEC features a 3,000 square foot motion capture space which can also be used for large meetings. Unreal, which makes the critical software on which many VR apps are built, recently conducted two days of training there. “We want to be a gathering place, a salon, for the best thinkers about this new medium,” Turner said.
+
+Mark Turner, VP Strategic Planning & Partnerships. (Photo Credit: Technicolor)
+
+Technicolor touches 70% of studio movies, but they don’t process film anymore. They create and manage digital assets, from conception to the home. Technicolor is now the #2 player in the “connected home” category, making set-top boxes and gateways for partners like DirectTV. Their executives are especially interested in the home of the future and the role the router and set top box will play in that connected home electronic ecosystem now known as The Internet of Things, or IoT.
+
+Don’t you guys develop film anymore? The answer is no.
+
+I demo’d several experiences which are curated by staffers who personally attend visitors. VR is so much more enjoyable when someone else has already done the tiresome downloading and calibration needed to set up each experience, no matter what the system. As Turner showed me the work of Technicolor’s advertising effects studio, The Mill, I wondered out loud, “don’t you guys develop film anymore?” The answer is no. Everything but. So they thoughtfully set me up with CEO Frederic Rose, who turned a dying film processing business into a digital production dream factory with one eye on the bottom line and the other on the future, and the amazing promise of fully immersive digital entertainment that puts you, literally, inside the movie or video game.
+
+Fred Rose, CEO of Technicolor, has overseen the transition of the legendary film processing and duplication company into a motion picture visual effects company and set top box manufacturer. (Photo Credit: Technicolor)
+
+When Fred Rose became CEO of Technicolor in September 2008, it was at the losing end of a business school case study of creative destruction. Film processors, even of high-end motion pictures, were about to see their customers migrate en masse to superior, more flexible digital platforms. A series of poorly structured acquisitions and other desperate tactics had left the company drained of cash, ideas, and a decent credit rating. The stock was trading at .20/share. To many inside and outside the company, it looked as if Technicolor was about to be flattened by the steamroller of history. To the new guy, it never has to be that way but, first, there was the business of retaining key customers, financial restructuring, and a serious recession that made slashing the present and investing in the future even more perilous.
+
+Rose got to know Technicolor’s operations well in those desperate first years, managing cash flow, making payroll, and deciding which of Technicolor’s businesses to keep. “I wanted businesses that could do three things: be one of the top three players in their category, be cash flow positive, or close to it, and they needed to be growth businesses.”
+
+State of the art mobile film processing laboratory, 1917. (Photo Credit: Technicolor)
+
+Once upon a time, film — created through a machine age bio-chemical process invented shortly before Technicolor was founded in 1915 — was itself the powerful new medium. Throughout the 20th Century, movies were at the center of Western culture. The demand for movies in the 30s, 40s, and 50s is hard to imagine today. Studios cranked out movies by the thousands, every year, along with cartoons, newsreels, music, and sports features. Films had to be developed, duplicated, and shipped. The country’s pre-eminent film manufacturer, Kodak, was one of America’s largest companies. In Hollywood, Technicolor was a behemoth (the film processing business was basically a duopoly, with Deluxe on the other side). “I didn’t want Technicolor to become the Smith-Corona typewriter, which never made the transition from type to images”. Or, even worse, you don’t want to be Kodak. It declared bankruptcy in 2012, after 131 years, many as a technology leader.
+
+In 2008, Technicolor made 500MM in revenue from film processing and duplication, and a small amount from its visual effects work. By 2016, the company had completely exited film processing, while increasing total sales for digital production and visual effects to 850MM. “They [the studio producers] bring us their visions,” said Rose,” and we make them come true.” Indeed, Technicolor has been responsible for Disney’s live-action “The Jungle Book”, “Alien: Covenant”, “Birdman” and many other recent movies whose visual effects make audiences say “wow!”. In addition, Technicolor collaborated with “Alien” creator Ridley Scott to create the much heralded immersive VR experience based on the movie. It’s now available for VR platforms here: http://alien.technicolor.com/
+
+Technicolor and Disney collaborated to bring the jungle and its musical denizens to life in “The Jungle Book”. The film won the Academy Award for Visual Effects. Photos: Technicolor
+
+In addition to digital movie making and set-top boxes, Technicolor has paradoxically succeeded in a category everyone said they should write off: DVD duplication. While others exited the business, Technicolor took advantage. DVDs just had their best-selling year in history. Rose says they shipped 1.6 BN discs this year. “People want to own their favorite movies, the classics, and the blockbusters. That’s what they put under the tree. We were the only ones who saw the growth left in this business.” Technicolor is now the world’s #1 manufacturer of DVDs.
+
+With its stock fully recovered and trading at $7/share in 2015, Technicolor acquired Scientific Atlanta from Cisco, making it the #2 manufacturer of set top boxes and cable modems. Cisco had purchased Scientific-Atlanta for 6.3 BN in 2006. In what was widely seen as a coup, Technicolor acquired the company for 600MM.
+
+The Invention Of Hugo Cabret. Technicolor touches 70% of the films made in Hollywood. (Photo Credit: Technicolor)
+
+Through its work in home connectivity and visual effects, and patents dating back to the days when former parent company Thomson made televisions, Technicolor has registered hundreds of patents. The small division set up to administer and monetize the rights collected over 300MM in high margin royalties last year.
+
+Which brings us to back to the Technicolor Experience Center. Turner is part of a mixed team drawn from enterprises across the company and tasked with evangelizing Technicolor’s broad portfolio of solutions to its customers. “They are not a separate business unit,” said Rose, “but rather a cross-functional team whose mission is to explore, engage, and discover where the medium is going and how best we can serve our customers across divisions, who are all looking to us for expertise in content creation for these emerging platforms.” The TEC is headed by Marcie Jastrow, who manages its team of artists, producers, engineers, technologists. Turner is responsible for bringing in business and creative partners and uses the TEC as a resource.
+
+“VR is not one thing. Interactivity is not one thing.” Turner explained. “The modes exist on a continuum. On one end, you’ve got passive 360 video, where you’re a ghost, watching but unable to interact; on the other, we have fully immersive multiplayer games and cinematic environments, and in between is where most content and devices are right now. Not totally one thing or another. The first big hit in VR may be more like a game than a movie.” Mark Turner is smart. And not just because he has a British accent. He’s clearly been thinking about immersive entertainment a lot. “At the end of the day, solving the problems of content creators is not limited to software, but hardware, like routers and set-top boxes. Our leadership in the connected home gives us an advantage.”
+
+With Technicolor on stable footing, despite its perilous perch on the edge of the new technology, Rose is feeling acquisition-minded. The company has free cash flow, which it is currently using to pay down its debt, improving its credit rating, and strengthening its balance sheet. Rose says he wants to acquire “companies that complement our production services or connected home activities. My criteria haven’t changed. We want to be the leader in any business we enter.”
+
+“Birdman”, starring Michael Keaton, was another Academy Award winning picture with Technicolor’s digital fingerprints all over it. (Photo Credit: Technicolor)
+
+++++++++++++++++
+
+Get fresh insights, news and analysis with CinematicVR’s newsletter, delivered to your inbox with l♥ve, every 2 weeks. Sign up now!

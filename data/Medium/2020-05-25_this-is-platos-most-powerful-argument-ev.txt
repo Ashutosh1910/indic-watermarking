@@ -1,0 +1,77 @@
+This Is Plato’s Most Powerful Argument Ever
+
+Charles Gray
+
+The Cave, the Sun, and the Divided Line Are Metaphors, but this Is His Neutron Bomb
+
+Everyone laments the current polarization on political, cultural, and epidemiological issues in America and the world, but since people have different experiences in life, a certain degree of polarization is to be expected. And, it is nothing new.
+
+The questions surrounding what we know in general, and how we know it, have proved to be polarizing since before Plato. Just as there are, broadly speaking, two general approaches to politics represented by the Democrats and the Republicans in this country, there are two general answers to questions concerning what we know and how we know it: Rationalism and empiricism.
+
+Rationalism emphasizes certain innate mental abilities that seem to separate Homo sapiens from essentially all other known species. It posits a category of knowledge that is objective, immutable, and known a priori or before experience. The subject matter of plane geometry or much of mathematics would be examples of this kind of knowledge. We know that a triangle has three sides because of our knowledge of the nature of triangles. We know that 2+2=4 because of our knowledge of the meanings of the constituents of the equation.
+
+Empiricism, in contrast, emphasizes the role of experience in knowledge. We know things, according to empiricists, because we can see, hear, smell, and touch them. We know that a quarter is larger than a penny because we can set them side by side and observe the respective dimensions.
+
+There are many nuances and complications to these two positions, but as I am a limited being, I will let these sketches stand.
+
+What Epistemological Team Does Plato Play For?
+
+Plato is the captain of the rationalist team. Some would name Descartes for that role, and he is a great choice, but I will stick with Plato for reasons of seniority.
+
+Anyway, Plato is known chiefly for positing a world of Forms that serves as the perfect template from which the world we walk around in was created. He claims that the Forms are the only proper objects of knowledge. They are uncreated, immutable, indestructible, and perfect; unlike everything we see around us.
+
+Plato writes that our “knowledge” of the objects around us does not qualify as knowledge because it changes with time and point of view. The banana, for instance, that I “know” is green today will be yellow some days hence. So, for Plato, I cannot meaningfully claim that I know that the banana is green. It is only my current opinion.
+
+Tastes Great, or Less Filling?
+
+The seemingly fundamental disagreement between the rationalists and the empiricists was already old in Plato’s time, and the dialogue that he wrote about it, Theaetetus, is considered by some to be his greatest work.
+
+The Theatetus has a very long interpolated narrative in which Socrates asks the bright young student, Theaetetus, to define “knowledge.” Theaetetus fails to satisfy Socrates with his first attempt and is invited to make a second. He answers that knowledge is sensation, and the two of them, with Theodorus, Theaetetus’ teacher, are off on a ninety-page discussion of empiricism in which Socrates offers argument after argument to dispute it.
+
+The arguments range from the simply hilarious to some of the most profound modeling of consciousness offered perhaps to this day. I would love to review them all, but I will fast forward to the coup de grace: the neutron bomb as I call it above.
+
+In English, we call this argument the table-turning argument, but its Greek cognomen is the peritrope, and it has applications beyond the empiricist claims that inspired it.
+
+How Does Socrates Use the Table-Turning Argument?
+
+Socrates tells Theaetetus that the sophist Protagoras has written a book called Truth in which he claims that man is the measure of all things and also that things are as they seem. This book, according to Socrates contains the fullest version of the empiricist theory of knowledge, and he recounts it at length for the edification of Theatetus and Theodorus.
+
+Socrates disagrees with almost every aspect of the theory, but he considers it a matter of principle to present Protagoras’ arguments fully and in their strongest forms.
+
+After exhaustive recounting and elenctic questioning of Theatetus, Socrates seems to have shown that empirical claims to knowledge are incorrigible to all but the individual making them; i.e., when I claim that the room is cold, no one is in a position to refute that because my real claim is “My senses tell me that the room is cold,” and I am the only one who can know that for sure.
+
+Socrates gets Theaeteus and Theodorus to agree that empiricist claims are relative, and they are always true for the one making them. It is at this point that Socrates presents what has become known as the table-turning argument, which I will break out into individual propositions as philosophers do.
+
+Protagoras claims that every claim is true for the one who makes it. Some people claim that Protagoras’ claim is true. Some people claim that Protagoras’ claim is not true. Ergo, Protagoras’ claim is true and not true.
+
+The law of noncontradiction does not allow a proposition to be true and not true at the same time, so the conclusion of the argument (proposition #4 above) cannot be true. Since the argument is valid, the implication is that one or more of the premisses is false, and the argument fails.
+
+Socrates believes that he has shown that Protagoras’ claims that man is the measure, and things are as they seem are incoherent: empiricism is self-contradictory and cannot be true.
+
+What Else Can the Table-Turning Argument Do?
+
+While Plato created the table-turning argument to confute empiricist claims, it can be used to show problems with other kinds of general propositions or universal claims. Such claims are often made about God.
+
+Many people claim, for instance, that God is omnipotent: There is nothing he cannot do. The table-turning argument can be applied thus:
+
+God is omnipotent (God can do anything). God can make a massive rock. Ergo, God can make a rock that is so massive that He cannot lift it.
+
+If premiss #1 is true, then premisses #2 (not technically needed in this argument) and #3 must be true. But, premiss #3 implies a dilemma: Either God cannot make a rock so massive that He cannot lift it, or he can make a rock so massive that He cannot lift it. In either case, God’s power is shown to have a limit, and premiss #1 is false: God is not omnipotent.
+
+Another common claim about God is that He is omniscient: He knows everything. The table-turning argument can be used to refute such a claim as follows:
+
+God is omniscient (God knows everything). That there is something that God does not know is a thing whether it be true or false. Ergo, God knows that there is something that God does not know.
+
+The conclusion asserts a contradiction and cannot be true due to the law of noncontradiction. Since the argument is valid, there must be a problem with one of the premisses, and the better candidate is premiss #1.
+
+One last case takes us out of the religious realm. Many people claim that, due to the presumed infinite size or duration of the universe, anything is possible.
+
+Anything is possible (Everything is possible). That something is impossible is a thing whether it be true or false. Ergo, it is possible for something to be impossible.
+
+As in the previous case, the conclusion asserts a contradiction and cannot be true, so the argument appears to be flawed.
+
+Wouldn’t David Hume Call All of this Sophistry and Illusion?
+
+Yeah; he probably would. It’s very similar to the problem facing the polarized camps in our current political and cultural conflicts: Both sides are sure that the other is talking manifest nonsense because both sides reject one or more of the basic ontological assumptions made by the other.
+
+Well, as the great Yogi Berra once said, “The future ain’t what it used to be.” He also said, “It gets late early out there.” And so it does.

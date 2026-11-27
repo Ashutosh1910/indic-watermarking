@@ -1,0 +1,57 @@
+Medium Stats Aren’t What You Think They Are
+
+J.J. Pryor
+
+Your story’s impact
+
+Next we move onto one of the Medium’s most addicting statistics — the views graph!
+
+And here’s where one of the biggest surprises is, hold tight.
+
+Firstly, we can go to the top right there and change the time period of what we want to see.
+
+You can choose ‘Lifetime’ (since it was first published) or any other full month, if it’s old enough.
+
+Moving back over to the far left side (hey Bernie), we see the ‘LIFETIME VIEWS’ number. That’s the exact same as the total views stat on the previous screen.
+
+Then we see the ‘INTERNAL VIEWS’ and ‘EXTERNAL VIEWS’ numbers. These are also represented in the graph.
+
+Surprise #3: Internal views ≠ member views
+
+Many if not all of us have thought that this graph represented what views we’d get paid for, and what views we wouldn’t.
+
+If you aren’t familiar with how Medium’s payment system works, here’s a quick summary for any article behind the paywall:
+
+If a paying Medium member (AKA those who pay $5 per month to see unlimited articles) reads your story, you will get paid a portion of their reading time every month. So, if Medium takes 100% of their $5 subscription, and pays it out to writers, and they only read your stories the entire month — in theory you would get that entire $5. (Hint: This doesn't actually happen to that degree.) If a non-member reads your article, and signs up to pay the Medium subscription within 30 days of reading your work, you will get a commission of sorts. Medium hasn’t stated how much this is, but I suspect it works on the same portion-of-reading system as in #1.
+
+So, back to internal vs external views:
+
+Medium has always been slightly vague when explaining most things on the platform, for whatever reason.
+
+And it’s no different for this subject too.
+
+Here’s what they state:
+
+An external view is defined as traffic coming from a full Medium URL that has been shared to another social network, email, chat, or other sharing system. If those other sources provide us with trackable referrer details, they will show in your referrer list. Please note: Medium links shared via our in-product sharing tools or shortened links do NOT count as external views. If you wish to track traffic from external sources, do not use our in-product sharing tools.”
+
+The big difference? This graph is focusing on sources of views — not whether its a member of Medium’s platform or not.
+
+Medium also explains them in a slightly different way here:
+
+Internal views — “How many times your story has been viewed in the selected time period from Medium distribution, including our homepage, app, emails, and social media accounts.” External views — “How many times your story has been viewed from non-Medium sources in the selected time period, including social media, search results, email, and more. Sharing your story helps increase your external views.”
+
+If you have any doubt, please note I spent an hour this week with another Medium friend of mine testing old articles to see what the stats would show when accessing my stories through different methods.
+
+We tried anything and everything to determine what the views would count towards on the stats page.
+
+Long story short — we learned three things:
+
+If you find an article through Google (or other external source like Facebook, LinkedIn, etc) — you will get 1 additional external view — even if it’s someone logged into Medium No earnings or Member Reading Time shows up initially (which gave me a bit of a shock) After a few hours, Medium’s algorithms catch up, and you’ll see member reading time increase — with earnings updated at the end of the UTC day
+
+TLDR — Medium members accessing your article from an external source (ex. Google) will show up as an external view, but their reading time will still count for earnings (after a few hours).
+
+So, what does this mean for that chart?
+
+Quite frankly, it really reduces the usefulness to us, in my opinion. We’d like to know what sources are gaining Medium member views and not just reads that don’t count towards earnings (ignoring the tiny potential ‘commission’ factor).
+
+Medium stated they will count any view from one of these sources as ‘internal’:

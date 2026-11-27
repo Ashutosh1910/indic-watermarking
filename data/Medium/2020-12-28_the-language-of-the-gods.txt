@@ -1,0 +1,41 @@
+The Language of the Gods
+
+Sudhir Sekharan
+
+I am, of course, talking about Mathematics.
+
+Math, a language? — Fundamentally, just counting — Inversion leads to chaos! — Is it complete?! — A dream of nothing and everything — Final thoughts.
+
+In schools round the world, Literature and Math are polar opposites. To bring Math under the umbrella of language might cause some trepidation. But let me explain — language is simply a means of communication. Being A can understand Being B only if A can understand the language B uses. Language need not be written or spoken — the broader family of languages could include Sign language, Body language and even Computer languages like C++, Java and Python.
+
+Further, despite the numerous Gods and their functions — a most common theme is their role in the creation of the Cosmos (or Earth) and it’s functioning. While the study of our physical world is called Physics, the ultimate expression of our understanding of the world must be in Math. Indeed, no theory in Physics can be complete without a mathematical representation of what it is intended to explain. To understand our reality, the minds of the Gods, with reason, we must speak Math.
+
+Mathemagician Ramanujan said that Namagiri devi appeared in his dreams and gave him complex formulae
+
+Unlike English — the most widely spoken language or even Sanskrit — a most structured language, Math is immutable. 1 is 1 no matter how you look at it. Math is comparative, allowing for one mathematical expression to be compared to another objectively , without dispute. This means that 5 is greater than 4, no matter how passionately you might feel otherwise. Thankfully, our universe maintains these abstract rules over time and space, keeping our reality from disintegrating.
+
+Here we are, a civilization built on Math. It all starts with that most basic of elements — Counting. Someday, our ancestors felt they could use their fingers (digits!) to communicate something important to one another. Perhaps the number of predators in the vicinity or how many suns to the next watering hole. Being specific might have been the difference between life and death. Maybe they could count to 5 or even 20. Over time, however, we have settled into a decimal system seemingly concurrent with our 10 fingers on 2 hands. Perhaps, the Octopus would be more at home in an Octal system.
+
+But no matter how far or how hard you count, you could never unveil the Math required to send rockets into space or model our brains. The concept (phenomenon) of emergence explains how complex systems built from simple components exhibit properties that never existed in the components. In Math, similarly, when you turn a concept on it’s head, there is an explosion of mathematical chaos — something I’d like to call Inversion!
+
+Addition could have evolved likely as a way to compare and establish distinctly counted groups as equal, more or less. At the very least, it is a quicker way to count. Inverting Addition, however, leads to Subtraction. When mathematicians first attempted subtracting 5 from 4, it must have been quite perplexing. Indeed, this led to a whole new construct of negative numbers and something called Zero. While you can keep all fingers rolled up and claim you understand zero, it’s quite another thing to hold up a negative number of fingers. Even zero, while comparatively straightforward, is an inversion of sorts — with the number being defined as not holding up any fingers.
+
+Multiplication again seems like an extrapolation of addition — an easier representation of 5 + 5 + 5 + 5 + 5 being 5*5. Perhaps the first multiplications took place as geometric measurements (land area, distance between locations) became a necessity of life. An inversion of Multiplication leads to Division. This forced us to deal with the construct of rational numbers and of infinity (division by 0). Multiplication and Division also forced us to frame rules that are consistent across negative and positive numbers (Bramhagupta — India, 600 AD).
+
+An extrapolation of Multiplication leads to Exponents — 5*5*5 being 5³. Again, Inversion introduces roots, and new constructs of complex numbers introduced with a base as the square root of -1 (represented now by i).
+
+We have come a long way now. Alongside the straight and narrow of positive integers (counting based), inversions have forced us to add other alphabets to the language of Math (negatives, zero, rational and irrational numbers, infinity, i).
+
+One of the most beautiful expressions in Math is Euler’s identity.
+
+e^iπ + 1 = 0
+
+It brings to life a relationship between the first integer (1), the abstract not (0), the amazingly famous irrational number (π-pi) and the imaginary square root of -1 (i). A beautifully simplistic equation that makes us believe that the language we constructed is no mere fancy of the human mind.
+
+Unfortunately, there may exist many alphabets to this language that we are yet to encounter. Worse still, is the possibility that we may encounter them, and get no further. Identities like 0/0 or log(0), simple looking calculations, yet indeterminate and best dealt with via the theory of limits (Calculus). Math is unsparing even of infinity, and some infinities are different from other infinities. Could our language be incomplete yet sufficient to understand our cosmos? In a reality where God not only appears to play dice, but also sometimes throws them where they may not be seen — we might be hopelessly incapable. Could it be that the only real numbers are zero and infinity, and all we can comprehend are some shades of their interactions. Time will tell, or maybe not even time can tell.
+
+Could it be, that the Language of the Gods — is beyond the Gods themselves.
+
+“…But, after all, who knows, and who can say Whence it all came, and how creation happened? The gods themselves are later than creation, so who knows truly whence it has arisen? Whence all creation had its origin, he, whether he fashioned it or whether he did not, he, who surveys it all from highest heaven, he knows — or maybe even he does not know” — Rigveda
+
+A few references beyond -

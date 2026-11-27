@@ -1,0 +1,147 @@
+Game Theory 101: Explaining the Mahjong showdown in ‘Crazy Rich Asians’
+
+Travis Bean
+
+Rachel Chu, Eleanor Young, and two other players sit down at a table to play Mahjong, a game involving 136 ceramic different tiles of varying suits. They roll the dice, deal out the tiles, and begin the game.
+
+With 13 tiles propped in front of her, Rachel picks up a 14th tile…and pauses. She stares at it, caresses it, contemplates her decision to either keep it or give it away. Keeping it means she’s fighting for the man she loves; giving it away means she’s willing to let him go.
+
+This tile isn’t just the key to winning this game of Mahjong—it will change her life and the lives of everyone around her.
+
+This moment comes towards the end of Crazy Rich Asians. At this point in the movie, Rachel has failed time and time again to win Eleanor’s approval to marry her son, and a s a result has refused Nick’s proposal. Rachel has decided to head back to the United States and leave the Nick’s crazy family behind forever.
+
+As they play, Rachel asks why she was never good enough for Nick, why she didn’t belong in Eleanor’s family. Eleanor explains that Rachel is “American”, that she’s “not what Nick needs” as Nick takes over the family empire in China.
+
+And then Rachel picks up that tile.
+
+Why then does Rachel then hand the tile off to Eleanor, allowing her to win? Well, that depends on how you define “winning.” The answer to that question is actually on display throughout the game of Mahjong, throughout their conversation, throughout the film — tracing all the way back to the opening scene. And we can better understand her intent by discussing a concept you use in your life every day, whether you realize it or not — something called game theory.
+
+What is game theory?
+
+Game theory is, at its core, pretty much exactly what it sounds like: Strategizing your way to victory during a game. The game could be tennis, chess, checkers, Jenga, or Monopoly (or, ahem, Mahjong…).
+
+Let’s look specifically at one sport. How about…soccer.
+
+In his paper “Brief Introduction to the Basics of Game Theory,” Matthew O. Jackson lays out a scenario involving a penalty kick. There are two players — a kicker and a goalie — and two different decisions those two players could make.
+
+Say you’re the goalie. The kicker could kick to the left or right side of the goal, and you could move to block either the left or right side of the goal. It’s a split second decision you have to make. There’s essentially a 50/50 shot for you to choose correctly, right? So what decision do you make?
+
+Seems simple — but here’s the thing: It’s not really a split-second, 50/50 decision, is it? There are so many factors and strategies at play leading up to that penalty kick.
+
+Let’s look at another game…how about poker — which happens to be the game Rachel is playing with her student during her introduction in Crazy Rich Asians.
+
+And what particular subject is Rachel covering in that class? You guessed right: GAME THEORY.
+
+Rachel sits across the poker table from her opponent, Curtis, in a dark classroom. Curtis’s hand ain’t too bad: a two pair of nines and kings. He looks down at his hand, then back at Rachel, his eyes peering between his sunglasses and curly hair.
+
+Then, Rachel makes her move as she goes all in and pushers her giant stack of chips into the center of the table.
+
+Perplexed, uneasy, frustrated, Curtis folds.
+
+And then Rachel reveals what she has: nuthin’.
+
+When describing how she beat her opponent in poker, Rachel tells the class:
+
+“Well, I know for a fact that Curtis is cheap. So he’s not playing using logic or math, but using his psychology. Our brains so hate the idea of losing something valuable to us that we abandon all rational thought and make some really poor decisions. So Curtis wasn’t playing to win-he was playing not to lose.”
+
+That, right there, is game theory. If you’re a soccer goalie, it’s not about jumping right or left to block a shot — it’s about understanding your opponent and then employing a logic-based strategy to achieve the best result.
+
+Let’s use another example. Say you and your brother are playing Rock Paper Scissors. Best-two-out-of-three wins. And for your brother’s entire life, he always for some reason throws out rock on the first throw
+
+You will, of course, want to start by throwing paper. By winning that first throw, you’ve put yourself in pretty good position for the next two throws, right? Your odds of winning just went up exponentially.
+
+But there’s something else to consider: Your brother might actually anticipate you knowing that he always throws out rock first, which means your brother might throw out scissors to cut your paper. Then you’re in a hole, and have to win the next two rounds to beat him.
+
+So…how do you choose what to throw?
+
+This requires thinking that goes beyond the basic components of the game: Is your brother this strategic in other games? Is he as observant of you as you are of him? Does he have some sort of physical tic that lets you know what he’ll throw?
+
+Maybe this all seems really obvious to you: of course you have to strategize during games. But we’re limiting the power of game theory if we think of them as just “games” with a strict set of rules. Remember: game theory is a class Rachel teaches at NYU. It’s been written about extensively in academic journals. Game theory is something studied and evaluated by the top athletes, economists, and psychologists in the world.
+
+Here’s how Investopedia defines game theory:
+
+“A model of making decisions that weigh the benefits of choice along with the interaction in between participants. It looks at relationships and tries to predict the optimals decisions people will make.”
+
+Rachel doesn’t win because she had a royal flush, but because Curtis ended up folding. The key was that she psychologically understood Curtis. She knew she could bluff her way to victory not because she knew what cards Curtis had drawn, but because she knew Curtis was cheap, because Curtis would hesitate, because Curtis was “playing not to lose.”
+
+The problem is, Rachel failed to use that level of thinking when meeting Nick’s family.
+
+Game theory in everyday life
+
+Game theory can be used as we move through life, as we interact with others, as we position ourselves to have the upper hand in any given situation. It’s not necessarily about winning or losing, but about achieving the most beneficial, fulfilling results in our daily lives.
+
+We can show this through a common example used to explain game theory: The Prisoner’s Dilemma.
+
+Say you and your friend committed a crime, and the police have brought you in for questioning. An officer takes everyone into a separate room, and then when he visits your room, he gives you four options:
+
+If you confess and agree to testify against your friend, and your friend does not confess, then you’ll be let go. If you both confess, then you’ll both be sent to prison for 2 years. If you do not confess and your friend does, then you will be convicted and the police will seek the maximum prison sentence of 3 years. If nobody confesses, then I you will be charged with a lighter crime for which the police has enough evidence to convict you and you will each go to prison for 1 year.”
+
+There’s no real easy answer here. If you confess, you’ll either get zero or two years in prison. If you don’t confess, it could lead to either 1 or 3 years in prison. You could choose the first option and confess and agree to testify against your friend…but what if the other player does the same thing? Then you’re caught up in a legal battle. No matter which option you pick, the amount of time you spend in prison is dependent on what the other player chooses to do. And because you’re in separate rooms, your decision must be based on how well you know the other player.
+
+The Prisoner’s Dilemma can be compared to your everyday life. Let’s keep it simple: While you and your brother are playing Rock Paper Scissors, your brother knocks over your mother’s favorite vase and breaks it.
+
+Your brother then decides to bribe you. He says that if you don’t tell your mom that he broke the vase, then he’ll give you his allowance for a month. But then your mom tells you that if somebody doesn’t confess to breaking the vase, you’re not allowed to go to your friend’s birthday party. But if you tell your mom your brother broke the vase, you not only lose that month of his allowance, but he might blame it on you instead, and then you still miss out on the birthday party anyway.
+
+So…what do you do?
+
+You can extend these examples to much bigger ordeals in your life, from The Prisoner’s Dilemma to…quitting your job. Say you work for the local factory, but then you get an opportunity to invest in your friend’s start-up — you’ll want to weigh the benefits of each scenario before you make your decision.
+
+At the factory, you’re earning $60,000 a year with benefits and there’s a chance for a promotion in 6 months…but you hate your boss.
+
+At the start-up, you’ll only make money if the company does well. But, you’ll also be vice president and you’ll work with your best friend every day.
+
+There are obvious advantages and disadvantages to both cases, and your decision must be framed in the long-term. What is better for your career? Your bank account? Your well-being? Your family’s well-being? Are you putting others in danger by pursuing your dream at this start-up? Will remaining at the factory make you unhappy, but your family happy?
+
+With alllll of this in mind, let’s look back to the moment Rachel holds that ceramic tile: Game theory can be used to better our relationships, to win the game of love, to set ourselves up for true happiness and fulfillment. So while Eleanor is playing Mahjong, Rachel ends up playing Eleanor.
+
+Game theory in Crazy Rich Asians
+
+Before Rachel and Nick hop on a plane, Rachel has no idea that the Young family is one of the richest families in Singapore. After she learns about this? Her demeanor changes. She’s anxious. She loves Nick, but if she were to marry him, she’d be part of a completely new environment. Raised by a single mother, Rachel knows a modest life-while Nick knows an extravagant one.
+
+This tension makes Rachel very nervous about meeting Nick’s mother, Eleanor. And thus, game theory begins: How do you best present yourself to the matriarch of a billion-dollar empire? How do you show you’re right for her son? What will be your role in this family?
+
+Rachel’s move is to describe her strengths: She’s the youngest faculty member of New York University; her mother is a self-made woman; she’s passionate about her career.
+
+With this in mind, it becomes clear that Rachel has been employing the wrong strategy. Eleanor doesn’t respect pursuing one’s passion, but instead someone who will put their loved ones ahead of themselves, even at the most crucial of junctures.
+
+And all Eleanor can respond with?
+
+How…American.
+
+If Rachel had known more about Eleanor, she would have known that Eleanor treasures a woman committed to building the family name. So pursuing your career? As opposed to supporting your husband’s successful empire? Nuh-uh. Eleanor even says later in the movie:
+
+“It’s nice that you appreciate this house, and us being here together wrapping dumplings. But all this doesn’t just happen. It’s because we know to put family first, instead of chasing one’s passion.”
+
+From here on out, no matter how hard Rachel tries to prove herself and her love for Nick, nothing is good enough for Eleanor. Rachel is too poor, too American, too ambitious. What Rachel doesn’t understand is that in Eleanor’s mind, Rachel actively wants to steal Nick away from her. And, as Nick explains, Eleanor is only this way because of the way Nick’s grandmother, Ah Ma, treated Eleanor.
+
+“There is a reason I lived with Ah Ma growing up. It’s because my mom knew she wasn’t the favorite, so she let Ah Ma raise me so I would be…It’s hard to understand what she did from the outside, but she did what she thought was best for the family, for everyone involved.”
+
+Turns out Rache is caught up in a looping cycle. Because Ah Ma didn’t trust Eleanor to raise Nick, she did herself. Likewise, Eleanor is latching onto Nick. She sacrificed raising Nick because that’s how much she respected Ah Ma’s motherhood, so she understandably has issues letting Nick go.
+
+With this in mind, it becomes clear that Rachel has been employing the wrong strategy. She was trying to win a game she was never even allowed to be part of — that is, until she switches it up and invites Eleanor to that game of Mahjong. That’s when she decided to write her own rules.
+
+Let’s look back on that conversation now with everything we know about game theory:
+
+Rachel: “My mom taught me how to play. She told me Mahjong would teach me important life skills: negotiation, strategy, cooperation.” Eleanor: “My mother taught me too.”
+
+Here we have two women who were taught to play Mahjong by two very different mothers with very different approaches to parenting. One taught Rachel to be ambitious, to build her own legacy; the other taught Eleanor to support her husband, to build the family name.
+
+Rachel once believed that Eleanor didn’t like her because she wasn’t rich, but now Rachel understands that Eleanor is terrified of losing her son, who has already spent his 20s living in America away from the family. And because Eleanor sees Rachel as “American,” Rachel has become a threat to the family empire. Eleanor has already lost her son once to Ah Ma, and doesn’t plan on losing him again.
+
+And that’s when Rachel picks up the Mahjong piece that will allow Eleanor to win the game. For the first time in this movie, she’s decided to study Eleanor’s moves and adjust her own strategy accordingly. Because Rachel now controls the game, as opposed to playing Eleanor’s game, she’s now writing the rules.
+
+Rachel’s not just a theorist for little games like Mahjong — she’s extending her skills to life. Because while giving up that tile loses her the game, it gains Eleanor’s respect, let’s Eleanor know that Rachel cares more about Nick being part of his family than taking Nick back to America.
+
+“If Nick chose me, he’d lose his family,” Rachel says after revealing she turned down Nick’s marriage proposal. “And if he chose his family, he might spend the rest of his life resenting you.” “So you chose for him?” Eleanor responds. “I’m not leaving because I’m scared,” says Rachel, “or because I think I’m not enough. Because maybe for the first time in my life, I know i am. I just love Nick so much. I don’t want him to lose his mom again.”
+
+This is not just a selfless decision Rachel is making for Nick — it’s for Eleanor and Nick’s entire family. Rachel might be an ambitious American who’s passionate about her career…but that doesn’t mean she won’t put family first.
+
+Rachel then flips over her hand, revealing that she has all 14 tiles as well — turns out, she’s already won the game.
+
+Think back to The Prisoner’s Dilemma: Your decision to confess or not confess to the crime is entirely dependent on what you think the other criminal will do. The amount of time you’ll spend in prison is entirely dependent on your knowledge and assessment of your opponent.
+
+Now think back to that poker scene: Rachel won not because she had the better hand, but because she understood her opponent psychologically. This, I think, reveals that Rachel had been approaching Eleanor all wrong. Much like Curtis, Rachel was playing “not to lose”, as opposed to adjusting her strategy based on her opponent.
+
+So while giving away that tile meant losing at Mahjong, it also meant winning Eleanor’s approval — which means Rachel won Nick, won love, and won the game of life.
+
+That’s Game Theory 101.

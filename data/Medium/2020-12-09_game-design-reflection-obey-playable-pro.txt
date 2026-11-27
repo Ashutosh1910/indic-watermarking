@@ -1,0 +1,25 @@
+Game Design Reflection “Obey” (Playable Prototype Version)
+
+Ryan Mccurdy
+
+The new design for the initial level/loop
+
+The game prototype I had finished was based around a previous documentation that I had turned into a legitimate playable version of the ideas I wrote about in my concept. This was based around the “Obey” prompt, simply put it was a 2d platformer based around forcing the player to complete levels while adhering to various increasing rules regarding what they can do, what they can’t, and other elements of the game. This game was made using Game Maker Studio 2, and was my first time developing using this engine. This time I was actually able to get real play testers, due to it being made for a single player.
+
+A screenshot of the second loop/level in GMS2
+
+The response I got was positive, with the movement and platforming working and feeling like it should so it allowed the gameplay to remain enjoyable enough throughout. The player was able to get a grasp on the gameplay and rules quickly due to the text I had placed around each level offering both descriptions of the rules and a clue at one of the more difficult parts with a secret alternate way through the level, although I did still explain the basic concept of the rules beforehand so that might have played a part in their understanding of the game.
+
+This was the overview of the second to last loop
+
+The route the player took was, generally, what I had expected, although I had tried to figure out all the possible actions and test if everything worked so nothing I saw would have been something I considered “breaking the game”, because even when there were parts I didn’t intend originally I had came across them while testing the game myself for the creation of the prototype.
+
+A standout moment for the player was the final loop. The last two parts of the game are based around the player going through a new level twice with two different sets of rules, the first loop preventing the player from going back and the second loop instead limiting their time and movement options. The tricky thing for players was, the second loop was designed to not be beaten if played normally, the amount of time and jumps needed are higher than what players are allowed to do. The trick to beating it was to realize that because the rule that prevented players from going back was lifted, then they should make use of that and go backwards at the start of the level, where a secret pathway that took you on a alternate route through the level was hidden, that would allow players to finish the game. This was a pretty tricky and surprising moment for the player, as they had not expected secret paths throughout the level normally.
+
+A sprite image of the text I used for the hints/tutorials
+
+That part could have become too obtuse so I had made sure to include an extra clue in the game if players got stuck, and even though there was never any other secret pathways in this game, it does still follow a similar pattern of beat the level using one route, get new/different rule that blocks/makes old route impossible, find/use new route designed to beat with that new/different rules in mind.
+
+The sprite for the launch/boost blocks
+
+Ultimately, there is not too much I would change for this game. Instead I would chose to add more, such as fleshing out the platforming elements, adding new rules and rule variations, develop some kind of story and unique art style for the game other than simple squares, and add more levels and loops in each level if I were to actually build a complete game out of these ideas and this prototype.
