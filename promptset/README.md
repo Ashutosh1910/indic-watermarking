@@ -9,6 +9,8 @@ scripts that generate, trim and verify the outputs.
 * **Edit levels** (L1 proofread, L2 polish, L3 paraphrase, L4 rewrite, C continue, OX outline extraction,
   G title): built from the human Hindi corpora (samalochan, hindi-aesthetics). See [EDIT_LEVELS.md](EDIT_LEVELS.md).
 * **GPU steps** (translation, generation, trimming, verification): see [GPU_RUNBOOK.md](GPU_RUNBOOK.md).
+* **The GPU job** (everything after the prompt files, in one resumable command, into an analysable dump):
+  see [JOB.md](JOB.md).
 
 ## Status (2026-11-23)
 

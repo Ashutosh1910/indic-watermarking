@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+# job outputs and corpus-derived files (never commit: corpus text, watermark keys)
+/work/
+/dump/

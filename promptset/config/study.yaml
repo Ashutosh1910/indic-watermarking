@@ -1,0 +1,71 @@
+# Job config for promptset/scripts/run_study.py: the whole GPU run, from prompt files to an analysable dump.
+# Paths are relative to the repo root unless absolute. Every key can be overridden on the command line
+# with --set key.sub=value (YAML value), e.g. --set filters='[split=main]' --set gpus=4.
+
+# Run config with the PRIVATE watermark keys (GPU_RUNBOOK.md step 1). The job copies it into the dump
+# (dump/config/run_config.yaml) and refuses to continue a dump that was made with other keys or sampling.
+# $RUNCFG, if set, wins over this value.
+run_config: promptset/config/generation.yaml
+
+dump_dir: dump/study        # everything the job writes goes here (see promptset/JOB.md for the layout)
+model: null                 # override model.model_id of run_config (HF id or local dir)
+tokenizer: null             # tokenizer for trimming and detection; default: the model id
+gpus: auto                  # auto = all visible GPUs; N = use GPUs 0..N-1; 0 = one process on model.device
+python: null                # interpreter for the stage subprocesses; default: the one running run_study.py
+
+# Prompt files. A missing file is skipped with a warning (e.g. edit prompts not built yet); O_prompts is
+# built by the job from the OX generations (stage "outline").
+prompts:
+  G: promptset/data/G_prompts.jsonl
+  edit: promptset/data/edit/edit_prompts.jsonl
+
+# Filters on prompt rows, applied to every stream (generate.py --filter syntax; same key = OR, keys AND).
+# The pilot first: filters: [split=pilot]. Full run: [split=pilot,main] (add reserve if needed).
+filters: [split=pilot]
+
+# Generation streams. Each stream has its own files, regeneration loop, trimming and scores.
+#   sources       which prompt files feed it (G, edit, O = the outline rows built from the ox stream)
+#   filter        extra filters for this stream
+#   no_watermark  generate without the watermark (control)
+#   trim          false for streams that are not scored (ox)
+streams:
+  ox:   {sources: [edit], filter: [level=OX_extract_outline], no_watermark: true, trim: false}
+  wm:   {sources: [G, edit, O], filter: [watermark=true]}
+  # Unwatermarked AI text with the same prompts: FPR on AI text and the no-watermark baseline of z.
+  # G only by default (cheap). To add matched edit controls, widen the level list, e.g.
+  # level=G,L2_polish,L4_rewrite,C_continue (costs about as much as those levels in wm).
+  ctrl: {sources: [G, edit, O], filter: [watermark=true, level=G], no_watermark: true}
+
+# Regeneration: after trimming, ids whose largest cutoff failed for length are generated again with a
+# new seed (attempt 1, 2, ...), up to max_attempts extra attempts. Ids still failing are written to
+# dump/failures/dropped.<stream>.jsonl. Per cutoff the first accepted attempt is used.
+regen:
+  max_attempts: 3
+  reasons: [too_short, no_sentence_end, empty]
+
+# Human text, trimmed with the same rule at every cutoff of promptset.yaml and scored with the same keys
+# (FPR per language and length). Each file is its own set (dump/trim/human.<name>.jsonl), so the edit
+# anchors and the wider pool are never double-counted. Missing files are skipped with a warning.
+human:
+  edit_anchors: promptset/data/edit/human_passages.jsonl     # from build_edit_prompts.py build
+  pool: work/human_pool.jsonl                                 # from build_human_pool.py (HindiSamay, Samalochan, Medium)
+human_cutoffs: null         # null = every cutoff of promptset.yaml ({words: [...], tokens: [...]})
+
+# Trimming (trim.py). null = promptset.yaml defaults (min_frac 0.95, slack_words 30).
+trim:
+  min_frac: null
+  slack_words: null
+  extra_args: []
+
+detection:
+  z_threshold: 3.0          # a text is flagged iff z > 3 (and at least detection.min_scored scored tokens)
+  min_scored: null          # null = run_config detection.min_scored
+  details: true             # per-token detector state per text (dump/tokens/*.jsonl.gz)
+  score_raw: true           # also score each full raw generation (text and sampled ids), before trimming
+  workers: auto             # CPU processes for scoring; auto = min(16, cpu count)
+
+generate:
+  batch_size: null          # null = run_config batching.batch_size
+  token_budget: null        # null = run_config batching.token_budget (lower it on 40/48 GB cards)
+  shard_retries: 2          # a crashed generation process is restarted this many times (it resumes)
+  extra_args: []
