@@ -1,0 +1,31 @@
+# Settings for promptset/scripts/analyze.py: the analysis of a run_study.py dump (see promptset/ANALYSIS.md).
+# Every key can be overridden on the command line with --set key=value (YAML value), e.g. --set bootstrap.reps=200.
+
+z_threshold: null          # null = the dump's manifest z_threshold (run_study detection.z_threshold), else 3.0
+min_scored: null           # null = the dump run config's detection.min_scored (else 50); used for the raw ids flag
+
+bootstrap:
+  reps: 1000               # resamples of clusters (pair_id: one document or one prompt pair)
+  seed: 20261127
+  ci: 0.95
+
+# The pre-registered primary comparison: Hindi minus English per-token strength (z / sqrt(n_scored)) per phase,
+# in this view and at this cutoff. Rows of lang_gap.csv that match are marked primary = true.
+primary:
+  view: same_tokens        # same_tokens | same_words
+  cutoff: 400
+
+# f = share of the passage the model actually wrote (0 = copied human text, 1 = all new).
+f:
+  bins: [0, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1.0001]
+  # difflib cost bound: word lists longer than this are aligned in windows (see ANALYSIS.md, "f").
+  max_align_words: 4000
+  ngram_len: null          # null = the dump run config's watermark.ngram_len (else 5)
+
+length_trap:
+  min_n: 10                # a cutoff needs at least this many passages to give the strength estimate
+
+# Streams treated as the unwatermarked control (phase "control").
+control_streams: [ctrl]
+
+figures: true              # PNGs under analysis/figures/ when matplotlib is installed
