@@ -7,7 +7,9 @@ scripts that generate, trim and verify the outputs.
 * **G level** (generate from scratch): 517 prompt pairs from existing human-written prompt datasets. Every
   prompt is used in both languages: its native language plus an IndicTrans2 translation.
 * **Edit levels** (L1 proofread, L2 polish, L3 paraphrase, L4 rewrite, C continue, OX outline extraction,
-  G title): built from the human Hindi corpora (samalochan, hindi-aesthetics). See [EDIT_LEVELS.md](EDIT_LEVELS.md).
+  G title): prompts that ask the model to edit, continue, outline or retitle a human text taken from our
+  study corpora: HindiSamay and Samalochan (Hindi), Medium (English), 300 documents per language with the
+  same story/essay mix. See [EDIT_LEVELS.md](EDIT_LEVELS.md).
 * **GPU steps** (translation, generation, trimming, verification): see [GPU_RUNBOOK.md](GPU_RUNBOOK.md).
 * **The GPU job** (everything after the prompt files, in one resumable command, into an analysable dump):
   see [JOB.md](JOB.md).
@@ -19,11 +21,11 @@ scripts that generate, trim and verify the outputs.
 | Download and rule-filter sources | done |
 | LLM keep/genre check of every candidate ([LABELING.md](LABELING.md)) | done, `data/work/labels/` |
 | Selection: 517 balanced pairs | done, `data/work/selected.jsonl` |
-| IndicTrans2 1B translation | **partial**: 64 of 517 rows (all English→Hindi) were translated on a laptop before it was stopped. They are on that laptop, not in the repo yet. The rest runs on the GPU server (runbook step 0b, resumable). |
-| Translation review (flag or drop only, never rewrite) | not done; runs on the finished translations |
-| `data/G_prompts*.jsonl` | **not built yet**; built in runbook step 0b once the translation is in |
-| Edit-level prompts | done: 4,597 rows from 300 docs, strict validator 0 errors (`data/edit/`; the 85 MB JSONL is gitignored, rebuild with the command in EDIT_LEVELS.md) |
-| generate / trim / verify scripts and tests | done, 168 tests pass |
+| IndicTrans2 1B translation | **partial**: 325 of 517 rows (Colab T4 run, 2026-11-27), `data/work/translated.jsonl`. All 101 Hindi→English rows are done; 192 of 416 English→Hindi rows (111 essay, 81 personal) are still missing. Finish with the Colab notebook or runbook step 0b (both resume from the file). |
+| Translation review (flag or drop only, never rewrite) | done for the 325 rows: 18 dropped, 69 kept with a note (`data/work/translation_review.jsonl`). Review the 192 remaining rows the same way once they exist. |
+| `data/G_prompts*.jsonl` | **built from the partial translation**: 301 pairs, 602 rows, strict validator 0 errors (`data/validation.md`). Essay and personal are short (29 and 16 main prompts) until the rest is translated. Pairs that duplicate another pair in either language (5) or are under 5 words (1) are dropped. |
+| Edit-level prompts | done: 10,455 rows (en 5,120, hi 5,335) from 600 docs (300 per language, story/essay 50/50; hi: HindiSamay 225 + Samalochan 75, en: Medium 300), strict validator 0 errors, 7 balance warnings (`data/edit/`). The 156 MB JSONL and `human_passages.jsonl` are gitignored, and so are the HindiSamay / Medium texts (do not redistribute): fetch them from branch `add-hindi-corpora` and rebuild with the command in EDIT_LEVELS.md |
+| generate / trim / verify scripts and tests | done, 183 tests pass |
 
 With the full translation, the G file has 1,034 rows (517 prompts × 2 languages). If you build it from a
 partial translation, you get only the pairs whose translation exists. English→Hindi runs first, so a partial
@@ -72,8 +74,13 @@ hash of the pair id, so they stay the same across rebuilds.
 | Aya dataset (hin, original annotations only) | hi | human-written Hindi requests | Apache 2.0 |
 | Anudesh (ai4bharat/indic-instruct-data-v0.1) | hi | human-written Hindi requests (English rows go to the English pool) | CC BY 4.0 |
 | IndicTrans2 1B (ai4bharat) | en↔hi | machine translation of every prompt into the other language | MIT (gated on HF: accept the terms) |
+| HindiSamay (hindisamay.com, MGAHV) | hi | edit levels: human base texts (stories and essays) | published with the authors' permission; copyright stays with the authors; **non-commercial research only, do not redistribute** (not in git: branch `add-hindi-corpora`) |
+| Samalochan (samalochan.com) | hi | edit levels: human base texts (essays) | copyright of the authors; **research use only, do not redistribute** |
+| Medium (fabiochiu/medium-articles) | en | edit levels: human base texts (stories and essays) | dump labelled MIT, but copyright stays with each Medium author; **non-commercial research only, do not redistribute** (not in git: branch `add-hindi-corpora`) |
 
-LMSYS-Chat-1M is excluded (no-redistribution license). Each row carries its `license`. Because No Robots is
+LMSYS-Chat-1M is excluded (no-redistribution license). Each row carries its `license`. The edit-level rows
+embed the corpus texts, so `data/edit/edit_prompts.jsonl` and `human_passages.jsonl` stay out of git, and
+generated text from them is for non-commercial research only. Because No Robots is
 NC, a public release of generated text from those rows is non-commercial only. You can drop them with
 `--filter`, or by removing the source from `english_source_weights`.
 
@@ -83,7 +90,9 @@ oasst2 13, persuade 8, aya_eval_dolly 5.
 ## What is ours and what is sourced
 
 * **Prompt text is sourced**: every task text is a human-written prompt from the datasets above. No prompt
-  was written or translated by Claude.
+  was written or translated by Claude. The edit-level base texts are verbatim prefixes of the human
+  corpus documents (cut at a sentence end), and their prompt wording is the kit's fixed templates (plus
+  one fixed outline-extraction template of ours, `edit_levels.yaml`).
 * **Translations are machine-only**: IndicTrans2 1B, used exactly as produced. Reviews may flag or drop a
   pair (`translation_review.jsonl`: `id, ok, drop, issue`) but never rewrite it.
 * **Ours (fixed templates, the same for every row)**: the system prompts and level phrasings in
@@ -134,7 +143,7 @@ the empty `<think>\n\n</think>\n\n` block, and the validator checks this.
 ## Tests
 
 ```bash
-python -m pytest promptset/tests -q     # 168 tests, CPU only, tiny random Qwen3; about 6 minutes
+python -m pytest promptset/tests -q     # 183 tests, CPU only, tiny random Qwen3; about 6-8 minutes
 ```
 
 ## Translation notes

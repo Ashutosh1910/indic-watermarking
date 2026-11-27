@@ -2,12 +2,8 @@
  "command": "build",
  "argv": [
   "build",
-  "--corpus",
-  "samalochan",
-  "--corpus",
-  "hindi-aesthetics",
-  "--n-docs",
-  "150",
+  "--tokenizer",
+  "/mnt/project-files/promptset_stage/qwen3_tokenizer/",
   "--out",
   "promptset/data/edit"
  ],
@@ -65,7 +61,32 @@
   "OX_extract_outline",
   "O_outline"
  ],
- "n_docs": 150,
+ "sampling_mode": "genre_mix",
+ "n_docs": 300,
+ "n_docs_unit": "per language",
+ "genre_mix": {
+  "story": 0.5,
+  "essay": 0.5
+ },
+ "genre_plan": {
+  "en": {
+   "story": {
+    "medium": 150
+   },
+   "essay": {
+    "medium": 150
+   }
+  },
+  "hi": {
+   "story": {
+    "hindisamay": 150
+   },
+   "essay": {
+    "hindisamay": 75,
+    "samalochan": 75
+   }
+  }
+ },
  "min_words": 300,
  "script_min": {
   "hi": 0.8,
@@ -73,17 +94,39 @@
  },
  "docs_skipped_script": 1,
  "docs": {
-  "hindi-aesthetics/hi": {
-   "available": 968,
+  "en/essay/medium": {
+   "available": 2849,
+   "quota": 150,
    "sampled": 150
   },
-  "samalochan/hi": {
-   "available": 576,
+  "en/story/medium": {
+   "available": 1143,
+   "quota": 150,
    "sampled": 150
+  },
+  "hi/essay/hindisamay": {
+   "available": 661,
+   "quota": 75,
+   "sampled": 75
+  },
+  "hi/essay/samalochan": {
+   "available": 540,
+   "quota": 75,
+   "sampled": 75
+  },
+  "hi/story/hindisamay": {
+   "available": 1035,
+   "quota": 150,
+   "sampled": 150
+  },
+  "hi/story/samalochan": {
+   "available": 36,
+   "quota": 0,
+   "sampled": 0
   }
  },
- "n_rows": 4597,
- "n_passages": 600,
+ "n_rows": 10455,
+ "n_passages": 1173,
  "skips": [
   {
    "level": "(doc)",
@@ -99,33 +142,21 @@
   },
   {
    "level": "C_continue",
-   "source": "samalochan",
+   "source": "hindisamay",
    "reason": "no inner sentence end",
    "n": 3
   },
   {
    "level": "G_title",
-   "source": "hindi-aesthetics",
+   "source": "medium",
    "reason": "no usable title",
-   "n": 54
+   "n": 37
   },
   {
    "level": "G_title",
    "source": "samalochan",
    "reason": "no usable title",
-   "n": 146
-  },
-  {
-   "level": "L1_proofread",
-   "source": "hindi-aesthetics",
-   "reason": "punctuation_removed: excluded",
-   "n": 300
-  },
-  {
-   "level": "L2_polish",
-   "source": "hindi-aesthetics",
-   "reason": "punctuation_removed: excluded",
-   "n": 300
+   "n": 62
   }
  ]
 }

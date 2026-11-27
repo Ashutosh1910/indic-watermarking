@@ -1,7 +1,7 @@
 """Unified access to the text corpora under data/.
 
     import corpora
-    corpora.available()                                  # ['hindi-aesthetics', 'samalochan']
+    corpora.available()        # ['hindi-aesthetics', 'hindisamay', 'medium', 'samalochan']
     sam = corpora.get("samalochan")                      # a Sequence[Document], raw text
     doc = sam[0]; doc.text, doc.title, doc.meta["date"]
     for batch in corpora.CorpusLoader("all", batch_size=16, shuffle=True):

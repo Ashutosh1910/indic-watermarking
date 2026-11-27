@@ -35,12 +35,10 @@ huggingface-cli download Qwen/Qwen3-8B            # ~16 GB (newer huggingface_hu
 
 ## 0b. Finish the translation and build the G prompt file (before any generation)
 
-`promptset/data/G_prompts*.jsonl` is built here, after the translation. The selection
-(`promptset/data/work/selected.jsonl`, `to_translate.jsonl`) is committed. The translation was started on a laptop
-and stopped at 64 of 517 rows (all English->Hindi); copy that partial `translated.jsonl` to
-`promptset/data/work/translated.jsonl` to resume from it, or translate all 517 here (minutes on a GPU). A pair is
-used only when both languages exist, so a build from a partial translation has no Hindi-native prompts and
-unbalanced genres; build after the translation is complete (517 pairs, 1,034 rows).
+`promptset/data/G_prompts*.jsonl` is committed, built from a PARTIAL translation: `promptset/data/work/translated.jsonl`
+has 325 of 517 rows (Colab run; all Hindi->English done, 192 English->Hindi essay/personal rows missing), so it holds
+301 pairs and essay/personal are short. If the remaining rows were translated elsewhere (Colab notebook, which
+resumes from that file), put the finished file there and skip to the build. Otherwise finish it here; then rebuild.
 
 IndicTrans2 needs its own venv (it breaks on transformers 5.x) and a Hugging Face token from an account that
 has accepted the terms of `ai4bharat/indictrans2-en-indic-1B` and `ai4bharat/indictrans2-indic-en-1B`:
@@ -49,10 +47,11 @@ has accepted the terms of `ai4bharat/indictrans2-en-indic-1B` and `ai4bharat/ind
 python3 -m venv .venv-mt && .venv-mt/bin/pip install torch "transformers==4.57.6" "IndicTransToolkit==1.1.1" sentencepiece sacremoses pyyaml
 .venv-mt/bin/huggingface-cli login                 # read token of the account with IndicTrans2 access
 W=promptset/data/work
-# Resumes: the rows already in translated.jsonl are skipped. Same model (1B) and beams (5) as the laptop rows.
+# Resumes: the rows already in translated.jsonl are skipped. Same model (1B) and beams (5) as the existing rows.
 .venv-mt/bin/python promptset/scripts/translate_indictrans2.py --in $W/to_translate.jsonl \
     --out $W/translated.jsonl --size 1B --batch 32 --beams 5 --device cuda
 wc -l $W/translated.jsonl                          # expect 517
+# review the new rows (flag/drop only) into $W/translation_review.jsonl before building, as for the first 325
 ```
 
 Optional speed-up: `--kv-cache` turns on the beam-search cache. With transformers 4.57.6 IndicTrans2's model
@@ -236,7 +235,8 @@ translation is complete:
 | G_prompts | main | hi | 376 | 5,102 | 1,918,400 |
 | G_prompts | reserve | en | 117 | 1,471 | 172,160 |
 | G_prompts | reserve | hi | 117 | 5,202 | 608,576 |
-| edit_prompts | main | hi | 4,597 | 3,436 | 15,794,688 |
+| edit_prompts | main | en | 5,120 | 1,188 | 6,085,120 |
+| edit_prompts | main | hi | 5,335 | 3,679 | 19,627,776 |
 
 Per-GPU throughput comes from the pilot log (`total N tok/s`); GPU-hours = generated tokens / throughput / 3600.
 Devanagari costs several times more Qwen3 tokens than English for the same amount of text (see

@@ -22,6 +22,7 @@ import hashlib
 import json
 import math
 import re
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -41,6 +42,14 @@ def tidy(text: str, lang: str) -> str:
     if lang == "hi":
         t = re.sub(r"\s*\|(?=\s|$)", "।", t)
     return t
+
+
+MIN_TASK_WORDS = 5  # same as validate_promptset.py
+
+
+def norm_key(s: str) -> str:
+    """Duplicate key, as validate_promptset.py: NFC, casefold, punctuation and spacing ignored."""
+    return re.sub(r"[\W_]+", " ", unicodedata.normalize("NFC", s or "").casefold()).strip()
 
 
 _ENDS = re.compile(r"[.!?।॥:][\"'”’)\]»]*$")
@@ -87,7 +96,37 @@ def main() -> None:
     rows, missing, dropped = [], 0, 0
     order = {"pilot": 0, "main": 1, "reserve": 2}
     sel.sort(key=lambda r: (order[r["split"]], r["genre"], r["pair_id"]))
+    # Pairs whose task text, in either language, repeats another pair's (some sources hold the same prompt
+    # in both languages: Anudesh en/hi, Dolly vs Aya's Hindi Dolly) or is under MIN_TASK_WORDS words are
+    # dropped. Of duplicates, the Hindi-native pair is kept (the Hindi pool is the scarce one), then the
+    # earlier split (pilot, main, reserve).
+    usable = {}
     for s in sel:
+        t = tr.get(s["pair_id"])
+        rv_ = review.get(s["pair_id"], {})
+        if rv_.get("drop") or rv_.get("ok") is False:
+            continue  # dropped in review below; must not shadow a duplicate
+        if t is not None and t.get("text", "").strip() == s["text"].strip() and t.get("src") == s["native_lang"]:
+            other = "hi" if s["native_lang"] == "en" else "en"
+            usable[s["pair_id"]] = {s["native_lang"]: tidy(s["text"], s["native_lang"]),
+                                    other: tidy(t["translation"], other)}
+    dup_dropped, short_dropped, seen_keys = set(), set(), {}
+    for s in sorted(sel, key=lambda r: (r["native_lang"] != "hi", order[r["split"]], r["genre"], r["pair_id"])):
+        texts_ = usable.get(s["pair_id"])
+        if texts_ is None:
+            continue
+        if any(len(v.split()) < MIN_TASK_WORDS for v in texts_.values()):
+            short_dropped.add(s["pair_id"])
+            continue
+        keys = [(lang, norm_key(v)) for lang, v in texts_.items()]
+        if any(k in seen_keys for k in keys):
+            dup_dropped.add(s["pair_id"])
+            continue
+        for k in keys:
+            seen_keys[k] = s["pair_id"]
+    for s in sel:
+        if s["pair_id"] in dup_dropped or s["pair_id"] in short_dropped:
+            continue
         t = tr.get(s["pair_id"])
         if t is None:
             missing += 1
@@ -160,7 +199,9 @@ def main() -> None:
     for r in rows:
         tok[(r["language"], r["split"])] += r["max_new_tokens"]
     lines = ["# G-level prompt set", "", f"{len(rows)} rows ({len(rows) // 2} prompts x 2 languages). "
-             f"Missing translations: {missing}. Dropped in translation review: {dropped}.", "",
+             f"Missing translations: {missing}. Dropped in translation review: {dropped}. "
+             f"Dropped as duplicates of another pair: {len(dup_dropped)}. "
+             f"Dropped as under {MIN_TASK_WORDS} words: {len(short_dropped)}.", "",
              "## Rows per language, split, genre and tier", "", "| language | split | genre | tier | rows |", "|---|---|---|---|---|"]
     for k, v in sorted(c.items()):
         lines.append("| " + " | ".join(k) + f" | {v} |")

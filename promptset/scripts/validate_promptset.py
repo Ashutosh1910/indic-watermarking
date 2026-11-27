@@ -92,7 +92,8 @@ CHECKS: dict[str, tuple[str, str]] = {
     "pair.native": ("error", "a pair does not have exactly one translated=false row whose language == native_lang"),
     "pair.translated_flag": ("error", "translated != (language != native_lang)"),
     "balance.en_hi": ("error", "en and hi row counts differ in a level x split x genre x tier cell"),
-    "balance.en_hi_edit": ("warning", "edit levels: en and hi row counts differ in a level x split x genre x experiment cell"),
+    "balance.en_hi_edit": ("warning", "edit levels: en and hi row counts differ in a level x split x genre x experiment cell "
+                                      "(a row counts in every experiment of its `experiments`)"),
     "balance.config": ("warning", "counts differ from config/promptset.yaml (per_genre, pilot_per_genre_tier)"),
     "balance.hindi_share": ("warning", "Hindi-native share of a genre is more than 0.1 off hindi_native_share"),
     "balance.split_native_mix": ("warning", "a split has no prompts of one native language"),
@@ -368,7 +369,17 @@ def check_balance(rows: list[dict], cfg: dict | None, rep: Report) -> dict:
         tier = r.get("length_tier") or r.get("experiment") or "-"
         return lv, str(r.get("split")), str(r.get("genre")), str(tier)
 
-    cells = Counter((*cell(r), r.get("language")) for r in rows)
+    cells: Counter = Counter()
+    for r in rows:
+        exps = r.get("experiments")
+        if is_edit(r) and isinstance(exps, list) and exps and all(is_nonempty_str(e) for e in exps):
+            # an edit row whose words and tokens cuts coincide serves every experiment in `experiments`
+            # (common for English): count it in each, or English looks short in the second experiment
+            lv, sp, g, _ = cell(r)
+            for e in dict.fromkeys(exps):
+                cells[(lv, sp, g, e, r.get("language"))] += 1
+        else:
+            cells[(*cell(r), r.get("language"))] += 1
     g_levels = {cell(r)[0] for r in rows if is_g(r)}
     cell_rows = []
     for k in sorted({k[:4] for k in cells}):

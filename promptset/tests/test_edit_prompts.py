@@ -116,7 +116,10 @@ class TestBuildFromCorpora(unittest.TestCase):
             self.assertRegex(r["template_id"], r"^[A-Za-z0-9_]+/\d+$")
             self.assertEqual(r["template_id"].split("/")[0], r["level"])
             self.assertTrue(r["token_counts_estimated"])
-            self.assertEqual(r["genre"], "unknown")
+            # samalochan: story/essay by its documented rule; hindi-aesthetics has no genre
+            self.assertEqual(r["genre"] in ("story", "essay"), r["source"] == "samalochan", r["genre"])
+            if r["source"] == "hindi-aesthetics":
+                self.assertEqual(r["genre"], "unknown")
             self.assertTrue(r["license"])
             self.assertEqual(r["max_new_tokens"] % RND, 0)
             self.assertEqual(r["watermark"], r["level"] != "OX_extract_outline")
@@ -403,6 +406,268 @@ class TestGenericJsonl(unittest.TestCase):
         self.assertEqual(bep.resolve_levels(bep.load_config(), ["O_outline"]), ["OX_extract_outline", "O_outline"])
 
 
+# ----------------------------------------------------------------------------- study corpora on fixtures
+
+def _hi_body(i: int, n_sent: int = 30) -> str:
+    sents = [" ".join(f"शब्द{i}क{s}ख{j}" for j in range(11)) + " है।" for s in range(n_sent)]
+    return "\n\n".join(" ".join(sents[k:k + 5]) for k in range(0, n_sent, 5))
+
+
+def _en_body(i: int, n_sent: int = 30) -> str:
+    sents = [" ".join(f"w{i}s{s}t{j}" for j in range(11)) + " end." for s in range(n_sent)]
+    return "\n\n".join(" ".join(sents[k:k + 5]) for k in range(0, n_sent, 5))
+
+
+def _write_title_author_dir(root: Path, rows: list[dict], fields: list[str]) -> None:
+    """Files in the hindisamay / medium layout (title, blank, author, blank, paragraphs) plus metadata.csv."""
+    import csv
+
+    root.mkdir(parents=True)
+    for r in rows:
+        (root / r["file"]).write_text(f"{r['title']}\n\n{r[fields[1]]}\n\n{r.pop('_body')}", encoding="utf-8")
+    with open(root / "metadata.csv", "w", encoding="utf-8-sig", newline="") as f:   # BOM, as HindiSamay's
+        w = csv.DictWriter(f, ["file", "title", *fields[1:]])
+        w.writeheader()
+        w.writerows(rows)
+
+
+def make_study_fixtures(base: Path, n_hs_story: int = 12, n_hs_essay: int = 8, n_sam_essay: int = 3,
+                        n_med_story: int = 10, n_med_essay: int = 14) -> dict[str, Path]:
+    hs = [{"file": f"{i:05d}_कहानी-{i}.txt", "title": f"पहली कहानी {i}", "author": f"लेखक {i}", "genre": "कहानी",
+           "words": 0, "_body": _hi_body(i)} for i in range(n_hs_story)]
+    fine = ["आलोचना", "लेख", "निबंध", "व्यंग्य"]
+    hs += [{"file": f"{100 + i:05d}_लेख-{i}.txt", "title": f"विचार : एक लेख {i}", "author": f"लेखिका {i}",
+            "genre": fine[i % 4], "words": 0, "_body": _hi_body(100 + i)} for i in range(n_hs_essay)]
+    for r in hs:
+        r["words"] = len(r["_body"].split())
+    _write_title_author_dir(base / "HindiSamay", hs, ["title", "author", "genre", "words"])
+    med = [{"file": f"2020-01-{i + 1:02d}_story-{i}.txt", "title": f"The Night Train: Part of No Series {i}",
+            "authors": f"Author {i}", "genre": "story", "words": 0, "tags": "fiction; short story",
+            "_body": _en_body(i)} for i in range(n_med_story)]
+    med += [{"file": f"2021-02-{i + 1:02d}_essay-{i}.txt", "title": f"On Walking Home {i}", "authors": f"Writer {i}",
+             "genre": "essay", "words": 0, "tags": "essay", "_body": _en_body(100 + i)} for i in range(n_med_essay)]
+    for r in med:
+        r["words"] = len(r["_body"].split())
+    _write_title_author_dir(base / "Medium", med, ["title", "authors", "genre", "words", "tags"])
+    sam = base / "Samalochan"
+    sam.mkdir()
+    for i in range(n_sam_essay):
+        (sam / f"2015-0{i + 1}-01_आलेख-{i}.txt").write_text(f"समालोचना शीर्षक {i}\nआलोचक {i}\n" + _hi_body(200 + i),
+                                                           encoding="utf-8")
+    (sam / "2015-09-01_कथा-गाथा-कोई.txt").write_text("कहानी शीर्षक\nकथाकार\n" + _hi_body(300), encoding="utf-8")
+    return {"hindisamay": base / "HindiSamay", "medium": base / "Medium", "samalochan": sam}
+
+
+class StudyCorporaFixture(unittest.TestCase):
+    """Points the registered hindisamay / medium / samalochan corpora at small fixture folders."""
+
+    roots: dict[str, Path] = {}
+
+    @classmethod
+    def setUpClass(cls):
+        import corpora
+        from corpora import registry
+
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.base = Path(cls.tmp.name)
+        cls.roots = make_study_fixtures(cls.base / "data")
+        cls._saved = {n: registry._REGISTRY[n].default_root for n in cls.roots}
+        for n, root in cls.roots.items():
+            registry._REGISTRY[n].default_root = root
+        cls.corpora = corpora
+
+    @classmethod
+    def tearDownClass(cls):
+        from corpora import registry
+
+        for n, root in cls._saved.items():
+            registry._REGISTRY[n].default_root = root
+        cls.tmp.cleanup()
+
+
+class TestStudyCorporaLoading(StudyCorporaFixture):
+    def test_hindisamay_and_medium_registered_with_metadata(self):
+        hs = self.corpora.get("hindisamay")
+        self.assertEqual(len(hs), 20)
+        d = hs[0]
+        self.assertEqual(d.title, "पहली कहानी 0")
+        self.assertEqual((d.meta["genre"], d.meta["genre_fine"], d.meta["author"]), ("story", "कहानी", "लेखक 0"))
+        self.assertEqual(d.meta["header_lines"], 2)
+        self.assertIsInstance(d.meta["words"], int)
+        self.assertEqual(Counter(x.meta["genre"] for x in hs), {"story": 12, "essay": 8})
+        self.assertEqual({x.meta["genre_fine"] for x in hs if x.meta["genre"] == "essay"},
+                         {"आलोचना", "लेख", "निबंध", "व्यंग्य"})
+        med = self.corpora.get("medium")
+        self.assertEqual(len(med), 24)                      # metadata.csv is not a document
+        m = med[0]
+        self.assertEqual((m.meta["genre"], m.meta["author"], m.meta["year"]), ("story", "Author 0", 2020))
+        self.assertEqual(m.meta["tags"], ["fiction", "short story"])
+
+    def test_samalochan_genre_rule(self):
+        sam = {d.meta["slug"]: d for d in self.corpora.get("samalochan")}
+        self.assertEqual(sam["कथा-गाथा-कोई"].meta["genre"], "story")
+        self.assertEqual(sam["आलेख-0"].meta["genre"], "essay")
+        from corpora.datasets import samalochan_genre
+
+        self.assertEqual(samalochan_genre("ravindra", "पेंटिग : कोई\nकहानी\nज़िंदगी लावारिस\n..."),
+                         ("story", "section label"))
+        self.assertEqual(samalochan_genre("ravindra", "कहानी और राष्ट्र की परछाइयाँ\nअरुण देव\n")[0], "essay")
+
+    def test_source_docs_strip_title_and_author(self):
+        cfg = bep.load_config()
+        est = bep.TokenCounter(None, cfg["lengths"]["tokens_per_word"])
+        for name, lang in (("hindisamay", "hi"), ("medium", "en")):
+            docs = bep.load_corpus_docs(name, cfg)
+            self.assertEqual({d.language for d in docs}, {lang})
+            self.assertTrue(all(d.genre in ("story", "essay") for d in docs))
+            self.assertIn("do not redistribute", docs[0].license)
+            ps, fails = bep.make_passages(docs[0], cfg, est)
+            self.assertFalse(fails)
+            for p in ps:
+                self.assertEqual(p.header_lines_stripped, 2)
+                self.assertFalse(p.text.startswith(docs[0].title))
+                self.assertEqual(docs[0].text[p.char_start:p.char_start + len(p.text)], p.text)
+
+
+class TestGenreMixSampling(StudyCorporaFixture):
+    N = 10
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.out = cls.base / "mix"
+        run_build(cls.out, "--n-docs", str(cls.N))             # no --corpus: the study build (genre_mix)
+        cls.rows = read(cls.out / "edit_prompts.jsonl")
+        cls.passages = read(cls.out / "human_passages.jsonl")
+        cls.meta = json.loads((cls.out / "build_meta.json").read_text(encoding="utf-8"))
+
+    def docs(self, passages=None) -> Counter:
+        return Counter((lang, g, src) for lang, g, src, _ in
+                       {(p["language"], p["genre"], p["source"], p["pair_id"]) for p in passages or self.passages})
+
+    def test_same_genre_mix_per_language(self):
+        self.assertEqual(self.meta["sampling_mode"], "genre_mix")
+        got = self.docs()
+        # 10 per language, 5 story + 5 essay; hi essays split hindisamay / samalochan (3 + 2 by largest remainder,
+        # ties by name), hi stories from hindisamay only (samalochan's कथा-गाथा story is not used)
+        self.assertEqual(got, {("en", "story", "medium"): 5, ("en", "essay", "medium"): 5,
+                               ("hi", "story", "hindisamay"): 5, ("hi", "essay", "hindisamay"): 3,
+                               ("hi", "essay", "samalochan"): 2})
+        self.assertEqual(self.meta["genre_plan"]["hi"], {"story": {"hindisamay": 5},
+                                                         "essay": {"hindisamay": 3, "samalochan": 2}})
+        self.assertEqual(self.meta["docs"]["hi/story/samalochan"]["quota"], 0)
+        self.assertNotIn("hindi-aesthetics", {r["source"] for r in self.rows})
+
+    def test_english_rows(self):
+        en = [r for r in self.rows if r["language"] == "en"]
+        kit = bep.load_config()["kit_data"]
+        self.assertTrue(en)
+        self.assertEqual({r["source"] for r in en}, {"medium"})
+        self.assertTrue({"L1_proofread", "L2_polish", "C_continue", "G_title", "OX_extract_outline"}
+                        <= {r["level"] for r in en})
+        for r in en:
+            self.assertEqual(r["messages"][0]["content"], kit["system"]["en"])
+            self.assertGreaterEqual(bep.script_share(r["messages"][1]["content"], "en"), 0.9)
+            self.assertIn("do not redistribute", r["license"])
+            if r["level"] == "OX_extract_outline":
+                self.assertEqual(r["max_new_tokens"], 512)
+            if r["level"] in ("L1_proofread", "L2_polish"):
+                self.assertIn(r["human_passage"], r["messages"][1]["content"])
+                self.assertFalse(r["human_passage"].startswith("The Night Train"))   # title line stripped
+            if r["level"] == "G_title" and r["genre"] == "story":
+                self.assertIn(":", r["title"])           # a colon subtitle is a usable metadata title
+        self.assertEqual(length_errors(self.rows), Counter())
+        self.assertIn(("en", "story"), {(r["language"], r["genre"]) for r in en})
+        self.assertTrue(all(r["meta"].get("genre_fine") for r in self.rows if r["source"] != "samalochan"))
+        self.assertTrue(all(r["meta"]["genre_rule"] for r in self.rows if r["source"] == "samalochan"))
+
+    def test_balance_matches_across_languages(self):
+        rep = vp.validate(self.rows)
+        cells = [c for c in rep.sections["balance"]["cells"] if not c[0].startswith("G_title")]
+        self.assertTrue(cells)
+        self.assertEqual([c for c in cells if c[-1] != "ok"], [])
+        self.assertEqual(rep.errors, 0)
+
+    def test_summary_reports_coverage_and_budgets_per_language(self):
+        md = (self.out / "edit_prompts_summary.md").read_text(encoding="utf-8")
+        for h in ("Documents (genre-matched sample)", "Sampled documents per language x genre x source",
+                  "Served-cutoff coverage per language", "max_new_tokens per language and split"):
+            self.assertIn(h, md)
+        tsv = (self.out / "titles_review.tsv").read_text(encoding="utf-8").splitlines()
+        self.assertEqual(tsv[0].split("\t")[:4], ["pair_id", "source", "language", "genre"])
+        self.assertEqual(len(tsv) - 1, 2 * self.N)
+
+    def test_stable_and_growing_sample(self):
+        out2 = self.base / "mix2"
+        run_build(out2, "--n-docs", str(self.N))
+        self.assertEqual((self.out / "edit_prompts.jsonl").read_bytes(), (out2 / "edit_prompts.jsonl").read_bytes())
+        out3 = self.base / "mix3"
+        run_build(out3, "--n-docs", str(self.N + 4), "--levels", "L1_proofread")
+        big = {p["pair_id"] for p in read(out3 / "human_passages.jsonl")}
+        self.assertLessEqual({p["pair_id"] for p in self.passages}, big)
+
+    def test_short_source_is_topped_up_within_the_genre(self):
+        out = self.base / "topup"
+        run_build(out, "--n-docs", "16", "--levels", "L1_proofread")       # hi essays 8: samalochan has only 3
+        got = self.docs(read(out / "human_passages.jsonl"))
+        self.assertEqual(got[("hi", "essay", "samalochan")], 3)
+        self.assertEqual(got[("hi", "essay", "hindisamay")], 5)
+        self.assertEqual(got[("hi", "story", "hindisamay")], 8)
+
+    def test_pilot_docs_per_language_keep_the_mix(self):
+        out = self.base / "pilot"
+        run_build(out, "--n-docs", str(self.N), "--pilot-docs", "4", "--levels", "L1_proofread")
+        pil = {(p["language"], p["genre"], p["pair_id"]) for p in read(out / "human_passages.jsonl")
+               if p["split"] == "pilot"}
+        self.assertEqual(Counter((lang, g) for lang, g, _ in pil),
+                         {("en", "story"): 2, ("en", "essay"): 2, ("hi", "story"): 2, ("hi", "essay"): 2})
+
+    def test_named_corpora_default_to_per_corpus(self):
+        out = self.base / "percorpus"
+        run_build(out, "--corpus", "medium", "--n-docs", "4", "--levels", "L1_proofread")
+        meta = json.loads((out / "build_meta.json").read_text(encoding="utf-8"))
+        self.assertEqual(meta["sampling_mode"], "per_corpus")
+        self.assertEqual(self.docs(read(out / "human_passages.jsonl")),
+                         {("en", "story", "medium"): 2, ("en", "essay", "medium"): 2})
+        out = self.base / "named_mix"
+        run_build(out, "--corpus", "hindisamay", "--sampling", "genre_mix", "--n-docs", "6",
+                  "--levels", "L1_proofread")
+        self.assertEqual(self.docs(read(out / "human_passages.jsonl")),
+                         {("hi", "story", "hindisamay"): 3, ("hi", "essay", "hindisamay"): 3})
+
+
+class TestSamplingUnits(unittest.TestCase):
+    def test_apportion(self):
+        self.assertEqual(bep.apportion(300, {"story": 0.5, "essay": 0.5}), {"story": 150, "essay": 150})
+        self.assertEqual(bep.apportion(5, {"hindisamay": 0.5, "samalochan": 0.5}), {"hindisamay": 3, "samalochan": 2})
+        self.assertEqual(bep.apportion(7, {"a": 1, "b": 2, "c": 0}), {"a": 2, "b": 5, "c": 0})
+        self.assertEqual(sum(bep.apportion(11, {"x": 0.3, "y": 0.3, "z": 0.4}).values()), 11)
+
+    def test_genre_mix_plan_renormalises_over_loaded_sources(self):
+        cfg = bep.load_config()
+        self.assertEqual(cfg["sampling"]["genre_mix"], {"story": 0.5, "essay": 0.5})
+        self.assertEqual(bep.genre_mix_plan(cfg, "hi", ["hindisamay", "samalochan"], 300),
+                         {"story": {"hindisamay": 150}, "essay": {"hindisamay": 75, "samalochan": 75}})
+        self.assertEqual(bep.genre_mix_plan(cfg, "hi", ["samalochan"], 10),
+                         {"story": {"samalochan": 5}, "essay": {"samalochan": 5}})   # no share: equal split
+        self.assertEqual(bep.genre_mix_plan(cfg, "en", ["medium"], 300),
+                         {"story": {"medium": 150}, "essay": {"medium": 150}})
+
+    def test_sample_genre_mix_order_and_unknown_genres(self):
+        docs = [bep.SourceDoc(f"s/{i}", "s", str(i), "en", "", "x", g, "") for i, g in
+                enumerate(["story"] * 5 + ["essay"] * 5 + ["poetry"] * 5)]
+        chosen, counts = bep.sample_genre_mix(docs, {"story": {"s": 2}, "essay": {"s": 2}}, 1, lambda d: True)
+        self.assertEqual([d.genre for d in chosen], ["story", "essay", "story", "essay"])
+        self.assertEqual(counts[("poetry", "s")], {"available": 5, "quota": 0, "sampled": 0})
+        # rejected docs are skipped and replaced, accept() is lazy (never called past the quota)
+        seen = []
+        chosen2, _ = bep.sample_genre_mix(docs, {"story": {"s": 2}, "essay": {"s": 0}}, 1,
+                                          lambda d: seen.append(d.pair_id) or d.pair_id != "s/0")
+        self.assertEqual(len(chosen2), 2)
+        self.assertNotIn("s/0", [d.pair_id for d in chosen2])
+        self.assertLessEqual(len(seen), 3)
+
+
 @unittest.skipUnless(HAVE_CORPORA and (bep.DEFAULT_TOKENIZER / "tokenizer.json").exists(),
                      "staged Qwen3 tokenizer or corpora not available")
 class TestRealTokenizer(unittest.TestCase):
@@ -523,6 +788,16 @@ class TestUnits(unittest.TestCase):
         self.assertEqual(bep.strip_header(story)[0], "“बिंदुली?\nजी हां बिंदुली,")
         prose = "यह एक लंबी पंक्ति है जिसमें दस से अधिक शब्द हैं और यह गद्य का हिस्सा है.\nदूसरी"
         self.assertEqual(bep.strip_header(prose), (prose, 0, ""))
+        # known title + author header (hindisamay, medium): dropped even when the title is long, then the
+        # heuristic still drops a short date line; a first body line with punctuation is kept
+        long_title = "Why I Finally Stopped Pretending That I Enjoy Running Marathons Every Single Year"
+        med = f"{long_title}\n\nJane Doe\n\nMay 4th, 2014\n\nI ran. Then I stopped.\n\nMore text here."
+        self.assertEqual(bep.strip_header(med)[1], 0)                       # heuristic alone: title > 10 words
+        rest, n, hdr = bep.strip_header(med, fixed_lines=2)
+        self.assertEqual((rest.strip(), n), ("I ran. Then I stopped.\n\nMore text here.", 3))
+        self.assertEqual([ln for ln in hdr.split("\n") if ln], [long_title, "Jane Doe", "May 4th, 2014"])
+        self.assertEqual(bep.strip_header("T\n\nA\n\nBody one. Body two.", fixed_lines=2)[0].strip(),
+                         "Body one. Body two.")
 
     def test_usable_title(self):
         chk = bep.load_config()["title_check"]
@@ -532,6 +807,16 @@ class TestUnits(unittest.TestCase):
         self.assertFalse(bep.usable_title("", "hi", chk)[0])
         self.assertFalse(bep.usable_title("यह एक वाक्य है.", "hi", chk)[0])
         self.assertTrue(bep.usable_title("The Long Walk Home", "en", chk)[0])
+        self.assertTrue(bep.usable_title("और अन्ना सो रही थी...", "hi", chk)[0])          # trailing ellipsis
+        self.assertFalse(bep.usable_title("Hide.", "en", chk)[0])
+        # medium / hindisamay allow a colon inside a metadata title (subtitle), never a trailing one
+        cfg = bep.load_config()
+        med = {**chk, **bep.source_cfg(cfg, "medium")["title_check"]}
+        self.assertFalse(bep.usable_title("The Alchemist: A book review", "en", chk)[0])
+        self.assertTrue(bep.usable_title("The Alchemist: A book review", "en", med)[0])
+        self.assertFalse(bep.usable_title("Mrs. Lovelock And The Iroquois Blanket:", "en", med)[0])
+        self.assertTrue(bep.usable_title("कबीर : एक अंतहीन यात्रा", "hi",
+                                         {**chk, **bep.source_cfg(cfg, "hindisamay")["title_check"]})[0])
 
     def test_cutoff_factor_matches_validator(self):
         self.assertEqual(bep.MNT_CUTOFF_FACTOR, vp.MNT_CUTOFF_FACTOR)
