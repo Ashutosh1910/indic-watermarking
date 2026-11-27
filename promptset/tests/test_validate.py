@@ -537,3 +537,12 @@ def test_title_rows_probe_the_title():
     assert "edit.passage_in_prompt" not in codes(run([r]))
     r["title"] = "Winter"
     assert "edit.passage_in_prompt" in codes(run([r]), "warning")
+
+
+def test_hi_number_glued_to_letter_is_not_a_length():
+    """'सी2 शब्दावली' (C2 vocabulary) is neither a length cap nor a length clause."""
+    import filter_prompts as fp
+    import validate_promptset as vp
+    assert not fp.HI_LENGTH_CAP.search("सी2 शब्दावली के साथ लिखें")
+    assert fp.HI_LENGTH_CAP.search("500 शब्दों में लिखें") and fp.HI_LENGTH_CAP.search("लगभग ५०० शब्द")
+    assert vp.clause_numbers("सी2 शब्दावली के साथ। लगभग 1300 शब्दों में लिखें।", "hi") == [1300]

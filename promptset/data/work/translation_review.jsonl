@@ -323,3 +323,195 @@
 {"id": "anudesh:anudesh-hi-cb6b4149-c4c2-5a51-a4e6-1f0dcc04cfbe", "ok": true, "drop": false, "issue": ""}
 {"id": "aya:aya-train-25447", "ok": false, "drop": true, "issue": "key content missing: brother who dropped out of studies is lost; 'reading' for studies; zeal infused in the letter not the brother"}
 {"id": "aya:aya-train-122296", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-1cbaa2432d56e24180578d0eaa62fae4", "ok": false, "drop": true, "issue": "garbled: '1.decline' and '3.shopping' left untranslated, list structure broken so shopping centres become the subject of 'to write an essay'"}
+{"id": "anudesh:anudesh-en-2461871b-77fc-5203-b73f-7cf2f547b18f", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-caf495b3ce16f91f2a65ac64df5d8d7e4a89c16541c7094732d070b934e1086c", "ok": false, "drop": true, "issue": "'dying/dyeing your hair' rendered as hair falling out; topic changed"}
+{"id": "wildchat:wildchat-a9ea09be331175828d3e8ed73e7b8977", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-3755f170a46f3798872f19f89b75d2e6", "ok": true, "drop": false, "issue": "eulogy rendered as a generic praise/hymn word; funeral sense weakened"}
+{"id": "no_robots:nr-76200d617224cf2d048ec860dcfca556c9c310210c6ca2bfc01e055e692a34e0", "ok": false, "drop": true, "issue": "'giants' rendered as stalwarts/great people in first sentence and demons in second; topic inconsistent and wrong"}
+{"id": "oasst2:oasst2-05bd14dd-bf8e-4823-894a-bf73203f37d0", "ok": true, "drop": false, "issue": "'nothingness' rendered with a word that can also mean zero; minor ambiguity"}
+{"id": "wildchat:wildchat-22b113d5b5624cf0d3a78918e121cb09", "ok": true, "drop": false, "issue": ""}
+{"id": "anudesh:anudesh-en-4a4a5af3-fecb-5367-b1cf-641f283b792e", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-adc44bd2b99c41955674b9103ecff61be2f9b75786f30dfbb194019ab444567c", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-3115449b634a594880cebff97f42c0c0", "ok": false, "drop": true, "issue": "asks for an essay about Spinoza's style and viewpoint; source asks for an essay on the quote written in Spinoza's style"}
+{"id": "wildchat:wildchat-67d98495ffcf6529e6d4b2de0665e31f", "ok": false, "drop": true, "issue": "'UT' (university) mistranslated as union territory; enrollment context becomes nonsensical"}
+{"id": "no_robots:nr-592eb2a4d7a8aa0dce501ae8ee2e58dc8611aeebdd3f82fc7e31b5b2f86e425c", "ok": true, "drop": false, "issue": "'opinionated' rendered as 'thoughtful'; tone instruction slightly shifted"}
+{"id": "wildchat:wildchat-da49027eb81d09a40a1206d1807e4028", "ok": true, "drop": false, "issue": ""}
+{"id": "anudesh:anudesh-en-6b15a8cb-18ab-5db9-8ab2-17d81ee9e620", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-061f0a0b8d2ec552b0931ce8b03dc4f67ff3e5f5853525cec96fe792a307f7e2", "ok": false, "drop": true, "issue": "'best man' rendered literally as 'best person'; wedding speech context lost"}
+{"id": "wildchat:wildchat-eaf49307cf7713b6727567665f5c657a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-cdc660a359f79eeb28abb928d7b892b5", "ok": false, "drop": true, "issue": "'door knobs' mistranslated as door tips/points; topic garbled"}
+{"id": "no_robots:nr-b561dad4dc28755325c064f3f1a066a59f2c713444a08627a9ae72a19a7d1f6e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-cebe10c791a60ab5c6725caaffd5de74", "ok": true, "drop": false, "issue": ""}
+{"id": "anudesh:anudesh-en-547a5b4a-c782-51d9-a0fd-4fc4f91395e4", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-40d7b7d1c72815493821e76cb6e5321e1939be5ee11425c71e5f56436ce0ff2e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-0144e40c4823e0dcc0c6511e9ba2095a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a7c32d0bf3b0d17c1e70bd3a5918b672", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-77b824382f26ba57dba153dc6c8c4e422e83637a97e509bdcf6a6a8a2d95d09b", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b59a2d2f25184d85a649cb0335dfe459", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-8bc3f5429b2d904b498df59452abbf60ca2eacce81e1f2fed48f94125d8c4898", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-4b47d575ea7a2e4aa9bcd21a2f5adfa6", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-608148168249a3e6dd7c1ae7ed96fb9b", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-877842e95c4a47a0d97a49fd3990d04d21aab1beac9dc5670fd69194c046c456", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-9c5bf502c2f23b2e7a553ed79085c599", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-44ce1ff3f5ab0dbe5dc116dd8ded0a10fcf85c6876287ce848225995922a3403", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-11d1898f1c06b558257490c91278c0ff", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-09e25ff87a701f3d8e9a85a2b435cd1b", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-e9372afa361929b26b5ce5f44ba72619b1adf9d205af4147e6933cb8de3385bf", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-606d07e86ae2ec2a87bfe71d64f5884e", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-498c6846aff34679bd2acaf9a40672c60df6dc00e30ecd2be181b233b23faf1e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-6828d32db75319886f1dde8e0c4d0162", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-83ba2d1bd6c4f32e42fef4935544fba7", "ok": true, "drop": false, "issue": "eulogy rendered as a generic praise/hymn word; funeral sense weakened"}
+{"id": "no_robots:nr-bbe789567c800172b8b97ed9021ae9f7253d148c485918a47d6ce22a23ce65ed", "ok": true, "drop": false, "issue": "'alone and lonely' rendered with the same word twice"}
+{"id": "wildchat:wildchat-3c69594ddf64136254ba4e4b9cfc707c", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-1caacf9eab6be4f554a58be295d326a74409befd32214b853ec843d456e6dbbf", "ok": false, "drop": true, "issue": "'extra' (background actor) rendered as 'additional'; premise of the request lost"}
+{"id": "wildchat:wildchat-115326613b75f7b1f63b1364b072d3ec", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-00c15d89a8b681c4b39d5e1cba19d40b", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-55cb475aef75798042fa69007a96bbbd2703dc6446a927f4e21acbef0ae62435", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-d06750fe2c864a7de8339d0c4ef82b0d", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-c01111e4b878aa843432efaae31eb175cd29364201f2109f82e746912e091b95", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-04a2b21a3c4115fbf13e662de484acd8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-7e9865f4de25f2741cec34deff39dad8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-08e5921aaeb044870d0ebcded752d435", "ok": true, "drop": false, "issue": "legal 'article' rendered as written article; ambiguous"}
+{"id": "wildchat:wildchat-a5b41ede3891ece224f0dbd2bafdc9d3", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a814b90d58fae6ce6f720a9355d0c777", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-0e6887f64e887fd568fae77e3c1bab8f", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b0b460bc90a791b75b1db72e73fbd08d", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-187fe7f22cd3ab7af800f6361cffb78e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-01795b609b88d8d66d98509a093f6060", "ok": false, "drop": true, "issue": "keyword/formatting instructions garbled: quotes misplaced, 'ise' transliterated as an acronym, usage rules no longer make sense"}
+{"id": "wildchat:wildchat-8bdd21813f1312870183448af9084741", "ok": false, "drop": true, "issue": "name 'S. Cohen' split at the period into two broken questions"}
+{"id": "wildchat:wildchat-f0d86a708d40cd7d9996546280c5bb93", "ok": true, "drop": false, "issue": "'benefits and advantages' rendered as the same word twice (source is redundant too)"}
+{"id": "wildchat:wildchat-e8d4680a24d7ff2d560bcd066bc365d8", "ok": true, "drop": false, "issue": "'prompt' rendered with a word meaning signal/hint; odd word choice"}
+{"id": "wildchat:wildchat-173d5baf03054386ed6265026c407662", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-ab2af7591c3c2d035071c7e7f1de0544", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-72831467607eba6300fb3523233dbd39", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-0fe6cfc62c64c8b638a0574f907ab517", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-c09da85e4b1f472d9640fa1d5cb17336", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-8c300b07d6d1dc743321affd53be16fb", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-9456cbf17104d830dfb28c35e4ecd8c3", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-fbf7564e5d9e76d808e47cfa8d015dfe", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-df3dea995adf1bcd994024e6893fe6a6", "ok": false, "drop": true, "issue": "'awnsers' mistranslated as a canopy/tent word, 'bed.Try' left untranslated, sentences merged, 'I whisper' rendered as 'I want'"}
+{"id": "wildchat:wildchat-a27e8c79e8a791e0eb69d222abbf38f5", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-920baa2b9fccb2fed3a4eac6bb947092", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-cb5a7e15c8d14b07c0320f22bf4ec2db", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-614a01d189864bcd0cbc4222fc16bffd", "ok": false, "drop": true, "issue": "'Surburbia' (suburbia) transliterated into a meaningless word; topic lost"}
+{"id": "wildchat:wildchat-c69449075f364d454d644226aeb33fde", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-d040a5c609abfca3dd0094420fd2bd9f", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-8506361dda0a9b8bc2c7444d898ce1f8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-c18e60456424fd63a2061eec971f76b2", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-0db03c392b5aa39cdda0cb0b4ecce582", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-65aaf69a1053a6c4edb09e70d1ecccc5", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-30a590352fbca6415fd4350aea940aa4", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a82878648f9b3b46cfda9b0adcfc96db", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-42420b21d4222506d9c0f2c68a276813", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-2e4d1b9fd141dd76d11adeee158c2f77", "ok": false, "drop": true, "issue": "'year 6 graduation speech' rendered as six graduation speeches in a year"}
+{"id": "wildchat:wildchat-31e9beb4623dca71f65edd3e1f8046ae", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-2b619df91b57c6dd642c5c37ddccdb7c", "ok": false, "drop": true, "issue": "'Sacramento' mistranslated as sacrament/rites and 'ghetto' as Jewish ghetto; setting of the story changed"}
+{"id": "wildchat:wildchat-db6be28e5324a6f4e949d3ffb3922589", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a2b5e531f69b3ab511d33ee42f4a1c6a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-9e5acfcc4391ab63bddfaeb988cd3b62", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-08115779b79ff8ee8e7f07043016992a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-411692dd19b0142ccda4b205c042e2c0", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a784ff1df16759d669df8b51a0e3a3bc", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-5c314624245245a29daf3a822b0840ce", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-4b2ae3f6c4dde069196548d4bc8a6169", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-cd6e607fd71317f0460213cfea52fe80", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-687fe7df5c052139c09db898a3b370be", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-a8801f7d250110802c3a609af75e2eb8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-4fd4c59e5f0c90185a264bd09098b10f", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-5673e8c72c1202a6a9723bd0b4794342", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-e7dfffb3ecc2ee60333796c7931761c1", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-e6e3b8d3ff6c5550dc006c26d88d9a8b", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b364d108fd0d5d3b5cef9d035bc8c45f", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-560bdd8f6fdc975ec03d5ffed57b19ac", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-5a71d9c15509bd08a5646146ac92bda8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-8cac263d8294ab0de22018e20d948767", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-0b282c1ae326795e0c9b4bbb5f8ad03a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-3b38fd5412d765669631f2bb9442726d", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-e496ae4ee78c899688d3d46dc9f19951", "ok": true, "drop": false, "issue": "event name 'vanguard' translated as a common adjective (leading)"}
+{"id": "wildchat:wildchat-e24e4d0815788c2d6afc937879ce8f36", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-d43ab53ed946d7c7f4e22cd49d8c0675", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-d1fa7eab6fe63d7ea4a3b2fbab7074b7", "ok": true, "drop": false, "issue": "ambiguous: reads as children hitting toys rather than hitting and grabbing toys"}
+{"id": "wildchat:wildchat-47855fb45209dd31c436570b7495a82e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-229ee9511fbdd450ec89ef69fa70c64a", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-61f1f39097c2ebcdd511af53ba5f6ddd", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-3ca05121cbba314908cdbd19e7fb7d4fc5ec57a23bf1dbf0fb2605b469b8fbc3", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry"}
+{"id": "anudesh:anudesh-en-ea97ebbb-45af-5389-8f0b-36a8fab28a1b", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b7c64cbd253bd05a035d492a838844b4", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-4646", "ok": true, "drop": false, "issue": ""}
+{"id": "oasst2:oasst2-5ab6d95c-3708-4bb6-93f9-6883ec58a5d4", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-ddd6f9a5a1061b6ec3eb544ad3ed035a56b455711fd0ad38f513094641d8d238", "ok": true, "drop": false, "issue": "hermit crab rendered literally (monk crab)"}
+{"id": "wildchat:wildchat-55b3bc3ed26f6c38f079e41e23ecc381", "ok": true, "drop": false, "issue": "'lovey-dovey' and 'goofy' rendered loosely (not loving / foolish); some awkward phrasing"}
+{"id": "wildchat:wildchat-c7b4e697837bc2a98ab5e9ad5ddf1b82", "ok": true, "drop": false, "issue": "sentence structure awkward/incomplete; 'calling' rendered as phone call"}
+{"id": "no_robots:nr-dd64898b0e8d4bd9be84be316035b68f52518af12f01a19ecdf0e7a243f6a2e8", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-fef30bc60d7295670570492b9781eb61", "ok": true, "drop": false, "issue": "'include' lost; reads as 'make sure how much you love her'"}
+{"id": "dolly:dolly-11709", "ok": true, "drop": false, "issue": ""}
+{"id": "oasst2:oasst2-cde34b94-1525-473f-a412-7ac6f6fab3ab", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-4444cf4dbd812de8fd3a9eb8bc901a0feb02c476b9c3cf8dc0f1ba6cdc888e76", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-177de1e13297eaac666394a98ec64e06", "ok": false, "drop": true, "issue": "'effete' mistranslated as cheerful/elated, contradicting the requested mood"}
+{"id": "wildchat:wildchat-48354fd35bc0746411571238b6e37e18", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-b2b38f6aa0a9e806454ce3546d01f8b36e96f2a2456cc62dc33335ee4f185041", "ok": true, "drop": false, "issue": "'be apologetic' rendered as 'excuse me'"}
+{"id": "wildchat:wildchat-8675e8b51774dcc3343ed90eebe462c7", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry; DeviantArt transliterated oddly"}
+{"id": "dolly:dolly-6629", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-f62a42db823421bd47870b1c57a6889749c10102a82fe47f3ef3cd6a1e8908ce", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry; 'getting along' rendered as 'living with'"}
+{"id": "wildchat:wildchat-e4a77fff24510ed2a76583b775df0e05", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-56212e63d214804cdff64fe2a2715a8f", "ok": false, "drop": true, "issue": "'collage' (college) rendered as making collages; college topic lost, request no longer makes sense"}
+{"id": "no_robots:nr-167d16dfc93474a934fce7fe0826a7943ee5f389dca25d27b9afed94735749f1", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-70bf52bc173a5d3ea7c1a923278c9cf0", "ok": true, "drop": false, "issue": "'grateful and appreciated' collapsed to repeated word; 'since' rendered as 'because'"}
+{"id": "dolly:dolly-3731", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-1fad1ddf81aabbb4e614d3b3003576a6e385e5c5dc70905d70fecb3278b2cad7", "ok": true, "drop": false, "issue": "stray 'User' line carried over from source; annoying-things clause slightly garbled"}
+{"id": "wildchat:wildchat-e471924ac09d0b69a113fd9c9a24f304", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-fa8540b3049e5cd7d23654fda242a142", "ok": true, "drop": false, "issue": "'childhood friend' rendered as 'a child's friend'"}
+{"id": "no_robots:nr-6d086b8e0f281729d0091bf9f73e4cb796568c4ba5c7127fa6ecbb71ad4a2709", "ok": true, "drop": false, "issue": "'male child' rendered very literally"}
+{"id": "wildchat:wildchat-7014ed227ea4bb6c7cfb0e047d3bf729", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-2850", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-fa1726671c06d08ffc04b6e8c38ede60cd886cc7ee97e53ef66dc5b155e29b1c", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-26d7c11ec51b77fd3281e0b446545225", "ok": false, "drop": true, "issue": "brother's promotion (reason for congratulations) missing"}
+{"id": "wildchat:wildchat-c79d8a82d0518b1333b3b6724e3856c9", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-519c9fd9533bce12f7b7defc87a074e763010a0cf1546fc9ba3c66439ab169b4", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-85ce4f9e41f5915ce42bb7527879d724", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-9908", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-0c14e9dcdbc081921b191eda7f4ba8b478e2ef1767b097bca6d8b2f37327fcef", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry"}
+{"id": "wildchat:wildchat-9b3fd7362b450709948b9f4b71b232ec", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-75d12f0d295ec70511ccfda6a05c34eb", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-8dd90633fd219cd25af4293a1991b4e1ae219ab348dcdf79ac1efd96d17ec1ac", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b08c6878c0194908730faec91d490829", "ok": true, "drop": false, "issue": "team name Cofidis transliterated imperfectly"}
+{"id": "dolly:dolly-12846", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-ad5fafacd7f8626ed2d32643dbf7f5fa849e8a08875ec7f315fab2fe5548d6c9", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry"}
+{"id": "wildchat:wildchat-4fc1384564e805a6024fd07bb7ffbea2", "ok": false, "drop": true, "issue": "'future self' lost; asks for a letter for 'my future'"}
+{"id": "wildchat:wildchat-b086bcba755dcfa4d4c8e06c432d8887", "ok": true, "drop": false, "issue": "'crush' rendered as 'the one who loves me'"}
+{"id": "no_robots:nr-0f170b0c2d4626a5558d8d25c10a760470860e571f71cbe1aba1c25a294f6949", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-7fa22735634642b36d9ab41381ce115d", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-11872", "ok": true, "drop": false, "issue": "clause order muddled; 'gone all day' rendered as 'went all day'"}
+{"id": "no_robots:nr-048d02ed24bacbdeadb0b6e915edc6a637ae19d34ef79839a9774ff2200982f5", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-e006d4e483bf7c5aad6e5413fc2bee33", "ok": true, "drop": false, "issue": "redundant 'with him with me' phrasing"}
+{"id": "wildchat:wildchat-9aca8565922f29b4dcabd3af61b92f97", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-ac54f273167fc5ac3b4ebc050cdf91df", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-14116", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-5e8df32e020e9c8b1e085719dd18abab5f5dca0782b444a83e47aff7e976c19e", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b3a7f468ac757a3e0c44d8e6db0564cf", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-b25f80c90146af685a738d8752027630", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-fabfade5693164dedb99ee523552d1271caf5ed1ef2ae3fb81048fde9a389d8a", "ok": true, "drop": false, "issue": "'sign it as Fluffers' rendered as 'sign Fluffers's letter'"}
+{"id": "wildchat:wildchat-0a4869f3952958c82f82cf508e19e687", "ok": true, "drop": false, "issue": "'make stuff up' rendered literally as 'make things'"}
+{"id": "dolly:dolly-6085", "ok": false, "drop": true, "issue": "'alien' mistranslated as foreigner; request changes meaning"}
+{"id": "no_robots:nr-aab127180645e43dcdbaf2db3640639f8a9ef6d70822ec0c0fce91da48c9c58c", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-6548edf6d9a332c0235a367eec6a904d", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-82aac0c1e5ddf1c6e1324c7874ee8b16", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-c103236d5f5df638c90173fbf8e174ab8a811e3f963c73769a4d4bbf593550b4", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-3f0e97339c1064249e5059ced8a93088", "ok": true, "drop": false, "issue": "long; 'ghetto' rendered as Jewish ghetto; final clause garbled (as in messy source)"}
+{"id": "dolly:dolly-4352", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-45c0a29c39221de7b84c5d8ffcb8ea5b8ad70ec43378af5975edd2dc5e5e5249", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-6a39521d924c1d41396f7ff12e4b0b24", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-d4117fbd04b01b68e0b3782b1f386b0c", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-db6e6a7cb724f2aa9c678e26da643fcc", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-9526", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-f2ab3e8bf2c3337f203162142425693d920481331dc4c6767e732eeab6c659e0", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-3b4776c66523adae83200d4526a26116", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-c62c8b2c9311315e0a3a3f26f0932e48", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-d8327dae58571dcae241393ecc612afb36391fc9d872449caf25d87b9d10601c", "ok": true, "drop": false, "issue": "journal rendered as patrika (magazine); context still makes it an entry; 'breaking out and seeing the world' garbled"}
+{"id": "wildchat:wildchat-7e9252dfe1a72bdeb6ce452a15a299f3", "ok": true, "drop": false, "issue": ""}
+{"id": "dolly:dolly-10798", "ok": true, "drop": false, "issue": ""}
+{"id": "no_robots:nr-bb2b008cb5017e4cfdcd258ece476c8df5324a5fe0cc76e00ac40f839d7f2e99", "ok": true, "drop": false, "issue": ""}
+{"id": "wildchat:wildchat-fac2099f5fb5c7c27e9dcdd8241a73a8", "ok": true, "drop": false, "issue": ""}
