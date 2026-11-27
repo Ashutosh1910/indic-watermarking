@@ -35,10 +35,9 @@ huggingface-cli download Qwen/Qwen3-8B            # ~16 GB (newer huggingface_hu
 
 ## 0b. Finish the translation and build the G prompt file (before any generation)
 
-`promptset/data/G_prompts*.jsonl` is committed, built from a PARTIAL translation: `promptset/data/work/translated.jsonl`
-has 325 of 517 rows (Colab run; all Hindi->English done, 192 English->Hindi essay/personal rows missing), so it holds
-301 pairs and essay/personal are short. If the remaining rows were translated elsewhere (Colab notebook, which
-resumes from that file), put the finished file there and skip to the build. Otherwise finish it here; then rebuild.
+**Done; skip this step.** The translation is complete (all 517 rows, IndicTrans2 1B on Colab), reviewed (37 pairs
+dropped), and `promptset/data/G_prompts*.jsonl` is built from it: 473 pairs, 946 rows, strict validator 0 errors. The
+commands below are only needed to reproduce it, or after a change to the selection.
 
 IndicTrans2 needs its own venv (it breaks on transformers 5.x) and a Hugging Face token from an account that
 has accepted the terms of `ai4bharat/indictrans2-en-indic-1B` and `ai4bharat/indictrans2-indic-en-1B`:
@@ -224,17 +223,16 @@ sampled token ids, which shows how much is lost to re-tokenisation.
 ## 6. Token budgets (TODO: fill after the pilot)
 
 Upper bounds known now (sum of `max_new_tokens`, i.e. every row running to its cap; real use is lower because
-generation stops at end of text). G rows are computed from the selection and config, so they hold once the
-translation is complete:
+generation stops at end of text). G rows are from the built `G_prompts.jsonl`:
 
 | file | split | language | rows | mean max_new_tokens | sum max_new_tokens |
 |---|---|---|---|---|---|
-| G_prompts | pilot | en | 24 | 1,440 | 34,560 |
-| G_prompts | pilot | hi | 24 | 5,088 | 122,112 |
-| G_prompts | main | en | 376 | 1,444 | 542,912 |
-| G_prompts | main | hi | 376 | 5,102 | 1,918,400 |
-| G_prompts | reserve | en | 117 | 1,471 | 172,160 |
-| G_prompts | reserve | hi | 117 | 5,202 | 608,576 |
+| G_prompts | pilot | en | 22 | 1,440 | 31,680 |
+| G_prompts | pilot | hi | 22 | 5,088 | 111,936 |
+| G_prompts | main | en | 341 | 1,438 | 490,304 |
+| G_prompts | main | hi | 341 | 5,080 | 1,732,352 |
+| G_prompts | reserve | en | 110 | 1,480 | 162,816 |
+| G_prompts | reserve | hi | 110 | 5,233 | 575,616 |
 | edit_prompts | main | en | 5,120 | 1,188 | 6,085,120 |
 | edit_prompts | main | hi | 5,335 | 3,679 | 19,627,776 |
 

@@ -21,16 +21,15 @@ scripts that generate, trim and verify the outputs.
 | Download and rule-filter sources | done |
 | LLM keep/genre check of every candidate ([LABELING.md](LABELING.md)) | done, `data/work/labels/` |
 | Selection: 517 balanced pairs | done, `data/work/selected.jsonl` |
-| IndicTrans2 1B translation | **partial**: 325 of 517 rows (Colab T4 run, 2026-11-27), `data/work/translated.jsonl`. All 101 Hindi→English rows are done; 192 of 416 English→Hindi rows (111 essay, 81 personal) are still missing. Finish with the Colab notebook or runbook step 0b (both resume from the file). |
-| Translation review (flag or drop only, never rewrite) | done for the 325 rows: 18 dropped, 69 kept with a note (`data/work/translation_review.jsonl`). Review the 192 remaining rows the same way once they exist. |
-| `data/G_prompts*.jsonl` | **built from the partial translation**: 301 pairs, 602 rows, strict validator 0 errors (`data/validation.md`). Essay and personal are short (29 and 16 main prompts) until the rest is translated. Pairs that duplicate another pair in either language (5) or are under 5 words (1) are dropped. |
+| IndicTrans2 1B translation | **done**: all 517 rows (416 English→Hindi, 101 Hindi→English), IndicTrans2 1B on a Colab T4, `data/work/translated.jsonl`. Used exactly as produced. |
+| Translation review (flag or drop only, never rewrite) | done for all 517 rows: 37 dropped, 101 kept with a note, none rewritten (`data/work/translation_review.jsonl`). |
+| `data/G_prompts*.jsonl` | **built**: 473 pairs, 946 rows, strict validator 0 errors (`data/validation.md`). 44 of 517 pairs were dropped: 37 in review, 6 duplicates of another pair in either language (the Hindi-native copy is kept), 1 under 5 words. Main + pilot per genre: story 92, opinion 94, essay 85, personal 92. |
 | Edit-level prompts | done: 10,455 rows (en 5,120, hi 5,335) from 600 docs (300 per language, story/essay 50/50; hi: HindiSamay 225 + Samalochan 75, en: Medium 300), strict validator 0 errors, 7 balance warnings (`data/edit/`). The 156 MB JSONL and `human_passages.jsonl` are gitignored, and so are the HindiSamay / Medium texts (do not redistribute): fetch them from branch `add-hindi-corpora` and rebuild with the command in EDIT_LEVELS.md |
 | generate / trim / verify scripts and tests | done, 183 tests pass |
 
-With the full translation, the G file has 1,034 rows (517 prompts × 2 languages). If you build it from a
-partial translation, you get only the pairs whose translation exists. English→Hindi runs first, so a partial
-file has no Hindi-native prompts, and its genre, tier and pilot balance is off. Rebuilding after the
-translation finishes gives the full set; nothing else changes.
+The Hindi-native share stays low outside story (story 45 of 92, essay 14 of 85, opinion 3 of 94, personal 1 of
+92), because the Hindi prompt pool is thin; `native_lang` and `translated` let you analyse native and translated
+prompts separately.
 
 ## Pipeline
 

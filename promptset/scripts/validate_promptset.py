@@ -73,7 +73,7 @@ MIN_TASK_WORDS = 5
 # premise template "a story of about {n} words", "लगभग {n} शब्दों ..."), plus "300-word" style compounds.
 LEN_CLAUSE = {
     "en": re.compile(r"(?<![\w.])(\d[\d,]*)(?:\s+|-)words?\b", re.IGNORECASE),
-    "hi": re.compile(r"(?<![\w.])([0-9०-९][0-9०-९,]*)\s*(?:-\s*)?शब्द"),
+    "hi": re.compile(r"(?<![\w.\u0900-\u097F])([0-9०-९][0-9०-९,]*)\s*(?:-\s*)?शब्द"),
 }
 URL = re.compile(r"https?://|\bwww\.|\b[\w-]+\.(?:com|org|net|in|io|co\.uk|ly)(?:/\S*)?\b", re.IGNORECASE)
 TAG = re.compile(r"[\[\(]\s*(?:[A-Z]{2,4}|डब्ल्यूपी|डब्ल्यू पी)\s*[\]\)]|<newline>|``|\br/\w+", re.UNICODE)
