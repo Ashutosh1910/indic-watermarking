@@ -9,3 +9,8 @@ __pycache__/
 # Fetch them from branch add-hindi-corpora: see promptset/EDIT_LEVELS.md ("Study corpora").
 /data/HindiSamay/
 /data/Medium/
+
+# cluster job logs
+/logs/
+/wm-check.*.out
+/wm-study.*.out

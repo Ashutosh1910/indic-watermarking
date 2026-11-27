@@ -5,6 +5,42 @@ one directory (the **dump**). `job/run_study.sh` wraps it for SLURM or a plain `
 scripts described in [GPU_RUNBOOK.md](GPU_RUNBOOK.md) (`generate.py`, `trim.py`, `build_edit_prompts.py
 build-outline`, `verify_generations.py`) and `scripts/load_dump.py` reads the dump back.
 
+## On Sharanga (BITS Hyderabad HPC)
+
+Everything large goes on `/scratch/$USER/wm` (`job/sharanga.env`): the repo, the venv, the Hugging Face cache
+(Qwen3-14B is about 30 GB) and the dumps. `$HOME` (40 GiB, backed up, nearly full) holds only the private keys
+(`~/wm/keys.private.yaml`) and a copy of each dump's report, results and analysis (`~/wm/results/<dump>/`).
+
+```bash
+# login node: downloads only (code must not run on login nodes)
+mkdir -p /scratch/$USER/wm && cd /scratch/$USER/wm
+git clone https://github.com/Ashutosh1910/indic-watermarking && cd indic-watermarking
+bash promptset/job/setup_sharanga.sh             # python 3.11 (conda if needed), venv, packages, Qwen3-14B weights
+sbatch promptset/job/check_sharanga.sh           # GPU node: watermarked test generation, CPU tests, internet check
+cat wm-check.<jobid>.out                          # must end with "ALL OK"
+
+# the study
+bash promptset/job/submit.sh --dump dump/pilot                                        # pilot, 4x H100
+bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'      # full run
+squeue -u $USER; tail -f logs/wm-study.<jobid>.out
+```
+
+* **Partitions.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h100_4` (4x H100
+  80 GB, `qos_gpu_h100`). Others: `WM_PARTITION=gpu_a100_8` (8x A100 80 GB) or `WM_PARTITION=gpu_h200_8` (8x H200
+  141 GB, 1-day limit; add `--set generate.token_budget=250000` there). One node per job.
+* **Walltime and resubmission.** Jobs ask for 23 h 50 min, which every partition allows. Fifteen minutes before
+  the limit the job stops cleanly and queues itself again (`--dependency=afterany`), up to `WM_MAX_CHAIN=8` times,
+  and the new job resumes the dump. To stop a chain: `touch /scratch/$USER/wm/STOP`, then `scancel` the jobs.
+* **Offline.** Inside jobs `HF_HUB_OFFLINE=1`: the weights and tokenizer come from the cache setup filled, so
+  compute nodes need no internet (`WM_ONLINE=1` turns this off).
+* **Scratch purge.** `/scratch` deletes files 15 days after their last modification. Every job start (and setup)
+  touches files under `/scratch/$USER/wm` older than 7 days. If no job runs for over a week, run
+  `source promptset/job/sharanga.env && wm_refresh` once, or rerun setup (it skips what is there).
+* **Keys.** The first real job creates `~/wm/keys.private.yaml` in your home (private, backed up). Never delete it
+  while dumps of the study exist.
+* **Driver.** The default torch wheel needs a recent NVIDIA driver; `check_sharanga.sh` shows it. If torch reports
+  no CUDA, rerun setup with `TORCH_INDEX=https://download.pytorch.org/whl/cu124`.
+
 ## Quick start (a fresh GPU server)
 
 ```bash

@@ -13,6 +13,7 @@ keys:
   file: ~/wm/keys.private.yaml
   allow_demo: false         # true = really use the public demo keys (tests only)
 prefetch_model: true        # download the weights once before the per-GPU processes start
+copy_results_to: null       # also copy report.md, manifest.json, results/, analysis/ to <dir>/<dump name>/ ($WM_RESULTS sets it)
 
 dump_dir: dump/study        # everything the job writes goes here (see promptset/JOB.md for the layout)
 model: null                 # override model.model_id of run_config (HF id or local dir)
