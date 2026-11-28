@@ -44,6 +44,7 @@ import platform
 import re
 import secrets
 import shlex
+import shutil
 import signal
 import subprocess
 import sys
@@ -93,6 +94,8 @@ def load_study(path: str | Path, sets: Sequence[str]) -> dict[str, Any]:
         _set_dotted(cfg, k.strip(), yaml.safe_load(v))
     if os.environ.get("RUNCFG"):
         cfg["run_config"] = os.environ["RUNCFG"]
+    if os.environ.get("WM_RESULTS") and not cfg.get("copy_results_to"):
+        cfg["copy_results_to"] = os.environ["WM_RESULTS"]
     cfg["filters"] = normalize_filters(cfg.get("filters"))
     cfg.setdefault("streams", {})
     for sc in (cfg.get("streams") or {}).values():
@@ -830,6 +833,26 @@ class Job:
 
     # ------------------------------------------------------------------ main flow
 
+    def copy_results(self) -> None:
+        """Copy the small outputs (no corpus text, no keys) to ``copy_results_to``/<dump name>/: report.md,
+        manifest.json, results/ and analysis/ (without passages.jsonl). For clusters whose scratch is purged."""
+        dest_root = rpath(self.s.get("copy_results_to"))
+        if not dest_root:
+            return
+        dest = dest_root / self.dump.name
+        try:
+            dest.mkdir(parents=True, exist_ok=True)
+            for name in ("report.md", "manifest.json"):
+                if (self.dump / name).exists():
+                    shutil.copy2(self.dump / name, dest / name)
+            for sub in ("results", "analysis"):
+                if (self.dump / sub).is_dir():
+                    shutil.copytree(self.dump / sub, dest / sub, dirs_exist_ok=True,
+                                    ignore=shutil.ignore_patterns("passages.jsonl"))
+            log(f"results copied to {dest}")
+        except OSError as e:
+            log(f"warning: could not copy results to {dest}: {e}")
+
     def write_manifest(self, status: str, started: str) -> None:
         man = {**getattr(self, "manifest_base", {}), "status": status, "started_utc": started,
                "finished_utc": now(), "argv": sys.argv, "stages": self.stages}
@@ -862,6 +885,7 @@ class Job:
         finally:
             if not self.args.plan:
                 self.write_manifest(status, started)
+                self.copy_results()
             log(f"[{now()}] job {status}; dump {self.dump}")
         return {"done": 0, "planned": 0, "interrupted": 130}.get(status, 1)
 

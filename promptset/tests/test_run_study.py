@@ -104,7 +104,8 @@ def setup(tmp_path_factory, tiny_model_dir):
                  human={"edit_anchors": str(edit / "human_passages.jsonl"), "pool": str(d / "job_pool.jsonl"),
                         "absent": str(d / "nope.jsonl")},
                  human_cutoffs={"words": [10, 20], "tokens": [20, 40]},
-                 keys={"file": str(d / "keys" / "private.yaml"), "allow_demo": False})
+                 keys={"file": str(d / "keys" / "private.yaml"), "allow_demo": False},
+                 copy_results_to=str(d / "home_results"))
     study["build_inputs"]["human_pool"].update(
         dirs=[f"pool_en:en:{d / 'corpus' / 'en'}", f"pool_hi:hi:{d / 'corpus' / 'hi'}"], min_words=30)
     study["regen"]["max_attempts"] = 2
@@ -302,3 +303,13 @@ def test_filters_from_the_command_line():
     assert run_study.normalize_filters("split=pilot") == ["split=pilot"]
     with pytest.raises(SystemExit):
         run_study.normalize_filters(["main"])
+
+
+def test_results_copied(first_run):
+    """copy_results_to (Sharanga: $WM_RESULTS in $HOME) gets the small outputs, never keys or corpus text."""
+    dest = first_run["dir"] / "home_results" / first_run["dump"].name
+    for rel in ("report.md", "manifest.json", "results/detection_rates.csv", "analysis/analysis.md",
+                "analysis/passages.csv"):
+        assert (dest / rel).exists(), rel
+    assert not (dest / "analysis" / "passages.jsonl").exists()
+    assert not (dest / "config").exists() and not (dest / "trim").exists() and not (dest / "gen").exists()
