@@ -275,6 +275,7 @@ class Job:
         self.tokenizer: str = ""
         self.batching: dict[str, Any] = {}
         self.gpus: list[str] | None = None
+        self._watcher = None
         self._rows_cache: dict[Path, list[dict[str, Any]]] = {}
 
     # ------------------------------------------------------------------ helpers
@@ -314,12 +315,34 @@ class Job:
                                  env={**os.environ, **env})
             self.children.append(p)
             procs.append((p, lf))
+        every = float((self.s.get("watch") or {}).get("every_min", 15)) * 60
+        last = time.monotonic()
+        while any(p.poll() is None for p, _ in procs):
+            time.sleep(5)
+            if every > 0 and time.monotonic() - last >= every:
+                self.watch()
+                last = time.monotonic()
         codes = []
         for p, lf in procs:
             codes.append(p.wait())
             lf.close()
             self.children.remove(p)
+        self.watch()
         return codes
+
+    def watch(self) -> None:
+        """Status block (progress, ETA, output health, z check) into the job log and <dump>/status.txt."""
+        ws = dict(self.s.get("watch") or {})
+        if ws.get("every_min", 15) in (0, None, False) or self.args.plan:
+            return
+        try:
+            import watch_study
+
+            if self._watcher is None:
+                self._watcher = watch_study.Watcher(self.dump, ws, score=bool(ws.get("score", True)))
+            log(self._watcher.write())
+        except Exception as e:  # noqa: BLE001  (monitoring must never stop the job)
+            log(f"watch: skipped ({type(e).__name__}: {str(e)[:200]})")
 
     def terminate_children(self) -> None:
         for p in list(self.children):

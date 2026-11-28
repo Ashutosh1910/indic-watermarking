@@ -107,6 +107,14 @@ edit_subsample:
   genre_mix: {story: 0.5, essay: 0.5}
   seed: 20261128
 
+# Live status while generating (scripts/watch_study.py): progress, tok/s, ETA, EOS share, Hindi script share,
+# failures and a z check of the newest 100%-AI / unwatermarked rows, printed into the job log and written to
+# <dump>/status.txt every every_min minutes. 0 turns it off. Thresholds: see watch_study.py.
+watch:
+  every_min: 15
+  score: true
+  sample: 40
+
 # Last stage: analyze.py on the dump (CPU): per-token strength z/sqrt(n_scored), edit share f, calibration on
 # human and control text, doc-clustered bootstrap CIs, en vs hi gaps, figures -> dump/analysis/ (ANALYSIS.md).
 analysis:
