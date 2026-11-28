@@ -20,13 +20,15 @@ sbatch promptset/job/check_sharanga.sh           # GPU node: watermarked test ge
 cat wm-check.<jobid>.out                          # must end with "ALL OK"
 
 # the study
-bash promptset/job/submit.sh --dump dump/pilot                                        # pilot, 4x H100
+bash promptset/job/submit.sh --dump dump/pilot                                        # pilot, 2x H100
 bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'      # full run
 squeue -u $USER; tail -f logs/wm-study.<jobid>.out
 ```
 
-* **Partitions.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h100_4` (4x H100
-  80 GB, `qos_gpu_h100`). Others: `WM_PARTITION=gpu_a100_8` (8x A100 80 GB) or `WM_PARTITION=gpu_h200_8` (8x H200
+* **Partitions and GPUs.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h100_4`
+  (H100 80 GB, `qos_gpu_h100`) with `WM_GPUS=2`: Qwen3-14B fits on one card, so each GPU runs its own generation
+  process and time falls about linearly with GPUs. `WM_GPUS=1` or `4` changes it (capped at the node's GPUs); the
+  dump resumes with any count. Others: `WM_PARTITION=gpu_a100_8` (8x A100 80 GB) or `WM_PARTITION=gpu_h200_8` (8x H200
   141 GB, 1-day limit; add `--set generate.token_budget=250000` there). One node per job.
 * **Walltime and resubmission.** Jobs ask for 23 h 50 min, which every partition allows. Fifteen minutes before
   the limit the job stops cleanly and queues itself again (`--dependency=afterany`), up to `WM_MAX_CHAIN=8` times,

@@ -5,7 +5,8 @@
 #   bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'
 #   WM_PARTITION=gpu_a100_8 bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'
 #
-# Every argument goes to run_study.py. Environment (optional): WM_PARTITION (default gpu_h100_4), WM_GPUS,
+# Every argument goes to run_study.py. Environment (optional): WM_PARTITION (default gpu_h100_4), WM_GPUS (default 2,
+# at most the GPUs of one node; the model fits on one 80 GB card, so each GPU runs its own generation process),
 # WM_TIME (default 23:50:00, under the 1-day limit of gpu_h200_8), WM_QOS, WM_MAIL (address for job mails),
 # WM_DEPENDENCY (sbatch --dependency value). The job resubmits itself after a time limit (run_study.sh,
 # WM_MAX_CHAIN times); a finished dump does nothing on a resubmission.
@@ -25,7 +26,8 @@ case "$P" in                                     # partition -> QoS (sacctmgr sh
   *) QOS_DEF=""; G_DEF=1 ;;
 esac
 QOS="${WM_QOS-$QOS_DEF}"
-GPUS="${WM_GPUS:-$G_DEF}"
+GPUS="${WM_GPUS:-2}"
+if (( GPUS > G_DEF )); then echo "WM_GPUS=$GPUS: $P has $G_DEF GPUs per node, using $G_DEF" >&2; GPUS=$G_DEF; fi
 TIME="${WM_TIME:-23:50:00}"
 CPUS=$(( GPUS * 4 < 16 ? 16 : GPUS * 4 ))
 MEM=$(( GPUS * 48 ))G                            # each generation process loads the weights through CPU RAM
