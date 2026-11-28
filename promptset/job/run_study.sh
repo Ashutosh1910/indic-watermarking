@@ -50,6 +50,15 @@ echo "[$(date -u +%FT%TZ)] host $(hostname) repo $REPO commit $(git rev-parse --
 python -c "import torch, transformers; print('torch', torch.__version__, 'transformers', transformers.__version__, 'cuda', torch.cuda.is_available(), torch.cuda.device_count())"
 nvidia-smi --query-gpu=index,name,memory.total,memory.used --format=csv 2>/dev/null || true
 
+# First job of a chain: check GPUs and the model before the study starts (WM_PRECHECK=0 skips it,
+# WM_PRECHECK=tests also runs the CPU test suites). A failed check stops here, with no resubmission.
+if [[ -n "${SLURM_JOB_ID:-}" && "${WM_CHAIN:-0}" -eq 0 && "${WM_PRECHECK:-1}" != 0 ]]; then
+  if ! bash "$REPO/promptset/job/precheck.sh" $([[ "${WM_PRECHECK:-1}" == tests ]] && echo --tests); then
+    echo "[$(date -u +%FT%TZ)] precheck failed: the study did not start (fix, then submit again)"
+    exit 2
+  fi
+fi
+
 # Run in the background and forward TERM/INT, so SLURM's warning signal reaches run_study.py, which stops
 # its generation processes cleanly (rows written so far are kept) and exits 130.
 python promptset/scripts/run_study.py --study "$STUDY" "$@" &
