@@ -13,4 +13,5 @@ __pycache__/
 # cluster job logs
 /logs/
 /wm-check.*.out
+/ashutosh-check.*.out
 /wm-study.*.out

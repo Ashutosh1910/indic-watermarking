@@ -20,11 +20,18 @@ bash promptset/job/setup_sharanga.sh             # python 3.11 (conda if needed)
 # the study (one job at a time: the QoS allows 2 GPUs and 12 CPUs per user in total)
 WM_TEST_ONLY=1 WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   # estimated start, submits nothing
 WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot                   # check + pilot, 2x H200
-grep -E "PRECHECK|ALL OK|exit" logs/wm-study.<jobid>.out                          # "== PRECHECK OK" first
+grep -E "PRECHECK|ALL OK|exit" logs/ashutosh.<jobid>.out                          # "== PRECHECK OK" first
 bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'  # full run, after the pilot
-squeue -u $USER; tail -f logs/wm-study.<jobid>.out
+squeue -u $USER -n ashutosh; tail -f logs/ashutosh.<jobid>.out
 ```
 
+* **Job name.** Jobs are named `ashutosh` (the cluster account is shared, so `squeue` shows whose job it is) and
+  log to `logs/ashutosh.<jobid>.out`; `WM_JOBNAME=<name>` changes both, and resubmissions keep it.
+* **Job mails.** Put your address in `~/wm/mail` once (`echo you@hyderabad.bits-pilani.ac.in > ~/wm/mail`; it
+  stays out of the public repo), or set `WM_MAIL=<address>` for one submission. Jobs then mail on BEGIN, END, FAIL
+  and REQUEUE (`WM_MAIL_TYPE` changes the list, e.g. `BEGIN,END,FAIL,TIME_LIMIT_80`). Every job of a resubmission
+  chain sends its own BEGIN/END mails. The Sharanga docs show `<username>@hyderabad.bits-pilani.ac.in` in their
+  examples; other addresses are not documented either way.
 * **Partitions and GPUs.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h200_8`
   (H200 141 GB, `qos_gpu_h200`, 1-day limit, `generate.token_budget=250000` set for you) with `WM_GPUS=2`:
   Qwen3-14B fits on one card, so each GPU runs its own generation process and time falls about linearly with GPUs.
@@ -47,7 +54,7 @@ squeue -u $USER; tail -f logs/wm-study.<jobid>.out
 * **Monitoring.** Everything is in files, so the login node needs only `tail` and `cat`:
 
   ```bash
-  tail -f logs/wm-study.<jobid>.out            # stage lines, and a status block every 15 min while generating
+  tail -f logs/ashutosh.<jobid>.out            # stage lines, and a status block every 15 min while generating
   cat dump/main/status.txt                     # the latest status block
   tail -f dump/main/logs/gen.wm.a0.s*.log      # every batch: rows done/total, tok/s, EOS count, ETA
   ls dump/main/failures/ dump/main/gen/*/*.failures.jsonl   # failed stages and batches

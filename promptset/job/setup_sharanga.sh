@@ -43,4 +43,4 @@ export PYTHON="$PY"
 SKIP_TESTS=1 bash promptset/job/setup_gpu.sh     # venv at $VENV, packages, weights into $HF_HOME (no tests here)
 wm_refresh "$REPO"
 echo "== disk: $(du -sh "$WM_ROOT" 2>/dev/null | cut -f1) in $WM_ROOT; home quota: run 'usertools quota info'"
-echo "== next: WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   (GPU check, then the pilot; log logs/wm-study.<id>.out)"
+echo "== next: WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   (GPU check, then the pilot; log logs/ashutosh.<id>.out)"
