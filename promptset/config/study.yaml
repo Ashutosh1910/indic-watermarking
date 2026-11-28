@@ -97,6 +97,16 @@ generate:
   shard_retries: 2          # a crashed generation process is restarted this many times (it resumes)
   extra_args: []
 
+# Fewer documents for the edit levels (the costliest part: Hindi L1-L4 and C rows are ~5,500-token inputs).
+# Keeps docs_per_language documents per language for these levels only, story/essay by genre_mix, pilot docs
+# first, then a seeded hash order; the same documents at every level and view. G, G_title, OX/O and the human
+# anchors keep all documents. null = all 300. Changing it on a resumed dump only changes what is still to run.
+edit_subsample:
+  docs_per_language: 200    # Ashu 2026-11-28: 200 of 300 (saves ~24 % of the run)
+  levels: [L1_proofread, L2_polish, L3_paraphrase, L4_rewrite, C_continue]
+  genre_mix: {story: 0.5, essay: 0.5}
+  seed: 20261128
+
 # Last stage: analyze.py on the dump (CPU): per-token strength z/sqrt(n_scored), edit share f, calibration on
 # human and control text, doc-clustered bootstrap CIs, en vs hi gaps, figures -> dump/analysis/ (ANALYSIS.md).
 analysis:

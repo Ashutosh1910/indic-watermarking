@@ -313,3 +313,30 @@ def test_results_copied(first_run):
         assert (dest / rel).exists(), rel
     assert not (dest / "analysis" / "passages.jsonl").exists()
     assert not (dest / "config").exists() and not (dest / "trim").exists() and not (dest / "gen").exists()
+
+
+def test_edit_subsample_keeps_same_docs_at_every_level():
+    import run_study as R
+
+    rows = []
+    for lang in ("en", "hi"):
+        for i in range(20):
+            genre = "story" if i % 2 else "essay"
+            split = "pilot" if i < 2 else "main"
+            for level in ("L1_proofread", "L4_rewrite", "C_continue", "G_title", "OX_extract_outline"):
+                for view in ("sw", "st"):
+                    rows.append({"id": f"{level}-{lang}-{i}-{view}", "pair_id": f"{lang}/{i}", "language": lang,
+                                 "genre": genre, "split": split, "level": level})
+    spec = {"docs_per_language": 6, "levels": ["L1_proofread", "L4_rewrite", "C_continue"], "seed": 1}
+    out = R.edit_subsample(rows, spec)
+    assert out == R.edit_subsample(list(rows), spec)                       # deterministic
+    for lang in ("en", "hi"):
+        per_level = {lv: {r["pair_id"] for r in out if r["language"] == lang and r["level"] == lv}
+                     for lv in spec["levels"]}
+        docs = per_level["L1_proofread"]
+        assert len(docs) == 6 and all(v == docs for v in per_level.values())
+        assert {f"{lang}/0", f"{lang}/1"} <= docs                          # pilot docs always kept
+        assert sum(int(d.split("/")[1]) % 2 for d in docs) == 3            # 3 story + 3 essay
+        for lv in ("G_title", "OX_extract_outline"):                        # other levels untouched
+            assert len({r["pair_id"] for r in out if r["language"] == lang and r["level"] == lv}) == 20
+    assert R.edit_subsample(rows, {"docs_per_language": None, "levels": spec["levels"]}) == rows
