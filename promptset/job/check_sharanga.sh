@@ -5,8 +5,8 @@
 #   sbatch promptset/job/check_sharanga.sh                                     # H100 partition
 #   sbatch -p gpu_a100_8 --qos=qos_gpu_a100 promptset/job/check_sharanga.sh    # another partition
 #
-#SBATCH -p gpu_h100_4
-#SBATCH --qos=qos_gpu_h100
+#SBATCH -p gpu_h200_8
+#SBATCH --qos=qos_gpu_h200
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=96G

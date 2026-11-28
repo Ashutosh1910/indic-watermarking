@@ -143,6 +143,8 @@ def test_outputs(first_run):
                 "results/detection_rates.csv", "results/fpr_human.csv", "analysis/analysis.md",
                 "analysis/passages.csv", "analysis/calibration.csv", "analysis/strength.csv", "analysis/lang_gap.csv"):
         assert (dump / rel).exists(), rel
+    status = (dump / "status.txt").read_text(encoding="utf-8")         # the live watch block
+    assert "[wm]" in status and "watermarked 100%-AI" in status and status.rstrip().splitlines()[-1].startswith("STATUS")
     man = json.loads((dump / "manifest.json").read_text(encoding="utf-8"))
     assert man["status"] == "done", [s for s in man["stages"] if s["status"] != "done"]
     assert man["inputs"]["G"]["sha256"] and man["inputs"]["human.absent"]["exists"] is False
@@ -313,3 +315,51 @@ def test_results_copied(first_run):
         assert (dest / rel).exists(), rel
     assert not (dest / "analysis" / "passages.jsonl").exists()
     assert not (dest / "config").exists() and not (dest / "trim").exists() and not (dest / "gen").exists()
+
+
+def test_edit_subsample_keeps_same_docs_at_every_level():
+    import run_study as R
+
+    rows = []
+    for lang in ("en", "hi"):
+        for i in range(20):
+            genre = "story" if i % 2 else "essay"
+            split = "pilot" if i < 2 else "main"
+            for level in ("L1_proofread", "L4_rewrite", "C_continue", "G_title", "OX_extract_outline"):
+                for view in ("sw", "st"):
+                    rows.append({"id": f"{level}-{lang}-{i}-{view}", "pair_id": f"{lang}/{i}", "language": lang,
+                                 "genre": genre, "split": split, "level": level})
+    spec = {"docs_per_language": 6, "levels": ["L1_proofread", "L4_rewrite", "C_continue"], "seed": 1}
+    out = R.edit_subsample(rows, spec)
+    assert out == R.edit_subsample(list(rows), spec)                       # deterministic
+    for lang in ("en", "hi"):
+        per_level = {lv: {r["pair_id"] for r in out if r["language"] == lang and r["level"] == lv}
+                     for lv in spec["levels"]}
+        docs = per_level["L1_proofread"]
+        assert len(docs) == 6 and all(v == docs for v in per_level.values())
+        assert {f"{lang}/0", f"{lang}/1"} <= docs                          # pilot docs always kept
+        assert sum(int(d.split("/")[1]) % 2 for d in docs) == 3            # 3 story + 3 essay
+        for lv in ("G_title", "OX_extract_outline"):                        # other levels untouched
+            assert len({r["pair_id"] for r in out if r["language"] == lang and r["level"] == lv}) == 20
+    assert R.edit_subsample(rows, {"docs_per_language": None, "levels": spec["levels"]}) == rows
+
+
+def test_watch_flags_problems(tmp_path):
+    import watch_study
+
+    d = tmp_path / "dump"
+    (d / "gen" / "wm").mkdir(parents=True)
+    (d / "logs").mkdir()
+    rows = [{"id": f"hi-{i}", "language": "hi", "level": "G", "watermarked": True, "finish_reason": "length",
+             "n_new_tokens": 100, "text": "This is English, not Hindi."} for i in range(12)]
+    with open(d / "gen" / "wm" / "a0.s0of2.jsonl", "w", encoding="utf-8") as f:
+        f.write("\n".join(json.dumps(r) for r in rows) + "\n" + '{"id": "half-writ')   # half-written last line
+    (d / "logs" / "gen.wm.a0.s0of2.log").write_text(
+        "===== start\n[12/40] batch rows=12 new_tok=1200 | total 850 tok/s, ETA 33.0 min\n", encoding="utf-8")
+    w = watch_study.Watcher(d, score=False)
+    text, n_warn = w.status()
+    assert "12 rows written" in text and "s0: 12/40" in text and "850 tok/s" in text
+    assert "end at EOS" in text and "not Devanagari" in text and n_warn == 2
+    with open(d / "gen" / "wm" / "a0.s0of2.jsonl", "a", encoding="utf-8") as f:   # the line completes later
+        f.write('", "language": "hi", "level": "G", "finish_reason": "eos", "text": "\u0928\u092e\u0938\u094d\u0924\u0947"}\n')
+    assert "13 rows written" in w.write() and (d / "status.txt").exists()

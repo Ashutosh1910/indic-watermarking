@@ -16,18 +16,49 @@ Everything large goes on `/scratch/$USER/wm` (`job/sharanga.env`): the repo, the
 mkdir -p /scratch/$USER/wm && cd /scratch/$USER/wm
 git clone https://github.com/Ashutosh1910/indic-watermarking && cd indic-watermarking
 bash promptset/job/setup_sharanga.sh             # python 3.11 (conda if needed), venv, packages, Qwen3-14B weights
-sbatch promptset/job/check_sharanga.sh           # GPU node: watermarked test generation, CPU tests, internet check
+sbatch --test-only promptset/job/check_sharanga.sh   # estimated start, submits nothing
+sbatch promptset/job/check_sharanga.sh           # GPU node (1x H200, 1.5 h): test generation, CPU tests, internet check
 cat wm-check.<jobid>.out                          # must end with "ALL OK"
 
-# the study
-bash promptset/job/submit.sh --dump dump/pilot                                        # pilot, 4x H100
-bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'      # full run
+# the study (one job at a time: the QoS allows 2 GPUs and 12 CPUs per user in total)
+WM_TEST_ONLY=1 WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   # estimated start, submits nothing
+WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot                   # pilot, 2x H200
+bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'  # full run, after the pilot
 squeue -u $USER; tail -f logs/wm-study.<jobid>.out
 ```
 
-* **Partitions.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h100_4` (4x H100
-  80 GB, `qos_gpu_h100`). Others: `WM_PARTITION=gpu_a100_8` (8x A100 80 GB) or `WM_PARTITION=gpu_h200_8` (8x H200
-  141 GB, 1-day limit; add `--set generate.token_budget=250000` there). One node per job.
+* **Partitions and GPUs.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h200_8`
+  (H200 141 GB, `qos_gpu_h200`, 1-day limit, `generate.token_budget=250000` set for you) with `WM_GPUS=2`:
+  Qwen3-14B fits on one card, so each GPU runs its own generation process and time falls about linearly with GPUs.
+  `WM_GPUS=1` changes it; the dump resumes with any count. Others: `WM_PARTITION=gpu_h100_4` (H100 80 GB) or
+  `WM_PARTITION=gpu_a100_8` (A100 80 GB). One node per job.
+* **QoS limits** (`sacctmgr show qos qos_gpu_h200 format=Name,MaxTRESPU%30,MaxJobsPU -p`): per user 2 GPUs and 2
+  running jobs; on H100 and H200 also 12 CPUs and 300G in total. `submit.sh` asks for 6 CPUs and 48G per GPU, at most
+  12 CPUs (`WM_MAX_CPUS`) and 300G, with the generic `gpu:N` request (the typed H100 name is capped at 1 GPU). A job
+  that would go over waits with `QOSMax...PerUser`; to queue the study behind the check job, use
+  `WM_DEPENDENCY=afterok:<check jobid>`.
+* **Starting sooner.** A shorter `WM_TIME` can start earlier by backfill into a gap before a reserved node.
+  `WM_TEST_ONLY=1` shows Slurm's estimate for the exact request; try a few `WM_TIME` values. A job that hits its
+  limit resubmits itself and resumes, so a short limit costs only a requeue.
+* **Monitoring.** Everything is in files, so the login node needs only `tail` and `cat`:
+
+  ```bash
+  tail -f logs/wm-study.<jobid>.out            # stage lines, and a status block every 15 min while generating
+  cat dump/main/status.txt                     # the latest status block
+  tail -f dump/main/logs/gen.wm.a0.s*.log      # every batch: rows done/total, tok/s, EOS count, ETA
+  ls dump/main/failures/ dump/main/gen/*/*.failures.jsonl   # failed stages and batches
+  srun --jobid=<jobid> --overlap nvidia-smi    # GPU memory and use on the job's node
+  ```
+
+  The status block (`scripts/watch_study.py`) gives per stream: rows written, per-shard progress, total tok/s
+  and ETA; per language: EOS share, mean new tokens, Hindi outputs that are mostly not Devanagari; and a z check
+  of the newest 40 watermarked 100%-AI rows and unwatermarked rows. It ends with `STATUS OK` or `STATUS WARN (n)`
+  and one `WARN` line per problem: a shard log silent for 30 min, failed batches or stages, under 50 % of outputs
+  ending at EOS, over 10 % of Hindi outputs not in Devanagari, `<think>` blocks, watermarked 100%-AI text with
+  mean z below 2, or unwatermarked text with mean z above 1.5. The first block comes after the outline stream
+  (OX, unwatermarked) and 15 min into the watermarked stream. Settings: `watch` in `config/study.yaml`.
+* **Stopping.** `touch /scratch/$USER/wm/STOP` (no resubmission), then `scancel <jobid>`. What was generated
+  stays in the dump; the same submit command resumes it after a fix.
 * **Walltime and resubmission.** Jobs ask for 23 h 50 min, which every partition allows. Fifteen minutes before
   the limit the job stops cleanly and queues itself again (`--dependency=afterany`), up to `WM_MAX_CHAIN=8` times,
   and the new job resumes the dump. To stop a chain: `touch /scratch/$USER/wm/STOP`, then `scancel` the jobs.
@@ -78,6 +109,12 @@ Qwen3-14B; the pilot measures the real throughput): `--set build_inputs.edit.n_d
 
 Settings live in `config/study.yaml` (streams, filters, regeneration cap, human sets, z threshold, GPUs);
 `--set key=value` overrides any of them. Qwen3-14B wants an 80 GB card; on 48 GB add `--set generate.token_budget=30000`.
+
+**Edit subsample.** `edit_subsample.docs_per_language` (default 200 of the 300 built documents) keeps L1-L4 and
+C_continue for that many documents per language, story/essay 50/50, pilot documents first, then a seeded hash
+order, the same documents at every level and view. G, G_title, OX/O and the human anchors keep all documents.
+`--set edit_subsample.docs_per_language=null` runs all 300. Each 20 documents per language is about 1.5M max new
+tokens (5 % of the full run), almost all of it Hindi.
 
 **Resume:** submit the same command again. Rows already generated are skipped (per id, attempt and watermark
 flag, across all shard files, so the number of GPUs may change); trimming and scoring are redone only when

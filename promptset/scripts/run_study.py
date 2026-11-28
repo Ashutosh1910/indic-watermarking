@@ -108,6 +108,52 @@ def load_study(path: str | Path, sets: Sequence[str]) -> dict[str, Any]:
     return cfg
 
 
+def edit_subsample(rows: list[dict[str, Any]], spec: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Keep the rows of ``spec["levels"]`` only for ``docs_per_language`` documents per language (pair_id).
+
+    The documents are picked per language and genre in a seeded hash order, pilot documents first, with
+    ``genre_mix`` quotas (a genre short of documents is topped up by the others). The same documents are kept
+    at every level and view, so levels stay paired. Rows of other levels (G, G_title, OX, O) and the human
+    anchors are not touched. ``docs_per_language: null`` keeps everything.
+    """
+    spec = spec or {}
+    n = spec.get("docs_per_language")
+    if n is None:
+        return rows
+    n = int(n)
+    levels = set(spec.get("levels") or [])
+    seed = str(spec.get("seed", 0))
+    mix = spec.get("genre_mix") or {"story": 0.5, "essay": 0.5}
+    docs: dict[str, dict[str, dict[str, bool]]] = {}       # language -> genre -> pair_id -> is pilot
+    for r in rows:
+        if r.get("level") in levels:
+            g = docs.setdefault(str(r.get("language")), {}).setdefault(str(r.get("genre")), {})
+            pid = str(r.get("pair_id"))
+            g[pid] = g.get(pid, False) or r.get("split") == "pilot"
+
+    def order(genre_docs: dict[str, bool]) -> list[str]:
+        key = lambda d: (not genre_docs[d], hashlib.sha256(f"{seed}|{d}".encode()).hexdigest())  # noqa: E731
+        return sorted(genre_docs, key=key)
+
+    keep: dict[str, set[str]] = {}
+    for lang, by_genre in docs.items():
+        ranked = {g: order(d) for g, d in by_genre.items()}
+        quota = {g: int(round(n * float(mix.get(g, 0)))) for g in ranked}
+        if quota and sum(quota.values()) != n:                  # rounding: give the rest to the largest share
+            top = max(quota, key=lambda g: float(mix.get(g, 0)))
+            quota[top] += n - sum(quota.values())
+        chosen = {g: ranked[g][: quota[g]] for g in ranked}
+        short = n - sum(len(c) for c in chosen.values())
+        for g in sorted(ranked, key=lambda g: -float(mix.get(g, 0))):  # top up from genres with spare docs
+            if short <= 0:
+                break
+            extra = ranked[g][len(chosen[g]): len(chosen[g]) + short]
+            chosen[g] += extra
+            short -= len(extra)
+        keep[lang] = {d for c in chosen.values() for d in c}
+    return [r for r in rows if r.get("level") not in levels or str(r.get("pair_id")) in keep.get(str(r.get("language")), set())]
+
+
 def normalize_filters(value: Any) -> list[str]:
     """Filter specs as a list of "key=v1,v2" strings. YAML reads ``[split=pilot,main]`` (the natural way to write
     it on the command line) as ["split=pilot", "main"]; an item without "=" continues the previous one."""
@@ -229,6 +275,7 @@ class Job:
         self.tokenizer: str = ""
         self.batching: dict[str, Any] = {}
         self.gpus: list[str] | None = None
+        self._watcher = None
         self._rows_cache: dict[Path, list[dict[str, Any]]] = {}
 
     # ------------------------------------------------------------------ helpers
@@ -268,12 +315,34 @@ class Job:
                                  env={**os.environ, **env})
             self.children.append(p)
             procs.append((p, lf))
+        every = float((self.s.get("watch") or {}).get("every_min", 15)) * 60
+        last = time.monotonic()
+        while any(p.poll() is None for p, _ in procs):
+            time.sleep(5)
+            if every > 0 and time.monotonic() - last >= every:
+                self.watch()
+                last = time.monotonic()
         codes = []
         for p, lf in procs:
             codes.append(p.wait())
             lf.close()
             self.children.remove(p)
+        self.watch()
         return codes
+
+    def watch(self) -> None:
+        """Status block (progress, ETA, output health, z check) into the job log and <dump>/status.txt."""
+        ws = dict(self.s.get("watch") or {})
+        if ws.get("every_min", 15) in (0, None, False) or self.args.plan:
+            return
+        try:
+            import watch_study
+
+            if self._watcher is None:
+                self._watcher = watch_study.Watcher(self.dump, ws, score=bool(ws.get("score", True)))
+            log(self._watcher.write())
+        except Exception as e:  # noqa: BLE001  (monitoring must never stop the job)
+            log(f"watch: skipped ({type(e).__name__}: {str(e)[:200]})")
 
     def terminate_children(self) -> None:
         for p in list(self.children):
@@ -500,6 +569,7 @@ class Job:
         rows: list[dict[str, Any]] = []
         for p in self.stream_prompt_files(stream):
             rows.extend(self.rows_of(p))
+        rows = edit_subsample(rows, self.s.get("edit_subsample"))
         return G.select_rows(rows, parse_filters(self.stream_filters(stream)), None, None, None)
 
     def gen_files(self, stream: str) -> list[Path]:
