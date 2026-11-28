@@ -1,6 +1,6 @@
 """Live status of a run_study.py dump: progress, speed, ETA, output health and a quick watermark check.
 
-run_study.py prints this block into the job log (logs/wm-study.<jobid>.out) every ``watch.every_min`` minutes
+run_study.py prints this block into the job log (logs/ashutosh.<jobid>.out) every ``watch.every_min`` minutes
 while it generates, and writes the latest one to ``<dump>/status.txt``, so a login node only needs ``cat``.
 By hand (on the compute node of a running job, or anywhere with the venv):
 

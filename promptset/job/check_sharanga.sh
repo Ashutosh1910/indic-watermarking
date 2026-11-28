@@ -12,8 +12,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=96G
 #SBATCH --time=01:30:00
-#SBATCH --job-name=wm-check
-#SBATCH --output=wm-check.%j.out
+#SBATCH --job-name=ashutosh-check
+#SBATCH --output=ashutosh-check.%j.out
 set -uo pipefail
 REPO="${SLURM_SUBMIT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 cd "$REPO"
