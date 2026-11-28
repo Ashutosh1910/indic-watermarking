@@ -9,7 +9,8 @@
 # Every argument goes to run_study.py. Environment (optional): WM_PARTITION (default gpu_h200_8), WM_GPUS (default 2,
 # at most the GPUs of one node; the model fits on one 80 GB card, so each GPU runs its own generation process),
 # WM_TIME (default 23:50:00, under the 1-day limit of gpu_h200_8), WM_JOBNAME (default ashutosh; log
-# logs/<name>.<jobid>.out), WM_QOS, WM_MAIL (address for job mails),
+# logs/<name>.<jobid>.out), WM_QOS, WM_MAIL (address for job mails;
+# default: the first line of ~/wm/mail, kept out of the public repo), WM_MAIL_TYPE (default BEGIN,END,FAIL,REQUEUE),
 # WM_DEPENDENCY (sbatch --dependency value), WM_MAX_CPUS / WM_MAX_MEM_GB (per-user QoS caps, default 12 / 300),
 # WM_TOKEN_BUDGET (H200 only, default 250000), WM_TEST_ONLY=1 (sbatch --test-only). The job resubmits itself after a time limit (run_study.sh,
 # WM_MAX_CHAIN times); a finished dump does nothing on a resubmission.
@@ -46,7 +47,12 @@ args=(-p "$P" --gres="gpu:$GPUS" --cpus-per-task="$CPUS" --mem="$MEM" --time="$T
       --job-name="$JOBNAME" --output="$REPO/logs/$JOBNAME.%j.out" --signal=B:TERM@900
       --export="ALL,WM_ENV=$WM_ENV,WM_JOBNAME=$JOBNAME,WM_PARTITION=$P,WM_GPUS=$GPUS,WM_TIME=$TIME,WM_QOS=$QOS,WM_CHAIN=${WM_CHAIN:-0}")
 [[ -n "$QOS" ]] && args+=(--qos="$QOS")
-[[ -n "${WM_MAIL:-}" ]] && args+=(--mail-user="$WM_MAIL" --mail-type=END,FAIL)
+MAIL="${WM_MAIL:-}"
+[[ -z "$MAIL" && -s "$HOME/wm/mail" ]] && MAIL="$(head -n1 "$HOME/wm/mail" | tr -d '[:space:]')"
+if [[ -n "$MAIL" ]]; then
+  args+=(--mail-user="$MAIL" --mail-type="${WM_MAIL_TYPE:-BEGIN,END,FAIL,REQUEUE}")
+  echo "job mails ($MAIL): ${WM_MAIL_TYPE:-BEGIN,END,FAIL,REQUEUE}"
+fi
 [[ -n "${WM_DEPENDENCY:-}" ]] && args+=(--dependency="$WM_DEPENDENCY")
 [[ -n "${WM_TEST_ONLY:-}" ]] && args+=(--test-only)
 echo "sbatch ${args[*]} promptset/job/run_study.sh ${extra[*]+${extra[*]}} $*"

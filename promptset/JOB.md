@@ -27,6 +27,11 @@ squeue -u $USER -n ashutosh; tail -f logs/ashutosh.<jobid>.out
 
 * **Job name.** Jobs are named `ashutosh` (the cluster account is shared, so `squeue` shows whose job it is) and
   log to `logs/ashutosh.<jobid>.out`; `WM_JOBNAME=<name>` changes both, and resubmissions keep it.
+* **Job mails.** Put your address in `~/wm/mail` once (`echo you@hyderabad.bits-pilani.ac.in > ~/wm/mail`; it
+  stays out of the public repo), or set `WM_MAIL=<address>` for one submission. Jobs then mail on BEGIN, END, FAIL
+  and REQUEUE (`WM_MAIL_TYPE` changes the list, e.g. `BEGIN,END,FAIL,TIME_LIMIT_80`). Every job of a resubmission
+  chain sends its own BEGIN/END mails. The Sharanga docs show `<username>@hyderabad.bits-pilani.ac.in` in their
+  examples; other addresses are not documented either way.
 * **Partitions and GPUs.** `submit.sh` sets partition, QoS, GPUs, CPUs and memory together. Default `gpu_h200_8`
   (H200 141 GB, `qos_gpu_h200`, 1-day limit, `generate.token_budget=250000` set for you) with `WM_GPUS=2`:
   Qwen3-14B fits on one card, so each GPU runs its own generation process and time falls about linearly with GPUs.
