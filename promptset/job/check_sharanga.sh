@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Sharanga: check the setup on a GPU node before the pilot. Runs the CPU test suites, a short watermarked
-# generation with the study model (offline, from the cache setup filled), and tests internet access.
+# Sharanga: check the setup on a GPU node on its own (precheck.sh --tests: GPUs, internet, a short watermarked
+# generation with the study model from the offline cache, and the CPU test suites). Not needed before the
+# pilot: the first job of every submit.sh chain runs the same check (without the tests) before it starts.
 #
-#   sbatch promptset/job/check_sharanga.sh                                     # H100 partition
+#   sbatch promptset/job/check_sharanga.sh                                     # H200 partition
 #   sbatch -p gpu_a100_8 --qos=qos_gpu_a100 promptset/job/check_sharanga.sh    # another partition
 #
 #SBATCH -p gpu_h200_8
@@ -22,23 +23,7 @@ wm_refresh "$REPO"
 # shellcheck disable=SC1091
 source "$VENV/bin/activate"
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
-nvidia-smi --query-gpu=index,name,memory.total,driver_version --format=csv 2>/dev/null || echo "nvidia-smi failed"
-
-FAIL=0
-echo "== internet from this compute node"
-if curl -sS -m 15 -o /dev/null -w '%{http_code}\n' https://huggingface.co/api/models/Qwen/Qwen3-14B; then
-  echo "internet: yes (the job still runs offline from the cache)"
-else
-  echo "internet: no (fine: the job runs offline from $HF_HOME)"
-fi
-
-echo "== GPU check (offline, model from the cache)"
-HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python promptset/job/gpu_check.py || FAIL=1
-
-echo "== CPU tests"
-python -m pytest promptset/tests -q -p no:cacheprovider || FAIL=1
-python -m pytest synthid/tests -q -p no:cacheprovider || FAIL=1
-
+bash promptset/job/precheck.sh --tests; FAIL=$?
 if [[ $FAIL -eq 0 ]]; then
   echo "== ALL OK. Next: bash promptset/job/submit.sh --dump dump/pilot"
 else

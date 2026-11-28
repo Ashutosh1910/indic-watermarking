@@ -16,13 +16,11 @@ Everything large goes on `/scratch/$USER/wm` (`job/sharanga.env`): the repo, the
 mkdir -p /scratch/$USER/wm && cd /scratch/$USER/wm
 git clone https://github.com/Ashutosh1910/indic-watermarking && cd indic-watermarking
 bash promptset/job/setup_sharanga.sh             # python 3.11 (conda if needed), venv, packages, Qwen3-14B weights
-sbatch --test-only promptset/job/check_sharanga.sh   # estimated start, submits nothing
-sbatch promptset/job/check_sharanga.sh           # GPU node (1x H200, 1.5 h): test generation, CPU tests, internet check
-cat wm-check.<jobid>.out                          # must end with "ALL OK"
 
 # the study (one job at a time: the QoS allows 2 GPUs and 12 CPUs per user in total)
 WM_TEST_ONLY=1 WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   # estimated start, submits nothing
-WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot                   # pilot, 2x H200
+WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot                   # check + pilot, 2x H200
+grep -E "PRECHECK|ALL OK|exit" logs/wm-study.<jobid>.out                          # "== PRECHECK OK" first
 bash promptset/job/submit.sh --dump dump/main --set filters='[split=pilot,main]'  # full run, after the pilot
 squeue -u $USER; tail -f logs/wm-study.<jobid>.out
 ```
@@ -40,6 +38,12 @@ squeue -u $USER; tail -f logs/wm-study.<jobid>.out
 * **Starting sooner.** A shorter `WM_TIME` can start earlier by backfill into a gap before a reserved node.
   `WM_TEST_ONLY=1` shows Slurm's estimate for the exact request; try a few `WM_TIME` values. A job that hits its
   limit resubmits itself and resumes, so a short limit costs only a requeue.
+* **Precheck.** The first job of each submit.sh chain starts with `job/precheck.sh` (a few minutes): GPUs and
+  driver, internet (for information), and a short watermarked generation with the study model from the offline
+  cache (`gpu_check.py`). If it fails, the job stops with `== PRECHECK FAILED` and exit 2, before the study
+  starts and without resubmitting. `WM_PRECHECK=tests` also runs the CPU test suites (about 15 min);
+  `WM_PRECHECK=0` skips the check. `sbatch promptset/job/check_sharanga.sh` runs the check with the tests as a
+  job of its own (1 GPU).
 * **Monitoring.** Everything is in files, so the login node needs only `tail` and `cat`:
 
   ```bash
@@ -69,7 +73,7 @@ squeue -u $USER; tail -f logs/wm-study.<jobid>.out
   `source promptset/job/sharanga.env && wm_refresh` once, or rerun setup (it skips what is there).
 * **Keys.** The first real job creates `~/wm/keys.private.yaml` in your home (private, backed up). Never delete it
   while dumps of the study exist.
-* **Driver.** The default torch wheel needs a recent NVIDIA driver; `check_sharanga.sh` shows it. If torch reports
+* **Driver.** The default torch wheel needs a recent NVIDIA driver; the precheck at the start of the job shows it. If torch reports
   no CUDA, rerun setup with `TORCH_INDEX=https://download.pytorch.org/whl/cu124`.
 
 ## Quick start (a fresh GPU server)

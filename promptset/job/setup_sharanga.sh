@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # One-time setup on a Sharanga LOGIN node: python, venv, packages and the model weights, all under
 # /scratch/$USER/wm (sharanga.env). Downloads only: the CPU tests and the GPU check run as a job afterwards
-# (sbatch promptset/job/check_sharanga.sh), because code must not run on login nodes.
+# (the precheck at the start of the first study job), because code must not run on login nodes.
 #
 #   cd /scratch/$USER/wm && git clone https://github.com/Ashutosh1910/indic-watermarking && cd indic-watermarking
 #   bash promptset/job/setup_sharanga.sh
@@ -43,4 +43,4 @@ export PYTHON="$PY"
 SKIP_TESTS=1 bash promptset/job/setup_gpu.sh     # venv at $VENV, packages, weights into $HF_HOME (no tests here)
 wm_refresh "$REPO"
 echo "== disk: $(du -sh "$WM_ROOT" 2>/dev/null | cut -f1) in $WM_ROOT; home quota: run 'usertools quota info'"
-echo "== next: sbatch promptset/job/check_sharanga.sh   (CPU tests + GPU check, about 30 min; log wm-check.<id>.out)"
+echo "== next: WM_TIME=03:00:00 bash promptset/job/submit.sh --dump dump/pilot   (GPU check, then the pilot; log logs/wm-study.<id>.out)"
